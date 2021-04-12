@@ -8,7 +8,7 @@
 module.exports = {
   title: "Enterprise features in a box",
   tagline: "Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes.",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://boxyhq.com",
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "boxyhq", // Usually your GitHub org/user name.
@@ -17,14 +17,14 @@ module.exports = {
     navbar: {
       title: "Boxy",
       logo: {
-        alt: "My Site Logo",
+        alt: "Boxy",
         src: "img/logo.svg"
       },
-      links: [
+      links_disabled: [
         { to: "docs/doc1", label: "Docs", position: "left" },
         { to: "blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/boxyhq",
           label: "GitHub",
           position: "right"
         }
@@ -32,7 +32,7 @@ module.exports = {
     },
     footer: {
       style: "dark",
-      links: [
+      links_disabled: [
         {
           title: "Docs",
           items: [
@@ -62,10 +62,10 @@ module.exports = {
         }
       ],
       logo: {
-        alt: "Facebook Open Source Logo",
-        src: "https://docusaurus.io/img/oss_logo.png"
+        alt: "",
+        src: ""
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`
+      copyright: `Copyright © ${new Date().getFullYear()} Boxy`
     }
   },
   presets: [
