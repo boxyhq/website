@@ -12,7 +12,7 @@ module.exports = {
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "boxyhq", // Usually your GitHub org/user name.
-  projectName: "", // Usually your repo name.
+  projectName: "website", // Usually your repo name.
   themeConfig: {
     navbar: {
       title: "Boxy",

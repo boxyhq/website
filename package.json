@@ -1,6 +1,6 @@
 {
-  "name": "docusaurus-template",
-  "version": "0.0.0",
+  "name": "boxy-website",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
