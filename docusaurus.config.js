@@ -7,7 +7,8 @@
 
 module.exports = {
   title: "Enterprise features in a box",
-  tagline: "Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes.",
+  tagline:
+    "Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes.",
   url: "https://boxyhq.com",
   baseUrl: "/",
   favicon: "img/favicon.ico",
@@ -18,7 +19,7 @@ module.exports = {
       title: "Boxy",
       logo: {
         alt: "Boxy",
-        src: "img/logo.png"
+        src: "img/logo.png",
       },
       links_disabled: [
         { to: "docs/doc1", label: "Docs", position: "left" },
@@ -26,9 +27,9 @@ module.exports = {
         {
           href: "https://github.com/boxyhq",
           label: "GitHub",
-          position: "right"
-        }
-      ]
+          position: "right",
+        },
+      ],
     },
     footer: {
       style: "dark",
@@ -38,47 +39,56 @@ module.exports = {
           items: [
             {
               label: "Docs",
-              to: "docs/doc1"
-            }
-          ]
+              to: "docs/doc1",
+            },
+          ],
         },
         {
           title: "Community",
           items: [
             {
               label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus"
-            }
-          ]
+              href: "https://discordapp.com/invite/docusaurus",
+            },
+          ],
         },
         {
           title: "Social",
           items: [
             {
               label: "Blog",
-              to: "blog"
-            }
-          ]
-        }
+              to: "blog",
+            },
+          ],
+        },
       ],
+      links: [{
+        title: "",
+        items: [
+          {
+            label: "Font Awesome by Dave Gandy",
+            href: "http://fontawesome.io"
+          }
+        ]
+      }],
       logo: {
         alt: "",
-        src: ""
+        src: "",
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Boxy`
-    }
+      copyright: `Copyright © ${new Date().getFullYear()} Boxy`,
+    },
   },
   presets: [
     [
       "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js")
+          sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
-      }
-    ]
-  ]
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
+  ],
 };
