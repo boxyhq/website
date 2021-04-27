@@ -66,7 +66,7 @@ module.exports = {
         title: "",
         items: [
           {
-            label: "Font Awesome by Dave Gandy",
+            label: "* Font Awesome by Dave Gandy",
             href: "http://fontawesome.io"
           }
         ]
