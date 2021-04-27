@@ -18,7 +18,7 @@ module.exports = {
       title: "Boxy",
       logo: {
         alt: "Boxy",
-        src: "img/logo.svg"
+        src: "img/logo.png"
       },
       links_disabled: [
         { to: "docs/doc1", label: "Docs", position: "left" },
