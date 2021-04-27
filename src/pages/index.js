@@ -113,6 +113,8 @@ function Home() {
                           src={withBaseUrl(imageUrl)}
                           alt={title}
                         />
+                        <br/>
+                        <br/>
                       </div>
                     )}
                     <h3>{title}</h3>
