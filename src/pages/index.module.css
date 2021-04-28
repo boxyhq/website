@@ -1,9 +1,4 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+/* stylelint-disable docusaurus/copyright-header */
 
 /**
  * CSS files with the .module.css suffix will be treated as CSS modules
@@ -27,16 +22,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
-
-.featureImage {
-  height: 80px;
-  width: 80px;
 }
