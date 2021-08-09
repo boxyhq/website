@@ -10,66 +10,76 @@ import classnames from "classnames";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import withBaseUrl from "@docusaurus/withBaseUrl";
 import styles from "./styles.module.css";
+import Head from "@docusaurus/Head";
 
 const features = [
   {
     title: <>SAML</>,
-    imageUrl: "img/shield-alt-solid.svg",
+    imageUrl: "fa-shield-alt",
     description: (
       <>
-        Add single sign on authentication into your product. Supports most identity providers via SAML 2.0
+        Add single sign on authentication into your product. Supports most
+        identity providers via SAML 2.0
       </>
-    )
+    ),
   },
   {
     title: <>Audit Logs</>,
-    imageUrl: "img/clipboard-list-solid.svg",
+    imageUrl: "fa-clipboard-list",
     description: (
       <>
-        Add audit logs into your product with ease. Allow your customers to send security related events to their SIEM
+        Add audit logs into your product with ease. Allow your customers to send
+        security related events to their SIEM
       </>
-    )
+    ),
   },
   {
     title: <>Privacy Vault</>,
-    imageUrl: "img/key-solid.svg",
+    imageUrl: "fa-key",
     description: (
       <>
-        Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data
+        Protect your customers sensitive data by safely encrypting it in a
+        Privacy vault. Add policies to govern access to the protected data
       </>
-    )
+    ),
   },
   {
     title: <>Role Based Access and Permissions</>,
-    imageUrl: "img/user-lock-solid.svg",
+    imageUrl: "fa-user-lock",
     description: (
       <>
-        Add roles, groups and permissions into your product using a flexible schema. Query the schema at runtime in your product to enforce Role Based Access Control
+        Add roles, groups and permissions into your product using a flexible
+        schema. Query the schema at runtime in your product to enforce Role
+        Based Access Control
       </>
-    )
+    ),
   },
   {
     title: <>Directory Sync</>,
-    imageUrl: "img/sync-solid.svg",
+    imageUrl: "fa-sync",
     description: (
       <>
-        Add Directory Sync support into your product to provision and de-provision users. Supports the SCIM protocol
+        Add Directory Sync support into your product to provision and
+        de-provision users. Supports the SCIM protocol
       </>
-    )
+    ),
   },
   {
     title: <>(coming soon)</>,
-    imageUrl: "img/ellipsis-h-solid.svg",
+    imageUrl: "fa-ellipsis-h",
     description: (
       <>
         Admin Portal, Security Status Page, Compliance Monitoring, many more.
         Contact us if you have any specific Enterprise features in mind.
       </>
-    )
-  }
+    ),
+  },
 ];
+
+function withIcon(icon) {
+  return `fas fa-lg fa-5x ${icon}`;
+}
 
 function Home() {
   const context = useDocusaurusContext();
@@ -79,6 +89,12 @@ function Home() {
       title={`${siteConfig.title}`}
       description="Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code"
     >
+      <Head>
+        <script
+          src="https://kit.fontawesome.com/d3a523e0cd.js"
+          crossorigin="anonymous"
+        ></script>
+      </Head>
       <header className={classnames("hero hero--primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -108,13 +124,10 @@ function Home() {
                   >
                     {imageUrl && (
                       <div className="text--center">
-                        <img
-                          className={styles.featureImage}
-                          src={withBaseUrl(imageUrl)}
-                          alt={title}
-                        />
-                        <br/>
-                        <br/>
+                        <i class={withIcon(imageUrl)}></i>
+
+                        <br />
+                        <br />
                       </div>
                     )}
                     <h3>{title}</h3>

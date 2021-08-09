@@ -62,15 +62,6 @@ module.exports = {
           ],
         },
       ],
-      links: [{
-        title: "",
-        items: [
-          {
-            label: "* Font Awesome by Dave Gandy",
-            href: "http://fontawesome.io"
-          }
-        ]
-      }],
       logo: {
         alt: "",
         src: "",
