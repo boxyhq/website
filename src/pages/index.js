@@ -34,12 +34,6 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code."
     >
-      <Head>
-        <script
-          src="https://kit.fontawesome.com/d3a523e0cd.js"
-          crossorigin="anonymous"
-        ></script>
-      </Head>
 
       <HomepageHeader />
       
