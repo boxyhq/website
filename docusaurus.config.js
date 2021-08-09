@@ -25,7 +25,13 @@ module.exports = {
         alt: 'Boxy',
         src: 'img/logo.png',
       },
-      items: [],
+      items: [
+        {
+          "href": "https://github.com/boxyhq",
+          "label": "GitHub",
+          "position": "right"
+        }
+      ],
     },
     footer: {
       style: 'dark',

@@ -4,17 +4,8 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: <>SAML</>,
-    Svg: require('../../static/img/feat_sso.svg').default,
-    description: (
-      <>
-        Add single sign on authentication into your product. Supports most
-        identity providers via SAML 2.0
-      </>
-    ),
-  },
-  {
     title: <>Audit Logs</>,
+    url: 'https://github.com/boxyhq/hermes',
     Svg: require('../../static/img/feat_audit.svg').default,
     description: (
       <>
@@ -24,7 +15,17 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Privacy Vault</>,
+    title: <>SAML (coming soon)</>,
+    Svg: require('../../static/img/feat_sso.svg').default,
+    description: (
+      <>
+        Add single sign on authentication into your product. Supports most
+        identity providers via SAML 2.0
+      </>
+    ),
+  },
+  {
+    title: <>Privacy Vault (coming soon)</>,
     Svg: require('../../static/img/feat_vault.svg').default,
     description: (
       <>
@@ -34,7 +35,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Role Based Access and Permissions</>,
+    title: <>Role Based Access and Permissions (coming soon)</>,
     Svg: require('../../static/img/feat_rbac.svg').default,
     description: (
       <>
@@ -45,7 +46,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Directory Sync</>,
+    title: <>Directory Sync (coming soon)</>,
     Svg: require('../../static/img/feat_dsync.svg').default,
     description: (
       <>
@@ -55,7 +56,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>(coming soon)</>,
+    title: <>(coming next)</>,
     Svg: require('../../static/img/feat_coming.svg').default,
     description: (
       <>
@@ -66,14 +67,20 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description, url }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        {url ? (
+          <h3>
+            <a href={url} target="_blank">{title}</a>
+          </h3>
+        ) : (
+          <h3>{title}</h3>
+        )}
         <p>{description}</p>
       </div>
     </div>
