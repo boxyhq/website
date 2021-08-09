@@ -6,78 +6,78 @@
  */
 
 module.exports = {
-  title: "Enterprise features in a box",
+  title: 'Enterprise features in a box',
   tagline:
-    "Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes.",
-  url: "https://boxyhq.com",
-  baseUrl: "/",
-  favicon: "img/favicon.ico",
-  organizationName: "boxyhq", // Usually your GitHub org/user name.
-  projectName: "website", // Usually your repo name.
+    'Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes.',
+  url: 'https://boxyhq.com',
+  baseUrl: '/',
+  favicon: 'img/favicon.ico',
+  organizationName: 'boxyhq', // Usually your GitHub org/user name.
+  projectName: 'website', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "Boxy",
+      title: 'Boxy',
       logo: {
-        alt: "Boxy",
-        src: "img/logo.png",
+        alt: 'Boxy',
+        src: 'img/logo.png',
       },
       links_disabled: [
-        { to: "docs/doc1", label: "Docs", position: "left" },
-        { to: "blog", label: "Blog", position: "left" },
+        { to: 'docs/doc1', label: 'Docs', position: 'left' },
+        { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: "https://github.com/boxyhq",
-          label: "GitHub",
-          position: "right",
+          href: 'https://github.com/boxyhq',
+          label: 'GitHub',
+          position: 'right',
         },
       ],
     },
     footer: {
-      style: "dark",
+      style: 'dark',
       links_disabled: [
         {
-          title: "Docs",
+          title: 'Docs',
           items: [
             {
-              label: "Docs",
-              to: "docs/doc1",
+              label: 'Docs',
+              to: 'docs/doc1',
             },
           ],
         },
         {
-          title: "Community",
+          title: 'Community',
           items: [
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
             },
           ],
         },
         {
-          title: "Social",
+          title: 'Social',
           items: [
             {
-              label: "Blog",
-              to: "blog",
+              label: 'Blog',
+              to: 'blog',
             },
           ],
         },
       ],
       logo: {
-        alt: "",
-        src: "",
+        alt: '',
+        src: '',
       },
       copyright: `Copyright © ${new Date().getFullYear()} Boxy`,
     },
   },
   presets: [
     [
-      "@docusaurus/preset-classic",
+      '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve('./sidebars.js'),
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],

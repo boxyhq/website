@@ -5,18 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from "react";
-import classnames from "classnames";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import styles from "./styles.module.css";
-import Head from "@docusaurus/Head";
+import React from 'react';
+import classnames from 'classnames';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import styles from './styles.module.css';
+import Head from '@docusaurus/Head';
 
 const features = [
   {
     title: <>SAML</>,
-    imageUrl: "fa-shield-alt",
+    imageUrl: 'fa-shield-alt',
     description: (
       <>
         Add single sign on authentication into your product. Supports most
@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: <>Audit Logs</>,
-    imageUrl: "fa-clipboard-list",
+    imageUrl: 'fa-clipboard-list',
     description: (
       <>
         Add audit logs into your product with ease. Allow your customers to send
@@ -36,7 +36,7 @@ const features = [
   },
   {
     title: <>Privacy Vault</>,
-    imageUrl: "fa-key",
+    imageUrl: 'fa-key',
     description: (
       <>
         Protect your customers sensitive data by safely encrypting it in a
@@ -46,7 +46,7 @@ const features = [
   },
   {
     title: <>Role Based Access and Permissions</>,
-    imageUrl: "fa-user-lock",
+    imageUrl: 'fa-user-lock',
     description: (
       <>
         Add roles, groups and permissions into your product using a flexible
@@ -57,7 +57,7 @@ const features = [
   },
   {
     title: <>Directory Sync</>,
-    imageUrl: "fa-sync",
+    imageUrl: 'fa-sync',
     description: (
       <>
         Add Directory Sync support into your product to provision and
@@ -67,7 +67,7 @@ const features = [
   },
   {
     title: <>(coming soon)</>,
-    imageUrl: "fa-ellipsis-h",
+    imageUrl: 'fa-ellipsis-h',
     description: (
       <>
         Admin Portal, Security Status Page, Compliance Monitoring, many more.
@@ -95,14 +95,14 @@ function Home() {
           crossorigin="anonymous"
         ></script>
       </Head>
-      <header className={classnames("hero hero--primary", styles.heroBanner)}>
+      <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                "button button--outline button--secondary button--lg",
+                'button button--outline button--secondary button--lg',
                 styles.getStarted
               )}
               to="mailto:hello@boxyhq.com"
@@ -120,7 +120,7 @@ function Home() {
                 {features.map(({ imageUrl, title, description }, idx) => (
                   <div
                     key={idx}
-                    className={classnames("col col--4", styles.feature)}
+                    className={classnames('col col--4', styles.feature)}
                   >
                     {imageUrl && (
                       <div className="text--center">
