@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Enterprise features in a box',
+  title: 'Enterprise features made simple',
   tagline:
     'Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes.',
   url: 'https://boxyhq.com',
