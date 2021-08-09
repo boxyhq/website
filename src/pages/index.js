@@ -5,7 +5,6 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import Head from '@docusaurus/Head';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -40,10 +39,7 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
-
-      <p align="center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/cRfAsvFS6vA" loading="lazy" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-      </p>
+      
     </Layout>
   );
 }
