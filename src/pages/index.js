@@ -19,8 +19,7 @@ const features = [
     imageUrl: "img/undraw_docusaurus_mountain.svg",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Add single sign on authentication into your product. Supports most identity providers via SAML 2.0
       </>
     )
   },
@@ -29,8 +28,7 @@ const features = [
     imageUrl: "img/undraw_docusaurus_tree.svg",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Add audit logs into your product with ease. Allow your customers to send security related events to their SIEM
       </>
     )
   },
@@ -39,8 +37,7 @@ const features = [
     imageUrl: "img/undraw_docusaurus_react.svg",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data
       </>
     )
   },
@@ -49,8 +46,7 @@ const features = [
     imageUrl: "img/undraw_docusaurus_mountain.svg",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Add roles, groups and permissions into your product using a flexible schema. Query the schema at runtime in your product to enforce Role Based Access Control
       </>
     )
   },
@@ -59,8 +55,7 @@ const features = [
     imageUrl: "img/undraw_docusaurus_tree.svg",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Add Directory Sync support into your product to provision and de-provision users. Supports the SCIM protocol
       </>
     )
   },
@@ -69,7 +64,7 @@ const features = [
     imageUrl: "img/undraw_docusaurus_react.svg",
     description: (
       <>
-        Admin Portal, API Management, Compliance Monitoring, many more.
+        Admin Portal, Security Status Page, Compliance Monitoring, many more.
         Contact us if you have any specific Enterprise features in mind.
       </>
     )
