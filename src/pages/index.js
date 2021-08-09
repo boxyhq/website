@@ -16,7 +16,7 @@ import styles from "./styles.module.css";
 const features = [
   {
     title: <>SAML</>,
-    imageUrl: "img/undraw_docusaurus_mountain.svg",
+    imageUrl: "img/shield-alt-solid.svg",
     description: (
       <>
         Add single sign on authentication into your product. Supports most identity providers via SAML 2.0
@@ -25,7 +25,7 @@ const features = [
   },
   {
     title: <>Audit Logs</>,
-    imageUrl: "img/undraw_docusaurus_tree.svg",
+    imageUrl: "img/clipboard-list-solid.svg",
     description: (
       <>
         Add audit logs into your product with ease. Allow your customers to send security related events to their SIEM
@@ -34,7 +34,7 @@ const features = [
   },
   {
     title: <>Privacy Vault</>,
-    imageUrl: "img/undraw_docusaurus_react.svg",
+    imageUrl: "img/key-solid.svg",
     description: (
       <>
         Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data
@@ -43,7 +43,7 @@ const features = [
   },
   {
     title: <>Role Based Access and Permissions</>,
-    imageUrl: "img/undraw_docusaurus_mountain.svg",
+    imageUrl: "img/user-lock-solid.svg",
     description: (
       <>
         Add roles, groups and permissions into your product using a flexible schema. Query the schema at runtime in your product to enforce Role Based Access Control
@@ -52,7 +52,7 @@ const features = [
   },
   {
     title: <>Directory Sync</>,
-    imageUrl: "img/undraw_docusaurus_tree.svg",
+    imageUrl: "img/sync-solid.svg",
     description: (
       <>
         Add Directory Sync support into your product to provision and de-provision users. Supports the SCIM protocol
@@ -61,7 +61,7 @@ const features = [
   },
   {
     title: <>(coming soon)</>,
-    imageUrl: "img/undraw_docusaurus_react.svg",
+    imageUrl: "img/ellipsis-h-solid.svg",
     description: (
       <>
         Admin Portal, Security Status Page, Compliance Monitoring, many more.
