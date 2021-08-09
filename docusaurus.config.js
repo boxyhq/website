@@ -55,4 +55,12 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    [
+      require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'GTM-N9999D3', // GTM Container ID
+      }
+    ]
+  ],
 };

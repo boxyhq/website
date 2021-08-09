@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      description="Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code."
     >
       <Head>
         <script
