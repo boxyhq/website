@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Boxy helps startups to enable enterprise features in any SaaS app with just a few lines of code."
+      description="Boxy helps startups enable enterprise features in any SaaS app with just a few lines of code."
     >
 
       <HomepageHeader />
