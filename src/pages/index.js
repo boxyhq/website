@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import Head from '@docusaurus/Head';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -33,13 +34,15 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Boxy helps startups enable enterprise features in any SaaS app with just a few lines of code."
     >
+      <Head>
+        <script src="https://cmp.osano.com/169lWRSfch3C32VM2/2cd324ff-6a09-4e61-94fa-6af31f004e67/osano.js"></script>
+      </Head>
 
       <HomepageHeader />
-      
+
       <main>
         <HomepageFeatures />
       </main>
-      
     </Layout>
   );
 }
