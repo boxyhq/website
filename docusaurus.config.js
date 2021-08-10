@@ -45,6 +45,23 @@ module.exports = {
             },
           ],
         },
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Privacy Policy',
+              href: '/privacy.html',
+              external: true,
+              target: '_blank',
+            },
+            {
+              label: 'Terms',
+              href: '/terms.html',
+              external: true,
+              target: '_blank',
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Boxy.`,
     },
