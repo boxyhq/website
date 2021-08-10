@@ -49,15 +49,18 @@ module.exports = {
           title: 'Legal',
           items: [
             {
+              label: 'Cookie Policy',
+              href: '/cookie.html',
+              target: '_blank',
+            },
+            {
               label: 'Privacy Policy',
               href: '/privacy.html',
-              external: true,
               target: '_blank',
             },
             {
               label: 'Terms',
               href: '/terms.html',
-              external: true,
               target: '_blank',
             },
           ],
