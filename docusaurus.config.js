@@ -27,10 +27,11 @@ module.exports = {
       },
       items: [
         {
-          "href": "https://github.com/boxyhq",
-          "label": "GitHub",
-          "position": "right"
-        }
+          href: 'https://github.com/boxyhq',
+          label: 'GitHub',
+          position: 'right',
+        },
+        { to: '/blog', label: 'Blog', position: 'right' },
       ],
     },
     footer: {
@@ -75,15 +76,15 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          editUrl: 'https://github.com/boxyhq/website/edit/main/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          editUrl: 'https://github.com/boxyhq/website/edit/main/',
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} Boxy.`,
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -96,7 +97,7 @@ module.exports = {
       require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-N9999D3', // GTM Container ID
-      }
-    ]
+      },
+    ],
   ],
 };
