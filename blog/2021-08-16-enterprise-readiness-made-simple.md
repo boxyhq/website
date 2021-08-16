@@ -20,7 +20,7 @@ Coding today is like assembling lego blocks thanks to these APIs and developers 
 
 I have spent a significant part of my career building products that were sold to the Enterprise. I have helped build out numerous Compliance and Security features, all essential to make the sale but still a big distraction from the core product. I have personally experienced the pain of balancing these Enterprise features with other core features. My co-founder Sama has spent a significant part of his career helping startups accelerate and connecting them to Enterprises. He has seen the pain of startups not being ready to sell to the Enterprise despite having fantastic products.
 
-We both looked at all this and questioned ourselves: What if Enterprise readiness had an API? What would that look like? How would it work? Could we create a product that will help developers at startups address the hard problems of enterprise readiness, data security and compliance?
+We both looked at all this and questioned ourselves: What if Enterprise Readiness had an API? What would that look like? How would it work? Could we create a product that will help developers at startups address the hard problems of enterprise readiness, data security and compliance?
 
 And we went ahead and started Boxy to build this vision. Boxy is a commercial open source software that helps you add enterprise features to your app in just a few lines of code. We want to make enterprise features simple, that's it. That's our focus for the next few years. We want to solve the hard things for you and give you back valuable time to focus on your core products.
 
