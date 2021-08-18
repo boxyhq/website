@@ -5,12 +5,12 @@ author: Deepak Prabhakara
 author_title: Co-founder & CEO @ BoxyHQ
 author_url: https://github.com/deepakprabhakara
 author_image_url: https://avatars.githubusercontent.com/u/357991?s=400&v=4
-tags: [jobs senior-software-engineer engineering]
+tags: [careers senior-software-engineer engineering]
 ---
 
 #### TLDR
 
-Join our well-funded remote-first team if you love building open source API driven developer tools. We are just getting started so it is a chance to be part of the founding team and influence adoption of our products! Join us on our mission to help startups simplify development of compliance and data security related features in their products. Reach out to us at jobs@boxyhq.com.
+Join our well-funded remote-first team if you love building open source API driven developer tools. We are just getting started so it is a chance to be part of the founding team and influence adoption of our products! Join us on our mission to help startups simplify development of compliance and data security related features in their products. Reach out to us at careers@boxyhq.com.
 
 #### About us
 

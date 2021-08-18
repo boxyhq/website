@@ -70,8 +70,8 @@ module.exports = {
           title: 'Company',
           items: [
             {
-              label: 'Jobs',
-              href: '/jobs',
+              label: 'Careers',
+              href: '/careers',
             },
           ],
         },
@@ -114,16 +114,16 @@ module.exports = {
         /**
          * Required for any multi-instance plugin
          */
-        id: 'jobs',
+        id: 'careers',
         /**
          * URL route for the blog section of your site.
          * *DO NOT* include a trailing slash.
          */
-        routeBasePath: 'jobs',
+        routeBasePath: 'careers',
         /**
          * Path to data on filesystem relative to site dir.
          */
-        path: './jobs',
+        path: './careers',
       },
     ],
   ],
