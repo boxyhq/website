@@ -66,6 +66,15 @@ module.exports = {
             },
           ],
         },
+        {
+          title: 'Company',
+          items: [
+            {
+              label: 'Jobs',
+              href: '/jobs',
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Boxy.`,
     },
@@ -97,6 +106,24 @@ module.exports = {
       require.resolve('docusaurus-gtm-plugin'),
       {
         id: 'GTM-N9999D3', // GTM Container ID
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'jobs',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'jobs',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './jobs',
       },
     ],
   ],
