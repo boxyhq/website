@@ -26,12 +26,13 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
+        { to: '/blog', label: 'Blog' },
+        { to: '/careers', label: 'Careers' },
         {
           href: 'https://github.com/boxyhq',
           label: 'GitHub',
           position: 'right',
         },
-        { to: '/blog', label: 'Blog', position: 'right' },
       ],
     },
     footer: {
