@@ -22,7 +22,7 @@ I have spent a significant part of my career building products that were sold to
 
 We both looked at all this and questioned ourselves: What if Enterprise Readiness had an API? What would that look like? How would it work? Could we create a product that will help developers at startups address the hard problems of enterprise readiness, data security and compliance?
 
-And we went ahead and started Boxy to build this vision. Boxy is a commercial open source software that helps you add enterprise features to your app in just a few lines of code. We want to make enterprise features simple, that's it. That's our focus for the next few years. We want to solve the hard things for you and give you back valuable time to focus on your core products.
+And we went ahead and started BoxyHQ to build this vision. BoxyHQ is a commercial open source software that helps you add enterprise features to your app in just a few lines of code. We want to make enterprise features simple, that's it. That's our focus for the next few years. We want to solve the hard things for you and give you back valuable time to focus on your core products.
 
 If you are selling to the Enterprise, come and say hello. We'd love to give you early access and help you with other aspects of Enterprise sales as well.
 

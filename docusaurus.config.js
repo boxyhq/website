@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Enterprise Readiness made simple',
   tagline:
-    'Boxy helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes. Open source and free.',
+    'BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes. Open source and free.',
   url: 'https://boxyhq.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -20,9 +20,9 @@ module.exports = {
       disableSwitch: true,
     },
     navbar: {
-      title: 'Boxy',
+      title: 'BoxyHQ',
       logo: {
-        alt: 'Boxy',
+        alt: 'BoxyHQ',
         src: 'img/logo.png',
       },
       items: [
@@ -77,7 +77,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Boxy.`,
+      copyright: `Copyright © ${new Date().getFullYear()} BoxyHQ Inc.`,
     },
   },
   presets: [
@@ -93,7 +93,7 @@ module.exports = {
           editUrl: 'https://github.com/boxyhq/website/edit/main/',
           feedOptions: {
             type: 'all',
-            copyright: `Copyright © ${new Date().getFullYear()} Boxy.`,
+            copyright: `Copyright © ${new Date().getFullYear()} BoxyHQ Inc.`,
           },
         },
         theme: {
