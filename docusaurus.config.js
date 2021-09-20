@@ -28,6 +28,7 @@ module.exports = {
       items: [
         { to: '/blog', label: 'Blog' },
         { to: '/careers', label: 'Careers' },
+        { to: '/team', label: 'Team' },
         {
           href: 'https://github.com/boxyhq',
           label: 'GitHub',
@@ -73,6 +74,10 @@ module.exports = {
             {
               label: 'Careers',
               href: '/careers',
+            },
+            {
+              label: 'Team',
+              href: '/team',
             },
           ],
         },
