@@ -4,6 +4,17 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
+    title: <>SAML SSO</>,
+    url: 'https://github.com/boxyhq/jackson',
+    Svg: require('../../static/img/feat_sso.svg').default,
+    description: (
+      <>
+        Add single sign on authentication into your product. Supports most
+        identity providers via SAML 2.0
+      </>
+    ),
+  },
+  {
     title: <>Audit Logs</>,
     url: 'https://github.com/boxyhq/hermes',
     Svg: require('../../static/img/feat_audit.svg').default,
@@ -11,16 +22,6 @@ const FeatureList = [
       <>
         Add audit logs into your product with ease. Allow your customers to send
         security related events to their SIEM
-      </>
-    ),
-  },
-  {
-    title: <>SAML (coming soon)</>,
-    Svg: require('../../static/img/feat_sso.svg').default,
-    description: (
-      <>
-        Add single sign on authentication into your product. Supports most
-        identity providers via SAML 2.0
       </>
     ),
   },
@@ -76,7 +77,9 @@ function Feature({ Svg, title, description, url }) {
       <div className="text--center padding-horiz--md">
         {url ? (
           <h3>
-            <a href={url} target="_blank">{title}</a>
+            <a href={url} target="_blank">
+              {title}
+            </a>
           </h3>
         ) : (
           <h3>{title}</h3>
