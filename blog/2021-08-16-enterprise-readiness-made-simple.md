@@ -12,16 +12,15 @@ I love Lego (don't we all), probably a little more than my kids. It invokes a bu
 
 ![img alt](/img/blog/xavi-cabrera-kn-UmDZQDjM-unsplash.jpg)
 
-<div style={{fontSize: "10px", marg
-     p: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@xavi_cabrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Xavi Cabrera</a> on <a href="https://unsplash.com/s/photos/lego?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@xavi_cabrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Xavi Cabrera</a> on <a href="https://unsplash.com/s/photos/lego?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
-Then came the Cloud; infrastructure at the click of a button. Nothing short of magic! And then over the last decade or so the Cloud enabled a lot of the re-usable services to be packaged up as APIs; enter the API Economy. If you need audio or video in your app, dial the Twilio API. If you need payments, cash in on the Stripe API. If you need authentication, sign in to the Auth0 API. The list is endless (also I ran out of puns).
+Then came the Cloud; infrastructure at the click of a button. Nothing short of magic! And then over the last decade or so the Cloud enabled a lot of the re-usable services to be packaged up as APIs; enter the API Economy. If you need audio or video in your app, dial the Twilio API. If you need payments, cash in on the Stripe API. If you need authentication, sign into the Auth0 API. The list is endless (also I ran out of puns).
 
 Coding today is like assembling lego blocks thanks to these APIs and developers love it. There is no need to re-invent these blocks in every startup, it’s much better to outsource the non-core stuff.
 
 I have spent a significant part of my career building products that were sold to the Enterprise. I have helped build out numerous Compliance and Security features, all essential to make the sale but still a big distraction from the core product. I have personally experienced the pain of balancing these Enterprise features with other core features. My co-founder Sama has spent a significant part of his career helping startups accelerate and connecting them to Enterprises. He has seen the pain of startups not being ready to sell to the Enterprise despite having fantastic products.
 
-We both looked at all this and questioned ourselves: What if Enterprise Readiness had an API? What would that look like? How would it work? Could we create a product that will help developers at startups address the hard problems of enterprise readiness, data security, and compliance?
+We both looked at all this and questioned ourselves: What if Enterprise Readiness had an API? What would that look like? How would it work? Could we create a product that will help developers at startups address the hard problems of enterprise readiness, data security and compliance?
 
 And we went ahead and started BoxyHQ to build this vision. BoxyHQ is a commercial open source software that helps you add enterprise features to your app in just a few lines of code. We want to make enterprise features simple, that's it. That's our focus for the next few years. We want to solve the hard things for you and give you back valuable time to focus on your core products.
 
