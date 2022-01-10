@@ -1,4 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
+const copyright = '© BoxyHQ';
+
 module.exports = {
   title: 'Enterprise Readiness made simple',
   tagline:
@@ -82,7 +85,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} BoxyHQ Inc.`,
+      copyright,
     },
   },
   presets: [
@@ -98,7 +101,7 @@ module.exports = {
           editUrl: 'https://github.com/boxyhq/website/edit/main/',
           feedOptions: {
             type: 'all',
-            copyright: `Copyright © ${new Date().getFullYear()} BoxyHQ Inc.`,
+            copyright,
           },
         },
         theme: {
