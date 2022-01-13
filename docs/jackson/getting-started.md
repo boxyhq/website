@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ### 1. Setting up SAML with your IdP
 
-Please follow the instructions [here](https://docs.google.com/document/d/1fk---Z9Ln59u-2toGKUkyO3BF6Dh3dscT2u4J2xHANE) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](./configure-idp) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
 ### 1.1 SAML profile/claims/attributes mapping
 

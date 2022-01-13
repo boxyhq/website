@@ -6,10 +6,9 @@ sidebar_position: 4
 
 ## Examples
 
-- [Jackson with Supertokens](https://github.com/devkiran/jackson-supertokens)
+- [Jackson with Supertokens](https://github.com/boxyhq/jackson-supertokens-express)
 - [Jackson with Next.js](https://github.com/boxyhq/jackson-demo)
-- [Jackson with Express](https://github.com/devkiran/express-jackson-demo)
-- [Jacksonw with NextAuth.js](not-done)
+- [Jackson with Express](https://github.com/boxyhq/express-jackson-demo)
 
 ## Resources
 
