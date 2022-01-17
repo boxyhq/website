@@ -31,14 +31,14 @@ The following API call sets up the configuration in Jackson:
 curl --location --request POST 'http://localhost:6000/api/v1/saml/config' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'rawMetadata=<IdP/SP metadata XML>' \
+--data-urlencode 'encodedRawMetadata=Base64(<IdP/SP metadata XML>)' \
 --data-urlencode 'defaultRedirectUrl=http://localhost:3000/login/saml' \
 --data-urlencode 'redirectUrl=["http://localhost:3000/*"]' \
 --data-urlencode 'tenant=boxyhq.com' \
 --data-urlencode 'product=demo'
 ```
 
-- rawMetadata: The XML metadata file your customer gets from their Identity Provider
+- encodedRawMetadata: Base64 encoding of the XML metadata your customer gets from their Identity Provider
 - defaultRedirectUrl: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
 - redirectUrl: JSON encoded array containing a list of allowed redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above)
 - tenant: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
