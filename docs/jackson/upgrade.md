@@ -4,4 +4,4 @@ sidebar_position: 10
 
 # Upgrade
 
-TODO: Add steps to update the versions
+We'll cover any special instructions to upgrade versions here.

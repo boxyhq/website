@@ -6,11 +6,7 @@ sidebar_position: 1
 
 SAML service [SAML in a box from BoxyHQ]
 
-You need someone like Jules Winnfield to save you from the vagaries of SAML login.
-
-### What is SAML-based SSO?
-
-TODO: Notes about the SAML
+You need someone like Jules Winnfield to save you from the vagaries of SAML login. Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away all the complexities of the SAML protocol.
 
 ## About Jackson
 
