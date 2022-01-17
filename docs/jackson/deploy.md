@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Deploy
 
-There are two ways to use this repo.
+There are two ways to use Jackson.
 
 - As an NPM library
 - As a separate service
