@@ -1,10 +1,10 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 # SAML Providers
 
-Add SAML provider specific integration
+SAML provider specific integration (Coming soon)
 
 - Okta
 - Google
