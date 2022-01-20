@@ -31,7 +31,7 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title="BoxyHQ"
       description="BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code."
     >
       <Head>
