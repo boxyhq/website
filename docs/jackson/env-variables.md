@@ -52,7 +52,7 @@ To encrypt data at rest specify a 32 character key
 
 #### PGSSLMODE
 
-If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `np-verify`. See https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js for more details
+If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js for more details
 
 #### PRE_LOADED_CONFIG
 
