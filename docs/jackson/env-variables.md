@@ -50,6 +50,10 @@ Default: 1000
 
 To encrypt data at rest specify a 32 character key
 
+#### PGSSLMODE
+
+If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `np-verify`. See https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js for more details
+
 #### PRE_LOADED_CONFIG
 
 If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section
