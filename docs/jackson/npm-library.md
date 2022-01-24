@@ -60,7 +60,7 @@ router.get('/api/v1/saml/config', async (req, res) => {
     ...
 
     // only when properly authenticated, call the config function
-    res.json(await apiController.config(req.query));
+    res.json(await apiController.getConfig(req.query));
   } catch (err) {
     res.status(500).json({
       error: err.message,
