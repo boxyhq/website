@@ -36,6 +36,30 @@ function Team() {
 
           <div className="col col--1 margin-bottom--lg"></div>
         </div>
+
+        <div className="row">
+          <div className="col col--1 margin-bottom--lg"></div>
+
+          <Profile
+            img={'/img/team/aswin.jpg'}
+            name={'Aswin Venugopal: Senior Software Engineer'}
+            bio={`Aswin is among the earliest engineers in our team. With an extensive experience building products at early/mid stage startups, he has worked across the stack, occasionaly dabbling the devops role too. Passionate about "Web and JavaScript", he also has a keen interest in improving the overall developer experience.`}
+            subtitle={'Aswin is working on his dev jokes. ;)'}
+            github={'https://github.com/niwsa'}
+            twitter={'https://twitter.com/av__2021'}
+          ></Profile>
+          <div className="col col--2 margin-bottom--lg"></div>
+
+          <Profile
+            img={'/img/team/kiran.jpg'}
+            name={'Kiran Krishnan: Senior Software Engineer'}
+            bio={`Kiran brings 8+ years of software development experience building apps for startups and enterprises. Prior to BoxyHQ he was co-founder and technical lead at a software development agency where he led a team of 25. He found his love for coding in his college days and it has just grown over the years. He is always excited to learn new languages and contribute to OSS. He loves to talk about building startups, programming, OSS and astronomy.`}
+            subtitle={`For Kiran, there's no place like localhost.`}
+            github={'https://github.com/devkiran'}
+            twitter={'https://twitter.com/tokirankrishnan'}
+          ></Profile>
+          <div className="col col--1 margin-bottom--lg"></div>
+        </div>
       </main>
     </Layout>
   );
