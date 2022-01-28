@@ -14,7 +14,7 @@ You need someone like Jules Winnfield to save you from the vagaries of SAML logi
 
 - An open-source solution that allows you to keep control of your data
 - Supports Bring Your Own Database (BYOD) and can be used with any database
-- Built-in support for MySQL, MariaDB, Postgres, MongoDB
+- Built-in support for MySQL, MariaDB, Postgres, MongoDB, Redis
 - Works great with databases from popular hosting providers
 
 ### Flexible and easy to use​
