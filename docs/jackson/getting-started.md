@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ### 1. Setting up SAML with your IdP
 
-Please follow the instructions [here](./configure-idp) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](./configure-saml-idp) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
 ### 2. SAML config API
 
