@@ -92,10 +92,6 @@ Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000
 
 If you see a page that says `{ name: 'John Doe' }` then the Jackson was started successfully!
 
-## Self Hosted Requirements
-
-Information on the requirements that are needed to install and run Jackson on your servers.
-
 ### Database
 
 Jackson currently supports the following databases.
