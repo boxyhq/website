@@ -92,7 +92,7 @@ npm run start
 
 Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000/api/hello). 
 
-If you see a page that says `{ name: 'John Doe' }` then the container was started successfully!
+If you see a page that says `{ name: 'John Doe' }` then the Jackson was started successfully!
 
 ## Self Hosted Requirements
 
