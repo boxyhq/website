@@ -65,6 +65,6 @@ If you only need a single tenant or a handful of pre-configured tenants then thi
 
 ### **JACKSON_API_KEYS**
 
-API keys are used to authenticate requests to the config APIs `/api/v1/saml/config/`. 
+API keys are used to authenticate requests to the config APIs `/api/v1/saml/config/`.
 
-The format of the value is key1,key2,key3.
+Keys are comma-separated values. For example `JACKSON_API_KEYS=key1,key2,key3`

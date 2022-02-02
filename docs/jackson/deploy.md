@@ -32,7 +32,6 @@ docker run \
   -e DB_ENGINE="sql" \
   -e DB_TYPE="postgres" \
   -e DB_URL="postgres://postgres:postgres@postgres:5432/postgres" \
-  -e DB_ENCRYPTION_KEY="fwTul69Mf0nZDr+L1SG9gqwcOkyieybu" \
   -d boxyhq/jackson
 ```
 
@@ -44,7 +43,6 @@ docker run \
   -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="mongo" \
   -e DB_URL="mongodb://localhost:27017/jackson" \
-  -e DB_ENCRYPTION_KEY="fwTul69Mf0nZDr+L1SG9gqwcOkyieybu" \
   -d boxyhq/jackson
 ```
 
