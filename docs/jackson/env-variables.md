@@ -61,6 +61,10 @@ If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) the
 
 ### **PRE_LOADED_CONFIG**
 
-If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section
+If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](pre-loaded-configuration.md) for more details
 
-Check [this section](pre-loaded-configuration.md) for more details
+### **JACKSON_API_KEYS**
+
+API keys are used to authenticate requests to the config APIs `/api/v1/saml/config/`. 
+
+The format of the value is key1,key2,key3.
