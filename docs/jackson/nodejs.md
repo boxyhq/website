@@ -41,7 +41,7 @@ let oauthController;
 
 const opts = {
   externalUrl: 'http://localhost',
-  samlPath: '/sso/acs', // Path 
+  samlPath: '/sso/acs',
   samlAudience: process.env.SAML_AUDIENCE,
   db: {
     engine: process.env.DB_ENGINE,
@@ -85,7 +85,7 @@ const result = await apiController.config(body)
 
 ### OAuth: Authorize URL
 
-The OAuth flow begins with redirecting your user to the authorize URL: The response contains the `redirect_url` to which you should redirect the user.
+The OAuth flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user.
 
 ```javascript
 const body = {
@@ -102,7 +102,7 @@ const { redirect_url } = await oauthController.authorize(body)
 
 ### Handle SAML Response
 
-Add a route on `samlPath` to handle the response from IdP. The response contains the `redirect_url` to which you should redirect the user. 
+Add a method to handle the SAML Response from IdP. 
 
 ```javascript
 const body = {
@@ -112,6 +112,10 @@ const body = {
 
 const { redirect_url } = await oauthController.samlResponse(body)
 ```
+
+:::info
+SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Service (ACS URL) with 2 fields `SAMLResponse` and `RelayState`.
+:::
 
 ### OAuth: Code Exchange
 

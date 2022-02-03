@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Deploy
+# Install Jackson
 
 There are two ways to use Jackson.
 
@@ -17,7 +17,7 @@ Jackson is available as an [npm package](https://www.npmjs.com/package/@boxyhq/s
 npm i @boxyhq/saml-jackson
 ```
 
-[Example express.js integration](npm-library.md)
+[Example express.js integration](https://github.com/boxyhq/express-jackson-demo)
 
 ## As a separate service
 
@@ -92,7 +92,7 @@ Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000
 
 If you see a page that says `{ name: 'John Doe' }` then the Jackson was started successfully!
 
-### Database
+## Database
 
 Jackson currently supports the following databases.
 
@@ -102,7 +102,7 @@ Jackson currently supports the following databases.
 - MongoDB
 - Redis
 
-### Deployment Guides (Coming soon)
+## Deployment Guides (Coming soon)
 
 - Heroku
 - DigitalOcean
