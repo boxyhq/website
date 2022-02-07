@@ -28,9 +28,9 @@ const opts = {
 let apiController;
 let oauthController;
 // Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
-// Run this in a function where you initialise the express server.
+// Run this in a function where you initialize the express server.
 async function init() {
-  const ret = await require('@boxyhq/saml-jackson')(opts);
+  const ret = await require('@boxyhq/saml-jackson').controllers(opts);
   apiController = ret.apiController;
   oauthController = ret.oauthController;
 }
