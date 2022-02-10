@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Install Jackson
+# Deploy
 
 There are two ways to use Jackson.
 
@@ -90,7 +90,7 @@ npm run start
 
 Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000/api/hello). 
 
-If you see a page that says `{ name: 'John Doe' }` then the Jackson was started successfully!
+If you see a page that says `{ name: 'Jules Winnfield' }` then the Jackson service was started successfully!
 
 ## Database
 
