@@ -32,7 +32,7 @@ Reach out to the maintainer at one of the following places:
 
 ### Community
 
-- [Discord](replace-discord-server-url-here)
+- [Discord](https://discord.gg/uyb7pYt4Pa)
 - [Twitter](https://twitter.com/boxyhq)
 
 ### License

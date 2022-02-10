@@ -17,7 +17,7 @@ Jackson is available as an [npm package](https://www.npmjs.com/package/@boxyhq/s
 npm i @boxyhq/saml-jackson
 ```
 
-[Example express.js integration](https://github.com/boxyhq/express-jackson-demo)
+[Example express.js integration](npm-library.md)
 
 ## As a separate service
 
