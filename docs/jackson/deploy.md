@@ -52,7 +52,7 @@ Kubernetes and docker-compose deployment files will be coming soon.
 
 ### Without Docker
 
-Please follow the below instructions. 
+Please follow the below instructions.
 
 #### Clone the repository
 
@@ -88,9 +88,9 @@ npm run start
 
 ## Test the service is running
 
-Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000/api/hello). 
+Open a browser and visit [http://localhost:5000](http://localhost:5000).
 
-If you see a page that says `{ name: 'Jules Winnfield' }` then the Jackson service was started successfully!
+If you see a page asking you to sign in, congrats 🎉 you are seeing the [Admin UI](admin-ui)
 
 ## Database
 
