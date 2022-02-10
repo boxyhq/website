@@ -26,4 +26,4 @@ module.exports = {
 
 The XML file (should share the name with the .js file) is the raw XML metadata file you receive from your Identity Provider. Please ensure it is saved in the `utf-8` encoding.
 
-The config and XML above correspond to the [SAML API config](getting-started#2-saml-config-api).
+The config and XML above correspond to the [SAML API config](saml-flow#2-saml-config-api).
