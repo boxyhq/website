@@ -68,3 +68,37 @@ If you only need a single tenant or a handful of pre-configured tenants then thi
 API keys are used to authenticate requests to the config APIs `/api/v1/saml/config/`.
 
 Keys are comma-separated values. For example `JACKSON_API_KEYS=key1,key2,key3`
+
+
+## ADMIN UI
+### **SMTP_HOST**
+
+The SMTP host like `smtp.example.com`.
+
+### **SMTP_PORT**
+
+The SMTP server port like `587`.
+
+### **SMTP_USER**
+
+Username for the SMTP server.
+
+### **SMTP_PASSWORD**
+
+Password for the SMTP server.
+
+### **SMTP_FROM**
+
+*From* address used to send mail like: `noreply@example.com`.
+
+### **NEXTAUTH_URL**
+
+When running locally this will point to the local server: `http://localhost:5000`. When deploying to production, set this to the canonical URL of the site. More details: https://next-auth.js.org/configuration/options#nextauth_url 
+
+### **NEXTAUTH_SECRET**
+
+Set this to a random string. You can use `openssl rand -base64 32` to get one. This secret is used to encrypt JWT and hash the email verification token. More details: https://next-auth.js.org/configuration/options#nextauth_secret
+
+### **NEXTAUTH_ACL**
+
+Set this to a comma separated string of email addresses or glob patterns like: `tonystark@gmail.com,*@marvel.com`. Access will be denied to email addresses which don't match. If you don't specify any value access is denied to all.
