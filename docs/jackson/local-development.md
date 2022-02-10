@@ -1,10 +1,10 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 ---
 
 # Local Development
 
-This guide will help you to setup and run SAML Jackson in development mode. 
+This guide will help you to setup and run SAML Jackson in development mode.
 
 ### Clone the repo
 
