@@ -44,7 +44,7 @@ function Team() {
             img={'/img/team/aswin.jpg'}
             name={'Aswin Venugopal: Senior Software Engineer'}
             bio={`Aswin is among the earliest engineers in our team. With an extensive experience building products at early/mid stage startups, he has worked across the stack, occasionaly dabbling the devops role too. Passionate about "Web and JavaScript", he also has a keen interest in improving the overall developer experience.`}
-            subtitle={'Aswin is working on his dev jokes. ;)'}
+            subtitle={'Aswin is a Web worker. ;)'}
             github={'https://github.com/niwsa'}
             twitter={'https://twitter.com/av__2021'}
           ></Profile>
@@ -67,7 +67,7 @@ function Team() {
           <Profile
             img={'/img/team/vishal.jpg'}
             name={'Vishal Lodha: Senior Software Engineer'}
-            bio={`Vishal has 11+ of expertise in design, architecture, and development of complex software products. Prior to BoxyHQ he worked at Finastra and IBM. He led multiple development teams in Java, DevOps concepts and process and CICD tools while providing expertise in the full software development lifecycle, from concept and design to testing, designing, developing and delivering high-volume, low-latency applications for mission-critical systems.`}
+            bio={`Vishal has 11+ of expertise in design, architecture, and development of complex software products. Prior to BoxyHQ he worked at Finastra and IBM. He led multiple development teams in Java, DevOps concepts and process and CI/CD tools while providing expertise in the full software development lifecycle, from concept and design to testing, designing, developing and delivering high-volume, low-latency applications for mission-critical systems.`}
             subtitle={'For Vishal, the impossible is 404 Not Found.'}
             github={'https://github.com/vishalboxyhq'}
             twitter={'https://twitter.com/vishallodha84'}
