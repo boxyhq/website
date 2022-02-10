@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
-const copyright = '© BoxyHQ';
+const copyright = '© BoxyHQ Inc';
 
 module.exports = {
   title: 'Enterprise Readiness made simple',
