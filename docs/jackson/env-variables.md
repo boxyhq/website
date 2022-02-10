@@ -71,6 +71,7 @@ Keys are comma-separated values. For example `JACKSON_API_KEYS=key1,key2,key3`
 
 
 ## ADMIN UI
+*Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin UI. The **SMTP_** variables are used for sending email which contain the magic link (one-time use) for sign in. *
 ### **SMTP_HOST**
 
 The SMTP host like `smtp.example.com`.
