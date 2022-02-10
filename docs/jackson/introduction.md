@@ -30,6 +30,11 @@ Reach out to the maintainer at one of the following places:
 - [GitHub Issues](https://github.com/boxyhq/jackson/issues)
 - The email which is located [in GitHub profile](https://github.com/deepakprabhakara)
 
+### Community
+
+- [Discord](https://discord.gg/uyb7pYt4Pa)
+- [Twitter](https://twitter.com/boxyhq)
+
 ### License
 
 [Apache 2.0 License](https://github.com/boxyhq/jackson/blob/main/LICENSE)

@@ -47,6 +47,10 @@ module.exports = {
           title: 'Community',
           items: [
             {
+              label: 'Discord',
+              href: 'https://discord.gg/uyb7pYt4Pa',
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/boxyhq',
             },
