@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Getting Started
+# SAML flow
 
 ### 1. Setting up SAML with your IdP
 
