@@ -36,6 +36,13 @@ This is just an identifier to validate the SAML audience, this value will also g
 Default: `https://saml.boxyhq.com`
 NPM library option: `samlAudience`
 
+### **CLIENT_SECRET_VERIFIER**
+
+When `tenant` and `product` are used for the SAML flow (and PKCE is not being used) then we use `dummy` as placeholders for `client_id` and `client_secret`. This is not a security issue because SAML is tenanted and hence your Identity Provider will block access to anyone trying to log into your SAML tenant. However for additional security you should set `CLIENT_SECRET_VERIFIER` to a random secret and use that value as the `client_secret` during the OAuth 2.0 flow.
+
+Default: `dummy`
+NPM library option: `clientSecretVerifier`
+
 ### **IDP_ENABLED**
 
 Set to true to enable IdP initiated login for SAML. SP initiated login is the only recommended flow but you might have to support IdP login at times.
