@@ -23,7 +23,7 @@ npm i @boxyhq/saml-jackson
 
 ### With Docker
 
-The docker container can be found at [boxyhq/jackson](https://hub.docker.com/r/boxyhq/jackson/tags). It is preferable to use a specific version instead of the `latest` tag.
+The docker container can be found at [Docker Hub](https://hub.docker.com/r/boxyhq/jackson/tags). It is preferable to use a specific version instead of the `latest` tag. You can verify the container image, please refer [here](container-signing.md) for more details.
 
 ```bash
 docker run \
