@@ -99,7 +99,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/boxyhq/website/edit/main/',
         },
         blog: {
           showReadingTime: true,
