@@ -61,7 +61,7 @@ NPM library option: `db.engine`
 
 The database URL to connect to.
 
-Example: `postgres://postgres:postgres@localhost:5450/jackson`
+Example: `postgres://postgres:postgres@localhost:5432/postgres`
 
 NPM library option: `db.url`
 
