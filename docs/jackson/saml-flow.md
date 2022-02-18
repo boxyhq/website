@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ### 1. Setting up SAML with your IdP
 
-Please follow the instructions [here](./configure-saml-idp) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](configure-saml-idp.md) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
 ### 2. SAML config API
 
@@ -33,7 +33,7 @@ curl --location --request POST 'http://localhost:5000/api/v1/saml/config' \
 - tenant: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
 - product: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
 
-The response returns a JSON with `client_id` and `client_secret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `client_id` and `client_secret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you use for [this](env-variables#client_secret_verifier) configuration) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `provider` attribute is also returned which indicates the domain of your Identity Provider.
+The response returns a JSON with `client_id` and `client_secret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `client_id` and `client_secret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you use for [this](env-variables.md#client_secret_verifier) configuration) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `provider` attribute is also returned which indicates the domain of your Identity Provider.
 
 #### 2.1 SAML get config API
 
