@@ -50,6 +50,8 @@ Set to true to enable IdP initiated login for SAML. SP initiated login is the on
 Default: `false`
 NPM library option: `idpEnabled`
 
+## Database configuration
+
 ### **DB_ENGINE**
 
 Supported values are `redis`, `sql`, `mongo`, `mem`
@@ -101,8 +103,26 @@ NPM library option: `db.encryptionKey`
 
 If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js for more details
 
+## Pre-loaded Configuration
+
 ### **PRE_LOADED_CONFIG**
 
 If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](pre-loaded-configuration.md) for more details
 
 NPM library option: `preLoadedConfig`
+
+## Opentelemetry
+
+Jackson supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
+
+### **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
+
+Target URL to which the exporter is going to send metrics.
+
+Example: `https://ingest.lightstep.com:443/metrics/otlp/v0.6`
+
+### **OTEL_EXPORTER_OTLP_HEADERS**
+
+Headers relevant for the endpoint, useful for specifying authentication details for providers.
+
+Example: `lightstep-access-token=<token>,...`
