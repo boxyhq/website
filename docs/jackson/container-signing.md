@@ -16,6 +16,8 @@ oras pull ghcr.io/boxyhq/jackson/cosign.pub:latest
 
 ## Container verification
 
+**Note:** This is supported for all versions >=0.3.8
+
 Our container images are hosted on [Docker Hub](https://hub.docker.com/r/boxyhq/jackson/tags). You can verify it by using the following command.
 
 ```bash

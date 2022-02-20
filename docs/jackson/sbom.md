@@ -12,6 +12,8 @@ SBOM reports primarily use [SPDX](https://en.wikipedia.org/wiki/Software_Package
 
 ## Reports
 
+**Note:** This is supported for all versions >=0.3.8
+
 You can find the SBOM reports as artifacts in our container registry at the locations below. They are updated every time there is change in the codebase and tagged by the exact version we release.
 
 | Location                                   | Files                         | Context                               |
