@@ -101,6 +101,8 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: {
+          blogTitle: 'Blog',
+          blogDescription: 'Enterprise readiness from BoxyHQ',
           showReadingTime: true,
           editUrl: 'https://github.com/boxyhq/website/edit/main/',
           feedOptions: {
@@ -137,6 +139,8 @@ module.exports = {
          * Path to data on filesystem relative to site dir.
          */
         path: './careers',
+        blogTitle: 'Careers',
+        blogDescription: 'Join us at BoxyHQ',
       },
     ],
   ],
