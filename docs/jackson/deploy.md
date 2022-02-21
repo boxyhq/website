@@ -52,7 +52,7 @@ Kubernetes and docker-compose deployment files will be coming soon.
 
 ### Without Docker
 
-Please follow the below instructions. 
+Please follow the below instructions.
 
 #### Clone the repository
 
