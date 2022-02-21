@@ -152,12 +152,12 @@ If everything goes well you should receive a JSON response with the user's profi
 {
   "id": <id from the Identity Provider>,
   "email": "sjackson@coolstartup.com",
-  "firstName": "SAML"
+  "firstName": "SAML",
   "lastName": "Jackson"
 }
 ```
 
-- id: The id of the user as provided by the Identity Provider
-- email: The email address of the user as provided by the Identity Provider
-- firstName: The first name of the user as provided by the Identity Provider
-- lastName: The last name of the user as provided by the Identity Provider
+- `id`: The id of the user as provided by the Identity Provider
+- `email`: The email address of the user as provided by the Identity Provider
+- `firstName`: The first name of the user as provided by the Identity Provider
+- `lastName`: The last name of the user as provided by the Identity Provider
