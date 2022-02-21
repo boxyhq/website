@@ -104,7 +104,6 @@ module.exports = {
           blogTitle: 'Blog',
           blogDescription: 'Enterprise readiness from BoxyHQ',
           showReadingTime: true,
-          editUrl: 'https://github.com/boxyhq/website/edit/main/',
           feedOptions: {
             type: 'all',
             copyright,

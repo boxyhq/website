@@ -2,9 +2,9 @@
 slug: the-ikea-effect-in-software-engineering
 title: The IKEA effect in Software Engineering
 author: Deepak Prabhakara
-author_title: Co-founder & CEO @ BoxyHQ
+author_title: Co-founder & CEO @BoxyHQ
 author_url: https://github.com/deepakprabhakara
-author_image_url: https://avatars.githubusercontent.com/u/357991?s=400&v=4
+author_image_url: https://boxyhq.com/img/team/deepak.jpg
 tags: [enterprise-readiness, ikea-effect]
 image: /img/blog/jay-wennington-BdeMttZx6Fs-unsplash.jpg
 ---
