@@ -17,12 +17,12 @@ You will need to provide a place in the UI for your customers (The account setti
 The following API call sets up the configuration in Jackson:
 
 ```bash
-curl --location --request POST 'http://localhost:5000/api/v1/saml/config' \
+curl --location --request POST 'http://localhost:5225/api/v1/saml/config' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'encodedRawMetadata=Base64(<IdP/SP metadata XML>)' \
---data-urlencode 'defaultRedirectUrl=http://localhost:3000/login/saml' \
---data-urlencode 'redirectUrl=["http://localhost:3000/*"]' \
+--data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/saml' \
+--data-urlencode 'redirectUrl=["http://localhost:3366/*"]' \
 --data-urlencode 'tenant=boxyhq.com' \
 --data-urlencode 'product=demo'
 ```
@@ -40,7 +40,7 @@ The response returns a JSON with `client_id` and `client_secret` that can be sto
 This endpoint can be used to return metadata about an existing SAML config. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
 
 ```bash
-curl -G --location 'http://localhost:5000/api/v1/saml/config' \
+curl -G --location 'http://localhost:5225/api/v1/saml/config' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'tenant=boxyhq.com' \
@@ -48,7 +48,7 @@ curl -G --location 'http://localhost:5000/api/v1/saml/config' \
 ```
 
 ```bash
-curl -G --location 'http://localhost:5000/api/v1/saml/config' \
+curl -G --location 'http://localhost:5225/api/v1/saml/config' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>'
@@ -61,7 +61,7 @@ The response returns a JSON with `provider` indicating the domain of your Identi
 This endpoint can be used to delete an existing IdP metadata.
 
 ```bash
-curl -X "DELETE" --location 'http://localhost:5000/api/v1/saml/config' \
+curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/config' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'tenant=boxyhq.com' \
@@ -69,7 +69,7 @@ curl -X "DELETE" --location 'http://localhost:5000/api/v1/saml/config' \
 ```
 
 ```bash
-curl -X "DELETE" --location 'http://localhost:5000/api/v1/saml/config' \
+curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/config' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>'
@@ -89,7 +89,7 @@ If for any reason you need to implement the flow on your own, the steps are outl
 The OAuth flow begins with redirecting your user to the `authorize` URL:
 
 ```bash
-https://localhost:5000/api/oauth/authorize
+https://localhost:5225/api/oauth/authorize
   ?response_type=code&provider=saml
   &client_id=<clientID or tenant and product query params as described in the SAML config API section above>
   &redirect_uri=<redirect URL>
@@ -111,7 +111,7 @@ The code can then be exchanged for a token by making the following request:
 
 ```bash
 curl --request POST \
-  --url 'http://localhost:5000/api/oauth/token' \
+  --url 'http://localhost:5225/api/oauth/token' \
   --header 'content-type: application/x-www-form-urlencoded' \
   --data 'grant_type=authorization_code' \
   --data 'client_id=<clientID or tenant and product query params as described in the SAML config API section above>' \
@@ -141,7 +141,7 @@ The short-lived access token can now be used to request the user's profile. You'
 
 ```bash
 curl --request GET \
-  --url https://localhost:5000/api/oauth/userinfo \
+  --url https://localhost:5225/api/oauth/userinfo \
   --header 'authorization: Bearer <access token>' \
   --header 'content-type: application/json'
 ```

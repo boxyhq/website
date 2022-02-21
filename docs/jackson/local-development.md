@@ -51,11 +51,11 @@ npm run dev
 The Jackson service can be accessed locally using the following URL
 
 ```
-http://localhost:5000
+http://localhost:5225
 ```
 
 You can visit the following URL to see if the Jackson was started successfully!
 
 ```
-http://localhost:5000/api/hello
+http://localhost:5225/api/hello
 ```

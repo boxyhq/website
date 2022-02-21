@@ -10,7 +10,7 @@ This guide explains the settings you’d need to use to configure SAML with your
 
 Create them exactly as shown below:
 
-- Assertion consumer service URL / Single Sign-On URL / Destination URL: `http://localhost:5000/api/oauth/saml`
+- Assertion consumer service URL / Single Sign-On URL / Destination URL: `http://localhost:5225/api/oauth/saml`
 
 - Entity ID / Identifier / Audience URI / Audience Restriction: `https://saml.boxyhq.com`
 

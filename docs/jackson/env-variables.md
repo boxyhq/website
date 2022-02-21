@@ -14,7 +14,7 @@ Default: `localhost`
 ### **HOST_PORT**
 
 The port to bind to.
-Default: `5000`
+Default: `5225`
 
 ### **EXTERNAL_URL**
 
