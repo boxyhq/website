@@ -18,7 +18,7 @@ The JS file has the following structure:-
 ```javascript
 module.exports = {
   defaultRedirectUrl: 'http://localhost:3000/login/saml',
-  redirectUrl: '["http://localhost:3000/*", "http://localhost:5000/*"]',
+  redirectUrl: '["http://localhost:3000/*"]',
   tenant: 'boxyhq.com',
   product: 'demo',
 };
