@@ -27,7 +27,7 @@ The docker container can be found at [Docker Hub](https://hub.docker.com/r/boxyh
 
 ```bash
 docker run \
-  -p 5000:5000 \
+  -p 5225:5225 \
   -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="sql" \
   -e DB_TYPE="postgres" \
@@ -39,7 +39,7 @@ OR
 
 ```bash
 docker run \
-  -p 5000:5000 \
+  -p 5225:5225 \
   -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="mongo" \
   -e DB_URL="mongodb://localhost:27017/jackson" \
@@ -88,7 +88,7 @@ npm run start
 
 ## Test the service is running
 
-Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000/api/hello). 
+Open a browser and visit [http://localhost:5225/api/hello](http://localhost:5225/api/hello).
 
 If you see a page that says `{ name: 'Jules Winnfield' }` then the Jackson service was started successfully!
 
