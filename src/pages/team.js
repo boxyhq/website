@@ -73,7 +73,7 @@ function Team() {
             twitter={'https://twitter.com/vishallodha84'}
           ></Profile>
           <div className="col col--2 margin-bottom--lg"></div>
-          
+
           <Profile
             img={'/img/team/utkarsh.jpg'}
             name={'Utkarsh Mehta: Senior Software Engineer'}

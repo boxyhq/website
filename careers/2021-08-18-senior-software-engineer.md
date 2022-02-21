@@ -31,11 +31,11 @@ Join our well-funded remote-first team if you love building open source API driv
 - Ability to write technical docs, blogs. Team is responsible to keep documentation up to date.
 
 ### The Offer
+
 - Competitive salary and stock options
 - Flexible work schedule
 - Choice of Mac, Windows or Linux laptop
 - Stipend for home office set up
 - Stipend for career development and learning
-
 
 *We’re committed to be the place where a culturally diverse mix of talented people get together to do their best work. We strongly encourage you to apply regardless of your location, background, race, gender, sexual orientation or any other personally defining attribute that make us different.*
