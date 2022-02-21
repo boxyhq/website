@@ -6,10 +6,14 @@ author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame/
 author_image_url: https://boxyhq.com/img/team/sama.jpg
 tags: [enterprise-readiness, startups, enterprises, corporates, sales, founder]
-image: /img/blog/jay-wennington-BdeMttZx6Fs-unsplash.jpg
+image: /img/blog/mulyadi-dDlvuSKUDZM-unsplash.jpg
 ---
 
 You have decided to quit your job and start something on your own, congratulations! Welcome to a new way of living, as our little green friend told us some years ago “do or do not, there is no try”. Resilience and perseverance will be your two new best friends now; we all know that starting a company is not hard at all, but something hard at the beginning of the journey is finding product-market fit, especially if you are selling to enterprises (if you are an open-source founder, make sure you prioritize project-community fit first).
+
+![img alt](/img/blog/mulyadi-dDlvuSKUDZM-unsplash.jpg)
+
+<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@mullyadii?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mulyadi</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
 Having worked for companies like Amazon Web Services & O2-Telefónica connecting enterprises with startups around the world, there are some best practices that I would like to share. We just have to remember that enterprises are conformed by groups of people, and every person is different. So please, don’t expect the secret sauce or the “right way” to do it. Even though each case will be unique, always look for the patterns of what works best for your company. I like to use the process DIA (Discover – Imagine – Act) to overcome challenges, so let me take you through it.
 
