@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 11
 ---
 
 # Software Bill Of Materials (SBOM) Reports
