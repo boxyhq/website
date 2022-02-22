@@ -29,7 +29,7 @@ docker run \
   -d boxyhq/jackson
 ```
 
-See the complete list of [Environment Variables](../env-variables.md)
+See the complete list of [Environment Variables](./env-variables.md)
 
 Kubernetes and docker-compose deployment files will be coming soon.
 
@@ -58,7 +58,7 @@ npm install
 cp .env.example .env
 ```
 
-Update `.env` with your values. See the complete list of [Environment Variables](../env-variables.md)
+Update `.env` with your values. See the complete list of [Environment Variables](./env-variables.md)
 
 ### Build and run
 

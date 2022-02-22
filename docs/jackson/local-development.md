@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 13
 ---
 
 # Local Development
@@ -28,7 +28,7 @@ npm install
 cp .env.example .env
 ```
 
-Please refer to [environment variables](env-variables.md) to read on setting environment variables.
+Please refer to [environment variables](./deploy/env-variables.md) to read on setting environment variables.
 
 ## Setup the database
 

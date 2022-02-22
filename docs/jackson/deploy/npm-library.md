@@ -19,7 +19,7 @@ See the [Github repo](https://github.com/boxyhq/express-jackson-demo) to see the
 ### Requirements
 
 - Node.js version 14 or newer
-- A database. [Database supported](service.md#database)
+- A [supported database](./service.md#database)
 - An Express.js based app to add SAML Jackson
 
 ### Install SAML Jackson library

@@ -1,12 +1,12 @@
 ---
-sidebar_position: 10
+sidebar_position: 8
 ---
 
 # Observability
 
 Jackson provides first-class observability on the back of OpenTelemetry. Currently we support the following metrics. Traces and logs are coming soon.
 
-Please check the [Environment Variables](env-variables.md#opentelemetry) to configure to enable this feature.
+Please check the [Environment Variables](./deploy/env-variables.md#opentelemetry) to configure to enable this feature.
 
 ## Metrics
 
