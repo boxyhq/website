@@ -3,13 +3,17 @@ sidebar_position: 2
 ---
 
 # NPM Library
+
+Jackson is available as an [npm package](https://www.npmjs.com/package/@boxyhq/saml-jackson) that can be integrated into any web application framework (like Express.js for example). Please file an issue or submit a PR if you encounter any issues with your choice of framework.
+
+```bash
+npm i @boxyhq/saml-jackson
+```
+
 Integrating SAML Jackson with a Node.js app involves the following steps.
 
 See the [Github repo](https://github.com/boxyhq/express-jackson-demo) to see the source code for the Express integration
 
-## As an NPM library
-
-Jackson is available as an [npm package](https://www.npmjs.com/package/@boxyhq/saml-jackson) that can be integrated into any web application framework (like Express.js for example). Please file an issue or submit a PR if you encounter any issues with your choice of framework.  
 ## Express.js example
 
 ### Requirements
@@ -55,13 +59,13 @@ async function init() {
 }
 ```
 
-- Add your app base URL as `externalUrl` 
+- Add your app base URL as `externalUrl`
 - `samlPath` becomes part of the ACS URL. The ACS URL is an endpoint on the SP where the IdP will redirect to with its authentication response. For example: If `externalUrl` is `http://localhost`, and `samlPath` is `/sso/acs`, the ASC URL will be `http://localhost/sso/acs`
 
-### Add SAML Config API route 
-
+### Add SAML Config API route
 
 [API Reference](../saml-flow.md#2-saml-config-api)
+
 ```javascript
 // express.js middlewares are needed to parse json and x-www-form-urlencoded
 router.use(express.json());
@@ -118,7 +122,6 @@ The OAuth flow begins with redirecting your user to the authorize URL. The respo
 
 [API Reference](../saml-flow.md#4-authorize)
 
-
 ```javascript
 // OAuth 2.0 flow
 router.get('/oauth/authorize', async (req, res) => {
@@ -136,7 +139,7 @@ router.get('/oauth/authorize', async (req, res) => {
 
 ### Handle SAML Response
 
-Add a method to handle the SAML Response from IdP. 
+Add a method to handle the SAML Response from IdP.
 
 :::info
 SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Service (ACS URL) with 2 fields `SAMLResponse` and `RelayState`.
@@ -161,6 +164,7 @@ router.post('/oauth/saml', async (req, res) => {
 The code can then be exchanged for a token by making the following request. You should validate that the state matches the one you sent in the authorize request.
 
 [API Reference](../saml-flow.md#5-code-exchange)
+
 ```javascript
 router.post('/oauth/token', cors(), async (req, res) => {
   try {
@@ -174,11 +178,13 @@ router.post('/oauth/token', cors(), async (req, res) => {
   }
 });
 ```
+
 ### OAuth: Get User Profile
 
 The short-lived access token can now be used to request the user's profile.
 
 [API Reference](../saml-flow.md#6-profile-request)
+
 ```javascript
 router.get('/oauth/userinfo', async (req, res) => {
   try {

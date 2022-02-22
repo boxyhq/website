@@ -4,10 +4,7 @@ sidebar_position: 1
 
 # Service
 
-
-## As a separate service
-
-### With Docker
+## With Docker
 
 The docker container can be found at [boxyhq/jackson](https://hub.docker.com/r/boxyhq/jackson/tags). It is preferable to use a specific version instead of the `latest` tag.
 
@@ -36,11 +33,11 @@ See the complete list of [Environment Variables](../env-variables.md)
 
 Kubernetes and docker-compose deployment files will be coming soon.
 
-### Without Docker
+## Without Docker
 
-Please follow the below instructions. 
+Please follow the below instructions.
 
-#### Clone the repository
+### Clone the repository
 
 You can clone the source from the [Jackson Github repo](https://github.com/boxyhq/jackson/tree/release)
 
@@ -49,13 +46,13 @@ git clone https://github.com/boxyhq/jackson
 cd jackson
 ```
 
-#### Install dependencies
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-#### Add environment variables
+### Add environment variables
 
 ```bash
 cp .env.example .env
@@ -63,7 +60,7 @@ cp .env.example .env
 
 Update `.env` with your values. See the complete list of [Environment Variables](../env-variables.md)
 
-#### Build and run
+### Build and run
 
 ```bash
 npm run build
@@ -75,7 +72,7 @@ npm run start
 
 ## Test the service is running
 
-Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000/api/hello). 
+Open a browser and visit [http://localhost:5000/api/hello](http://localhost:5000/api/hello).
 
 If you see a page that says `{ name: 'Jules Winnfield' }` then the Jackson service was started successfully!
 

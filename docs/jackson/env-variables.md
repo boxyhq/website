@@ -6,6 +6,8 @@ sidebar_position: 5
 
 The env vars are only applicable to the Jackson service. If you are using the npm then look for the options below when initializing the library.
 
+## General configuration
+
 ### **HOST_URL**
 
 The URL to bind to.
@@ -93,6 +95,7 @@ NPM library option: `db.cleanupLimit`
 To encrypt data at rest specify a 32 character key
 
 You can use openssl to generate a random 32 character key:
+
 ```bash
 openssl rand -base64 24
 ```
@@ -101,7 +104,7 @@ NPM library option: `db.encryptionKey`
 
 ### **PGSSLMODE**
 
-If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js for more details
+If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See [Heroku docs](https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js) for more details
 
 ## Pre-loaded Configuration
 
@@ -111,7 +114,7 @@ If you only need a single tenant or a handful of pre-configured tenants then thi
 
 NPM library option: `preLoadedConfig`
 
-## Opentelemetry
+## Opentelemetry configuration
 
 Jackson supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
 
