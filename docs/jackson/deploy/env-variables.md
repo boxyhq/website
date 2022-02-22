@@ -129,3 +129,39 @@ Example: `https://ingest.lightstep.com:443/metrics/otlp/v0.6`
 Headers relevant for the endpoint, useful for specifying authentication details for providers.
 
 Example: `lightstep-access-token=<token>,...`
+
+## Admin UI configuration
+
+* Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin UI. The **SMTP_** variables are used for sending email which contain the magic link (one-time use) for sign in. *
+
+### **SMTP_HOST**
+
+The SMTP host like `smtp.example.com`.
+
+### **SMTP_PORT**
+
+The SMTP server port like `587`.
+
+### **SMTP_USER**
+
+Username for the SMTP server.
+
+### **SMTP_PASSWORD**
+
+Password for the SMTP server.
+
+### **SMTP_FROM**
+
+*From* address used to send mail like: `noreply@example.com`.
+
+### **NEXTAUTH_URL**
+
+When running locally this will point to the local server: `http://localhost:5225`. When deploying to production, set this to the canonical URL of the site. More details [here](https://next-auth.js.org/configuration/options#nextauth_url).
+
+### **NEXTAUTH_SECRET**
+
+Set this to a random string. You can use `openssl rand -base64 32` to get one. This secret is used to encrypt JWT and hash the email verification token. More details [here](https://next-auth.js.org/configuration/options#nextauth_secret).
+
+### **NEXTAUTH_ACL**
+
+Set this to a comma separated string of email addresses or glob patterns like: `tonystark@gmail.com,*@marvel.com`. Access will be denied to email addresses which don't match. If you don't specify any value access is denied to all.
