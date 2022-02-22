@@ -1,14 +1,14 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # SAML flow
 
-### 1. Setting up SAML with your IdP
+## 1. Setting up SAML with your IdP
 
-Please follow the instructions [here](configure-saml-idp.md) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](./configure-saml-idp.md) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
-### 2. SAML config API
+## 2. SAML config API
 
 Once your customer has set up the SAML app on their Identity Provider, the Identity Provider will generate an IdP or SP metadata file. Some Identity Providers only generate an IdP metadata file but it usually works for the SP login flow as well. It is an XML file that contains various attributes Jackson needs to validate incoming SAML login requests. This step is the equivalent of setting an OAuth 2.0 app and generating a client ID and client secret that will be used in the login flow.
 
@@ -33,9 +33,9 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/config' \
 - tenant: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
 - product: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
 
-The response returns a JSON with `client_id` and `client_secret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `client_id` and `client_secret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you use for [this](env-variables.md#client_secret_verifier) configuration) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `provider` attribute is also returned which indicates the domain of your Identity Provider.
+The response returns a JSON with `client_id` and `client_secret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `client_id` and `client_secret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you use for [this](./deploy/env-variables.md#client_secret_verifier) configuration) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `provider` attribute is also returned which indicates the domain of your Identity Provider.
 
-#### 2.1 SAML get config API
+### 2.1 SAML get config API
 
 This endpoint can be used to return metadata about an existing SAML config. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
 
@@ -56,7 +56,7 @@ curl -G --location 'http://localhost:5225/api/v1/saml/config' \
 
 The response returns a JSON with `provider` indicating the domain of your Identity Provider. If an empty JSON payload is returned then we do not have any configuration stored for the attributes you requested.
 
-#### 2.2 SAML delete config API
+### 2.2 SAML delete config API
 
 This endpoint can be used to delete an existing IdP metadata.
 
@@ -76,7 +76,7 @@ curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/config' \
 --data-urlencode 'clientSecret=<Client Secret>'
 ```
 
-### 3. OAuth 2.0 Flow
+## 3. OAuth 2.0 Flow
 
 Jackson has been designed to abstract the SAML login flow as a pure OAuth 2.0 flow. This means it's compatible with any standard OAuth 2.0 library out there, both client-side and server-side. It is important to remember that SAML is configured per customer unlike OAuth 2.0 where you can have a single OAuth app supporting logins for all customers.
 
@@ -84,7 +84,7 @@ Jackson also supports the PKCE authorization flow (<https://oauth.net/2/pkce/>),
 
 If for any reason you need to implement the flow on your own, the steps are outlined below:
 
-### 4. Authorize
+## 4. Authorize
 
 The OAuth flow begins with redirecting your user to the `authorize` URL:
 
@@ -103,7 +103,7 @@ https://localhost:5225/api/oauth/authorize
 - redirect_uri: This is where the user will be taken back once the authorization flow is complete
 - state: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks
 
-### 5. Code Exchange
+## 5. Code Exchange
 
 After successful authorization, the user is redirected back to the `redirect_uri`. The query parameters will include the `code` and `state` parameters. You should validate that the state matches the one you sent in the `authorize` request.
 
@@ -135,7 +135,7 @@ If everything goes well you should receive a JSON response that includes the acc
 }
 ```
 
-### 6. Profile Request
+## 6. Profile Request
 
 The short-lived access token can now be used to request the user's profile. You'll need to make the following request:
 

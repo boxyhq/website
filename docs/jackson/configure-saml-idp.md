@@ -1,10 +1,10 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Configure SAML Identity Provider
 
-This guide explains the settings you’d need to use to configure SAML with your Identity Provider. Once this is set up you should get an XML metadata file that should then be configured using our [API (or calling the API controller config method if using our NPM)](saml-flow.md).
+This guide explains the settings you’d need to use to configure SAML with your Identity Provider. Once this is set up you should get an XML metadata file that should then be configured using our [API (or calling the API controller config method if using our NPM)](./saml-flow.md).
 
 > Please do not add a trailing slash at the end of the URLs.
 

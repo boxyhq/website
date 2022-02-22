@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 11
 ---
 
 # Security
@@ -12,7 +12,7 @@ OAuth 2.0 is typically a single instance and all users can login using the same 
 
 ## Client Secret
 
-The Config API returns a `client_id` and `client_secret` that you can save for each customer and use when initiating the OAuth 2.0 flow. However for convenience we also let you use a `tenant` and `product` instead since this doesn't require you to store any additional data. When using this we recommend you use the [CLIENT_SECRET_VERIFIER](env-variables.md#client_secret_verifier) configuration and not use the default `dummy` value. The `client_secret` cannot really be misused because as you will see in the next section the tokens are short lived but it is a good idea to set the `client_secret` to something that is really a secret.
+The Config API returns a `client_id` and `client_secret` that you can save for each customer and use when initiating the OAuth 2.0 flow. However for convenience we also let you use a `tenant` and `product` instead since this doesn't require you to store any additional data. When using this we recommend you use the [CLIENT_SECRET_VERIFIER](./deploy/env-variables.md#client_secret_verifier) configuration and not use the default `dummy` value. The `client_secret` cannot really be misused because as you will see in the next section the tokens are short lived but it is a good idea to set the `client_secret` to something that is really a secret.
 
 For client-side logins we highly recommend you use the PKCE flow which is supported by Jackson. This ensures a secure login without revealing the `client_secret` on the client-side.
 

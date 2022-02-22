@@ -1,10 +1,12 @@
 ---
-sidebar_position: 6
+sidebar_position: 3
 ---
 
 # Environment Variables
 
 The env vars are only applicable to the Jackson service. If you are using the npm then look for the options below when initializing the library.
+
+## General configuration
 
 ### **HOST_URL**
 
@@ -93,6 +95,7 @@ NPM library option: `db.cleanupLimit`
 To encrypt data at rest specify a 32 character key
 
 You can use openssl to generate a random 32 character key:
+
 ```bash
 openssl rand -base64 24
 ```
@@ -101,17 +104,17 @@ NPM library option: `db.encryptionKey`
 
 ### **PGSSLMODE**
 
-If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js for more details
+If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See [Heroku docs](https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js) for more details
 
 ## Pre-loaded Configuration
 
 ### **PRE_LOADED_CONFIG**
 
-If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](pre-loaded-configuration.md) for more details
+If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-configuration.md) for more details
 
 NPM library option: `preLoadedConfig`
 
-## Opentelemetry
+## Opentelemetry configuration
 
 Jackson supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
 
