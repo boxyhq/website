@@ -15,7 +15,7 @@ Jackson is available as an [npm package](https://www.npmjs.com/package/@boxyhq/s
 ### Requirements
 
 - Node.js version 14 or newer
-- A database. [Database supported](service.md#database)
+- A database. [Database supported](service#database)
 - An Express.js based app to add SAML Jackson
 
 ### Install SAML Jackson library
@@ -61,7 +61,7 @@ async function init() {
 ### Add SAML Config API route 
 
 
-[API Reference](../saml-flow.md#2-saml-config-api)
+[API Reference](../saml-flow#2-saml-config-api)
 ```javascript
 // express.js middlewares are needed to parse json and x-www-form-urlencoded
 router.use(express.json());
@@ -116,7 +116,7 @@ router.delete('/api/v1/saml/config', async (req, res) => {
 
 The OAuth flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user.
 
-[API Reference](../saml-flow.md#4-authorize)
+[API Reference](../saml-flow#4-authorize)
 
 
 ```javascript
@@ -160,7 +160,7 @@ router.post('/oauth/saml', async (req, res) => {
 
 The code can then be exchanged for a token by making the following request. You should validate that the state matches the one you sent in the authorize request.
 
-[API Reference](../saml-flow.md#5-code-exchange)
+[API Reference](../saml-flow#5-code-exchange)
 ```javascript
 router.post('/oauth/token', cors(), async (req, res) => {
   try {
@@ -178,7 +178,7 @@ router.post('/oauth/token', cors(), async (req, res) => {
 
 The short-lived access token can now be used to request the user's profile.
 
-[API Reference](../saml-flow.md#6-profile-request)
+[API Reference](../saml-flow#6-profile-request)
 ```javascript
 router.get('/oauth/userinfo', async (req, res) => {
   try {
