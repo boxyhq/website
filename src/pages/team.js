@@ -17,7 +17,7 @@ function Team() {
           <Profile
             img={'/img/team/deepak.jpg'}
             name={'Deepak Prabhakara: CEO & Co-founder'}
-            bio={`Deepak brings close to two decades of expertise in design, architecture and development of complex software products. Prior to BoxyHQ he was the CTO at Red Sift, a fast-growing cybersecurity startup. Prior to that, he was the founder of ContentSift and the first technical hire at Apsmart (acquired by Thomson Reuters). He has led product and engineering teams at several startups and worked on the Opera Mini and Mobile browsers, a product loved and used by millions of users across the globe.`}
+            bio={`Deepak brings close to two decades of expertise in the design, architecture and development of complex software products. Prior to BoxyHQ he was the CTO at Red Sift, a fast-growing cybersecurity startup. Prior to that, he was the founder of ContentSift and the first technical hire at Apsmart (acquired by Thomson Reuters). He has led product and engineering teams at several startups and worked on the Opera Mini and Mobile browsers, a product loved and used by millions of users across the globe.`}
             subtitle={'Deepak and Debug are interchangeable.'}
             github={'https://github.com/deepakprabhakara'}
             twitter={'https://twitter.com/deepakprab'}
@@ -73,7 +73,7 @@ function Team() {
             twitter={'https://twitter.com/vishallodha84'}
           ></Profile>
           <div className="col col--2 margin-bottom--lg"></div>
-          
+
           <Profile
             img={'/img/team/utkarsh.jpg'}
             name={'Utkarsh Mehta: Senior Software Engineer'}

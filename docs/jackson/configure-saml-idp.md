@@ -1,16 +1,16 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Configure SAML Identity Provider
 
-This guide explains the settings you’d need to use to configure SAML with your Identity Provider. Once this is set up you should get an XML metadata file that should then be configured using our [API (or calling the API controller config method if using our NPM)](saml-flow).
+This guide explains the settings you’d need to use to configure SAML with your Identity Provider. Once this is set up you should get an XML metadata file that should then be configured using our [API (or calling the API controller config method if using our NPM)](./saml-flow.md).
 
 > Please do not add a trailing slash at the end of the URLs.
 
 Create them exactly as shown below:
 
-- Assertion consumer service URL / Single Sign-On URL / Destination URL: `http://localhost:5000/api/oauth/saml`
+- Assertion consumer service URL / Single Sign-On URL / Destination URL: `http://localhost:5225/api/oauth/saml`
 
 - Entity ID / Identifier / Audience URI / Audience Restriction: `https://saml.boxyhq.com`
 

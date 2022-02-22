@@ -2,10 +2,11 @@
 slug: enterprise-readiness-made-simple
 title: Enterprise Readiness made simple
 author: Deepak Prabhakara
-author_title: Co-founder & CEO @ BoxyHQ
+author_title: Co-founder & CEO @BoxyHQ
 author_url: https://github.com/deepakprabhakara
-author_image_url: https://avatars.githubusercontent.com/u/357991?s=400&v=4
+author_image_url: https://boxyhq.com/img/team/deepak.jpg
 tags: [enterprise-readiness]
+image: /img/blog/xavi-cabrera-kn-UmDZQDjM-unsplash.jpg
 ---
 
 I love Lego (don't we all), probably a little more than my kids. It invokes a builder's instinct. I feel the same way with code as well. When I started my career in the early 2000s building software was complex. You had to visit datacenters and set up your servers to even get started, it was the age of the ASPs; the predecessor of SaaS.
