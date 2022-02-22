@@ -6,8 +6,8 @@ sidebar_position: 1
 
 There are two ways to use Jackson.
 
-- As a [separate service](service#service)
+- As a [separate service](service.md#service)
 
-- As an [NPM library](npm-library)
+- As an [NPM library](npm-library.md)
 
 
