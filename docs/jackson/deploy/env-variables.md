@@ -156,7 +156,7 @@ Password for the SMTP server.
 
 ### **NEXTAUTH_URL**
 
-When running locally this will point to the local server: `http://localhost:5000`. When deploying to production, set this to the canonical URL of the site. More details [here](https://next-auth.js.org/configuration/options#nextauth_url).
+When running locally this will point to the local server: `http://localhost:5225`. When deploying to production, set this to the canonical URL of the site. More details [here](https://next-auth.js.org/configuration/options#nextauth_url).
 
 ### **NEXTAUTH_SECRET**
 

@@ -10,7 +10,7 @@ The docker container can be found at [boxyhq/jackson](https://hub.docker.com/r/b
 
 ```bash
 docker run \
-  -p 5000:5000 \
+  -p 5225:5225 \
   -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="sql" \
   -e DB_TYPE="postgres" \
@@ -22,7 +22,7 @@ OR
 
 ```bash
 docker run \
-  -p 5000:5000 \
+  -p 5225:5225 \
   -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="mongo" \
   -e DB_URL="mongodb://localhost:27017/jackson" \
@@ -72,9 +72,9 @@ npm run start
 
 ## Test the service is running
 
-Open a browser and visit [http://localhost:5000](http://localhost:5000).
+Open a browser and visit [http://localhost:5225](http://localhost:5225).
 
-If you see a page asking you to sign in, congrats 🎉 you are seeing the [Admin UI](admin-ui)
+If you see a page asking you to sign in, congrats 🎉 you are seeing the [Admin UI](./admin-ui.md)
 
 ## Database
 

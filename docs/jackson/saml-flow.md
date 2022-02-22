@@ -65,14 +65,14 @@ The response returns a JSON with `provider` indicating the domain of your Identi
 Uses the `PATCH` HTTP verb to update an existing SAML config.
 
 ```bash
-curl --location --request PATCH 'http://localhost:5000/api/v1/saml/config' \
+curl --location --request PATCH 'http://localhost:5225/api/v1/saml/config' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>' \ /* Required */
 --data-urlencode 'clientSecret=<Client Secret>' \ /* Required */
 --data-urlencode 'encodedRawMetadata=Base64(<IdP/SP metadata XML>)' \
---data-urlencode 'defaultRedirectUrl=http://localhost:3000/login/saml' \
---data-urlencode 'redirectUrl=["http://localhost:3000/*"]' \
+--data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/saml' \
+--data-urlencode 'redirectUrl=["http://localhost:3366/*"]' \
 --data-urlencode 'tenant=boxyhq.com' \
 --data-urlencode 'product=demo' \
 --data-urlencode 'name=demo-config' \
