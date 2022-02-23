@@ -70,7 +70,7 @@ Auth0 provides database connections to authenticate users with an email/username
 Let's create one so that our users can register or login.
 
 - Go to [Auth0 Dashboard > Authentication > Database](https://manage.auth0.com/dashboard/).
-- Click **Create DB Connection** [Auth0 Create DB Document](https://auth0.com/docs/authenticate/database-connections/custom-db/create-db-connection)
+- Click **Create DB Connection** - [Auth0 Create DB Document](https://auth0.com/docs/authenticate/database-connections/custom-db/create-db-connection)
 - Give your connection a name, then click **Create**.
 - Go to the **Applications** tab and enable the application you just created.
 
@@ -428,7 +428,7 @@ Congratulations, you should now have a functioning SAML SSO integrated with your
 
 To learn more about SAML Jackson, take a look at the following resources:
 
-- [SAML Jackson Doc](https://boxyhq.com/docs/jackson/introduction)
+- [SAML Jackson Documentation](https://boxyhq.com/docs/jackson/introduction)
 - [SAML Jackson Github](https://github.com/boxyhq/jackson)
 - [Express web app that shows how to use SAML Jackson](https://github.com/boxyhq/express-jackson-demo)
 
