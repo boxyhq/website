@@ -127,7 +127,7 @@ npm i --save @boxyhq/saml-jackson
 
 Once you installed Jackson, let's initialize it.
 
-Add the following code to the `routes/index.js` before `module.exports = router;` line.
+Add the following code to the `routes/index.js`.
 
 ```javascript
 // routes/index.js
