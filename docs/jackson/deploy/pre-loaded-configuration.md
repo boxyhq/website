@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 4
 ---
 
 # Pre-loaded SAML Configuration
@@ -17,8 +17,8 @@ The JS file has the following structure:-
 
 ```javascript
 module.exports = {
-  defaultRedirectUrl: 'http://localhost:3000/login/saml',
-  redirectUrl: '["http://localhost:3000/*", "http://localhost:5000/*"]',
+  defaultRedirectUrl: 'http://localhost:3366/login/saml',
+  redirectUrl: '["http://localhost:3366/*"]',
   tenant: 'boxyhq.com',
   product: 'demo',
 };
@@ -26,4 +26,4 @@ module.exports = {
 
 The XML file (should share the name with the .js file) is the raw XML metadata file you receive from your Identity Provider. Please ensure it is saved in the `utf-8` encoding.
 
-The config and XML above correspond to the [SAML API config](saml-flow#2-saml-config-api).
+The config and XML above correspond to the [SAML API config](../saml-flow.md#2-saml-config-api).
