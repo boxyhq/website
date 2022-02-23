@@ -70,7 +70,7 @@ Auth0 provides database connections to authenticate users with an email/username
 Let's create one so that our users can register or login.
 
 - Go to [Auth0 Dashboard > Authentication > Database](https://manage.auth0.com/dashboard/).
-- Click **Create DB Connection**
+- Click **Create DB Connection** [Auth0 Create DB Document](https://auth0.com/docs/authenticate/database-connections/custom-db/create-db-connection)
 - Give your connection a name, then click **Create**.
 - Go to the **Applications** tab and enable the application you just created.
 
@@ -413,7 +413,7 @@ Replace the `views/dashboard.ejs` view with the below code.
 
 From the command line, let's restart the express app then visit the authorize the URL [http://localhost:3000/sso/authorize](http://localhost:3000/sso/authorize). 
 
-If you've configured everything okay, it should redirect you to the Auth0 authentication page.
+If you've configured everything okay, it should redirect you to the Auth0 authentication page, then click on the Sign up link and register there
 
 If the authentication is successful, the app will redirect you to the dashboard and display the `Id`, `Email` of the user.
 
