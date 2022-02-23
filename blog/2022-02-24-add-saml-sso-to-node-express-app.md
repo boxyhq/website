@@ -2,7 +2,7 @@
 slug: add-saml-sso-to-node-express-app
 title: How to add SAML Single Sign On to an Express app
 author: Kiran K
-author_title: Senior Developer @ BoxyHQ
+author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
 author_image_url: https://avatars.githubusercontent.com/u/4593041?s=400&v=4
 tags: [saml-jackson]
@@ -80,23 +80,23 @@ Now we've everything ready, let's move to the next step.
 
 Launch a terminal and clone the Github repo:
 
-```
+```bash
 git clone https://github.com/devkiran/express-saml.git
 ```
 
-```
+```bash
 cd express-saml
 ```
 
 Now, install the dependencies:
 
-```
+```bash
 npm install
 ```
 
 Add the environment variables:
 
-```
+```bash
 cp .env.example .env
 ```
 
@@ -236,6 +236,7 @@ router.post('/config', async (req, res, next) => {
   }
 });
 ```
+
 There are a few important things to note in the code above.
 
 `defaultRedirectUrl` holds the redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow.
@@ -244,7 +245,7 @@ There are a few important things to note in the code above.
 
 Next, let's start the express app. The app starts a server and listens on port 3000 (by default) for connections.
 
-```
+```bash
 npm start
 ```
 
@@ -252,11 +253,11 @@ Now, let's visit [http://localhost:3000/config](http://localhost:3000/config), y
 
 ![img alt](/img/blog/add-saml-sso-to-node-express-app/add-saml-config-form.png)
 
-Here you can add the metadata you've downloaded from Auth0. Fill out the form with a Tenant, Product, and paste the metadata XML content as it is. 
+Here you can add the metadata you've downloaded from Auth0. Fill out the form with a Tenant, Product, and paste the metadata XML content as it is.
 
 I'll use 'boxyhq.com' for tenant and 'crm' for product.
 
-The response returns a JSON with `client_id` and `client_secret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. 
+The response returns a JSON with `client_id` and `client_secret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow.
 
 If you do not want to store the `client_id` and `client_secret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and any arbitrary value for `client_secret` when setting up the OAuth 2.0 flow.
 
@@ -321,7 +322,7 @@ router.post('/sso/acs', async (req, res, next) => {
 });
 ```
 
-Call to the method `oauthController.samlResponse()` will returns a `redirect_url`. You should redirect the users to this `redirect_url`. The query parameters will include the `code` and `state` parameters. 
+Call to the method `oauthController.samlResponse()` will returns a `redirect_url`. You should redirect the users to this `redirect_url`. The query parameters will include the `code` and `state` parameters.
 
 ### Code exchange
 
@@ -411,15 +412,16 @@ Replace the `views/dashboard.ejs` view with the below code.
 </html>
 ```
 
-From the command line, let's restart the express app then visit the authorize the URL [http://localhost:3000/sso/authorize](http://localhost:3000/sso/authorize). 
+From the command line, let's restart the express app then visit the authorize the URL [http://localhost:3000/sso/authorize](http://localhost:3000/sso/authorize).
 
 If you've configured everything okay, it should redirect you to the Auth0 authentication page, then click on the Sign up link and register there
 
-If the authentication is successful, the app will redirect you to the dashboard and display the `Id`, `Email` of the user.
+If the authentication is successful, the app will redirect you to the dashboard and display the `id`, `email` of the user.
 
 ![img alt](/img/blog/add-saml-sso-to-node-express-app/express-dashboard.png)
 
 ## Conclusion
+
 Congratulations, you should now have a functioning SAML SSO integrated with your express.js app using the SAML Jackson and Auth0.
 
 ## References
@@ -430,4 +432,4 @@ To learn more about SAML Jackson, take a look at the following resources:
 - [SAML Jackson Github](https://github.com/boxyhq/jackson)
 - [Express web app that shows how to use SAML Jackson](https://github.com/boxyhq/express-jackson-demo)
 
-Your feedbacks and contributions are welcome!
+Your feedback and contributions are welcome!
