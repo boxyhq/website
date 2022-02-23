@@ -132,7 +132,7 @@ Example: `lightstep-access-token=<token>,...`
 
 ## Admin UI configuration
 
-* Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin UI. The **SMTP_** variables are used for sending email which contain the magic link (one-time use) for sign in. *
+Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin UI. The **SMTP_** variables are used for sending email which contain the magic link (one-time use) for sign in.
 
 ### **SMTP_HOST**
 
