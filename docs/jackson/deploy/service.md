@@ -74,7 +74,7 @@ npm run start
 
 Open a browser and visit [http://localhost:5225](http://localhost:5225).
 
-If you see a page asking you to sign in, congrats 🎉 you are seeing the [Admin UI](./admin-ui.md)
+If you see a page asking you to sign in, congrats 🎉 you are seeing the [Admin UI](../admin-ui.md)
 
 ## Database
 
