@@ -14,6 +14,7 @@ module.exports = {
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
   themeConfig: {
+    image: 'img/website-preview-image.png',
     colorMode: {
       // "light" | "dark"
       defaultMode: 'light',
