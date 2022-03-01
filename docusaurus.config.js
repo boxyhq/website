@@ -14,13 +14,15 @@ module.exports = {
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
   themeConfig: {
+    image: 'img/website-preview-image.png',
     colorMode: {
       // "light" | "dark"
       defaultMode: 'light',
 
       // Hides the switch in the navbar
       // Useful if you want to support a single color mode
-      disableSwitch: true,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'BoxyHQ',

@@ -6,5 +6,6 @@
     "anothertenant",
     "boxyhq",
     "Unencrypted"
-  ]
+  ],
+  "editor.formatOnSave": true
 }
