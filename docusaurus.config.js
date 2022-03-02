@@ -28,6 +28,7 @@ module.exports = {
         lightIcon: 'light_mode',
         lightIconStyle: {
           fontFamily: 'Material Icons',
+          color: 'white',
         },
       },
     },
