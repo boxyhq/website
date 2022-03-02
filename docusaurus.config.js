@@ -13,16 +13,23 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
+  stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
     image: 'img/website-preview-image.png',
     colorMode: {
-      // "light" | "dark"
       defaultMode: 'light',
-
-      // Hides the switch in the navbar
-      // Useful if you want to support a single color mode
       disableSwitch: false,
       respectPrefersColorScheme: true,
+      switchConfig: {
+        darkIcon: 'dark_mode',
+        darkIconStyle: {
+          fontFamily: 'Material Icons',
+        },
+        lightIcon: 'light_mode',
+        lightIconStyle: {
+          fontFamily: 'Material Icons',
+        },
+      },
     },
     navbar: {
       title: 'BoxyHQ',
