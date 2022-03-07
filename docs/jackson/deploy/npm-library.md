@@ -36,7 +36,7 @@ const express = require('express');
 const router = express.Router();
 const cors = require('cors'); // needed if you are calling the token userinfo endpoints from the frontend
 
-// Set the required options. Refer to https://github.com/boxyhq/jackson#configuration for the full list
+// Set the required options. Refer to `Environment Variables` for the full list
 const opts = {
   externalUrl: 'https://my-cool-app.com',
   samlAudience: 'https://my-cool-app.com',
