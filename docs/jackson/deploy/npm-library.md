@@ -85,6 +85,20 @@ router.post('/api/v1/saml/config', async (req, res) => {
     });
   }
 });
+// update config
+router.patch('/api/v1/saml/config', async (req,res) => {
+   try {
+    // apply your authentication flow (or ensure this route has passed through your auth middleware)
+    ...
+
+    // only when properly authenticated, call the config function
+    res.json(await apiController.updateConfig(req.body));
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
+})
 // fetch config
 router.get('/api/v1/saml/config', async (req, res) => {
   try {
