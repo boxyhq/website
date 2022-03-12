@@ -44,7 +44,7 @@ So few pointers before we go ahead,
 
 ## Clickhouse plugin for fluent-bit:
 
-![Funny Gif](https://media0.giphy.com/media/bAplZhiLAsNnG/giphy.webp?cid=dda24d507bdfdacf288d461758839009285c1ed114150484&rid=giphy.webp&ct=g)
+<!-- ![Funny Gif](https://media0.giphy.com/media/bAplZhiLAsNnG/giphy.webp?cid=dda24d507bdfdacf288d461758839009285c1ed114150484&rid=giphy.webp&ct=g) -->
 
 I developed a fluent-bit output [plugin](https://github.com/boxyhq/fluent-bit-clickhouse) for Clickhouse.
 
@@ -56,7 +56,7 @@ This config makes fluent-bit ingest data via HTTP server listening on port 8888 
 
 ## Clickhouse config:
 
-![Funny Gif](https://media0.giphy.com/media/aS8ypUweGOXMA/200w.webp?cid=dda24d5064d326145a245fce898f7775bc4b7e4ce5f8f178&rid=200w.webp&ct=g)
+<!-- ![Funny Gif](https://media0.giphy.com/media/aS8ypUweGOXMA/200w.webp?cid=dda24d5064d326145a245fce898f7775bc4b7e4ce5f8f178&rid=200w.webp&ct=g) -->
 
 I ramped up the number of concurrent requests/queries by modifying the config.xml. After multiple tests, I finalized the following config.
 
@@ -64,7 +64,7 @@ I ramped up the number of concurrent requests/queries by modifying the config.xm
 
 ## Load testing tool:
 
-![Funny Gif](https://media1.giphy.com/media/B6SyssSlTgPXq/200w.webp?cid=dda24d50edfaf581e3165a3d10a7dd26c246ebb459fcebb5&rid=200w.webp&ct=g)
+<!-- ![Funny Gif](https://media1.giphy.com/media/B6SyssSlTgPXq/200w.webp?cid=dda24d50edfaf581e3165a3d10a7dd26c246ebb459fcebb5&rid=200w.webp&ct=g) -->
 
 I developed a load testing tool with Node.js that can be used to benchmark REST API-based endpoints of Fluent-bit.
 
