@@ -36,7 +36,7 @@ const express = require('express');
 const router = express.Router();
 const cors = require('cors'); // needed if you are calling the token userinfo endpoints from the frontend
 
-// Set the required options. Refer to https://github.com/boxyhq/jackson#configuration for the full list
+// Set the required options. Refer to `Environment Variables` for the full list
 const opts = {
   externalUrl: 'https://my-cool-app.com',
   samlAudience: 'https://my-cool-app.com',
@@ -85,6 +85,20 @@ router.post('/api/v1/saml/config', async (req, res) => {
     });
   }
 });
+// update config
+router.patch('/api/v1/saml/config', async (req,res) => {
+   try {
+    // apply your authentication flow (or ensure this route has passed through your auth middleware)
+    ...
+
+    // only when properly authenticated, call the config function
+    res.json(await apiController.updateConfig(req.body));
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
+})
 // fetch config
 router.get('/api/v1/saml/config', async (req, res) => {
   try {

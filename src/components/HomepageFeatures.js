@@ -4,17 +4,6 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: <>SAML SSO</>,
-    url: 'https://github.com/boxyhq/jackson',
-    Svg: require('../../static/img/feat_sso.svg').default,
-    description: (
-      <>
-        Add single sign on authentication into your product. Supports most
-        identity providers via SAML 2.0
-      </>
-    ),
-  },
-  {
     title: <>Audit Logs</>,
     url: 'https://github.com/boxyhq/hermes',
     Svg: require('../../static/img/feat_audit.svg').default,
@@ -56,23 +45,23 @@ const FeatureList = [
       </>
     ),
   },
-  {
-    title: <>(coming next)</>,
-    Svg: require('../../static/img/feat_coming.svg').default,
-    description: (
-      <>
-        Admin Portal, Security Status Page, Compliance Monitoring, many more.
-        Contact us if you have any specific Enterprise features in mind.
-      </>
-    ),
-  },
+  // {
+  //   title: <>(coming next)</>,
+  //   Svg: require('../../static/img/feat_coming.svg').default,
+  //   description: (
+  //     <>
+  //       Admin Portal, Security Status Page, Compliance Monitoring, many more.
+  //       Contact us if you have any specific Enterprise features in mind.
+  //     </>
+  //   ),
+  // },
 ];
 
-function Feature({ Svg, title, description, url }) {
+function Feature({ Svg, title, description, url, colSize }) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col ' + colSize)}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+        {Svg ? <Svg className={styles.featureSvg} alt={title} /> : null}
       </div>
       <div className="text--center padding-horiz--md">
         {url ? (
@@ -90,13 +79,65 @@ function Feature({ Svg, title, description, url }) {
   );
 }
 
+const SSOSAMLMain = {
+  title: <>SAML SSO</>,
+  Svg: require('../../static/img/feat_sso.svg').default,
+  description: '',
+};
+
+const SAMLSSOFeatureList = [
+  {
+    title: <>Interactive Demo: SAML Login</>,
+    url: 'https://saml-demo.boxyhq.com/',
+    description: (
+      <>Try out our zero-configuration, interactive demo of SAML SSO</>
+    ),
+  },
+  {
+    title: <>Integrate SAML with a few lines of code</>,
+    url: 'https://github.com/boxyhq/jackson',
+    description: (
+      <>
+        Add single sign on authentication into your product. Supports most
+        identity providers via SAML 2.0
+      </>
+    ),
+  },
+  {
+    title: <>Mock SAML</>,
+    url: 'https://mocksaml.com',
+    description: (
+      <>
+        A free mock SAML 2.0 Identity Provider for testing your SAML SSO
+        integrations
+      </>
+    ),
+  },
+];
+
+function SSOSAMLSection() {
+  return (
+    <div className="container">
+      <div className="row">
+        <Feature key="SSOSAMLSection" {...SSOSAMLMain} colSize="col--12" />
+      </div>
+      <div className="row">
+        {SAMLSSOFeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} colSize="col--4" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+        {<SSOSAMLSection></SSOSAMLSection>}
         <div className="row">
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+            <Feature key={idx} {...props} colSize="col--6" />
           ))}
         </div>
       </div>

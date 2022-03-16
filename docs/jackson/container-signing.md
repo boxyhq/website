@@ -4,7 +4,7 @@ sidebar_position: 11
 
 # Container Signing and Verification
 
-Jackson container images are signed are signed and can be verified using [cosign](https://github.com/sigstore/cosign).
+Jackson container images are signed and can be verified using [cosign](https://github.com/sigstore/cosign).
 
 ## Fetching our public key
 
