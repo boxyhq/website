@@ -5,7 +5,7 @@ author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
 author_image_url: https://avatars.githubusercontent.com/u/4593041?s=400&v=4
-tags: [saml-jackson]
+tags: [enterprise-readiness, engineering, saml, saml-jackson, integrations]
 ---
 
 In this article, you'll learn how add SAML SSO login to an Express.js app. You'll use [SAML Jackson](https://boxyhq.com/docs/jackson/introduction) with [Auth0](https://auth0.com/single-sign-on) to authenticate users and protect routes.
@@ -53,13 +53,13 @@ We'll use the Auth0 as our identity provider. An Identity Provider (IdP) is a se
 
 ```json
 {
-   "audience":"https://saml.boxyhq.com",
-   "mappings":{
-      "id":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
-      "email":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
-      "firstName":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname",
-      "lastName":"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"
-   }
+  "audience": "https://saml.boxyhq.com",
+  "mappings": {
+    "id": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+    "email": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+    "firstName": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname",
+    "lastName": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"
+  }
 }
 ```
 
@@ -181,30 +181,53 @@ Add a view to display the form.
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>SAML Config</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-        <link rel='stylesheet' href='/stylesheets/style.css' />
-    </head>
-    <body>
-        <h1>SAML Config</h1>
-        <p>Add SAML Metadata.</p>
-        <form action="/config" method="POST">
-            <div class="form-group">
-                <label for="tenant">Tenant</label>
-                <input type="text" name="tenant" id="tenant" class="form-control col-md-6" required="required">
-            </div>
-            <div class="form-group">
-                <label for="product">Product</label>
-                <input type="text" name="product" id="product" class="form-control col-md-6" required="required">
-            </div>
-            <div class="form-group">
-                <label for="rawMetadata">Metadata (Raw XML)</label>
-                <textarea name="rawMetadata" id="rawMetadata" cols="30" rows="10" class="form-control col-md-6" required="required"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </body>
+  <head>
+    <title>SAML Config</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>SAML Config</h1>
+    <p>Add SAML Metadata.</p>
+    <form action="/config" method="POST">
+      <div class="form-group">
+        <label for="tenant">Tenant</label>
+        <input
+          type="text"
+          name="tenant"
+          id="tenant"
+          class="form-control col-md-6"
+          required="required"
+        />
+      </div>
+      <div class="form-group">
+        <label for="product">Product</label>
+        <input
+          type="text"
+          name="product"
+          id="product"
+          class="form-control col-md-6"
+          required="required"
+        />
+      </div>
+      <div class="form-group">
+        <label for="rawMetadata">Metadata (Raw XML)</label>
+        <textarea
+          name="rawMetadata"
+          id="rawMetadata"
+          cols="30"
+          rows="10"
+          class="form-control col-md-6"
+          required="required"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </body>
 </html>
 ```
 
@@ -282,7 +305,7 @@ router.get('/sso/authorize', async (req, res, next) => {
       client_id: `tenant=${tenant}&product=${product}`,
       redirect_uri: 'http://localhost:3000/sso/callback',
       state: 'a-random-state-value',
-    }
+    };
 
     const { redirect_url } = await oauthController.authorize(body);
 
@@ -306,12 +329,12 @@ The SAML Response contains 2 fields: `SAMLResponse` and `RelayState`.
 
 router.post('/sso/acs', async (req, res, next) => {
   try {
-    const {SAMLResponse, RelayState} = req.body;
+    const { SAMLResponse, RelayState } = req.body;
 
     const body = {
       SAMLResponse,
-      RelayState
-    }
+      RelayState,
+    };
 
     const { redirect_url } = await oauthController.samlResponse(body);
 
@@ -377,7 +400,7 @@ Replace the `GET /dashboard` route with the below code.
 ```javascript
 // routes/index.js
 
-router.get('/dashboard', function(req, res, next) {
+router.get('/dashboard', function (req, res, next) {
   const { profile } = req.session;
 
   if (profile === undefined) {
@@ -386,7 +409,7 @@ router.get('/dashboard', function(req, res, next) {
 
   // Pass the profile to the view
   res.render('dashboard', {
-    profile
+    profile,
   });
 });
 ```
@@ -400,7 +423,7 @@ Replace the `views/dashboard.ejs` view with the below code.
 <html>
   <head>
     <title>Dashboard</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <h1>Dashboard</h1>
