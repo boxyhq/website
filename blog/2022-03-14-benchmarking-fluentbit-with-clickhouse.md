@@ -1,11 +1,22 @@
 ---
-slug: bencharing-fluentbit-with-clickhouse
+slug: benchmarking-fluentbit-with-clickhouse
 title: Benchmarking fluent-bit with Clickhouse
 author: Utkarsh Mehta
 author_title: Senior Software Engineer (Open Source Dev Tools) @BoxyHQ
 author_url: https://www.linkedin.com/in/utkarsh-mehta2612/
 author_image_url: https://boxyhq.com/img/team/utkarsh.jpg
-tags: [enterprise-readiness, startups, enterprises, corporates, auditlogs, hermes, fluent-bit, clickhouse, benchmarking, research, load-testing]
+tags:
+  [
+    enterprise-readiness,
+    engineering,
+    audit-logs,
+    hermes,
+    fluent-bit,
+    clickhouse,
+    benchmarking,
+    research,
+    load-testing,
+  ]
 image: /img/blog/fluentbit-clickhouse.png
 ---
 
@@ -15,23 +26,23 @@ We were trying out different databases, ingesters & tools to see which are best 
 
 ![Title Image](/img/blog/fluentbit-clickhouse.png)
 
-We decided to benchmark different combinations of ingestors (Vector, Fluentd, Fluent-Bit, etc.) and storage & query tools (Mongodb, Clickhouse, Elasticsearch, etc.).
+We decided to benchmark different combinations of ingesters (Vector, Fluentd, Fluent-Bit, etc.) and storage & query tools (Mongodb, Clickhouse, Elasticsearch, etc.).
 
 The first round of benchmarks will be lightweight and extensive benchmarks will follow later once we pick the right tools for Hermes.
 
-## Hardware Configurations:
+## Hardware Configuration
 
 The following tests and benchmarks have been performed on a MacBook Pro (14-inch, 2021) with Apple M1 Pro and 16 GB RAM, the tools to be tested were dockerized with docker desktop running with 4 GB Memory, 4 CPUs & 1 GB Swap.
 
-> Fluent Bit is a super-fast, lightweight, highly scalable logging and metrics processor and forwarder. 
+> Fluent Bit is a super-fast, lightweight, highly scalable logging and metrics processor and forwarder.
 > It is the preferred choice for cloud and containerized environments.
 > Source: [fluent-bit website](https://fluentbit.io/)
-
-> Clickhouse is the fastest OLAP database on earth. ClickHouse works 100–1000x faster than traditional approaches. 
+> Clickhouse is the fastest OLAP database on earth. ClickHouse works 100–1000x faster than traditional approaches.
 > Companies like Uber, Cloudflare, Spotify, and eBay use Clickhouse.
 > Source: [Clickhouse website](https://clickhouse.com/)
 
 So few pointers before we go ahead,
+
 1. Fluent-bit is fast at ingesting logs/data, processing them, and sending them to a destination.
 
 2. Clickhouse is efficient at handling and querying data.
@@ -42,19 +53,19 @@ So few pointers before we go ahead,
 
 5. For faster querying in Clickhouse, an efficient table schema with indexes, compression, etc. should be established.
 
-## Clickhouse plugin for fluent-bit:
+## Clickhouse plugin for fluent-bit
 
 <!-- ![Funny Gif](https://media0.giphy.com/media/bAplZhiLAsNnG/giphy.webp?cid=dda24d507bdfdacf288d461758839009285c1ed114150484&rid=giphy.webp&ct=g) -->
 
 I developed a fluent-bit output [plugin](https://github.com/boxyhq/fluent-bit-clickhouse) for Clickhouse.
 
-## Fluent-Bit config:
+## Fluent-Bit config
 
 ![Fluent-bit Configuration](/img/blog/fluentbit-config.png)
 
-This config makes fluent-bit ingest data via HTTP server listening on port 8888 and sends the data to clickhouse with configuration stated.
+This config makes fluent-bit ingest data via HTTP server listening on port 8888 and sends the data to Clickhouse with configuration stated.
 
-## Clickhouse config:
+## Clickhouse config
 
 <!-- ![Funny Gif](https://media0.giphy.com/media/aS8ypUweGOXMA/200w.webp?cid=dda24d5064d326145a245fce898f7775bc4b7e4ce5f8f178&rid=200w.webp&ct=g) -->
 
@@ -62,34 +73,33 @@ I ramped up the number of concurrent requests/queries by modifying the config.xm
 
 ![Clickhouse Configuration](/img/blog/clickhouse-config.png)
 
-## Load testing tool:
+## Load testing tool
 
 <!-- ![Funny Gif](https://media1.giphy.com/media/B6SyssSlTgPXq/200w.webp?cid=dda24d50edfaf581e3165a3d10a7dd26c246ebb459fcebb5&rid=200w.webp&ct=g) -->
 
 I developed a load testing tool with Node.js that can be used to benchmark REST API-based endpoints of Fluent-bit.
 
-https://github.com/boxyhq/api-benchmarking/
+[API Benchmarking](https://github.com/boxyhq/api-benchmarking)
 
-Another tool to load test the querying part of Clickhouse.
+Another tool to load test is the querying part of Clickhouse.
 
-https://github.com/boxyhq/clickhouse-db-load-testing
+[Clickhouse Load Testing](https://github.com/boxyhq/clickhouse-db-load-testing)
 
-
-## The results:
+## The results
 
 These results are dependent on the ram allocated to the Docker engine, in my case, it's(4 GiBs).
 
-### Ingester:
+### Ingester
 
 ![Ingester results](/img/blog/results-ingester.png)
 
-### Query:
+### Query
 
 ![Queryer result](/img/blog/results-query.png)
 
-## Conclusion:
+## Conclusion
 
-### Ingester:
+### Ingester
 
 1. Fluent-bit can handle loads up to 2000 req/sec but in the case of bigger batches, the speed goes down drastically. (200 X 10) & (300 X 10)
 
@@ -97,7 +107,7 @@ These results are dependent on the ram allocated to the Docker engine, in my cas
 
 3. Fluent-bit performs at average speeds in the case of average loads (50 X 50).
 
-### Query:
+### Query
 
 1. Clickhouse shows the best req/sec performance with an average load (50 X 50).
 
