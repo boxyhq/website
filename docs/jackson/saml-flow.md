@@ -10,6 +10,8 @@ Please follow the instructions [here](./configure-saml-idp.md) to guide your cus
 
 **Note:** All the APIs below support both `application/x-www-form-urlencoded` and `application/json` content types. Examples below use `application/x-www-form-urlencoded`.
 
+**Note:** OAuth 2.0 protocol uses underscore casing for the parameters, we use camel casing for all our APIs. For exampe it's `client_id` in the OAuth 2.0 flow and `clientID` in our APIs.
+
 ## 2. SAML config API
 
 Once your customer has set up the SAML app on their Identity Provider, the Identity Provider will generate an IdP or SP metadata file. Some Identity Providers only generate an IdP metadata file but it usually works for the SP login flow as well. It is an XML file that contains various attributes Jackson needs to validate incoming SAML login requests. This step is the equivalent of setting an OAuth 2.0 app and generating a client ID and client secret that will be used in the login flow.
@@ -39,7 +41,7 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/config' \
 - `name`: A friendly name to identify the SAML config
 - `description`: A short description with some information of the configuration
 
-The response returns a JSON with `client_id` and `client_secret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `client_id` and `client_secret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you use for [this](./deploy/env-variables.md#client_secret_verifier) configuration) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `provider` attribute is also returned which indicates the domain of your Identity Provider.
+The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](./deploy/env-variables.md#client_secret_verifier) configuration) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
 
 ### 2.1 SAML get config API
 
@@ -60,7 +62,7 @@ curl -G --location 'http://localhost:5225/api/v1/saml/config' \
 --data-urlencode 'clientID=<Client ID>'
 ```
 
-The response returns a JSON with `provider` indicating the domain of your Identity Provider. If an empty JSON payload is returned then we do not have any configuration stored for the attributes you requested.
+The response returns a JSON with `idpMetadata.provider` indicating the domain of your Identity Provider. If an empty JSON payload is returned then we do not have any configuration stored for the attributes you requested.
 
 ### 2.2 SAML update config API
 
