@@ -168,7 +168,7 @@ The short-lived access token can now be used to request the user's profile. You'
 
 ```bash
 curl --request GET \
-  --url https://localhost:5225/api/oauth/userinfo \
+  --url 'https://localhost:5225/api/oauth/userinfo' \
   --header 'authorization: Bearer <access token>' \
   --header 'content-type: application/json'
 ```
