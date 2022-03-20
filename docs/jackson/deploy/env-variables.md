@@ -38,6 +38,14 @@ This is just an identifier to validate the SAML audience, this value will also g
 Default: `https://saml.boxyhq.com`
 NPM library option: `samlAudience`
 
+### **SAML_PATH**
+
+The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the IdP. Set this when using the npm package.
+
+NPM library option: `samlPath`
+
+For example `/api/oauth/saml`
+
 ### **CLIENT_SECRET_VERIFIER**
 
 When `tenant` and `product` are used for the SAML flow (and PKCE is not being used) then we use `dummy` as placeholders for `client_id` and `client_secret`. This is not a security issue because SAML is tenanted and hence your Identity Provider will block access to anyone trying to log into your SAML tenant. However for additional security you should set `CLIENT_SECRET_VERIFIER` to a random secret and use that value as the `client_secret` during the OAuth 2.0 flow.
