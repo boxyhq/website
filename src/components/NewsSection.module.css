@@ -1,0 +1,6 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.newsSection {
+  border-top: 1px solid var(--ifm-color-content-secondary);
+  padding: 40px;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
-import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import Feature from './Feature';
+import NewsSection from './NewsSection';
 
 const FeatureList = [
   {
@@ -56,28 +57,6 @@ const FeatureList = [
   //   ),
   // },
 ];
-
-function Feature({ Svg, title, description, url, colSize }) {
-  return (
-    <div className={clsx('col ' + colSize)}>
-      <div className="text--center">
-        {Svg ? <Svg className={styles.featureSvg} alt={title} /> : null}
-      </div>
-      <div className="text--center padding-horiz--md">
-        {url ? (
-          <h3>
-            <a href={url} target="_blank">
-              {title}
-            </a>
-          </h3>
-        ) : (
-          <h3>{title}</h3>
-        )}
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
 
 const SSOSAMLMain = {
   title: <>SAML SSO</>,
@@ -140,6 +119,7 @@ export default function HomepageFeatures() {
             <Feature key={idx} {...props} colSize="col--6" />
           ))}
         </div>
+        {<NewsSection></NewsSection>}
       </div>
     </section>
   );

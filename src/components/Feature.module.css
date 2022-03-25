@@ -1,0 +1,11 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.featureSvg {
+  height: 150px;
+  width: 150px;
+}
+
+.featureSmallSvg {
+  height: 50px;
+  width: 150px;
+}
