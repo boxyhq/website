@@ -26,7 +26,8 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/config' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'encodedRawMetadata=Base64(<IdP/SP metadata XML>)' \
 --data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/saml' \
---data-urlencode 'redirectUrl=["http://localhost:3366/*"]' \
+--data-urlencode 'redirectUrl=http://localhost:3366/*' \
+--data-urlencode 'redirectUrl=http://localhost:3000/*' \
 --data-urlencode 'tenant=boxyhq.com' \
 --data-urlencode 'product=demo' \
 --data-urlencode 'name=demo-config' \
@@ -35,7 +36,7 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/config' \
 
 - `encodedRawMetadata`: Base64 encoding of the XML metadata your customer gets from their Identity Provider
 - `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
-- `redirectUrl`: JSON encoded array containing a list of allowed redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above)
+- `redirectUrl`: Allowed redirect URL. Repeat this field multiple times to allow multiple redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above).
 - `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
 - `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
 - `name`: A friendly name to identify the SAML config
@@ -76,7 +77,8 @@ curl --location --request PATCH 'http://localhost:5225/api/v1/saml/config' \
 --data-urlencode 'clientSecret=<Client Secret>' \ /* Required */
 --data-urlencode 'encodedRawMetadata=Base64(<IdP/SP metadata XML>)' \
 --data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/saml' \
---data-urlencode 'redirectUrl=["http://localhost:3366/*"]' \
+--data-urlencode 'redirectUrl=http://localhost:3366/*' \
+--data-urlencode 'redirectUrl=http://localhost:3000/*' \
 --data-urlencode 'tenant=boxyhq.com' \
 --data-urlencode 'product=demo' \
 --data-urlencode 'name=demo-config' \
