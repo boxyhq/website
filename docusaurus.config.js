@@ -50,6 +50,10 @@ module.exports = {
               href: 'https://discord.gg/uyb7pYt4Pa',
             },
             {
+              label: 'Aviyel',
+              href: 'https://aviyel.com/projects/11/boxyhq',
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/boxyhq',
             },
