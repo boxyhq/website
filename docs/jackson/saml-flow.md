@@ -195,3 +195,26 @@ If everything goes well you should receive a JSON response with the user's profi
 - `lastName`: The last name of the user as provided by the Identity Provider
 - `raw`: This contains all claims attributes returned by the SAML provider
 - `requested`: This contains the `tenant`, `product`, `client_id` and `state` from the authorize request. It can be used to reconcile context on the client side if needed
+
+## 7. SAML SLO
+
+SLO is a SAML flow that allows an end-user to logout of a single session and be automatically logged out of all linked sessions created during the SSO process.
+
+The SLO flow begins with redirecting your user to the `/api/logout` endpoint.
+
+```bash
+https://localhost:5225/api/logout
+  ?nameId=google-auth0-f92cc1834efc0f73e9c09
+  &tenant=boxyhq.com
+  &product=demo
+  &redirectUrl=http://www.example.com/logout
+```
+
+- `nameId`: Identifies the subject of a SAML assertion (Typically the user who is authenticated)
+- `tenant`: The tentant
+- `product`: The product
+- `redirectUrl`: Post logout redirect URL
+
+IdP will send a response back to a specific URL for the logout request. You need to register this URL on the IdP `/api/logout/callback` to handle the response.
+
+Jackson will redirect users to `redirectUrl` after the successful logout.

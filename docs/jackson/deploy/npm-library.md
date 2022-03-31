@@ -44,18 +44,19 @@ const opts = {
   db: {
     engine: 'mongo',
     url: 'mongodb://localhost:27017/my-cool-app',
-  }
+  },
 };
-
 
 let apiController;
 let oauthController;
+let logoutController;
 // Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
 // Run this in a function where you initialize the express server.
 async function init() {
   const ret = await require('@boxyhq/saml-jackson').controllers(opts);
   apiController = ret.apiController;
   oauthController = ret.oauthController;
+  logoutController = ret.logoutController;
 }
 ```
 
@@ -225,5 +226,46 @@ router.get('/oauth/userinfo', async (req, res) => {
 
 // set the router
 app.use('/sso', router);
+```
 
+### SLO: Create Logout Request
+
+Create the logout request by calling the method `createRequest()`.
+
+```javascript
+router.get('/logout', async (req, res, next) => {
+  const { logoutUrl, logoutForm } = await logoutController.createRequest({
+    nameId: 'google-oauth2|108149256146623609101',
+    tenant: 'boxyhq.com',
+    product: 'demo',
+    redirectUrl: 'http://localhost:3000',
+  });
+
+  // HTTP-Redirect binding
+  if (logoutUrl) {
+    return res.redirect(logoutUrl);
+  }
+
+  // HTTP-POST binding
+  if (logoutForm) {
+    return res.send(logoutForm);
+  }
+});
+```
+
+### SLO: Handle the Response
+
+IdP will send a response back to a specific URL. You need to register this URL on the IdP to handle the response properly.
+
+```javascript
+router.post('/logout/callback', async (req, res, next) => {
+  const { SAMLResponse, RelayState } = req.body;
+
+  const { redirectUrl } = await logoutController.handleResponse({
+    SAMLResponse,
+    RelayState,
+  });
+
+  return res.redirect(redirectUrl);
+});
 ```
