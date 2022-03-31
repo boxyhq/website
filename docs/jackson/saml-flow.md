@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# SAML flow
+# SAML Flow
 
 ## 1. Setting up SAML with your IdP
 
@@ -215,6 +215,6 @@ https://localhost:5225/api/logout
 - `product`: The product
 - `redirectUrl`: Post logout redirect URL
 
-IdP will send a response back to a specific URL for the logout request. You need to register this URL on the IdP `/api/logout/callback` to handle the response.
+IdP will send a response (as a POST operation) to a specific URL (Single Logout URL) for the logout request. You need to register this URL on the IdP `/api/logout/callback` to handle the response.
 
 Jackson will redirect users to `redirectUrl` after the successful logout.
