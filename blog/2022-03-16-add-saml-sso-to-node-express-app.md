@@ -63,7 +63,7 @@ We'll use the Auth0 as our identity provider. An Identity Provider (IdP) is a se
 }
 ```
 
-`audience` is just an identifier to validate the SAML audience. [More info](https://boxyhq.com/docs/jackson/env-variables#saml_audience).
+`audience` is just an identifier to validate the SAML audience. [More info](https://boxyhq.com/docs/jackson/deploy/env-variables#saml_audience).
 
 Auth0 provides database connections to authenticate users with an email/username and password. These credentials are securely stored in the Auth0 user store.
 
