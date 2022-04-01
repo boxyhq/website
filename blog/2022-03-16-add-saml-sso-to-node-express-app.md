@@ -49,7 +49,7 @@ We'll use the Auth0 as our identity provider. An Identity Provider (IdP) is a se
 - Go to the **Usage** tab and download the **Identity Provider Metadata**.
 - Go to the **Settings** tab and make below changes.
 - Add `http://localhost:3000/sso/acs` as your **Application Callback URL** that receives the SAML response.
-- Past the following JSON for **Settings**, then click **Enable** button.
+- Paste the following JSON for **Settings**, then click **Enable** button.
 
 ```json
 {
