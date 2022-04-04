@@ -4,6 +4,12 @@ sidebar_position: 1
 
 # Service
 
+## Health Check
+
+The service offers a readiness and health check endpoint that can be configured in orchestration tools like Docker Compose and Kubernetes.
+
+The `/api/health` GET endpoint returns a 200 when the service ready and healthy or a 5xx (typically 503) error if unhealthy.
+
 ## With Docker
 
 The docker container can be found at [boxyhq/jackson](https://hub.docker.com/r/boxyhq/jackson/tags). It is preferable to use a specific version instead of the `latest` tag.
