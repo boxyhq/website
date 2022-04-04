@@ -218,3 +218,7 @@ https://localhost:5225/api/logout
 IdP will send a response (as a POST operation) to a specific URL (Single Logout URL) for the logout request. You need to register this URL on the IdP `/api/logout/callback` to handle the response.
 
 Jackson will redirect users to `redirectUrl` after the successful logout.
+
+:::info
+You should save the `id` returned by the `userinfo` for an user so that you can use the `id` as `nameId` with SLO request.
+:::
