@@ -19,3 +19,7 @@ sidebar_position: 7
 - [Mock SAML](https://github.com/boxyhq/mock-saml)
 - [NextAuth.js Provider](https://next-auth.js.org/providers/boxyhq-saml)
 - [Remix Auth Strategy](https://github.com/boxyhq/remix-auth-saml)
+
+## Third-party examples
+
+- [Jackson with Next.js and Supertokens](https://github.com/nadilas/jackson-next-supertokens)
