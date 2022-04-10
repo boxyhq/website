@@ -13,7 +13,7 @@ Let's get started 🚀.
 
 If you wish to dive straight into the source, Checkout: https://github.com/boxyhq/jackson-remix-auth
 
-# Setting up the remix app
+## Setting up the remix app
 
 Run `create-remix`. You can go with the Remix App Server as the deployment target for this tutorial. Feel free to choose either "Typescript" or "Javascript". All the code samples in this tutorial are in typescript (We ❤️ typescript )
 
@@ -27,10 +27,17 @@ We are going to need a few dependencies along the way. First, let's install the 
 npm i @boxyhq/remix-auth-saml
 ```
 
-# SAML Service Provider
+## SAML Service Provider
 
-To get saml working, we need a service provider that constructs the SAML request, redirects the app to Identity Provider (IdP), and parses the SAML response coming from the IdP. 
+To get saml working, we need a service provider (SP) that constructs the SAML request, redirects the app to Identity Provider (IdP), and parses the SAML response coming from the IdP. 
 
 > 💡 SAML uses the front-channel or browser to send/receive the request/response XML.
 
-It turns out you don't need to do the heavy lifting yourself 🤗, We've covered it for you in the form of an open-source module [SAML Jackson](https://github.com/boxyhq/jackson).
+It turns out you don't need to do the heavy lifting (of building a full blown SP) yourself 🤗, We've covered it for you with an open-source npm module [SAML Jackson](https://github.com/boxyhq/jackson). With jackson you've got 2 options up your sleeve.
+
+1. Host SP as a separate service.
+2. Embed SP functionality on top of remix resource routes.
+
+### Hosted SAML Service Provider
+
+### Embed SAML Service Provider functionality
