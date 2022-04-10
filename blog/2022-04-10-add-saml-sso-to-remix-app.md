@@ -21,7 +21,7 @@ Run `create-remix`. You can go with the Remix App Server as the deployment targe
 npx create-remix@latest
 ```
 
-We are going to need a few dependencies along the way. First, let's install the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package. This package is a wrapper around [`remix-auth-oauth2`](https://github.com/sergiodxa/remix-auth-oauth2), enabling us to choose the tenant/product 
+We are going to need a few dependencies along the way. First, let's install the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package. This package is a wrapper around [`remix-auth-oauth2`](https://github.com/sergiodxa/remix-auth-oauth2), enabling us to set the tenant/product in a multi-tenant app. 
 
 ```bash
 npm i @boxyhq/remix-auth-saml
