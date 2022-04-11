@@ -120,21 +120,23 @@ To get SAML working, we need a service provider (SP) that constructs the SAML re
 
 It turns out you don't need to do the heavy lifting (of building a full-blown SP) yourself 🤗. We've got it covered with an open-source npm module [SAML Jackson](https://github.com/boxyhq/jackson). With "SAML Jackson" you've got 2 options up your sleeve.
 
-1. Host SAML SP as a separate service.
-2. Embed SAML SP functionality leveraging remix resource routes.
+1. [Host SAML SP as a separate service](#host-saml-sp-as-a-separate-service).
+2. [Embed SAML SP functionality leveraging remix resource routes](#embed-saml-service-provider-functionality).
 
 ### Host SAML SP as a separate service
 
 #### Setup
 
 To get going, you'll need a hosted instance of "SAML Jackson".  
-Refer to the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy Jackson to your favorite hosting provider.  
-Otherwise, fret not 🤗, we have a hosted instance (details below) of `jackson`, that can be readily used to test out the SAML flow.
+Refer to the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy `Jackson` to your favorite hosting provider.  
+Otherwise, fret not 🤗, we have a hosted instance (details below) of `Jackson`, that can be readily used to test out the SAML flow.
 
-`Hosted Service URL`:&nbsp;&nbsp; **https://jackson-demo.boxyhq.com**  
-`client_id`: &nbsp;&nbsp; **tenant=boxyhq.com&product=saml-demo.boxyhq.com**
+```bash
+Jackson Service : https://jackson-demo.boxyhq.com  
+client_id       : tenant=boxyhq.com&product=saml-demo.boxyhq.com
+```
 
-We'll be using the above pre-configured tenant/product pointing to https://mocksaml.com as the IdP.
+We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api) tenant/product pointing to https://mocksaml.com as the IdP.
 
 #### Routes
 
