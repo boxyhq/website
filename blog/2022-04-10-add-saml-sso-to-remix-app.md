@@ -21,7 +21,7 @@ Run `create-remix`. You can go with the Remix App Server as the deployment targe
 npx create-remix@latest
 ```
 
-We are going to need a few dependencies along the way. First, we need the [`remix-auth`](https://github.com/sergiodxa/remix-auth) which exposes the API (login,logout) for authentication. Second one is the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package exposing the `BoxyHQSAMLStrategy`. 
+We are going to need a few dependencies along the way. First, we need the [`remix-auth`](https://github.com/sergiodxa/remix-auth) package that exposes the API for login and logout. Second one is the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package exposing the `BoxyHQSAMLStrategy`. 
 <!-- This package is a wrapper around [`remix-auth-oauth2`](https://github.com/sergiodxa/remix-auth-oauth2), enabling us to set the tenant/product in a multi-tenant app.  -->
 
 ```bash
@@ -30,17 +30,14 @@ npm i remix-auth @boxyhq/remix-auth-saml
 
 ## Authenticator
 
-Next we need an `Authenticator` instance from `remix-auth`.  
-Before that just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth#overview).
+Next, we need an `Authenticator` instance from `remix-auth`.Before we go any further, just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth#overview).
 
 > Remix Auth is a complete open-source authentication solution for Remix.run applications.
-
 > Heavily inspired by Passport.js, but completely rewrote it from scratch to work on top of the Web Fetch API. Remix Auth can be dropped in to any Remix-based application with minimal setup.
-
 > As with Passport.js, it uses the strategy pattern to support the different authentication flows. Each strategy is published individually as a separate npm package.
 
-
-For strategy, we'll be using the `BoxyHQSAMLStrategy` from `remix-auth-saml` installed in the previous step.
+The `Authenticator` needs a sessionStorage instance to store the logged in user.For this we can rely on the `createCookieSessionStorage` from remix. 
+<!-- For strategy, we'll be using the `BoxyHQSAMLStrategy` from `remix-auth-saml` installed in the previous step. -->
 
 Create two files under `app` directory:    
 ->  `sessions.server.ts` for `sessionStorage`.  
