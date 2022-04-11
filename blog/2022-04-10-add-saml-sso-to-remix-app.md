@@ -27,6 +27,19 @@ We are going to need a few dependencies along the way. First, let's install the 
 npm i @boxyhq/remix-auth-saml
 ```
 
+## Authenticator
+
+Next we need an `Authenticator` instance from `remix-auth`.  
+Before that just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth).
+
+> Remix Auth is a complete open-source authentication solution for Remix.run applications.
+
+> Heavily inspired by Passport.js, but completely rewrote it from scratch to work on top of the Web Fetch API. Remix Auth can be dropped in to any Remix-based application with minimal setup.
+
+> As with Passport.js, it uses the strategy pattern to support the different authentication flows. Each strategy is published individually as a separate npm package.
+
+
+
 ## SAML Service Provider
 
 To get saml working, we need a service provider (SP) that constructs the SAML request, redirects the app to Identity Provider (IdP), and parses the SAML response coming from the IdP. 
