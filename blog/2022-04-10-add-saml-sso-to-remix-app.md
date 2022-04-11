@@ -46,11 +46,26 @@ To get saml working, we need a service provider (SP) that constructs the SAML re
 
 > 💡 SAML uses the front-channel or browser to send/receive the request/response XML.
 
-It turns out you don't need to do the heavy lifting (of building a full blown SP) yourself 🤗, We've covered it for you with an open-source npm module [SAML Jackson](https://github.com/boxyhq/jackson). With jackson you've got 2 options up your sleeve.
+It turns out you don't need to do the heavy lifting (of building a full-blown SP) yourself 🤗. We've got it covered with an open-source npm module [SAML Jackson](https://github.com/boxyhq/jackson). With "SAML Jackson" you've got 2 options up your sleeve.
 
-1. Host SP as a separate service.
-2. Embed SP functionality on top of remix resource routes.
+1. Host SAML SP as a separate service.
+2. Embed SAML SP functionality leveraging remix resource routes.
 
-### Hosted SAML Service Provider
+### Host SAML SP as a separate service
+
+#### Setup
+
+To get going, you'll need a hosted instance of "SAML Jackson".  
+Refer the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy Jackson into your favorite hosting provider.  
+Otherwise fret not 🤗, we have a hosted instance (details below) of jackson which you can readily use to test out the SAML flow.
+
+`Hosted Service URL`:&nbsp;&nbsp; **https://jackson-demo.boxyhq.com**  
+`client_id`: &nbsp;&nbsp; **tenant=boxyhq.com&product=saml-demo.boxyhq.com**
+
+We'll be using the above pre-configured tenant/product pointing to https://mocksaml.com as the IdP.
+
+#### Routes
+
+
 
 ### Embed SAML Service Provider functionality
