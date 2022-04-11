@@ -21,16 +21,17 @@ Run `create-remix`. You can go with the Remix App Server as the deployment targe
 npx create-remix@latest
 ```
 
-We are going to need a few dependencies along the way. First, let's install the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package. This package is a wrapper around [`remix-auth-oauth2`](https://github.com/sergiodxa/remix-auth-oauth2), enabling us to set the tenant/product in a multi-tenant app. 
+We are going to need a few dependencies along the way. First, we need the [`remix-auth`](https://github.com/sergiodxa/remix-auth) which exposes the API (login,logout) for authentication. Second one is the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package exposing the `BoxyHQSAMLStrategy`. 
+<!-- This package is a wrapper around [`remix-auth-oauth2`](https://github.com/sergiodxa/remix-auth-oauth2), enabling us to set the tenant/product in a multi-tenant app.  -->
 
 ```bash
-npm i @boxyhq/remix-auth-saml
+npm i remix-auth @boxyhq/remix-auth-saml
 ```
 
 ## Authenticator
 
 Next we need an `Authenticator` instance from `remix-auth`.  
-Before that just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth).
+Before that just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth#overview).
 
 > Remix Auth is a complete open-source authentication solution for Remix.run applications.
 
@@ -39,10 +40,84 @@ Before that just a small primer on [remix-auth](https://github.com/sergiodxa/rem
 > As with Passport.js, it uses the strategy pattern to support the different authentication flows. Each strategy is published individually as a separate npm package.
 
 
+For strategy, we'll be using the `BoxyHQSAMLStrategy` from `remix-auth-saml` installed in the previous step.
+
+Create two files under `app` directory:    
+->  `sessions.server.ts` for `sessionStorage`.  
+->  `auth.server.ts` for `Authenticator`.
+
+> sessions.server.ts:
+> ```typescript
+> import { createCookieSessionStorage } from "remix";
+>
+> const sessionStorage = createCookieSessionStorage({
+>   cookie: {
+>     name: "__session",
+>     httpOnly: true,
+>     path: "/",
+>     sameSite: "lax",
+>     secrets: process.env.COOKIE_SECRETS!.split(","),
+>     secure: process.env.NODE_ENV === "production",
+>   },
+> });
+> 
+> const { getSession, commitSession, destroySession } = sessionStorage;
+> const JACKSON_ERROR_COOKIE_KEY = "jackson_error";
+> 
+> export default sessionStorage;
+> export { getSession, commitSession, destroySession, JACKSON_ERROR_COOKIE_KEY };```
+
+
+> auth.server.ts:
+> ```typescript
+> import { Authenticator } from "remix-auth";
+> import {
+>   BoxyHQSAMLStrategy,
+>   type BoxyHQSAMLProfile,
+> } from "@boxyhq/remix-auth-saml";
+> import invariant from "tiny-invariant";
+> import sessionStorage from "./sessions.server";
+> 
+> invariant(process.env.BASE_URL, "Expected BASE_URL to be set in env");
+> invariant(
+>   process.env.BOXYHQSAML_ISSUER,
+>   "Expected BOXYHQSAML_ISSUER to be set in env"
+> );
+> 
+> const BASE_URL = process.env.BASE_URL;
+> const BOXYHQSAML_ISSUER = process.env.BOXYHQSAML_ISSUER;
+> 
+> let auth: Authenticator;
+> declare global {
+>   var __auth: Authenticator | undefined;
+> }
+> 
+> function createAuthenticator() {
+>   const auth = new Authenticator<BoxyHQSAMLProfile>(sessionStorage);
+> 
+>   // Strategy use for the hosted saml service provider goes here
+>   
+>   // Strategy use for the embedded saml service provider goes here
+>   
+>   return auth;
+> }
+> 
+> if (process.env.NODE_ENV === "production") {
+>   auth = createAuthenticator();
+> } else {
+>   if (!global.__auth) {
+>     global.__auth = createAuthenticator();
+>   }
+>   auth = global.__auth;
+> }
+> 
+> export { auth };
+```
+
 
 ## SAML Service Provider
 
-To get saml working, we need a service provider (SP) that constructs the SAML request, redirects the app to Identity Provider (IdP), and parses the SAML response coming from the IdP. 
+To get SAML working, we need a service provider (SP) that constructs the SAML request, redirects the app to Identity Provider (IdP), and parses the SAML response coming from the IdP. 
 
 > 💡 SAML uses the front-channel or browser to send/receive the request/response XML.
 
@@ -56,8 +131,8 @@ It turns out you don't need to do the heavy lifting (of building a full-blown SP
 #### Setup
 
 To get going, you'll need a hosted instance of "SAML Jackson".  
-Refer the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy Jackson into your favorite hosting provider.  
-Otherwise fret not 🤗, we have a hosted instance (details below) of jackson which you can readily use to test out the SAML flow.
+Refer to the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy Jackson to your favorite hosting provider.  
+Otherwise, fret not 🤗, we have a hosted instance (details below) of `jackson`, that can be readily used to test out the SAML flow.
 
 `Hosted Service URL`:&nbsp;&nbsp; **https://jackson-demo.boxyhq.com**  
 `client_id`: &nbsp;&nbsp; **tenant=boxyhq.com&product=saml-demo.boxyhq.com**
