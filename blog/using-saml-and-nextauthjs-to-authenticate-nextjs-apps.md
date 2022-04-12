@@ -109,8 +109,8 @@ export default NextAuth({
   providers: [
     BoxyHQSAMLProvider({
       issuer: 'JACKSON_BASE_URL',
-      clientId: 'YOUR_CLIENT_ID',
-      clientSecret: 'YOUR_CLIENT_SECRET',
+      clientId: 'dummy',
+      clientSecret: 'dummy',
     }),
   ],
 });
@@ -118,9 +118,12 @@ export default NextAuth({
 
 The `issuer` should be the base URL to your Jackson server instance. For example, if you deployed the Jackson on Heroku, the `issuer` should be `https://<your-app-name>.herokuapp.com`. Don't add a trailing slash.
 
-Replace the `YOUR_CLIENT_ID` with `Client Id` copied from Jackson Admin UI.
+```
+clientId: 'dummy',
+clientSecret: 'dummy'
+```
 
-Replace the `YOUR_CLIENT_SECRET` with `Client Secret` copied from Jackson Admin UI.
+The `dummy` here is necessary since we'll pass `tenant` and `product` as custom attributes on the client-side.
 
 And that's it! You've now setup the server side of your Next.js application.
 
@@ -154,7 +157,7 @@ export default MyApp;
 
 SAML login requires a configuration for every tenant of yours. One common method is to use the domain for an email address to figure out which tenant they belong to. You can also use a unique tenant ID (string) for this, typically some kind of account or organization ID.
 
-Open the login page at http://localhost:3000/login
+Open the login page at [http://localhost:3000/login](http://localhost:3000/login)
 
 You'll see a input field for email with a button. The users can enter their tenant identifier (in this case the domain name), and Jackson will redirect the users to their IdP.
 
@@ -163,25 +166,15 @@ Let's wire up the NextAuth on the client side.
 Open the `pages/login.tsx` and make the following changes.
 
 ```javascript
-import { signIn } from "next-auth/react";
-
-
-const handleSignin = (event) => {
-    //event.preventDefault();
-    //signIn("boxyhq-saml", {}, { tenant, product });
-}
-
-...
+// pages/login.tsx
 ```
 
-Instances of useSession will then have access to the session data and status.
+Instances of `useSession` will then have access to the session data and status.
 
 ## Display User Profile
 
-The useSession() React Hook in the NextAuth.js client is the easiest way to check if someone is signed in.
+The `useSession()` React Hook in the NextAuth.js client is the easiest way to check if someone is signed in.
 
 ```javascript
-import { useSession } from 'next-auth/react';
-
-// {session.user}
+// pages/me.tsx
 ```
