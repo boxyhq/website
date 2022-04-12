@@ -122,7 +122,7 @@ To get SAML working, we need a service provider (SP) that constructs the SAML re
 It turns out you don't need to do the heavy lifting (of building a full-blown SP) yourself 🤗. We've got it covered with an open-source npm module [SAML Jackson](https://github.com/boxyhq/jackson). With "SAML Jackson" you've got 2 options up your sleeve.
 
 1. [Host SAML SP as a separate service](#host-saml-sp-as-a-separate-service).
-2. [Embed SAML SP functionality leveraging remix resource routes](#embed-saml-service-provider-functionality).
+2. [Embed SAML SP functionality leveraging remix resource routes](#embed-saml-sp).
 
 ### Host SAML SP as a separate service
 
@@ -209,10 +209,24 @@ Create the following files under `app/routes`:
 > };
 > ```
 
-### Embed SAML Service Provider functionality
+### Embed SAML SP
 
 #### Setup
 
+We'll be using SAML Jackson npm to setup some API routes (resource routes in remix terminology) to handle the SAML SP flows.
+
+Install `@boxyhq/saml-jackson` first:
+
+```bash
+npm i @boxyhq/saml-jackson
+```
+
+Next, create the api files:
+
+```bash
+app/routes $ mkdir api && cd api
+routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
+```
 #### Strategy usage
 
 
