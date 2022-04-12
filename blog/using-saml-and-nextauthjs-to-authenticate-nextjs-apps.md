@@ -29,39 +29,25 @@ To follow along with this article, you’ll need the following:
 SAML Jackson comes with two installation options.
 
 1. Install SAML Jackson into your Node.js based app as an NPM package
-2. Install SAML Jackson as a standalone service. 
+2. Install SAML Jackson as a standalone service.
+
+Before you begin this article, you should have Jackson installed on your server. You can learn how to install SAML Jackson by following our guide on [Getting Started with SAML Jackson on Heroku](/)
 
 The advantage of using Jackson as a standalone service is that you can use Jackson with any standard OAuth 2.0 supported library in any language. Jackson has been designed to abstract the SAML login flow as a pure OAuth 2.0 flow.
 
-[TODO]
-
-https://{}/api/hello
-
-Now we've everything ready, let's move to the next step.
-
-[How to install SAML Jackson as a service - Use the one-click deploy button]
-
 ## Add SAML Config
 
-We'll use [Mock SAML](https://mocksaml.com/), a free SAML 2.0 Identity Provider (IdP) for testing SAML SSO integrations. You can follow this tutorial with any other IdPs (Auth0, Okta, etc) of your choice.
+[TODO: Add a notes on how to add SAML Config]
 
-Go to "SAML Configurations"
-Click the button "New"
-Give your new configuration a name
-Add your tenant (Eg: boxyhq.com) and product (Eg: flex)
-Allowed redirect URLs
-Default redirect URL
-Raw IdP XML
+## Project Setup
 
-## Project Setup 
+We'll use our [Next.js boilerplate](https://github.com/boxyhq/jackson-nextjs) and integrate the SAML SSO into it.
 
-We'll use a Next.js boilerplate and integrate the SAML SSO into it.
+The Next.js boilerplate comes with 3 default routes:
 
-The Next.js boilerplate comes with [3 default routes](https://github.com/boxyhq/jackson-nextjs/tree/main/pages):
-
-- index.tsx: A static home page
-- login.tsx: A simple login page
-- me.tsx: A route to display user profile
+- `index.tsx` : A static home page
+- `login.tsx` : A simple login page
+- `me.tsx` : A route to display user profile
 
 Launch a terminal and clone the Github repo:
 
@@ -85,7 +71,7 @@ Start the application to see the welcome screen:
 npm run dev
 ```
 
-[ADD: Welcome screen screenshot]
+![img alt](/img/blog/jackson-nextjs-nextauth/nextjs-jackson-home.png)
 
 ## Install NextAuth.js
 
@@ -97,30 +83,71 @@ npm install --save next-auth
 
 ## Configure BoxyHQ SAML Provider
 
-To add NextAuth.js to your app, create a file called [...nextauth].js in pages/api/auth. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations.
+To add NextAuth.js to your app, create a file called `[...nextauth].ts` in `pages/api/auth`. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations.
 
 ```javascript
-import NextAuth from "next-auth"
+// pages/api/auth/[...nextauth].ts
+
+import NextAuth from 'next-auth';
 
 export default NextAuth({
   providers: [
+    // We will add the BoxyHQ SAML Provider here in the next step
   ],
-})
+});
 ```
 
 Now let's configure the [BoxyHQ SAML Provider](https://next-auth.js.org/providers/boxyhq-saml).
 
 ```javascript
-import NextAuth from "next-auth"
-import BoxyHQSAMLProvider from "next-auth/providers/boxyhq-saml"
+// pages/api/auth/[...nextauth].ts
 
-providers: [
-  BoxyHQSAMLProvider({
-    issuer: "http://localhost:5225",
-    clientId: "dummy", // The dummy here is necessary since we'll pass tenant and product custom attributes in the client code
-    clientSecret: "dummy", // The dummy here is necessary since we'll pass tenant and product custom attributes in the client code
-  })
+import NextAuth from 'next-auth';
+import BoxyHQSAMLProvider from 'next-auth/providers/boxyhq-saml';
+
+export default NextAuth({
+  providers: [
+    BoxyHQSAMLProvider({
+      issuer: 'JACKSON_BASE_URL',
+      clientId: 'YOUR_CLIENT_ID',
+      clientSecret: 'YOUR_CLIENT_SECRET',
+    }),
+  ],
+});
+```
+
+The `issuer` should be the base URL to your Jackson server instance. For example, if you deployed the Jackson on Heroku, the `issuer` should be `https://<your-app-name>.herokuapp.com`. Don't add a trailing slash.
+
+Replace the `YOUR_CLIENT_ID` with `Client Id` copied from Jackson Admin UI.
+
+Replace the `YOUR_CLIENT_SECRET` with `Client Secret` copied from Jackson Admin UI.
+
+And that's it! You've now setup the server side of your Next.js application.
+
+## Configure Shared Session
+
+To setup the client side, wrap your `pages/_app.ts` component in the `SessionProvider` component.
+
+This allows other components that call `useSession()` anywhere in your application to access the `session` object.
+
+```javascript
+// pages/_app.ts
+
+import type { AppProps } from 'next/app';
+import Navbar from '../components/Navbar';
+import '../styles/globals.css';
+import { SessionProvider } from 'next-auth/react';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <SessionProvider session={pageProps.session}>
+      <Navbar />
+      <Component {...pageProps} />
+    </SessionProvider>
+  );
 }
+
+export default MyApp;
 ```
 
 ## Add Login Page
@@ -146,28 +173,6 @@ const handleSignin = (event) => {
 
 ...
 ```
-## Configure Shared Session
-
-To be able to use useSession first you'll need to expose the session context, <SessionProvider />, at the top level of your application:
-
-```javascript
-
-// pages/_app.ts
-
-import { SessionProvider } from "next-auth/react"
-
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
-  return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
-  )
-}
-
-```
 
 Instances of useSession will then have access to the session data and status.
 
@@ -176,9 +181,7 @@ Instances of useSession will then have access to the session data and status.
 The useSession() React Hook in the NextAuth.js client is the easiest way to check if someone is signed in.
 
 ```javascript
-import { useSession } from "next-auth/react"
+import { useSession } from 'next-auth/react';
 
-
-// {session.user} 
-
+// {session.user}
 ```
