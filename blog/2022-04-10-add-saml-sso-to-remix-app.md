@@ -165,10 +165,11 @@ Use the strategy with the `Authenticator` as shown below. Point the `issuer` to 
 We need 2 routes:   
 ~> [/auth/saml](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx) - Action handler for login  
 ~> [/auth/saml/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx) - Loader which handles the callback from the IdP  
+
 Create the following files under `app/routes`:  
 
 
-> **auth.saml.tsx**
+**auth.saml.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx**
 > ```typescript
 > ...
 > export const action: ActionFunction = async ({ request }) => {
@@ -192,11 +193,9 @@ Create the following files under `app/routes`:
 > };
 > ``` 
 
-> **auth.saml.callback.tsx**
+**auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx**
 > ```typescript
-> import type { LoaderFunction } from "remix";
-> import { auth } from "~/auth.server";
-> 
+> ...
 > export const loader: LoaderFunction = async ({ request, params }) => {
 >   return auth.authenticate("boxyhq-saml", request, {
 >     successRedirect: "/private",
@@ -217,12 +216,19 @@ Install `@boxyhq/saml-jackson` first:
 npm i @boxyhq/saml-jackson
 ```
 
-Setup `JacksonProvider`. Calling this function returns the controllers (`oauthController` and `apiController`) needed to orchestrate the SAML flow. Create the following file under `app`:    
-> **https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts**
-> 
-> **auth.jackson.server.ts:**
-> 
+Setup `JacksonProvider`. Calling this function returns the controllers (`oauthController` and `apiController`) needed to orchestrate the SAML flow. Create the following file under `app`:  
+
+**auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts**
+
 > ```typescript
+> 
+> const opts =  {
+>  ...
+>  // clientSecretVerifier will be checked when requesting token
+>  // 👉🏻 https://boxyhq.com/docs/jackson/deploy/env-variables#client_secret_verifier
+>  clientSecretVerifier: process.env.CLIENT_SECRET_VERIFIER 
+>  ...
+> }
 > 
 > ...
 > 
@@ -265,9 +271,8 @@ Next, create the api files for [OAuth2.0 flow](https://boxyhq.com/docs/jackson/s
 app/routes $ mkdir api && cd api
 routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
 ```
-> **https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/oauth.%24slug.ts**
-> 
-> **oauth.$slug.ts**
+
+ **oauth.$slug.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/oauth.%24slug.ts**
 > ```typescript
 >
 > ...
@@ -342,9 +347,8 @@ routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
 > };
 > ```
 
-> **https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/v1.saml.config.ts**
-> 
-> **v1.saml.config.ts**
+**v1.saml.config.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/v1.saml.config.ts**
+
 > ```typescript
 >  export const loader: LoaderFunction = async ({ request }) => {
 >   const url = new URL(request.url);
@@ -387,5 +391,68 @@ routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
 
 #### Strategy usage
 
+**auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.server.ts**
+
+> ```typescript
+>  // issuer could be set from env
+>  const BOXYHQSAML_ISSUER = process.env.BOXYHQSAML_ISSUER;
+>  // Strategy use for the embedded saml service provider goes here
+>  auth.use(
+>    new BoxyHQSAMLStrategy(
+>      {
+>        issuer: BOXYHQSAML_ISSUER, //same as the APP URL
+>        clientID: "dummy",
+>        clientSecret: process.env.CLIENT_SECRET_VERIFIER || "dummy",
+>        callbackURL: new URL("/auth/saml/embed/callback", BASE_URL).toString(),
+>      },
+>      async ({ profile }) => {
+>        return profile;
+>      }
+>    ),
+>    "boxyhq-saml-embed" // use a name here when using the same strategy again
+>  );
+> ```
 
 #### Routes
+
+We need 2 routes:   
+~> [/auth/saml/embed](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx) - Action handler for login  
+~> [/auth/saml/embed/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx) - Loader which handles the callback from the IdP  
+
+Create the following files under `app/routes`:  
+
+**auth.saml.embed.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx &nbsp;**
+
+> ```typescript
+> ...
+> export const action: ActionFunction = async ({ request }) => {
+>   const formData = await request.formData();
+>   const email = formData.get("email");
+>   const product = formData.get("product");
+> 
+>   ... // Add some validation logic
+> 
+>   // extracting the tenant from email is one way to set it
+>   const tenant = email.split("@")[1];
+> 
+>   return await auth.authenticate("boxyhq-saml-embed", request, {
+>     successRedirect: "/private",
+>     failureRedirect: "/login",
+>     context: {
+>       clientID: `tenant=${tenant}&product=${product}`,
+>       clientSecret: process.env.CLIENT_SECRET_VERIFIER || "dummy",
+>     },
+>   });
+> };
+> ```
+
+**auth.saml.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx &nbsp;**
+> ```typescript
+> ...
+> export const loader: LoaderFunction = async ({ request, params }) => {
+>   return auth.authenticate("boxyhq-saml-embed", request, {
+>     successRedirect: "/private",
+>     failureRedirect: "/login",
+>   });
+> };
+> ```
