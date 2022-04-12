@@ -62,7 +62,8 @@ Create two files under `app` directory:
 > const JACKSON_ERROR_COOKIE_KEY = "jackson_error";
 > 
 > export default sessionStorage;
-> export { getSession, commitSession, destroySession, JACKSON_ERROR_COOKIE_KEY };```
+> export { getSession, commitSession, destroySession, JACKSON_ERROR_COOKIE_KEY };
+> ```
 
 
 > auth.server.ts:
