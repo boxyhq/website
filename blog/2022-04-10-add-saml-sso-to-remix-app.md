@@ -130,7 +130,7 @@ It turns out you don't need to do the heavy lifting (of building a full-blown SP
 
 To get going, you'll need a hosted instance of "SAML Jackson".  
 Refer to the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy `Jackson` to your favorite hosting provider.  
-Otherwise, fret not 🤗, we have a hosted instance (details below) of `Jackson`, that can be readily used to test out the SAML flow.
+Otherwise, fret not 🤗, we have a hosted instance (details below) of `Jackson`, that can be readily used without any configuration.
 
 ```bash
 Jackson Service : https://jackson-demo.boxyhq.com  
@@ -221,12 +221,174 @@ Install `@boxyhq/saml-jackson` first:
 npm i @boxyhq/saml-jackson
 ```
 
-Next, create the api files:
+Setup `JacksonProvider`. Calling this function returns the controllers (`oauthController` and `apiController`) needed to orchestrate the SAML flow. Create the following file under `app`:    
+> **https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts**
+> 
+> **auth.jackson.server.ts: **
+> 
+> ```typescript
+> 
+> ...
+> 
+> async function JacksonProvider({
+>   appBaseUrl,
+> }: {
+>   appBaseUrl: string;
+> }): Promise<{
+>   apiController: IAPIController;
+>   oauthController: IOAuthController;
+> }> {
+>   const _opts = { ...opts, externalUrl: appBaseUrl, samlAudience: appBaseUrl };
+>   // this is needed because in development we don't want to restart
+>   // the server with every change, but we want to make sure we don't
+>   // create a new connection to the DB with every change either.
+>   if (process.env.NODE_ENV === "production") {
+>     const controllers = await jackson(_opts);
+>     apiController = controllers.apiController;
+>     oauthController = controllers.oauthController;
+>   } else {
+>     if (!global.__apiController && !global.__oauthController) {
+>       const controllers = await jackson(_opts);
+>       global.__apiController = controllers.apiController;
+>       global.__oauthController = controllers.oauthController;
+>     }
+>     apiController = global.__apiController;
+>     oauthController = global.__oauthController;
+>   }
+> 
+>   return { apiController, oauthController };
+> }
+>
+> ...
+> 
+> ```
+
+Next, create the api files for [OAuth2.0 flow](https://boxyhq.com/docs/jackson/saml-flow#3-oauth-20-flow) and [SAML Configuration](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api):
 
 ```bash
 app/routes $ mkdir api && cd api
 routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
 ```
+> **https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/oauth.%24slug.ts**
+> 
+> **oauth.$slug.ts**
+> ```typescript
+>
+> ...
+>  
+> // Handles GET /api/oauth/authorize, GET /api/oauth/userinfo
+> export const loader: LoaderFunction = async ({ params, request }) => {
+>
+>   ... // Some validation logic
+>   const operation = params.slug;
+>   const url = new URL(request.url);
+> 
+>   const { oauthController } = await JacksonProvider({
+>     appBaseUrl: url.origin,
+>   });
+> 
+>   // rightmost query param will win in case of multiple ones with same name
+>   const queryParams = Object.fromEntries(url.searchParams.entries());
+> 
+>   switch (operation) {
+>     case "authorize": {
+>       ...
+>       try {
+>         const { redirect_url, authorize_form } =
+>           await oauthController.authorize(
+>             queryParams as unknown as OAuthReqBody
+>           );
+>         ...
+>       } catch (err: any) {
+>         ... // error handling
+>       }
+>     }
+>     case "userinfo": {
+>      ... // token validation
+>       try {
+>         const profile = await oauthController.userInfo(token);
+>         return json(profile);
+>       } catch (error: any) {
+>         ... // error handling
+>       }
+>     }
+>   }
+> };
+>
+> // Handles POST /api/oauth/saml, POST /api/oauth/token
+> export const action: ActionFunction = async ({ params, request }) => {
+> 
+>   ... // Some validation logic
+>   const operation = params.slug;
+>   const url = new URL(request.url);
+> 
+>   const { oauthController } = await JacksonProvider({
+>     appBaseUrl: url.origin,
+>   });
+>   switch (operation) {
+>     case "saml": {
+>       try {
+>         const { redirect_url } = await oauthController.samlResponse(body);
+>         return redirect(redirect_url, 302);
+>       } catch (err: any) {
+>         ... // error handling
+>       }
+>     }
+>     case "token": {
+>       try {
+>         const tokenRes = await oauthController.token(body);
+>         return json(tokenRes);
+>       } catch (error: any) {
+>         ... // error handling
+>       }
+>     }
+>   }
+> };
+> ```
+
+> **https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/v1.saml.config.ts**
+> 
+> **v1.saml.config.ts**
+> ```typescript
+>  export const loader: LoaderFunction = async ({ request }) => {
+>   const url = new URL(request.url);
+>   const queryParams = Object.fromEntries(
+>     url.searchParams.entries()
+>   ) as unknown as { clientID?: string; tenant?: string; product?: string };
+>   ...// Validate apiKey
+>   const { apiController } = await JacksonProvider({ appBaseUrl: url.origin });
+> 
+>   try {
+>     return json(await apiController.getConfig(queryParams));
+>   } catch (error: any) {
+>     ... // error handling
+>   }
+> };
+> 
+> export const action: ActionFunction = async ({ request }) => {
+>   const url = new URL(request.url);
+>   const contentType = request.headers.get("Content-Type");
+>   ... // Validate body,apiKey
+>   const { apiController } = await JacksonProvider({ appBaseUrl: url.origin });
+> 
+>   try {
+>     switch (request.method) {
+>       case "POST":
+>         return json(await apiController.config(body));
+>       case "PATCH":
+>         await apiController.updateConfig(body);
+>         return new Response(null, { status: 204 });
+>       case "DELETE":
+>         await apiController.deleteConfig(body);
+>         return new Response(null, { status: 204 });
+>     }
+>   } catch (error: any) {
+>     ... // error handling
+>   }
+> };
+> ```
+
+
 #### Strategy usage
 
 
