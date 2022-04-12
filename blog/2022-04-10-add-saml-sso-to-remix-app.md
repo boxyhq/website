@@ -40,8 +40,8 @@ The `Authenticator` needs a sessionStorage instance to store the logged-in user.
 <!-- For strategy, we'll be using the `BoxyHQSAMLStrategy` from `remix-auth-saml` installed in the previous step. -->
 
 Create two files under `app` directory:    
-->  `sessions.server.ts` for `sessionStorage`.  
-->  `auth.server.ts` for `Authenticator`.
+~>  `sessions.server.ts` for `sessionStorage`.  
+~>  `auth.server.ts` for `Authenticator`.
 
 > sessions.server.ts:
 > ```typescript
@@ -141,7 +141,7 @@ We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-f
 
 #### Strategy usage
 
-Use the strategy with the `Authenticator` as shown below. The clientID/Secret values are expected to be set dynamically from the client side. For now set them to the value `dummy`
+Use the strategy with the `Authenticator` as shown below. Point the `issuer` to the jackson-demo url. The clientID/Secret values are expected to be set dynamically from the client side. For now set them to the value `dummy`.
 
 > **auth.server.ts**
 > ```typescript
@@ -210,3 +210,10 @@ Create the following files under `app/routes`:
 > ```
 
 ### Embed SAML Service Provider functionality
+
+#### Setup
+
+#### Strategy usage
+
+
+#### Routes
