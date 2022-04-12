@@ -30,13 +30,13 @@ npm i remix-auth @boxyhq/remix-auth-saml
 
 ## Authenticator
 
-Next, we need an `Authenticator` instance from `remix-auth`.Before we go any further, just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth#overview).
+Next, we need an `Authenticator` instance from `remix-auth`. Before we go any further, just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth#overview).
 
 > Remix Auth is a complete open-source authentication solution for Remix.run applications.
 > Heavily inspired by Passport.js, but completely rewrote it from scratch to work on top of the Web Fetch API. Remix Auth can be dropped in to any Remix-based application with minimal setup.
 > As with Passport.js, it uses the strategy pattern to support the different authentication flows. Each strategy is published individually as a separate npm package.
 
-The `Authenticator` needs a sessionStorage instance to store the logged in user.For this we can rely on the `createCookieSessionStorage` from remix. 
+The `Authenticator` needs a sessionStorage instance to store the logged-in user. For this, we can rely on the `createCookieSessionStorage` from remix. 
 <!-- For strategy, we'll be using the `BoxyHQSAMLStrategy` from `remix-auth-saml` installed in the previous step. -->
 
 Create two files under `app` directory:    
