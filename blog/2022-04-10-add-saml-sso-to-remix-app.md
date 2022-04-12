@@ -43,7 +43,7 @@ Create two files under `app` directory:
 ~>  `sessions.server.ts` for `sessionStorage`.  
 ~>  `auth.server.ts` for `Authenticator`.
 
-> sessions.server.ts:
+> **sessions.server.ts:**
 > ```typescript
 > import { createCookieSessionStorage } from "remix";
 >
@@ -66,7 +66,7 @@ Create two files under `app` directory:
 > ```
 
 
-> auth.server.ts:
+> **auth.server.ts:**
 > ```typescript
 > import { Authenticator } from "remix-auth";
 > import {
@@ -224,7 +224,7 @@ npm i @boxyhq/saml-jackson
 Setup `JacksonProvider`. Calling this function returns the controllers (`oauthController` and `apiController`) needed to orchestrate the SAML flow. Create the following file under `app`:    
 > **https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts**
 > 
-> **auth.jackson.server.ts: **
+> **auth.jackson.server.ts:**
 > 
 > ```typescript
 > 
