@@ -141,6 +141,26 @@ We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-f
 
 #### Strategy usage
 
+Use the strategy with the `Authenticator` as shown below. The clientID/Secret values are expected to be set dynamically from the client side. For now set them to the value `dummy`
+
+> **auth.server.ts**
+> ```typescript
+> // Strategy use for the hosted saml service provider goes here
+>  auth.use(
+>    new BoxyHQSAMLStrategy(
+>      {
+>        issuer: "https://jackson-demo.boxyhq.com",
+>        clientID: "dummy",
+>        clientSecret: "dummy",
+>        callbackURL: new URL("/auth/saml/callback", BASE_URL).toString(),
+>      },
+>      async ({ profile }) => {
+>        return profile;
+>      }
+>    )
+>  );
+> ```
+
 #### Routes
 We need 2 routes:   
 ~> [/auth/saml](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx) - Action handler for login  
