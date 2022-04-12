@@ -135,7 +135,7 @@ router.delete('/api/v1/saml/config', async (req, res) => {
 
 The OAuth flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user.
 
-[API Reference](../saml-flow.md#4-authorize)
+[API Reference](../saml-flow.md#31-authorize)
 
 ```javascript
 // OAuth 2.0 flow
@@ -178,7 +178,7 @@ router.post('/oauth/saml', async (req, res) => {
 
 The code can then be exchanged for a token by making the following request. You should validate that the state matches the one you sent in the authorize request.
 
-[API Reference](../saml-flow.md#5-code-exchange)
+[API Reference](../saml-flow.md#32-code-exchange)
 
 ```javascript
 router.post('/oauth/token', cors(), async (req, res) => {
@@ -198,7 +198,7 @@ router.post('/oauth/token', cors(), async (req, res) => {
 
 The short-lived access token can now be used to request the user's profile.
 
-[API Reference](../saml-flow.md#6-profile-request)
+[API Reference](../saml-flow.md#33-profile-request)
 
 ```javascript
 router.get('/oauth/userinfo', async (req, res) => {

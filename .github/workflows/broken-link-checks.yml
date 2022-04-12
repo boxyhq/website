@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/broken-link-checks.yml
+  schedule:
+    - cron: '0 0 * * 0' # Run every Sunday at 00:00
+
+name: Check broken links
+jobs:
+  broken-link-checker:
+    name: Check broken links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: https://boxyhq.com
+          cmd_params: '--buffer-size=8192 --max-connections=10 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org)" --skip-tls-verification'
