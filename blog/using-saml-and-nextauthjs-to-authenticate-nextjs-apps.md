@@ -123,8 +123,62 @@ providers: [
 }
 ```
 
-## Add Login Routes
+## Add Login Page
 
-## Add Protected Routes
+SAML login requires a configuration for every tenant of yours. One common method is to use the domain for an email address to figure out which tenant they belong to. You can also use a unique tenant ID (string) for this, typically some kind of account or organization ID.
+
+Open the login page at http://localhost:3000/login
+
+You'll see a input field for email with a button. The users can enter their tenant identifier (in this case the domain name), and Jackson will redirect the users to their IdP.
+
+Let's wire up the NextAuth on the client side.
+
+Open the `pages/login.tsx` and make the following changes.
+
+```javascript
+import { signIn } from "next-auth/react";
+
+
+const handleSignin = (event) => {
+    //event.preventDefault();
+    //signIn("boxyhq-saml", {}, { tenant, product });
+}
+
+...
+```
+## Configure Shared Session
+
+To be able to use useSession first you'll need to expose the session context, <SessionProvider />, at the top level of your application:
+
+```javascript
+
+// pages/_app.ts
+
+import { SessionProvider } from "next-auth/react"
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  )
+}
+
+```
+
+Instances of useSession will then have access to the session data and status.
 
 ## Display User Profile
+
+The useSession() React Hook in the NextAuth.js client is the easiest way to check if someone is signed in.
+
+```javascript
+import { useSession } from "next-auth/react"
+
+
+// {session.user} 
+
+```
