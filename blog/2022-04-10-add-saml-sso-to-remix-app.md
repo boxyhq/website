@@ -21,7 +21,7 @@ Run `create-remix`. You can go with the Remix App Server as the deployment targe
 npx create-remix@latest
 ```
 
-We are going to need a few dependencies along the way. First, we need the [`remix-auth`](https://github.com/sergiodxa/remix-auth) package that exposes the API for login and logout. Second one is the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package exposing the `BoxyHQSAMLStrategy`. 
+We are going to need a few dependencies along the way. First, we need the [`remix-auth`](https://github.com/sergiodxa/remix-auth) package for the [`Authenticator`](#authenticator). Second one is the [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) package exposing the `BoxyHQSAMLStrategy`. 
 <!-- This package is a wrapper around [`remix-auth-oauth2`](https://github.com/sergiodxa/remix-auth-oauth2), enabling us to set the tenant/product in a multi-tenant app.  -->
 
 ```bash
@@ -30,7 +30,7 @@ npm i remix-auth @boxyhq/remix-auth-saml
 
 ## Authenticator
 
-Next, we need an `Authenticator` instance from `remix-auth`. Before we go any further, just a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth#overview).
+Next, we need an `Authenticator` instance from `remix-auth`. `Authenticator` exposes the API for login and logout. Before we go any further, let's do a small primer on [remix-auth](https://github.com/sergiodxa/remix-auth#overview).
 
 > Remix Auth is a complete open-source authentication solution for Remix.run applications.
 > Heavily inspired by Passport.js, but completely rewrote it from scratch to work on top of the Web Fetch API. Remix Auth can be dropped in to any Remix-based application with minimal setup.
@@ -138,8 +138,54 @@ client_id       : tenant=boxyhq.com&product=saml-demo.boxyhq.com
 
 We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api) tenant/product pointing to https://mocksaml.com as the IdP.
 
+#### Strategy usage
+
 #### Routes
+We need 2 routes:   
+~> [/auth/saml](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx) - Action handler for login  
+~> [/auth/saml/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx) - Loader which handles the callback from the IdP  
+Create the following files under `app/routes`:  
 
 
+> **auth.saml.tsx**
+> ```typescript
+> import { ActionFunction, redirect } from "remix";
+> import { auth } from "~/auth.server";
+> import { commitSession, getSession } from "~/sessions.server";
+> import { validateEmail, validateProduct } from "~/utils.server";
+> 
+> export const action: ActionFunction = async ({ request }) => {
+>   const formData = await request.formData();
+>   const email = formData.get("email");
+>   const product = formData.get("product");
+> 
+>   ... // Add some validation logic
+> 
+>   // extracting the tenant from email is one way to set it
+>   const tenant = email.split("@")[1];
+> 
+>   return await auth.authenticate("boxyhq-saml", request, {
+>     successRedirect: "/private",
+>     failureRedirect: "/login",
+>     context: {
+>       clientID: `tenant=${tenant}&product=${product}`,
+>       clientSecret: "dummy",
+>     },
+>   });
+> };
+> ``` 
+
+> **auth.saml.callback.tsx**
+> ```typescript
+> import type { LoaderFunction } from "remix";
+> import { auth } from "~/auth.server";
+> 
+> export const loader: LoaderFunction = async ({ request, params }) => {
+>   return auth.authenticate("boxyhq-saml", request, {
+>     successRedirect: "/private",
+>     failureRedirect: "/login",
+>   });
+> };
+> ```
 
 ### Embed SAML Service Provider functionality
