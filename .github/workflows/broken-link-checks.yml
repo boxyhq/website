@@ -1,12 +1,8 @@
+name: Check broken links
 on:
-  workflow_dispatch:
-  push:
-    paths:
-      - .github/workflows/broken-link-checks.yml
   schedule:
     - cron: '0 0 * * *' # Run every day at 00:00
 
-name: Check broken links
 jobs:
   broken-link-checker:
     name: Check broken links
