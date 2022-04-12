@@ -170,11 +170,7 @@ Create the following files under `app/routes`:
 
 > **auth.saml.tsx**
 > ```typescript
-> import { ActionFunction, redirect } from "remix";
-> import { auth } from "~/auth.server";
-> import { commitSession, getSession } from "~/sessions.server";
-> import { validateEmail, validateProduct } from "~/utils.server";
-> 
+> ...
 > export const action: ActionFunction = async ({ request }) => {
 >   const formData = await request.formData();
 >   const email = formData.get("email");
