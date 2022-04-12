@@ -456,3 +456,11 @@ Create the following files under `app/routes`:
 >   });
 > };
 > ```
+
+## App routes
+
+### Login/Logout
+
+### Private
+
+### Error page
