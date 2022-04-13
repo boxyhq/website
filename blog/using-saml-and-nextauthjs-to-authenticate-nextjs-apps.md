@@ -95,6 +95,7 @@ export default NextAuth({
     // We will add the BoxyHQ SAML Provider here in the next step
   ],
 });
+import { SessionProvider } from 'next-auth/react';
 ```
 
 Now let's configure the [BoxyHQ SAML Provider](https://next-auth.js.org/providers/boxyhq-saml).
@@ -153,13 +154,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 ```
 
-## Add Login Page
+## Add Login Component
 
 SAML login requires a configuration for every tenant of yours. One common method is to use the domain for an email address to figure out which tenant they belong to. You can also use a unique tenant ID (string) for this, typically some kind of account or organization ID.
-
-Open the login page at [http://localhost:3000/login](http://localhost:3000/login)
-
-You'll see a input field for email with a button. The users can enter their tenant identifier (in this case the domain name), and Jackson will redirect the users to their IdP.
 
 Let's wire up the NextAuth on the client side.
 
@@ -167,14 +164,78 @@ Open the `pages/login.tsx` and make the following changes.
 
 ```javascript
 // pages/login.tsx
+
+...
+import { signIn } from "next-auth/react";
+
+const Login: NextPage = () => {
+  ...
+
+  const loginUser = async (event: FormEvent) => {
+    event.preventDefault();
+
+    const tenant = state.email.split("@")[1];
+    const product = "flex";
+
+    signIn("boxyhq-saml", { callbackUrl: "/me" }, { tenant, product });
+  };
+};
+...
 ```
 
-Instances of `useSession` will then have access to the session data and status.
-
-## Display User Profile
+## Add User Profile Component
 
 The `useSession()` React Hook in the NextAuth.js client is the easiest way to check if someone is signed in.
 
+Open the `pages/me.tsx` and make the following changes.
+
 ```javascript
 // pages/me.tsx
+
+...
+import { useSession } from "next-auth/react";
+
+const Me: NextPage = () => {
+  const { data: session, status } = useSession();
+
+  if (status === "authenticated") {
+    return (
+      <Container title="Me">
+        <div className="space-y-4">
+          <h2 className="text-2xl mb-5">User Profile</h2>
+          <p>Name: {session.user?.name}</p>
+          <p>Email: {session.user?.email}</p>
+        </div>
+      </Container>
+    );
+  }
+
+  ...
+};
+
+...
+```
+
+## Add Sign Out Component
+
+Open the `pages/logout.tsx` and make the following changes.
+
+```javascript
+// pages/logout.tsx
+
+...
+import { signOut } from 'next-auth/react';
+
+const Logout: NextPage = () => {
+  async function logOut() {
+    await signOut({ callbackUrl: '/' });
+  }
+
+  useEffect(() => {
+    logOut();
+  }, []);
+
+  return <p>Logging out...</p>;
+};
+...
 ```
