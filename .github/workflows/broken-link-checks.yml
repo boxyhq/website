@@ -17,3 +17,14 @@ jobs:
         with:
           url: https://boxyhq.com
           cmd_params: '--buffer-size=8192 --max-connections=10 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org)" --skip-tls-verification'
+      - name: Post to Slack
+        id: slack
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # Slack channel id, channel name, or user id to post message.
+          # See also: https://api.slack.com/methods/chat.postMessage#channels
+          channel-id: 'C02QNMNV5B8'
+          # For posting a simple plain text message
+          slack-message: 'GitHub build result: ${{ job.status }}'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
