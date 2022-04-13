@@ -1,11 +1,11 @@
 ---
 slug: add-saml-sso-to-remix-app
-title: Add SAML Federated Identity to a remix app
+title: Add SAML Single Sign On to a remix app
 author: Aswin V
 author_title: Senior Software Engineer (Open Source Dev Tools) @BoxyHQ
 author_url: https://twitter.com/av__2021
 author_image_url: https://avatars.githubusercontent.com/u/3107922?v=4
-tags: [enterprise-readiness, saml, federated-identity, saml-jackson, integrations, remix]
+tags: [enterprise-readiness, saml, federated-identity, sso, saml-jackson, integrations, remix]
 ---
 Ever since it was first [launched](https://remix.run/blog/remix-v1), "remix" has made a mark of its own as an edge-first web framework that moves the bulk of the JavaScript workload from the user's browser to a server closer to the user. In doing so, it embraces platform features like [Web Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and augments the good old HTML forms to support data mutations. The result is a super-fast user experience, all the while shipping less code to the browser. And we thought it would be cool to plug SAML auth into a remix app.  
 
@@ -301,7 +301,7 @@ routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
 >           );
 >         ...
 >       } catch (err: any) {
->         ... // error handling
+>         ... // error handling, redirect to /error page
 >       }
 >     }
 >     case "userinfo": {
@@ -460,7 +460,7 @@ Create the following files under `app/routes`:
 ## App routes
 ### Login/Logout
 
-For the `Login` page we need a form that can accept email (for deriving tenant) and product. In the demo app, the email and product are hard coded. We also change the form action for the `embedded SAML provider` button
+For the `Login` page we need a form that can accept email (for deriving tenant) and product. In the demo app, the email and product are hard coded. We also change the form action for the `embedded SAML provider` button.
 
 **login.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/login.tsx &nbsp;**
 > ```tsx
@@ -495,7 +495,7 @@ For the `Login` page we need a form that can accept email (for deriving tenant) 
 
 ### Private
 
-This page simply displays the logged in user profile.
+This page renders the logged-in user profile.
 
 **private.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/private.tsx &nbsp;**
 >```tsx
@@ -520,4 +520,69 @@ This page simply displays the logged in user profile.
 >  }
 >```
 
-### Error page
+### Error page (only for embedded SAML SP)
+
+
+For errors occuring in the SAML flow (/api/oauth/authorize and /api/oauth/saml), the user get's [redirected](https://github.com/boxyhq/jackson-remix-auth/blob/e75cb4a9c340b088749ec63d6932f2f4b206a07d/app/routes/api/oauth.%24slug.ts#L63) to an error page.
+
+Create one at `/error`:
+
+**error.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/error.tsx &nbsp;**
+
+> ```tsx
+> export const loader: LoaderFunction = async ({ request }) => {
+>   const session = await getSession(request.headers.get("Cookie"));
+>   const { statusCode, message } = session.get(JACKSON_ERROR_COOKIE_KEY) || {
+>     statusCode: null,
+>     message: "",
+>   };
+>   return json({ statusCode, message });
+> };
+> 
+> export default function Error() {
+>   const { statusCode, message } = useLoaderData<LoaderData>();
+> 
+>   let statusText = "";
+>   if (typeof statusCode === "number") {
+>     if (statusCode >= 400 && statusCode <= 499) {
+>       statusText = "client-side error";
+>     }
+>     if (statusCode >= 500 && statusCode <= 599) {
+>       statusText = "server error";
+>     }
+>   }
+> 
+>   if (statusCode === null) {
+>     return null;
+>   }
+> 
+>   return (
+>     <div className="h-full">
+>       <div className="h-[20%] translate-y-[100%] px-[20%] text-[hsl(152,56%,40%)]">
+>         <svg
+>           className="mb-5 h-10 w-10"
+>           fill="none"
+>           viewBox="0 0 24 24"
+>           stroke="currentColor"
+>           strokeWidth={2}
+>         >
+>           <path
+>             strokeLinecap="round"
+>             strokeLinejoin="round"
+>             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+>           />
+>         </svg>
+>         <h1 className="text-xl font-extrabold md:text-6xl">{statusCode}</h1>
+>         <h2 className="uppercase">{statusText}</h2>
+>         <p className="mt-6 inline-block">SAML error: </p>
+>         <p className="mr-2 text-xl font-bold">{message}</p>
+>       </div>
+>     </div>
+>   );
+> }
+> ```
+
+
+## Ready to go
+
+At this stage you are ready to accept SAML users into your app. 🎉
