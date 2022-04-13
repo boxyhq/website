@@ -26,6 +26,7 @@ module.exports = {
       logo: {
         alt: 'BoxyHQ',
         src: 'img/logo.png',
+        srcDark: 'img/logo-dark.png',
       },
       items: [
         { to: '/blog', label: 'Blog' },
