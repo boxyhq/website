@@ -194,7 +194,7 @@ Create the following files under `app/routes`:
 > ``` 
 
 **auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx**
-> ```typescript
+> ```tsx
 > ...
 > export const loader: LoaderFunction = async ({ request, params }) => {
 >   return auth.authenticate("boxyhq-saml", request, {
@@ -423,7 +423,7 @@ Create the following files under `app/routes`:
 
 **auth.saml.embed.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx &nbsp;**
 
-> ```typescript
+> ```tsx
 > ...
 > export const action: ActionFunction = async ({ request }) => {
 >   const formData = await request.formData();
@@ -447,7 +447,7 @@ Create the following files under `app/routes`:
 > ```
 
 **auth.saml.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx &nbsp;**
-> ```typescript
+> ```tsx
 > ...
 > export const loader: LoaderFunction = async ({ request, params }) => {
 >   return auth.authenticate("boxyhq-saml-embed", request, {
@@ -458,9 +458,66 @@ Create the following files under `app/routes`:
 > ```
 
 ## App routes
-
 ### Login/Logout
 
+For the `Login` page we need a form that can accept email (for deriving tenant) and product. In the demo app, the email and product are hard coded. We also change the form action for the `embedded SAML provider` button
+
+**login.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/login.tsx &nbsp;**
+> ```tsx
+>  export const loader: LoaderFunction = async ({ request }) => {
+>    // check if authenticated then redirect to /private
+>    await auth.isAuthenticated(request, { successRedirect: "/private" });
+>    // return form error data from session
+>  }
+>
+>   export default function Login() {
+>     return ( 
+>       ...
+>       <Form
+>        method="post"
+>        action="/auth/saml"
+>        reloadDocument
+>        >
+>        ... // input fields for email and product
+>        <button type="submit">Continue with SAML SSO (Hosted SAML Provider)</button>
+>        <button type="submit" formAction="/auth/saml/embed">Continue with SAML SSO (Embedded SAML Provider)</button>
+>       </Form>
+>       ...
+>     )
+> ```
+
+**logout.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/logout.ts &nbsp;**
+> ```typescript
+>  export const loader: LoaderFunction = async ({ request }) => {
+>    await auth.logout(request, { redirectTo: "/login" });
+>  };
+> ```
+
 ### Private
+
+This page simply displays the logged in user profile.
+
+**private.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/private.tsx &nbsp;**
+>```tsx
+>  export const loader: LoaderFunction = async ({ request }) => {
+>    const profile = await auth.isAuthenticated(request, {
+>      failureRedirect: "/login",
+>    });
+>  
+>    return json<LoaderData>({ profile });
+>  };
+>  
+>  export default function Private() {
+>    const { profile } = useLoaderData<LoaderData>();
+>    return (
+>      <>
+>        <h1 className="text-primary mb-4 font-bold md:text-3xl">Raw profile</h1>
+>        <pre>
+>          <code>{JSON.stringify(profile, null, 2)}</code>
+>        </pre>
+>      </>
+>    );
+>  }
+>```
 
 ### Error page
