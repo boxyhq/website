@@ -465,7 +465,7 @@ auth.saml.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/
 
 #### Add SAML config
 
-We have one last thing to do, which is to add a SAML config for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
+We have one last thing to do, which is to [add a SAML config](https://boxyhq.com/docs/jackson/saml-flow#21-saml-add-config-api) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
 
 <details>
 <summary>Below adds a SAML IdP config for https://mocksaml.com</summary>
