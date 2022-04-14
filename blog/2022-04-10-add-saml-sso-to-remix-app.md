@@ -217,6 +217,8 @@ Install `@boxyhq/saml-jackson` first:
 npm i @boxyhq/saml-jackson
 ```
 
+Before you proceed,set up a [database](https://boxyhq.com/docs/jackson/deploy/service#database) for jackson. Refer to [db environment variables](https://boxyhq.com/docs/jackson/deploy/env-variables#database-configuration) for the npm library options.
+
 Setup `JacksonProvider`. Calling this function returns the controllers (`oauthController` and `apiController`) needed to orchestrate the SAML flow. Create the following file under `app`:  
 
 auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts  
@@ -225,8 +227,11 @@ auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/a
 > 
 > const opts =  {
 >  ...
->  // clientSecretVerifier will be checked when requesting token
->  // 👉🏻 https://boxyhq.com/docs/jackson/deploy/env-variables#client_secret_verifier
+>   db: {
+>    engine: "sql",
+>    url: "postgresql://postgres:postgres@localhost:5432/postgres",
+>    type: "postgres",
+>  },
 >  clientSecretVerifier: process.env.CLIENT_SECRET_VERIFIER 
 >  ...
 > }
