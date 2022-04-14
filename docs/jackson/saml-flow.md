@@ -14,6 +14,7 @@ Please follow the instructions [here](./configure-saml-idp.md) to guide your cus
 
 ## 2. SAML config API
 
+### 2.1 SAML add config API
 Once your customer has set up the SAML app on their Identity Provider, the Identity Provider will generate an IdP or SP metadata file. Some Identity Providers only generate an IdP metadata file but it usually works for the SP login flow as well. It is an XML file that contains various attributes Jackson needs to validate incoming SAML login requests. This step is the equivalent of setting an OAuth 2.0 app and generating a client ID and client secret that will be used in the login flow.
 
 You will need to provide a place in the UI for your customers (The account settings page is usually a good place for this) to configure this and then call the API below.
@@ -44,7 +45,7 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/config' \
 
 The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](./deploy/env-variables.md#client_secret_verifier) configuration) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
 
-### 2.1 SAML get config API
+### 2.2 SAML get config API
 
 This endpoint can be used to return metadata about an existing SAML config. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
 
@@ -65,7 +66,7 @@ curl -G --location 'http://localhost:5225/api/v1/saml/config' \
 
 The response returns a JSON with `idpMetadata.provider` indicating the domain of your Identity Provider. If an empty JSON payload is returned then we do not have any configuration stored for the attributes you requested.
 
-### 2.2 SAML update config API
+### 2.3 SAML update config API
 
 This endpoint can be used to update an existing SAML config.
 
@@ -85,7 +86,7 @@ curl --location --request PATCH 'http://localhost:5225/api/v1/saml/config' \
 --data-urlencode 'description=Demo SAML config'
 ```
 
-### 2.3 SAML delete config API
+### 2.4 SAML delete config API
 
 This endpoint can be used to delete an existing IdP metadata.
 
@@ -113,7 +114,7 @@ Jackson also supports the PKCE authorization flow (<https://oauth.net/2/pkce/>),
 
 If for any reason you need to implement the flow on your own, the steps are outlined below:
 
-## 4. Authorize
+### 3.1 Authorize
 
 The OAuth flow begins with redirecting your user to the `authorize` URL:
 
@@ -132,7 +133,7 @@ https://localhost:5225/api/oauth/authorize
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete
 - `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks
 
-## 5. Code Exchange
+### 3.2 Code Exchange
 
 After successful authorization, the user is redirected back to the `redirect_uri`. The query parameters will include the `code` and `state` parameters. You should validate that the state matches the one you sent in the `authorize` request.
 
@@ -164,7 +165,7 @@ If everything goes well you should receive a JSON response that includes the acc
 }
 ```
 
-## 6. Profile Request
+### 3.3 Profile Request
 
 The short-lived access token can now be used to request the user's profile. You'll need to make the following request:
 
@@ -198,7 +199,7 @@ If everything goes well you should receive a JSON response with the user's profi
 - `raw`: This contains all claims attributes returned by the SAML provider
 - `requested`: This contains the `tenant`, `product`, `client_id` and `state` from the authorize request. It can be used to reconcile context on the client side if needed
 
-## 7. SAML SLO
+## 4. SAML SLO
 
 SLO is a SAML flow that allows an end-user to logout of a single session and be automatically logged out of all linked sessions created during the SSO process.
 

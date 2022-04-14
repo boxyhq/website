@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Admin UI
 
-If you are running Jackson as a [service](./deploy/service.md), we also provide an **Admin UI** out of the box. You can [add](./saml-flow.md#2-saml-config-api), [edit](./saml-flow.md#22-saml-update-config-api) or [delete](./saml-flow.md#22-saml-delete-config-api) SAML configurations from this UI.
+If you are running Jackson as a [service](./deploy/service.md), we also provide an **Admin UI** out of the box. You can [add](./saml-flow.md#21-saml-add-config-api), [edit](./saml-flow.md#23-saml-update-config-api) or [delete](./saml-flow.md#24-saml-delete-config-api) SAML configurations from this UI.
 
 ## Login
 

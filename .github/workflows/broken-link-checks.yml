@@ -1,0 +1,26 @@
+name: Check broken links
+on:
+  schedule:
+    - cron: '0 8 * * *' # Run every day at 08:00 UTC
+
+jobs:
+  broken-link-checker:
+    name: Check broken links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: https://boxyhq.com
+          cmd_params: '--buffer-size=8192 --max-connections=10 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org)" --skip-tls-verification'
+      - name: Post to Slack
+        if: ${{ job.status == 'failure' }}
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # Slack channel id, channel name, or user id to post message.
+          # See also: https://api.slack.com/methods/chat.postMessage#channels
+          channel-id: 'C02QNMNV5B8'
+          # For posting a simple plain text message
+          slack-message: 'Found some broken links in action run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
