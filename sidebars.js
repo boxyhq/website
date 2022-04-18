@@ -2,7 +2,7 @@ module.exports = {
   DocsSidebar: [
     {
       type: 'doc',
-      id: 'introduction',
+      id: 'index',
       label: 'Introduction',
     },
     {

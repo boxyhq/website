@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Environment Variables
 
 The env vars are only applicable to the Jackson service. If you are using the npm then look for the options below when initializing the library.
@@ -140,7 +136,7 @@ Example: `lightstep-access-token=<token>,...`
 
 ## Admin UI configuration
 
-Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin UI. The **SMTP_** variables are used for sending email which contain the magic link (one-time use) for sign in.
+Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin UI. The **SMTP\_** variables are used for sending email which contain the magic link (one-time use) for sign in.
 
 ### **SMTP_HOST**
 
@@ -160,7 +156,7 @@ Password for the SMTP server.
 
 ### **SMTP_FROM**
 
-*From* address used to send mail like: `noreply@example.com`.
+_From_ address used to send mail like: `noreply@example.com`.
 
 ### **NEXTAUTH_URL**
 

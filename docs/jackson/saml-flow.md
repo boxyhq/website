@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # SAML Flow
 
 ## 1. Setting up SAML with your IdP
@@ -15,6 +11,7 @@ Please follow the instructions [here](./configure-saml-idp.md) to guide your cus
 ## 2. SAML config API
 
 ### 2.1 SAML add config API
+
 Once your customer has set up the SAML app on their Identity Provider, the Identity Provider will generate an IdP or SP metadata file. Some Identity Providers only generate an IdP metadata file but it usually works for the SP login flow as well. It is an XML file that contains various attributes Jackson needs to validate incoming SAML login requests. This step is the equivalent of setting an OAuth 2.0 app and generating a client ID and client secret that will be used in the login flow.
 
 You will need to provide a place in the UI for your customers (The account settings page is usually a good place for this) to configure this and then call the API below.
