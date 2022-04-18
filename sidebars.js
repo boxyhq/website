@@ -38,31 +38,39 @@ module.exports = {
 
   GuidesSidebar: [
     'guides/index',
-    'guides/jackson/overview',
     {
       type: 'category',
-      label: 'Framework Guides',
+      label: 'SAML Jackson',
+      collapsible: true,
       collapsed: false,
       items: [
-        'guides/jackson/with-nextjs',
-        'guides/jackson/with-remix',
-        'guides/jackson/with-express',
-        'guides/jackson/with-redwood',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Deployment Guides',
-      collapsed: false,
-      items: ['guides/jackson/with-heroku', 'guides/jackson/with-vercel'],
-    },
-    {
-      type: 'category',
-      label: 'Integrations Guides',
-      collapsed: false,
-      items: [
-        'guides/jackson/with-nextauth',
-        'guides/jackson/with-supertokens',
+        'guides/jackson/overview',
+        {
+          type: 'category',
+          label: 'Framework Guides',
+          collapsed: false,
+          items: [
+            'guides/jackson/with-express',
+            'guides/jackson/with-nextjs',
+            'guides/jackson/with-remix',
+            'guides/jackson/with-redwood',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Deployment Guides',
+          collapsed: false,
+          items: ['guides/jackson/with-heroku', 'guides/jackson/with-vercel'],
+        },
+        {
+          type: 'category',
+          label: 'Integrations Guides',
+          collapsed: false,
+          items: [
+            'guides/jackson/with-nextauth',
+            'guides/jackson/with-supertokens',
+          ],
+        },
       ],
     },
   ],
