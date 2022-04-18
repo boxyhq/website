@@ -1,0 +1,91 @@
+---
+title: Overview
+hide_table_of_contents: true
+sidebar_position: 1
+---
+
+# Overview
+
+Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away all the complexities of the SAML protocol. Integrate SAML with just a few lines of code.
+
+import GuideSection from '../../../src/components/GuideSection.js';
+const frameworks = [
+  {
+    name: 'Next.js',
+    href: '/guides/jackson/with-nextjs',
+  },
+  {
+    name: 'Remix.run',
+    href: '/guides/jackson/with-remix',
+  },
+  {
+    name: 'Express.js',
+    href: '/guides/jackson/with-express',
+  },
+  {
+    name: 'RedwoodJS',
+    href: '/guides/jackson/with-redwood',
+  },
+];
+const integrations = [
+  {
+    name: 'SuperTokens',
+    href: '/guides/jackson/with-supertokens',
+  },
+  {
+    name: 'Next-Auth',
+    href: '/guides/jackson/with-nextauth',
+  },
+  {
+    name: 'Hasura',
+    href: '/guides/jackson/with-nextauth',
+  },
+];
+const deployments = [
+  {
+    name: 'Heroku',
+    href: '/guides/jackson/with-heroku',
+  },
+  {
+    name: 'Vercel',
+    href: '/guides/jackson/with-vercel',
+  },
+  {
+    name: 'AWS',
+    href: '/guides/jackson/with-aws',
+  },
+  {
+    name: 'DigitalOcean',
+    href: '/guides/jackson/with-digitalocean',
+  },
+];
+
+## Deployment Guides
+
+If you want to self host SAML Jackson, the recommended approach is to use one of the recommended one click installation options.
+
+<div class="container" style={{ padding: 0 }}>
+  <div class="row is-multiline">
+    <GuideSection items={deployments} />
+  </div>
+</div>
+
+## Framework Guides
+
+SAML Jackson works with a large number of tools and frameworks.
+
+<div class="container" style={{ padding: 0 }}>
+  <div class="row is-multiline">
+    <GuideSection items={frameworks} />
+  </div>
+</div>
+
+## Integrations Guides
+
+SAML Jackson works with a large number of tools and frameworks.
+
+<div class="container" style={{ padding: 0 }}>
+  <div class="row is-multiline">
+    <GuideSection items={integrations} />
+  </div>
+</div>
