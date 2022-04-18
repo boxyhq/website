@@ -1,6 +1,7 @@
 ---
+title: NextAuth.js
 hide_table_of_contents: true
-sidebar_position: 6
+slug: /jackson/guides/with-nextauth
 ---
 
 # NextAuth.js

@@ -1,6 +1,7 @@
 ---
+title: SuperTokens
 hide_table_of_contents: true
-sidebar_position: 7
+slug: /jackson/guides/with-supertokens
 ---
 
 # SuperTokens

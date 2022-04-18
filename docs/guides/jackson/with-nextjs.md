@@ -1,7 +1,7 @@
 ---
 title: Next.js
 hide_table_of_contents: true
-sidebar_position: 2
+slug: /jackson/guides/with-nextjs
 ---
 
 # Next.js
