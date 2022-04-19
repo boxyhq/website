@@ -9,6 +9,11 @@ slug: /jackson/guides/with-express
 
 This guide explains how to connect the SAML SSO to a Express.js project using SAML Jackson.
 
-## Project set up
+## Configuration
 
 ## Configure SAML Jackson
+
+- Install SAML Jackson
+- Add SAML Config
+- MockSAML
+- Framework specific configuration
