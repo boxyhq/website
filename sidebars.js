@@ -47,6 +47,15 @@ module.exports = {
         'guides/jackson/overview',
         {
           type: 'category',
+          label: 'Integrations Guides',
+          collapsed: false,
+          items: [
+            'guides/jackson/with-nextauth',
+            'guides/jackson/with-supertokens',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Framework Guides',
           collapsed: false,
           items: [
@@ -61,15 +70,6 @@ module.exports = {
           label: 'Deployment Guides',
           collapsed: false,
           items: ['guides/jackson/with-heroku', 'guides/jackson/with-vercel'],
-        },
-        {
-          type: 'category',
-          label: 'Integrations Guides',
-          collapsed: false,
-          items: [
-            'guides/jackson/with-nextauth',
-            'guides/jackson/with-supertokens',
-          ],
         },
       ],
     },
