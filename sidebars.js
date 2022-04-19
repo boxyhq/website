@@ -69,7 +69,12 @@ module.exports = {
           type: 'category',
           label: 'Deployment Guides',
           collapsed: false,
-          items: ['guides/jackson/with-heroku', 'guides/jackson/with-vercel'],
+          items: [
+            'guides/jackson/with-heroku',
+            'guides/jackson/with-vercel',
+            'guides/jackson/with-digitalocean',
+            'guides/jackson/with-aws',
+          ],
         },
       ],
     },
