@@ -55,7 +55,3 @@ Download the SAML Metadata file from your IdP and follow the below steps for add
 - Click the button **Save Changes**
 
 Now you've successfully installed SAML Jackson and added your first SAML configuration.
-
-## Known Limitations
-
-If you are on a free tier and you don’t access the application for a while Heroku will put your dynos to sleep. You can fix this by upgrading the dynos to paid tier.
