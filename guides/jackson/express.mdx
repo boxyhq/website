@@ -1,5 +1,5 @@
 ---
-title: Connect the SAML SSO to a Express.js project
+title: Connect the SAML SSO to a Express.js app
 sidebar_label: Express.js
 ---
 
@@ -49,7 +49,7 @@ async function init() {
 The authenticate flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user.
 
 <Tabs>
-<TabItem value="with-client-id" label="Using Client ID" default>
+<TabItem value="01" label="Using Client ID" default>
 
 ```javascript
 router.get('/sso/authorize', async (req, res) => {
@@ -68,7 +68,7 @@ router.get('/sso/authorize', async (req, res) => {
 ```
 
 </TabItem>
-<TabItem value="with-tenant-product" label="Using Tenant and Product">
+<TabItem value="02" label="Using Tenant and Product">
 
 ```javascript
 router.get('/sso/authorize', async (req, res) => {
@@ -113,7 +113,7 @@ router.post('/sso/acs', async (req, res) => {
 Add the to handle the redirect endpoint which will handle the callback after a user has authenticated. This endpoint should exchange the authorization code with the authenticated user's profile.
 
 <Tabs>
-<TabItem value="with-client-id-secret" label="With Client ID and Secret">
+<TabItem value="01" label="With Client ID and Secret">
 
 ```javascript
 router.get('/sso/callback', async (req, res) => {
@@ -138,7 +138,7 @@ router.get('/sso/callback', async (req, res) => {
 
 </TabItem>
 
-<TabItem value="with-tenant-product" label="With Tenant and Product">
+<TabItem value="02" label="With Tenant and Product">
 
 ```javascript
 router.get('/sso/callback', async (req, res) => {
