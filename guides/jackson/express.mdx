@@ -21,70 +21,66 @@ npm i --save @boxyhq/saml-jackson
 ### Initialize SAML Jackson
 
 ```javascript
-const express = require('express');
-const router = express.Router();
-const cors = require('cors');
-
 const opts = {
   externalUrl: 'https://my-cool-app.com',
   samlAudience: 'https://my-cool-app.com',
-  samlPath: '/sso/oauth/saml',
+  samlPath: '/sso/acs',
   db: {
     engine: 'mongo',
     url: 'mongodb://localhost:27017/my-cool-app',
   },
 };
 
-let apiController;
 let oauthController;
-let logoutController;
 
 // Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
 // Run this in a function where you initialize the express server.
 async function init() {
   const ret = await require('@boxyhq/saml-jackson').controllers(opts);
-  apiController = ret.apiController;
-  oauthController = ret.oauthController;
-  logoutController = ret.logoutController;
-}
 
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
+  oauthController = ret.oauthController;
+}
 ```
 
 ### Add route to initiate SSO
 
 <Tabs>
-<TabItem value="Using Client ID" label="Using Client ID" default>
+<TabItem value="with-client-id" label="Using Client ID" default>
 
 ```javascript
-router.get('/oauth/authorize', async (req, res) => {
-  try {
-    const { redirect_url } = await oauthController.authorize(req.query);
+router.get('/sso/authorize', async (req, res) => {
+  const redirectURI = ''; // The callback URI JACKSON should redirect to after the authentication
+  const state = ''; // Create a random state and store on your app
+  const clientID = ''; // The client ID of your SAML configuration
 
-    res.redirect(redirect_url);
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
+  const { redirect_url } = await oauthController.authorize({
+    client_id: clientID,
+    redirect_uri: redirectURI,
+    state: state,
+  });
 
-    res.status(statusCode).send(message);
-  }
+  res.redirect(redirect_url);
 });
 ```
 
 </TabItem>
-<TabItem value="Using Tenant and Product" label="Using Tenant and Product">
+<TabItem value="with-tenant-product" label="Using Tenant and Product">
 
 ```javascript
-router.get('/oauth/authorize1', async (req, res) => {
-  try {
-    const { redirect_url } = await oauthController.authorize(req.query);
+router.get('/sso/authorize', async (req, res) => {
+  const redirectURI = ''; // The callback URI the app should redirect to after the authentication
+  const state = ''; // Create a random state and store on your app
+  const tenant = ''; // The tenant ID of the tenant you want to authenticate against
+  const product = ''; // The product ID of the product you want to authenticate against
 
-    res.redirect(redirect_url);
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
+  const { redirect_url } = await oauthController.authorize({
+    tenant: tenant,
+    product: product,
+    redirect_uri: redirectURI,
+    state: state,
+  });
 
-    res.status(statusCode).send(message);
-  }
+  res.redirect(redirect_url);
 });
 ```
 
@@ -94,39 +90,73 @@ router.get('/oauth/authorize1', async (req, res) => {
 ### Add route to handle response from IdP
 
 ```javascript
-router.post('/oauth/saml', async (req, res) => {
-  try {
-    const { redirect_url } = await oauthController.samlResponse(req.body);
+router.post('/sso/saml', async (req, res) => {
+  const { SAMLResponse, RelayState } = req.body;
 
-    res.redirect(redirect_url);
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
+  const { redirect_url } = await oauthController.samlResponse({
+    SAMLResponse: SAMLResponse,
+    RelayState: RelayState,
+  });
 
-    res.status(statusCode).send(message);
-  }
+  res.redirect(redirect_url);
 });
 ```
 
 ### Add route to handle the callback
 
+<Tabs>
+<TabItem value="with-client-id-secret" label="With Client ID and Secret">
+
 ```javascript
-router.get('/sso/callback', async (req, res, next) => {
-  const { code } = req.query;
+router.get('/sso/callback', async (req, res) => {
+  const { code, state } = req.query;
 
-  const body = {
-    code,
-    client_id: `tenant=${tenant}&product=${product}`,
-    client_secret: 'dummy',
-  };
+  const clientID = ''; // The client ID of your SAML configuration
+  const clientSecret = ''; // The client secret of your SAML configuration
 
-  try {
-    const { access_token } = await oauthController.token(body);
+  // TODO: Verify the `state` matches the state you stored on your app
 
-    req.session.access_token = access_token;
+  const { access_token } = await oauthController.token({
+    code: code,
+    client_id: clientID,
+    client_secret: clientSecret,
+  });
 
-    res.redirect('/me');
-  } catch (err) {
-    next(err);
-  }
+  const profile = await oauthController.userInfo(access_token);
+
+  // You can use the `profile` information for further business logic.
 });
 ```
+
+</TabItem>
+
+<TabItem value="with-tenant-product" label="With Tenant and Product">
+
+```javascript
+router.get('/sso/callback', async (req, res) => {
+  const { code, state } = req.query;
+
+  const tenant = ''; // The tenant ID of the tenant
+  const product = ''; // The product ID of the product
+
+  const clientID = `tenant=${tenant}&product=${product}`;
+  const clientSecret = 'dummy';
+
+  // TODO: Verify the `state` matches the state you stored on your app
+
+  const { access_token } = await oauthController.token({
+    code: code,
+    client_id: clientID,
+    client_secret: clientSecret,
+  });
+
+  const profile = await oauthController.userInfo(access_token);
+
+  // You can use the `profile` information for further business logic.
+
+  res.redirect('/');
+});
+```
+
+</TabItem>
+</Tabs>
