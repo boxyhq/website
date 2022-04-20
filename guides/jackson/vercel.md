@@ -1,7 +1,6 @@
 ---
 title: Deploy SAML Jackson on Vercel
 sidebar_label: Vercel
-slug: /jackson/vercel
 ---
 
 # Vercel
