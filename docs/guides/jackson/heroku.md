@@ -1,7 +1,7 @@
 ---
 title: Deploy SAML Jackson on Heroku
 sidebar_label: Heroku
-slug: /jackson/guides/with-heroku
+slug: /jackson/guides/heroku
 ---
 
 # Heroku

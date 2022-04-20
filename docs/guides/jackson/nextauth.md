@@ -1,6 +1,6 @@
 ---
 title: BoxyHQ SAML as NextAuth OAuth provider
-slug: /jackson/guides/with-nextauth
+slug: /jackson/guides/nextauth
 sidebar_label: NextAuth
 ---
 
