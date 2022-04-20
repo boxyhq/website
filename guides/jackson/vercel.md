@@ -11,7 +11,7 @@ If you don’t have a Vercel account, create one [here](https://vercel.com/signu
 
 ## Install SAML Jackson
 
-- Fork the the SAML Jackson [Github repository](https://github.com/boxyhq/jackson/fork).
+- Fork the the SAML Jackson [GitHub repository](https://github.com/boxyhq/jackson/fork).
 - Go to the forked repo and click the **Deploy** button from the README section.
 - Select your username under **GIT SCOPE**.
 - Enter a **name** for your project, choose whether you want your repo `private` or `public`, and click **Create**.

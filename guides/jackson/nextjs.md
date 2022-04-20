@@ -26,7 +26,7 @@ The Next.js boilerplate comes with 3 default routes:
 - `login.tsx` : A simple login page
 - `me.tsx` : A route to display user profile
 
-Launch a terminal and clone the Github repo:
+Launch a terminal and clone the GitHub repo:
 
 ```sh
 git clone https://github.com/boxyhq/jackson-nextjs
