@@ -10,3 +10,7 @@ sidebar_label: NextAuth
 NextAuth support SAML Jackson as an OAuth Provider in the name BoxyHQ SAML Provider.
 
 Follow [this documentation](https://next-auth.js.org/providers/boxyhq-saml) to learn about how to use SAML Jackson with NextAuth.
+
+## Next steps
+
+- Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)

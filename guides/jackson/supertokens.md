@@ -10,3 +10,7 @@ sidebar_label: SuperTokens
 SuperTokens allows you to use SAML Jackson as a custom OAuth provider.
 
 Follow [this documentation](https://supertokens.com/docs/thirdpartyemailpassword/common-customizations/saml/with-boxyhq/integration-steps) to learn about how to use SAML Jackson with SuperTokens.
+
+## Next steps
+
+- Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)
