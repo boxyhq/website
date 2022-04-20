@@ -1,0 +1,133 @@
+---
+title: Connect the SAML SSO to a Express.js project
+sidebar_label: Express.js
+slug: /jackson/guides/with-express
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Express.js
+
+This guide explains how to connect the SAML SSO to an Express.js app using SAML Jackson.
+
+## Add SAML SSO to your app
+
+### Install SAML Jackson
+
+```bash
+npm i --save @boxyhq/saml-jackson
+```
+
+### Initialize SAML Jackson
+
+```javascript
+const express = require('express');
+const router = express.Router();
+const cors = require('cors');
+
+const opts = {
+  externalUrl: 'https://my-cool-app.com',
+  samlAudience: 'https://my-cool-app.com',
+  samlPath: '/sso/oauth/saml',
+  db: {
+    engine: 'mongo',
+    url: 'mongodb://localhost:27017/my-cool-app',
+  },
+};
+
+let apiController;
+let oauthController;
+let logoutController;
+
+// Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
+// Run this in a function where you initialize the express server.
+async function init() {
+  const ret = await require('@boxyhq/saml-jackson').controllers(opts);
+  apiController = ret.apiController;
+  oauthController = ret.oauthController;
+  logoutController = ret.logoutController;
+}
+
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+```
+
+### Add route to initiate SSO
+
+<Tabs>
+<TabItem value="Using Client ID" label="Using Client ID" default>
+
+```javascript
+router.get('/oauth/authorize', async (req, res) => {
+  try {
+    const { redirect_url } = await oauthController.authorize(req.query);
+
+    res.redirect(redirect_url);
+  } catch (err) {
+    const { message, statusCode = 500 } = err;
+
+    res.status(statusCode).send(message);
+  }
+});
+```
+
+</TabItem>
+<TabItem value="Using Tenant and Product" label="Using Tenant and Product">
+
+```javascript
+router.get('/oauth/authorize1', async (req, res) => {
+  try {
+    const { redirect_url } = await oauthController.authorize(req.query);
+
+    res.redirect(redirect_url);
+  } catch (err) {
+    const { message, statusCode = 500 } = err;
+
+    res.status(statusCode).send(message);
+  }
+});
+```
+
+</TabItem>
+</Tabs>
+
+### Add route to handle response from IdP
+
+```javascript
+router.post('/oauth/saml', async (req, res) => {
+  try {
+    const { redirect_url } = await oauthController.samlResponse(req.body);
+
+    res.redirect(redirect_url);
+  } catch (err) {
+    const { message, statusCode = 500 } = err;
+
+    res.status(statusCode).send(message);
+  }
+});
+```
+
+### Add route to handle the callback
+
+```javascript
+router.get('/sso/callback', async (req, res, next) => {
+  const { code } = req.query;
+
+  const body = {
+    code,
+    client_id: `tenant=${tenant}&product=${product}`,
+    client_secret: 'dummy',
+  };
+
+  try {
+    const { access_token } = await oauthController.token(body);
+
+    req.session.access_token = access_token;
+
+    res.redirect('/me');
+  } catch (err) {
+    next(err);
+  }
+});
+```
