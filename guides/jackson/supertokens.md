@@ -1,7 +1,7 @@
 ---
 title: SuperTokens
-slug: /jackson/guides/supertokens
 sidebar_label: SuperTokens
+slug: /jackson/supertokens
 ---
 
 # SuperTokens

@@ -32,7 +32,7 @@ module.exports = {
         { to: '/careers', label: 'Careers' },
         { to: '/team', label: 'Team' },
         { to: '/docs', label: 'Docs' },
-        { to: '/docs/guides', label: 'Guides' },
+        { to: '/guides', label: 'Guides' },
         {
           href: 'https://github.com/boxyhq',
           position: 'right',
@@ -144,6 +144,15 @@ module.exports = {
         path: './careers',
         blogTitle: 'Careers',
         blogDescription: 'Join us at BoxyHQ',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guides',
+        path: 'guides',
+        routeBasePath: 'guides',
+        sidebarPath: require.resolve('./sidebars_guides.js'),
       },
     ],
   ],

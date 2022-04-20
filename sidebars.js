@@ -35,39 +35,4 @@ module.exports = {
       ],
     },
   ],
-
-  GuidesSidebar: [
-    'guides/index',
-    {
-      type: 'category',
-      label: 'SAML Jackson',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        'guides/jackson/overview',
-        {
-          type: 'category',
-          label: 'Deployment Guides',
-          collapsed: false,
-          items: ['guides/jackson/heroku', 'guides/jackson/vercel'],
-        },
-        {
-          type: 'category',
-          label: 'Framework Guides',
-          collapsed: false,
-          items: [
-            'guides/jackson/express',
-            'guides/jackson/nextjs',
-            'guides/jackson/remix',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Integrations Guides',
-          collapsed: false,
-          items: ['guides/jackson/nextauth', 'guides/jackson/supertokens'],
-        },
-      ],
-    },
-  ],
 };
