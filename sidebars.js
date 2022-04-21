@@ -3,7 +3,7 @@ module.exports = {
     {
       type: 'doc',
       id: 'index',
-      label: 'Introduction',
+      label: 'Overview',
     },
     {
       type: 'category',
@@ -11,7 +11,7 @@ module.exports = {
       collapsible: true,
       collapsed: false,
       items: [
-        'jackson/introduction',
+        'jackson/overview',
         {
           type: 'category',
           label: 'Deploy',
