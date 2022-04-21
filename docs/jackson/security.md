@@ -1,7 +1,3 @@
----
-sidebar_position: 12
----
-
 # Security
 
 In general most OAuth 2.0 security guidelines apply to Jackson as well but there are a few minor differences.

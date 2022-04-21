@@ -1,7 +1,3 @@
----
-sidebar_position: 11
----
-
 # Container Signing and Verification
 
 Jackson container images are signed and can be verified using [cosign](https://github.com/sigstore/cosign).
