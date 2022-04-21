@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 This guide explains how to connect the SAML SSO to an Express.js app using SAML Jackson.
 
+Visit the [GitHub repo](https://github.com/boxyhq/express-jackson-demo) to see the source code for the Express.js SAML SSO integration.
+
 ## Add SAML SSO to your app
 
 Let’s start by building the SAML SSO authentication workflow into your Express.js app.
@@ -49,26 +51,7 @@ async function init() {
 The authenticate flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user.
 
 <Tabs>
-<TabItem value="01" label="Using Client ID" default>
-
-```javascript
-router.get('/sso/authorize', async (req, res) => {
-  const redirectURI = ''; // The callback URI JACKSON should redirect to after the authentication
-  const state = ''; // Create a random state and store on your app
-  const clientID = ''; // The client ID of your SAML configuration
-
-  const { redirect_url } = await oauthController.authorize({
-    client_id: clientID,
-    redirect_uri: redirectURI,
-    state: state,
-  });
-
-  res.redirect(redirect_url);
-});
-```
-
-</TabItem>
-<TabItem value="02" label="Using Tenant and Product">
+<TabItem value="01" label="With Tenant and Product" default>
 
 ```javascript
 router.get('/sso/authorize', async (req, res) => {
@@ -80,6 +63,26 @@ router.get('/sso/authorize', async (req, res) => {
   const { redirect_url } = await oauthController.authorize({
     tenant: tenant,
     product: product,
+    redirect_uri: redirectURI,
+    state: state,
+  });
+
+  res.redirect(redirect_url);
+});
+```
+
+</TabItem>
+
+<TabItem value="02" label="With Client ID">
+
+```javascript
+router.get('/sso/authorize', async (req, res) => {
+  const redirectURI = ''; // The callback URI JACKSON should redirect to after the authentication
+  const state = ''; // Create a random state and store on your app
+  const clientID = ''; // The client ID of your SAML configuration
+
+  const { redirect_url } = await oauthController.authorize({
+    client_id: clientID,
     redirect_uri: redirectURI,
     state: state,
   });
@@ -113,32 +116,7 @@ router.post('/sso/acs', async (req, res) => {
 Add the to handle the redirect endpoint which will handle the callback after a user has authenticated. This endpoint should exchange the authorization code with the authenticated user's profile.
 
 <Tabs>
-<TabItem value="01" label="With Client ID and Secret">
-
-```javascript
-router.get('/sso/callback', async (req, res) => {
-  const { code, state } = req.query;
-
-  const clientID = ''; // The client ID of your SAML configuration
-  const clientSecret = ''; // The client secret of your SAML configuration
-
-  // TODO: Verify the `state` matches the state you stored on your app
-
-  const { access_token } = await oauthController.token({
-    code: code,
-    client_id: clientID,
-    client_secret: clientSecret,
-  });
-
-  const profile = await oauthController.userInfo(access_token);
-
-  // You can use the `profile` information for further business logic.
-});
-```
-
-</TabItem>
-
-<TabItem value="02" label="With Tenant and Product">
+<TabItem value="01" label="With Tenant and Product" default>
 
 ```javascript
 router.get('/sso/callback', async (req, res) => {
@@ -167,6 +145,32 @@ router.get('/sso/callback', async (req, res) => {
 ```
 
 </TabItem>
+
+<TabItem value="02" label="With Client ID and Secret">
+
+```javascript
+router.get('/sso/callback', async (req, res) => {
+  const { code, state } = req.query;
+
+  const clientID = ''; // The client ID of your SAML configuration
+  const clientSecret = ''; // The client secret of your SAML configuration
+
+  // TODO: Verify the `state` matches the state you stored on your app
+
+  const { access_token } = await oauthController.token({
+    code: code,
+    client_id: clientID,
+    client_secret: clientSecret,
+  });
+
+  const profile = await oauthController.userInfo(access_token);
+
+  // You can use the `profile` information for further business logic.
+});
+```
+
+</TabItem>
+
 </Tabs>
 
 ## Next steps
