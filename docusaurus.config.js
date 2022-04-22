@@ -107,7 +107,8 @@ module.exports = {
         },
         blog: {
           blogTitle: 'Blog',
-          blogDescription: 'Enterprise readiness from BoxyHQ',
+          blogDescription:
+            'The BoxyHQ blog is an open discussion of thoughts from our team. We discuss everything from what SAML is to how we build certain elements of the products.',
           showReadingTime: true,
           feedOptions: {
             type: 'all',
@@ -144,7 +145,8 @@ module.exports = {
          */
         path: './careers',
         blogTitle: 'Careers',
-        blogDescription: 'Join us at BoxyHQ',
+        blogDescription:
+          'Join us on our mission to help startups simplify the development of compliance and data security-related features in their products. Check out our open roles.',
       },
     ],
     [

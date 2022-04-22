@@ -1,14 +1,17 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-const Title = 'Team';
 import Profile from '../components/Profile';
+
+const title = 'Team';
+const description =
+  'At BoxyHQ we are a diverse team of individuals from all over the world who share a passion for building a simpler and more open way to be enterprise-ready. ';
 
 function Team() {
   return (
-    <Layout title={Title}>
+    <Layout title={title} description={description}>
       <main className="container margin-vert--lg">
         <div className="text--center margin-bottom--lg">
-          <h1>{Title}</h1>
+          <h1>{title}</h1>
         </div>
 
         <div className="row">
