@@ -1,8 +1,4 @@
----
-sidebar_position: 1
----
-
-# Introduction
+# Overview
 
 SAML service [SAML in a box from BoxyHQ]
 

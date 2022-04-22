@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Pre-loaded SAML Configuration
 
 If PRE_LOADED_CONFIG is set then it should point to a directory with the following structure (example below):-
