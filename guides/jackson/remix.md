@@ -1,7 +1,9 @@
 ---
-title: Remix
-sidebar_label: Add SAML Single Sign On to a remix app
+title: Add SAML Single Sign On to a remix app
+sidebar_label: Remix
 ---
+
+# Remix
 
 Ever since it was first [launched](https://remix.run/blog/remix-v1), "remix" has made a mark of its own as an edge-first web framework that moves the bulk of the JavaScript workload from the user's browser to a server closer to the user. In doing so, it embraces platform features like [Web Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and augments the good old HTML forms to support data mutations. The result is a super-fast user experience, all the while shipping less code to the browser. And we thought it would be cool to plug SAML auth into a remix app.  
 
