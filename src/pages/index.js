@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title="BoxyHQ"
-      description="BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code."
+      description="BoxyHQ helps startups enable enterprise features in any SaaS aplication with just a few lines of code. Implement SAML Single Sign-On in record time today."
     >
       <Head>
         <script src="https://cmp.osano.com/169lWRSfch3C32VM2/2cd324ff-6a09-4e61-94fa-6af31f004e67/osano.js"></script>

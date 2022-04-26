@@ -6,10 +6,10 @@ export default function GuideSection({ items }) {
   return (
     <>
       {items.map((item) => (
-        <div key={item.name} class="col col--3">
-          <Link class="card" to={item.href}>
+        <div key={item.name} className="col col--3">
+          <Link className="card" to={item.href}>
             <div
-              class="card__body"
+              className="card__body"
               style={{ display: 'flex', gap: 20, alignItems: 'center' }}
             >
               <ArrowIcon
