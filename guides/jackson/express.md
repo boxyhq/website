@@ -113,7 +113,7 @@ router.post('/sso/acs', async (req, res) => {
 
 ### Add route to handle the callback
 
-Add the to handle the redirect endpoint which will handle the callback after a user has authenticated. This endpoint should exchange the authorization code with the authenticated user's profile.
+Add the route to handle the redirect endpoint which will handle the callback after a user has authenticated. This endpoint should exchange the authorization code with the authenticated user's profile.
 
 <Tabs>
 <TabItem value="01" label="With Tenant and Product" default>
