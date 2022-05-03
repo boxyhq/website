@@ -27,8 +27,6 @@ You can visit the path `/api/hello` on your app to see if the Jackson was starte
 }
 ```
 
-For example https://boxyhq-saml.herokuapp.com/api/hello
-
 ## Next steps
 
 At this stage you have a functional SAML Jackson instance running on your server!
