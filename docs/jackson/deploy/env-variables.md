@@ -42,6 +42,17 @@ NPM library option: `samlPath`
 
 For example `/api/oauth/saml`
 
+### **IDP_DISCOVERY_PATH**
+
+This is the path for showing the IdP Selection screen in case there is multiple SAML IdP configured for same `tenant` and `product`.
+This path is also used to show the App Selection screen in the case of IdP-initiated SAML login (Different apps using the same SAML IdP).
+Set this when using the npm package.
+
+NPM library option: `idpDiscoveryPath`
+
+For example: `/idp/select` - You can find an implemenation of IdP/App Selection at https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx.
+
+
 ### **CLIENT_SECRET_VERIFIER**
 
 When `tenant` and `product` are used for the SAML flow (and PKCE is not being used) then we use `dummy` as placeholders for `client_id` and `client_secret`. This is not a security issue because SAML is tenanted and hence your Identity Provider will block access to anyone trying to log into your SAML tenant. However for additional security you should set `CLIENT_SECRET_VERIFIER` to a random secret and use that value as the `client_secret` during the OAuth 2.0 flow.
