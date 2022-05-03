@@ -30,8 +30,6 @@ npm i remix-auth @boxyhq/remix-auth-saml
 
 First, we need an `Authenticator` instance from `remix-auth`. `Authenticator` exposes the API for login and logout. 
 
-<!-- For strategy, we'll be using the `BoxyHQSAMLStrategy` from `remix-auth-saml` installed in the previous step. -->
-
 
 ### Create sessionStorage for `Authenticator`
 
@@ -120,17 +118,13 @@ To get going, you'll need a hosted instance of "SAML Jackson".
 Refer to the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy `Jackson` to your favorite hosting provider.  
 Otherwise, fret not 🤗, we have a hosted instance of [`Jackson`](https://jackson-demo.boxyhq.com), that can be readily used without any configuration.
 
-```bash
-client_id         : tenant=boxyhq.com&product=saml-demo.boxyhq.com
-Identity Provider : https://mocksaml.com
-```
-
-We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api) tenant/product pointing to https://mocksaml.com as the IdP.
 
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
 We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/v1/guides/resource-routes) in remix terminology) to handle the SAML SP flows.
+
+##### Install jackson
 
 Install `@boxyhq/saml-jackson` first:
 
@@ -140,9 +134,9 @@ npm i @boxyhq/saml-jackson
 
 Before you proceed,set up a [database](https://boxyhq.com/docs/jackson/deploy/service#database) for jackson. Refer to [db environment variables](https://boxyhq.com/docs/jackson/deploy/env-variables#database-configuration) for the npm library options.
 
-Setup `JacksonProvider`. Calling this function returns the controllers (`oauthController` and `apiController`) needed to orchestrate the SAML flow. Create the following file under `app`:  
+##### Setup `JacksonProvider`
 
-auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts  
+app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts  
 > **NOTE: [clientSecretVerifier](https://boxyhq.com/docs/jackson/deploy/env-variables#client_secret_verifier) set below will be matched against client_secret coming from Authenticator &nbsp;**
 
 ```typescript
@@ -192,6 +186,7 @@ auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/a
  
  ```
 
+##### Resource routes
 Next, create the api files for [OAuth2.0 flow](https://boxyhq.com/docs/jackson/saml-flow#3-oauth-20-flow) and [SAML Configuration](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api):
 
 ```bash
@@ -351,7 +346,7 @@ const BOXYHQSAML_ISSUER = process.env.BOXYHQSAML_ISSUER;
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
-Point the `issuer` to the app url. We are also setting a name for the strategy here inorder for us to point to the right one in the demo.
+Point the `issuer` to the app url. We are also setting a name for the strategy here in order for us to point to the right one.
 
 auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.server.ts
 
@@ -396,7 +391,7 @@ We need 2 routes:
 Create the following files under `app/routes`:  
 
 
-auth.saml.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx
+app/routes/auth.saml.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx
  ```typescript
  ...
  export const action: ActionFunction = async ({ request }) => {
@@ -420,7 +415,7 @@ auth.saml.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes
  };
  ``` 
 
-auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx
+app/routes/auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx
  ```tsx
  ...
  export const loader: LoaderFunction = async ({ request, params }) => {
@@ -435,13 +430,12 @@ auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/a
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
-We need 2 routes:   
 ~> [/auth/saml/embed](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx) - Action handler for login  
 ~> [/auth/saml/embed/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.  
 
 Create the following files under `app/routes`:  
 
-auth.saml.embed.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx
+app/routes/auth.saml.embed.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx
 
 ```tsx
 ...
@@ -466,7 +460,7 @@ export const action: ActionFunction = async ({ request }) => {
 };
 ```
 
-auth.saml.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx
+app/routes/auth.saml.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx
 ```tsx
 ...
 export const loader: LoaderFunction = async ({ request, params }) => {
@@ -484,9 +478,21 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 
 
 
-#### Add SAML config
+## SAML configuration
 
-We have one last thing to do, which is to [add a SAML config](https://boxyhq.com/docs/jackson/saml-flow#21-saml-add-config-api) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
+<Tabs>
+<TabItem value="01" label="Host SAML SP as a separate service">
+
+```bash
+client_id         : tenant=boxyhq.com&product=saml-demo.boxyhq.com
+Identity Provider : https://mocksaml.com
+```
+
+We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api) tenant/product pointing to https://mocksaml.com as the IdP.
+</TabItem>
+<TabItem value="02" label="Embed SAML SP">
+
+[Add a SAML config](https://boxyhq.com/docs/jackson/saml-flow#21-saml-add-config-api) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
 
 <details>
 <summary>Below adds a SAML IdP config for https://mocksaml.com</summary>
@@ -503,13 +509,16 @@ curl --location --request POST 'http://localhost:3366/api/v1/saml/config'
 --data-urlencode 'description=Demo SAML config'
 </pre>
 </details>
+</TabItem>
+</Tabs>
+
 
 
 
 ## App routes
 ### Login/Logout
 
-For the `Login` page we need a form that can accept email (for deriving tenant) and product. In the demo app, the email and product are hard coded. We also change the form action for the `embedded SAML provider` button.
+For the `Login` page we need a form that can accept email (for deriving tenant) and product. We also change the form action for the `embedded SAML provider` button.
 
 **login.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/login.tsx &nbsp;**
 ```tsx
@@ -569,7 +578,7 @@ This page renders the logged-in user profile.
   }
 ```
 
-### Error page (only for embedded SAML SP)
+### Error page (needed only for embedded SAML SP)
 
 
 For errors occuring in the SAML flow (/api/oauth/authorize and /api/oauth/saml), the user get's [redirected](https://github.com/boxyhq/jackson-remix-auth/blob/e75cb4a9c340b088749ec63d6932f2f4b206a07d/app/routes/api/oauth.%24slug.ts#L63) to an error page.
