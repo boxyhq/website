@@ -4,7 +4,7 @@
 
 The service offers a readiness and health check endpoint that can be configured in orchestration tools like Docker Compose and Kubernetes.
 
-The `/api/health` GET endpoint returns a 200 when the service ready and healthy or a 5xx (typically 503) error if unhealthy.
+The `/api/health` GET endpoint returns a 200 when the service ready and healthy or a 5xx (typically 503) error if unhealthy. The response contains the current version of jackson ex:- `{"version":"1.0.0"}`.
 
 ## With Docker
 
