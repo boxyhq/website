@@ -6,25 +6,32 @@ module.exports = {
       label: 'SAML Jackson',
       collapsible: true,
       collapsed: false,
+      link: { type: 'doc', id: 'jackson/overview' },
       items: [
-        'jackson/overview',
         {
           type: 'category',
           label: 'Deployment Guides',
           collapsed: false,
-          items: ['jackson/heroku', 'jackson/vercel'],
+          items: ['jackson/deployments/heroku', 'jackson/deployments/vercel'],
         },
         {
           type: 'category',
           label: 'Framework Guides',
           collapsed: false,
-          items: ['jackson/express', 'jackson/nextjs', 'jackson/remix'],
+          items: [
+            'jackson/frameworks/express',
+            'jackson/frameworks/nextjs',
+            'jackson/frameworks/remix',
+          ],
         },
         {
           type: 'category',
           label: 'Integrations Guides',
           collapsed: false,
-          items: ['jackson/nextauth', 'jackson/supertokens'],
+          items: [
+            'jackson/integrations/nextauth',
+            'jackson/integrations/supertokens',
+          ],
         },
       ],
     },
