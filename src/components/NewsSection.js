@@ -6,7 +6,7 @@ const NewsList = [
   {
     title: <>BoxyHQ brings ‘enterprise readiness’ to any SaaS app</>,
     url: 'https://venturebeat.com/2022/02/23/boxyhq-brings-enterprise-readiness-to-any-saas-app/',
-    Svg: require('../../static/img/news/vb_logo.svg').default,
+    Svg: require('../../static/img/news/vb-logo.svg').default,
   },
   {
     title: (
@@ -16,7 +16,7 @@ const NewsList = [
       </>
     ),
     url: 'https://yourstory.com/2022/03/boxyhq-tech-startup-helps-saas-companies-add-features-enterprise',
-    Svg: require('../../static/img/news/yourstory_logo.svg').default,
+    Svg: require('../../static/img/news/yourstory-logo.svg').default,
   },
 ];
 

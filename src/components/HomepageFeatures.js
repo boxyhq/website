@@ -7,7 +7,7 @@ const FeatureList = [
   {
     title: <>Audit Logs</>,
     url: 'https://github.com/boxyhq/hermes',
-    Svg: require('../../static/img/feat_audit.svg').default,
+    Svg: require('../../static/img/feat-audit.svg').default,
     description: (
       <>
         Add audit logs into your product with ease. Allow your customers to send
@@ -17,7 +17,7 @@ const FeatureList = [
   },
   {
     title: <>Privacy Vault (coming soon)</>,
-    Svg: require('../../static/img/feat_vault.svg').default,
+    Svg: require('../../static/img/feat-vault.svg').default,
     description: (
       <>
         Protect your customers sensitive data by safely encrypting it in a
@@ -27,7 +27,7 @@ const FeatureList = [
   },
   {
     title: <>Role Based Access and Permissions (coming soon)</>,
-    Svg: require('../../static/img/feat_rbac.svg').default,
+    Svg: require('../../static/img/feat-rbac.svg').default,
     description: (
       <>
         Add roles, groups and permissions into your product using a flexible
@@ -38,7 +38,7 @@ const FeatureList = [
   },
   {
     title: <>Directory Sync (coming soon)</>,
-    Svg: require('../../static/img/feat_dsync.svg').default,
+    Svg: require('../../static/img/feat-dsync.svg').default,
     description: (
       <>
         Add Directory Sync support into your product to provision and
@@ -48,7 +48,7 @@ const FeatureList = [
   },
   // {
   //   title: <>(coming next)</>,
-  //   Svg: require('../../static/img/feat_coming.svg').default,
+  //   Svg: require('../../static/img/feat-coming.svg').default,
   //   description: (
   //     <>
   //       Admin Portal, Security Status Page, Compliance Monitoring, many more.
@@ -60,7 +60,7 @@ const FeatureList = [
 
 const SSOSAMLMain = {
   title: <>SAML SSO</>,
-  Svg: require('../../static/img/feat_sso.svg').default,
+  Svg: require('../../static/img/feat-sso.svg').default,
   description: '',
 };
 
