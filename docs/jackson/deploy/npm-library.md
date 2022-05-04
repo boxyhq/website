@@ -150,7 +150,13 @@ router.get('/oauth/authorize', async (req, res) => {
 
 ### Handle SAML Response
 
-Add a method to handle the SAML Response from IdP.
+Add a method to handle the SAML Response from IdP. 
+
+#### IdP-initiated flow
+
+To enable IdP-initiated SAML flow set https://boxyhq.com/docs/jackson/deploy/env-variables#idp_enabled. If [idpDiscoveryPath](https://boxyhq.com/docs/jackson/deploy/env-variables#idp_discovery_path) is not set then always the first config will be chosen in case of multiple matches.
+
+If `oauthController.samlResponse` returns `app_select_form` with no `redirect_url`, then we have hit the case where the IdP-initiated flow has multiple matches for the same IdP. Users can select an app and the flow is resumed with the `idp_hint` containing the user selection. For reference on how to add an IdP selection page, see: https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx
 
 :::info
 SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Service (ACS URL) with 2 fields `SAMLResponse` and `RelayState`.
@@ -159,9 +165,14 @@ SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Servi
 ```javascript
 router.post('/oauth/saml', async (req, res) => {
   try {
-    const { redirect_url } = await oauthController.samlResponse(req.body);
+    const { redirect_url, app_select_form } = await oauthController.samlResponse(req.body);
 
-    res.redirect(redirect_url);
+     if (redirect_url) {
+      res.redirect(302, redirect_url);
+    } else {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.send(app_select_form);
+    }
   } catch (err) {
     const { message, statusCode = 500 } = err;
 
