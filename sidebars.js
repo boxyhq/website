@@ -3,18 +3,19 @@ module.exports = {
     {
       type: 'doc',
       id: 'index',
-      label: 'Overview',
+      label: 'Docs',
     },
     {
       type: 'category',
       label: 'SAML Jackson',
       collapsible: true,
       collapsed: false,
+      link: { type: 'doc', id: 'jackson/overview' },
       items: [
-        'jackson/overview',
         {
           type: 'category',
           label: 'Deploy',
+          link: { type: 'doc', id: 'jackson/deploy/index' },
           items: [
             'jackson/deploy/service',
             'jackson/deploy/npm-library',
