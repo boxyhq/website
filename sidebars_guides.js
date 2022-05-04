@@ -6,8 +6,8 @@ module.exports = {
       label: 'SAML Jackson',
       collapsible: true,
       collapsed: false,
+      link: { type: 'doc', id: 'jackson/overview' },
       items: [
-        'jackson/overview',
         {
           type: 'category',
           label: 'Deployment Guides',
