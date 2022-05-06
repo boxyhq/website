@@ -11,7 +11,7 @@ NextAuth supports SAML Jackson as an OAuth Provider.
 
 Follow [this documentation](https://next-auth.js.org/providers/boxyhq-saml) to learn about how to use SAML Jackson with NextAuth.
 
-Visit the [GitHub repo](https://github.com/boxyhq/jackson-next-auth) to see the source code for the NextAuth SAML SSO integration.
+Visit the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/next-auth) to see the source code for the NextAuth SAML SSO integration.
 
 ## Next steps
 

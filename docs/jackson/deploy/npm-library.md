@@ -8,7 +8,7 @@ npm i @boxyhq/saml-jackson
 
 Integrating SAML Jackson with a Node.js app involves the following steps.
 
-See the [Github repo](https://github.com/boxyhq/express-jackson-demo) to see the source code for the Express integration
+See the [Github repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express integration
 
 ## Express.js example
 
@@ -150,7 +150,7 @@ router.get('/oauth/authorize', async (req, res) => {
 
 ### Handle SAML Response
 
-Add a method to handle the SAML Response from IdP. 
+Add a method to handle the SAML Response from IdP.
 
 #### IdP-initiated flow
 
@@ -165,9 +165,10 @@ SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Servi
 ```javascript
 router.post('/oauth/saml', async (req, res) => {
   try {
-    const { redirect_url, app_select_form } = await oauthController.samlResponse(req.body);
+    const { redirect_url, app_select_form } =
+      await oauthController.samlResponse(req.body);
 
-     if (redirect_url) {
+    if (redirect_url) {
       res.redirect(302, redirect_url);
     } else {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');

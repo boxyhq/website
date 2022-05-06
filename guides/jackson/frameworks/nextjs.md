@@ -12,7 +12,7 @@ In this guide, you'll learn to authenticate users in your Next.js apps using SAM
 
 NextAuth support SAML Jackson as an OAuth Provider in the name **BoxyHQ SAML Provider**.
 
-Visit the [GitHub repo](https://github.com/boxyhq/jackson-next-auth) to see the source code for the Next.js SAML SSO integration.
+Visit the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/next-auth) to see the source code for the Next.js SAML SSO integration.
 
 ## Add SAML SSO to your app
 

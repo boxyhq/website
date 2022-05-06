@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 This guide explains how to connect the SAML SSO to an Express.js app using SAML Jackson.
 
-Visit the [GitHub repo](https://github.com/boxyhq/express-jackson-demo) to see the source code for the Express.js SAML SSO integration.
+Visit the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express.js SAML SSO integration.
 
 ## Add SAML SSO to your app
 
