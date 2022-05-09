@@ -24,9 +24,9 @@ As outlined in the guide above we try and support 4 attributes in the SAML claim
 
 | SAML Attribute                                                         | Jackson mapping |
 | ---------------------------------------------------------------------- | --------------- |
-| <http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier> | id              |
-| <http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress>   | email           |
-| <http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname>      | firstName       |
-| <http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname>        | lastName        |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier` | id              |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`   | email           |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`      | firstName       |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`        | lastName        |
 
 (Provider specific instructions coming soon)
