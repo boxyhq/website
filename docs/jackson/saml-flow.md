@@ -129,7 +129,9 @@ https://localhost:5225/api/oauth/authorize
 - `product`: Should be specified if specifying `tenant` above
 - `idp_hint`: Can be used to select the SAML Identity Provider if multiple configs match for the same `tenant/product`. Should point to the absolute "clientID" of the SAML IdP config in jackson.
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete
-- `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks
+- `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks.
+
+**NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically. 
 
 The user will be taken to the IdP based on the configured SAML metadata.
 In case of any errors, we return the `error` and `error_description` (see [Error Response](https://www.oauth.com/oauth2-servers/authorization/the-authorization-response/)) back to the `redirect_uri` (`redirect_uri` is validated against the saml config to prevent open redirects).
