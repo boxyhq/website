@@ -136,7 +136,7 @@ In case of any errors, we return the `error` and `error_description` (see [Error
 
 ### 3.2 Code Exchange
 
-Once the user logs in successfully at the SAML IdP, IdP sents back the SAML response to Jackson. After successful authorization, the user is redirected back to the `redirect_uri`. The query parameters will include the `code` and `state` parameters. You should validate that the state matches the one you sent in the `authorize` request.
+Once the user logs in successfully at the SAML IdP, IdP sends back the SAML response to Jackson. After successful authorization, the user is redirected back to the `redirect_uri`. The query parameters will include the `code` and `state` parameters. You should validate that the state matches the one you sent in the `authorize` request.
 
 The code can then be exchanged for a token by making the following request:
 
