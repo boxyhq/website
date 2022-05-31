@@ -30,7 +30,7 @@ export default function Profile({
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                 >
-                  {github ? 'Github' : 'LinkedIn'}
+                  {github ? 'GitHub' : 'LinkedIn'}
                 </a>{' '}
                 ·{' '}
                 <a

@@ -41,7 +41,7 @@ Please follow the below instructions.
 
 ### Clone the repository
 
-You can clone the source from the [Jackson Github repo](https://github.com/boxyhq/jackson/tree/release)
+You can clone the source from the [Jackson GitHub repo](https://github.com/boxyhq/jackson/tree/release)
 
 ```bash
 git clone https://github.com/boxyhq/jackson

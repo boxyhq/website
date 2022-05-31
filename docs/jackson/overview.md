@@ -2,7 +2,7 @@
 
 SAML service [SAML in a box from BoxyHQ]
 
-You need someone like Jules Winnfield to save you from the vagaries of SAML login. Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away all the complexities of the SAML protocol.
+Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away all the complexities of the SAML protocol. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
 
 ## About Jackson
 

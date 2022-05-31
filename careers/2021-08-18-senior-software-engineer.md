@@ -19,7 +19,7 @@ Join our well-funded remote-first team if you love building open source API driv
 - BoxyHQ is still small - just us 2 founders for now. You will be one of the first employees and can drive major parts of the product.
 - Highly competitive salary and stock options.
 - Experienced founders with strong engineering, commercial and open source experience.
-- Engineering team will be involved in product discussions and planning. We do it openly via Github.
+- Engineering team will be involved in product discussions and planning. We do it openly via GitHub.
 - We encourage and support the team in attending conferences, giving talks, writing blog-posts, and other activities.
 - We believe in constantly iterating and improving; you will get to influence our internal processes as well.
 
@@ -27,7 +27,7 @@ Join our well-funded remote-first team if you love building open source API driv
 
 - Strong software engineering background. We are language agnostic but will be using Go and Javascript in our initial projects. Excellent coding practises (standards, unit tests, docs, etc) are essential.
 - Remote work self-discipline. A lot of our processes are built on trust - we don't like to micro-manage. You get to take full ownership of the products.
-- Excellent communication skills - clear, constructive, and respectful dialog  with other team members, community.
+- Excellent communication skills - clear, constructive, and respectful dialog with other team members, community.
 - Ability to write technical docs, blogs. Team is responsible to keep documentation up to date.
 
 ### The Offer
@@ -38,4 +38,4 @@ Join our well-funded remote-first team if you love building open source API driv
 - Stipend for home office set up
 - Stipend for career development and learning
 
-*We’re committed to be the place where a culturally diverse mix of talented people get together to do their best work. We strongly encourage you to apply regardless of your location, background, race, gender, sexual orientation or any other personally defining attribute that make us different.*
+_We’re committed to be the place where a culturally diverse mix of talented people get together to do their best work. We strongly encourage you to apply regardless of your location, background, race, gender, sexual orientation or any other personally defining attribute that make us different._

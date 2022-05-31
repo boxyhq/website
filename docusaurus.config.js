@@ -48,6 +48,10 @@ module.exports = {
           title: 'Community',
           items: [
             {
+              label: 'GitHub',
+              href: 'https://github.com/boxyhq',
+            },
+            {
               label: 'Discord',
               href: 'https://discord.gg/uyb7pYt4Pa',
             },

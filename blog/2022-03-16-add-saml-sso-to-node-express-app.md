@@ -78,7 +78,7 @@ Now we've everything ready, let's move to the next step.
 
 ## Getting started
 
-Launch a terminal and clone the Github repo:
+Launch a terminal and clone the GitHub repo:
 
 ```bash
 git clone https://github.com/devkiran/express-saml.git
@@ -452,7 +452,7 @@ Congratulations, you should now have a functioning SAML SSO integrated with your
 To learn more about SAML Jackson, take a look at the following resources:
 
 - [SAML Jackson Documentation](https://boxyhq.com/docs/jackson/overview)
-- [SAML Jackson Github](https://github.com/boxyhq/jackson)
+- [SAML Jackson GitHub](https://github.com/boxyhq/jackson)
 - [Express web app that shows how to use SAML Jackson](https://github.com/boxyhq/jackson-examples/tree/main/apps/express)
 
 Your feedback and contributions are welcome!
