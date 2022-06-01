@@ -35,5 +35,131 @@ module.exports = {
         'jackson/local-development',
       ],
     },
+    {
+        type: 'category',
+        label: 'Retraced',
+        collapsible: true,
+        collapsed: false,
+        link: { type: 'doc', id: 'retraced/overview/introduction-to-retraced' },
+        items: [
+            {
+                type: 'category',
+                label: 'Overview',
+                link: { type: 'doc', id: 'retraced/overview/introduction-to-retraced' },
+                items: [
+                    'retraced/overview/introduction-to-retraced',
+                  ],
+              },
+          {
+            type: 'category',
+            label: 'How to audit log',
+            link: { type: 'doc', id: 'retraced/how-to-audit-log/audit-logging-basics' },
+            items: [
+                'retraced/how-to-audit-log/audit-logging-basics',
+                'retraced/how-to-audit-log/actions',
+                'retraced/how-to-audit-log/actors',
+                'retraced/how-to-audit-log/exportable',
+                'retraced/how-to-audit-log/immutable',
+                'retraced/how-to-audit-log/searchable',
+                'retraced/how-to-audit-log/segments',
+                'retraced/how-to-audit-log/targets',
+                'retraced/how-to-audit-log/time-synced',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Getting Started',
+            link: { type: 'doc', id: 'retraced/getting-started/retraced-basics' },
+            items: [
+                'retraced/getting-started/retraced-basics',
+                'retraced/getting-started/embedded-viewer',
+                'retraced/getting-started/first-audit-event',
+                'retraced/getting-started/renaming-properties',
+                'retraced/getting-started/searching-for-events',
+                'retraced/getting-started/time-synchronization',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Advanced Retraced',
+            link: { type: 'doc', id: 'retraced/advanced-retraced/advanced-concepts' },
+            items: [
+                'retraced/advanced-retraced/advanced-concepts',
+                'retraced/advanced-retraced/display-templates',
+                'retraced/advanced-retraced/template-comparators',
+                'retraced/advanced-retraced/ssh-streaming',
+                'retraced/advanced-retraced/tracking-application-versions',
+                'retraced/advanced-retraced/automated-audit-events',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Exposing Events',
+            link: { type: 'doc', id: 'retraced/exposing-retraced-data/overview' },
+            items: [
+                'retraced/exposing-retraced-data/overview',
+                'retraced/exposing-retraced-data/viewer',
+                'retraced/exposing-retraced-data/enterprise-api',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Architecture',
+            link: { type: 'doc', id: 'retraced/architecture/retraced-overview' },
+            items: [
+                'retraced/architecture/retraced-overview',
+                'retraced/architecture/immutability-guarantee',
+                'retraced/architecture/hashing-formula',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'SDKs',
+            link: { type: 'doc', id: 'retraced/sdks/available-sdks' },
+            items: [
+                'retraced/sdks/available-sdks',
+                {
+                    type: 'category',
+                    label: 'Golang',
+                    link: { type: 'doc', id: 'retraced/sdks/golang/getting-started' },
+                    items: [
+                        'retraced/sdks/golang/getting-started',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'NodeJS',
+                    link: { type: 'doc', id: 'retraced/sdks/nodejs/getting-started' },
+                    items: [
+                        'retraced/sdks/nodejs/getting-started',
+                    ],
+                },
+              ],
+          },
+          {
+            type: 'category',
+            label: 'APIs',
+            link: { type: 'doc', id: 'retraced/apis/overview' },
+            items: [
+                'retraced/apis/overview',
+                'retraced/apis/publisher-api',
+                'retraced/apis/enterprise-api',
+                'retraced/apis/admin-api',
+                'retraced/apis/graphql',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Troubleshooting',
+            link: { type: 'doc', id: 'retraced/troubleshooting/troubleshooting-retraced' },
+            items: [
+                'retraced/troubleshooting/troubleshooting-retraced',
+                'retraced/troubleshooting/daily-email',
+                'retraced/troubleshooting/public-ips',
+                'retraced/troubleshooting/release-notes',
+              ],
+          },
+        ],
+      },
   ],
 };
