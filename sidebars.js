@@ -42,18 +42,19 @@ module.exports = {
         collapsed: false,
         link: { type: 'doc', id: 'retraced/overview/introduction-to-retraced' },
         items: [
-            {
-                type: 'category',
-                label: 'Overview',
-                link: { type: 'doc', id: 'retraced/overview/introduction-to-retraced' },
-                items: [
-                    'retraced/overview/introduction-to-retraced',
-                  ],
-              },
+          {
+            type: 'category',
+            label: 'Deploy',
+            link: { type: 'doc', id: 'retraced/deploy/index' },
+            items: [
+                'retraced/deploy/env-variables',
+                'retraced/deploy/docker-compose',
+                'retraced/deploy/local',
+              ],
+          },
           {
             type: 'category',
             label: 'How to audit log',
-            link: { type: 'doc', id: 'retraced/how-to-audit-log/audit-logging-basics' },
             items: [
                 'retraced/how-to-audit-log/audit-logging-basics',
                 'retraced/how-to-audit-log/actions',
@@ -69,7 +70,6 @@ module.exports = {
           {
             type: 'category',
             label: 'Getting Started',
-            link: { type: 'doc', id: 'retraced/getting-started/retraced-basics' },
             items: [
                 'retraced/getting-started/retraced-basics',
                 'retraced/getting-started/embedded-viewer',
@@ -82,7 +82,6 @@ module.exports = {
           {
             type: 'category',
             label: 'Advanced Retraced',
-            link: { type: 'doc', id: 'retraced/advanced-retraced/advanced-concepts' },
             items: [
                 'retraced/advanced-retraced/advanced-concepts',
                 'retraced/advanced-retraced/display-templates',
@@ -95,7 +94,6 @@ module.exports = {
           {
             type: 'category',
             label: 'Exposing Events',
-            link: { type: 'doc', id: 'retraced/exposing-retraced-data/overview' },
             items: [
                 'retraced/exposing-retraced-data/overview',
                 'retraced/exposing-retraced-data/viewer',
@@ -105,7 +103,6 @@ module.exports = {
           {
             type: 'category',
             label: 'Architecture',
-            link: { type: 'doc', id: 'retraced/architecture/retraced-overview' },
             items: [
                 'retraced/architecture/retraced-overview',
                 'retraced/architecture/immutability-guarantee',
@@ -115,31 +112,15 @@ module.exports = {
           {
             type: 'category',
             label: 'SDKs',
-            link: { type: 'doc', id: 'retraced/sdks/available-sdks' },
             items: [
                 'retraced/sdks/available-sdks',
-                {
-                    type: 'category',
-                    label: 'Golang',
-                    link: { type: 'doc', id: 'retraced/sdks/golang/getting-started' },
-                    items: [
-                        'retraced/sdks/golang/getting-started',
-                    ],
-                },
-                {
-                    type: 'category',
-                    label: 'NodeJS',
-                    link: { type: 'doc', id: 'retraced/sdks/nodejs/getting-started' },
-                    items: [
-                        'retraced/sdks/nodejs/getting-started',
-                    ],
-                },
+                'retraced/sdks/golang/getting-started',
+                'retraced/sdks/nodejs/getting-started',
               ],
           },
           {
             type: 'category',
             label: 'APIs',
-            link: { type: 'doc', id: 'retraced/apis/overview' },
             items: [
                 'retraced/apis/overview',
                 'retraced/apis/publisher-api',
@@ -151,7 +132,6 @@ module.exports = {
           {
             type: 'category',
             label: 'Troubleshooting',
-            link: { type: 'doc', id: 'retraced/troubleshooting/troubleshooting-retraced' },
             items: [
                 'retraced/troubleshooting/troubleshooting-retraced',
                 'retraced/troubleshooting/daily-email',
