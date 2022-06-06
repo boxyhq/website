@@ -39,7 +39,40 @@ Default: `10000`
 If set `true` Retraced will use Postgres to `index & search` the audit logs instead of `Elasticsearch`.
 
 Default: `false`
+### **RETRACED_API_LOG_FILE**
 
+If set to a valid file path, Retraced will use the file to save `Retraced API` logs.
+### **RETRACED_PROCESSOR_LOG_FILE**
+
+If set to a valid file path, Retraced will use the file to save `Retraced processor` logs.
+### **RETRACED_API_SCHEMES**
+
+The api schema to used for swagger.
+
+Default: `http,https`
+### **PROCESSOR_NORMALIZE_REPAIRER_MIN_AGE_MS**
+
+The minimum age in microseconds used by processor to select audit logs to process.
+
+Default: `120000`
+### **PROCESSOR_NORMALIZE_REPAIRER_MAX_EVENTS**
+
+The maximum number of events processor will select to process.
+
+Default: `10000`
+
+### **RETRACED_DB_NO_CACHE**
+
+If set to true, Retraced disables db level caching.<br />
+Caching is used for `Actor`, `Target` & `Groups` SELECT queries of audit log.
+### **TMPDIR**
+
+The path of the temporary folder used for Geo data sync.<br />
+Retraced looks for `"GeoLite2` files to import IP address and location data.
+
+### **RETRACED_APP_BASE**
+
+The base path of the Retraced instance which is used for links in the emails.
 ## [Postgres](https://www.postgresql.org/) Configuration
 
 ### **POSTGRES_HOST**
@@ -98,6 +131,10 @@ The tcp port to use for nsqd connection.
 
 Default: `4150`
 
+### **NSQ_CIRCUIT_BREAKER_THRESHOLD**
+
+The circuit breaker threshold used for NSQ client.
+
 ## [Supercronic](https://github.com/aptible/supercronic) Configuration
 
 ### **SUPERCRONIC_URL**
@@ -129,4 +166,169 @@ Ex:<br />
 or <br />
 `https://localhost:9200,https://localhost:9201,https://localhost:9202`
 
-NPM library option: `preLoadedConfig`
+### **ELASTICSEARCH_CAFILE**
+
+The CA file to use when connecting with `SSL enabled Elasticsearch`.
+### **ELASTICSEARCH_REQUEST_RETRIES**
+
+Max retries for Elasticsearch client.
+### **ELASTICSEARCH_REQUEST_TIMEOUT**
+
+Request timeout for Elasticsearch client.
+### **ELASTICSEARCH_BACKOFF**
+
+The backoff interval for retries used by `internal wrapper of Elasticsearch`.
+### **ELASTICSEARCH_TOTAL_TIMEOUT**
+
+The total timeout used by wrapper for `all Elasticsearch requests` & `retries with backoffs`.
+
+## Headless Mode configuration
+
+`Headless mode bootstraps the db configuration required for a tenant to use Retraced right away.`
+### **HEADLESS_ENV_ID**
+
+Environment Id to be used in the headless mode.
+
+### **HEADLESS_API_KEY**
+
+API key to be used in the headless mode.
+### **HEADLESS_PROJECT_ID**
+
+Project Id to be used in the headless mode.
+### **HEADLESS_PROJECT_ENV**
+
+Environment Id to be used for Project in the headless mode.
+
+## [Bugsnag](https://www.bugsnag.com) configuration ([Error Reporting](https://docs.bugsnag.com/api/error-reporting/))
+
+### **BUGSNAG_TOKEN**
+
+Token to be used for bugsnag [error reporting](https://docs.bugsnag.com/api/error-reporting/).
+### **STAGE**
+
+[ReleaseStage](https://docs.bugsnag.com/product/releases/#configuring-the-release-stage) configuration to be used for bugsnag.
+
+## [Signal Sciences](https://www.signalsciences.com/) configuration
+
+`Signal Sciences is used for edge security & API protection`
+
+### **SIGSCI_RPC_ADDRESS**
+
+The RPC address to be used for Signal Sciences API protection.
+
+## **ADMIN_ROOT_TOKEN**
+
+When this is set, Retraced makes api `/admin/v1/user/_login` available.
+Admin can make a post request to above api with `token=<ADMIN_ROOT_TOKEN>` in Authorization Header to create users in case they does not exists.
+
+## [Prometheus](https://prometheus.io/) configuration
+
+### **RETRACED_PROMETHEUS_ENDPOINT**
+
+Prometheus endpoint url to be used for export.
+
+### **RETRACED_ENABLE_PROMETHEUS**
+
+When this is set Retraced exposes an endpoint for Prometheus exporter. <br />
+`/<RETRACED_PROMETHEUS_ENDPOINT>/metrics`
+
+## SSL configuration
+
+Used to enable https mode of Retraced.
+
+### **SSL_SERVER_CERT_PATH**
+
+The path of the ssl certificate file.
+
+### **SSL_SERVER_KEY_PATH**
+
+The path of the ssl private key file.
+
+## Statsd Reporter configuration
+
+### **STATSD_HOST**
+
+The hostpath for the statsd reporter.
+### **STATSD_PORT**
+
+The port for the statsd reporter.
+### **STATSD_INTERVAL_MILLIS**
+
+The miliseconds time interval for the statsd reporter to send stats.
+### **STATSD_PREFIX**
+
+The prefix for the statsd reporter.
+### **STATSD_USE_SYSDIG_NAME_REWRITER**
+
+If set true, rewrite argument of the statsd reporter will be set to true.
+
+## [Statuspage](https://www.statuspage.io) configuration
+### **STATUSPAGEIO_TOKEN**
+
+Token to be used for statuspage config.
+### **STATUSPAGEIO_PAGE_ID**
+
+Page ID to be used for statuspage config.
+### **STATUSPAGEIO_URL**
+
+URL to be used for statuspage config.
+### **STATUSPAGEIO_INTERVAL_MILLIS**
+
+Interval Milliseconds to be used for statuspage config.
+
+## [SSH EVENT STREAMING](/docs/retraced/advanced-retraced/ssh-streaming/) configuration
+
+### **NO_WARP_PIPE**
+
+If not set, Retraced will enable SSH streaming of events.
+### **WARP_PIPE_REDIS_DB**
+
+The redis db id used for SSH streaming.
+## [Redis](https://redis.io/) configuration
+
+### **REDIS_URI**
+
+The uri to be used for redis connection.
+## Email configuration
+
+### **EMAIL_FROM**
+
+The email address to be used to send email from Retraced.
+
+Default: `Retraced <contact@retraced.io>`
+
+### **SMTP_CONNECTION_URL**
+
+SMTP connection url to be used to send emails using [nodemailer](https://www.npmjs.com/package/nodemailer).
+
+### **MANDRILL_KEY**
+
+The API key to be used to send emails using [Mandrill By Mailchimp](https://mailchimp.com/en-gb/features/transactional-email/?utm_source=mandrill&utm_medium=mc-site&utm_campaign=aoc_product-mktg_tnx_redirect_wld_20200515).
+## [Auth0](https://auth0.com/) configuration
+
+### **AUTH0_CLIENT_DOMAIN**
+
+The domain to be used for Auth0 web auth.
+
+### **AUTH0_CLIENT_ID**
+
+The client id to be used for Auth0 web auth.
+## Publisher configuration
+
+### **PUBLISHER_BULK_CREATE_MAX_EVENTS**
+
+The limit of the events that can be created using bulk api.
+
+default: `50`
+
+### **PUBLISHER_CREATE_EVENT_TIMEOUT**
+
+The timeout used by publister for delay while registering events.
+
+default: `1000`
+
+## [Analytics-node](https://segment.com/docs/connections/sources/catalog/libraries/server/node/) configuration
+
+### **SEGMENT_WRITE_KEY**
+
+The write keys used for [Analytics](https://segment.com/docs/connections/sources/catalog/libraries/server/node/#identify). Reports the project as a `user segment`.
