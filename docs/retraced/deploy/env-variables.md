@@ -1,7 +1,5 @@
 # Environment Variables
 
-The env vars are only applicable to the Jackson service. If you are using the npm then look for the options below when initializing the library.
-
 ## General configuration
 
 ### **API_BASE_URL_PATH**
