@@ -47,3 +47,8 @@ Create tables and indexes required for Retraced in Elasticsearch.
 ## Start the processor
 
 `node -r ts-node/register src/_processor/index.ts`
+
+## See it in action
+
+Use the postman collection located at `./postman/Retraced.postman_collection.json`.
+You can import the json file in postman and use the API calls to test Retraced.
