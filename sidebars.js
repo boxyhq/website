@@ -121,6 +121,7 @@ module.exports = {
           {
             type: 'category',
             label: 'APIs',
+            link: { type: 'doc', id: 'retraced/apis/index' },
             items: [
                 'retraced/apis/overview',
                 'retraced/apis/publisher-api',
