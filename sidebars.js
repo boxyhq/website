@@ -35,5 +35,18 @@ module.exports = {
         'jackson/local-development',
       ],
     },
+    {
+      type: 'category',
+      label: 'Directory Sync (Beta)',
+      collapsible: true,
+      collapsed: false,
+      link: { type: 'doc', id: 'jackson/directory-sync/index' },
+      items: [
+        'jackson/directory-sync/providers',
+        'jackson/directory-sync/webhook',
+        'jackson/directory-sync/apis',
+        'jackson/directory-sync/admin-ui',
+      ]
+    },
   ],
 };
