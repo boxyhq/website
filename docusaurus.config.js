@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
-const copyright = '2021-now © BoxyHQ Inc.';
+const copyright = '2021-present © BoxyHQ Inc.';
 
 module.exports = {
   title: 'Enterprise Readiness made simple',
@@ -69,14 +69,8 @@ module.exports = {
           title: 'Legal',
           items: [
             {
-              label: 'Cookies Policy',
-              href: '/cookies.html',
-              target: '_blank',
-            },
-            {
-              label: 'Privacy Policy',
+              label: 'Privacy & Cookies Policy',
               href: '/privacy.html',
-              target: '_blank',
             },
             {
               label: 'Terms',
