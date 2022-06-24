@@ -91,45 +91,6 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### Update a directory
-
-Update a directory connection.
-
-<Tabs>
-<TabItem value="01" label="Node.js" default>
-
-```javascript
-const directory = await directorySyncController.directories.create({
-  name: 'BoxyHQ SCIM App',
-  tenant: 'boxyhq',
-  product: 'flex',
-  type: 'okta-scim-v2',
-  webhook_url: 'https://my-cool-app.com/webhook',
-  webhook_secret: 'my-secret',
-});
-```
-
-</TabItem>
-<TabItem value="02" label="Shell">
-
-```bash
-curl --request POST \
-  --url http://localhost:5225/api/v1/directory-sync \
-  --header 'Authorization: Bearer secret' \
-  --header 'Content-Type: application/json' \
-  --data '{
-	"name": "BoxyHQ SCIM App",
-	"tenant": "boxyhq",
-	"product": "flex",
-	"type": "okta-scim-v2",
-	"webhook_url": "https://my-cool-app.com/webhook",
-	"webhook_secret": "my-secret"
-}'
-```
-
-</TabItem>
-</Tabs>
-
 ### List directories
 
 List all the available directory connections.
