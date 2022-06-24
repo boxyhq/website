@@ -1,8 +1,23 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import { useColorMode } from '@docusaurus/theme-common';
 
 const title = '';
 const description = 'Privacy & Cookies Policy';
+
+const IFrame = () => {
+  const { colorMode } = useColorMode();
+
+  return (
+    <iframe
+      title="Privasee - BoxyHQ Inc."
+      id="privacy-policy-iframe"
+      frameBorder="0"
+      src={`https://app.privasee.io/embedded-privacy-portal/62b05b7a239a600013f95e77?theme=${colorMode}`}
+      style={{ width: '100%', height: '100vh' }}
+    ></iframe>
+  );
+};
 
 function Privacy() {
   window.addEventListener(
@@ -23,13 +38,7 @@ function Privacy() {
   return (
     <Layout title={title} description={description}>
       <main className="container margin-vert--lg">
-        <iframe
-          title="Privasee - BoxyHQ Inc."
-          id="privacy-policy-iframe"
-          frameBorder="0"
-          src="https://app.privasee.io/embedded-privacy-portal/62b05b7a239a600013f95e77?theme=light"
-          style={{ width: '100%', height: '100vh' }}
-        ></iframe>
+        <IFrame></IFrame>
       </main>
     </Layout>
   );
