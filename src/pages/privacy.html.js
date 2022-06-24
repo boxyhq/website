@@ -20,20 +20,22 @@ const IFrame = () => {
 };
 
 function Privacy() {
-  window.addEventListener(
-    'message',
-    (event) => {
-      if (event.data) {
-        const { message, contentHeight } = JSON.parse(event.data);
-        if (message === 'Updating content height') {
-          var _doc = document.getElementById('privacy-policy-iframe');
-          if (!_doc) return false;
-          _doc.style.height = contentHeight;
+  if (typeof window !== 'undefined') {
+    window.addEventListener(
+      'message',
+      (event) => {
+        if (event.data) {
+          const { message, contentHeight } = JSON.parse(event.data);
+          if (message === 'Updating content height') {
+            var _doc = document.getElementById('privacy-policy-iframe');
+            if (!_doc) return false;
+            _doc.style.height = contentHeight;
+          }
         }
-      }
-    },
-    false
-  );
+      },
+      false
+    );
+  }
 
   return (
     <Layout title={title} description={description}>
