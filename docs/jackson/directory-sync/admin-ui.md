@@ -1,3 +1,8 @@
+---
+title: Directory Sync
+sidebar_label: Admin UI
+---
+
 # Admin UI
 
 This guide outline how to manage your directory connections via the Jackson Admin UI.
