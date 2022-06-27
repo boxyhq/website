@@ -9,7 +9,7 @@ module.exports = {
       type: 'category',
       label: 'SAML Jackson',
       collapsible: true,
-      collapsed: false,
+      //collapsed: false,
       link: { type: 'doc', id: 'jackson/overview' },
       items: [
         {
@@ -39,13 +39,24 @@ module.exports = {
       type: 'category',
       label: 'Directory Sync (Beta)',
       collapsible: true,
-      collapsed: false,
+      //collapsed: false,
       link: { type: 'doc', id: 'jackson/directory-sync/index' },
       items: [
-        'jackson/directory-sync/providers',
-        'jackson/directory-sync/webhook',
         'jackson/directory-sync/apis',
         'jackson/directory-sync/admin-ui',
+        'jackson/directory-sync/webhook',
+        {
+          type: 'category',
+          label: "Providers",
+          collapsible: true,
+          link: { type: 'doc', id: 'jackson/directory-sync/providers/index' },
+          items: [
+            'jackson/directory-sync/providers/azure',
+            'jackson/directory-sync/providers/okta',
+            'jackson/directory-sync/providers/onelogin',
+            'jackson/directory-sync/providers/jumpcloud',
+          ]
+        },
       ]
     },
   ],

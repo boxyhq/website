@@ -6,4 +6,3 @@
 - Event types
 - Receive events
 - Validate the signature
-- 

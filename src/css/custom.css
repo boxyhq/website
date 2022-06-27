@@ -62,3 +62,7 @@ html[data-theme='dark'] .header-github-link:before {
     margin-bottom: var(--ifm-spacing-horizontal) !important;
   }
 }
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.3rem;
+}
