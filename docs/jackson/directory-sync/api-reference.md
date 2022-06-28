@@ -10,17 +10,6 @@ import TabItem from '@theme/TabItem';
 
 The following guides provide information about the APIs and SDKs that are available for the Directory Sync service.
 
-## On this page
-
-- [Initialize SAML Jackson Directory Sync](apis.md#initialize-saml-jackson-directory-sync)
-- [Create a new directory](apis.md#create-a-new-directory)
-- [List directories](apis.md#list-directories)
-- [Get a directory](apis.md#get-a-directory)
-- [List directory users](apis.md#list-directory-users)
-- [Get a directory user](apis.md#get-a-directory-user)
-- [List directory groups](apis.md#list-directory-groups)
-- [Get a directory group](apis.md#get-a-directory-group)
-
 ### Initialize SAML Jackson Directory Sync
 
 ```javascript
@@ -50,7 +39,7 @@ async function init() {
 - `name`: The name of the directory
 - `tenant`: The tenant ID of the tenant you want to create the directory for
 - `product`: The product ID of the product you want to create the directory for
-- `type`: The directory provider type. See the [Directory Providers](./providers.md) for more information.
+- `type`: The directory provider type. See the [Directory Providers](./providers) for more information.
 - `webhook_url`: The webhook URL to which the directory connection will POST the events
 - `webhook_secret`: The webhook secret used to sign the webhook payload
 
@@ -63,7 +52,7 @@ Create a new directory connection.
 <Tabs>
 <TabItem value="01" label="Node.js" default>
 
-```javascript
+```javascript showLineNumbers
 const { data, error } = await directorySyncController.directories.create({
   name: 'App',
   tenant: 'boxyhq',
@@ -131,7 +120,7 @@ List all the available directory connections.
 <Tabs>
 <TabItem value="01" label="Node.js" default>
 
-```javascript
+```javascript showLineNumbers
 const { data, error } = await directorySyncController.directories.list({});
 ```
 
@@ -186,7 +175,7 @@ Get the details of a directory connection.
 <Tabs>
 <TabItem value="01" label="Node.js" default>
 
-```javascript
+```javascript showLineNumbers
 // Get the directory by tenant and product
 
 const tenant = 'boxyhq';
@@ -266,7 +255,7 @@ List all the users in a directory.
 <Tabs>
 <TabItem value="01" label="Node.js" default>
 
-```javascript
+```javascript showLineNumbers
 const tenant = 'boxyhq';
 const product = 'jackson';
 
@@ -384,7 +373,7 @@ Get the details of a directory user.
 <Tabs>
 <TabItem value="01" label="Node.js" default>
 
-```javascript
+```javascript showLineNumbers
 const tenant = 'boxyhq';
 const product = 'flex';
 const userId = 'ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92';
@@ -463,7 +452,7 @@ List all the groups in a directory.
 <Tabs>
 <TabItem value="01" label="Node.js" default>
 
-```javascript
+```javascript showLineNumbers
 const tenant = 'boxyhq';
 const product = 'jackson';
 
@@ -527,7 +516,7 @@ Get the details of a directory group.
 <Tabs>
 <TabItem value="01" label="Node.js" default>
 
-```javascript
+```javascript showLineNumbers
 const tenant = 'boxyhq';
 const product = 'jackson';
 const groupId = '44d08c0e-d185-4a5e-80a6-b47a717ffaa5';

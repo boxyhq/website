@@ -11,24 +11,13 @@ This guide outline how to manage your directory connections via the Jackson Admi
 
 ---
 
-## On this page
-
-- [Create directory sync connection](admin-ui.md#create-directory-sync-connection)
-- [Update directory sync connection](admin-ui.md#update-directory-sync-connection)
-- [View directory users](admin-ui.md#view-directory-users)
-- [View directory groups](admin-ui.md#view-directory-groups)
-- [View webhook events](admin-ui.md#view-webhook-events)
-- [Enable webhook events logging](admin-ui.md#enable-webhook-events-logging)
-
----
-
 ### Create directory sync connection
 
 1. From your SAML Jackson Admin UI, go to **Directory Sync**.
 2. Click **Create New**.
 3. Enter the following information:
    - Enter **Directory name**
-   - Select the **Directory provider** from the list of [available providers](providers.md).
+   - Select the **Directory provider** from the list of [available providers](providers).
    - Add the **Tenant**
    - Add the **Product**
    - Enter the **Webhook URL**
