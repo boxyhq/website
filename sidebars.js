@@ -42,7 +42,7 @@ module.exports = {
       //collapsed: false,
       link: { type: 'doc', id: 'jackson/directory-sync/index' },
       items: [
-        'jackson/directory-sync/apis',
+        'jackson/directory-sync/api-reference',
         'jackson/directory-sync/admin-ui',
         'jackson/directory-sync/webhook',
         {
