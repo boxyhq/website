@@ -5,7 +5,7 @@ author: Deepak Prabhakara
 author_title: Co-founder & CEO @ BoxyHQ
 author_url: https://github.com/deepakprabhakara
 author_image_url: https://avatars.githubusercontent.com/u/357991?s=400&v=4
-tags: [careers senior-software-engineer engineering]
+tags: [careers, senior-software-engineer, engineering]
 ---
 
 #### TLDR
