@@ -15,6 +15,15 @@ module.exports = {
   projectName: 'website', // Usually your repo name.
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    zoom: {
+      selector: '.markdown :not(em) > img',
+      config: {
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        }
+      }
+    },
     image: 'img/website-preview-image.png',
     colorMode: {
       defaultMode: 'light',
@@ -162,5 +171,6 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars_guides.js'),
       },
     ],
+    require.resolve("docusaurus-plugin-image-zoom")
   ],
 };

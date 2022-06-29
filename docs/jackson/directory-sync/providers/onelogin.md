@@ -60,6 +60,64 @@ In the popup window, check the box **Include in User Provisioning** and click th
 
 ### Assign Users
 
+In order to assign users to your app, select **Users** from the top navigation menu and choose the user you want to assign to the app.
+
+From the user page, click the **Application** tab on the left and click the plus sign.
+
+![img alt](/img/dsync/onelogin/8.png)
+
+A popup window will show you the list of apps that you can assign the user to. Select the app you created earlier and click the **Continue** button.
+
+![img alt](/img/dsync/onelogin/9.png)
+
+Click **Save** on the next modal window to confirm the assignment.
+
+![img alt](/img/dsync/onelogin/10.png)
+
+Depending on your configuration, You may have to approve the assignment.
+
+If you see a text **Pending** in the table, click that text. That'll bring up a modal window, click the button **Approve** to approve the assignment.
+
+![img alt](/img/dsync/onelogin/11.png)
+
+At this point, the user will be assigned to the app.
+
 ---
 
 ### Push Groups
+
+In order to push groups to your app, you've to create a new **Role** in your app.
+
+In the top navigation, select **Users** and then **Roles** from the dropdown.
+
+Click **New Role** to create a new role.
+
+![img alt](/img/dsync/onelogin/12.png)
+
+Enter a name for the role, select the app you created earlier and click the **Save** button.
+
+![img alt](/img/dsync/onelogin/13.png)
+
+Click the **Users** tab for the role and search for the user you want to assign the role to.
+
+Click the button **Add To Role** to assign the user to the role and click the **Save** button.
+
+![img alt](/img/dsync/onelogin/14.png)
+
+Click **Save** in the next modal to confirm the assignment.
+
+![img alt](/img/dsync/onelogin/15.png)
+
+Go back to your app and click the **Rule** tab on the left and click the **Add Rule** button.
+
+Give the rule a name. Under the **Actions**, select the **Set Groups in your-app-name** from the dropdown, then select for each **role** with values that matches **your-app-name**. Click the **Save** button.
+
+![img alt](/img/dsync/onelogin/16.png)
+
+Click the **Users** tab on the left, you may see **Pending** provisions in the table. Click that text to approve the assignment.
+
+![img alt](/img/dsync/onelogin/17.png)
+
+Click **Approve** in the next modal to confirm the assignment.
+
+![img alt](/img/dsync/onelogin/18.png)
