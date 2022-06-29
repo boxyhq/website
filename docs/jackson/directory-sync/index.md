@@ -4,7 +4,8 @@ title: Directory Sync
 
 # Directory Sync
 
-TODO: Add a small note about the what is Directory Sync
+TODO: Add a section about Directory Sync.
+
 TODO: Link to the example app
 
 ## Overview
