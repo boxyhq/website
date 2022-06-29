@@ -7,7 +7,7 @@ sidebar_label: Admin UI
 
 This guide outline how to manage your directory connections via the Jackson Admin UI.
 
-![img alt](/img/dsync/directories.png)
+![img alt](/img/dsync/admin/directories.png)
 
 ---
 
@@ -23,7 +23,7 @@ This guide outline how to manage your directory connections via the Jackson Admi
    - Enter the **Webhook URL**
    - Enter the **Webhook secret**
 
-![img alt](/img/dsync/create-directory.png)
+![img alt](/img/dsync/admin/create-directory.png)
 
 ---
 
@@ -37,7 +37,7 @@ This guide outline how to manage your directory connections via the Jackson Admi
    - Enter the **Webhook secret**
    - Toggle **Enable Webhook events logging**
 
-![img alt](/img/dsync/update-directory.png)
+![img alt](/img/dsync/admin/update-directory.png)
 
 ---
 
@@ -48,7 +48,7 @@ This guide outline how to manage your directory connections via the Jackson Admi
 3. Click the tab **Users**.
 4. Click the eye icon to view the user raw JSON data.
 
-![img alt](/img/dsync/users.png)
+![img alt](/img/dsync/admin/users.png)
 
 ---
 
@@ -59,7 +59,7 @@ This guide outline how to manage your directory connections via the Jackson Admi
 3. Click the tab **Groups**.
 4. Click the eye icon to view the group raw JSON data.
 
-![img alt](/img/dsync/groups.png)
+![img alt](/img/dsync/admin/groups.png)
 
 ---
 
@@ -70,7 +70,7 @@ This guide outline how to manage your directory connections via the Jackson Admi
 3. Click the tab **Webhook Events**.
 4. Click the eye icon to view the event raw JSON data.
 
-![img alt](/img/dsync/logs.png)
+![img alt](/img/dsync/admin/logs.png)
 
 Click the button **Clear Events** to delete all events from the database.
 
