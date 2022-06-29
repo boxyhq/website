@@ -217,7 +217,22 @@ Jackson will notify you of the following events:
   <p>
 
 ```json
-
+{
+  "directory_id": "58b5cd9dfaa39d47eb8f5f88631f9a629a232016",
+  "event": "group.deleted",
+  "tenant": "boxyhq",
+  "product": "jackson",
+  "data": {
+    "id": "29e3adde-b4bb-45fc-bf65-2b44f29fd6f6",
+    "name": "developers",
+    "raw": {
+      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
+      "displayName": "developers",
+      "members": [],
+      "id": "29e3adde-b4bb-45fc-bf65-2b44f29fd6f6"
+    }
+  }
+}
 ```
 
   </p>
@@ -346,3 +361,23 @@ Jackson will notify you of the following events:
 
   </p>
 </details>
+
+## Webhooks
+
+A webhook is an HTTP request, triggered by an event in a source system and sent to a destination system (Eg: your app), often with a payload of data.
+
+### Receive Events
+
+You have to provide a **Webhook Endpoint** and **Webhook Secret** at the time of creating a directory connection to receive events.
+
+Read more about how to create a directory connection [here](admin-ui#create-directory-sync-connection).
+
+Jackson will make a POST request to the Webhook Endpoint with an additional header. Your Webhook Endpoint should be able to receive POST request and respond with a 200 status code.
+
+The header will have the following key-value pairs:
+
+- **BoxyHQ-Signature** - The signature of the payload. **(t=${timestamp},s=${signature})**
+
+The signature is generated using the Webhook Secret, payload and timestamp.
+
+### Validate the Signature

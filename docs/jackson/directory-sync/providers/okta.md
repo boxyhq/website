@@ -5,15 +5,15 @@ sidebar_label: Okta SCIM v2.0
 
 # Okta SCIM v2.0
 
-TODO: Add YouTube video link here.
-
 The following guide will walk you through the process of configuring SAML Jackson to use the Okta as a directory sync provider.
+
+TODO: Add video link here.
 
 ---
 
 ### Create Okta Application
 
-Click **Applications** from the left navigation menu and select **Browse App Catalog**.
+Click **Applications** from the left navigation menu and click **Browse App Catalog** button.
 
 ![img alt](/img/dsync/okta/1.png)
 
