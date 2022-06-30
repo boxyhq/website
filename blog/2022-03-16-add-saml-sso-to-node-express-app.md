@@ -4,8 +4,8 @@ title: How to add SAML Single Sign On to an Express app
 author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
-author_image_url: https://avatars.githubusercontent.com/u/4593041?s=400&v=4
-tags: [enterprise-readiness, engineering, saml, saml-jackson, integrations]
+author_image_url: ../img/team/kiran.jpg
+tags: [enterprise-readiness, engineering, saml, saml-jackson, integrations, sso]
 ---
 
 In this article, you'll learn how add SAML SSO login to an Express.js app. You'll use [SAML Jackson](https://boxyhq.com/docs/jackson/overview) with [Auth0](https://auth0.com/single-sign-on) to authenticate users and protect routes.
