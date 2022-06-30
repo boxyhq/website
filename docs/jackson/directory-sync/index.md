@@ -8,6 +8,8 @@ TODO: Add a section about Directory Sync.
 
 TODO: Link to the example app
 
+![img alt](/img/dsync/directory-sync-flow.png)
+
 ## Overview
 
 - [API Reference](api-reference)
