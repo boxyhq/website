@@ -5,7 +5,7 @@ author: Jay Singh
 author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
 author_image_url: ../img/team/jay.jpg
-image: ../img/blog/sso/with-boxyhq.png
+image: img/blog/sso/with-boxyhq.png
 tags: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
 ---
 
