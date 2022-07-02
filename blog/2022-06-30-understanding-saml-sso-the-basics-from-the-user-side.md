@@ -4,7 +4,7 @@ title: Understanding SAML SSO, the basics from the user side
 author: Jay Singh
 author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
-author_image_url: ../img/team/jay.jpg
+author_image_url: https://boxyhq.com/img/team/jay.jpg
 tags: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
 image: img/blog/sso/with-saml.png
 ---
