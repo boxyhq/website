@@ -44,10 +44,11 @@ module.exports = {
       items: [
         'jackson/directory-sync/api-reference',
         'jackson/directory-sync/admin-ui',
-        'jackson/directory-sync/webhook',
+        'jackson/directory-sync/webhooks',
+        'jackson/directory-sync/events',
         {
           type: 'category',
-          label: "Providers",
+          label: 'Providers',
           collapsible: true,
           link: { type: 'doc', id: 'jackson/directory-sync/providers/index' },
           items: [
@@ -55,9 +56,9 @@ module.exports = {
             'jackson/directory-sync/providers/okta',
             'jackson/directory-sync/providers/onelogin',
             'jackson/directory-sync/providers/jumpcloud',
-          ]
+          ],
         },
-      ]
+      ],
     },
   ],
 };

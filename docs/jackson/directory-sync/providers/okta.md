@@ -7,8 +7,6 @@ sidebar_label: Okta SCIM v2.0
 
 The following guide will walk you through the process of configuring SAML Jackson to use the Okta as a directory sync provider.
 
-TODO: Add video link here.
-
 ---
 
 ### Create Okta Application

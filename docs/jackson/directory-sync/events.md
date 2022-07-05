@@ -1,15 +1,13 @@
 ---
-title: Directory Sync Webhook and Events
-sidebar_label: Webhook and Events
+title: Directory Sync Webhook Events
+sidebar_label: Events
 ---
 
-# Webhook and Events
+# Events and Types
 
-Jackson uses webhooks to notify your application any time changes are made to directory users and groups.
+SAML Jackson uses webhooks to notify your application any time changes are made to directory users and groups.
 
-## Event Types
-
-Jackson will notify you of the following events:
+SAML Jackson will notify you of the following 6 events.
 
 <details>
   <summary>user.created - New user has been assigned to the app.</summary>
@@ -361,23 +359,3 @@ Jackson will notify you of the following events:
 
   </p>
 </details>
-
-## Webhooks
-
-A webhook is an HTTP request, triggered by an event in a source system and sent to a destination system (Eg: your app), often with a payload of data.
-
-### Receive Events
-
-You have to provide a **Webhook Endpoint** and **Webhook Secret** at the time of creating a directory connection to receive events.
-
-Read more about how to create a directory connection [here](admin-ui#create-directory-sync-connection).
-
-Jackson will make a POST request to the Webhook Endpoint with an additional header. Your Webhook Endpoint should be able to receive POST request and respond with a 200 status code.
-
-The header will have the following key-value pairs:
-
-- **BoxyHQ-Signature** - The signature of the payload. **(t=${timestamp},s=${signature})**
-
-The signature is generated using the Webhook Secret, payload and timestamp.
-
-### Validate the Signature

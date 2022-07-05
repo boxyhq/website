@@ -6,7 +6,7 @@ title: Directory Sync
 
 TODO: Add a section about Directory Sync.
 
-TODO: Link to the example app
+SAML Jackson supports only SCIM 2.0 protocol.
 
 ![img alt](/img/dsync/directory-sync-flow.png)
 
@@ -14,5 +14,6 @@ TODO: Link to the example app
 
 - [API Reference](api-reference)
 - [Admin UI](admin-ui)
-- [Webhook and Events](webhook)
+- [Webhook](webhooks)
+- [Events and Types](events)
 - [Directory Sync Providers](providers)
