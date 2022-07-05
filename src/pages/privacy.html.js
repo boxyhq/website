@@ -25,7 +25,7 @@ function Privacy() {
       'message',
       (event) => {
         if (event.data) {
-          const { message, contentHeight } = JSON.parse(event.data);
+          const { message, contentHeight } = event.data;
           if (message === 'Updating content height') {
             var _doc = document.getElementById('privacy-policy-iframe');
             if (!_doc) return false;
