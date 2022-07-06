@@ -33,6 +33,12 @@ module.exports = {
             'jackson/integrations/supertokens',
           ],
         },
+        {
+          type: 'category',
+          label: 'SSO Providers',
+          collapsed: false,
+          items: ['jackson/providers/okta', 'jackson/providers/onelogin'],
+        },
       ],
     },
   ],
