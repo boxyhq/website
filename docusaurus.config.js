@@ -156,5 +156,6 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars_guides.js'),
       },
     ],
+    ['@cmfcmf/docusaurus-search-local', {}],
   ],
 };
