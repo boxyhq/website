@@ -1,9 +1,11 @@
 ---
-title: Configure OneLogin as SAML Identity Provider
+title: Setup your own custom SAML application for OneLogin SAML
 sidebar_label: OneLogin SAML
 ---
 
-# Configure OneLogin as SAML Identity Provider
+# OneLogin SAML SSO
+
+In this section, we will show you how to setup your own custom SAML application for OneLogin SAML.
 
 ## Create Application
 
@@ -13,15 +15,15 @@ If your application is alread created, choose it from the list and move to the s
 
 Click **Add App** button to create a new application.
 
-![img alt](/img/saml/onelogin/1.png)
+![img alt](/img/sso-providers/onelogin/1.png)
 
 Search for **SAML Test Connector** in the **Find Applications** section. Select **SAML Custom Connector (Advanced)** from the search results.
 
-![img alt](/img/saml/onelogin/2.png)
+![img alt](/img/sso-providers/onelogin/2.png)
 
 Give your application a **Display Name** and click **Save**.
 
-![img alt](/img/saml/onelogin/3.png)
+![img alt](/img/sso-providers/onelogin/3.png)
 
 ## Configure Application
 
@@ -38,13 +40,13 @@ Replace the values with the ones you have received from SAML Jackson.
 
 Click **Save** to save the configuration.
 
-![img alt](/img/saml/onelogin/4.png)
+![img alt](/img/sso-providers/onelogin/4.png)
 
-![img alt](/img/saml/onelogin/7.png)
+![img alt](/img/sso-providers/onelogin/7.png)
 
 Click the dropdown menu **More Actions** from the top right corner and click **SAML Metadata** to download the metadata XML file.
 
-![img alt](/img/saml/onelogin/5.png)
+![img alt](/img/sso-providers/onelogin/5.png)
 
 ## Attribute Mapping
 
@@ -61,18 +63,29 @@ You have to configure the following attributes:
 
 See the screenshot below.
 
-![img alt](/img/saml/onelogin/6.png)
+![img alt](/img/sso-providers/onelogin/6.png)
 
 See the below screenshot to see how to map **id** attribute to **UUID**.
 
 Enter **id** in the **Field name** input and check the **Include in SAML assertion** checkbox. Click **Save** to continue.
 
-![img alt](/img/saml/onelogin/8.png)
+![img alt](/img/sso-providers/onelogin/8.png)
 
 On the next screen, select **UUID** from the **Value** dropdown and click **Save**.
 
-![img alt](/img/saml/onelogin/9.png)
+![img alt](/img/sso-providers/onelogin/9.png)
 
 Do the same for the other attributes (email, firstName, lastName).
 
-## Assign Users
+## Next steps
+
+You've successfully configured your custom SAML application for OneLogin SAML. At this stage, you can assign users to your application and start using it.
+
+## Resources
+
+- [OneLogin](https://www.onelogin.com/) official website
+- Visit [OneLogin documentation](https://developers.onelogin.com/)
+
+:::tip
+Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)
+:::
