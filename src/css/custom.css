@@ -16,6 +16,14 @@
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
   --ifm-navbar-height: 5rem;
+
+  --aa-muted-color-rgb: 37, 194, 160 !important;
+  --aa-primary-color-rgb: 37, 194, 160 !important;
+}
+
+body[data-theme='dark'] {
+  --aa-muted-color-rgb: 37, 194, 160 !important;
+  --aa-primary-color-rgb: 37, 194, 160 !important;
 }
 
 .docusaurus-highlight-code-line {
