@@ -9,6 +9,11 @@ In this section, we will show you how to set up your own custom SAML application
 
 ## Create Application
 
+![img alt](/img/sso-providers/auth0/1.png)
+![img alt](/img/sso-providers/auth0/2.png)
+![img alt](/img/sso-providers/auth0/3.png)
+![img alt](/img/sso-providers/auth0/4.png)
+
 ## Configure Application
 
 ## Attribute Mapping
