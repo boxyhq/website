@@ -17,11 +17,11 @@ Most larger solution providers have already invested a lot of time and money int
 
 The main reason why smaller companies don’t implement SAML as part of the standard build is that it traditionally takes a long time as they have to build a custom integration with each IDP provider their customers use. Well, this is now an old issue because we have created BoxyHQ which allows you to connect to our free product with one single integration that then connects to all the IDPs for you! Let's take a look at what the integrations with and without BoxyHQ look like first.
 
-![img alt](/img/blog/sso/without-boxyhq.png)
+![Without BoxyHQ](/img/blog/sso/without-boxyhq.png)
 
 In the diagram above we can see what it looks like when you build a custom SAML integration with each IDP. As you can see for each IDP you have to connect all the instances of your product and build a unique integration. This can take months and take the focus away from your team building your core product. We believe that enterprise readiness should be accessible and easy for businesses of all sizes so we built BoxyHQ. Let's see what that looks like.
 
-![img alt](/img/blog/sso/with-boxyhq.png)
+![With BoxyHQ](/img/blog/sso/with-boxyhq.png)
 
 As you can see from the image above with BoxyHQ you only have to connect your product with a straightforward integration to BoxyHQ and then we manage and connect you to all the IDPs! It is that simple and you can deploy SAML SSO for your clients in as little as 8 days. We are also open source and free so you don't need to worry about big maintenance bills, we will even offer you custom support during the integration.
 

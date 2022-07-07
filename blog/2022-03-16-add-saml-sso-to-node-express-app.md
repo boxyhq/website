@@ -274,7 +274,7 @@ npm start
 
 Now, let's visit [http://localhost:3000/config](http://localhost:3000/config), you should see the page with a form.
 
-![img alt](/img/blog/add-saml-sso-to-node-express-app/add-saml-config-form.png)
+![SAML Config](/img/blog/add-saml-sso-to-node-express-app/add-saml-config-form.png)
 
 Here you can add the metadata you've downloaded from Auth0. Fill out the form with a Tenant, Product, and paste the metadata XML content as it is.
 
@@ -441,7 +441,7 @@ If you've configured everything okay, it should redirect you to the Auth0 authen
 
 If the authentication is successful, the app will redirect you to the dashboard and display the `id`, `email` of the user.
 
-![img alt](/img/blog/add-saml-sso-to-node-express-app/express-dashboard.png)
+![Dashboard](/img/blog/add-saml-sso-to-node-express-app/express-dashboard.png)
 
 ## Conclusion
 
