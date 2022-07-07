@@ -13,7 +13,7 @@ From your OneLogin account, click **Applications** from top navigation menu.
 
 If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
 
-Click **Add App** button to create a new application.
+If you haven't created a SAML application, click **Add App** button to create a new application.
 
 ![img alt](/img/sso-providers/onelogin/1.png)
 

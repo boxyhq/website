@@ -13,7 +13,7 @@ From your Okta account, click **Applications** from left navigation menu.
 
 If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
 
-Click **Create App Integration** button to create a new application.
+If you haven't created a SAML application, click **Create App Integration** button to create a new application.
 
 ![img alt](/img/sso-providers/okta/1.png)
 
@@ -32,6 +32,8 @@ Enter the following values in the **SAML Settings** section on the next screen:
 - **Single sign on URL**
 - **Audience URI (SP Entity ID)**
 - Select **EmailAddress** from the **Name ID format** dropdown.
+
+Replace the values with the ones you have received from SAML Jackson.
 
 ![img alt](/img/sso-providers/okta/4.png)
 
