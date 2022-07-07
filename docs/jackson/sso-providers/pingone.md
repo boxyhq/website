@@ -5,13 +5,13 @@ sidebar_label: PingOne SAML
 
 # PingOne SAML SSO
 
-In this section, we will show you how to setup your own custom SAML application for PingOne SAML.
+In this section, we will show you how to set up your own custom SAML application for PingOne SAML.
 
 ## Create Application
 
 From your PingOne account, click **Connections** > **Applications** from left navigation menu.
 
-If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
+If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
 If you haven't created a SAML application, click plus button to create a new application.
 

@@ -5,17 +5,17 @@ sidebar_label: Azure AD SAML
 
 # Azure AD SAML SSO
 
-In this section, we will show you how to setup your own custom SAML application for Azure AD SAML.
+In this section, we will show you how to set up your own custom SAML application for Azure AD SAML.
 
 ## Create Application
 
-From your Azure Admin console, click **Enterprise applications** from left navigation menu.
+From your Azure Admin console, click **Enterprise applications** from the left navigation menu.
 
 ![img alt](/img/sso-providers/azure/1.png)
 
-If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
+If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
-If you haven't created a SAML application, click **New application** from the top create a new application.
+If you haven't created a SAML application, click **New application** from the top to create a new application.
 
 ![img alt](/img/sso-providers/azure/2.png)
 

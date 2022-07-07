@@ -5,15 +5,15 @@ sidebar_label: OneLogin SAML
 
 # OneLogin SAML SSO
 
-In this section, we will show you how to setup your own custom SAML application for OneLogin SAML.
+In this section, we will show you how to set up your own custom SAML application for OneLogin SAML.
 
 ## Create Application
 
-From your OneLogin account, click **Applications** from top navigation menu.
+From your OneLogin account, click **Applications** from the top navigation menu.
 
-If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
+If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
-If you haven't created a SAML application, click **Add App** button to create a new application.
+If you haven't created a SAML application, click the **Add App** button to create a new application.
 
 ![img alt](/img/sso-providers/onelogin/1.png)
 
@@ -27,7 +27,7 @@ Give your application a **Display Name** and click **Save**.
 
 ## Configure Application
 
-From your application, click **Configuration** tab on the left to configure the application.
+From your application, click the **Configuration** tab on the left to configure the application.
 
 You have to enter the following values in the **Application details** section:
 
@@ -50,7 +50,7 @@ Click the dropdown menu **More Actions** from the top right corner and click **S
 
 ## Attribute Mapping
 
-From your application, click **Parameters** tab on the left.
+From your application, click the **Parameters** tab on the left.
 
 You have to configure the following attributes:
 
@@ -65,7 +65,7 @@ See the screenshot below.
 
 ![img alt](/img/sso-providers/onelogin/6.png)
 
-See the below screenshot to see how to map **id** attribute to **UUID**.
+See the below screenshot to see how to map the **id** attribute to **UUID**.
 
 Enter **id** in the **Field name** input and check the **Include in SAML assertion** checkbox. Click **Save** to continue.
 

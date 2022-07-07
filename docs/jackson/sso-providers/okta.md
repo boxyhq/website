@@ -5,15 +5,15 @@ sidebar_label: Okta SAML
 
 # Okta SAML SSO
 
-In this section, we will show you how to setup your own custom SAML application for Okta SAML.
+In this section, we will show you how to set up your own custom SAML application for Okta SAML.
 
 ## Create Application
 
-From your Okta account, click **Applications** from left navigation menu.
+From your Okta account, click **Applications** from the left navigation menu.
 
-If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
+If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
-If you haven't created a SAML application, click **Create App Integration** button to create a new application.
+If you haven't created a SAML application, click the **Create App Integration** button to create a new application.
 
 ![img alt](/img/sso-providers/okta/1.png)
 
@@ -21,7 +21,7 @@ Choose **SAML 2.0** from the next screen and click **Next**.
 
 ![img alt](/img/sso-providers/okta/2.png)
 
-Give your application a **App Name** and click **Next**.
+Give your application an **App Name** and click **Next**.
 
 ![img alt](/img/sso-providers/okta/3.png)
 
@@ -58,7 +58,7 @@ On the next screen select **I'm an Okta customer adding an internal app** and cl
 
 From your application, click **Sign On** tab and go to the section **SAML Signing Certificates**
 
-Click the **Actions** dropdown for the correct certificate and click **View IdP metadata**. A seperate window will open with the metadata XML file, you can copy it to your clipboard.
+Click the **Actions** dropdown for the correct certificate and click **View IdP metadata**. A separate window will open with the metadata XML file, you can copy it to your clipboard.
 
 ![img alt](/img/sso-providers/okta/7.png)
 

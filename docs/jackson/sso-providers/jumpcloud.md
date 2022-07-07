@@ -5,13 +5,13 @@ sidebar_label: JumpCloud SAML
 
 # JumpCloud SAML SSO
 
-In this section, we will show you how to setup your own custom SAML application for JumpCloud SAML.
+In this section, we will show you how to set up your own custom SAML application for JumpCloud SAML.
 
 ## Create Application
 
-From your JumpCloud Admin console, click **SSO** from left navigation menu.
+From your JumpCloud Admin console, click **SSO** from the left navigation menu.
 
-If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
+If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
 If you haven't created a SAML application, click plus icon and then **Custom SAML App** to create a new application
 
@@ -47,11 +47,11 @@ See the screenshot below.
 
 Make sure you have checked the **Declare Redirect Endpoint** checkbox.
 
-Finally click **Activate** to save the application configuration.
+Finally, click **Activate** to save the application configuration.
 
 ![img alt](/img/sso-providers/jumpcloud/4.png)
 
-Now go back to the SAML app you just created, click the tab **SSO** and click the button **Export Metadata** to download the metadata XML file.
+Now go back to the SAML app you just created, click the tab **SSO**, and click the button **Export Metadata** to download the metadata XML file.
 
 ![img alt](/img/sso-providers/jumpcloud/5.png)
 

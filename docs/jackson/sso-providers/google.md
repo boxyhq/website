@@ -5,19 +5,19 @@ sidebar_label: Google SAML
 
 # Google SAML SSO
 
-In this section, we will show you how to setup your own custom SAML application for Google SAML.
+In this section, we will show you how to set up your own custom SAML application for Google SAML.
 
 ## Create Application
 
 From your Google Admin console, click **Apps** from the sidebar then click **Web and mobile apps** from the list.
 
-If your application is alread created, choose it from the list and move to the section [Configure Application](#configure-application)
+If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
 If you haven't created a SAML application, click **Add custom SAML app** from the menu.
 
 ![img alt](/img/sso-providers/google/1.png)
 
-Give your application a **App name** and click **Continue**.
+Give your application an **App name** and click **Continue**.
 
 ![img alt](/img/sso-providers/google/2.png)
 
@@ -52,7 +52,7 @@ After you have configured the attributes, click **Finish** to save the configura
 
 ![img alt](/img/sso-providers/google/5.png)
 
-From the next scree, click **User access** to configure the application to allow users to login.
+From the next screen, click **User access** to configure the application to allow users to log in.
 
 ![img alt](/img/sso-providers/google/6.png)
 

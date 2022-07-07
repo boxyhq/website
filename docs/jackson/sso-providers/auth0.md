@@ -5,7 +5,7 @@ sidebar_label: Auth0 SAML
 
 # Auth0 SAML SSO
 
-In this section, we will show you how to setup your own custom SAML application for Auth0 SAML.
+In this section, we will show you how to set up your own custom SAML application for Auth0 SAML.
 
 ## Create Application
 
