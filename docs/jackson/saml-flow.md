@@ -202,15 +202,7 @@ If everything goes well you should receive a JSON response with the user's profi
 - `raw`: This contains all claims attributes returned by the SAML provider
 - `requested`: This contains the `tenant`, `product`, `client_id` and `state` from the authorize request. It can be used to reconcile context on the client side if needed
 
-
-## 4. OpenID Connect flow
-
-### 4.1 Authorize
-
-### 4.2 Code Exchange
-
-### 4.3 Profile Request
-## 5. SAML SLO
+## 4. SAML SLO
 
 SLO is a SAML flow that allows an end-user to logout of a single session and be automatically logged out of all linked sessions created during the SSO process.
 
