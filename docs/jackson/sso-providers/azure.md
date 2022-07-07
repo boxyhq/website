@@ -52,12 +52,12 @@ Click **Edit** on the **Attributes & Claims** section.
 
 You have to configure the following attributes under the **Attributes & Claims** section:
 
-| Name                                                               | Value                  |
-| ------------------------------------------------------------------ | ---------------------- |
-| http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress | user.email             |
-| http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname    | user.givenname         |
-| http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name         | user.userprincipalname |
-| http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname      | user.surname           |
+| Name                                                                 | Value                  |
+| -------------------------------------------------------------------- | ---------------------- |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | user.email             |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`    | user.givenname         |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`         | user.userprincipalname |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`      | user.surname           |
 
 See the screenshot below.
 
