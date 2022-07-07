@@ -134,7 +134,7 @@ https://localhost:5225/api/oauth/authorize
 **NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically. 
 
 The user will be taken to the IdP based on the configured SAML metadata.
-In case of any errors, we return the `error` and `error_description` (see [Error Response](https://www.oauth.com/oauth2-servers/authorization/the-authorization-response/)) back to the `redirect_uri` (`redirect_uri` is validated against the saml config to prevent open redirects).
+In case of any errors, we return the `error`, `error_description` and `state` (from original request) (see [Error Response](https://www.oauth.com/oauth2-servers/authorization/the-authorization-response/)) back to the `redirect_uri` (`redirect_uri` is validated against the saml config to prevent open redirects).
 
 ### 3.2 Code Exchange
 
