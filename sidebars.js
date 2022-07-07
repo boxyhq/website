@@ -25,7 +25,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'SSO Providers',
+          label: 'Configure your SSO provider',
           link: { type: 'doc', id: 'jackson/sso-providers/index' },
           items: [
             'jackson/sso-providers/auth0',
@@ -35,9 +35,9 @@ module.exports = {
             'jackson/sso-providers/okta',
             'jackson/sso-providers/onelogin',
             'jackson/sso-providers/pingone',
+            'jackson/sso-providers/generic-saml',
           ],
         },
-        'jackson/configure-saml-idp',
         'jackson/saml-flow',
         'jackson/examples',
         'jackson/admin-ui',
