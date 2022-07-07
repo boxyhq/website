@@ -73,7 +73,7 @@ For supporting OpenID flow, we need to set the algorithm and keys used to sign t
 
 ### **JWS_ALG**
 
-The algorithm used to sign the id_token. We use [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
+The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
 ### **RSA_PRIVATE_KEY**
 
 Base64 value of private key. 
@@ -84,7 +84,7 @@ cat private-key.pem | base64
 ```
 ### **RSA_PUBLIC_KEY**
 Base64 value of public key. 
-You can generate the public key from the private as shown below:
+You can generate the public key from the private key as shown below:
 ```bash
 openssl rsa -in private-key.pem -pubout -out public-key.pem
 cat public-key.pem | base64
