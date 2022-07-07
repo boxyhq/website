@@ -71,13 +71,13 @@ NPM library option: `idpEnabled`
 
 For supporting OpenID flow, we need to set the algorithm and keys used to sign the ID token JWT.
 
-### **JWS_ALG**
+### **OPENID_JWS_ALG**
 
 The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
 
-NPM library option: `jwsAlg`
+NPM library option: `openid.jwsAlg`
 
-### **RSA_PRIVATE_KEY**
+### **OPENID_RSA_PRIVATE_KEY**
 
 Base64 value of private key. 
 To generate one:
@@ -86,9 +86,9 @@ openssl genrsa -out private-key.pem 3072
 cat private-key.pem | base64
 ```
 
-NPM library option: `jwtSigningKeys.private`
+NPM library option: `openid.jwtSigningKeys.private`
 
-### **RSA_PUBLIC_KEY**
+### **OPENID_RSA_PUBLIC_KEY**
 Base64 value of public key. 
 You can generate the public key from the private key as shown below:
 ```bash
@@ -96,7 +96,7 @@ openssl rsa -in private-key.pem -pubout -out public-key.pem
 cat public-key.pem | base64
 ```
 
-NPM library option: `jwtSigningKeys.public`
+NPM library option: `openid.jwtSigningKeys.public`
 
 ## Database configuration
 
