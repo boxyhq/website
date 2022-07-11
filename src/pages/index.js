@@ -1,11 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import Head from '@docusaurus/Head';
+import HeroSection from '../components/HeroSection';
 
 const heroSection = {
   Svg: require('../../static/img/home-hero.svg').default,
@@ -15,29 +12,6 @@ const heroSection = {
   ctaTitle: 'Book a demo',
   ctaLink: 'https://meetings.hubspot.com/deepakprab/demo',
 };
-
-function HomepageHeader({ title, tagline, Svg, ctaTitle, ctaLink }) {
-  return (
-    <div className={clsx('hero', styles.heroBanner)}>
-      <div className="row">
-        <div className="col">
-          <h1 className="hero__title">{title}</h1>
-          <p className="hero__subtitle">{tagline}</p>
-          <div className={styles.buttons}>
-            <Link className="button button--primary button--lg" to={ctaLink}>
-              {ctaTitle}
-            </Link>
-          </div>
-        </div>
-        <div className="col">
-          <div className={clsx('text--center', styles.svgContainer)}>
-            <Svg className={clsx(styles.heroSvg)} alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -49,7 +23,7 @@ export default function Home() {
         <script src="https://cmp.osano.com/169lWRSfch3C32VM2/2cd324ff-6a09-4e61-94fa-6af31f004e67/osano.js"></script>
       </Head>
 
-      <HomepageHeader {...heroSection} />
+      <HeroSection {...heroSection} />
 
       <main>
         <HomepageFeatures />
