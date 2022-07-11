@@ -7,23 +7,35 @@ import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import Head from '@docusaurus/Head';
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+const heroSection = {
+  Svg: require('../../static/img/home-hero.svg').default,
+  title: 'Enterprise readiness for your product, straight out the box',
+  tagline:
+    'At BoxyHQ we enable you to add enterprise compliant security via simple and efficient integrations. SAML Single Sign-on just got easy.',
+  ctaTitle: 'Book a demo',
+  ctaLink: 'https://meetings.hubspot.com/deepakprab/demo',
+};
+
+function HomepageHeader({ title, tagline, Svg, ctaTitle, ctaLink }) {
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="mailto:hello@boxyhq.com"
-          >
-            Contact Us
-          </Link>
+    <div className={clsx('hero', styles.heroBanner)}>
+      <div className="row">
+        <div className="col">
+          <h1 className="hero__title">{title}</h1>
+          <p className="hero__subtitle">{tagline}</p>
+          <div className={styles.buttons}>
+            <Link className="button button--primary button--lg" to={ctaLink}>
+              {ctaTitle}
+            </Link>
+          </div>
+        </div>
+        <div className="col">
+          <div className={clsx('text--center', styles.svgContainer)}>
+            <Svg className={clsx(styles.heroSvg)} alt="" />
+          </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 
@@ -37,7 +49,7 @@ export default function Home() {
         <script src="https://cmp.osano.com/169lWRSfch3C32VM2/2cd324ff-6a09-4e61-94fa-6af31f004e67/osano.js"></script>
       </Head>
 
-      <HomepageHeader />
+      <HomepageHeader {...heroSection} />
 
       <main>
         <HomepageFeatures />

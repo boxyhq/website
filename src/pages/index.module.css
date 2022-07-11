@@ -24,3 +24,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.heroSvg {
+  height: 100%;
+  width: auto;
+}
+
+.svgContainer {
+  height: 100%;
+}
