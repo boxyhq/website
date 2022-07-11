@@ -20,9 +20,15 @@ module.exports = {
       config: {
         background: {
           light: 'rgb(255, 255, 255)',
-          dark: 'rgb(50, 50, 50)'
-        }
-      }
+          dark: 'rgb(50, 50, 50)',
+        },
+      },
+    },
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a target="_blank" rel="noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star us on GitHub</a>',
+      isCloseable: false,
     },
     image: 'img/website-preview-image.png',
     colorMode: {
@@ -165,6 +171,7 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars_guides.js'),
       },
     ],
-    require.resolve("docusaurus-plugin-image-zoom")
+    ['@cmfcmf/docusaurus-search-local', {}],
+    require.resolve('docusaurus-plugin-image-zoom'),
   ],
 };

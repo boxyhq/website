@@ -4,8 +4,8 @@ title: How to add SAML Single Sign On to an Express app
 author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
-author_image_url: https://avatars.githubusercontent.com/u/4593041?s=400&v=4
-tags: [enterprise-readiness, engineering, saml, saml-jackson, integrations]
+author_image_url: https://boxyhq.com/img/team/kiran.jpg
+tags: [enterprise-readiness, engineering, saml, saml-jackson, integrations, sso]
 ---
 
 In this article, you'll learn how add SAML SSO login to an Express.js app. You'll use [SAML Jackson](https://boxyhq.com/docs/jackson/overview) with [Auth0](https://auth0.com/single-sign-on) to authenticate users and protect routes.
@@ -274,7 +274,7 @@ npm start
 
 Now, let's visit [http://localhost:3000/config](http://localhost:3000/config), you should see the page with a form.
 
-![img alt](/img/blog/add-saml-sso-to-node-express-app/add-saml-config-form.png)
+![SAML Config](/img/blog/add-saml-sso-to-node-express-app/add-saml-config-form.png)
 
 Here you can add the metadata you've downloaded from Auth0. Fill out the form with a Tenant, Product, and paste the metadata XML content as it is.
 
@@ -441,7 +441,7 @@ If you've configured everything okay, it should redirect you to the Auth0 authen
 
 If the authentication is successful, the app will redirect you to the dashboard and display the `id`, `email` of the user.
 
-![img alt](/img/blog/add-saml-sso-to-node-express-app/express-dashboard.png)
+![Dashboard](/img/blog/add-saml-sso-to-node-express-app/express-dashboard.png)
 
 ## Conclusion
 
