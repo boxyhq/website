@@ -3,13 +3,17 @@ import clsx from 'clsx';
 import styles from './HeroSection.module.css';
 import Link from '@docusaurus/Link';
 
-function HeroText({ title, tagline, ctaTitle, ctaLink }) {
+function HeroText({ main, title, tagline, ctaTitle, ctaLink }) {
   return (
     <div className="col">
-      <h1 className="hero__title">{title}</h1>
-      <p className="hero__subtitle">{tagline}</p>
+      {main ? (
+        <h1 className="hero__subtitle">{title}</h1>
+      ) : (
+        <h2 className="hero__subtitle">{title}</h2>
+      )}
+      <p className="">{tagline}</p>
       <div className={styles.buttons}>
-        <Link className="button button--primary button--lg" to={ctaLink}>
+        <Link className="button button--primary" to={ctaLink}>
           {ctaTitle}
         </Link>
       </div>
@@ -27,11 +31,12 @@ function HeroImage({ Svg }) {
   );
 }
 
-function HeroLeft({ title, tagline, Svg, ctaTitle, ctaLink }) {
+function HeroLeft({ main, title, tagline, Svg, ctaTitle, ctaLink }) {
   return (
     <div className="row">
       <HeroImage Svg={Svg} />
       <HeroText
+        main={main}
         title={title}
         tagline={tagline}
         ctaTitle={ctaTitle}
@@ -41,10 +46,11 @@ function HeroLeft({ title, tagline, Svg, ctaTitle, ctaLink }) {
   );
 }
 
-function HeroRight({ title, tagline, Svg, ctaTitle, ctaLink }) {
+function HeroRight({ main, title, tagline, Svg, ctaTitle, ctaLink }) {
   return (
     <div className="row">
       <HeroText
+        main={main}
         title={title}
         tagline={tagline}
         ctaTitle={ctaTitle}
@@ -56,6 +62,7 @@ function HeroRight({ title, tagline, Svg, ctaTitle, ctaLink }) {
 }
 
 export default function HeroSection({
+  main = false,
   title,
   tagline,
   Svg,
@@ -67,6 +74,7 @@ export default function HeroSection({
     <div className={clsx('hero', styles.heroBanner)}>
       {svgRight ? (
         <HeroRight
+          main={main}
           title={title}
           tagline={tagline}
           Svg={Svg}
@@ -75,6 +83,7 @@ export default function HeroSection({
         />
       ) : (
         <HeroLeft
+          main={main}
           title={title}
           tagline={tagline}
           Svg={Svg}
