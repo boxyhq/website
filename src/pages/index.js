@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '../components/HomepageFeatures';
 import Head from '@docusaurus/Head';
 import HeroSection from '../components/HeroSection';
-import TrusedBySection from '../components/TrustedBySection';
+import TrustedBySection from '../components/TrustedBySection';
 
 const mainHeroSection = {
   main: true,
@@ -46,7 +46,7 @@ export default function Home() {
       </Head>
 
       <HeroSection {...mainHeroSection} />
-      <TrusedBySection />
+      <TrustedBySection />
       <HeroSection {...demoHeroSection} />
       <HeroSection {...contactHeroSection} />
 

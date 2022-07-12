@@ -3,7 +3,7 @@ import Feature from './Feature';
 import SvgFeature from './SvgFeature';
 import styles from './TrustedBySection.module.css';
 
-const TrusedByList = [
+const TrustedByList = [
   {
     url: 'https://cal.com',
     Svg: require('../../static/img/customers/cal.svg').default,
@@ -22,19 +22,19 @@ const TrusedByList = [
   },
 ];
 
-const TrusedByMain = {
+const TrustedByMain = {
   title: <>Used and trusted by</>,
   description: '',
 };
 
-export default function TrusedBySection() {
+export default function TrustedBySection() {
   return (
-    <div className={`container ${styles.trusedBySection}`}>
+    <div className={`container ${styles.trustedBySection}`}>
       <div className="row">
-        <Feature key="TrustedBySection" {...TrusedByMain} colSize="col--12" />
+        <Feature key="TrustedBySection" {...TrustedByMain} colSize="col--12" />
       </div>
       <div className="row">
-        {TrusedByList.map((props, idx) => (
+        {TrustedByList.map((props, idx) => (
           <SvgFeature key={idx} {...props} colSize="col--3" />
         ))}
       </div>
