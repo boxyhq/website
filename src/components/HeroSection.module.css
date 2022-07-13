@@ -1,6 +1,7 @@
 /* stylelint-disable docusaurus/copyright-header */
 
 .heroBanner {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
   text-align: center;
   position: relative;
   overflow: hidden;

@@ -1,7 +1,6 @@
 /* stylelint-disable docusaurus/copyright-header */
 
 .trustedBySection {
-  border-top: 1px solid var(--ifm-color-emphasis-200);
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
   padding: 20px;
   background-color: white;

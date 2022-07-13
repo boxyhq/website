@@ -13,7 +13,7 @@ function HeroText({ main, title, tagline, ctaTitle, ctaLink }) {
       )}
       <p className="">{tagline}</p>
       <div className={styles.buttons}>
-        <Link className="button button--primary" to={ctaLink}>
+        <Link className="button button--primary button--lg" to={ctaLink}>
           {ctaTitle}
         </Link>
       </div>
