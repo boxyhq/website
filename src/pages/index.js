@@ -46,7 +46,7 @@ export default function Home() {
       </Head>
 
       <HeroSection {...mainHeroSection} />
-      <TrustedBySection />
+      <TrustedBySection quotes={true} />
       <HeroSection {...demoHeroSection} />
       <HeroSection {...contactHeroSection} />
 

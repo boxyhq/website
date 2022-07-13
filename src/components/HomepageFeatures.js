@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './HomepageFeatures.module.css';
 import Feature from './Feature';
 import NewsSection from './NewsSection';
+import TrustedBySection from './TrustedBySection';
 
 const FeatureList = [
   {
@@ -113,13 +114,13 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        {<SSOSAMLSection></SSOSAMLSection>}
+        <SSOSAMLSection />
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} colSize="col--6" />
           ))}
         </div>
-        {<NewsSection></NewsSection>}
+        <NewsSection />
       </div>
     </section>
   );
