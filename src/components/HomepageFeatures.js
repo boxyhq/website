@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './HomepageFeatures.module.css';
 import Feature from './Feature';
-import NewsSection from './NewsSection';
-import TrustedBySection from './TrustedBySection';
 
 const FeatureList = [
   {
@@ -120,7 +118,6 @@ export default function HomepageFeatures() {
             <Feature key={idx} {...props} colSize="col--6" />
           ))}
         </div>
-        <NewsSection />
       </div>
     </section>
   );
