@@ -4,6 +4,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding: 8rem 8rem;
 }
 
 @media screen and (max-width: 966px) {

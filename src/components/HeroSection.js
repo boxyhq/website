@@ -7,7 +7,7 @@ function HeroText({ main, title, tagline, ctaTitle, ctaLink }) {
   return (
     <div className="col">
       {main ? (
-        <h1 className="hero__subtitle">{title}</h1>
+        <h1 className="hero__title">{title}</h1>
       ) : (
         <h2 className="hero__subtitle">{title}</h2>
       )}
