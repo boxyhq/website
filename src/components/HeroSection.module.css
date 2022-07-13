@@ -20,6 +20,10 @@
   justify-content: center;
 }
 
+.buttons > * {
+  margin: 10px 10px;
+}
+
 .heroSvg {
   height: 100%;
   width: auto;

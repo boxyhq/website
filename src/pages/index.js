@@ -12,8 +12,16 @@ const mainHeroSection = {
   title: 'Enterprise readiness for your product, straight out the box',
   tagline:
     'At BoxyHQ we enable you to add enterprise compliant security via simple and efficient integrations. SAML Single Sign-on just got easy.',
-  ctaTitle: 'Book a demo',
-  ctaLink: 'https://meetings.hubspot.com/deepakprab/demo',
+  ctas: [
+    {
+      title: 'Get started',
+      link: 'https://github.com/boxyhq',
+    },
+    {
+      title: 'Book a demo',
+      link: 'https://meetings.hubspot.com/deepakprab/demo',
+    },
+  ],
 };
 
 const demoHeroSection = {
@@ -23,8 +31,7 @@ const demoHeroSection = {
     'Spend more time building your product, not your standard enterprise authentication',
   tagline:
     'At BoxyHQ we enable you to add enterprise compliant security via simple and efficient integrations. SAML Single Sign-on just got easy.',
-  ctaTitle: 'Interactive demo',
-  ctaLink: 'https://saml-demo.boxyhq.com',
+  ctas: [{ title: 'Interactive demo', link: 'https://saml-demo.boxyhq.com' }],
 };
 
 const contactHeroSection = {
@@ -32,8 +39,7 @@ const contactHeroSection = {
   title: 'Simple integration for big results',
   tagline:
     'By using our rapid deployment of SAML SSO you can quickly become an enterprise compliant vendor and start making bigger deals in no time. With security at the forefront of most businesses these days, it can take tech teams months on end to be compliant, but we want to change this by using the power of open source to make this as simple and efficient as possible.',
-  ctaTitle: 'Contact us',
-  ctaLink: 'mailto:hello@boxyhq.com',
+  ctas: [{ title: 'Contact us', link: 'mailto:hello@boxyhq.com' }],
 };
 
 export default function Home() {

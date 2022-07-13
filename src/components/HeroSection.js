@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './HeroSection.module.css';
 import Link from '@docusaurus/Link';
 
-function HeroText({ main, title, tagline, ctaTitle, ctaLink }) {
+function HeroText({ main, title, tagline, ctas }) {
   return (
     <div className="col">
       {main ? (
@@ -13,9 +13,15 @@ function HeroText({ main, title, tagline, ctaTitle, ctaLink }) {
       )}
       <p className="">{tagline}</p>
       <div className={styles.buttons}>
-        <Link className="button button--primary button--lg" to={ctaLink}>
-          {ctaTitle}
-        </Link>
+        {ctas.map((cta, idx) => (
+          <Link
+            key={idx}
+            className="button button--primary button--lg"
+            to={cta.link}
+          >
+            {cta.title}
+          </Link>
+        ))}
       </div>
     </div>
   );
@@ -31,31 +37,19 @@ function HeroImage({ Svg }) {
   );
 }
 
-function HeroLeft({ main, title, tagline, Svg, ctaTitle, ctaLink }) {
+function HeroLeft({ main, title, tagline, Svg, ctas }) {
   return (
     <div className="row">
       <HeroImage Svg={Svg} />
-      <HeroText
-        main={main}
-        title={title}
-        tagline={tagline}
-        ctaTitle={ctaTitle}
-        ctaLink={ctaLink}
-      />
+      <HeroText main={main} title={title} tagline={tagline} ctas={ctas} />
     </div>
   );
 }
 
-function HeroRight({ main, title, tagline, Svg, ctaTitle, ctaLink }) {
+function HeroRight({ main, title, tagline, Svg, ctas }) {
   return (
     <div className="row">
-      <HeroText
-        main={main}
-        title={title}
-        tagline={tagline}
-        ctaTitle={ctaTitle}
-        ctaLink={ctaLink}
-      />
+      <HeroText main={main} title={title} tagline={tagline} ctas={ctas} />
       <HeroImage Svg={Svg} />
     </div>
   );
@@ -67,8 +61,7 @@ export default function HeroSection({
   tagline,
   Svg,
   svgRight = true,
-  ctaTitle,
-  ctaLink,
+  ctas,
 }) {
   return (
     <div className={clsx('hero', styles.heroBanner)}>
@@ -78,8 +71,7 @@ export default function HeroSection({
           title={title}
           tagline={tagline}
           Svg={Svg}
-          ctaTitle={ctaTitle}
-          ctaLink={ctaLink}
+          ctas={ctas}
         />
       ) : (
         <HeroLeft
@@ -87,8 +79,7 @@ export default function HeroSection({
           title={title}
           tagline={tagline}
           Svg={Svg}
-          ctaTitle={ctaTitle}
-          ctaLink={ctaLink}
+          ctas={ctas}
         />
       )}
     </div>
