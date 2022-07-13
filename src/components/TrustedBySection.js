@@ -32,11 +32,9 @@ const TrustedByList = [
 
 const TrustedByMain = {
   title: <>Used and trusted by</>,
-  description: '',
 };
 const CustomerQuotesMain = {
   title: <>What our customers say</>,
-  description: '',
 };
 
 export default function TrustedBySection({ quotes }) {
@@ -45,7 +43,7 @@ export default function TrustedBySection({ quotes }) {
   return (
     <div className={`container ${styles.trustedBySection}`}>
       <div className="row">
-        <Feature key="TrustedBySection" {...features} colSize="col--12" />
+        <SvgFeature key="TrustedBySection" {...features} colSize="col--12" />
       </div>
       <div className="row">
         {TrustedByList.map((props, idx) => (
