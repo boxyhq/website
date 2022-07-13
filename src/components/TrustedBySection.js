@@ -41,7 +41,7 @@ export default function TrustedBySection({ quotes }) {
   const features = quotes ? CustomerQuotesMain : TrustedByMain;
 
   return (
-    <div className={`container ${styles.trustedBySection}`}>
+    <div className={`${styles.trustedBySection}`}>
       <div className="row">
         <SvgFeature key="TrustedBySection" {...features} colSize="col--12" />
       </div>

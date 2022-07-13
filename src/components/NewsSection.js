@@ -27,7 +27,7 @@ const NewsMain = {
 
 export default function NewsSection() {
   return (
-    <div className={`container ${styles.newsSection}`}>
+    <div className={`${styles.newsSection}`}>
       <div className="row">
         <SvgFeature key="NewsSection" {...NewsMain} colSize="col--12" />
       </div>
