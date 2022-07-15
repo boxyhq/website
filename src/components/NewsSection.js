@@ -21,7 +21,7 @@ const NewsList = [
 ];
 
 const NewsMain = {
-  title: <>In the News</>,
+  title: 'In the News',
   description: 'A few of the stories about BoxyHQ in the press',
 };
 

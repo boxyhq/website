@@ -4,7 +4,7 @@ import Feature from './Feature';
 
 const FeatureList = [
   {
-    title: <>Audit Logs (Coming soon)</>,
+    title: 'Audit Logs (Coming soon)',
     Svg: require('../../static/img/feat-audit.svg').default,
     description: (
       <>
@@ -14,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Privacy Vault (coming soon)</>,
+    title: 'Privacy Vault (coming soon)',
     Svg: require('../../static/img/feat-vault.svg').default,
     description: (
       <>
@@ -24,7 +24,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Role Based Access and Permissions (coming soon)</>,
+    title: 'Role Based Access and Permissions (coming soon)',
     Svg: require('../../static/img/feat-rbac.svg').default,
     description: (
       <>
@@ -35,7 +35,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Directory Sync (coming soon)</>,
+    title: 'Directory Sync (coming soon)',
     Svg: require('../../static/img/feat-dsync.svg').default,
     description: (
       <>
@@ -44,27 +44,17 @@ const FeatureList = [
       </>
     ),
   },
-  // {
-  //   title: <>(coming next)</>,
-  //   Svg: require('../../static/img/feat-coming.svg').default,
-  //   description: (
-  //     <>
-  //       Admin Portal, Security Status Page, Compliance Monitoring, many more.
-  //       Contact us if you have any specific Enterprise features in mind.
-  //     </>
-  //   ),
-  // },
 ];
 
 const SSOSAMLMain = {
-  title: <>SAML SSO</>,
+  title: 'SAML SSO',
   Svg: require('../../static/img/feat-sso.svg').default,
   description: '',
 };
 
 const SAMLSSOFeatureList = [
   {
-    title: <>Integrate SAML with a few lines of code</>,
+    title: 'Integrate SAML with a few lines of code',
     url: 'https://github.com/boxyhq/jackson',
     description: (
       <>
@@ -74,7 +64,7 @@ const SAMLSSOFeatureList = [
     ),
   },
   {
-    title: <>Mock SAML</>,
+    title: 'Mock SAML',
     url: 'https://mocksaml.com',
     description: (
       <>

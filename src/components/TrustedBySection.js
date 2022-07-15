@@ -27,10 +27,10 @@ const TrustedByList = [
 ];
 
 const TrustedByMain = {
-  title: <>Used and trusted by</>,
+  title: 'Used and trusted by',
 };
 const CustomerQuotesMain = {
-  title: <>Don't take our word for it, hear what our customers say</>,
+  title: 'What our customers say',
 };
 
 export default function TrustedBySection({ quotes }) {
