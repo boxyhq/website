@@ -30,7 +30,7 @@ const TrustedByMain = {
   title: <>Used and trusted by</>,
 };
 const CustomerQuotesMain = {
-  title: <>Don't take out word for it, hear what our customers say</>,
+  title: <>Don't take our word for it, hear what our customers say</>,
 };
 
 export default function TrustedBySection({ quotes }) {
