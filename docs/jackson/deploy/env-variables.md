@@ -52,7 +52,6 @@ NPM library option: `idpDiscoveryPath`
 
 For example: `/idp/select` - You can find an implemenation of IdP/App Selection at https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx.
 
-
 ### **CLIENT_SECRET_VERIFIER**
 
 When `tenant` and `product` are used for the SAML flow (and PKCE is not being used) then we use `dummy` as placeholders for `client_id` and `client_secret`. This is not a security issue because SAML is tenanted and hence your Identity Provider will block access to anyone trying to log into your SAML tenant. However for additional security you should set `CLIENT_SECRET_VERIFIER` to a random secret and use that value as the `client_secret` during the OAuth 2.0 flow.
@@ -71,7 +70,7 @@ NPM library option: `idpEnabled`
 
 ### **DB_ENGINE**
 
-Supported values are `redis`, `sql`, `mongo`, `mem`
+Supported values are `redis`, `sql`, `mongo`, `mem`, `planetscale`
 
 Default: `sql`
 NPM library option: `db.engine`
