@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './HomepageFeatures.module.css';
 import Feature from './Feature';
-import NewsSection from './NewsSection';
 
 const FeatureList = [
   {
@@ -66,13 +65,6 @@ const SSOSAMLMain = {
 
 const SAMLSSOFeatureList = [
   {
-    title: <>Interactive Demo: SAML Login</>,
-    url: 'https://saml-demo.boxyhq.com/',
-    description: (
-      <>Try out our zero-configuration, interactive demo of SAML SSO</>
-    ),
-  },
-  {
     title: <>Integrate SAML with a few lines of code</>,
     url: 'https://github.com/boxyhq/jackson',
     description: (
@@ -102,7 +94,7 @@ function SSOSAMLSection() {
       </div>
       <div className="row">
         {SAMLSSOFeatureList.map((props, idx) => (
-          <Feature key={idx} {...props} colSize="col--4" />
+          <Feature key={idx} {...props} colSize="col--6" />
         ))}
       </div>
     </div>
@@ -113,13 +105,12 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        {<SSOSAMLSection></SSOSAMLSection>}
+        <SSOSAMLSection />
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} colSize="col--6" />
           ))}
         </div>
-        {<NewsSection></NewsSection>}
       </div>
     </section>
   );
