@@ -68,16 +68,6 @@ function Team() {
           <div className="col col--1 margin-bottom--lg"></div>
 
           <Profile
-            img={'/img/team/vishal.jpg'}
-            name={'Vishal Lodha: Senior Software Engineer'}
-            bio={`Vishal has 11+ of expertise in design, architecture, and development of complex software products. Prior to BoxyHQ he worked at Finastra and IBM. He led multiple development teams in Java, DevOps concepts and process and CI/CD tools while providing expertise in the full software development lifecycle, from concept and design to testing, designing, developing and delivering high-volume, low-latency applications for mission-critical systems.`}
-            subtitle={'For Vishal, the impossible is 404 Not Found.'}
-            github={'https://github.com/vishalboxyhq'}
-            twitter={'https://twitter.com/vishallodha84'}
-          ></Profile>
-          <div className="col col--2 margin-bottom--lg"></div>
-
-          <Profile
             img={'/img/team/utkarsh.jpg'}
             name={'Utkarsh Mehta: Senior Software Engineer'}
             bio={`Utkarsh is a full stack developer with 6+ years of experience. He has developed dApps, Microservices & his own products as well. He has worked with variety of languages and platforms. He has worked in MNC, Mid-scale & startups. He likes to learn new tech, write blogs & training students. He plays chess, reads and binges tv series in free time.`}

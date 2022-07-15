@@ -11,7 +11,7 @@ image: /img/blog/jay-wennington-BdeMttZx6Fs-unsplash.jpg
 
 I recently had to revamp my home office setup and decided to make a trip to my closest IKEA. The wide range of choices of desks in Micke, Malm, Brusali, Alex, and Bekant was only the beginning of the journey. I knew I had to head back home with the desk, find a good place to unpack the unit, find my screwdrivers, hammer, alan keys, and finally dedicate a few hours of labor to assemble everything. I enjoy the process but it is not devoid of frustrations. In the end, I now have a desk I value more because of the labor I put into it.
 
-![img alt](/img/blog/jay-wennington-BdeMttZx6Fs-unsplash.jpg)
+![IKEA Assembly](/img/blog/jay-wennington-BdeMttZx6Fs-unsplash.jpg)
 
 <div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@jaywennington?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jay Wennington</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
   

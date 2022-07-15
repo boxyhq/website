@@ -8,7 +8,7 @@ npm i @boxyhq/saml-jackson
 
 Integrating SAML Jackson with a Node.js app involves the following steps.
 
-See the [Github repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express integration
+See the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express integration
 
 ## Express.js example
 

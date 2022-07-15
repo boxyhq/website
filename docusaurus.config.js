@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 
-const copyright = '2021-now © BoxyHQ Inc.';
+const copyright = '2021-present © BoxyHQ Inc.';
 
 module.exports = {
   title: 'Enterprise Readiness made simple',
@@ -15,6 +15,12 @@ module.exports = {
   projectName: 'website', // Usually your repo name.
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star us on GitHub</a>',
+      isCloseable: false,
+    },
     image: 'img/website-preview-image.png',
     colorMode: {
       defaultMode: 'light',
@@ -48,6 +54,10 @@ module.exports = {
           title: 'Community',
           items: [
             {
+              label: 'GitHub',
+              href: 'https://github.com/boxyhq',
+            },
+            {
               label: 'Discord',
               href: 'https://discord.gg/uyb7pYt4Pa',
             },
@@ -65,14 +75,8 @@ module.exports = {
           title: 'Legal',
           items: [
             {
-              label: 'Cookies Policy',
-              href: '/cookies.html',
-              target: '_blank',
-            },
-            {
-              label: 'Privacy Policy',
+              label: 'Privacy & Cookies Policy',
               href: '/privacy.html',
-              target: '_blank',
             },
             {
               label: 'Terms',
@@ -158,5 +162,6 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars_guides.js'),
       },
     ],
+    ['@cmfcmf/docusaurus-search-local', {}],
   ],
 };

@@ -11,7 +11,7 @@ image: /img/blog/xavi-cabrera-kn-UmDZQDjM-unsplash.jpg
 
 I love Lego (don't we all), probably a little more than my kids. It invokes a builder's instinct. I feel the same way with code as well. When I started my career in the early 2000s building software was complex. You had to visit datacenters and set up your servers to even get started, it was the age of the ASPs; the predecessor of SaaS.
 
-![img alt](/img/blog/xavi-cabrera-kn-UmDZQDjM-unsplash.jpg)
+![Lego](/img/blog/xavi-cabrera-kn-UmDZQDjM-unsplash.jpg)
 
 <div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@xavi_cabrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Xavi Cabrera</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
