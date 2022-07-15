@@ -4,8 +4,7 @@ import Feature from './Feature';
 
 const FeatureList = [
   {
-    title: <>Audit Logs</>,
-    url: 'https://github.com/boxyhq/hermes',
+    title: <>Audit Logs (Coming soon)</>,
     Svg: require('../../static/img/feat-audit.svg').default,
     description: (
       <>
