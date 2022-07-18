@@ -87,6 +87,7 @@ Jackson currently supports the following databases.
 - MariaDB
 - MongoDB
 - Redis
+- PlanetScale
 
 ## Deployment Guides (Coming soon)
 
