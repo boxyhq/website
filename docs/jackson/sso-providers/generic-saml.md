@@ -1,6 +1,11 @@
-# Configure SAML Identity Provider
+---
+title: Setup your own custom SAML application for a Generic IdP
+sidebar_label: Generic SAML
+---
 
-This guide explains the settings you’d need to use to configure SAML with your Identity Provider. Once this is set up you should get an XML metadata file that should then be configured using our [API (or calling the API controller config method if using our NPM)](./saml-flow.md).
+# Generic SAML
+
+This guide explains the settings you’d need to use to configure SAML with your Identity Provider. Once this is set up you should get an XML metadata file that should then be configured using our [API (or calling the API controller config method if using our NPM)](../saml-flow.md).
 
 > Please do not add a trailing slash at the end of the URLs.
 
@@ -28,5 +33,3 @@ As outlined in the guide above we try and support 4 attributes in the SAML claim
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`   | email           |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`      | firstName       |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`        | lastName        |
-
-(Provider specific instructions coming soon)
