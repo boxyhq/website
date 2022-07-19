@@ -83,7 +83,8 @@ Base64 value of private key.
 To generate one:
 ```bash
 openssl genrsa -out private-key.pem 3072
-cat private-key.pem | base64
+openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in private-key.pem -out private_key.pem
+cat private_key.pem | base64
 ```
 
 NPM library option: `openid.jwtSigningKeys.private`
@@ -92,8 +93,8 @@ NPM library option: `openid.jwtSigningKeys.private`
 Base64 value of public key. 
 You can generate the public key from the private key as shown below:
 ```bash
-openssl rsa -in private-key.pem -pubout -out public-key.pem
-cat public-key.pem | base64
+openssl rsa -in private_key.pem -pubout -out public_key.pem
+cat public_key.pem | base64
 ```
 
 NPM library option: `openid.jwtSigningKeys.public`
