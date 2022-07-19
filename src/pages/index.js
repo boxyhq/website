@@ -11,7 +11,7 @@ const mainHeroSection = {
   Svg: require('../../static/img/home-hero.svg').default,
   title: 'Enterprise readiness for your product, straight out the box',
   tagline:
-    'At BoxyHQ we enable you to add enterprise compliant security via simple and efficient integrations. SAML Single Sign-on just got easy.',
+    'At BoxyHQ we enable you to add enterprise compliant security via simple and efficient integrations. SAML Single Sign-on just got easy. Open-source and free.',
   ctas: [
     {
       title: 'Get started',
