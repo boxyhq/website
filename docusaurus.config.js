@@ -15,6 +15,12 @@ module.exports = {
   projectName: 'website', // Usually your repo name.
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    announcementBar: {
+      id: 'announcement-bar',
+      content:
+        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star us on GitHub</a>',
+      isCloseable: false,
+    },
     image: 'img/website-preview-image.png',
     colorMode: {
       defaultMode: 'light',
@@ -112,6 +118,8 @@ module.exports = {
             type: 'all',
             copyright,
           },
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -156,5 +164,6 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars_guides.js'),
       },
     ],
+    ['@cmfcmf/docusaurus-search-local', {}],
   ],
 };

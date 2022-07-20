@@ -11,7 +11,7 @@ image: /img/blog/mulyadi-dDlvuSKUDZM-unsplash.jpg
 
 You have decided to quit your job and start something on your own, congratulations! Welcome to a new way of living, as our little green friend told us some years ago “do or do not, there is no try”. Resilience and perseverance will be your two new best friends now; we all know that starting a company is not hard at all, but something hard at the beginning of the journey is finding product-market fit, especially if you are selling to enterprises (if you are an open-source founder, make sure you prioritize project-community fit first).
 
-![img alt](/img/blog/mulyadi-dDlvuSKUDZM-unsplash.jpg)
+![Star Wars Lego](/img/blog/mulyadi-dDlvuSKUDZM-unsplash.jpg)
 
 <div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@mullyadii?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mulyadi</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 

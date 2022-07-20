@@ -2,7 +2,7 @@
 
 ## 1. Setting up SAML with your IdP
 
-Please follow the instructions [here](./configure-saml-idp.md) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](./sso-providers) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
 **Note:** All the APIs below support both `application/x-www-form-urlencoded` and `application/json` content types. Examples below use `application/x-www-form-urlencoded`.
 
@@ -131,10 +131,10 @@ https://localhost:5225/api/oauth/authorize
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete
 - `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks.
 
-**NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically. 
+**NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically.
 
 The user will be taken to the IdP based on the configured SAML metadata.
-In case of any errors, we return the `error` and `error_description` (see [Error Response](https://www.oauth.com/oauth2-servers/authorization/the-authorization-response/)) back to the `redirect_uri` (`redirect_uri` is validated against the saml config to prevent open redirects).
+In case of any errors, we return the `error`, `error_description` and `state` (from original request) (see [Error Response](https://www.oauth.com/oauth2-servers/authorization/the-authorization-response/)) back to the `redirect_uri` (`redirect_uri` is validated against the saml config to prevent open redirects).
 
 ### 3.2 Code Exchange
 

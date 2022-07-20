@@ -16,11 +16,11 @@ Let's start with what SAML SSO is and what it does. An example of SAML SSO in ac
 But how does this work? Well, the idea behind SAML SSO is that by centralizing your access to an external system you can better manage access and permission as well as improve security. So in our example, the dashboard that allowed the user to just click an icon and log in was SAML in action. Because the company has connected to its external servicing using SAML it can now let its users access all the services from a single point. This single point of access is known as the IdP (Identity Provider) which authenticates the access to all the other services via SAML.
 
 The diagrams below show how this access flow would work with and without SAML:
-![img alt](/img/blog/sso/without-saml.png)
+![Without SAML SSO](/img/blog/sso/without-saml.png)
 
 In the diagram above we can see that the company is not using SAML so the user has to log into each of the services with an individual username and password. The username and password are managed by the service provider and access is also managed via an admin user on the service provider's side. The user must be given aces to each of the services from each of the services and remember the login details for each one.
 
-![img alt](/img/blog/sso/with-saml.png)
+![With SAML SSO](/img/blog/sso/with-saml.png)
 
 In the image above we can see that the company is using an IdP such as Okta so the user simply has to log in once and then can access all the external services from a single dashboard. This also means that the company admins can manage access to the different services as they control the access directly from their IdP.
 

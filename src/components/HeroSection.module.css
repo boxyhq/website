@@ -1,0 +1,40 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.heroBanner {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 8rem;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons > * {
+  margin: 10px 10px;
+}
+
+.heroSvg {
+  height: 100%;
+  width: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .heroSvg {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.svgContainer {
+  height: 300px;
+}

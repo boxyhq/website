@@ -14,7 +14,7 @@ export default function Profile({
     <div className="col col--4 margin-bottom--lg">
       <div className="">
         <div className="card__image">
-          <img src={img} className={styles.center} />
+          <img loading="lazy" src={img} className={styles.center} />
         </div>
         <div className="card__body">
           <div className="avatar">

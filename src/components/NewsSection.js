@@ -1,5 +1,5 @@
 import React from 'react';
-import Feature from './Feature';
+import SvgFeature from './SvgFeature';
 import styles from './NewsSection.module.css';
 
 const NewsList = [
@@ -21,19 +21,19 @@ const NewsList = [
 ];
 
 const NewsMain = {
-  title: <>IN THE NEWS</>,
+  title: 'In the News',
   description: 'A few of the stories about BoxyHQ in the press',
 };
 
 export default function NewsSection() {
   return (
-    <div className={`container ${styles.newsSection}`}>
+    <div className={`${styles.newsSection}`}>
       <div className="row">
-        <Feature key="SSOSAMLSection" {...NewsMain} colSize="col--12" />
+        <SvgFeature key="NewsSection" {...NewsMain} colSize="col--12" />
       </div>
       <div className="row">
         {NewsList.map((props, idx) => (
-          <Feature key={idx} {...props} colSize="col--6" smallSvg={true} />
+          <SvgFeature key={idx} {...props} colSize="col--6" smallSvg={true} />
         ))}
       </div>
     </div>

@@ -1,0 +1,9 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.trustedBySection {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding: 20px;
+  background-color: white;
+  margin: 0px;
+  max-width: 100%;
+}
