@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './HomepageFeatures.module.css';
 import Feature from './Feature';
-import NewsSection from './NewsSection';
 
 const FeatureList = [
   {
-    title: <>Audit Logs</>,
-    url: 'https://github.com/boxyhq/hermes',
+    title: 'Audit Logs (Coming soon)',
     Svg: require('../../static/img/feat-audit.svg').default,
     description: (
       <>
@@ -16,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Privacy Vault (coming soon)</>,
+    title: 'Privacy Vault (coming soon)',
     Svg: require('../../static/img/feat-vault.svg').default,
     description: (
       <>
@@ -26,7 +24,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Role Based Access and Permissions (coming soon)</>,
+    title: 'Role Based Access and Permissions (coming soon)',
     Svg: require('../../static/img/feat-rbac.svg').default,
     description: (
       <>
@@ -37,7 +35,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <>Directory Sync (coming soon)</>,
+    title: 'Directory Sync (coming soon)',
     Svg: require('../../static/img/feat-dsync.svg').default,
     description: (
       <>
@@ -46,34 +44,17 @@ const FeatureList = [
       </>
     ),
   },
-  // {
-  //   title: <>(coming next)</>,
-  //   Svg: require('../../static/img/feat-coming.svg').default,
-  //   description: (
-  //     <>
-  //       Admin Portal, Security Status Page, Compliance Monitoring, many more.
-  //       Contact us if you have any specific Enterprise features in mind.
-  //     </>
-  //   ),
-  // },
 ];
 
 const SSOSAMLMain = {
-  title: <>SAML SSO</>,
+  title: 'SAML SSO',
   Svg: require('../../static/img/feat-sso.svg').default,
   description: '',
 };
 
 const SAMLSSOFeatureList = [
   {
-    title: <>Interactive Demo: SAML Login</>,
-    url: 'https://saml-demo.boxyhq.com/',
-    description: (
-      <>Try out our zero-configuration, interactive demo of SAML SSO</>
-    ),
-  },
-  {
-    title: <>Integrate SAML with a few lines of code</>,
+    title: 'Integrate SAML with a few lines of code',
     url: 'https://github.com/boxyhq/jackson',
     description: (
       <>
@@ -83,7 +64,7 @@ const SAMLSSOFeatureList = [
     ),
   },
   {
-    title: <>Mock SAML</>,
+    title: 'Mock SAML',
     url: 'https://mocksaml.com',
     description: (
       <>
@@ -102,7 +83,7 @@ function SSOSAMLSection() {
       </div>
       <div className="row">
         {SAMLSSOFeatureList.map((props, idx) => (
-          <Feature key={idx} {...props} colSize="col--4" />
+          <Feature key={idx} {...props} colSize="col--6" />
         ))}
       </div>
     </div>
@@ -113,13 +94,12 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        {<SSOSAMLSection></SSOSAMLSection>}
+        <SSOSAMLSection />
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} colSize="col--6" />
           ))}
         </div>
-        {<NewsSection></NewsSection>}
       </div>
     </section>
   );
