@@ -10,7 +10,18 @@ import TabItem from '@theme/TabItem';
 
 The following guides provide information about the APIs and SDKs that are available for the Directory Sync service.
 
-### Initialize SAML Jackson Directory Sync
+### Directory
+
+#### Properties
+
+- `name`: The name of the directory
+- `tenant`: The tenant ID of the tenant you want to create the directory for
+- `product`: The product ID of the product you want to create the directory for
+- `type`: The directory provider type. See the [Directory Providers](./providers) for more information.
+- `webhook_url`: The webhook URL to which the directory connection will POST the events
+- `webhook_secret`: The webhook secret used to sign the webhook payload
+
+### Initialize Directory Sync
 
 ```javascript
 const opts = {
@@ -23,25 +34,13 @@ const opts = {
 
 let directorySyncController;
 
-// Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
-// Run this in a function where you initialize the express server.
+// Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level.
 async function init() {
   const jackson = await require('@boxyhq/saml-jackson').controllers(opts);
 
   directorySyncController = jackson.directorySyncController;
 }
 ```
-
-### Directory
-
-#### Properties
-
-- `name`: The name of the directory
-- `tenant`: The tenant ID of the tenant you want to create the directory for
-- `product`: The product ID of the product you want to create the directory for
-- `type`: The directory provider type. See the [Directory Providers](./providers) for more information.
-- `webhook_url`: The webhook URL to which the directory connection will POST the events
-- `webhook_secret`: The webhook secret used to sign the webhook payload
 
 ### Create a new directory
 
@@ -576,4 +575,89 @@ curl --request GET \
   },
   "error": null
 }
+```
+
+---
+
+### Handle the Requests from Directory Sync Providers
+
+Make sure your application can handle the requests from Directory Sync Providers.
+
+#### Routes
+
+Typically, you will want to add the following routes to your application to handle the requests. However, the `Methods` can vary for some Directory Sync Providers.
+
+| Route       | Methods    | Event                                          |
+| ----------- | ---------- | ---------------------------------------------- |
+| /Users      | POST       | A new user has been assigned to a SCIM app     |
+| /Users/:id  | PUT, PATCH | A user information has been updated            |
+| /Users/:id  | DELETE     | A user has been removed from a SCIM app        |
+| /Groups     | POST       | A new group has been pushed                    |
+| /Groups/:id | PUT        | Group name has been changed                    |
+| /Groups/:id | PATCH      | User has been added to or removed from a group |
+| /Groups/:id | DELETE     | Group has been removed                         |
+
+#### User Requests
+
+```javascript showLineNumbers
+const { data, status } = await directorySyncController.usersRequest.handle(
+  request
+);
+```
+
+The shape of the `request` should be as follows:
+
+```javascript
+{
+  method: HTTPMethod;
+  body?: any;
+  query: {
+    directory_id: string;
+    user_id?: string;
+    count?: number;
+    startIndex?: number;
+    filter?: string;
+  };
+};
+```
+
+#### Group Requests
+
+Handling the group requests is similar to handling the user requests.
+
+```javascript showLineNumbers
+const { data, status } = await directorySyncController.groupsRequest.handle(
+  request
+);
+```
+
+The shape of the `request` should be as follows:
+
+```javascript
+{
+  method: HTTPMethod;
+  body?: any;
+  query: {
+    directory_id: string;
+    group_id?: string;
+    count?: number;
+    startIndex?: number;
+    filter?: string;
+  };
+};
+```
+
+#### Callback Function
+
+You can optionally pass a callback function as a second parameter to the handle methods `usersRequest.handle` and `groupsRequest.handle`. Jackson will invoke the callback function with the event object as the first argument after handling the request. You can use the event object to determine the action to take.
+
+```javascript showLineNumbers
+const callback = (event: DirectorySyncEvent) => {
+  console.log(event);
+};
+
+const { data, status } = await directorySyncController.usersRequest.handle(
+  request,
+  callback
+);
 ```
