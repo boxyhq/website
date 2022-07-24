@@ -66,6 +66,38 @@ Set to true to enable IdP initiated login for SAML. SP initiated login is the on
 Default: `false`
 NPM library option: `idpEnabled`
 
+## OpenID configuration
+
+For supporting OpenID flow, we need to set the algorithm and keys used to sign the ID token JWT.
+
+### **OPENID_JWS_ALG**
+
+The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
+
+NPM library option: `openid.jwsAlg`
+
+### **OPENID_RSA_PRIVATE_KEY**
+
+Base64 value of private key. 
+To generate one:
+```bash
+openssl genrsa -out private-key.pem 3072
+openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in private-key.pem -out private_key.pem
+cat private_key.pem | base64
+```
+
+NPM library option: `openid.jwtSigningKeys.private`
+
+### **OPENID_RSA_PUBLIC_KEY**
+Base64 value of public key. 
+You can generate the public key from the private key as shown below:
+```bash
+openssl rsa -in private_key.pem -pubout -out public_key.pem
+cat public_key.pem | base64
+```
+
+NPM library option: `openid.jwtSigningKeys.public`
+
 ## Database configuration
 
 ### **DB_ENGINE**

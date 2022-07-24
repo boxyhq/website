@@ -202,6 +202,11 @@ If everything goes well you should receive a JSON response with the user's profi
 - `raw`: This contains all claims attributes returned by the SAML provider
 - `requested`: This contains the `tenant`, `product`, `client_id` and `state` from the authorize request. It can be used to reconcile context on the client side if needed
 
+
+#### OpenId Connect support
+
+Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
+
 ## 4. SAML SLO
 
 SLO is a SAML flow that allows an end-user to logout of a single session and be automatically logged out of all linked sessions created during the SSO process.

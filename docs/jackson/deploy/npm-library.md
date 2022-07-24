@@ -46,6 +46,7 @@ const opts = {
 let apiController;
 let oauthController;
 let logoutController;
+let oidcDiscoveryController;
 // Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
 // Run this in a function where you initialize the express server.
 async function init() {
@@ -53,6 +54,7 @@ async function init() {
   apiController = ret.apiController;
   oauthController = ret.oauthController;
   logoutController = ret.logoutController;
+  oidcDiscoveryController = ret.oidcDiscoveryController;
 }
 ```
 
@@ -277,3 +279,34 @@ router.post('/logout/callback', async (req, res, next) => {
   return res.redirect(redirectUrl);
 });
 ```
+
+### OpenIdConnect: Discovery endpoints
+
+To enable support for OpenID Connect clients (or Relying Parties), we must expose the location and other [metadata](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) of Jackson (OpenID Issuer).
+
+Jackson exports `oidcDiscoveryController` which can be used to construct service endpoints for OIDC discovery as shown below.
+
+```javascript
+// https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig
+router.get('/.well-known/openid-configuration', async (req, res, next) => {
+  try {
+    const config = oidcDiscoveryController.openidConfig();
+    const response = JSON.stringify(config, null, 2);
+    res.status(200).send(response);
+  } catch (err) {
+    next(err);
+  }
+});
+// jwks_uri
+router.get('/oauth/jwks', async (req, res, next) => {
+  try {
+    const jwks = await oidcDiscoveryController.jwks();
+    const response = JSON.stringify(jwks, null, 2);
+    res.status(200).send(response);
+  } catch (err) {
+    next(err);
+  }
+});
+```
+
+Make sure you have configured the OpenID environment variables mentioned in [Environment Variables](env-variables.md#openid-configuration).
