@@ -74,6 +74,7 @@ For supporting OpenID flow, we need to set the algorithm and keys used to sign t
 
 The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
 
+Default: `RS256`
 NPM library option: `openid.jwsAlg`
 
 ### **OPENID_RSA_PRIVATE_KEY**
