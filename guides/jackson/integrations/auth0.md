@@ -9,7 +9,7 @@ sidebar_label: Auth0
 
 As an early-stage startup this makes Enterprise SSO integration unaffordable, this is why we have created a seamless way to continue using Auth0 for auth but plug-in BoxyHQ for Enterprise SSO directly from Auth0. Your user management stays entirely in Auth0 but using BoxyHQ's OAuth 2.0 skin you can make Enterprise SAML or OIDC logins available to your customers.
 
-Visit the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/auth0-user-store) to see the source code for the Auth0 integration.
+Visit our [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/auth0-user-store) to see the source code for the Auth0 integration.
 
 ## Next steps
 
