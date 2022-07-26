@@ -33,6 +33,7 @@ module.exports = {
           label: 'Integrations Guides',
           collapsed: false,
           items: [
+            'jackson/integrations/auth0',
             'jackson/integrations/nextauth',
             'jackson/integrations/supertokens',
           ],
