@@ -7,7 +7,7 @@ sidebar_label: mogenius
 
 This guide will walk you through the configuration and deployment of SAML Jackson on mogenius. mogenius is the easiest way for developers to run any application in the cloud. Connect your repository and mogenius deploys it on a fully automated cloud infrastructure.
 
-If you don’t have a mogenius account, create one [here](https://studio.mogenius.com/user/registration).
+If you don’t have a mogenius account, create one [here](https://studio.mogenius.com/user/registration). They have an extensive [guide](https://docs.mogenius.com/getting-started/quickstart) to get you started.
 
 ## Deploy SAML Jackson
 
