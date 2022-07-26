@@ -1,1 +1,4 @@
 # deliberately empty
+Sitemap: https://boxyhq.com/sitemap.xml
+User-agent: *
+Disallow:

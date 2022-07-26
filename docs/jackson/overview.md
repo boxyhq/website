@@ -1,4 +1,4 @@
-# Overview
+# SAML Jackson
 
 SAML service [SAML in a box from BoxyHQ]
 
