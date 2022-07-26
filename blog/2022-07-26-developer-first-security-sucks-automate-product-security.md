@@ -1,6 +1,6 @@
 ---
 slug: developer-first-security-sucks-automate-product-security
-title: 'Developer-first Security sucks! Why it is essential to automate product security?'
+title: 'Developer-first Security sucks! Why is it essential to automate product security?'
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame/
