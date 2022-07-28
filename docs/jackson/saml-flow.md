@@ -131,7 +131,7 @@ https://localhost:5225/api/oauth/authorize
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete
 - `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks.
 
-**NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically.
+**NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` or `resource` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically.
 
 The user will be taken to the IdP based on the configured SAML metadata.
 In case of any errors, we return the `error`, `error_description` and `state` (from original request) (see [Error Response](https://www.oauth.com/oauth2-servers/authorization/the-authorization-response/)) back to the `redirect_uri` (`redirect_uri` is validated against the saml config to prevent open redirects).
@@ -201,7 +201,6 @@ If everything goes well you should receive a JSON response with the user's profi
 - `lastName`: The last name of the user as provided by the Identity Provider
 - `raw`: This contains all claims attributes returned by the SAML provider
 - `requested`: This contains the `tenant`, `product`, `client_id` and `state` from the authorize request. It can be used to reconcile context on the client side if needed
-
 
 #### OpenId Connect support
 
