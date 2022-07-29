@@ -579,13 +579,13 @@ curl --request GET \
 
 ---
 
-### Handle the Requests from Directory Sync Providers
+### Handle the Requests from Identity Providers
 
-Make sure your application can handle the requests from Directory Sync Providers.
+Make sure your application can handle the requests from Identity Providers.
 
 #### Routes
 
-Typically, you will want to add the following routes to your application to handle the requests. However, the `Methods` can vary for some Directory Sync Providers.
+Typically, you will want to add the following routes to your application to handle the requests. However, the `Methods` can vary for some Identity Providers.
 
 | Route       | Methods    | Event                                          |
 | ----------- | ---------- | ---------------------------------------------- |
@@ -600,7 +600,7 @@ Typically, you will want to add the following routes to your application to hand
 #### User Requests
 
 ```javascript showLineNumbers
-const { data, status } = await directorySyncController.usersRequest.handle(
+const { data, status } = await directorySyncController.requests.handle(
   request
 );
 ```
@@ -611,9 +611,11 @@ The shape of the `request` should be as follows:
 {
   method: HTTPMethod;
   body?: any;
+  directoryId: string;
+  resourceId: string;
+  resourceType: "users",
+  apiSecret: string;
   query: {
-    directory_id: string;
-    user_id?: string;
     count?: number;
     startIndex?: number;
     filter?: string;
@@ -626,7 +628,7 @@ The shape of the `request` should be as follows:
 Handling the group requests is similar to handling the user requests.
 
 ```javascript showLineNumbers
-const { data, status } = await directorySyncController.groupsRequest.handle(
+const { data, status } = await directorySyncController.requests.handle(
   request
 );
 ```
@@ -637,9 +639,11 @@ The shape of the `request` should be as follows:
 {
   method: HTTPMethod;
   body?: any;
+  directoryId: string;
+  resourceId: string;
+  resourceType: "groups",
+  apiSecret: string;
   query: {
-    directory_id: string;
-    group_id?: string;
     count?: number;
     startIndex?: number;
     filter?: string;
@@ -649,14 +653,14 @@ The shape of the `request` should be as follows:
 
 #### Callback Function
 
-You can optionally pass a callback function as a second parameter to the handle methods `usersRequest.handle` and `groupsRequest.handle`. Jackson will invoke the callback function with the event object as the first argument after handling the request. You can use the event object to determine the action to take.
+You can optionally pass a callback function as a second parameter to the handle method `requests.handle`. Jackson will invoke the callback with the event object as the first argument after handling the request. You can use the event object to determine the action to take.
 
 ```javascript showLineNumbers
 const callback = (event: DirectorySyncEvent) => {
   console.log(event);
 };
 
-const { data, status } = await directorySyncController.usersRequest.handle(
+const { data, status } = await directorySyncController.requests.handle(
   request,
   callback
 );
