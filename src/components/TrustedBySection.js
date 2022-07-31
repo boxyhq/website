@@ -1,5 +1,4 @@
 import React from 'react';
-import Feature from './Feature';
 import SvgFeature from './SvgFeature';
 import styles from './TrustedBySection.module.css';
 
@@ -26,24 +25,23 @@ const TrustedByList = [
   },
 ];
 
-const TrustedByMain = {
-  title: 'Used and trusted by',
-};
 const CustomerQuotesMain = {
   title: 'What our customers say',
 };
 
-export default function TrustedBySection({ quotes }) {
-  const features = quotes ? CustomerQuotesMain : TrustedByMain;
-
+export default function TrustedBySection() {
   return (
     <div className={`${styles.trustedBySection}`}>
       <div className="row">
-        <SvgFeature key="TrustedBySection" {...features} colSize="col--12" />
+        <SvgFeature
+          key="TrustedBySection"
+          {...CustomerQuotesMain}
+          colSize="col--12"
+        />
       </div>
       <div className="row">
         {TrustedByList.map((props, idx) => (
-          <SvgFeature key={idx} {...props} quotes={quotes} colSize="col--3" />
+          <SvgFeature key={idx} {...props} quotes={true} colSize="col--3" />
         ))}
       </div>
     </div>
