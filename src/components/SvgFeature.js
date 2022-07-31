@@ -4,6 +4,7 @@ import styles from './SvgFeature.module.css';
 
 export default function SvgFeature({
   Svg,
+  png,
   quote,
   url,
   colSize,
@@ -16,6 +17,12 @@ export default function SvgFeature({
         <div className="text--center">
           <a href={url} target="_blank">
             <Svg className={styles.svgFeature} alt={url} />
+          </a>
+        </div>
+      ) : png ? (
+        <div className="text--center">
+          <a href={url} target="_blank">
+            <img className={styles.pngFeature} src={png} />
           </a>
         </div>
       ) : null}
