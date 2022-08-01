@@ -34,6 +34,7 @@ module.exports = {
           collapsed: false,
           items: [
             'jackson/integrations/auth0',
+            'jackson/integrations/firebase',
             'jackson/integrations/nextauth',
             'jackson/integrations/supertokens',
           ],
