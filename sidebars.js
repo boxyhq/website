@@ -118,22 +118,8 @@ module.exports = {
             link: { type: 'doc', id: 'retraced/sdks/available-sdks' },
             items: [
                 'retraced/sdks/available-sdks',
-                {
-                    type: 'category',
-                    label: 'Golang',
-                    link: { type: 'doc', id: 'retraced/sdks/golang/getting-started' },
-                    items: [
-                        'retraced/sdks/golang/getting-started',
-                    ],
-                },
-                {
-                    type: 'category',
-                    label: 'NodeJS',
-                    link: { type: 'doc', id: 'retraced/sdks/nodejs/getting-started' },
-                    items: [
-                        'retraced/sdks/nodejs/getting-started',
-                    ],
-                },
+                'retraced/sdks/golang',
+                'retraced/sdks/nodejs'
               ],
           },
           {

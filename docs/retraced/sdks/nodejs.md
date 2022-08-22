@@ -1,33 +1,35 @@
+---
+title: Retraced NodeJS SDK
+sidebar_label: NodeJS
+---
+
 # NodeJS
 
-
-### [Github](https://github.com/retracedhq/retraced-js) | [npm](https://www.npmjs.com/package/retraced)
-
+On this page, we get you up and running with Retraced's SDK in your application.
 
 ## Installation
 
 The Retraced NodeJS SDK can be installed with npm:
 
-```sh
+```bash
 npm install -s retraced
 ```
 
-
 ## Basic Usage
 
-
 Initialize a client
+
 ```javascript
 import * as Retraced from "retraced";
 
 const retraced = new Retraced.Client({
-	apiKey: "your api key goes here",
-	projectId: "your project id goes here",
+  apiKey: "your api key goes here",
+  projectId: "your project id goes here",
 });
 ```
 
-
 Create an event
+
 ```javascript
 const event = {
   action: "some.record.created",
@@ -48,6 +50,7 @@ const event = {
 ```
 
 Report an event
+
 ```javascript
 // The Retraced client's methods are asynchronous.
 // You can "fire and forget" them...
