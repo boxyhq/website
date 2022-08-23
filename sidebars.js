@@ -80,10 +80,10 @@ module.exports = {
           },
           {
             type: 'category',
-            label: 'How to audit log',
-            link: { type: 'doc', id: 'retraced/how-to-audit-log/audit-logging-basics' },
+            label: 'How to Audit Log',
+            link: { type: 'doc', id: 'retraced/how-to-audit-log/index' },
             items: [
-                'retraced/how-to-audit-log/audit-logging-basics',
+                'retraced/how-to-audit-log/index',
                 'retraced/how-to-audit-log/actions',
                 'retraced/how-to-audit-log/actors',
                 'retraced/how-to-audit-log/exportable',
@@ -92,29 +92,6 @@ module.exports = {
                 'retraced/how-to-audit-log/segments',
                 'retraced/how-to-audit-log/targets',
                 'retraced/how-to-audit-log/time-synced',
-              ],
-          },
-          {
-            type: 'category',
-            label: 'Advanced Retraced',
-            link: { type: 'doc', id: 'retraced/advanced-retraced/advanced-concepts' },
-            items: [
-                'retraced/advanced-retraced/advanced-concepts',
-                'retraced/advanced-retraced/display-templates',
-                'retraced/advanced-retraced/template-comparators',
-                'retraced/advanced-retraced/ssh-streaming',
-                'retraced/advanced-retraced/tracking-application-versions',
-                'retraced/advanced-retraced/automated-audit-events',
-              ],
-          },
-          {
-            type: 'category',
-            label: 'Exposing Events',
-            link: { type: 'doc', id: 'retraced/exposing-retraced-data/overview' },
-            items: [
-                'retraced/exposing-retraced-data/overview',
-                'retraced/exposing-retraced-data/viewer',
-                'retraced/exposing-retraced-data/enterprise-api',
               ],
           },
           {
@@ -137,6 +114,29 @@ module.exports = {
                 'retraced/apis/enterprise-api',
                 'retraced/apis/admin-api',
                 'retraced/apis/graphql',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Exposing Events',
+            link: { type: 'doc', id: 'retraced/exposing-retraced-data/overview' },
+            items: [
+                'retraced/exposing-retraced-data/overview',
+                'retraced/exposing-retraced-data/viewer',
+                'retraced/exposing-retraced-data/enterprise-api',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Advanced Retraced',
+            link: { type: 'doc', id: 'retraced/advanced/index' },
+            items: [
+                'retraced/advanced/index',
+                'retraced/advanced/display-templates',
+                'retraced/advanced/template-comparators',
+                'retraced/advanced/ssh-streaming',
+                'retraced/advanced/tracking-application-versions',
+                'retraced/advanced/automated-audit-events',
               ],
           },
           {
