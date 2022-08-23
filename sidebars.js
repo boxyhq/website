@@ -9,7 +9,7 @@ module.exports = {
       type: 'category',
       label: 'SAML Jackson',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: { type: 'doc', id: 'jackson/overview' },
       items: [
         {
@@ -40,16 +40,34 @@ module.exports = {
         label: 'Retraced',
         collapsible: true,
         collapsed: false,
-        link: { type: 'doc', id: 'retraced/overview/introduction-to-retraced' },
+        link: { type: 'doc', id: 'retraced/overview' },
         items: [
-            {
-                type: 'category',
-                label: 'Overview',
-                link: { type: 'doc', id: 'retraced/overview/introduction-to-retraced' },
-                items: [
-                    'retraced/overview/introduction-to-retraced',
-                  ],
-              },
+          'retraced/overview',
+          {
+            type: 'category',
+            label: 'Getting Started',
+            link: { type: 'doc', id: 'retraced/getting-started/retraced-basics' },
+            items: [
+                'retraced/getting-started/retraced-basics',
+                'retraced/getting-started/embedded-viewer',
+                'retraced/getting-started/first-audit-event',
+                'retraced/getting-started/renaming-properties',
+                'retraced/getting-started/searching-for-events',
+                'retraced/getting-started/time-synchronization',
+              ],
+          },
+          {
+            type: 'category',
+            label: 'Self Hosting',
+            link: { type: 'doc', id: 'retraced/self-host/index' },
+            items: [
+                'retraced/self-host/index',
+                'retraced/self-host/docker',
+                'retraced/self-host/digitalocean',
+                'retraced/self-host/aws',
+                'retraced/self-host/kubernetes',
+              ],
+          },
           {
             type: 'category',
             label: 'How to audit log',
@@ -64,19 +82,6 @@ module.exports = {
                 'retraced/how-to-audit-log/segments',
                 'retraced/how-to-audit-log/targets',
                 'retraced/how-to-audit-log/time-synced',
-              ],
-          },
-          {
-            type: 'category',
-            label: 'Getting Started',
-            link: { type: 'doc', id: 'retraced/getting-started/retraced-basics' },
-            items: [
-                'retraced/getting-started/retraced-basics',
-                'retraced/getting-started/embedded-viewer',
-                'retraced/getting-started/first-audit-event',
-                'retraced/getting-started/renaming-properties',
-                'retraced/getting-started/searching-for-events',
-                'retraced/getting-started/time-synchronization',
               ],
           },
           {
