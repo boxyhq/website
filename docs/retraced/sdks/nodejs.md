@@ -17,7 +17,7 @@ npm install -s retraced
 
 ## Basic Usage
 
-Initialize a client
+### Initialize a client
 
 ```javascript
 import * as Retraced from "retraced";
@@ -28,7 +28,7 @@ const retraced = new Retraced.Client({
 });
 ```
 
-Create an event
+### Report an event
 
 ```javascript
 const event = {
@@ -47,22 +47,13 @@ const event = {
     url: "https://customertowne.xyz/records/" + newRecord.id,
   },
 };
-```
 
-Report an event
-
-```javascript
 // The Retraced client's methods are asynchronous.
-// You can "fire and forget" them...
+// You can "fire and forget" them.
 retraced.reportEvent(event);
 
-// ... "await" them...
-console.log("Reporting...");
 await retraced.reportEvent(event);
-console.log("Finished reporting!");
 
-// ... or treat them as Promises.
-console.log("Reporting...");
 retraced.reportEvent(event)
   .then(() => { console.log("Finished reporting!"); })
   .catch((err) => handleError(err));

@@ -17,7 +17,7 @@ go get github.com/retracedhq/retraced-go
 
 Error handling omitted for brevity.
 
-Initialize a client
+### Initialize a client
 
 ```go
 import "github.com/retracedhq/retraced-go"
@@ -25,7 +25,7 @@ import "github.com/retracedhq/retraced-go"
 client, _ := retraced.NewClient("You Retraced project id goes here", "Your Retraced Publisher API token goes here")
 ```
 
-Create an event
+### Report an event
 
 ```go
 event := &retraced.Event{
@@ -37,15 +37,11 @@ event := &retraced.Event{
   Actor:       &retraced.Actor{ID: "alice@bigcorp.com", Name: "Alice"},
   Group:       &retraced.Group{ID: "bigcorp.com"},
 }
-```
 
-Report an event
-
-```go
 resp, _ := client.ReportEvent(event)
 ```
 
-Verify the event receipt hash
+### Verify the event receipt hash
 
 ```go
 err := event.VerifyHash(resp)

@@ -70,6 +70,16 @@ module.exports = {
           },
           {
             type: 'category',
+            label: 'Architecture',
+            link: { type: 'doc', id: 'retraced/architecture/index' },
+            items: [
+                'retraced/architecture/index',
+                'retraced/architecture/immutability-guarantee',
+                'retraced/architecture/hashing-formula',
+              ],
+          },
+          {
+            type: 'category',
             label: 'How to audit log',
             link: { type: 'doc', id: 'retraced/how-to-audit-log/audit-logging-basics' },
             items: [
@@ -105,16 +115,6 @@ module.exports = {
                 'retraced/exposing-retraced-data/overview',
                 'retraced/exposing-retraced-data/viewer',
                 'retraced/exposing-retraced-data/enterprise-api',
-              ],
-          },
-          {
-            type: 'category',
-            label: 'Architecture',
-            link: { type: 'doc', id: 'retraced/architecture/retraced-overview' },
-            items: [
-                'retraced/architecture/retraced-overview',
-                'retraced/architecture/immutability-guarantee',
-                'retraced/architecture/hashing-formula',
               ],
           },
           {
