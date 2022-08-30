@@ -10,7 +10,7 @@
 
 ## Run Retraced (Without Elasticsearch)
 
-`docker-compose -f docker-compose-PG_SEARCH.yaml up`
+`docker-compose -f docker-compose-pg-search.yaml up`
 
 ## See it in action
 
