@@ -19,4 +19,4 @@ Make sure you have set the `ADMIN_ROOT_TOKEN` environement varaible in **docker-
 Use the postman collection located at `./postman/Retraced.postman_collection.json`.
 You can import the json file in postman and use the API calls to test Retraced.
 
-`Make sure that the bootstrap & migrations and finished before makeing api calls.`
+`Make sure that the bootstrap & migrations are finished before makeing api calls.`
