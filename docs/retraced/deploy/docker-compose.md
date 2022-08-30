@@ -4,6 +4,8 @@
 
 `git clone https://github.com/boxyhq/retraced`
 
+Make sure you have set the `ADMIN_ROOT_TOKEN` environement varaible in **docker-compose** or **.env** file.
+
 ## Run Retraced
 
 `docker-compose up`
