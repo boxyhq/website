@@ -38,7 +38,12 @@ module.exports = {
             'jackson/sso-providers/generic-saml',
           ],
         },
-        'jackson/saml-flow',
+        {
+          type: 'category',
+          label: 'SSO Flows',
+          link: { type: 'doc', id: 'jackson/sso-flow/index' },
+          items: ['jackson/sso-flow/saml', 'jackson/sso-flow/oidc'],
+        },
         'jackson/examples',
         'jackson/admin-ui',
         'jackson/observability',

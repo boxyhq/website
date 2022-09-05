@@ -1,4 +1,4 @@
-# SAML Flow
+# SAML
 
 ## 1. Setting up SAML with your IdP
 
