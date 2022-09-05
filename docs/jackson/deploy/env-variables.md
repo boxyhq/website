@@ -36,11 +36,19 @@ NPM library option: `samlAudience`
 
 ### **SAML_PATH**
 
-The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the IdP. Set this when using the npm package.
+The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the SAML IdP. Set this when using the npm package.
 
 NPM library option: `samlPath`
 
 For example `/api/oauth/saml`
+
+### **OIDC_PATH**
+
+The `redirect_uri` at which the Authorization response is sent back from the OpenId Connect IdP. Set this when using the npm package.
+
+NPM library option: `oidcPath`
+
+For example `/api/oauth/oidc`
 
 ### **IDP_DISCOVERY_PATH**
 
@@ -79,8 +87,9 @@ NPM library option: `openid.jwsAlg`
 
 ### **OPENID_RSA_PRIVATE_KEY**
 
-Base64 value of private key. 
+Base64 value of private key.
 To generate one:
+
 ```bash
 openssl genrsa -out private-key.pem 3072
 openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in private-key.pem -out private_key.pem
@@ -90,8 +99,10 @@ cat private_key.pem | base64
 NPM library option: `openid.jwtSigningKeys.private`
 
 ### **OPENID_RSA_PUBLIC_KEY**
-Base64 value of public key. 
+
+Base64 value of public key.
 You can generate the public key from the private key as shown below:
+
 ```bash
 openssl rsa -in private_key.pem -pubout -out public_key.pem
 cat public_key.pem | base64
