@@ -164,13 +164,13 @@ NPM library option: `db.encryptionKey`
 
 If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See [Heroku docs](https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js) for more details
 
-## Pre-loaded Configuration
+## Pre-loaded Connections
 
-### **PRE_LOADED_CONFIG**
+### **PRE_LOADED_CONNECTION**
 
-If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-configuration.md) for more details
+If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenId and SAML)connections. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
 
-NPM library option: `preLoadedConfig`
+NPM library option: `preLoadedConnection`
 
 ## Opentelemetry configuration
 

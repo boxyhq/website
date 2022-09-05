@@ -1,6 +1,6 @@
 # Pre-loaded Connections
 
-If PRE_LOADED_CONFIG is set then it should point to a directory with the following structure (example below):-
+If PRE_LOADED_CONNECTION is set then it should point to a directory with the following structure (example below):-
 
 ```bash
 boxyhq.js
@@ -28,7 +28,7 @@ The config and XML above correspond to the [SAML API config](../saml-flow.md#2-s
 
 # Pre-loaded OIDC Connection
 
-For a connection backed by OpenId IdP create the \*.js file at PRE_LOADED_CONFIG as shown below:-
+For a connection backed by OpenId IdP create the \*.js file at PRE_LOADED_CONNECTION as shown below:-
 
 ```javascript
 module.exports = {
