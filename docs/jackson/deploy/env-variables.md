@@ -40,7 +40,7 @@ The ACS path at which the [saml response](./npm-library#handle-saml-response) is
 
 NPM library option: `samlPath`
 
-For example `/api/oauth/saml`
+For example: `/api/oauth/saml`
 
 ### **OIDC_PATH**
 
@@ -48,7 +48,7 @@ The `redirect_uri` at which the Authorization response is sent back from the Ope
 
 NPM library option: `oidcPath`
 
-For example `/api/oauth/oidc`
+For example: `/api/oauth/oidc`
 
 ### **IDP_DISCOVERY_PATH**
 
