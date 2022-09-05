@@ -20,7 +20,7 @@ module.exports = {
             'jackson/deploy/service',
             'jackson/deploy/npm-library',
             'jackson/deploy/env-variables',
-            'jackson/deploy/pre-loaded-configuration',
+            'jackson/deploy/pre-loaded-connections',
           ],
         },
         {
