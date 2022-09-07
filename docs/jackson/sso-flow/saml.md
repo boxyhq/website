@@ -1,12 +1,12 @@
 # SAML
 
-## 1. Setting up SAML with your IdP
-
-Please follow the instructions [here](./sso-providers) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
-
 **Note:** All the APIs below support both `application/x-www-form-urlencoded` and `application/json` content types. Examples below use `application/x-www-form-urlencoded`.
 
-**Note:** OAuth 2.0 protocol uses underscore casing for the parameters, we use camel casing for all our APIs. For exampe it's `client_id` in the OAuth 2.0 flow and `clientID` in our APIs.
+**Note:** OAuth 2.0 protocol uses underscore casing for the parameters, we use camel casing for all our APIs. For example it's `client_id` in the OAuth 2.0 flow and `clientID` in our APIs.
+
+## 1. Setting up SAML with your IdP
+
+Please follow the instructions [here](../sso-providers) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
 ## 2. SAML connection API
 
