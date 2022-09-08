@@ -5,6 +5,7 @@ import Head from '@docusaurus/Head';
 import HeroSection from '../components/HeroSection';
 import TrustedBySection from '../components/TrustedBySection';
 import NewsSection from '../components/NewsSection';
+import InvestorsSection from '../components/InvestorsSection';
 
 const mainHeroSection = {
   main: true,
@@ -53,13 +54,14 @@ export default function Home() {
       </Head>
 
       <HeroSection {...mainHeroSection} />
-      <TrustedBySection quotes={true} />
+      <TrustedBySection />
       <HeroSection {...demoHeroSection} />
       <HeroSection {...contactHeroSection} />
 
       <HomepageFeatures />
 
       <NewsSection />
+      <InvestorsSection />
     </Layout>
   );
 }

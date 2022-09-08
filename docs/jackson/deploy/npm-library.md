@@ -280,7 +280,7 @@ router.post('/logout/callback', async (req, res, next) => {
 });
 ```
 
-### OpenIdConnect: Discovery endpoints
+### OpenID Connect: Discovery endpoints
 
 To enable support for OpenID Connect clients (or Relying Parties), we must expose the location and other [metadata](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) of Jackson (OpenID Issuer).
 

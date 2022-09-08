@@ -61,7 +61,7 @@ You've successfully configured your custom SAML application for JumpCloud. At th
 
 ## Resources
 
-- [JumpCloud](https://www.jumpcloud.com/) official website
+- [JumpCloud](https://jumpcloud.com/) official website
 
 :::tip
 Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)
