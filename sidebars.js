@@ -54,7 +54,7 @@ module.exports = {
       label: 'Directory Sync (Beta)',
       collapsible: true,
       //collapsed: false,
-      link: { type: 'doc', id: 'directory-sync/index' },
+      link: { type: 'doc', id: 'directory-sync/overview' },
       items: [
         'directory-sync/api-reference',
         'directory-sync/admin-ui',
