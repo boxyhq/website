@@ -1,5 +1,5 @@
 ---
-title: Directory Sync
+title: Directory Sync Admin UI
 sidebar_label: Admin UI
 ---
 

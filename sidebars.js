@@ -57,6 +57,7 @@ module.exports = {
       link: { type: 'doc', id: 'directory-sync/overview' },
       items: [
         'directory-sync/api-reference',
+        'directory-sync/examples',
         'directory-sync/admin-ui',
         'directory-sync/webhooks',
         'directory-sync/events',
