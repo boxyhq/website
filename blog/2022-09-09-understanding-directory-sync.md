@@ -1,6 +1,6 @@
 ---
-slug: scim-and-directory-sync
-title: SCIM and Directory Sync
+slug: understanding-scim-and-directory-sync
+title: Understanding SCIM and Directory Sync
 author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
@@ -18,17 +18,17 @@ SCIM facilitates user identity data communication between Identity Providers (Ok
 
 ## Why should you care about SCIM?
 
-Many companies manually onboard and offboard users, which consumes many IT resources and time. 
+Many companies manually onboard and offboard users, which consumes many IT resources and time.
 
 User lifecycle management (ULM) begins when employees start their job and continue until they leave the company. ULM is all about provisioning and de-provisioning users when they join an organization.
 
-For IT departments, this means creating an account for the new employees in the cloud apps they need to use after starting their job. Also, IT departments must ensure that when those employees leave, they revoke access to those accounts. 
+For IT departments, this means creating an account for the new employees in the cloud apps they need to use after starting their job. Also, IT departments must ensure that when those employees leave, they revoke access to those accounts.
 
-Smaller organizations might address these procedures manually, but the process can become error-prone and time-consuming when done at scale. This is where the SCIM and Directory Sync come to the organization's rescue. 
+Smaller organizations might address these procedures manually, but the process can become error-prone and time-consuming when done at scale. This is where the SCIM and Directory Sync come to the organization's rescue.
 
 ## What is Directory Sync?
 
-Directory sync helps organizations automate the provisioning and de-provisioning of their users. 
+Directory sync helps organizations automate the provisioning and de-provisioning of their users.
 
 As a result, it streamlines the user lifecycle management process by saving valuable organizational hours, creating a single truth source of the user identity data, and facilitating them to keep the data secure.
 
@@ -46,7 +46,7 @@ Technically, SCIM is a set of APIs that allows you to manipulate the users and g
 
 ## How to add Directory Sync to your SaaS app?
 
-Building Directory sync implementation yourself can be tedious and time-consuming for any engineering team. 
+Building Directory sync implementation yourself can be tedious and time-consuming for any engineering team.
 
 Below are some questions the engineering team should answer before starting building Directory sync.
 
@@ -61,7 +61,7 @@ The best alternative is an open-source dedicated Directory Sync implementation p
 
 ## Directory Sync from BoxyHQ
 
-BoxyHQ can help enterprises to add Directory Sync to any SaaS app with just a few lines of code. 
+BoxyHQ can help enterprises to add Directory Sync to any SaaS app with just a few lines of code.
 
 Enterprise SaaS apps can provide a Webhook endpoint to SAML Jackson, and Jackson will notify the Webhook every time a change occurs in the user identity data within the IDP.
 
