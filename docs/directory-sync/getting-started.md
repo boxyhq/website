@@ -11,7 +11,7 @@ The advantage of running a separate service is that you get all of our UI toolin
 
 **If you are not using Node.js then this is the only option available to you.**
 
-Read more about [how to run the Jackson service](docs/jackson/deploy/service)
+Read more about [how to run the Jackson service](/docs/jackson/deploy/service)
 
 Jackson use webhooks to notify your application any time changes are made to directory users and groups. You can use webhooks to trigger actions in your application, such as creating a new user in your application, or updating a user in your application based on the changes made in the directory.
 
