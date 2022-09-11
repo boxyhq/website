@@ -50,10 +50,10 @@ Building Directory sync implementation yourself can be tedious and time-consumin
 
 Below are some questions the engineering team should answer before starting building Directory sync.
 
-How do we support multiple identity providers?
-How much effort should the team put into support & maintenance?
-Do we have developers with good knowledge of SCIM and its security?
-Is it worth building the Directory sync ourselves?
+- How do we support multiple identity providers?
+- How much effort should the team put into support & maintenance?
+- Do we have developers with good knowledge of SCIM and its security?
+- Is it worth building the Directory sync ourselves?
 
 In short, building Directory sync yourself is not a good idea. It requires a lot of tedious engineering work and ongoing maintenance.
 
