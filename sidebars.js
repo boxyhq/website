@@ -138,18 +138,7 @@ module.exports = {
                 'retraced/advanced/tracking-application-versions',
                 'retraced/advanced/automated-audit-events',
               ],
-          },
-          {
-            type: 'category',
-            label: 'Troubleshooting',
-            link: { type: 'doc', id: 'retraced/troubleshooting/troubleshooting-retraced' },
-            items: [
-                'retraced/troubleshooting/troubleshooting-retraced',
-                'retraced/troubleshooting/daily-email',
-                'retraced/troubleshooting/public-ips',
-                'retraced/troubleshooting/release-notes',
-              ],
-          },
+          }
         ],
       },
   ],
