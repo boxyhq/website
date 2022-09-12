@@ -2,10 +2,10 @@
 
 Now that you've sent some events into Retraced, it's time to expose them to your end users. Retraced has an advanced, highly customizable log viewer that you can embed on your own site.
 
-
 Note: Currently, a React-based site is required to embed the viewer, but support for embedding without React will be available soon.
 
 ## Installing
+
 There are a few short steps to getting the embedded viewer integrated into your site.
 
 1. Install the `retraced-logs-viewer` package from npm and include in your site.
@@ -13,23 +13,26 @@ There are a few short steps to getting the embedded viewer integrated into your 
 1. Render the `<RetracedEventsBrowser/>` React component as part of your application
 
 ### Obtain a viewer token from the Retraced API
+
 The browser will communicate directly with the Retraced API to search and show audit logs. Your backend server is the only trusted source to identify who the browser is. To identify the user, your site's backend should request a viewer token using the appropriate [Retraced SDK](/docs/retraced/sdks/available-sdks) or directly with the [Retraced API](/docs/retraced/apis/overview). Once you have obtained a temporary viewer token from the Retraced API, send it to the browser where it can be used in the next and final step.
 
 ### Render the component
 
 Inside a React Component
+
 ```javascript
-    function render() {
-        return (
-            <RetracedEventsBrowser
-              auditLogToken=<YOUR_VIEWER_TOKEN>
-              header="My Audit Log"
-              mount={true} />
-        )
-    }
+function render() {
+    return (
+        <RetracedEventsBrowser
+          auditLogToken=<YOUR_VIEWER_TOKEN>
+          header="My Audit Log"
+          mount={true} />
+    )
+}
 ```
 
 or, without JSX:
+
 ```html
 ReactDOM.render(
   React.createElement(
@@ -41,6 +44,7 @@ ReactDOM.render(
 ```
 
 #### Options
+
 The embedded viewer supports quite a few options, but they all have defaults. The table below describes the keys that are possible to override in the component properties. 
 
 | Key | Default Value | Value Type | Description |

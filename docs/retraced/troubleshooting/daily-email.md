@@ -4,4 +4,3 @@ By default, Retraced will send a daily email to all admins on your account with 
 
 This is a sample of the type of information that the daily email contains:
 ![Daily Email Sample](/images/retraced-daily-email.png)
-

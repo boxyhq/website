@@ -14,7 +14,7 @@ Reatrced provides an audit log feature for your application; one that meets all 
 ### Own your own data​
 
 - An open-source solution that allows you to keep control of your data
-- Supports Bring Your Own Database (BYOD) and can be used with postgres for now
+- Supports Bring Your Own Database (BYOD) and can be used with Postgres for now
 - Built-in support for Elasticsearch
 - Works great with databases from popular hosting providers
 

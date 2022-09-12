@@ -12,11 +12,4 @@ At it's core, Retraced consists of 3 components:
 - The [Enterprise IT Integration API](/docs/retraced/apis/enterprise-api) which
   be used by end customers to consume audit log events programmatically.
 
-
-The first step in any Retraced integration is 
-[sending an event to the Publisher API](/docs/retraced/getting-started/first-audit-event).
-Once events have been published to Retraced, they can be consumed either by 
-embedding the logs viewer or by accessing the Enterprise IT Integration API.
-
-
-
+The first step in any Retraced integration is [sending an event to the Publisher API](/docs/retraced/getting-started/first-audit-event). Once events have been published to Retraced, they can be consumed either by embedding the logs viewer or by accessing the Enterprise IT Integration API.

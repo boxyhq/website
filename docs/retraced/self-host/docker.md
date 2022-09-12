@@ -36,9 +36,3 @@ docker-compose up
 At this stage, you've got a running Retraced instance. You can now start publishing the audit logs using the Publisher API endpoints.
 
 The base URL would be `http://localhost:3000/auditlog/publisher/v1/project/{project-id}/event`
-
-## Next steps
-
-Now that your instance is up and running, here are a couple of guides we'd recommend you check out.
-
-TODO: Add the lists here

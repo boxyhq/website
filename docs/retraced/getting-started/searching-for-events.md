@@ -3,9 +3,11 @@
 The Retraced interface supports searching for events. While it's presented as a single, simple input field, the Retraced search interface supports complex structured queries.
 
 ## Free Text Search
+
 By default, the search query you type in the search box will seach all fields for this value.
 
 ## Structured (Advanced) Search
+
 If you use the advanced search syntax, you can perform very specific and exact searches to find the data you are looking for. The syntax for this is `key:value`. For example, to search for all events that have an action that starts with `user.` you could enter the following query: `action:user.*`
 
 This table shows the supported advanced searches:
