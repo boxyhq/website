@@ -4,6 +4,17 @@ import Feature from './Feature';
 
 const FeatureList = [
   {
+    title: 'Directory Sync',
+    url: 'https://github.com/boxyhq/jackson#directory-sync',
+    Svg: require('../../static/img/feat-dsync.svg').default,
+    description: (
+      <>
+        Add Directory Sync support into your product to provision and
+        de-provision users. Supports the SCIM protocol
+      </>
+    ),
+  },
+  {
     title: 'Audit Logs (Coming soon)',
     Svg: require('../../static/img/feat-audit.svg').default,
     description: (
@@ -31,16 +42,6 @@ const FeatureList = [
         Add roles, groups and permissions into your product using a flexible
         schema. Query the schema at runtime in your product to enforce Role
         Based Access Control
-      </>
-    ),
-  },
-  {
-    title: 'Directory Sync (coming soon)',
-    Svg: require('../../static/img/feat-dsync.svg').default,
-    description: (
-      <>
-        Add Directory Sync support into your product to provision and
-        de-provision users. Supports the SCIM protocol
       </>
     ),
   },

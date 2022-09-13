@@ -9,12 +9,21 @@ module.exports = {
   url: 'https://boxyhq.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    zoom: {
+      selector: '.markdown :not(em) > img',
+      config: {
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)',
+        },
+      },
+    },
     announcementBar: {
       id: 'announcement-bar',
       content:
@@ -165,5 +174,6 @@ module.exports = {
       },
     ],
     ['@cmfcmf/docusaurus-search-local', {}],
+    require.resolve('docusaurus-plugin-image-zoom'),
   ],
 };
