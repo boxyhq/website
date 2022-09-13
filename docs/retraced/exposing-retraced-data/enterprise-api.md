@@ -2,15 +2,13 @@
 
 The Retraced Enterprise API enables users to consume audit log data programmatically and integrate it with an external monitoring or security system.
 
-
 ## Creating and Managing Enterprise Tokens
 
 Enterprise Tokens can be created and managed via the [Embedded Viewer](/docs/retraced/exposing-retraced-data/viewer/)
 
-
 **Note**: If you're a vendor integrating Retraced as your audit log, you can also manage and distribute Enterprise Tokens using the [Publisher API](/docs/retraced/apis/publisher-api/).
 
-## Graphql  
+## Graphql
 
 The quickest way to start getting events is using the GraphQL API. Below is an example request:
 
@@ -32,12 +30,11 @@ There are five things to pay attention to here:
 
 - We send our Enterpise API Token in a header of the form `Authorization: token=...`
 - `variables.last` is the number of events we're requesting, in this case we only want the last 3 events
-- `variables.query` is a free-text or structured search query, as you'd use in [The Embedded Viewer](/docs/retraced/exposing-retraced-data/viewer/#search). 
+- `variables.query` is a free-text or structured search query, as you'd use in [The Embedded Viewer](/docs/retraced/exposing-retraced-data/viewer/#search).
 - `variables.before` allows us to specify a cursor for paging through events. Since we just want the most recent events, we'll leave this blank for now.
-- In the `query` field, we describe the structure and parameters of the GraphQL query. 
+- In the `query` field, we describe the structure and parameters of the GraphQL query.
 
-
-The response will look something like 
+The response will look something like
 
 ```json
 {
@@ -99,21 +96,21 @@ query Search($query: String!, $last: Int, $before: String) { search(query: $quer
 The same query is expanded below for readability. In general use, the first few lines won't change for every request, the interesting part is under `node`, where you're able to select which fields you'd like to receive.
 
 ```
-query Search($query: String!, $last: Int, $before: String) { 
-  search(query: $query, last: $last, before: $before) { 
-    totalCount 
-    pageInfo { 
-      hasPreviousPage 
-    } 
+query Search($query: String!, $last: Int, $before: String) {
+  search(query: $query, last: $last, before: $before) {
+    totalCount
+    pageInfo {
+      hasPreviousPage
+    }
     edges {
-      cursor 
+      cursor
       node {
-        id 
-        action 
-        crud 
-        created 
+        id
+        action
+        crud
+        created
         actor {
-          name 
+          name
         }
       }
     }
@@ -121,12 +118,9 @@ query Search($query: String!, $last: Int, $before: String) {
 }
 ```
 
-
-This example only requests a few event fields: `id`, `action`, `crud`, `created`, and `actor.name`, but there are many other fields available, as described in the [Event Schema](/docs/retraced/apis/graphql/#event). 
-
+This example only requests a few event fields: `id`, `action`, `crud`, `created`, and `actor.name`, but there are many other fields available, as described in the [Event Schema](/docs/retraced/apis/graphql/#event).
 
 The GraphQL APIs for consuming events are specified fully in [GraphQL API Guide](/docs/retraced/apis/graphql/). There are example queries and usage in the [Golang SDK](https://github.com/retracedhq/retraced-go/blob/master/graphql.go#L216) and the [Javascript SDK](https://github.com/retracedhq/retraced-js/blob/master/src/graphql.ts#L334)
-
 
 ## SSH Event Stream
 
@@ -147,30 +141,23 @@ PTY allocation request failed on channel 0
 {"action":"audit.log.view","actor":{"created":1498682746392,"environment_id":"7a691d01114a494ba9d77eb302edce6a","first_active":1498682746393,"id":"27c92eb3f5ce849b9866edd12f8fdef8","last_active":1510939425326,"name":"dexter+qa@replicated.com","project_id":"51e79795f89b4454a883a3a49d03d6ea"},"crud":"r","description":"POST /viewer/v1/graphql","group":{"created_at":1494456302651,"environment_id":"7a691d01114a494ba9d77eb302edce6a","event_count":"16134","id":"1ff0ab86bcb8f9fcd67936db08b80600","last_active":1510939425315,"name":"Replicated QA","project_id":"51e79795f89b4454a883a3a49d03d6ea"},"id":"8d14443a55dc4b7d87939917019a520d","raw":"{\"action\":\"audit.log.view\",\"crud\":\"r\",\"actor\":{\"id\":\"27c92eb3f5ce849b9866edd12f8fdef8\"},\"group\":{\"id\":\"1ff0ab86bcb8f9fcd67936db08b80600\"},\"description\":\"POST /viewer/v1/graphql\",\"source_ip\":\"35.186.223.140\"}","received":1510939425299,"source_ip":"35.186.223.140","target":{}}
 ```
 
-
 Events will continue to appear as long as the ssh session is open. These events can now be piped to a file, or to any other program to ingest them into your monitoring or security systems.
 
 **Note**: SSH Streaming may not be available in all Retraced environments.
 
-For more information, check out [SSH Streaming](/docs/retraced/advanced-retraced/ssh-streaming/).
-
+For more information, check out [SSH Streaming](/docs/retraced/advanced/ssh-streaming/).
 
 ## Saved Searches
 
-The Enterprise API includes several endpoints for saving a search and maintaining a persistent cursor across search queries. 
+The Enterprise API includes several endpoints for saving a search and maintaining a persistent cursor across search queries.
 
 The general workflow is:
 
 - Create a "Saved Search" with desired query parameters
 - Create an "Active Search" from the saved search's ID
 - Use the "Pump Active Search" endpoint whenever you want to get more events from your search.
-    - Pump active search will always return only the events that occurred since the last time it was queried, so it can be called as often as every few seconds, or as infrequently as every few months
+  - Pump active search will always return only the events that occurred since the last time it was queried, so it can be called as often as every few seconds, or as infrequently as every few months
 
 **Note**: Saved Search functionality may not be available in all Retraced environments.
 
-The endpoints for managing Saved Searches are described in the [Enterprise API Guide](/docs/retraced/apis/enterprise-api/). There's also an [OpenAPI/Swagger  specification](https://api.replicated.com/auditlog/enterprise/v1/swagger.json) and [interactive API console](https://retraced.readme.io/reference#searchactive).
-
-
-
- 
-
+The endpoints for managing Saved Searches are described in the [Enterprise API Guide](/docs/retraced/apis/enterprise-api/). There's also an [OpenAPI/Swagger specification](https://api.replicated.com/auditlog/enterprise/v1/swagger.json) and [interactive API console](https://retraced.readme.io/reference#searchactive).

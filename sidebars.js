@@ -78,7 +78,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Retraced',
+      label: 'Audit Logs (Beta)',
       collapsible: true,
       collapsed: true,
       link: { type: 'doc', id: 'retraced/overview' },

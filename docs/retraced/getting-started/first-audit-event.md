@@ -2,7 +2,7 @@
 
 Getting started with Retraced is easy. The best way to start is to pick a single event to start sending to confirm that everything is set up right. If your site has a login event, it's a perfect first event because it covers most of the scenarios that can be tricky when starting to audit log. Login events can have both a successful and failed response, it can be anonymous or authenticated and it may or may not belong to a group.
 
-Remembering the basics of [how to audit log](/docs/retraced/how-to-audit-log/audit-logging-basics/), you should find a place in your code that is guaranteed to be executed after a login event. 
+Remembering the basics of [how to audit log](/docs/retraced/how-to-audit-log), you should find a place in your code that is guaranteed to be executed after a login event.
 
 ## Publishing Guide
 
@@ -13,7 +13,7 @@ the Retraced admin site.
 
 ### Sending Events
 
-Next, in your Login API handler, you'll want to add a call to the Publisher API's  after each login attempt. The Create Event call can be made using one of the [Retraced SDKs](/docs/retraced/sdks/available-sdks), or by making a request to `POST /publisher/v1/project/{projectId}/event` as described in the [Publisher API Documentation](/docs/retraced/apis/publisher-api) and the [Publisher Swagger Specification](https://api.replicated.com/auditlog/publisher/v1/swagger.json).
+Next, in your Login API handler, you'll want to add a call to the Publisher API's after each login attempt. The Create Event call can be made using one of the [Retraced SDKs](/docs/retraced/sdks/available-sdks), or by making a request to `POST /publisher/v1/project/{projectId}/event` as described in the [Publisher API Documentation](/docs/retraced/apis/publisher-api) and the [Publisher Swagger Specification](https://api.replicated.com/auditlog/publisher/v1/swagger.json).
 
 ### Verifying Event Hashes
 
