@@ -12,7 +12,11 @@ module.exports = {
           type: 'category',
           label: 'Deployment Guides',
           collapsed: false,
-          items: ['jackson/deployments/heroku', 'jackson/deployments/vercel'],
+          items: [
+            'jackson/deployments/heroku',
+            'jackson/deployments/vercel',
+            'jackson/deployments/mogenius',
+          ],
         },
         {
           type: 'category',
@@ -29,6 +33,8 @@ module.exports = {
           label: 'Integrations Guides',
           collapsed: false,
           items: [
+            'jackson/integrations/auth0',
+            'jackson/integrations/firebase',
             'jackson/integrations/nextauth',
             'jackson/integrations/supertokens',
           ],

@@ -9,7 +9,7 @@ This guide will walk you through the configuration and deployment of SAML Jackso
 
 If you don’t have a Heroku account, create one [here](https://signup.heroku.com/).
 
-## Install SAML Jackson
+## Deploy SAML Jackson
 
 - Fork the the SAML Jackson [GitHub repository](https://github.com/boxyhq/jackson/fork).
 - Go to the forked repo and click the **Deploy to Heroku** button from the README section.
@@ -17,7 +17,7 @@ If you don’t have a Heroku account, create one [here](https://signup.heroku.co
 - Fill the **Config Vars** as per the [documentation](/docs/jackson/deploy/env-variables).
 - After you've filled everything click the **Deploy app** button.
 
-### Verify installation
+### Verify deployment
 
 You can visit the path `/api/hello` on your app to see if the Jackson was started successfully! If the installation was successful, you'll see the following output on the screen.
 

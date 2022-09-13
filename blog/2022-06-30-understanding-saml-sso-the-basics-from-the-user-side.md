@@ -18,7 +18,7 @@ But how does this work? Well, the idea behind SAML SSO is that by centralizing y
 The diagrams below show how this access flow would work with and without SAML:
 ![Without SAML SSO](/img/blog/sso/without-saml.png)
 
-In the diagram above we can see that the company is not using SAML so the user has to log into each of the services with an individual username and password. The username and password are managed by the service provider and access is also managed via an admin user on the service provider's side. The user must be given aces to each of the services from each of the services and remember the login details for each one.
+In the diagram above we can see that the company is not using SAML so the user has to log into each of the services with an individual username and password. The username and password are managed by the service provider and access is also managed via an admin user on the service provider's side. The user must be given access to each of the services from each of the services and remember the login details for each one.
 
 ![With SAML SSO](/img/blog/sso/with-saml.png)
 

@@ -5,13 +5,14 @@ import Head from '@docusaurus/Head';
 import HeroSection from '../components/HeroSection';
 import TrustedBySection from '../components/TrustedBySection';
 import NewsSection from '../components/NewsSection';
+import InvestorsSection from '../components/InvestorsSection';
 
 const mainHeroSection = {
   main: true,
   Svg: require('../../static/img/home-hero.svg').default,
   title: 'Enterprise readiness for your product, straight out the box',
   tagline:
-    'At BoxyHQ we enable you to add enterprise compliant security via simple and efficient integrations. SAML Single Sign-on just got easy.',
+    'At BoxyHQ we enable you to add enterprise compliant security via simple and efficient integrations. SAML Single Sign-on just got easy. Open-source and free.',
   ctas: [
     {
       title: 'Get started',
@@ -53,13 +54,14 @@ export default function Home() {
       </Head>
 
       <HeroSection {...mainHeroSection} />
-      <TrustedBySection quotes={true} />
+      <TrustedBySection />
       <HeroSection {...demoHeroSection} />
       <HeroSection {...contactHeroSection} />
 
       <HomepageFeatures />
 
       <NewsSection />
+      <InvestorsSection />
     </Layout>
   );
 }

@@ -2,6 +2,7 @@
 
 .newsSection {
   border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid #ebedf0;
   padding: 20px;
   background-color: white;
   margin: 0px;

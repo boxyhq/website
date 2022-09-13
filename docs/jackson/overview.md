@@ -1,4 +1,4 @@
-# Overview
+# SAML Jackson
 
 SAML service [SAML in a box from BoxyHQ]
 
@@ -10,7 +10,7 @@ Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away al
 
 - An open-source solution that allows you to keep control of your data
 - Supports Bring Your Own Database (BYOD) and can be used with any database
-- Built-in support for MySQL, MariaDB, Postgres, MongoDB, Redis
+- Built-in support for MySQL, MariaDB, Postgres, MongoDB, Redis, PlanetScale
 - Works great with databases from popular hosting providers
 
 ### Flexible and easy to use​
