@@ -27,49 +27,100 @@ Default: `boxyhq/terminus-ui:${TERMINUS_UI_VERSION}`
 
 ### **TERMINUS_VERSION**
 
-Terminus' image versions for the vault and the proxy services
+Terminus' image versions for the vault and the proxy services.
 
 Default: `latest`
 
 
-## Vault Persistence Layer Configuration
+## Vault: Persistence Layer
 
-Terminus' vault persistence layer currently uses [GORM](https://gorm.io/) with a default configuration using PostgreSQL as a provider. 
+Terminus' vault persistence layer (or DB) currently uses [GORM](https://gorm.io/) with a default configuration using PostgreSQL as a provider. 
 
 ### **TERMINUS_VAULT_DB_IMAGE**
 
-The docker image 
+The PostgreSQL docker image to use.
+
+Default: `postgres:14.4`
+
 ### **TERMINUS_VAULT_DB_HOSTNAME**
-### **TERMINUS_VAULT_DB_USER**
-### **TERMINUS_VAULT_DB_PASSWORD**
-### **TERMINUS_VAULT_DB_DBNAME**
+
+The hostname or URL of Terminus' vault DB server. When running on the same docker compose network, it is the name of the container.
+
+Default: `terminus_vault_persistence`
+
 ### **TERMINUS_VAULT_DB_HOST_PORT**
+
+The port where Terminus' vault DB server runs. When running in docker is the external port.
+
+Default: `5432`
+
 ### **TERMINUS_VAULT_DB_CONTAINER_PORT**
+
+The port where Terminus' vault DB server runs. 
+
+Default: `5432`
+
+### **TERMINUS_VAULT_DB_USER**
+
+The username of the DB.
+
+Default: `postgres`
+
+### **TERMINUS_VAULT_DB_PASSWORD**
+
+The password of the DB.
+
+Default: `postgres`
+
+### **TERMINUS_VAULT_DB_DBNAME**
+
+The DB name within the server.
+
+Default: `postgres`
+
 ### **TERMINUS_VAULT_DB_VOLUME**
 
+When running on docker, the mapping of the DB volume on the host file system.
 
-### **HOST_URL**
+Default: `./terminus-volumes/terminus-vault-data`
 
-The URL to bind to.
-Default: `localhost`
+## Vault: Service
 
-### **HOST_PORT**
+### **TERMINUS_VAULT_SERVICE_NAME**
 
-The port to bind to.
-Default: `5225`
+The name of the docker container if running on docker or the hostname of the vault service.
+
+Default: `terminus_vault_service`
+
+### **TERMINUS_VAULT_SERVICE_HOST_PORT**
+
+The port where Terminus' vault service runs. When running in docker is the external port.
+
+Default: `3005`
+
+### **TERMINUS_VAULT_SERVICE_PORT**
+
+The port where Terminus' vault service runs. 
+
+Default: `3005`
+
+### **TERMINUS_VAULT_SERVICE_ENDPOINT**
+
+The URL of Terminus' service endpoint.
+
+Default: `http://${TERMINUS_VAULT_SERVICE_NAME}:${TERMINUS_VAULT_SERVICE_PORT}`
+
+### **TERMINUS_VAULT_SERVICE_IMAGE**
+### **TERMINUS_VAULT_SERVICE_ENCR_AES**
+### **TERMINUS_VAULT_SERVICE_KEY_AES**
+### **TERMINUS_VAULT_SERVICE_VOLUME**
+### **TERMINUS_VAULT_SERVICE_LOGS_VOLUME**
+### **TERMINUS_VAULT_SERVICE_SERVICE_NAME**
+### **TERMINUS_VAULT_SERVICE_OTEL_LIGHSTEP_ACCESS_TOKEN**
 
 <!-- 
 
 
-# Terminus Vault Persistence
-TERMINUS_VAULT_DB_IMAGE=postgres:14.4
-TERMINUS_VAULT_DB_HOSTNAME=terminus_vault_persistence
-TERMINUS_VAULT_DB_USER=postgres
-TERMINUS_VAULT_DB_PASSWORD=postgres
-TERMINUS_VAULT_DB_DBNAME=postgres
-TERMINUS_VAULT_DB_HOST_PORT=5432
-TERMINUS_VAULT_DB_CONTAINER_PORT=5432
-TERMINUS_VAULT_DB_VOLUME=./terminus-volumes/terminus-vault-data
 
 # Terminus Vault Service 
 TERMINUS_VAULT_SERVICE_NAME=terminus_vault_service
