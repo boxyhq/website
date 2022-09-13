@@ -40,7 +40,7 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/connection' \
 - `name`: A friendly name to identify the SAML connection
 - `description`: A short description with some information of the connection
 
-The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](./deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
+The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](../deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
 
 ### 2.2 SAML get connection API
 
@@ -204,7 +204,7 @@ If everything goes well you should receive a JSON response with the user's profi
 
 #### OpenID Connect support
 
-Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
+Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](../deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
 
 ## 4. SAML SLO
 

@@ -2,7 +2,7 @@
 
 SAML Jackson comes with an Admin interface that allows you to manage SAML configurations via UI. To enable the Admin UI, make sure you deploy the [Jackson as a service](./deploy/service.md)
 
-You can [add](./saml-flow.md#21-saml-add-config-api), [edit](./saml-flow.md#23-saml-update-config-api) or [delete](./saml-flow.md#24-saml-delete-config-api) SAML configurations from this UI.
+You can [add](./sso-flow/saml.md#21-saml-add-connection-api), [edit](./sso-flow/saml.md#23-saml-update-connection-api) or [delete](./sso-flow/saml.md#24-saml-delete-connection-api) SAML configurations from this UI.
 
 ## Sign into Admin UI
 
