@@ -37,13 +37,14 @@ const opts = {
   externalUrl: 'https://my-cool-app.com',
   samlAudience: 'https://my-cool-app.com',
   samlPath: '/sso/oauth/saml',
+  oidcPath: '/sso/oauth/oidc',
   db: {
     engine: 'mongo',
     url: 'mongodb://localhost:27017/my-cool-app',
   },
 };
 
-let apiController;
+let connectionAPIController;
 let oauthController;
 let logoutController;
 let oidcDiscoveryController;
@@ -51,7 +52,7 @@ let oidcDiscoveryController;
 // Run this in a function where you initialize the express server.
 async function init() {
   const ret = await require('@boxyhq/saml-jackson').controllers(opts);
-  apiController = ret.apiController;
+  connectionAPIController = ret.connectionAPIController;
   oauthController = ret.oauthController;
   logoutController = ret.logoutController;
   oidcDiscoveryController = ret.oidcDiscoveryController;
@@ -60,8 +61,9 @@ async function init() {
 
 - Add your app base URL as `externalUrl`
 - `samlPath` becomes part of the ACS URL. The ACS URL is an endpoint on the SP where the IdP will redirect to with its authentication response. For example: If `externalUrl` is `http://localhost`, and `samlPath` is `/sso/acs`, the ASC URL will be `http://localhost/sso/acs`
+- `oidcPath` is the endpoint which recieves the authentication response from an OIDC IdP. The `code` contained in the response is then exchanged to retrieve token/userprofile.
 
-### Add SAML Config API route
+### Add SAML Connection API route
 
 [API Reference](../sso-flow/saml.md#21-saml-add-connection-api)
 
@@ -70,56 +72,65 @@ async function init() {
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-// SAML config API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
-router.post('/api/v1/saml/config', async (req, res) => {
+// SAML connection API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
+router.post('/api/v1/:strategy/connection', async (req, res) => {
+  const strategy = req.params.strategy;
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
-
-    // only when properly authenticated, call the config function
-    res.json(await apiController.config(req.body));
+    if (strategy === "saml") {
+     res.json(await connectionAPIController.createSAMLConnection(req.body));
+    } else if (strategy === "oidc") {
+      res.json(await connectionAPIController.createOIDCConnection(req.body))
+    } else {
+      throw 'strategy not supported'
+    }
   } catch (err) {
     res.status(500).json({
       error: err.message,
     });
   }
 });
-// update config
-router.patch('/api/v1/saml/config', async (req,res) => {
+// update connection
+router.patch('/api/v1/:strategy/connection', async (req,res) => {
+  const strategy = req.params.strategy;
    try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
-
-    // only when properly authenticated, call the config function
-    res.json(await apiController.updateConfig(req.body));
+  if (strategy === "saml") {
+     res.json(await connectionAPIController.updateSAMLConnection(req.body));
+    } else if (strategy === "oidc") {
+      res.json(await connectionAPIController.updateOIDCConnection(req.body))
+    } else {
+      throw 'strategy not supported'
+    }
   } catch (err) {
     res.status(500).json({
       error: err.message,
     });
   }
 })
-// fetch config
-router.get('/api/v1/saml/config', async (req, res) => {
+// fetch connection
+router.get('/api/v1/:strategy/connection', async (req, res) => {
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
 
-    // only when properly authenticated, call the config function
-    res.json(await apiController.getConfig(req.query));
+    res.json(await connectionAPIController.getConnection(req.query));
   } catch (err) {
     res.status(500).json({
       error: err.message,
     });
   }
 });
-// delete config
-router.delete('/api/v1/saml/config', async (req, res) => {
+// delete connection
+router.delete('/api/v1/:strategy/connection', async (req, res) => {
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
 
-    // only when properly authenticated, call the config function
-    await apiController.deleteConfig(req.body);
+    // only when properly authenticated, call the connection function
+    await connectionAPIController.deleteConnection(req.body);
     res.status(200).end();
   } catch (err) {
     res.status(500).json({
@@ -156,7 +167,7 @@ Add a method to handle the SAML Response from IdP.
 
 #### IdP-initiated flow
 
-To enable IdP-initiated SAML flow set https://boxyhq.com/docs/jackson/deploy/env-variables#idp_enabled. If [idpDiscoveryPath](https://boxyhq.com/docs/jackson/deploy/env-variables#idp_discovery_path) is not set then always the first config will be chosen in case of multiple matches.
+To enable IdP-initiated SAML flow set https://boxyhq.com/docs/jackson/deploy/env-variables#idp_enabled. If [idpDiscoveryPath](https://boxyhq.com/docs/jackson/deploy/env-variables#idp_discovery_path) is not set then always the first connection will be chosen in case of multiple matches.
 
 If `oauthController.samlResponse` returns `app_select_form` with no `redirect_url`, then we have hit the case where the IdP-initiated flow has multiple matches for the same IdP. Users can select an app and the flow is resumed with the `idp_hint` containing the user selection. For reference on how to add an IdP selection page, see: https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx
 
