@@ -1,8 +1,8 @@
 # SAML Jackson
 
-SAML service [SAML in a box from BoxyHQ]
+SAML/OIDC Single Sign-On (SSO) service [SSO in a box from BoxyHQ]
 
-Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away all the complexities of the SAML protocol. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
+Jackson takes a multi-tenanted approach to implementing SSO, abstracting away all the complexities of the underlying SAML/OIDC protocol. What this means is you can enable SSO for all your customers and across products from a single instance of jackson, and works with both SAML and OIDC Identity Provider(IdP)s. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
 
 ## About Jackson
 
@@ -15,8 +15,8 @@ Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away al
 
 ### Flexible and easy to use​
 
-- Designed to work with OAuth 2.0 flow
-- Integrate with your existing OAuth 2.0 package
+- Designed to work with OAuth 2.0 / OpenID Connect 1.0 flow
+- Integrate with your existing OAuth 2.0 / OpenID Connect 1.0 library
 
 ### Support
 
