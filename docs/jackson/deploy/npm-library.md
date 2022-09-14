@@ -168,7 +168,7 @@ router.get('/oauth/authorize', async (req, res) => {
 });
 ```
 
-### Handle SAML Response
+### Handle Response from SAML Provider
 
 Add a method to handle the SAML Response from IdP.
 
@@ -183,7 +183,7 @@ SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Servi
 :::
 
 ```javascript
-router.post('/oauth/saml', async (req, res) => {
+router.post('/sso/oauth/saml', async (req, res) => {
   try {
     const { redirect_url, app_select_form } =
       await oauthController.samlResponse(req.body);
@@ -193,6 +193,23 @@ router.post('/oauth/saml', async (req, res) => {
     } else {
       res.set('Content-Type', 'text/html; charset=utf-8');
       res.send(app_select_form);
+    }
+  } catch (err) {
+    const { message, statusCode = 500 } = err;
+
+    res.status(statusCode).send(message);
+  }
+});
+```
+
+### Handle Response from OIDC Provider
+
+```javascript
+router.post('/sso/oauth/oidc', async (req, res) => {
+  try {
+    const { redirect_url } = await oauthController.oidcAuthzResponse(req.query);
+    if (redirect_url) {
+      res.redirect(302, redirect_url);
     }
   } catch (err) {
     const { message, statusCode = 500 } = err;
