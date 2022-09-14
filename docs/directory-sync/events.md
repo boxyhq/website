@@ -7,7 +7,7 @@ sidebar_label: Events
 
 SAML Jackson uses webhooks to notify your application any time changes are made to directory users and groups.
 
-SAML Jackson will notify you of the following 6 events.
+We'll notify you of the following 8 events.
 
 <details>
   <summary>user.created - New user has been assigned to the app.</summary>
