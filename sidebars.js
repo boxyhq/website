@@ -39,10 +39,9 @@ module.exports = {
           ],
         },
         {
-          type: 'category',
-          label: 'SSO Flows',
-          link: { type: 'doc', id: 'jackson/sso-flow/index' },
-          items: ['jackson/sso-flow/saml', 'jackson/sso-flow/oidc'],
+          type: 'doc',
+          label: 'Single Sign-on (SSO) Flow',
+          id: 'jackson/sso-flow',
         },
         'jackson/examples',
         'jackson/admin-ui',

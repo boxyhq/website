@@ -1,20 +1,26 @@
-# SAML
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Single Sign-On (SSO)
 
 **Note:** All the APIs below support both `application/x-www-form-urlencoded` and `application/json` content types. Examples below use `application/x-www-form-urlencoded`.
 
 **Note:** OAuth 2.0 protocol uses underscore casing for the parameters, we use camel casing for all our APIs. For example it's `client_id` in the OAuth 2.0 flow and `clientID` in our APIs.
 
-## 1. Setting up SAML with your IdP
+## 1. Setting up SSO Provider
 
-Please follow the instructions [here](../sso-providers) to guide your customers in setting up SAML correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](./sso-providers) to guide your customers in setting up SAML/OIDC correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
-## 2. SAML connection API
+## 2. SSO Connection API
 
-### 2.1 SAML add connection API
+You will need to provide a place in the UI for your customers (The account settings page is usually a good place for this) to configure this and then call the APIs below.
+
+### 2.1 Add connection
+
+<Tabs>
+<TabItem value="saml" label="SAML" default>
 
 Once your customer has set up the SAML app on their Identity Provider, the Identity Provider will generate an IdP or SP metadata file. Some Identity Providers only generate an IdP metadata file but it usually works for the SP login flow as well. It is an XML file that contains various attributes Jackson needs to validate incoming SAML login requests. This step is the equivalent of setting an OAuth 2.0 app and generating a client ID and client secret that will be used in the login flow.
-
-You will need to provide a place in the UI for your customers (The account settings page is usually a good place for this) to configure this and then call the API below.
 
 The following API call sets up the connection in Jackson:
 
@@ -40,11 +46,50 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/connection' \
 - `name`: A friendly name to identify the SAML connection
 - `description`: A short description with some information of the connection
 
-The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](../deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
+The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](./deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
+</TabItem>
+<TabItem value="oidc" label="OIDC">
 
-### 2.2 SAML get connection API
+Once your customer has set up the OIDC app on their Identity Provider, the Identity Provider will generate a clientId and clientSecret.
 
-This endpoint can be used to return metadata about an existing SAML connection. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
+The following API call sets up the connection in Jackson:
+
+```bash
+curl --location --request POST 'http://localhost:5225/api/v1/oidc/connection' \
+--header 'Authorization: Api-Key <Jackson API Key>' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/saml' \
+--data-urlencode 'oidcDiscoveryUrl=<well-known url of OIDC Provider>' \
+--data-urlencode 'oidcClientId=<clientId of IdP Registered App>' \
+--data-urlencode 'oidcClientSecret=<clientSecret of IdP Registered App>' \
+--data-urlencode 'redirectUrl=http://localhost:3366/*' \
+--data-urlencode 'redirectUrl=http://localhost:3000/*' \
+--data-urlencode 'tenant=boxyhq.com' \
+--data-urlencode 'product=demo' \
+--data-urlencode 'name=demo-connection' \
+--data-urlencode 'description=Demo OIDC connection'
+```
+
+- `oidcDiscoveryUrl`: OpenId Providers supporting discovery make the metadata available at the endpoint obtained by concatenating issuer and /.well-known/openid-configuration
+- `oidcClientId`: The client identifier issued to the client during the IdP registration process.
+- `oidcClientSecret`: The client secret issued to the client during the IdP registration process.
+- `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
+- `redirectUrl`: Allowed redirect URL. Repeat this field multiple times to allow multiple redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above).
+- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
+- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
+- `name`: A friendly name to identify the SAML connection
+- `description`: A short description with some information of the connection
+
+The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](./deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
+</TabItem>
+</Tabs>
+
+### 2.2 Get connection
+
+This endpoint can be used to return metadata about an existing SAML/OIDC connection. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination. Use connection type (`saml` or `oidc`) as the value for `:strategy` param.
+
+<Tabs>
+<TabItem value="saml" label="SAML" default>
 
 ```bash
 curl -G --location 'http://localhost:5225/api/v1/saml/connection' \
@@ -61,11 +106,34 @@ curl -G --location 'http://localhost:5225/api/v1/saml/connection' \
 --data-urlencode 'clientID=<Client ID>'
 ```
 
-The response returns a JSON with `idpMetadata.provider` indicating the domain of your Identity Provider. If an empty JSON payload is returned then we do not have any connection stored for the attributes you requested.
+The response returns a JSON with `idpMetadata.provider`indicating the domain of your Identity Provider. If an empty JSON payload is returned then we do not have any connection stored for the attributes you requested.
+</TabItem>
+<TabItem value="oidc" label="OIDC">
 
-### 2.3 SAML update connection API
+```bash
+curl -G --location 'http://localhost:5225/api/v1/oidc/connection' \
+--header 'Authorization: Api-Key <Jackson API Key>' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'tenant=boxyhq.com' \
+--data-urlencode 'product=demo'
+```
 
-This endpoint can be used to update an existing SAML connection.
+```bash
+curl -G --location 'http://localhost:5225/api/v1/oidc/connection' \
+--header 'Authorization: Api-Key <Jackson API Key>' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'clientID=<Client ID>'
+```
+
+The response returns a JSON with `oidcProvider.provider` indicating the domain of your Identity Provider. If an empty JSON payload is returned then we do not have any connection stored for the attributes you requested.
+</TabItem>
+</Tabs>
+
+### 2.3 Update connection
+
+This endpoint can be used to update an existing IdP connection.
+<Tabs>
+<TabItem value="saml" label="SAML" default>
 
 ```bash
 curl --location --request PATCH 'http://localhost:5225/api/v1/saml/connection' \
@@ -77,15 +145,42 @@ curl --location --request PATCH 'http://localhost:5225/api/v1/saml/connection' \
 --data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/saml' \
 --data-urlencode 'redirectUrl=http://localhost:3366/*' \
 --data-urlencode 'redirectUrl=http://localhost:3000/*' \
---data-urlencode 'tenant=boxyhq.com' \
---data-urlencode 'product=demo' \
+--data-urlencode 'tenant=boxyhq.com' \ /* Required */
+--data-urlencode 'product=demo' \ /* Required */
 --data-urlencode 'name=demo-connection' \
 --data-urlencode 'description=Demo SAML connection'
 ```
 
-### 2.4 SAML delete connection API
+</TabItem>
+<TabItem value="oidc" label="OIDC" default>
 
-This endpoint can be used to delete an existing IdP metadata.
+```bash
+curl --location --request PATCH 'http://localhost:5225/api/v1/oidc/connection' \
+--header 'Authorization: Api-Key <Jackson API Key>' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'clientID=<Client ID>' \ /* Required */
+--data-urlencode 'clientSecret=<Client Secret>' \ /* Required */
+--data-urlencode 'oidcDiscoveryUrl=<well-known url of OIDC Provider>' \
+--data-urlencode 'oidcClientId=<clientId of IdP Registered App>' \
+--data-urlencode 'oidcClientSecret=<clientSecret of IdP Registered App>' \
+--data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/saml' \
+--data-urlencode 'redirectUrl=http://localhost:3366/*' \
+--data-urlencode 'redirectUrl=http://localhost:3000/*' \
+--data-urlencode 'tenant=boxyhq.com' \ /* Required */
+--data-urlencode 'product=demo' \ /* Required */
+--data-urlencode 'name=demo-connection' \
+--data-urlencode 'description=Demo OIDC connection'
+```
+
+</TabItem>
+</Tabs>
+
+### 2.4 Delete connection
+
+This endpoint can be used to delete an existing connection.
+
+<Tabs>
+<TabItem value="saml" label="SAML" default>
 
 ```bash
 curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/connection' \
@@ -102,6 +197,28 @@ curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/connection' \
 --data-urlencode 'clientID=<Client ID>'
 --data-urlencode 'clientSecret=<Client Secret>'
 ```
+
+</TabItem>
+<TabItem value="oidc" label="OIDC">
+
+```bash
+curl -X "DELETE" --location 'http://localhost:5225/api/v1/oidc/connection' \
+--header 'Authorization: Api-Key <Jackson API Key>' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'tenant=boxyhq.com' \
+--data-urlencode 'product=demo'
+```
+
+```bash
+curl -X "DELETE" --location 'http://localhost:5225/api/v1/oidc/connection' \
+--header 'Authorization: Api-Key <Jackson API Key>' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'clientID=<Client ID>'
+--data-urlencode 'clientSecret=<Client Secret>'
+```
+
+</TabItem>
+</Tabs>
 
 ## 3. OAuth 2.0 Flow
 
@@ -204,7 +321,7 @@ If everything goes well you should receive a JSON response with the user's profi
 
 #### OpenID Connect support
 
-Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](../deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
+Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](./deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
 
 ## 4. SAML SLO
 
