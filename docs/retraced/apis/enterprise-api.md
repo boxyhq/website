@@ -1,6 +1,6 @@
 # Enterprise API
 
-### [Swagger JSON](https://api.replicated.com/auditlog/enterprise/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)
+### [Swagger JSON](http://localhost:3000/auditlog/enterprise/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)
 
 ## Overview
 
@@ -14,15 +14,13 @@ The Enterprise API endpoints expect the token to be provided in a header of the 
 Authorization: token=YOUR_ENTERPRISE_TOKEN
 ```
 
-
 ## Getting an Enterprise API Token
 
-There are currently two ways to manage Enterprise API tokens. 
+There are currently two ways to manage Enterprise API tokens.
 
 - Most often, end customers create and manage Enterprise IT tokens using the UI in the [Embedded Viewer](/docs/retraced/getting-started/embedded-viewer)
 - There are also endpoints in the [Publisher API](/docs/retraced/apis/publisher-api) that
-allow a vendor to create, edit, and delete Enterprise API tokens 
-  
-  
-Note that to allow end customers to manage Enterprise API tokens in the embedded viewer, 
-the `is_admin` query parameter must be set to `true` when [requesting a token to initialize the embedded viewer](https://retraced.readme.io/reference#publisherv1projectprojectidviewertoken) 
+  allow a vendor to create, edit, and delete Enterprise API tokens
+
+Note that to allow end customers to manage Enterprise API tokens in the embedded viewer,
+the `is_admin` query parameter must be set to `true` when [requesting a token to initialize the embedded viewer](https://retraced.readme.io/reference#publisherv1projectprojectidviewertoken)

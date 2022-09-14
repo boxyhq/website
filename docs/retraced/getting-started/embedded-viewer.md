@@ -34,29 +34,25 @@ function render() {
 or, without JSX:
 
 ```html
-ReactDOM.render(
-  React.createElement(
-    RetracedEventsBrowser,
-    { auditLogToken: <VIEWER_TOKEN>, mount: true },
-  ),
-  document.getElementById('main')
-);
+ReactDOM.render( React.createElement( RetracedEventsBrowser, { auditLogToken:
+<VIEWER_TOKEN
+  >, mount: true }, ), document.getElementById('main') );</VIEWER_TOKEN
+>
 ```
 
 #### Options
 
-The embedded viewer supports quite a few options, but they all have defaults. The table below describes the keys that are possible to override in the component properties. 
+The embedded viewer supports quite a few options, but they all have defaults. The table below describes the keys that are possible to override in the component properties.
 
-| Key | Default Value | Value Type | Description |
-|--------|--------|-----------|-------------|
-| admin  | `true` | `boolean` | A bool to indicate if the admin/settings button is possible to show. This will never force it to show, this setting is provided to completely disable this button at times. |
-| export | `true` | `boolean` | A bool to indicate if the export button should be shown on the footer. |
-| crud   | `cud`  | `string`  | The default search filter options to enable. By default, read items are not shown. |
-| theme  | `light`| `string`  | The theme to use. Supports `dark` and `light`. |
-| header | `Audit Log` | `string`  | A header to show beside the search box. | 
-| apiTokenHelpURL | https://boxyhq.com/docs/retraced/exposing-retraced-data/enterprise-api/ | `string`  | A help link for the "How to Use Audit Log API Tokens" text in the API tokens modal. | 
-| searchHelpURL   | https://boxyhq.com/docs/retraced/exposing-retraced-data/viewer/#search  | `string`  | A help link for the "Get Help With Search" text in search filters modal. |
-| customClass   | ``  | `string`  | One or more space-separated CSS classes to apply to the outermost viewer `<div/>`
-| host   | `https://api.replicated.com/auditlog`  | `string`  | Retraced API host to use. Only needs to change for on-premise Retraced instances.
-| mount   | `false`  | `boolean`  | Determines whether to mount the component. Handy if you need to wait until a token is returned from your backend. 
-
+| Key             | Default Value                                                           | Value Type | Description                                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| admin           | `true`                                                                  | `boolean`  | A bool to indicate if the admin/settings button is possible to show. This will never force it to show, this setting is provided to completely disable this button at times. |
+| export          | `true`                                                                  | `boolean`  | A bool to indicate if the export button should be shown on the footer.                                                                                                      |
+| crud            | `cud`                                                                   | `string`   | The default search filter options to enable. By default, read items are not shown.                                                                                          |
+| theme           | `light`                                                                 | `string`   | The theme to use. Supports `dark` and `light`.                                                                                                                              |
+| header          | `Audit Log`                                                             | `string`   | A header to show beside the search box.                                                                                                                                     |
+| apiTokenHelpURL | https://boxyhq.com/docs/retraced/exposing-retraced-data/enterprise-api/ | `string`   | A help link for the "How to Use Audit Log API Tokens" text in the API tokens modal.                                                                                         |
+| searchHelpURL   | https://boxyhq.com/docs/retraced/exposing-retraced-data/viewer/#search  | `string`   | A help link for the "Get Help With Search" text in search filters modal.                                                                                                    |
+| customClass     | ``                                                                      | `string`   | One or more space-separated CSS classes to apply to the outermost viewer `<div/>`                                                                                           |
+| host            | `http://localhost:3000/auditlog`                                        | `string`   | Retraced API host to use. Only needs to change for on-premise Retraced instances.                                                                                           |
+| mount           | `false`                                                                 | `boolean`  | Determines whether to mount the component. Handy if you need to wait until a token is returned from your backend.                                                           |

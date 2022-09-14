@@ -5,7 +5,7 @@ sidebar_label: Overview
 
 # Audit Logging Basics
 
-An audit log is a centralized stream of all user activity in an application. 
+An audit log is a centralized stream of all user activity in an application.
 
 An audit log event is a single line that represents an [action](/docs/retraced/how-to-audit-log/actions) that an [actor](/docs/retraced/how-to-audit-log/actors) took, most often on a [target](/docs/retraced/how-to-audit-log/targets).
 
@@ -17,7 +17,7 @@ An actor in the spreadsheet application is any authenticated identity that's int
 
 ## Actions
 
-Actions are the events that the actors performed that should be audited. In the spreadsheet example application, some of the most obvious actions might include `sheet.create` and `sheet.delete`. Sometimes it's important to create new objects to wrap events. For example, if a user is editing a spreadsheet and the sheet saves every second, you don't want to create a `sheet.update` event each second. Wrap these events into a session and create a single `sheet.update` event for the entire edit session. 
+Actions are the events that the actors performed that should be audited. In the spreadsheet example application, some of the most obvious actions might include `sheet.create` and `sheet.delete`. Sometimes it's important to create new objects to wrap events. For example, if a user is editing a spreadsheet and the sheet saves every second, you don't want to create a `sheet.update` event each second. Wrap these events into a session and create a single `sheet.update` event for the entire edit session.
 
 ## Targets
 

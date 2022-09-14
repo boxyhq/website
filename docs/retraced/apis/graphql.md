@@ -2,15 +2,15 @@
 
 The recommended way to search events using an API is to POST your query and variables to the appropriate Retraced GraphQL endpoint.
 
-| API | Endpoint |
-| --- | -------- |
-| Publisher | https://api.replicated.com/auditlog/publisher/v1/project/{projectId}/graphql |
-| Admin | https://api.replicated.com/auditlog/admin/v1/project/{projectId}/environment/{environmentId}/graphql |
-| Enterprise | https://api.replicated.com/auditlog/enterprise/v1/graphql |
-| Viewer | https://api.replicated.com/auditlog/viewer/v1/graphql |
-
+| API        | Endpoint                                                                                        |
+| ---------- | ----------------------------------------------------------------------------------------------- |
+| Publisher  | http://localhost:3000/auditlog/publisher/v1/project/{projectId}/graphql                         |
+| Admin      | http://localhost:3000/auditlog/admin/v1/project/{projectId}/environment/{environmentId}/graphql |
+| Enterprise | http://localhost:3000/auditlog/enterprise/v1/graphql                                            |
+| Viewer     | http://localhost:3000/auditlog/viewer/v1/graphql                                                |
 
 ## Search
+
 The query root provides a search method. A fully-formed query for a subset of event fields would look like this:
 
 ```
@@ -37,7 +37,7 @@ The query root provides a search method. A fully-formed query for a subset of ev
 
 ### Variables
 
-Use ```query```, ```last```, and ```before``` variables to enable reuse of your query templates. If you define a parameterized query like this...
+Use `query`, `last`, and `before` variables to enable reuse of your query templates. If you define a parameterized query like this...
 
 ```
 const searchQuery = `query Search($query: String!, $last: Int, $before: String) {
@@ -62,13 +62,14 @@ const searchQuery = `query Search($query: String!, $last: Int, $before: String) 
 ```
 
 ... then you can execute searches like this:
+
 ```
 const vars = {
   query: "action:user.login location:German",
   last: 50,
   before: "opaquecursor",
 };
-const res = fetch("https://api.replicated.com/auditlog/publisher/v1/project/3hf140713bn302/graphql", {
+const res = fetch("http://localhost:3000/auditlog/publisher/v1/project/3hf140713bn302/graphql", {
   method: "POST",
   headers: {
     "Accept": "application/json",
@@ -87,30 +88,35 @@ const res = fetch("https://api.replicated.com/auditlog/publisher/v1/project/3hf1
 <details>
   <summary><strong>Table of Contents</strong></summary>
 
-  * [Query](#query)
-  * [Objects](#objects)
-    * [Action](#action)
-    * [Actor](#actor)
-    * [Display](#display)
-    * [Event](#event)
-    * [EventEdge](#eventedge)
-    * [EventsConnection](#eventsconnection)
-    * [Field](#field)
-    * [Group](#group)
-    * [PageInfo](#pageinfo)
-    * [Target](#target)
-  * [Enums](#enums)
-    * [CRUD](#crud)
-  * [Scalars](#scalars)
-    * [Boolean](#boolean)
-    * [ID](#id)
-    * [Int](#int)
-    * [String](#string)
-  * [Interfaces](#interfaces)
+- [GraphQL Endpoint](#graphql-endpoint)
+  - [Search](#search)
+    - [Variables](#variables)
+- [Schema Types](#schema-types)
+  - [Query](#query)
+  - [Objects](#objects)
+    - [Action](#action)
+    - [Actor](#actor)
+    - [Display](#display)
+    - [Event](#event)
+    - [EventEdge](#eventedge)
+    - [EventsConnection](#eventsconnection)
+    - [Field](#field)
+    - [Group](#group)
+    - [PageInfo](#pageinfo)
+    - [Target](#target)
+  - [Enums](#enums)
+    - [CRUD](#crud)
+  - [Scalars](#scalars)
+    - [Boolean](#boolean)
+    - [ID](#id)
+    - [Int](#int)
+    - [String](#string)
+  - [Interfaces](#interfaces)
 
 </details>
 
-## Query 
+## Query
+
 The root query object of the Retraced GraphQL interface.
 
 <table>
@@ -733,7 +739,7 @@ The set of fields associated with this target.
 
 ### CRUD
 
-Create  | Read | Update | Delete
+Create | Read | Update | Delete
 
 <table>
 <thead>
@@ -788,12 +794,10 @@ The `ID` scalar type represents a unique identifier, often used to refetch an ob
 
 ### Int
 
-The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
 
 ### String
 
 The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
 
-
 ## Interfaces
-
