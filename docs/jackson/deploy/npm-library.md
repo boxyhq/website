@@ -147,12 +147,19 @@ The OAuth flow begins with redirecting your user to the authorize URL. The respo
 [API Reference](../sso-flow/saml.md#31-authorize)
 
 ```javascript
-// OAuth 2.0 flow
+// OAuth 2.0 / OpenID Connect 1.0 flow
 router.get('/oauth/authorize', async (req, res) => {
   try {
-    const { redirect_url } = await oauthController.authorize(req.query);
-
-    res.redirect(redirect_url);
+    const { redirect_url, authorize_form } = await oauthController.authorize(
+      req.query
+    );
+    if (redirect_url) {
+      res.redirect(302, redirect_url);
+    } else {
+      // For SAML Post Binding
+      res.set('Content-Type', 'text/html; charset=utf-8');
+      res.send(authorize_form);
+    }
   } catch (err) {
     const { message, statusCode = 500 } = err;
 
@@ -184,7 +191,7 @@ router.post('/oauth/saml', async (req, res) => {
     if (redirect_url) {
       res.redirect(302, redirect_url);
     } else {
-      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.set('Content-Type', 'text/html; charset=utf-8');
       res.send(app_select_form);
     }
   } catch (err) {
