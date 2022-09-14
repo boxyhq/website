@@ -80,7 +80,7 @@ Default: `postgres`
 
 ### **TERMINUS_VAULT_DB_VOLUME**
 
-When running on docker, the mapping of the DB volume on the host file system.
+The mapping of the DB volume on the host file system.
 
 Default: `./terminus-volumes/terminus-vault-data`
 
@@ -111,40 +111,102 @@ The URL of Terminus' service endpoint.
 Default: `http://${TERMINUS_VAULT_SERVICE_NAME}:${TERMINUS_VAULT_SERVICE_PORT}`
 
 ### **TERMINUS_VAULT_SERVICE_IMAGE**
+
+The Vault Service docker image to pull when running on docker.
+
+Default: `boxyhq/terminus-vault:${TERMINUS_VERSION}`
+
 ### **TERMINUS_VAULT_SERVICE_ENCR_AES**
+
+Whether the vault performs AES based encryption and a B64 encoding on the data sent to it prior to persisting it.
+
+Default: `true`
+
 ### **TERMINUS_VAULT_SERVICE_KEY_AES**
+
+The 32 byte key to perform the vault service encryption.
+
+Default: `passphrasewhichneedstobe32byzes!`
+
 ### **TERMINUS_VAULT_SERVICE_VOLUME**
+
+The mapping of the Vault service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-vault-conf`
+
 ### **TERMINUS_VAULT_SERVICE_LOGS_VOLUME**
+
+The mapping of the logs vault service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-vaultservice-logs`
+
 ### **TERMINUS_VAULT_SERVICE_SERVICE_NAME**
+
+The vault service name for Open Telemetry (OTEL).
+
+Default: `terminus-vault-service`
+
 ### **TERMINUS_VAULT_SERVICE_OTEL_LIGHSTEP_ACCESS_TOKEN**
 
-<!-- 
+The vault service Lightstep key for OTEL launcher. Currently being moved to a more generic OTEL provider.
+
+Default: No default.
 
 
 
-# Terminus Vault Service 
-TERMINUS_VAULT_SERVICE_NAME=terminus_vault_service
-TERMINUS_VAULT_SERVICE_IMAGE=boxyhq/terminus-vault:${TERMINUS_VERSION}
-TERMINUS_VAULT_SERVICE_ENCR_AES=true
-TERMINUS_VAULT_SERVICE_KEY_AES=passphrasewhichneedstobe32byzes!
-TERMINUS_VAULT_SERVICE_HOST_PORT=3005
-TERMINUS_VAULT_SERVICE_PORT=3005
-TERMINUS_VAULT_SERVICE_VOLUME=./terminus-volumes/terminus-vault-conf
-TERMINUS_VAULT_SERVICE_LOGS_VOLUME=./terminus-volumes/terminus-vaultservice-logs
-# OTEL
-TERMINUS_VAULT_SERVICE_SERVICE_NAME=terminus-vault-service
-TERMINUS_VAULT_SERVICE_OTEL_LIGHSTEP_ACCESS_TOKEN=xxx_addtoenvironment
-# Vault external endpoint
-TERMINUS_VAULT_SERVICE_ENDPOINT=http://${TERMINUS_VAULT_SERVICE_NAME}:${TERMINUS_VAULT_SERVICE_PORT}
+## Proxy: Service
 
-# Terminus Proxy Service
-TERMINUS_PROXY_SERVICE_NAME=terminus_proxy_service
-TERMINUS_PROXY_SERVICE_IMAGE=boxyhq/terminus-proxy:${TERMINUS_VERSION}
-TERMINUS_PROXY_SERVICE_CONF_KEY_AES=passphrasethatnneedstobe32byzes!
-TERMINUS_PROXY_SERVICE_PORT=3002
-TERMINUS_PROXY_SERVICE_HOST_PORT=3002
-TERMINUS_PROXY_SERVICE_VOLUME=./terminus-volumes/terminus-proxy-data
-TERMINUS_PROXY_SERVICE_LOGS_VOLUME=./terminus-volumes/terminus-proxyservice-logs
-# OTEL
-TERMINUS_PROXY_SERVICE_SERVICE_NAME=terminus-proxy-service
-TERMINUS_PROXY_SERVICE_OTEL_LIGHSTEP_ACCESS_TOKEN=xxx_addtoenvironment -->
+### **TERMINUS_PROXY_SERVICE_NAME**
+
+The name of the docker container if running on docker or the hostname of the proxy service.
+
+Default: `terminus_proxy_service`
+
+### **TERMINUS_PROXY_SERVICE_IMAGE**
+
+The Proxy Service docker image to pull when running on docker.
+
+Default: `boxyhq/terminus-proxy:${TERMINUS_VERSION}`
+
+### **TERMINUS_PROXY_SERVICE_PORT**
+
+The port where Terminus' proxy service runs. 
+
+Default: `3002`
+
+### **TERMINUS_PROXY_SERVICE_HOST_PORT**
+
+The port where Terminus' vault service runs. When running in docker is the external port.
+
+Default: `3002`
+
+### **TERMINUS_PROXY_SERVICE_VOLUME**
+
+The mapping of the Proxy service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-proxy-data`
+
+### **TERMINUS_PROXY_SERVICE_LOGS_VOLUME**
+
+The mapping of the logs Proxy service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-proxyservice-logs`
+
+### **TERMINUS_PROXY_SERVICE_SERVICE_NAME**
+
+The proxy service name for Open Telemetry (OTEL).
+
+Default: `terminus-proxy-service`
+
+### **TERMINUS_PROXY_SERVICE_OTEL_LIGHSTEP_ACCESS_TOKEN**
+
+The proxy service Lightstep key for OTEL launcher. Currently being moved to a more generic OTEL provider.
+
+Default: No default.
+
+### **TERMINUS_PROXY_SERVICE_CONF_KEY_AES**
+
+By default, Terminus encryption proxy is configured with AES. This is the 32 byte key to perform all the cryptographic operations.
+
+Default: `passphrasethatnneedstobe32byzes!`
+
