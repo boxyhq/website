@@ -1,6 +1,6 @@
 # Hashing Formula
 
-When both the sender and the receiver of a message independently calculate a digest of the message, it's a proven way to ensure that both sides have the same content. But both sides needs to have a reference that describes how to calculate the digest. This document describes the specification that the Replicated API uses to calculate a message digest.
+When both the sender and the receiver of a message independently calculate a digest of the message, it's a proven way to ensure that both sides have the same content. But both sides needs to have a reference that describes how to calculate the digest. This document describes the specification that the Retraced API uses to calculate a message digest.
 
 To calculate the digest, Retraced will build a colon (:) delimited string of all the fields, and then calculate a SHA256 digest. Empty or missing fields are not ignored, but are included in the digest as empty strings. Individual fields are percent-escaped before being added to the string.
 
@@ -16,11 +16,12 @@ The order of the fields is important, and is defined as:
 1. `IS_ANONYMOUS`: An integer ("1" or "0") representation of the is_anonymous parameter provided when creating an event. This is required, and will default to "0".
 1. `FIELDS`: A semicolon (`;`) separated list of the field=value parameters provided in the event. The fields are sorted alphabetically by the key name before encoding. A trailing `;` is included, if there are fields. If there are no fields, a single colon (`:`) should be appended in place of the fields list.
 
-
 ## Examples
 
 ### Simple Event
+
 Given the following login audit event:
+
 ```json
 {
   "action": "user.login",
@@ -44,17 +45,21 @@ Given the following login audit event:
 ```
 
 A string is built with the fields, as described above:
+
 ```
 event-id:user.login::actor-id:group-id:8.8.8.8:0:0:
 ```
 
 Finally, a SHA256 digest of the above string returns:
+
 ```
 1ee7c214a6bc2ab3e4f921b7c98a148357eebb56081fd68d88bd25acdec45332
 ```
 
 ### With Fields
+
 Given the following audit event:
+
 ```json
 {
   "action": "document.share",
@@ -88,16 +93,16 @@ Given the following audit event:
 ```
 
 A string is built with the fields, as described above:
+
 ```
 event-id:user.login:target-id:actor-id:group-id:8.8.8.8:0:0:permission_granted=view;resulting_permission=view,edit;
 ```
 
 Finally, a SHA256 digest of the above string returns:
+
 ```
 e3412f11c1ed3b592d5333441880373ede3b774bc62914ed9317d3affaec9048
 ```
-
-
 
 ### Escaping Hash Parameters
 
