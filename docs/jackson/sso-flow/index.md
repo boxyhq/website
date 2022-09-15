@@ -3,13 +3,15 @@ import TabItem from '@theme/TabItem';
 
 # Single Sign-On (SSO)
 
+Jackson takes a multi-tenanted approach to implementing SSO, abstracting away all the complexities of the underlying SAML/OIDC protocol. What this means is you can enable SSO for all (your) customers across products from a single instance of jackson, and works with both SAML and OIDC Identity Provider(IdP)s.
+
 **Note:** All the APIs below support both `application/x-www-form-urlencoded` and `application/json` content types. Examples below use `application/x-www-form-urlencoded`.
 
 **Note:** OAuth 2.0 protocol uses underscore casing for the parameters, we use camel casing for all our APIs. For example it's `client_id` in the OAuth 2.0 flow and `clientID` in our APIs.
 
 ## 1. Setting up SSO Provider
 
-Please follow the instructions [here](./sso-providers) to guide your customers in setting up SAML/OIDC correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](../sso-providers) to guide your customers in setting up SAML/OIDC correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
 ## 2. SSO Connection API
 
@@ -46,7 +48,7 @@ curl --location --request POST 'http://localhost:5225/api/v1/saml/connection' \
 - `name`: A friendly name to identify the SAML connection
 - `description`: A short description with some information of the connection
 
-The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](./deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
+The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](../deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
 </TabItem>
 <TabItem value="oidc" label="OIDC">
 
@@ -80,7 +82,7 @@ curl --location --request POST 'http://localhost:5225/api/v1/oidc/connection' \
 - `name`: A friendly name to identify the SAML connection
 - `description`: A short description with some information of the connection
 
-The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](./deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
+The response returns a JSON with `clientID` and `clientSecret` that can be stored against your tenant and product for a more secure OAuth 2.0 flow. If you do not want to store the `clientID` and `clientSecret` you can alternatively use `client_id=tenant=<tenantID>&product=<productID>` and use `dummy` (or the value you set for the [secret verifier](../deploy/env-variables.md#client_secret_verifier) env) as the value for `client_secret` when setting up the OAuth 2.0 flow. Additionally a `idpMetadata.provider` attribute is also returned which indicates the domain of your Identity Provider.
 </TabItem>
 </Tabs>
 
@@ -226,7 +228,7 @@ curl -X "DELETE" --location 'http://localhost:5225/api/v1/oidc/connection' \
 
 #### OpenID Connect flow
 
-Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](./deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
+Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](../deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
 :::
 
 Jackson has been designed to abstract the underlying IdP login flow as a pure OAuth 2.0 flow. This means it's compatible with any standard OAuth 2.0 library out there, both client-side and server-side. It is important to remember that SAML is configured per customer unlike OAuth 2.0 where you can have a single OAuth app supporting logins for all customers.

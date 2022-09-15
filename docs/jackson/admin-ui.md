@@ -2,7 +2,7 @@
 
 SAML Jackson comes with an Admin interface that allows you to manage IdP Connections via UI. To enable the Admin UI, make sure you deploy the [Jackson as a service](./deploy/service.md).
 
-You can `add`, `update` or `delete` IdP connections from the UI. For API Reference see [SSO Flow > SSO Connection API ](./sso-flow.md#2-connection-api)
+You can `add`, `update` or `delete` IdP connections from the UI. For API Reference see [SSO Flow > SSO Connection API ](./sso-flow/index.md#2-sso-connection-api)
 
 ## Sign into Admin UI
 

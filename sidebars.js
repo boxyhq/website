@@ -10,8 +10,9 @@ module.exports = {
       label: 'SAML Jackson',
       collapsible: true,
       //collapsed: false,
-      link: { type: 'doc', id: 'jackson/overview' },
+      // link: { type: 'doc', id: 'jackson/overview' },
       items: [
+        { type: 'doc', id: 'jackson/overview', label: 'Overview' },
         {
           type: 'category',
           label: 'Deploy',
@@ -39,9 +40,10 @@ module.exports = {
           ],
         },
         {
-          type: 'doc',
+          type: 'category',
           label: 'Single Sign-on (SSO) Flow',
-          id: 'jackson/sso-flow',
+          link: { type: 'doc', id: 'jackson/sso-flow/index' },
+          items: ['jackson/sso-flow/example-flow'],
         },
         'jackson/examples',
         'jackson/admin-ui',

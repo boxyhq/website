@@ -65,7 +65,7 @@ async function init() {
 
 ### Add SAML Connection API route
 
-[API Reference](../sso-flow.md#2-sso-connection-api)
+[API Reference](../sso-flow/index.md#2-sso-connection-api)
 
 ```javascript
 // express.js middlewares are needed to parse json and x-www-form-urlencoded
@@ -144,7 +144,7 @@ router.delete('/api/v1/:strategy/connection', async (req, res) => {
 
 The OAuth flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user. The returned `redirect_url` is the authorization endpoint on the IdP end, where user authentication takes place.
 
-[API Reference](../sso-flow.md#31-authorize)
+[API Reference](../sso-flow/index.md#31-authorize)
 
 ```javascript
 // OAuth 2.0 / OpenID Connect 1.0 flow
@@ -229,7 +229,7 @@ router.post('/sso/oauth/oidc', async (req, res) => {
 
 The code can then be exchanged for a token by making the following request. You should validate that the state matches the one you sent in the authorize request.
 
-[API Reference](../sso-flow.md#32-code-exchange)
+[API Reference](../sso-flow/index.md#32-code-exchange)
 
 ```javascript
 router.post('/oauth/token', cors(), async (req, res) => {
@@ -249,7 +249,7 @@ router.post('/oauth/token', cors(), async (req, res) => {
 
 The short-lived access token can now be used to request the user's profile.
 
-[API Reference](../sso-flow.md#33-profile-request)
+[API Reference](../sso-flow/index.md#33-profile-request)
 
 ```javascript
 router.get('/oauth/userinfo', async (req, res) => {

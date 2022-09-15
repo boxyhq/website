@@ -24,13 +24,13 @@ module.exports = {
 
 The XML file (should share the name with the .js file) is the raw XML metadata file you receive from your Identity Provider. Please ensure it is saved in the `utf-8` encoding.
 
-The config and XML above correspond to the [Add connection API - SAML tab](../sso-flow.md#21-add-connection).
+The config and XML above correspond to the [Add connection API - SAML tab](../sso-flow/index.md#21-add-connection).
 
 # Pre-loaded OIDC Connection
 
 For a connection backed by OpenId IdP create the \*.js file at PRE_LOADED_CONNECTION as shown below:-
 
-See [Add connection API - OIDC tab](../sso-flow.md#21-add-connection)
+See [Add connection API - OIDC tab](../sso-flow/index.md#21-add-connection)
 
 ```javascript
 module.exports = {
