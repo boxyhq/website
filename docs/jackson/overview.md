@@ -4,6 +4,10 @@ SAML/OIDC Single Sign-On (SSO) service [SSO in a box from BoxyHQ]
 
 Jackson takes a multi-tenanted approach to implementing SSO, abstracting away all the complexities of the underlying SAML/OIDC protocol. What this means is you can enable SSO for all your customers and across products from a single instance of jackson, and works with both SAML and OIDC Identity Provider(IdP)s. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
 
+## Architecture
+
+![img alt](/img/sso-flow.png)
+
 ## About Jackson
 
 ### Own your own data​
