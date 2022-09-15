@@ -8,7 +8,7 @@ Jackson takes a multi-tenanted approach to implementing SSO, abstracting away al
 
 ![img alt](/img/sso-flow.png)
 
-## About Jackson
+## Key Features
 
 ### Own your own data​
 
