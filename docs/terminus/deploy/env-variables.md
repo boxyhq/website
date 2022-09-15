@@ -2,7 +2,7 @@
 
 The env vars are split into: 
 
-- Docker Compose assembly variables. Only relevant when running Terminus on docker
+- Docker Compose variables. Only relevant when running Terminus on docker
 - Terminus services configuration variables:
 
     - The persistence layer
@@ -11,7 +11,23 @@ The env vars are split into:
 
 When running via docker compose, all variables can be set in the [.env](https://docs.docker.com/compose/env-file/) file as well as environment variables.
 
+
+
 ## Docker Compose
+
+### **VAULT_DB_IMAGE**
+
+See [vault](http://localhost:2699/docs/terminus/deploy/env-variables#vault-persistence-layer).
+
+The PostgreSQL docker image to use.
+
+Default: `postgres:14.4`
+
+### **VAULT_DB_VOLUME**
+
+The mapping of the DB volume on the host file system.
+
+Default: `./terminus-volumes/terminus-vault-data`
 
 ### **UI_VERSION**
 
@@ -31,18 +47,49 @@ Terminus' image versions for the vault and the proxy services.
 
 Default: `latest`
 
+### **VAULT_SERVICE_IMAGE**
+
+The Vault Service docker image to pull when running on docker.
+
+Default: `boxyhq/terminus-vault:${VERSION}`
+
+### **VAULT_SERVICE_VOLUME**
+
+The mapping of the Vault service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-vault-conf`
+
+### **VAULT_SERVICE_LOGS_VOLUME**
+
+The mapping of the logs vault service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-vaultservice-logs`
+
+### **PROXY_SERVICE_IMAGE**
+
+The Proxy Service docker image to pull when running on docker.
+
+Default: `boxyhq/terminus-proxy:${VERSION}`
+
+### **PROXY_SERVICE_VOLUME**
+
+The mapping of the Proxy service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-proxy-data`
+
+### **PROXY_SERVICE_LOGS_VOLUME**
+
+The mapping of the logs Proxy service volume on the host file system.
+
+Default: `./terminus-volumes/terminus-proxyservice-logs`
+
+
 
 ## Vault: Persistence Layer
 
 Terminus' vault persistence layer (or DB) currently uses [GORM](https://gorm.io/) with a default configuration using PostgreSQL as a provider. 
 
-### **VAULT_DB_IMAGE**
-
-The PostgreSQL docker image to use.
-
-Default: `postgres:14.4`
-
-### **VAULT_DB_HOSTNAME**
+### **VAULT_DB_NAME**
 
 The hostname or URL of Terminus' vault DB server. When running on the same docker compose network, it is the name of the container.
 
@@ -72,11 +119,7 @@ The DB name within the server.
 
 Default: `postgres`
 
-### **VAULT_DB_VOLUME**
 
-The mapping of the DB volume on the host file system.
-
-Default: `./terminus-volumes/terminus-vault-data`
 
 ## Vault: Service
 
@@ -98,12 +141,6 @@ The URL of Terminus' service endpoint.
 
 Default: `http://${VAULT_SERVICE_NAME}:${VAULT_SERVICE_PORT}`
 
-### **VAULT_SERVICE_IMAGE**
-
-The Vault Service docker image to pull when running on docker.
-
-Default: `boxyhq/terminus-vault:${VERSION}`
-
 ### **VAULT_SERVICE_ENCR_AES**
 
 Whether the vault performs AES based encryption and a B64 encoding on the data sent to it prior to persisting it.
@@ -115,18 +152,6 @@ Default: `true`
 The 32 byte key to perform the vault service encryption.
 
 Default: `passphrasewhichneedstobe32byzes!`
-
-### **VAULT_SERVICE_VOLUME**
-
-The mapping of the Vault service volume on the host file system.
-
-Default: `./terminus-volumes/terminus-vault-conf`
-
-### **VAULT_SERVICE_LOGS_VOLUME**
-
-The mapping of the logs vault service volume on the host file system.
-
-Default: `./terminus-volumes/terminus-vaultservice-logs`
 
 ### **VAULT_SERVICE_SERVICE_NAME**
 
@@ -150,29 +175,11 @@ The name of the docker container if running on docker or the hostname of the pro
 
 Default: `terminus_proxy_service`
 
-### **PROXY_SERVICE_IMAGE**
-
-The Proxy Service docker image to pull when running on docker.
-
-Default: `boxyhq/terminus-proxy:${VERSION}`
-
 ### **PROXY_SERVICE_PORT**
 
 The port where Terminus' proxy service runs. When running in docker is both the internal and external port.
 
 Default: `3002`
-
-### **PROXY_SERVICE_VOLUME**
-
-The mapping of the Proxy service volume on the host file system.
-
-Default: `./terminus-volumes/terminus-proxy-data`
-
-### **PROXY_SERVICE_LOGS_VOLUME**
-
-The mapping of the logs Proxy service volume on the host file system.
-
-Default: `./terminus-volumes/terminus-proxyservice-logs`
 
 ### **PROXY_SERVICE_SERVICE_NAME**
 

@@ -1,24 +1,47 @@
-# SAML Jackson
+# Terminus
 
-SAML service [SAML in a box from BoxyHQ]
+Terminus: A service providing advanced encryption and PII in a box from BoxyHQ.
 
-Jackson implements the SAML login flow as an OAuth 2.0 flow, abstracting away all the complexities of the SAML protocol. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
+Terminus provides a no code advanced encryption and privacy vault exposed via a simple API.
 
-## About Jackson
+Terminus is as highly customisable and extendable as it is easy to configure. It abstracts away all the complexities of multiple encryption mechanisms, data masking, data modelling, data access policies and highly efficient storage. 
+
+Check our our [Github repo](https://github.com/boxyhq/terminus/).
+
+> :warning: **Terminus is in Alpha release**: Things will be extended and will evolve. Mainly around encryption mechanisms, policy and access control and the configuration UI.
+
+## About Terminus
+
+[Terminus](https://en.wikipedia.org/wiki/Terminus_(god)) is about boundaries. It is about enabling the segregation of highly sensible and private data away from the main data stores. It is about zero visibility and zero trust. It is about unobservability of the data stored unless by the relevant authorised parties. It is about access control. It is about easy integration with existing systems. It is about performance. It is about allowing you to focus on the business logic, not on how to protect your sensible data and be regulation compliant.
 
 ### Own your own data​
 
-- An open-source solution that allows you to keep control of your data
+- An open-source solution that allows you to keep control of your most sensitive data and the access to it
 - Supports Bring Your Own Database (BYOD) and can be used with any database
-- Built-in support for MySQL, MariaDB, Postgres, MongoDB, Redis, PlanetScale
-- Works great with databases from popular hosting providers
+- Built-in support for Postgres - more to come
+- Works with databases from popular hosting providers
+
+### Own your privacy vault
+
+- Designed to be run anywhere
+- Designed with data and responsibilities segregation between components as a fundamental building block.
 
 ### Flexible and easy to use​
 
-- Designed to work with OAuth 2.0 flow
-- Integrate with your existing OAuth 2.0 package
+- Designed to work with most advanced encryption mechanisms - currently supporting AES, more to come
+- Integrate with your existing logic and separate your highly sensible data with ease
+- Define your encryption models representing your business requirements in a visual no-code-way
+- One-click deployment of new encryption strategies
 
-### Support
+### Data encryption and PII made simple
+
+Terminus is composed of three main components
+
+- The persistence vault, where the data is stored.
+- The vault service, which interfaces and optimises access to the persistence vault and implements system level vault encryption on the data.
+- The proxy service, responsible for domain specific data models, the encryption strategies at different granularity (object, field), the masking strategies for restricted viewing access, the visual data model and masking editor and the access policies.
+
+### Support  > :warning: **TODO: EXTEND THIS SECTION**
 
 Reach out to the maintainer at one of the following places:
 

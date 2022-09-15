@@ -94,6 +94,20 @@ module.exports = {
             // 'jackson/deploy/pre-loaded-configuration',
           ],
         },
+        {
+          type: 'category',
+          label: 'Architecture',
+          link: { type: 'doc', id: 'terminus/architecture/index' },
+          items: [
+            {
+              type: 'category',
+              label: 'Encryption',
+              link: { type: 'doc', id: 'terminus/encryption/index' },
+              items: [],
+            },
+          ],
+        },
+
         // {
         //   type: 'category',
         //   label: 'Configure your SSO provider',
