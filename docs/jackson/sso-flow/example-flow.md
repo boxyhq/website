@@ -3,13 +3,15 @@ title: Example flow
 sidebar_label: Example flow
 ---
 
-Consider this scenario for a customer `acme.com` who is using two of your SaaS offerings. For now let's call them `CRM (Customer Relationship Management)` and `HRM (Human Resource Management)`. `CRM` happens to integrate with the customer (of acme.com) facing SAML Identity Provider (Azure AD), while `HRM` happens to integrate with the Google workspace account of `acme.com` employees. Let's see how SSO works in this case.
+## Scenario
 
-#### Configure the SSO Connection
+Let's say you have a customer `acme.com` who is using two of your SaaS offerings. For now let's call them `CRM (Customer Relationship Management)` and `HRM (Human Resource Management)`. `CRM` happens to integrate with the customer (of acme.com) facing SAML Identity Provider (Azure AD), while `HRM` happens to integrate with the Google workspace account of `acme.com` employees. Let's see how SSO works in this case.
+
+## Configure the SSO Connection
 
 First as the application developer, you'll need to [add](./index.md#21-add-connection) the CRM IdP connection for SAML and OIDC. This will be saved (marked as SAML Metadata and OIDC Metadata in the below diagram) within Jackson and later used to orchestrate the IdP login.
 
-#### Login flow
+## Login flow
 
 Jackson uses the Authorization Code flow as outlined by the numbered steps below.
 
