@@ -4,7 +4,7 @@ SAML/OIDC Single Sign-On (SSO) service [SSO in a box from BoxyHQ]. Check out our
 
 ## Architecture
 
-We have developed Jackson from scratch adopting a modular architecture as shown below. The business logic is separated into controllers which helps us in incremental addition of features.
+We have developed Jackson from scratch adopting a modular architecture as shown below. The business logic is separated into controllers which helps us in incremental adoption of features.
 
 ![img alt](/img/jackson-architecture.png)
 
