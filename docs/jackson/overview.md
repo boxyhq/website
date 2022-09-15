@@ -1,10 +1,12 @@
 # SAML Jackson
 
-SAML/OIDC Single Sign-On (SSO) service [SSO in a box from BoxyHQ]
-
-Jackson takes a multi-tenanted approach to implementing SSO, abstracting away all the complexities of the underlying SAML/OIDC protocol. What this means is you can enable SSO for all your customers and across products from a single instance of jackson, and works with both SAML and OIDC Identity Provider(IdP)s. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
+SAML/OIDC Single Sign-On (SSO) service [SSO in a box from BoxyHQ]. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
 
 ## Architecture
+
+Jackson takes a multi-tenanted approach to implementing SSO, abstracting away all the complexities of the underlying SAML/OIDC protocol. What this means is you can enable SSO for all (your) customers across products from a single instance of jackson, and works with both SAML and OIDC Identity Provider(IdP)s.
+
+Consider this scenario for a customer `acme.com` who is using two of your SaaS offerings. For now let's call them `CRM (Customer Relationship Management)` and `HRM (Human Resource Management)`. `CRM` happens to integrate with the customer (of acme.com) facing SAML Identity Provider (Azure AD), while HRM happens to integrate with the Google workspace account of `acme.com` employees. Let's see how SSO works in this scenario.
 
 ![img alt](/img/sso-flow.png)
 
