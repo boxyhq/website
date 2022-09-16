@@ -37,6 +37,7 @@ module.exports = {
             'jackson/sso-providers/onelogin',
             'jackson/sso-providers/pingone',
             'jackson/sso-providers/generic-saml',
+            'jackson/sso-providers/generic-oidc',
           ],
         },
         {
