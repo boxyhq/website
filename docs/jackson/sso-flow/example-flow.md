@@ -5,7 +5,12 @@ sidebar_label: Example flow
 
 ## Scenario
 
-Let's say you have a customer `acme.com` who is using two of your SaaS offerings. For now let's call them `CRM (Customer Relationship Management)` and `HRM (Human Resource Management)`. `CRM` happens to integrate with the customer (of acme.com) facing SAML Identity Provider (Azure AD), while `HRM` happens to integrate with the Google workspace account of `acme.com` employees. Let's see how SSO works in this case.
+Let's say you have a customer `acme.com` who is using two of your SaaS offerings. For now let's call them:
+
+- `CRM (Customer Relationship Management)` - Should integrate with the customer (of acme.com) facing SAML Identity Provider (Azure AD)
+- `HRM (Human Resource Management)` - Should integrate with the Google workspace account of `acme.com` employees.
+
+Let's see how SSO works in this case.
 
 ## Configure the SSO Connection
 
