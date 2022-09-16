@@ -12,5 +12,5 @@ To allow apps or clients to login using an OIDC Identity Provider, we must regis
 - **Client Secret**: Along with the Client ID, the IdP also generates a client secret which is used to authenticate the client while issuing tokens. Make a note of this to be used later when creating the SSO connection with Jackson.
 
 :::info
-Since Jackson acts as a proxy between the app and the OIDC Identity Provider, here the application credentials are issued against Jackson
+Since Jackson acts as a proxy between the app and the OIDC Identity Provider, here the application/client is Jackson.
 :::
