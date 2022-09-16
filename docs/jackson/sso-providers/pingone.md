@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for PingOne SAML
+title: Set up your own custom SAML application for PingOne SAML
 sidebar_label: PingOne SAML
 ---
 

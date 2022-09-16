@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for a Generic IdP
+title: Set up your own custom SAML application for a Generic IdP
 sidebar_label: Generic SAML
 ---
 
