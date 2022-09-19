@@ -131,8 +131,8 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 | Route       | Methods    |
 | ----------- | ---------- |
 | /Groups     | POST       |
-| /Groups/:id | PUT        |
-| /Groups/:id | PATCH      |
+| /Groups/:id | GET        |
+| /Groups/:id | PUT, PATCH |
 | /Groups/:id | DELETE     |
 
 ### Handle SCIM API Requests
