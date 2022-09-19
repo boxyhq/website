@@ -22,9 +22,17 @@ The need for authorization arose with the dawn of Single Page Apps (SPA) and nat
 
 ## OAuth 2.0
 
-The OAuth 2.0 Authorization framework enables a third-party application/client to obtain limited access to an HTTP service on behalf of the resource owner. In the final step of this process, the client receives a short-lived access token that can be used to access the protected resources.
+The OAuth 2.0 Authorization framework enables a third-party application/client to obtain limited access to an HTTP service on behalf of the resource owner (or user). In the final step of this process, the client receives a short-lived access token that can be used to access the protected resources.
 
-The flow starts with the client redirecting the user agent to an intermediary Authorization server (AS). The AS authenticates the resource owner and obtains permission to access resources from the owner. Once that's done, AS redirects back to the client with an Authorization code. The Authorization code is a grant or a credential representing the resource owner's authorization to be used by the client. In the final step, the client uses this code to obtain an access token. This flow otherwise called Authorization Code grant is one of 4 grant types that are supported. For simplicity, we can omit the others for now.
+The flow starts with the app redirecting the user agent to an intermediary Authorization server (AS). The AS authenticates the user and obtains permission from the user to access resources. Once that's done, AS redirects back to the client with an Authorization code. The Authorization code is a grant or a credential representing the user's authorization to be used by the client. In the final step, the client uses this code to obtain an access token. This flow otherwise called Authorization Code grant is one of 4 grant types that are supported. For sake of simplicity, we can omit the others for now.
+
+The above-mentioned flow offers a few benefits: -
+
+- The user only authenticates with the authorization server and the credentials are never shared with the app.
+- The access token is not transmitted<sup>\*</sup> via the user agent but directly to the client via an HTTP request.
+- The Client can be authenticated by the authorization server using a client secret.
+
+**\*** _It's worth mentioning the fact that another grant type 'implicit grant' does return an access token in the redirect URL fragment_
 
 ## OpenID Connect
 
