@@ -30,7 +30,7 @@ The above-mentioned flow offers a few benefits: -
 
 - The user only authenticates with the authorization server and the credentials are never shared with the app.
 - The access token is not transmitted<sup>\*</sup> via the user agent but directly to the client via an HTTP request.
-- The Client can be authenticated by the authorization server using a client secret.
+- The Client can be authenticated by the authorization server by using a client secret.
 
 **\*** _It's worth mentioning the fact that another grant type 'implicit grant' does return an access token in the redirect URL fragment_
 
