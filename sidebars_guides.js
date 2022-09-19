@@ -54,6 +54,7 @@ module.exports = {
           collapsed: true,
           items: [
             'directory-sync/frameworks/nextjs',
+            'directory-sync/frameworks/express',
           ],
         },
       ],

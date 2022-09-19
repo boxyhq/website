@@ -1,14 +1,14 @@
 ---
-title: Implement Directory Sync (SCIM) to your Next.js App using Jackson
-sidebar_label: Next.js 
+title: Implement Directory Sync (SCIM) to your Express.js App using Jackson
+sidebar_label: Express.js 
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Next.js
+# Express.js
 
-This guide will teach you to implement SCIM Provisioning in your Next.js app.
+This guide will teach you to implement SCIM Provisioning in your Express.js app.
 
 ## Quickstart
 
@@ -16,7 +16,7 @@ Directory sync helps organizations automate the provisioning and de-provisioning
 
 ### Install SAML Jackson
 
-Let’s start by installing SAML Jackson to your Next.js app.
+Let’s start by installing SAML Jackson to your Express.js app.
 
 ```bash
 npm i --save @boxyhq/saml-jackson
@@ -24,15 +24,10 @@ npm i --save @boxyhq/saml-jackson
 
 ### Initialize SAML Jackson
 
-Create a new file, `jackson.ts` that holds the Jackson initialization.
+Please note that the initialization of `@boxyhq/saml-jackson` is async, you cannot run it at the top level. Run this in a function where you initialize the express server.
 
-```javascript title="lib/jackson.ts"
-import type { JacksonOption, DirectorySync } from '@boxyhq/saml-jackson';
-import jackson from '@boxyhq/saml-jackson';
-
-let directorySync: DirectorySync;
-
-const g = global as any;
+```javascript
+let directorySync;
 
 const opts = {
   externalUrl: `http://localhost:3000/`,
@@ -43,21 +38,12 @@ const opts = {
     type: 'postgres',
     url: "postgres://username:password@localhost:5432/your-database-name",
   },
-} as JacksonOption;
+};
 
-export default async function init() {
-  if (!g.directorySync) {
-    const ret = await jackson(opts);
+async function init() {
+  const ret = await require('@boxyhq/saml-jackson').controllers(opts);
 
-    directorySync = ret.directorySync;
-    g.directorySync = directorySync;
-  } else {
-    directorySync = g.directorySync;
-  }
-
-  return {
-    directorySync,
-  };
+  directorySync = ret.directorySync;
 }
 ```
 
@@ -139,55 +125,41 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 
 Now let's add the route to handle the incoming requests from the Directory Sync providers.
 
-```javascript title="pages/api/scim/[...directory].ts"
-import type { NextApiRequest, NextApiResponse } from 'next';
-import type { DirectorySyncRequest, HTTPMethod, DirectorySyncEvent } from '@boxyhq/saml-jackson';
+```javascript
+router.all('/api/scim/:directoryId/:resourceType/:resourceId?', async (req, res, next) => {
+  const { params, method, body, headers, query } = req;
+  const { directoryId, resourceType, resourceId } = params;
 
-import jackson from '../../../lib/jackson';
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { directorySync } = await jackson();
-
-  const { method, query, body } = req;
-
-  const directory = query.directory as string[];
-  const [directoryId, path, resourceId] = directory; // Extract the params
+  const authToken = headers.authorization.split(' ')[1];
 
   // Construct the event
-  const request: DirectorySyncRequest = {
-    method: method as HTTPMethod,
+  const request = {
+    method: method,
     body: body ? JSON.parse(body) : undefined,
     directoryId: directoryId,
     resourceId: resourceId,
-    resourceType: path === 'Users' ? 'users' : 'groups',
-    apiSecret: extractAuthToken(req),
+    resourceType: resourceType.toLowerCase(),
+    apiSecret: authToken,
     query: {
-      count: req.query.count ? parseInt(req.query.count as string) : undefined,
-      startIndex: req.query.startIndex ? parseInt(req.query.startIndex as string) : undefined,
-      filter: req.query.filter as string,
+      count: query.count ? parseInt(query.count) : undefined,
+      startIndex: query.startIndex ? parseInt(query.startIndex) : undefined,
+      filter: query.filter,
     },
   };
   
   // Handle the requests
   // highlight-start
-  const { status, data } = await directorySync.requests.handle(request, async (event: DirectorySyncEvent) => {
+  const { status, data } = await directorySync.requests.handle(request, async (event) => {
     console.log(event); // Do something with the event
   });
   // highlight-end
 
   // Send the response back
   return res.status(status).json(data);
-}
-
-// Fetch the auth token from the request headers
-const extractAuthToken = (req: NextApiRequest): string | null => {
-  const authHeader = req.headers.authorization || null;
-
-  return authHeader ? authHeader.split(' ')[1] : null;
-};
+});
 ```
 
-`pages/api/scim/[...directory].ts` is a catch all paths route. Matched parameters will be sent as a query parameter to the page, and it will always be an array.
+`router.all('/api/scim/:directoryId/:resourceType/:resourceId?', async (req, res, next) => {...})` is a catch all paths route. Matched parameters will be sent as a parameter to the route.
 
 Look at the highlighted lines, and you can pass an async callback method to the `directorySync.requests.handle` as a second argument. This method will be called with SCIM event as the first argument.
 
