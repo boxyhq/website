@@ -24,7 +24,7 @@ The need for authorization arose with the dawn of Single Page Apps (SPA) and nat
 
 The OAuth 2.0 Authorization framework enables a third-party application/client to obtain limited access to an HTTP service on behalf of the resource owner. In the final step of this process, the client receives a short-lived access token that can be used to access the protected resources.
 
-The flow starts with the client redirecting the user agent to an intermediary Authorization server (AS). The AS authenticates the resource owner and obtains permission to access resources from the owner. Once that's done, AS redirects back to the client with an Authorization code. The Authorization code is a grant or a credential representing the resource owner's authorization to be used by the client. In the final step, the client used this code to obtain an access token. This flow otherwise called Authorization Code grant is one of 4 grant types that are supported. For simplicity, we can omit the others for now.
+The flow starts with the client redirecting the user agent to an intermediary Authorization server (AS). The AS authenticates the resource owner and obtains permission to access resources from the owner. Once that's done, AS redirects back to the client with an Authorization code. The Authorization code is a grant or a credential representing the resource owner's authorization to be used by the client. In the final step, the client uses this code to obtain an access token. This flow otherwise called Authorization Code grant is one of 4 grant types that are supported. For simplicity, we can omit the others for now.
 
 ## OpenID Connect
 
