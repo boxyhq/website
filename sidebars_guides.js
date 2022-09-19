@@ -5,7 +5,7 @@ module.exports = {
       type: 'category',
       label: 'SAML Jackson',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: { type: 'doc', id: 'jackson/overview' },
       items: [
         {
@@ -37,6 +37,23 @@ module.exports = {
             'jackson/integrations/firebase',
             'jackson/integrations/nextauth',
             'jackson/integrations/supertokens',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Directory Sync',
+      collapsible: true,
+      collapsed: true,
+      link: { type: 'doc', id: 'directory-sync/overview' },
+      items: [
+        {
+          type: 'category',
+          label: 'Framework Guides',
+          collapsed: true,
+          items: [
+            'directory-sync/frameworks/nextjs',
           ],
         },
       ],
