@@ -38,13 +38,14 @@ The above-mentioned flow offers a few benefits:
 
 Since authentication usually occurs before issuing the access token, it is usually assumed that possession of an access token is proof that authentication happened. The access token is then used to query the Identity API to obtain user details.
 
-However, this is not secure and has several pitfalls for the following reasons:
+However, this does not fully serve as proof of authentication and has several pitfalls:
 
 - The access token is opaque to the client and its intended audience is the protected resource server.
 - There is no way to know if the user is still around because information about the authentication event is not exposed.
 - In situations where clients get an access token directly in the return URL (implicit grant), there is a high chance that an attacker can inject their malicious token. This can be mitigated by using the Authorization code flow as the token is retrieved from the token endpoint directly.
+- OAuth does not define a standard set of fields for the Identity API. For eg:- While one IdP could use `user_id` for user identifier, the same could be `subject` in another one. This requires different handling on the client side from one IdP to another.
 
-A new standard called 'OpenID Connect' was developed as a workaround, plugging the security holes of OAuth 2.0 authentication.
+A new standard called 'OpenID Connect' which builds on top of OAuth 2.0 brings new artifacts like ID tokens that can serve as reliable proof of authentication and also standardizes things like `scope` and `claims`.
 
 ## OpenID Connect
 
