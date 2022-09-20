@@ -10,7 +10,7 @@ tags: [sso, engineering, saml-jackson, oauth-2.0]
 
 We have already covered SAML at a high level from both [user](2022-06-30-understanding-saml-sso-the-basics-from-the-user-side.md) and [application provider](2022-06-30-understanding-saml-sso-the-basics-from-the-solution-providers-side.md) points of view.
 
-In this post, we'll dive into the technicalities of SAML, OAuth 2.0 and OpenID Connect and how these come together to serve as building blocks for Jackson.
+In this post, we'll dive into the technicalities of SAML, OAuth 2.0 and OpenID Connect and how these come together to serve as building blocks for Jackson SSO.
 
 ## SAML
 
@@ -40,8 +40,9 @@ Since authentication usually occurs before issuing the access token, it is usual
 
 However, this is not secure and has several pitfalls for the following reasons:
 
-- The access token is opaque to the client and its intended audience is the protected resource server. Moreover, the protected resource server cannot tell if the user is still present by the token alone.
-- In situations where clients get an access token directly in the return URL (implicit flow), there is a high chance that an attacker can inject their malicious token.
+- The access token is opaque to the client and its intended audience is the protected resource server.
+- There is no way to know if the user is still around as there is no way to derive any information about the authentication event.
+- In situations where clients get an access token directly in the return URL (implicit grant), there is a high chance that an attacker can inject their malicious token. This can be mitigated by using the Authorization code flow as the token is retrieved from the token endpoint directly.
 
 ## OpenID Connect
 
