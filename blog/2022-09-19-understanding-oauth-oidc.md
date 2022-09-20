@@ -1,5 +1,5 @@
 ---
-slug: understanding-oauth-and-oidc
+slug: SSO Building blocks
 title: SSO Building blocks - SAML, OAuth 2.0 and OpenID Connect
 author: Aswin V
 author_title: Senior Developer @BoxyHQ
@@ -41,8 +41,10 @@ Since authentication usually occurs before issuing the access token, it is usual
 However, this is not secure and has several pitfalls for the following reasons:
 
 - The access token is opaque to the client and its intended audience is the protected resource server.
-- There is no way to know if the user is still around as there is no way to derive any information about the authentication event.
+- There is no way to know if the user is still around because information about the authentication event is not exposed.
 - In situations where clients get an access token directly in the return URL (implicit grant), there is a high chance that an attacker can inject their malicious token. This can be mitigated by using the Authorization code flow as the token is retrieved from the token endpoint directly.
+
+A new standard called 'OpenID Connect' was developed as a workaround, plugging the security holes of OAuth 2.0 authentication.
 
 ## OpenID Connect
 
