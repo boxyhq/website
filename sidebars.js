@@ -85,17 +85,6 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Deploy',
-          link: { type: 'doc', id: 'terminus/deploy/index' },
-          items: [
-            // 'jackson/deploy/service',
-            // 'jackson/deploy/npm-library',
-            'terminus/deploy/env-variables',
-            // 'jackson/deploy/pre-loaded-configuration',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Architecture',
           link: { type: 'doc', id: 'terminus/architecture/index' },
           items: [
@@ -107,7 +96,17 @@ module.exports = {
             },
           ],
         },
-
+        {
+          type: 'category',
+          label: 'Deploy',
+          link: { type: 'doc', id: 'terminus/deploy/index' },
+          items: [
+            // 'jackson/deploy/service',
+            // 'jackson/deploy/npm-library',
+            'terminus/deploy/env-variables',
+            // 'jackson/deploy/pre-loaded-configuration',
+          ],
+        },
         // {
         //   type: 'category',
         //   label: 'Configure your SSO provider',
