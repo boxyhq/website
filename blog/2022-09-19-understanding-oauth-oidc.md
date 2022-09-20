@@ -10,7 +10,7 @@ tags: [sso, engineering, saml-jackson, oauth-2.0]
 
 We have already covered SAML at a high level from both [user](2022-06-30-understanding-saml-sso-the-basics-from-the-user-side.md) and [application provider](2022-06-30-understanding-saml-sso-the-basics-from-the-solution-providers-side.md) points of view.
 
-In this post, we'll dive into the technicalities of SAML, OAuth 2.0 and OpenID Connect building upon one another.
+In this post, we'll dive into the technicalities of SAML, OAuth 2.0 and OpenID Connect and how these come together to serve as building blocks for Jackson.
 
 ## SAML
 
@@ -26,13 +26,22 @@ The OAuth 2.0 Authorization framework enables a third-party application/client t
 
 The flow starts with the app redirecting the user agent to an intermediary Authorization server (AS). The AS authenticates the user and obtains permission from the user to access resources. Once that's done, AS redirects back to the client with an Authorization code. The Authorization code is a grant or a credential representing the user's authorization to be used by the client. In the final step, the client uses this code to obtain an access token. This flow otherwise called Authorization Code grant is one of 4 grant types that are supported. For sake of simplicity, we can omit the others for now.
 
-The above-mentioned flow offers a few benefits: -
+The above-mentioned flow offers a few benefits:
 
 - The user only authenticates with the authorization server and the credentials are never shared with the app.
 - The access token is not transmitted<sup>\*</sup> via the user agent but directly to the client via an HTTP request.
 - The Client can be authenticated by the authorization server by using a client secret.
 
 **\*** _It's worth mentioning the fact that another grant type 'implicit grant' does return an access token via the user agent in the redirect URL fragment_
+
+#### Using OAuth 2.0 for authentication
+
+Since authentication usually occurs before issuing the access token, it is usually assumed that possession of an access token is proof that authentication happened. The access token is then used to query the Identity API to obtain user details.
+
+However, this is not secure and has several pitfalls for the following reasons:
+
+- The access token is opaque to the client and its intended audience is the protected resource server. Moreover, the protected resource server cannot tell if the user is still present by the token alone.
+- In situations where clients get an access token directly in the return URL (implicit flow), there is a high chance that an attacker can inject their malicious token.
 
 ## OpenID Connect
 
