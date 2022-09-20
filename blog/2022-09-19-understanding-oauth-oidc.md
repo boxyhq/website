@@ -49,4 +49,6 @@ A new standard called 'OpenID Connect' which builds on top of OAuth 2.0 brings n
 
 ## OpenID Connect
 
+OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. It supports 3 flows of which Authorization code and implicit flow are similar to the ones defined in OAuth 2.0. The notable difference here is the return of an ID Token in JWT format (JSON Web Token). The claims in the ID Token help the client reliably confirm the identity of the user. A key point to note is that the audience claim will be set to the client id which means the ID token is intended to be consumed by the client alone. Conforming to the OAuth 2.0 spec, an access token is still returned which can be used to obtain information about the user from the "userinfo" endpoint. A notable difference from OAuth is the standardization of claims set in ID Token as well as the ones returned from the "userinfo" endpoint.
+
 ##
