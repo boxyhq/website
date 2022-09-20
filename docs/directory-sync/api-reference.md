@@ -314,7 +314,6 @@ curl --request GET \
         "locale": "en-US",
         "externalId": "00u34iw1hm16RmjS95d7",
         "groups": [],
-        "password": "fzXdD89d",
         "active": true,
         "id": "6296f71e-15fd-4af4-86ee-d6623b3ef1a4"
       }
@@ -351,7 +350,6 @@ curl --request GET \
         "locale": "en-US",
         "externalId": "00u3e3cmpdDydXdzV5d7",
         "groups": [],
-        "password": "XJkEp0O6",
         "active": true,
         "id": "ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92"
       }
@@ -431,7 +429,6 @@ curl --request GET \
       "locale": "en-US",
       "externalId": "00u3e3cmpdDydXdzV5d7",
       "groups": [],
-      "password": "XJkEp0O6",
       "active": true,
       "id": "ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92"
     }
