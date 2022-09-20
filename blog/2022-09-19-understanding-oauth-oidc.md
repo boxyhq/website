@@ -1,6 +1,6 @@
 ---
 slug: understanding-oauth-and-oidc
-title: Technical bits on SAML, OAuth 2.0 and OpenID Connect
+title: SSO Building blocks - SAML, OAuth 2.0 and OpenID Connect
 author: Aswin V
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/av__2021
@@ -32,7 +32,7 @@ The above-mentioned flow offers a few benefits: -
 - The access token is not transmitted<sup>\*</sup> via the user agent but directly to the client via an HTTP request.
 - The Client can be authenticated by the authorization server by using a client secret.
 
-**\*** _It's worth mentioning the fact that another grant type 'implicit grant' does return an access token in the redirect URL fragment_
+**\*** _It's worth mentioning the fact that another grant type 'implicit grant' does return an access token via the user agent in the redirect URL fragment_
 
 ## OpenID Connect
 
