@@ -79,6 +79,7 @@ module.exports = {
                 'retraced/getting-started/time-synchronization',
               ],
           },
+          'retraced/admin-ui',
           {
             type: 'category',
             label: 'Advanced Retraced',
