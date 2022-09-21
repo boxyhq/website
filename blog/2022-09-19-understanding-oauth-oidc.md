@@ -63,8 +63,14 @@ We need to support two kinds of SSO Identity Providers - SAML and OIDC. For the 
 
 #### Setup SSO Connection
 
-The preliminary step is to add the SSO Connection to Jackson. For SAML IdP, this would mean saving the XML metadata from the IdP. The metadata would contain the SSO URL to send the SAML request to plus the public key to verify the SAML assertion signature. In the case of OIDC IdP, we need the discovery url and client credentials (clientID and clientSecret of the registered app). The discover
+The preliminary step (marked by green arrow above) is to add the SSO Connection to Jackson. For SAML IdP, this would mean saving the XML metadata from the IdP. The metadata would contain the SSO URL to send the SAML request to plus the public key to verify the SAML assertion signature. In the case of OIDC IdP, we need the discovery url and client credentials (clientID and clientSecret of the registered app). The discovery url can be used to query metadata about IdP such as authorization and token endpoints while the client credentials will be used to authenticate the Jackson client orchestrating the OIDC flow.
 
-This step is marked by the green arrow in the diagram.
+#### Login flow
 
-#### Login flow - Resolve the IdP Connection
+1. The Client (Browser app) initiates the login by redirecting to Jackson's `authorize` endpoint. Jackson will parse the tenant/product in the request and use it to redirect the user to the configured IdP.
+2. Step 2 varies based on the Identity Provider type. For SAML IdP, Jackson would construct the SAML request, sign it and send it to IdP. The IdP validates the request and authenticates the user. For OIDC IdP, Jackson constructs an OpenId Connect request and redirects the user to the OIDC Provider authorization endpoint.
+3. Once the user is logged in successfully, the IdP redirects back to Jackson. For SAML, the response contains the user profile. In the case of OIDC, the response contains the authorization code that is used by Jackson to obtain the token and user profile from the OIDC IdP. Jackson generates a short-lived `authorization code` and stores the user profile against it.
+4. The `authorization code` generated in the previous step is sent to the client app.
+5. The client exchanges the code for the token and uses it to query the userInfo endpoint of Jackson to get the complete user profile.
+
+So in a nutshell, Jackson acts as a proxy between the client app and the IdP doing the heavy lifting of orchestrating SAML/OIDC flows to the configured IdPs.
