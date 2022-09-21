@@ -90,6 +90,24 @@ module.exports = {
           items: [
             {
               type: 'category',
+              label: 'Proxy Service',
+              link: { type: 'doc', id: 'terminus/architecture/proxy' },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Vault Service',
+              link: { type: 'doc', id: 'terminus/architecture/vaultservice' },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Persistent Vault',
+              link: { type: 'doc', id: 'terminus/architecture/vault' },
+              items: [],
+            },
+            {
+              type: 'category',
               label: 'Encryption',
               link: { type: 'doc', id: 'terminus/encryption/index' },
               items: [],
