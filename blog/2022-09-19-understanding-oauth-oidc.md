@@ -67,10 +67,16 @@ The preliminary step (marked by green arrow above) is to add the SSO Connection 
 
 #### Login flow
 
+Jackson supports both OAuth 2.0 as well OpenId flows. The OAuth 2.0 flow is made secure by supporting Authorization Code flow with PKCE. By including the scope `openid` in the client request Jackson will switch to OpenId flow.
+
+The login process follows the below steps:
+
 1. The Client (Browser app) initiates the login by redirecting to Jackson's `authorize` endpoint. Jackson will parse the tenant/product in the request and use it to redirect the user to the configured IdP.
 2. Step 2 varies based on the Identity Provider type. For SAML IdP, Jackson would construct the SAML request, sign it and send it to IdP. The IdP validates the request and authenticates the user. For OIDC IdP, Jackson constructs an OpenId Connect request and redirects the user to the OIDC Provider authorization endpoint.
 3. Once the user is logged in successfully, the IdP redirects back to Jackson. For SAML, the response contains the user profile. In the case of OIDC, the response contains the authorization code that is used by Jackson to obtain the token and user profile from the OIDC IdP. Jackson generates a short-lived `authorization code` and stores the user profile against it.
 4. The `authorization code` generated in the previous step is sent to the client app.
-5. The client exchanges the code for the token and uses it to query the userInfo endpoint of Jackson to get the complete user profile.
+5. The client exchanges the code for the token and uses it to query the userInfo endpoint of Jackson to get the complete user profile. In the case of OpenId flow, ID Token is returned by Jackson and contains the basic user profile.
 
-So in a nutshell, Jackson acts as a proxy between the client app and the IdP doing the heavy lifting of orchestrating SAML/OIDC flows to the configured IdPs.
+## Final thoughts
+
+So in a nutshell, Jackson acts as a proxy between the client app and the IdP doing the heavy lifting of orchestrating SAML/OIDC flows with the configured IdPs. This way you can quickly scale your app auth to any number of providers allowing you to focus on your core product.
