@@ -1,11 +1,12 @@
-# Architecture
+# Components and Architecture
 
 Terminus can be generally represented as the following:
 
 ![General Diagran](./general.png)
 ---------------
 
-Terminus is by design, a multicomponent decupled systems where data is protected from each of the components. Nothing travels in the clear unless explicitly set, thus enabling the implementation of the most stringent data privacy and data segregation policies. The data stored in the vault is encrypted as specified in the proxy and has no visibility on it
+Terminus is by design, a multi-component decupled system where data is protected from each of the components. 
+Nothing travels in the clear unless explicitly set, thus enabling the implementation of the most stringent data privacy and data segregation policies. The data stored in the vault is encrypted as specified in the proxy and has no visibility on it
 
 From an architectural point of view, Terminus is made of the following components having the following responsibilities:
 
@@ -25,3 +26,4 @@ From an architectural point of view, Terminus is made of the following component
     - Stores and retrieves data
     - Has no knowledge of whatever payloads are stored internally
 
+The different services can be compiled and run independently. The easier way of getting started is by running them with the Docker Compose file provided using the official published images.

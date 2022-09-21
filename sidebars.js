@@ -85,7 +85,7 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Architecture',
+          label: 'Components and Architecture',
           link: { type: 'doc', id: 'terminus/architecture/index' },
           items: [
             {
@@ -116,7 +116,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Deploy',
+          label: 'Deployment',
           link: { type: 'doc', id: 'terminus/deploy/index' },
           items: [
             // 'jackson/deploy/service',
