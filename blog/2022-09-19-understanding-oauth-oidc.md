@@ -47,8 +47,24 @@ However, this does not fully serve as proof of authentication and has several pi
 
 A new standard called 'OpenID Connect' which builds on top of OAuth 2.0 brings new artifacts like ID tokens that can serve as reliable proof of authentication and also standardizes things like `scope` and `claims`.
 
-## OpenID Connect
+## OpenID Connect (OIDC)
 
-OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. It supports 3 flows of which Authorization code and implicit flow are similar to the ones defined in OAuth 2.0. The notable difference here is the return of an ID Token in JWT format (JSON Web Token). The claims in the ID Token help the client reliably confirm the identity of the user. A key point to note is that the audience claim will be set to the client id which means the ID token is intended to be consumed by the client alone. Conforming to the OAuth 2.0 spec, an access token is still returned which can be used to obtain information about the user from the "userinfo" endpoint. A notable difference from OAuth is the standardization of claims set in ID Token as well as the ones returned from the "userinfo" endpoint.
+OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. It supports 3 flows of which Authorization code and implicit flow are similar to the ones defined in OAuth 2.0. The notable difference here is the return of an ID Token in JWT format (JSON Web Token). The claims in the ID Token help the client reliably confirm the identity of the user. The audience(`aud`) claim will be set to the client id which means the ID token is intended to be consumed by the client alone. Conforming to the OAuth 2.0 spec, an access token is still returned which can be used to obtain information about the user from the "userinfo" endpoint. OIDC also standardizes the claims in the ID Token as well as the "userinfo" response.
 
-##
+## Assembling the SSO puzzle
+
+Now that we have all the pieces of the SSO puzzle, bringing it together in Jackson would look something like the one below.
+
+![img alt](/img/sso-flow.png)
+
+Allow me to explain.
+
+We need to support two kinds of SSO Identity Providers - SAML and OIDC. For the sake of discussion, consider the scenario of two apps where one (CRM) needs to log in with Azure AD via SAML and another (HRM) needs to log in with Google Workspace via OIDC.
+
+#### Setup SSO Connection
+
+The preliminary step is to add the SSO Connection to Jackson. For SAML IdP, this would mean saving the XML metadata from the IdP. The metadata would contain the SSO URL to send the SAML request to plus the public key to verify the SAML assertion signature. In the case of OIDC IdP, we need the discovery url and client credentials (clientID and clientSecret of the registered app). The discover
+
+This step is marked by the green arrow in the diagram.
+
+#### Login flow - Resolve the IdP Connection
