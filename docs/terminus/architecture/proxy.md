@@ -17,11 +17,11 @@ Data modelling is done via a visual interface that allows the composition via pu
 ### Sample Model
 - Below is an illustrated an example of the shallow model of a Passport, with its individual fields, restrictions on the type, type of encryption and decryption to be applied and the masking to apply once data is read. 
 
-        Future versions will include access-role-based masking policies and multitenancy on the proxy side, allowing for different clients to manage their own models.
+    **NOTE**: Future versions will include access-role-based masking policies and multitenancy on the proxy side, allowing for different clients to manage their own models.
 
     ![Sample Model: Passport](./proxy_assets/SampleModel.png)
 
-        Note all fields are currently treated as strings. No numerical types are supported yet.
+    **NOTE**: all fields are currently treated as strings. No numerical types are supported yet.
 
 ### Field Restrictions
 - The below illustration shows the current supported restrictions on the values. Behind the scenes it is implemented via regular expressions.
@@ -42,12 +42,12 @@ Data modelling is done via a visual interface that allows the composition via pu
 ### Encryption
 - Following are the planned encryption types to be supported by Terminus. Currently terminus supports AES Encryption with a 32 bytes key.
     
-    ![Encryption Options](./proxy_assets/EncryptionOptions.png)
+![Encryption Options](./proxy_assets/EncryptionOptions.png)
     
 ### Masking
 - Terminus supports currently generic and redact masking policies.
 
-    ![Masking Options](./proxy_assets/MaskOptions.png)
+![Masking Options](./proxy_assets/MaskOptions.png)
 
 ---
 ## Configuration
@@ -132,8 +132,15 @@ access: acp.#AuthResponse & {
 }
 
 ```
-**NOTE**: the paths in the API mappings are values accepted by Go's [Gorilla Mux's](https://github.com/gorilla/mux) specification.
+**NOTES**: 
 
+- the paths in the API definitions are values accepted by Go's [Gorilla Mux's](https://github.com/gorilla/mux) specification.
+- the names in the API definitions (i.e. `vaultStatus`) are mapped via code to the relevant handling functions.
+- the `version` is used as part of the path. An example of the status endpoint served by a proxy running locally on port 3002 would be:
+    http://127.0.0.1:3002/v1/status
+    
+---
+---
 - The API Keys and their role-based mapping
 ```
 ///////////////////////////////////////////////////////////////////////
