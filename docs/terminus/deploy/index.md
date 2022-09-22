@@ -1,4 +1,4 @@
-# Deploy
+# Deploy - WIP
 
 2 ways of use terminus. Start services individually or docker. Expand
 

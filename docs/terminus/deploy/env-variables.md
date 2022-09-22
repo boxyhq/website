@@ -122,6 +122,9 @@ Default: `postgres`
 
 
 ## Vault: Service
+> :warning: **NOTE*: The vault service requires the following configuration to connect to the persistence layer. If running via docker compose, all will already be set. If running Terminus across different hosts, this needs to be set: VAULT_DB_USER, VAULT_DB_PASSWORD, VAULT_DB_DBNAME, VAULT_DB_NAME, VAULT_DB_PORT
+
+    
 
 ### **VAULT_SERVICE_NAME**
 
@@ -134,12 +137,6 @@ Default: `terminus_vault_service`
 The port where Terminus' vault server runs. When running in docker is both the internal and external port.
 
 Default: `3005`
-
-### **VAULT_SERVICE_ENDPOINT**
-
-The URL of Terminus' service endpoint.
-
-Default: `http://${VAULT_SERVICE_NAME}:${VAULT_SERVICE_PORT}`
 
 ### **VAULT_SERVICE_ENCR_AES**
 
@@ -168,6 +165,15 @@ Default: No default.
 
 
 ## Proxy: Service
+
+### **VAULT_SERVICE_ENDPOINT**
+
+The URL of Terminus' vault service endpoint.
+
+Default: `http://${VAULT_SERVICE_NAME}:${VAULT_SERVICE_PORT}`
+
+> :warning: **NOTE*: The proxy service requires the following configuration to connect to the vault service. If running via docker compose, all will already be set. If running Terminus across different hosts, this needs to be set: VAULT_SERVICE_NAME, VAULT_SERVICE_PORT. Alternatively, hardcode the VAULT_SERVICE_ENDPOINT to the relevant endpoint.
+
 
 ### **PROXY_SERVICE_NAME**
 
