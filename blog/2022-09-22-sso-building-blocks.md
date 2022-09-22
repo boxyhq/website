@@ -1,5 +1,5 @@
 ---
-slug: SSO Building blocks
+slug: sso-building-blocks
 title: SSO Building blocks - SAML, OAuth 2.0 and OpenID Connect
 author: Aswin V
 author_title: Senior Developer @BoxyHQ
