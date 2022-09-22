@@ -43,7 +43,7 @@ However, this does not fully serve as proof of authentication and has several pi
 - The access token is opaque to the client and its intended audience is the protected resource server.
 - There is no way to know if the user is still around because information about the authentication event is not exposed.
 - In situations where clients get an access token directly in the return URL (implicit grant), there is a high chance that an attacker can inject their malicious token. This can be mitigated by using the Authorization code flow as the token is retrieved from the token endpoint directly.
-- OAuth does not define a standard set of fields for the Identity API. For eg:- While one IdP could use `user_id` for user identifier, the same could be `subject` in another one. This requires different handling on the client side from one IdP to another.
+- OAuth does not define a standard set of fields for the Identity API. For eg:- While one IdP could use `user_id` for the user identifier, the same could be `subject` in another one. This requires different handling on the client side from one IdP to another.
 
 A new standard called 'OpenID Connect' which builds on top of OAuth 2.0 brings new artifacts like ID tokens that can serve as reliable proof of authentication and also standardizes things like `scope` and `claims`.
 
@@ -63,11 +63,11 @@ We need to support two kinds of SSO Identity Providers - SAML and OIDC. For the 
 
 #### Setup SSO Connection
 
-The preliminary step (marked by green arrow above) is to add the SSO Connection to Jackson. For SAML IdP, this would mean saving the XML metadata from the IdP. The metadata would contain the SSO URL to send the SAML request to plus the public key to verify the SAML assertion signature. In the case of OIDC IdP, we need the discovery url and client credentials (clientID and clientSecret of the registered app). The discovery url can be used to query metadata about IdP such as authorization and token endpoints while the client credentials will be used to authenticate the Jackson client orchestrating the OIDC flow.
+The preliminary step (marked by the green arrow above) is to add the SSO Connection to Jackson. For SAML IdP, this would mean saving the XML metadata from the IdP. The metadata would contain the SSO URL to send the SAML request to plus the public key to verify the SAML assertion signature. In the case of OIDC IdP, we need the discovery URL and client credentials (clientID and clientSecret of the registered app). The discovery URL can be used to query metadata about IdP such as authorization and token endpoints while the client credentials will be used to authenticate the Jackson client orchestrating the OIDC flow.
 
 #### Login flow
 
-Jackson supports both OAuth 2.0 as well OpenId flows. The OAuth 2.0 flow is made secure by supporting Authorization Code flow with PKCE. By including the scope `openid` in the client request Jackson will switch to OpenId flow.
+Jackson supports both OAuth 2.0 as well OpenId flows. The OAuth 2.0 flow is made secure by supporting Authorization Code flow with PKCE. By including the scope `openid` in the client request Jackson will switch to OpenID flow.
 
 The login process follows the below steps:
 
