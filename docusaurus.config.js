@@ -1,7 +1,6 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
-
 const copyright = '2021-present © BoxyHQ Inc.';
 
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Enterprise Readiness made simple',
   tagline:
