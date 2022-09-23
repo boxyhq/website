@@ -45,6 +45,8 @@ module.exports = {
       title: 'BoxyHQ',
       logo: {
         alt: 'BoxyHQ',
+        width: '32px',
+        height: '32px',
         src: 'img/logo.png',
         srcDark: 'img/logo-dark.png',
       },
