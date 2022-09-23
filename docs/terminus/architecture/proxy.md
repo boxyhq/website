@@ -14,6 +14,8 @@ It is written in [Go](https://go.dev/).
 
 Data modelling is done via a visual interface that allows the composition via puzzle pieces. 
 
+>  :warning: **IMPORTANT**: changes on encryption policies on fields of stored datasets will most likely render the existing data useless due to the impossibility of interpret and/or decrypt the data. Thread carefully. Adding and removing fields is allowed.
+
 ### Sample Model
 - Below is an illustrated an example of the shallow model of a Passport, with its individual fields, restrictions on the type, type of encryption and decryption to be applied and the masking to apply once data is read. 
 
