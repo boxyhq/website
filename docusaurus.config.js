@@ -12,6 +12,12 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
+  scripts: [
+    {
+      src: 'https://cmp.osano.com/169lWRSfch3C32VM2/2cd324ff-6a09-4e61-94fa-6af31f004e67/osano.js',
+      defer: true,
+    },
+  ],
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
     zoom: {
