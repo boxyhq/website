@@ -2,6 +2,8 @@
 
 The proxy service is the outermost client facing of Terminus. Amongst it's roles and responsibilities:
 - Enables no-code configuration of encryption and masking business data models
+- Supports multi-tenancy and multi-product logical segregation via API URL paths. 
+> :warning: **IMPORTANT**: Terminus only supports currently one business data model (alpha version), therefore all tenants/products use the same business and encryption models and configurations
 - It exposes the public API for clients to interface with the privacy vault
 - Interfaces with the Vault service
 - Implements Access Control Policies

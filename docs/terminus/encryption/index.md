@@ -1,5 +1,6 @@
-# Encryption - WIP
+# Encryption SDK - WIP
 
-Blockly. Configuration. 
+Configuration and architecture
 
-Images and screenshots.
+ADD ABOUT AUTH GO IMPLEMENTATION (as opposed to ACP middleware)
+
