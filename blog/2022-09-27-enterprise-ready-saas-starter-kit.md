@@ -1,6 +1,6 @@
 ---
-slug: enterprise-saas-starter-kit
-title: Enterprise SaaS Starter Kit
+slug: enterprise-ready-saas-starter-kit
+title: Enterprise-ready SaaS Starter Kit
 author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
@@ -8,7 +8,7 @@ author_image_url: https://boxyhq.com/img/team/kiran.jpg
 tags: [enterprise-readiness, nextjs-template, saas-starter-kit]
 ---
 
-Enterprise SaaS Starter Kit is a **Next.js** based SaaS Starter Kit that can save hundreds of development hours while building [enterprise-ready SaaS apps](/blog/enterprise-readiness-made-simple).
+Enterprise-ready SaaS Starter Kit is a **Next.js** based SaaS Starter Kit that can save hundreds of development hours while building [enterprise-ready SaaS apps](/blog/enterprise-readiness-made-simple).
 
 [Kickstart your enterprise app development with Next.js SaaS Starter Kit](https://github.com/boxyhq/saas-starter-kit)
 
