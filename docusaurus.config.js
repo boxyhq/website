@@ -75,7 +75,7 @@ module.exports = {
             },
             {
               label: 'Discord',
-              href: 'https://discord.gg/uyb7pYt4Pa',
+              href: 'https://discord.boxyhq.com',
             },
             {
               label: 'Aviyel',
