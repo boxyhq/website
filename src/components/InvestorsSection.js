@@ -18,6 +18,7 @@ const InvestorsList = [
   {
     url: 'https://wayra.com',
     png: require('../../static/img/investors/wayra-logo.png').default,
+    loading: 'lazy',
   },
 ];
 

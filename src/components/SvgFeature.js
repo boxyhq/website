@@ -10,6 +10,7 @@ export default function SvgFeature({
   colSize,
   quotes,
   title,
+  loading,
 }) {
   return (
     <div className={clsx('col ' + colSize)}>
@@ -22,7 +23,7 @@ export default function SvgFeature({
       ) : png ? (
         <div className="text--center">
           <a href={url} target="_blank">
-            <img className={styles.pngFeature} src={png} />
+            <img className={styles.pngFeature} src={png} loading={loading} />
           </a>
         </div>
       ) : null}
