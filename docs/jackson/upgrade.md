@@ -4,6 +4,7 @@
 
 1. Landed support for OpenId Identity Providers.
 2. Landed new API (`/api/v1/connections`) to support setting up both SAML/OIDC SSO Connections.
+
    **Note:** The previous API for SAML configuration `/api/v1/saml/config` has been deprecated, and would be completely removed in a future release.
 
 3. Renamed env variable `PRE_LOADED_CONFIG` to [`PRE_LOADED_CONNECTION`](deploy/env-variables.md#pre_loaded_connection) for Jackson service. In the case of npm `preLoadedConfig` becomes`preLoadedConnection`.
