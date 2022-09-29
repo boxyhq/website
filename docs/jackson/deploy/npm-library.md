@@ -179,7 +179,7 @@ router.get('/oauth/authorize', async (req, res) => {
 
 #### SAML
 
-Add a method to handle the SAML Response from IdP. Once the SAML response is validated and user profile extracted, Jackson will generate the authorization response (authorization code) for the client.
+Add a method to handle the SAML Response from IdP. Once the SAML response is validated and the user profile extracted, Jackson will generate the authorization response (authorization code) for the client.
 
 ##### IdP-initiated SAML flow
 
@@ -217,7 +217,7 @@ router.post('/sso/oauth/saml', async (req, res) => {
 Add a method to handle OIDC authentication response from IdP. Once the response is processed and the user profile is retrieved, Jackson will generate the authorization response (authorization code) for the client.
 
 :::info
-OIDC Response - The successful Authentication response from the OIDC IdP contains the `authorization code` and `state` from original authorization request (sent from jackson). Jackson will use the `authorization code` to obtain the token which is then exchanged for userprofile. The user profile is stored against a code which is then set in the returned `redirect_url`. In case of authorization failure at IdP the `error` and `error_description` from IdP will be set in the returned `redirect_url`
+OIDC Response - The successful Authentication response from the OIDC IdP contains the `authorization code` and `state` from the original authorization request (sent from jackson). Jackson will use the `authorization code` to obtain the token which is then exchanged for the user profile. The user profile is stored against a code which is then set in the returned `redirect_url`. In case of authorization failure at IdP the `error` and `error_description` from IdP will be set in the returned `redirect_url`
 :::
 
 ```javascript
