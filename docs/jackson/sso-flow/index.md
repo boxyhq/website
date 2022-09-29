@@ -88,7 +88,7 @@ The response returns a JSON with `clientID` and `clientSecret` that can be store
 
 ### 2.2 Get connections
 
-This endpoint can be used to return SAML/OIDC connections configured for a tenant/product. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
+This endpoint can be used to retrieve SAML/OIDC connections configured for a tenant/product. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
 
 <Tabs>
 <TabItem value="saml" label="SAML" default>
