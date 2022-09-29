@@ -23,7 +23,7 @@ NPM library option: `externalUrl`
 
 ### **JACKSON_API_KEYS**
 
-A comma separated list of API keys that will be validated when serving the Config API requests at `/api/v1/saml/config/`.
+A comma separated list of API keys that will be validated when serving the SSO Connection requests at `/api/v1/connections`.
 
 For example `JACKSON_API_KEYS=key1,key2,key3`
 
@@ -52,13 +52,13 @@ For example: `/api/oauth/oidc`
 
 ### **IDP_DISCOVERY_PATH**
 
-This is the path for showing the IdP Selection screen in case there are multiple SAML IdP configs for the same `tenant` and `product`.
+This is the path for showing the IdP Selection screen in case there are multiple SAML SSO Connections for the same `tenant` and `product`.
 This path is also used to show the App Selection screen in the case of IdP-initiated SAML login (Different apps using the same SAML IdP).
 Set this when using the npm package.
 
 NPM library option: `idpDiscoveryPath`
 
-For example: `/idp/select` - You can find an implemenation of IdP/App Selection at https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx.
+For example: `/idp/select` - You can find an implementation of IdP/App Selection at https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx.
 
 ### **CLIENT_SECRET_VERIFIER**
 
