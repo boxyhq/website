@@ -62,3 +62,20 @@ Also get the OpenId provider [discovery](https://openid.net/specs/openid-connect
 - Click the button **Save Changes**
 
 Now you've successfully added your first OIDC connection.
+
+### ForceAuthn
+
+With ForceAuthn enabled user has to re-authenticate even if the user has an existing session irrespective of authentication level.
+
+With Jackson Admin UI you can enable/disable the ForceAuthn setting by editing the SAML connection.
+
+- Go to **Connections** 
+- Find the **SAML Config** you want to enable ForceAuthn for
+- Click on the **Pencil** icon in the **Actions** column
+- Scroll down on the edit page and find **Enable ForceAuthn**
+- Enable the checkbox below Enable ForceAuthn and click on the **Save Changes** button
+
+If you have disabled this setting on you IdP then this parameter will not be honored.
+
+You can also initiate a ForceAuthn flow by sending prompt parameter in the SAML request.
+Prompt is a space limited list of strings you can pass **login** as one of the strings or only **login** as sting to invoke user re-authentication.
