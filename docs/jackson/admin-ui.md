@@ -22,7 +22,7 @@ Follow the below steps to login into the Admin dashboard.
 
 ## Add SSO Connections
 
-To start using SAML Jackson, you need to add an SSO Connection. Refer to the steps below on adding [SAML](#saml) / [OIDC](#oidc) connections.
+To start using SAML Jackson, you need to add SSO Connections. Refer to the steps below on adding [SAML](#saml) / [OIDC](#oidc) connections.
 
 ### SAML
 
@@ -32,7 +32,7 @@ The SAML metadata file contains information about the various SAML Authorities t
 
 Download the SAML Metadata file from your IdP and follow the below steps for adding the SAML connection.
 
-- Go to **SSO Connections** and click the button **New Connection**.
+- Go to **SSO Connections** in the Admin UI and click the button **New Connection**.
 - Choose **SAML** as the type.
 - Give your new connection a **name**.
 - Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex).
@@ -52,7 +52,7 @@ The clientSecret will be used to authenticate the oidc client (in this case jack
 
 Also get the OpenId provider [discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) endpoint (usually ending in `/.well-known/openid-configuration`) and follow the below steps for adding the OIDC connection.
 
-- Go to **SSO Connections** and click the button **New Connection**.
+- Go to **SSO Connections** in the Admin UI and click the button **New Connection**.
 - Choose **OIDC** as the type.
 - Give your new connection a **name**.
 - Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex).
