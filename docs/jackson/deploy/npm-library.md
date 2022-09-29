@@ -63,7 +63,7 @@ async function init() {
 - `samlPath` becomes part of the ACS URL. The ACS URL is an endpoint on the SP where the IdP will redirect to with its authentication response. For example: If `externalUrl` is `http://localhost`, and `samlPath` is `/sso/acs`, the ASC URL will be `http://localhost/sso/acs`
 - `oidcPath` is the endpoint which recieves the authentication response from an OIDC IdP. The `code` contained in the response is then exchanged to retrieve token/userprofile.
 
-### Add SAML Connection API route
+### Add API routes for SSO Connections
 
 [API Reference](../sso-flow/index.md#2-sso-connection-api)
 
