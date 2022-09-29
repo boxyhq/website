@@ -79,7 +79,7 @@ export const strategyChecker = (req) => {
 };
 
 
-// SAML connection API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
+// SSO connections API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
 router.post('/api/v1/connections', async (req, res) => {
   const { isSAML, isOIDC } = strategyChecker(req);
   try {
