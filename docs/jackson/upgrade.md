@@ -2,11 +2,8 @@
 
 ## Upgrading to 1.3.0
 
-1. Landed support for OpenId Identity Provider.
-2. New API paths have been introduced for setting up SSO Connection.
-
-   - `/api/v1/saml/connection`
-   - `/api/v1/oidc/connection`
+1. Landed support for OpenId Identity Providers.
+2. A new API path `/api/v1/connections` have been introduced for setting up SSO Connections.
 
    **Note:** The older API path for SAML configuration `/api/v1/saml/config` is now deprecated, and would be completely removed in a future release.
 
