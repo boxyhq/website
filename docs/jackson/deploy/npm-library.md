@@ -175,11 +175,13 @@ router.get('/oauth/authorize', async (req, res) => {
 });
 ```
 
-### Handle Response from SAML Provider
+### Handle Response from IdP
+
+#### SAML
 
 Add a method to handle the SAML Response from IdP. Once the SAML response is validated and user profile extracted, Jackson will generate the authorization response (authorization code) for the client.
 
-#### IdP-initiated flow
+##### IdP-initiated SAML flow
 
 To enable IdP-initiated SAML flow set https://boxyhq.com/docs/jackson/deploy/env-variables#idp_enabled. If [idpDiscoveryPath](https://boxyhq.com/docs/jackson/deploy/env-variables#idp_discovery_path) is not set then always the first connection will be chosen in case of multiple matches.
 
@@ -210,7 +212,7 @@ router.post('/sso/oauth/saml', async (req, res) => {
 });
 ```
 
-### Handle Response from OIDC Provider
+#### OIDC
 
 Add a method to handle OIDC authentication response from IdP. Once the response is processed and the user profile is retrieved, Jackson will generate the authorization response (authorization code) for the client.
 
