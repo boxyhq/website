@@ -72,15 +72,22 @@ async function init() {
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
+export const strategyChecker = (req) => {
+  const isSAML = 'rawMetadata' in req.body || 'encodedRawMetadata' in req.body;
+  const isOIDC = 'oidcDiscoveryUrl' in req.body;
+  return { isSAML, isOIDC };
+};
+
+
 // SAML connection API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
-router.post('/api/v1/:strategy/connection', async (req, res) => {
-  const strategy = req.params.strategy;
+router.post('/api/v1/connections', async (req, res) => {
+  const { isSAML, isOIDC } = strategyChecker(req);
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
-    if (strategy === "saml") {
+    if (isSAML) {
      res.json(await connectionAPIController.createSAMLConnection(req.body));
-    } else if (strategy === "oidc") {
+    } else if (isOIDC) {
       res.json(await connectionAPIController.createOIDCConnection(req.body))
     } else {
       throw 'strategy not supported'
@@ -92,14 +99,14 @@ router.post('/api/v1/:strategy/connection', async (req, res) => {
   }
 });
 // update connection
-router.patch('/api/v1/:strategy/connection', async (req,res) => {
-  const strategy = req.params.strategy;
+router.patch('/api/v1/connections', async (req,res) => {
+  const { isSAML, isOIDC } = strategyChecker(req);
    try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
-  if (strategy === "saml") {
+  if (isSAML) {
      res.json(await connectionAPIController.updateSAMLConnection(req.body));
-    } else if (strategy === "oidc") {
+    } else if (isOIDC) {
       res.json(await connectionAPIController.updateOIDCConnection(req.body))
     } else {
       throw 'strategy not supported'
@@ -111,12 +118,12 @@ router.patch('/api/v1/:strategy/connection', async (req,res) => {
   }
 })
 // fetch connection
-router.get('/api/v1/:strategy/connection', async (req, res) => {
+router.get('/api/v1/connections', async (req, res) => {
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
 
-    res.json(await connectionAPIController.getConnection(req.query));
+    res.json(await connectionAPIController.getConnections(req.query));
   } catch (err) {
     res.status(500).json({
       error: err.message,
@@ -124,13 +131,13 @@ router.get('/api/v1/:strategy/connection', async (req, res) => {
   }
 });
 // delete connection
-router.delete('/api/v1/:strategy/connection', async (req, res) => {
+router.delete('/api/v1/connections', async (req, res) => {
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
 
     // only when properly authenticated, call the connection function
-    await connectionAPIController.deleteConnection(req.body);
+    await connectionAPIController.deleteConnections(req.body);
     res.status(200).end();
   } catch (err) {
     res.status(500).json({
