@@ -1,8 +1,8 @@
 # Admin UI
 
-SAML Jackson comes with an Admin interface that allows you to manage IdP Connections via UI. To enable the Admin UI, make sure you deploy the [Jackson as a service](./deploy/service.md).
+SAML Jackson comes with an Admin interface that allows you to manage SSO Connections via UI. To enable the Admin UI, make sure you deploy the [Jackson as a service](./deploy/service.md).
 
-You can `add`, `update` or `delete` IdP connections from the UI. For API Reference see [SSO Flow > SSO Connection API ](./sso-flow/index.md#2-sso-connection-api)
+You can `add`, `update` or `delete` SSO Connections from the UI. For API Reference see [SSO Flow > SSO Connection API ](./sso-flow/index.md#2-sso-connection-api)
 
 ## Sign into Admin UI
 
@@ -20,9 +20,9 @@ Follow the below steps to login into the Admin dashboard.
 - Open the inbox and you'll see an email from Jackson.
 - Open that email and click the button **Sign in**. Now you've successfully logged into the SAML Jackson admin UI.
 
-## Add IdP Connections
+## Add SSO Connections
 
-To start using SAML Jackson, you need to add an IdP connection. Refer the steps below to add [SAML](#saml) / [OIDC](#oidc) connections.
+To start using SAML Jackson, you need to add an SSO Connection. Refer to the steps below on adding [SAML](#saml) / [OIDC](#oidc) connections.
 
 ### SAML
 
@@ -32,14 +32,15 @@ The SAML metadata file contains information about the various SAML Authorities t
 
 Download the SAML Metadata file from your IdP and follow the below steps for adding the SAML connection.
 
-- Go to **Connections** and click the button **New**
-- Choose **SAML** as the type
-- Give your new connection a **name**
-- Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex)
-- Add **Allowed redirect URLs**
-- Add **Default redirect URL**
-- Paste the **Raw IdP XML**
-- Click the button **Save Changes**
+- Go to **SSO Connections** and click the button **New Connection**.
+- Choose **SAML** as the type.
+- Give your new connection a **name**.
+- Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex).
+- Add **Allowed redirect URLs**.
+- Add **Default redirect URL**.
+- Paste the **Raw IdP XML**.
+- If **ForceAuthn** is checked, it means that the user will be forced to re-authenticate at SAML IdP, even if they have an active session.
+- Click the button **Save Changes**.
 
 Now you've successfully added your first SAML connection.
 
@@ -51,31 +52,14 @@ The clientSecret will be used to authenticate the oidc client (in this case jack
 
 Also get the OpenId provider [discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) endpoint (usually ending in `/.well-known/openid-configuration`) and follow the below steps for adding the OIDC connection.
 
-- Go to **Connections** and click the button **New**
-- Choose **OIDC** as the type
-- Give your new connection a **name**
-- Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex)
-- Add **Allowed redirect URLs**
-- Add **Default redirect URL**
+- Go to **SSO Connections** and click the button **New Connection**.
+- Choose **OIDC** as the type.
+- Give your new connection a **name**.
+- Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex).
+- Add **Allowed redirect URLs**.
+- Add **Default redirect URL**.
 - Enter the URL for OpenId Provider discovery which exposes the Provider Metadata.
 - Paste the **clientId** and **clientSecret** values into Client ID [OIDC Provider]/Client Secret [OIDC Provider] fields in the UI.
-- Click the button **Save Changes**
+- Click the button **Save Changes**.
 
 Now you've successfully added your first OIDC connection.
-
-### ForceAuthn
-
-With ForceAuthn enabled user has to re-authenticate even if the user has an existing session irrespective of authentication level.
-
-With Jackson Admin UI you can enable/disable the ForceAuthn setting by editing the SAML connection.
-
-- Go to **Connections** 
-- Find the **SAML Config** you want to enable ForceAuthn for
-- Click on the **Pencil** icon in the **Actions** column
-- Scroll down on the edit page and find **Enable ForceAuthn**
-- Enable the checkbox below Enable ForceAuthn and click on the **Save Changes** button
-
-If you have disabled this setting on you IdP then this parameter will not be honored.
-
-You can also initiate a ForceAuthn flow by sending prompt parameter in the SAML request.
-Prompt is a space limited list of strings you can pass **login** as one of the strings or only **login** as sting to invoke user re-authentication.

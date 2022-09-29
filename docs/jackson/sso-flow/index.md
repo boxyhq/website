@@ -133,7 +133,7 @@ The response returns a JSON with `oidcProvider.provider` indicating the domain o
 
 ### 2.3 Update connection
 
-This endpoint can be used to update an existing IdP connection.
+This endpoint can be used to update an existing SSO Connection.
 <Tabs>
 <TabItem value="saml" label="SAML" default>
 
@@ -228,7 +228,7 @@ https://localhost:5225/api/oauth/authorize
 - `client_id`: Use the client_id returned by the SSO connection API or use `tenant=<tenantID>&product=<productID>` to use the tenant and product IDs instead. **Note:** Please don't forget to URL encode the query parameters including `client_id`.
 - `tenant`: Optionally you can provide use `dummy` as the value for `client_id` and specify the `tenant` and `product` custom attributes (if your OAuth 2.0 library allows it).
 - `product`: Should be specified if specifying `tenant` above
-- `idp_hint`: Can be used to select the Identity Provider if multiple connections match for the same `tenant/product`. Should point to the absolute "clientID" of the IdP connection in Jackson.
+- `idp_hint`: Can be used to select the Identity Provider if multiple connections match for the same `tenant/product`. Should point to the absolute "clientID" of the SSO Connection in Jackson.
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete
 - `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks.
 - `nonce` (for oidc flow): String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token. Sufficient entropy MUST be present in the nonce values used to prevent attackers from guessing values.

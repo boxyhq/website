@@ -8,9 +8,9 @@ Please check the [Environment Variables](./deploy/env-variables.md#opentelemetry
 
 | Name                        | Description                              | Type  |
 | --------------------------- | ---------------------------------------- | ----- |
-| `jackson.connection.create` | Number of IdP connection create requests | Count |
-| `jackson.connection.get`    | Number of IdP connection get requests    | Count |
-| `jackson.connection.delete` | Number of IdP connection delete requests | Count |
+| `jackson.connection.create` | Number of SSO Connection create requests | Count |
+| `jackson.connection.get`    | Number of SSO Connection get requests    | Count |
+| `jackson.connection.delete` | Number of SSO Connection delete requests | Count |
 | `jackson.oauth.authorize`   | Number of oauth authorize requests       | Count |
 | `jackson.oauth.token`       | Number of oauth token requests           | Count |
 | `jackson.oauth.userinfo`    | Number of oauth user info requests       | Count |

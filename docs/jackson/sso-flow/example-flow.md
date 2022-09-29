@@ -14,7 +14,7 @@ Let's see how SSO works in this case.
 
 ## Configure the SSO Connection
 
-First as the application developer, you'll need to [add](./index.md#21-add-connection) the CRM IdP connection for SAML and OIDC. This will be saved (marked as SAML Metadata and OIDC Metadata in the below diagram) within Jackson and later used to orchestrate the IdP login.
+First as the application developer, you'll need to [add](./index.md#21-add-connection) the SSO connections for CRM and HRM. This will be saved (marked as SAML Metadata and OIDC Metadata in the below diagram) within Jackson and later used to orchestrate the IdP login.
 
 ## Login flow
 
