@@ -17,33 +17,43 @@ const FeatureSection = ({
         <div
           className="row"
           style={{
-            gap: '20px',
-            display: 'flex',
-            flexDirection: 'row',
-            flexFlow: direction === 'right' ? 'row-reverse' : 'row',
+            flexDirection: direction === 'right' ? 'row-reverse' : 'row',
           }}
         >
-          <div
-            className="col"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-            }}
-          >
-            <div>
-              <h2>{title}</h2>
-              <p>{children}</p>
-              <Link
-                className="button button--outline button--primary"
-                to={btnLink}
+          <div className="col">
+            <div className="col-demo">
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '350px',
+                }}
               >
-                {btnText}
-              </Link>
+                <div>
+                  <h2>{title}</h2>
+                  <p>{children}</p>
+                  <Link
+                    className="button button--outline button--primary"
+                    to={btnLink}
+                  >
+                    {btnText}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
           <div className="col">
-            <div className="text--center">
-              <Icon style={{ width: '350px', height: '350px' }} />
+            <div className="col-demo">
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '350px',
+                }}
+              >
+                <Icon style={{ width: '350px', height: '350px' }} />
+              </div>
             </div>
           </div>
         </div>

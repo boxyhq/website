@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 
-const HeroSection = ({ title, description, icon }) => {
-  const ProductIcon = icon;
+const HeroSection = ({ title, description, icon = null, buttons }) => {
+  const Icon = icon;
 
   return (
     <main className="container margin-vert--lg">
@@ -15,25 +16,22 @@ const HeroSection = ({ title, description, icon }) => {
               gap: '5px',
             }}
           >
-            <ProductIcon style={{ width: '40px', height: '40px' }} />
+            {Icon && <Icon style={{ width: '40px', height: '40px' }} />}
             <h1 className="intro__header">{title}</h1>
           </div>
           <p className="intro__description" style={{ marginTop: '30px' }}>
             {description}
           </p>
           <div className="intro__buttons">
-            <Link
-              className="button button--primary button--lg"
-              href="https://meetings.hubspot.com/deepakprab/demo"
-            >
-              Book a demo
-            </Link>
-            <Link
-              className="button button--outline button--primary button--lg"
-              to="/docs/jackson/overview"
-            >
-              Learn More
-            </Link>
+            {buttons.map(({ href, title, className }, idx) => (
+              <Link
+                className={clsx('button button--lg', className)}
+                href={href}
+                key={idx}
+              >
+                {title}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

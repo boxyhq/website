@@ -114,8 +114,7 @@ html[data-theme='dark'] .header-github-link:before {
 .page__section {
   border-top: 1px solid var(--ifm-color-emphasis-200);
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 40px 10px 40px;
 }
 
 .border__red {

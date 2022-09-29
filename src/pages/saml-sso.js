@@ -1,17 +1,18 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
+
 import FeatureSection from '../components/FeatureSection';
 import CustomersSection from '../components/CustomersSection';
 import HeroSection from '../components/HeroSection';
 import BenefitsSection from '../components/BenefitsSection';
+import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 
 const title = 'SAML Jackson';
 const description =
   'Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready';
 
 const ProductIcon =
-  require('../../static/img/products/saml-jackson/no-padding.svg').default;
+  require('../../static/img/products/saml-jackson/logo.svg').default;
 
 const Icon1 =
   require('../../static/img/products/saml-jackson/undraw_connected_world_wuay.svg').default;
@@ -51,49 +52,6 @@ const benefits = [
   },
 ];
 
-const DeveloperCommunity = () => {
-  return (
-    <section className="page__section">
-      <div className="container">
-        <div className="row">
-          <div className="col col--6 col--offset-3">
-            <div className="col-demo text--center">
-              <h2 className="section__header" style={{ padding: '10px' }}>
-                Join our developer community
-              </h2>
-              <p>
-                Open-source is in the heart of BoxyHQ. Follow us on Twitter,
-                star our GitHub repo, and join our developer community on
-                Discord!
-              </p>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  gap: '5px',
-                }}
-              >
-                <Link
-                  href="https://meetings.hubspot.com/deepakprab/demo"
-                  className="button button--success button--outline"
-                >
-                  Join Discord
-                </Link>
-                <Link
-                  href="https://meetings.hubspot.com/deepakprab/demo"
-                  className="button button--success button--outline"
-                >
-                  Star on GitHub
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const SAMLSSO = () => {
   return (
     <Layout title={title} description={description}>
@@ -102,6 +60,18 @@ const SAMLSSO = () => {
         description="Deploy SAML SSO straight out of the box in as little as 8 days and
               become enterprise ready."
         icon={ProductIcon}
+        buttons={[
+          {
+            title: 'Get Started',
+            href: '/',
+            className: 'button--primary',
+          },
+          {
+            title: 'Learn More',
+            href: '/',
+            className: 'button--primary button--outline',
+          },
+        ]}
       />
 
       <FeatureSection
@@ -163,27 +133,7 @@ const SAMLSSO = () => {
         benefits={benefits}
       />
 
-      <DeveloperCommunity />
-
-      {/* <section className="page__section">
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <div className="col-demo border__red">6</div>
-            </div>
-            <div className="col">
-              <div className="col-demo border__red">
-                <ul className="tabs">
-                  <li className="tabs__item tabs__item--active">Alpha</li>
-                  <li className="tabs__item">Beta</li>
-                  <li className="tabs__item">Gamma</li>
-                  <li className="tabs__item">Zeta</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      <DeveloperCommunitySection />
     </Layout>
   );
 };

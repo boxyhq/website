@@ -44,17 +44,16 @@ const CustomersSection = () => {
         >
           What our customers say
         </h2>
-        <div
-          className="row"
-          style={{ marginTop: '30px', display: 'flex', gap: '10px' }}
-        >
+        <div className="row" style={{ marginTop: '30px' }}>
           {customersList.map(({ quote, logo, url }, idx) => (
-            <div className="col" key={idx} style={{ padding: '10px' }}>
-              <div className="text--center">
-                <SvgIcon icon={logo} href={url} />
-                <p>
-                  <q>{quote}</q>
-                </p>
+            <div className="col" key={idx}>
+              <div class="col-demo">
+                <div className="text--center">
+                  <SvgIcon icon={logo} href={url} />
+                  <p style={{ fontSize: '15px' }}>
+                    <q>{quote}</q>
+                  </p>
+                </div>
               </div>
             </div>
           ))}
