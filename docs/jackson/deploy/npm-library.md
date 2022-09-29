@@ -198,6 +198,7 @@ router.post('/sso/oauth/saml', async (req, res) => {
     if (redirect_url) {
       res.redirect(302, redirect_url);
     } else {
+      // For IdP initiated SAML login where multiple apps are configured for same IdP. Here user choice is required to complete the flow
       res.set('Content-Type', 'text/html; charset=utf-8');
       res.send(app_select_form);
     }
