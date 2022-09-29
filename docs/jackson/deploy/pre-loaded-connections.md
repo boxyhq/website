@@ -1,4 +1,6 @@
-# Pre-loaded Connections
+# Pre-loaded SSO Connections
+
+#### SAML
 
 If PRE_LOADED_CONNECTION is set then it should point to a directory with the following structure (example below):-
 
@@ -22,11 +24,11 @@ module.exports = {
 };
 ```
 
-The XML file (should share the name with the .js file) is the raw XML metadata file you receive from your Identity Provider. Please ensure it is saved in the `utf-8` encoding.
+The XML file (which should have the same name as the .js file) is the raw XML metadata file you receive from your Identity Provider. Please ensure it is saved in the `utf-8` encoding.
 
 The config and XML above correspond to the [Add connection API - SAML tab](../sso-flow/index.md#21-add-connection).
 
-# Pre-loaded OIDC Connection
+#### OIDC
 
 For a connection backed by OpenId IdP create the \*.js file at PRE_LOADED_CONNECTION as shown below:-
 
