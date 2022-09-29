@@ -27,7 +27,7 @@ Once your customer has set up the SAML app on their Identity Provider, the Ident
 The following API call sets up the connection in Jackson:
 
 ```bash
-curl --location --request POST 'http://localhost:5225/api/v1/saml/connection' \
+curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'encodedRawMetadata=Base64(<IdP/SP metadata XML>)' \
@@ -57,7 +57,7 @@ Once your customer has set up the [OIDC app](../sso-providers/generic-oidc.md) o
 The following API call sets up the connection in Jackson:
 
 ```bash
-curl --location --request POST 'http://localhost:5225/api/v1/oidc/connection' \
+curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'defaultRedirectUrl=http://localhost:3366/login/oidc' \
@@ -86,15 +86,15 @@ The response returns a JSON with `clientID` and `clientSecret` that can be store
 </TabItem>
 </Tabs>
 
-### 2.2 Get connection
+### 2.2 Get connections
 
-This endpoint can be used to return metadata about an existing SAML/OIDC connection. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
+This endpoint can be used to return SAML/OIDC connections configured for a tenant/product. This can be used to check and display the details to your customers. You can use either `clientID` or `tenant` and `product` combination.
 
 <Tabs>
 <TabItem value="saml" label="SAML" default>
 
 ```bash
-curl -G --location 'http://localhost:5225/api/v1/saml/connection' \
+curl -G --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'tenant=boxyhq.com' \
@@ -102,7 +102,7 @@ curl -G --location 'http://localhost:5225/api/v1/saml/connection' \
 ```
 
 ```bash
-curl -G --location 'http://localhost:5225/api/v1/saml/connection' \
+curl -G --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>'
@@ -113,7 +113,7 @@ The response returns a JSON with `idpMetadata.provider`indicating the domain of 
 <TabItem value="oidc" label="OIDC">
 
 ```bash
-curl -G --location 'http://localhost:5225/api/v1/oidc/connection' \
+curl -G --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'tenant=boxyhq.com' \
@@ -121,7 +121,7 @@ curl -G --location 'http://localhost:5225/api/v1/oidc/connection' \
 ```
 
 ```bash
-curl -G --location 'http://localhost:5225/api/v1/oidc/connection' \
+curl -G --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>'
@@ -138,7 +138,7 @@ This endpoint can be used to update an existing IdP connection.
 <TabItem value="saml" label="SAML" default>
 
 ```bash
-curl --location --request PATCH 'http://localhost:5225/api/v1/saml/connection' \
+curl --location --request PATCH 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>' \ /* Required */
@@ -157,7 +157,7 @@ curl --location --request PATCH 'http://localhost:5225/api/v1/saml/connection' \
 <TabItem value="oidc" label="OIDC" default>
 
 ```bash
-curl --location --request PATCH 'http://localhost:5225/api/v1/oidc/connection' \
+curl --location --request PATCH 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>' \ /* Required */
@@ -177,15 +177,12 @@ curl --location --request PATCH 'http://localhost:5225/api/v1/oidc/connection' \
 </TabItem>
 </Tabs>
 
-### 2.4 Delete connection
+### 2.4 Delete connections
 
-This endpoint can be used to delete an existing connection.
-
-<Tabs>
-<TabItem value="saml" label="SAML" default>
+This endpoint can be used to delete existing connections either by tenant/product or clientID.
 
 ```bash
-curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/connection' \
+curl -X "DELETE" --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'tenant=boxyhq.com' \
@@ -193,34 +190,12 @@ curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/connection' \
 ```
 
 ```bash
-curl -X "DELETE" --location 'http://localhost:5225/api/v1/saml/connection' \
+curl -X "DELETE" --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'clientID=<Client ID>'
 --data-urlencode 'clientSecret=<Client Secret>'
 ```
-
-</TabItem>
-<TabItem value="oidc" label="OIDC">
-
-```bash
-curl -X "DELETE" --location 'http://localhost:5225/api/v1/oidc/connection' \
---header 'Authorization: Api-Key <Jackson API Key>' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'tenant=boxyhq.com' \
---data-urlencode 'product=demo'
-```
-
-```bash
-curl -X "DELETE" --location 'http://localhost:5225/api/v1/oidc/connection' \
---header 'Authorization: Api-Key <Jackson API Key>' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'clientID=<Client ID>'
---data-urlencode 'clientSecret=<Client Secret>'
-```
-
-</TabItem>
-</Tabs>
 
 ## 3. OAuth 2.0 Flow
 
