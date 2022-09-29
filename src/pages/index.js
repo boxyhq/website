@@ -1,12 +1,12 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '../components/HomepageFeatures';
-import HeroSection from '../components/HeroSection';
+import HeroSectionOld from '../components/HeroSectionOld';
 import TrustedBySection from '../components/TrustedBySection';
 import NewsSection from '../components/NewsSection';
 import InvestorsSection from '../components/InvestorsSection';
 
-const mainHeroSection = {
+const mainHeroSectionOld = {
   main: true,
   Svg: require('../../static/img/home-hero.svg').default,
   title: 'Enterprise readiness for your product, straight out the box',
@@ -24,7 +24,7 @@ const mainHeroSection = {
   ],
 };
 
-const demoHeroSection = {
+const demoHeroSectionOld = {
   Svg: require('../../static/img/home-section1.svg').default,
   svgRight: false,
   title:
@@ -34,7 +34,7 @@ const demoHeroSection = {
   ctas: [{ title: 'Interactive demo', link: 'https://saml-demo.boxyhq.com' }],
 };
 
-const contactHeroSection = {
+const contactHeroSectionOld = {
   Svg: require('../../static/img/home-section2.svg').default,
   title: 'Simple integration for big results',
   tagline:
@@ -48,10 +48,10 @@ export default function Home() {
       title="BoxyHQ"
       description="BoxyHQ helps startups enable enterprise features in any SaaS aplication with just a few lines of code. Implement SAML Single Sign-On in record time today."
     >
-      <HeroSection {...mainHeroSection} />
+      <HeroSectionOld {...mainHeroSectionOld} />
       <TrustedBySection />
-      <HeroSection {...demoHeroSection} />
-      <HeroSection {...contactHeroSection} />
+      <HeroSectionOld {...demoHeroSectionOld} />
+      <HeroSectionOld {...contactHeroSectionOld} />
 
       <HomepageFeatures />
 

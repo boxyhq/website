@@ -1,87 +1,44 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './HeroSection.module.css';
 import Link from '@docusaurus/Link';
 
-function HeroText({ main, title, tagline, ctas }) {
+const HeroSection = ({ title, description, icon }) => {
+  const ProductIcon = icon;
+
   return (
-    <div className="col">
-      {main ? (
-        <h1 className="hero__title">{title}</h1>
-      ) : (
-        <h2 className="hero__subtitle">{title}</h2>
-      )}
-      <p className="">{tagline}</p>
-      <div className={styles.buttons}>
-        {ctas.map((cta, idx) => (
-          <Link
-            key={idx}
-            className="button button--primary button--lg"
-            to={cta.link}
+    <main className="container margin-vert--lg">
+      <div className="intro">
+        <div className="intro__section">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+            }}
           >
-            {cta.title}
-          </Link>
-        ))}
+            <ProductIcon style={{ width: '40px', height: '40px' }} />
+            <h1 className="intro__header">{title}</h1>
+          </div>
+          <p className="intro__description" style={{ marginTop: '30px' }}>
+            {description}
+          </p>
+          <div className="intro__buttons">
+            <Link
+              className="button button--primary button--lg"
+              href="https://meetings.hubspot.com/deepakprab/demo"
+            >
+              Book a demo
+            </Link>
+            <Link
+              className="button button--outline button--primary button--lg"
+              to="/docs/jackson/overview"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
-}
+};
 
-function HeroImage({ Svg }) {
-  return (
-    <div className="col">
-      <div className={clsx('text--center', styles.svgContainer)}>
-        <Svg className={clsx(styles.heroSvg)} alt="" />
-      </div>
-    </div>
-  );
-}
-
-function HeroLeft({ main, title, tagline, Svg, ctas }) {
-  return (
-    <div className="row">
-      <HeroImage Svg={Svg} />
-      <HeroText main={main} title={title} tagline={tagline} ctas={ctas} />
-    </div>
-  );
-}
-
-function HeroRight({ main, title, tagline, Svg, ctas }) {
-  return (
-    <div className="row">
-      <HeroText main={main} title={title} tagline={tagline} ctas={ctas} />
-      <HeroImage Svg={Svg} />
-    </div>
-  );
-}
-
-export default function HeroSection({
-  main = false,
-  title,
-  tagline,
-  Svg,
-  svgRight = true,
-  ctas,
-}) {
-  return (
-    <div className={clsx('hero', styles.heroBanner)}>
-      {svgRight ? (
-        <HeroRight
-          main={main}
-          title={title}
-          tagline={tagline}
-          Svg={Svg}
-          ctas={ctas}
-        />
-      ) : (
-        <HeroLeft
-          main={main}
-          title={title}
-          tagline={tagline}
-          Svg={Svg}
-          ctas={ctas}
-        />
-      )}
-    </div>
-  );
-}
+export default HeroSection;

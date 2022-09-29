@@ -51,6 +51,24 @@ module.exports = {
         srcDark: 'img/logo-dark.png',
       },
       items: [
+        {
+          label: 'Products',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'SAML Jackson',
+              to: '/saml-sso',
+            },
+            {
+              label: 'Directory Sync',
+              to: '/directory-sync',
+            },
+            {
+              label: 'Audit Logs',
+              to: '/audit-logs',
+            },
+          ],
+        },
         { to: '/blog', label: 'Blog' },
         { to: '/careers', label: 'Careers' },
         { to: '/team', label: 'Team' },

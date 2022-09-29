@@ -2,7 +2,7 @@ import React from 'react';
 import SvgFeature from './SvgFeature';
 import styles from './TrustedBySection.module.css';
 
-const TrustedByList = [
+export const TrustedByList = [
   {
     url: 'https://cal.com',
     Svg: require('../../static/img/customers/cal.svg').default,

@@ -17,16 +17,16 @@
   --ifm-code-font-size: 95%;
   --ifm-navbar-height: 5rem;
 
-  --aa-input-border-color-rgb: 190,195,201 !important;
-  --aa-selected-color-rgb: 141,148,158 !important;
+  --aa-input-border-color-rgb: 190, 195, 201 !important;
+  --aa-selected-color-rgb: 141, 148, 158 !important;
   --aa-muted-color-rgb: 37, 194, 160 !important;
   --aa-primary-color-rgb: 37, 194, 160 !important;
 }
 
 body[data-theme='dark'] {
-  --aa-input-border-color-rgb: 190,195,201 !important;
-  --aa-background-color-rgb: 27,27,29 !important;
-  --aa-selected-color-rgb: 190,195,201 !important;
+  --aa-input-border-color-rgb: 190, 195, 201 !important;
+  --aa-background-color-rgb: 27, 27, 29 !important;
+  --aa-selected-color-rgb: 190, 195, 201 !important;
   --aa-muted-color-rgb: 37, 194, 160 !important;
   --aa-primary-color-rgb: 37, 194, 160 !important;
 }
@@ -78,4 +78,59 @@ html[data-theme='dark'] .header-github-link:before {
 
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.3rem;
+}
+
+/* v2 CSS */
+
+.intro {
+  align-items: flex-end;
+  background: url(../../static/img/feat-sso.svg) 100% 100%/40% no-repeat;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+.intro__section {
+  margin: 6rem 0;
+  max-width: 40rem;
+}
+
+.intro__header {
+  font-size: 40px;
+  margin: 0%;
+}
+
+.intro__description {
+  font-size: 20px;
+}
+
+.intro__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page__section {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.border__red {
+  border: 1px solid red;
+}
+
+.section__header {
+  font-size: 30px;
+  margin: 0%;
+}
+
+.card__description {
+  font-size: 14px;
+}
+
+.card {
+  border: 1px solid #e3dbdb !important;
 }
