@@ -2,6 +2,8 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 
+import SectionLayout from './SectionLayout';
+
 const products = [
   {
     title: 'SAML SSO',
@@ -13,7 +15,7 @@ const products = [
   {
     title: 'Directory Sync',
     description:
-      'Add Directory Sync support into your product to provision and de-provision users. Supports the SCIM protocol.',
+      'Add Directory Sync support into your product to provision and de-provision users.',
     url: 'https://github.com/boxyhq/jackson#directory-sync',
     icon: '/img/products/saml-jackson/logo.svg',
   },
@@ -49,64 +51,60 @@ const products = [
 
 const ProductsSection = () => {
   return (
-    <section className="page__section">
-      <div className="container">
-        <h2
-          className="section__header text--center"
-          style={{ padding: '10px' }}
-        >
-          Our Products
-        </h2>
-        <p className="text--center">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry
-        </p>
-        <div className="row">
-          {products.map(({ title, description, url, icon }, idx) => (
-            <div className="col col--4" style={{ marginTop: '20px' }} key={idx}>
-              <div className="card-demo">
-                <div className="card" style={{ minHeight: '300px' }}>
-                  <div className="card__header">
-                    <div className="card__image">
-                      <div className="avatar avatar--vertical">
-                        <img
-                          className="avatar__photo avatar__photo--xl"
-                          src={icon}
-                          style={{
-                            borderRadius: '0px',
-                            width: '70px',
-                            height: '70px',
-                          }}
-                        />
-                      </div>
+    <SectionLayout
+      title="Our Products"
+      description="Lorem Ipsum is simply dummy text of the printing and typesetting
+    industry"
+    >
+      <div className="row">
+        {products.map(({ title, description, url, icon }, idx) => (
+          <div
+            className="col col--4"
+            style={{ marginBottom: '30px' }}
+            key={idx}
+          >
+            <div className="card-demo">
+              <div className="card">
+                <div className="card__header">
+                  <div className="card__image">
+                    <div className="avatar avatar--vertical">
+                      <img
+                        className="avatar__photo avatar__photo--xl"
+                        src={icon}
+                        style={{
+                          borderRadius: '0px',
+                          width: '70px',
+                          height: '70px',
+                        }}
+                      />
                     </div>
                   </div>
-                  <div className="card__body">
-                    <h4 className="text--center" style={{ fontSize: '20px' }}>
-                      {title}
-                    </h4>
-                    <p className="text--center">{description}</p>
-                  </div>
-                  <div className="card__footer">
-                    <Link
-                      to={url}
-                      className={clsx(
-                        'button button--primary button--block button--outline',
-                        {
-                          disabled: !url,
-                        }
-                      )}
-                    >
-                      {url ? 'Learn More' : 'Coming Soon'}
-                    </Link>
-                  </div>
+                </div>
+                <div className="card__body">
+                  <h4 className="text--center" style={{ fontSize: '20px' }}>
+                    {title}
+                  </h4>
+                  <p className="text--center">{description}</p>
+                </div>
+                <div className="card__footer">
+                  <Link
+                    to={url}
+                    className={clsx(
+                      'button button--primary button--block button--outline',
+                      {
+                        disabled: !url,
+                      }
+                    )}
+                  >
+                    {url ? 'Learn More' : 'Coming Soon'}
+                  </Link>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </SectionLayout>
   );
 };
 

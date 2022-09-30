@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 
+import SectionLayout from './SectionLayout';
+
 const NewsList = [
   {
     title: 'BoxyHQ brings ‘enterprise readiness’ to any SaaS app',
@@ -17,47 +19,38 @@ const NewsList = [
 
 const NewsSection = () => {
   return (
-    <section className="page__section">
-      <div className="container">
-        <div className="row">
-          <div className="col">
+    <SectionLayout
+      title="In the News"
+      description="A few of the stories about BoxyHQ in the press"
+    >
+      <div
+        className="row"
+        style={{
+          justifyContent: 'center',
+          gap: '5px',
+        }}
+      >
+        {NewsList.map(({ title, url, logo }, idx) => (
+          <div className="col col--4" key={idx}>
             <div className="col-demo text--center">
-              <h2 className="section__header" style={{ padding: '10px' }}>
-                In the News
-              </h2>
-              <p>A few of the stories about BoxyHQ in the press</p>
+              <div
+                style={{
+                  minHeight: '70px',
+                  alignItems: 'center',
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <Link href={url}>
+                  <img src={logo} style={{ width: '150px' }} />
+                </Link>
+              </div>
+              <h4>{title}</h4>
             </div>
           </div>
-        </div>
-        <div
-          className="row"
-          style={{
-            justifyContent: 'center',
-            marginTop: '20px',
-          }}
-        >
-          {NewsList.map(({ title, url, logo }, idx) => (
-            <div className="col col--4" key={idx}>
-              <div className="col-demo text--center">
-                <div
-                  style={{
-                    minHeight: '70px',
-                    alignItems: 'center',
-                    display: 'flex',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <Link href={url}>
-                    <img src={logo} style={{ width: '150px' }} />
-                  </Link>
-                </div>
-                <h4>{title}</h4>
-              </div>
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
-    </section>
+    </SectionLayout>
   );
 };
 
