@@ -44,7 +44,7 @@ For example: `/api/oauth/saml`
 
 ### **OIDC_PATH**
 
-The `redirect_uri` at which the Authorization response is sent back from the OpenId Connect IdP. Set this when using the npm package.
+The `redirect_uri` at which the Authorization response is sent back from the OpenID Connect IdP. Set this when using the npm package.
 
 NPM library option: `oidcPath`
 
@@ -168,7 +168,7 @@ If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) the
 
 ### **PRE_LOADED_CONNECTION**
 
-If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenId and SAML)connections. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
+If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenID and SAML)connections. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
 
 NPM library option: `preLoadedConnection`
 

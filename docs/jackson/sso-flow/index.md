@@ -72,7 +72,7 @@ curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 --data-urlencode 'description=Demo OIDC connection'
 ```
 
-- `oidcDiscoveryUrl`: OpenId Providers supporting discovery make the metadata available at the endpoint obtained by concatenating issuer and /.well-known/openid-configuration
+- `oidcDiscoveryUrl`: OpenID Providers supporting discovery make the metadata available at the endpoint obtained by concatenating issuer and /.well-known/openid-configuration
 - `oidcClientId`: The client identifier issued to the client during the IdP registration process.
 - `oidcClientSecret`: The client secret issued to the client during the IdP registration process.
 - `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow

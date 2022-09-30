@@ -30,7 +30,7 @@ The config and XML above correspond to the [Add connection API - SAML tab](../ss
 
 #### OIDC
 
-For a connection backed by OpenId IdP create the \*.js file at PRE_LOADED_CONNECTION as shown below:-
+For a connection backed by OpenID IdP create the \*.js file at PRE_LOADED_CONNECTION as shown below:-
 
 See [Add connection API - OIDC tab](../sso-flow/index.md#21-add-connection)
 
@@ -44,7 +44,7 @@ module.exports = {
   description: 'OIDC connection for oidc.example.com',
   oidcDiscoveryUrl:
     'https://accounts.google.com/.well-known/openid-configuration',
-  oidcClientId: '<ClientId from the OpenId IdP>',
-  oidcClientSecret: '<ClientSecret from the OpenId IdP>',
+  oidcClientId: '<ClientId from the OpenID IdP>',
+  oidcClientSecret: '<ClientSecret from the OpenID IdP>',
 };
 ```

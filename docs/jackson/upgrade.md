@@ -2,7 +2,7 @@
 
 ## Upgrading to 1.3.0
 
-1. Landed support for OpenId Identity Providers.
+1. Landed support for OpenID Identity Providers.
 2. Landed new API (`/api/v1/connections`) to support setting up both SAML/OIDC SSO Connections.
 
    **Note:** The previous API for SAML configuration `/api/v1/saml/config` has been deprecated, and would be completely removed in a future release.

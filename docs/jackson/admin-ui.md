@@ -50,7 +50,7 @@ Once you've registered the OIDC app on your Identity Provider, the Identity Prov
 
 The clientSecret will be used to authenticate the oidc client (in this case jackson) and obtain the access_token.
 
-Also get the OpenId provider [discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) endpoint (usually ending in `/.well-known/openid-configuration`) and follow the below steps for adding the OIDC connection.
+Also get the OpenID provider [discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) endpoint (usually ending in `/.well-known/openid-configuration`) and follow the below steps for adding the OIDC connection.
 
 - Go to **SSO Connections** in the Admin UI and click the button **New Connection**.
 - Choose **OIDC** as the type.
@@ -58,7 +58,7 @@ Also get the OpenId provider [discovery](https://openid.net/specs/openid-connect
 - Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex).
 - Add **Allowed redirect URLs**.
 - Add **Default redirect URL**.
-- Enter the URL for OpenId Provider discovery which exposes the Provider Metadata.
+- Enter the URL for OpenID Provider discovery which exposes the Provider Metadata.
 - Paste the **clientId** and **clientSecret** values into Client ID [OIDC Provider]/Client Secret [OIDC Provider] fields in the UI.
 - Click the button **Save Changes**.
 
