@@ -59,14 +59,14 @@ module.exports = {
               label: 'SAML Jackson',
               to: '/saml-sso',
             },
-            {
-              label: 'Directory Sync',
-              to: '/directory-sync',
-            },
-            {
-              label: 'Audit Logs',
-              to: '/audit-logs',
-            },
+            // {
+            //   label: 'Directory Sync',
+            //   to: '/directory-sync',
+            // },
+            // {
+            //   label: 'Audit Logs',
+            //   to: '/audit-logs',
+            // },
           ],
         },
         { to: '/blog', label: 'Blog' },
