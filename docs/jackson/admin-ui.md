@@ -1,8 +1,8 @@
 # Admin UI
 
-SAML Jackson comes with an Admin interface that allows you to manage SAML configurations via UI. To enable the Admin UI, make sure you deploy the [Jackson as a service](./deploy/service.md)
+SAML Jackson comes with an Admin interface that allows you to manage SSO Connections via UI. To enable the Admin UI, make sure you deploy the [Jackson as a service](./deploy/service.md).
 
-You can [add](./saml-flow.md#21-saml-add-config-api), [edit](./saml-flow.md#23-saml-update-config-api) or [delete](./saml-flow.md#24-saml-delete-config-api) SAML configurations from this UI.
+You can `add`, `update` or `delete` SSO Connections from the UI. For API Reference see [SSO Flow > SSO Connection API ](./sso-flow/index.md#2-sso-connection-api)
 
 ## Sign into Admin UI
 
@@ -20,20 +20,46 @@ Follow the below steps to login into the Admin dashboard.
 - Open the inbox and you'll see an email from Jackson.
 - Open that email and click the button **Sign in**. Now you've successfully logged into the SAML Jackson admin UI.
 
-## Add SAML Configurations
+## Add SSO Connections
 
-To start using the SAML Jackson, you've to add at least one SAML configuration. Once you've set up the SAML app on your Identity Provider, the Identity Provider will generate a SAML Metadata file.
+To start using SAML Jackson, you need to add SSO Connections. Refer to the steps below on adding [SAML](#saml) / [OIDC](#oidc) connections.
+
+### SAML
+
+Once you've set up the SAML app on your Identity Provider, the Identity Provider will generate a SAML Metadata file.
 
 The SAML metadata file contains information about the various SAML Authorities that can be used in SAML 2.0 protocol message exchanges. This metadata identifies Identity Provider endpoints and the certificates to secure SAML 2.0 message exchanges.
 
-Download the SAML Metadata file from your IdP and follow the below steps for adding the SAML configuration.
+Download the SAML Metadata file from your IdP and follow the below steps for adding the SAML connection.
 
-- Go to **SAML Configurations** and click the button **New**
-- Give your new configuration a **name**
-- Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex)
-- Add **Allowed redirect URLs**
-- Add **Default redirect URL**
-- Paste the **Raw IdP XML**
-- Click the button **Save Changes**
+- Go to **SSO Connections** in the Admin UI and click the button **New Connection**.
+- Choose **SAML** as the type.
+- Give your new connection a **name**.
+- Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex).
+- Add **Allowed redirect URLs**.
+- Add **Default redirect URL**.
+- Paste the **Raw IdP XML**.
+- If **ForceAuthn** is checked, it means that the user will be forced to re-authenticate at SAML IdP, even if they have an active session.
+- Click the button **Save Changes**.
 
-Now you've successfully installed SAML Jackson and added your first SAML configuration.
+Now you've successfully added your first SAML connection.
+
+### OIDC
+
+Once you've registered the OIDC app on your Identity Provider, the Identity Provider will generate a clientId and clientSecret.
+
+The clientSecret will be used to authenticate the oidc client (in this case jackson) and obtain the access_token.
+
+Also get the OpenId provider [discovery](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig) endpoint (usually ending in `/.well-known/openid-configuration`) and follow the below steps for adding the OIDC connection.
+
+- Go to **SSO Connections** in the Admin UI and click the button **New Connection**.
+- Choose **OIDC** as the type.
+- Give your new connection a **name**.
+- Add your **Tenant** (Eg: boxyhq.com) and **Product** (Eg: flex).
+- Add **Allowed redirect URLs**.
+- Add **Default redirect URL**.
+- Enter the URL for OpenId Provider discovery which exposes the Provider Metadata.
+- Paste the **clientId** and **clientSecret** values into Client ID [OIDC Provider]/Client Secret [OIDC Provider] fields in the UI.
+- Click the button **Save Changes**.
+
+Now you've successfully added your first OIDC connection.

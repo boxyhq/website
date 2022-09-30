@@ -37,13 +37,14 @@ const opts = {
   externalUrl: 'https://my-cool-app.com',
   samlAudience: 'https://my-cool-app.com',
   samlPath: '/sso/oauth/saml',
+  oidcPath: '/sso/oauth/oidc',
   db: {
     engine: 'mongo',
     url: 'mongodb://localhost:27017/my-cool-app',
   },
 };
 
-let apiController;
+let connectionAPIController;
 let oauthController;
 let logoutController;
 let oidcDiscoveryController;
@@ -51,7 +52,7 @@ let oidcDiscoveryController;
 // Run this in a function where you initialize the express server.
 async function init() {
   const ret = await require('@boxyhq/saml-jackson').controllers(opts);
-  apiController = ret.apiController;
+  connectionAPIController = ret.connectionAPIController;
   oauthController = ret.oauthController;
   logoutController = ret.logoutController;
   oidcDiscoveryController = ret.oidcDiscoveryController;
@@ -60,66 +61,83 @@ async function init() {
 
 - Add your app base URL as `externalUrl`
 - `samlPath` becomes part of the ACS URL. The ACS URL is an endpoint on the SP where the IdP will redirect to with its authentication response. For example: If `externalUrl` is `http://localhost`, and `samlPath` is `/sso/acs`, the ASC URL will be `http://localhost/sso/acs`
+- `oidcPath` is the endpoint which recieves the authentication response from an OIDC IdP. The `code` contained in the response is then exchanged to retrieve token/userprofile.
 
-### Add SAML Config API route
+### Add API routes for SSO Connections
 
-[API Reference](../saml-flow.md#2-saml-config-api)
+[API Reference](../sso-flow/index.md#2-sso-connection-api)
 
 ```javascript
 // express.js middlewares are needed to parse json and x-www-form-urlencoded
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-// SAML config API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
-router.post('/api/v1/saml/config', async (req, res) => {
+export const strategyChecker = (req) => {
+  const isSAML = 'rawMetadata' in req.body || 'encodedRawMetadata' in req.body;
+  const isOIDC = 'oidcDiscoveryUrl' in req.body;
+  return { isSAML, isOIDC };
+};
+
+
+// SSO connections API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
+router.post('/api/v1/connections', async (req, res) => {
+  const { isSAML, isOIDC } = strategyChecker(req);
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
-
-    // only when properly authenticated, call the config function
-    res.json(await apiController.config(req.body));
+    if (isSAML) {
+     res.json(await connectionAPIController.createSAMLConnection(req.body));
+    } else if (isOIDC) {
+      res.json(await connectionAPIController.createOIDCConnection(req.body))
+    } else {
+      throw 'strategy not supported'
+    }
   } catch (err) {
     res.status(500).json({
       error: err.message,
     });
   }
 });
-// update config
-router.patch('/api/v1/saml/config', async (req,res) => {
+// update connection
+router.patch('/api/v1/connections', async (req,res) => {
+  const { isSAML, isOIDC } = strategyChecker(req);
    try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
-
-    // only when properly authenticated, call the config function
-    res.json(await apiController.updateConfig(req.body));
+  if (isSAML) {
+     res.json(await connectionAPIController.updateSAMLConnection(req.body));
+    } else if (isOIDC) {
+      res.json(await connectionAPIController.updateOIDCConnection(req.body))
+    } else {
+      throw 'strategy not supported'
+    }
   } catch (err) {
     res.status(500).json({
       error: err.message,
     });
   }
 })
-// fetch config
-router.get('/api/v1/saml/config', async (req, res) => {
+// fetch connection
+router.get('/api/v1/connections', async (req, res) => {
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
 
-    // only when properly authenticated, call the config function
-    res.json(await apiController.getConfig(req.query));
+    res.json(await connectionAPIController.getConnections(req.query));
   } catch (err) {
     res.status(500).json({
       error: err.message,
     });
   }
 });
-// delete config
-router.delete('/api/v1/saml/config', async (req, res) => {
+// delete connection
+router.delete('/api/v1/connections', async (req, res) => {
   try {
     // apply your authentication flow (or ensure this route has passed through your auth middleware)
     ...
 
-    // only when properly authenticated, call the config function
-    await apiController.deleteConfig(req.body);
+    // only when properly authenticated, call the connection function
+    await connectionAPIController.deleteConnections(req.body);
     res.status(200).end();
   } catch (err) {
     res.status(500).json({
@@ -131,17 +149,24 @@ router.delete('/api/v1/saml/config', async (req, res) => {
 
 ### OAuth: Authorize URL
 
-The OAuth flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user.
+The OAuth flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user. The returned `redirect_url` is the authorization endpoint on the IdP end, where user authentication takes place.
 
-[API Reference](../saml-flow.md#31-authorize)
+[API Reference](../sso-flow/index.md#31-authorize)
 
 ```javascript
-// OAuth 2.0 flow
+// OAuth 2.0 / OpenID Connect 1.0 flow
 router.get('/oauth/authorize', async (req, res) => {
   try {
-    const { redirect_url } = await oauthController.authorize(req.query);
-
-    res.redirect(redirect_url);
+    const { redirect_url, authorize_form } = await oauthController.authorize(
+      req.query
+    );
+    if (redirect_url) {
+      res.redirect(302, redirect_url);
+    } else {
+      // For SAML Post Binding
+      res.set('Content-Type', 'text/html; charset=utf-8');
+      res.send(authorize_form);
+    }
   } catch (err) {
     const { message, statusCode = 500 } = err;
 
@@ -150,13 +175,15 @@ router.get('/oauth/authorize', async (req, res) => {
 });
 ```
 
-### Handle SAML Response
+### Handle Response from IdP
 
-Add a method to handle the SAML Response from IdP.
+#### SAML
 
-#### IdP-initiated flow
+Add a method to handle the SAML Response from IdP. Once the SAML response is validated and the user profile extracted, Jackson will generate the authorization response (authorization code) for the client.
 
-To enable IdP-initiated SAML flow set https://boxyhq.com/docs/jackson/deploy/env-variables#idp_enabled. If [idpDiscoveryPath](https://boxyhq.com/docs/jackson/deploy/env-variables#idp_discovery_path) is not set then always the first config will be chosen in case of multiple matches.
+##### IdP-initiated SAML flow
+
+To enable IdP-initiated SAML flow set https://boxyhq.com/docs/jackson/deploy/env-variables#idp_enabled. If [idpDiscoveryPath](https://boxyhq.com/docs/jackson/deploy/env-variables#idp_discovery_path) is not set then always the first connection will be chosen in case of multiple matches.
 
 If `oauthController.samlResponse` returns `app_select_form` with no `redirect_url`, then we have hit the case where the IdP-initiated flow has multiple matches for the same IdP. Users can select an app and the flow is resumed with the `idp_hint` containing the user selection. For reference on how to add an IdP selection page, see: https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx
 
@@ -165,7 +192,7 @@ SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Servi
 :::
 
 ```javascript
-router.post('/oauth/saml', async (req, res) => {
+router.post('/sso/oauth/saml', async (req, res) => {
   try {
     const { redirect_url, app_select_form } =
       await oauthController.samlResponse(req.body);
@@ -173,8 +200,32 @@ router.post('/oauth/saml', async (req, res) => {
     if (redirect_url) {
       res.redirect(302, redirect_url);
     } else {
-      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      // For IdP initiated SAML login where multiple apps are configured for same IdP. Here user choice is required to complete the flow
+      res.set('Content-Type', 'text/html; charset=utf-8');
       res.send(app_select_form);
+    }
+  } catch (err) {
+    const { message, statusCode = 500 } = err;
+
+    res.status(statusCode).send(message);
+  }
+});
+```
+
+#### OIDC
+
+Add a method to handle OIDC authentication response from IdP. Once the response is processed and the user profile is retrieved, Jackson will generate the authorization response (authorization code) for the client.
+
+:::info
+OIDC Response - The successful Authentication response from the OIDC IdP contains the `authorization code` and `state` from the original authorization request (sent from jackson). Jackson will use the `authorization code` to obtain the token which is then exchanged for the user profile. The user profile is stored against a code which is then set in the returned `redirect_url`. In case of authorization failure at IdP the `error` and `error_description` from IdP will be set in the returned `redirect_url`
+:::
+
+```javascript
+router.post('/sso/oauth/oidc', async (req, res) => {
+  try {
+    const { redirect_url } = await oauthController.oidcAuthzResponse(req.query);
+    if (redirect_url) {
+      res.redirect(302, redirect_url);
     }
   } catch (err) {
     const { message, statusCode = 500 } = err;
@@ -188,7 +239,7 @@ router.post('/oauth/saml', async (req, res) => {
 
 The code can then be exchanged for a token by making the following request. You should validate that the state matches the one you sent in the authorize request.
 
-[API Reference](../saml-flow.md#32-code-exchange)
+[API Reference](../sso-flow/index.md#32-code-exchange)
 
 ```javascript
 router.post('/oauth/token', cors(), async (req, res) => {
@@ -208,7 +259,7 @@ router.post('/oauth/token', cors(), async (req, res) => {
 
 The short-lived access token can now be used to request the user's profile.
 
-[API Reference](../saml-flow.md#33-profile-request)
+[API Reference](../sso-flow/index.md#33-profile-request)
 
 ```javascript
 router.get('/oauth/userinfo', async (req, res) => {

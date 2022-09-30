@@ -23,7 +23,7 @@ NPM library option: `externalUrl`
 
 ### **JACKSON_API_KEYS**
 
-A comma separated list of API keys that will be validated when serving the Config API requests at `/api/v1/saml/config/`.
+A comma separated list of API keys that will be validated when serving the SSO Connection requests at `/api/v1/connections`.
 
 For example `JACKSON_API_KEYS=key1,key2,key3`
 
@@ -36,21 +36,29 @@ NPM library option: `samlAudience`
 
 ### **SAML_PATH**
 
-The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the IdP. Set this when using the npm package.
+The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the SAML IdP. Set this when using the npm package.
 
 NPM library option: `samlPath`
 
-For example `/api/oauth/saml`
+For example: `/api/oauth/saml`
+
+### **OIDC_PATH**
+
+The `redirect_uri` at which the Authorization response is sent back from the OpenId Connect IdP. Set this when using the npm package.
+
+NPM library option: `oidcPath`
+
+For example: `/api/oauth/oidc`
 
 ### **IDP_DISCOVERY_PATH**
 
-This is the path for showing the IdP Selection screen in case there are multiple SAML IdP configs for the same `tenant` and `product`.
+This is the path for showing the IdP Selection screen in case there are multiple SAML SSO Connections for the same `tenant` and `product`.
 This path is also used to show the App Selection screen in the case of IdP-initiated SAML login (Different apps using the same SAML IdP).
 Set this when using the npm package.
 
 NPM library option: `idpDiscoveryPath`
 
-For example: `/idp/select` - You can find an implemenation of IdP/App Selection at https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx.
+For example: `/idp/select` - You can find an implementation of IdP/App Selection at https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx.
 
 ### **CLIENT_SECRET_VERIFIER**
 
@@ -79,8 +87,9 @@ NPM library option: `openid.jwsAlg`
 
 ### **OPENID_RSA_PRIVATE_KEY**
 
-Base64 value of private key. 
+Base64 value of private key.
 To generate one:
+
 ```bash
 openssl genrsa -out private-key.pem 3072
 openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in private-key.pem -out private_key.pem
@@ -90,8 +99,10 @@ cat private_key.pem | base64
 NPM library option: `openid.jwtSigningKeys.private`
 
 ### **OPENID_RSA_PUBLIC_KEY**
-Base64 value of public key. 
+
+Base64 value of public key.
 You can generate the public key from the private key as shown below:
+
 ```bash
 openssl rsa -in private_key.pem -pubout -out public_key.pem
 cat public_key.pem | base64
@@ -153,13 +164,13 @@ NPM library option: `db.encryptionKey`
 
 If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See [Heroku docs](https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js) for more details
 
-## Pre-loaded Configuration
+## Pre-loaded Connections
 
-### **PRE_LOADED_CONFIG**
+### **PRE_LOADED_CONNECTION**
 
-If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load SAML configs. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-configuration.md) for more details
+If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenId and SAML)connections. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
 
-NPM library option: `preLoadedConfig`
+NPM library option: `preLoadedConnection`
 
 ## Opentelemetry configuration
 

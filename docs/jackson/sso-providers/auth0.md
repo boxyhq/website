@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for Auth0 SAML
+title: Set up your own custom SAML application for Auth0 SAML
 sidebar_label: Auth0 SAML
 ---
 

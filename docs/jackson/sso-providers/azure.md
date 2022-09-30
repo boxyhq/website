@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for Azure AD SAML
+title: Set up your own custom SAML application for Azure AD SAML
 sidebar_label: Azure AD SAML
 ---
 
