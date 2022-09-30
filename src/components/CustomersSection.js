@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 
+import SvgIcon from './SvgIcon';
 import SectionLayout from './SectionLayout';
 
 const customersList = [
@@ -26,25 +26,19 @@ const customersList = [
   },
 ];
 
-const SvgIcon = ({ icon, href }) => {
-  const Icon = icon;
-
-  return (
-    <Link href={href}>
-      <Icon style={{ height: '50px', width: '120px' }} />
-    </Link>
-  );
-};
-
 const CustomersSection = () => {
   return (
     <SectionLayout title="What our customers say">
       <div className="row">
         {customersList.map(({ quote, logo, url }, idx) => (
           <div className="col" key={idx}>
-            <div class="col-demo">
+            <div className="col-demo">
               <div className="text--center">
-                <SvgIcon icon={logo} href={url} />
+                <SvgIcon
+                  icon={logo}
+                  url={url}
+                  size={{ height: '50px', width: '120px' }}
+                />
                 <p style={{ fontSize: '15px' }}>
                   <q>{quote}</q>
                 </p>

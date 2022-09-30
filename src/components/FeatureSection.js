@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 
+import SvgIcon from './SvgIcon';
+
 const FeatureSection = ({
   title,
   image,
@@ -52,7 +54,10 @@ const FeatureSection = ({
                   height: '350px',
                 }}
               >
-                <Icon style={{ width: '350px', height: '350px' }} />
+                <SvgIcon
+                  icon={image}
+                  size={{ width: '350px', height: '350px' }}
+                />
               </div>
             </div>
           </div>

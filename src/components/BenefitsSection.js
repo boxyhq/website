@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SvgIcon from './SvgIcon';
 import SectionLayout from './SectionLayout';
 
 const BenefitsSection = ({ benefits, title, description }) => {
@@ -18,14 +19,18 @@ const BenefitsSection = ({ benefits, title, description }) => {
                 <div className="card">
                   <div
                     className="card__body text--center"
-                    style={{ minHeight: '350px' }}
+                    style={{ minHeight: '330px' }}
                   >
                     <div className="avatar avatar--vertical margin-bottom--md">
-                      <img
-                        src={icon}
-                        className="avatar__photo avatar__photo--xl"
+                      <div
+                        className="avatar__photo avatar__photo--lg"
                         style={{ borderRadius: '0px' }}
-                      />
+                      >
+                        <SvgIcon
+                          icon={icon}
+                          size={{ width: '64px', height: '64px' }}
+                        />
+                      </div>
                     </div>
                     <h3>{title}</h3>
                     <p>{description}</p>

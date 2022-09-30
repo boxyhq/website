@@ -69,41 +69,11 @@ html[data-theme='dark'] .header-github-link:before {
   color: var(--ifm-color-content);
 }
 
-@media screen and (min-width: 996px) {
-  .row.is-multiline .col {
-    margin-top: var(--ifm-spacing-horizontal) !important;
-    margin-bottom: var(--ifm-spacing-horizontal) !important;
-  }
-}
-
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.3rem;
 }
 
 /* v2 CSS */
-
-.intro {
-  align-items: flex-end;
-  background: url(../../static/img/feat-sso.svg) 100% 100%/40% no-repeat;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  /* border: 1px solid red; */
-}
-
-.intro__section {
-  margin: 6rem 0;
-  max-width: 40rem;
-}
-
-.intro__header {
-  font-size: 40px;
-  margin: 0%;
-}
-
-.intro__description {
-  font-size: 20px;
-}
 
 .intro__buttons {
   display: flex;
@@ -117,7 +87,7 @@ html[data-theme='dark'] .header-github-link:before {
   padding: 40px 10px 40px;
 }
 
-.border__red {
+.red {
   border: 1px solid red;
 }
 
@@ -132,4 +102,31 @@ html[data-theme='dark'] .header-github-link:before {
 
 .card {
   border: 1px solid #e3dbdb !important;
+}
+
+.hero__title {
+  font-size: 2.25rem;
+  margin: 0%;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+}
+
+.hero__image {
+  display: none;
+  justify-content: center;
+}
+
+/* Mobile view */
+
+@media screen and (min-width: 996px) {
+  .row.is-multiline .col {
+    margin-top: var(--ifm-spacing-horizontal) !important;
+    margin-bottom: var(--ifm-spacing-horizontal) !important;
+  }
+
+  .hero__image {
+    display: flex;
+  }
 }

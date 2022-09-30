@@ -18,6 +18,7 @@ const SAMLSSO = () => {
       <HeroSection
         title="Enterprise readiness for your product, straight out the box"
         description="At BoxyHQ we enable you to add enterprise-ready features to your SaaS product in as little as 8 days!"
+        image="/img/home-hero.svg"
         buttons={[
           {
             title: 'Get Started',
@@ -37,25 +38,17 @@ const SAMLSSO = () => {
 
       <section className="page__section">
         <div className="container">
-          <h2 className="section__header text--center">
-            Use BoxyHQ’s free open-source solution
-          </h2>
           <div className="row" style={{ gap: '10px', marginTop: '20px' }}>
             <div className="col col--5 col--offset-1">
               <div className="col-demo">
                 <div class="card-demo" style={{}}>
-                  <div
-                    class="card"
-                    style={{
-                      minHeight: '300px',
-                      backgroundColor: 'rgb(22 113 93)',
-                      color: 'white',
-                    }}
-                  >
+                  <div class="card">
                     <div class="card__header">
-                      <h3 className="text--center">
-                        Spend more time building your core product, not standard
-                        features
+                      <h3
+                        className="text--center"
+                        style={{ whiteSpace: 'pre-line' }}
+                      >
+                        {`Spend more time building your core product, \n not standard features`}
                       </h3>
                     </div>
                     <div class="card__body">
@@ -81,18 +74,13 @@ const SAMLSSO = () => {
             <div className="col col--5">
               <div className="col-demo">
                 <div class="card-demo">
-                  <div
-                    class="card"
-                    style={{
-                      minHeight: '300px',
-                      backgroundColor: 'rgb(22 113 93)',
-                      color: 'white',
-                    }}
-                  >
+                  <div class="card">
                     <div class="card__header">
-                      <h3 className="text--center">
-                        Build or buy? Neither! Use BoxyHQ’s free open-source
-                        solution
+                      <h3
+                        className="text--center"
+                        style={{ whiteSpace: 'pre-line' }}
+                      >
+                        {`Build or buy? Neither! \n Use BoxyHQ’s free open-source solution`}
                       </h3>
                     </div>
                     <div class="card__body">

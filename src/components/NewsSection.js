@@ -1,19 +1,20 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 
+import SvgIcon from './SvgIcon';
 import SectionLayout from './SectionLayout';
 
 const NewsList = [
   {
     title: 'BoxyHQ brings ‘enterprise readiness’ to any SaaS app',
     url: 'https://venturebeat.com/2022/02/23/boxyhq-brings-enterprise-readiness-to-any-saas-app/',
-    logo: 'img/news/vb-logo.svg',
+    logo: require('../../static/img/news/vb-logo.svg').default,
   },
   {
     title:
       'This tech startup helps SaaS companies make their products enterprise-ready',
     url: 'https://yourstory.com/2022/03/boxyhq-tech-startup-helps-saas-companies-add-features-enterprise',
-    logo: 'img/news/yourstory-logo.svg',
+    logo: require('../../static/img/news/yourstory-logo.svg').default,
   },
 ];
 
@@ -41,9 +42,7 @@ const NewsSection = () => {
                   justifyContent: 'center',
                 }}
               >
-                <Link href={url}>
-                  <img src={logo} style={{ width: '150px' }} />
-                </Link>
+                <SvgIcon icon={logo} url={url} size={{ width: '150px' }} />
               </div>
               <h4>{title}</h4>
             </div>

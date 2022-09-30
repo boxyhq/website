@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 
+import SvgIcon from './SvgIcon';
 import SectionLayout from './SectionLayout';
 
 const products = [
@@ -10,42 +11,42 @@ const products = [
     description:
       'Add single sign on authentication into your product. Supports most identity providers via SAML 2.0',
     url: 'https://github.com/boxyhq/jackson',
-    icon: '/img/products/saml-jackson/logo.svg',
+    icon: require('../../static/img/products/saml-jackson/logo.svg').default,
   },
   {
     title: 'Directory Sync',
     description:
       'Add Directory Sync support into your product to provision and de-provision users.',
     url: 'https://github.com/boxyhq/jackson#directory-sync',
-    icon: '/img/products/saml-jackson/logo.svg',
+    icon: require('../../static/img/products/saml-jackson/logo.svg').default,
   },
   {
     title: 'Mock SAML',
     description:
       'A free mock SAML 2.0 Identity Provider for testing your SAML SSO integrations.',
     url: 'https://mocksaml.com',
-    icon: '/img/products/mock-saml/logo.svg',
+    icon: require('../../static/img/products/mock-saml/logo.svg').default,
   },
   {
     title: 'Audit Logs',
     description:
       'Add audit logs into your product with ease. Allow your customers to send security related events to their SIEM.',
     url: null,
-    icon: '/img/products/audit-logs/logo.svg',
+    icon: require('../../static/img/products/audit-logs/logo.svg').default,
   },
   {
     title: 'Privacy Vault',
     description:
       'Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data.',
     url: null,
-    icon: '/img/products/privacy-vault/logo.svg',
+    icon: require('../../static/img/products/privacy-vault/logo.svg').default,
   },
   {
     title: 'Role-Based Access Control',
     description:
       'Add roles, groups and permissions into your product using a flexible schema. Query the schema at runtime in your product to enforce RBAC.',
     url: null,
-    icon: '/img/products/rbac/logo.svg',
+    icon: require('../../static/img/products/rbac/logo.svg').default,
   },
 ];
 
@@ -68,15 +69,15 @@ const ProductsSection = () => {
                 <div className="card__header">
                   <div className="card__image">
                     <div className="avatar avatar--vertical">
-                      <img
-                        className="avatar__photo avatar__photo--xl"
-                        src={icon}
-                        style={{
-                          borderRadius: '0px',
-                          width: '70px',
-                          height: '70px',
-                        }}
-                      />
+                      <div
+                        className="avatar__photo avatar__photo--lg"
+                        style={{ borderRadius: '0px' }}
+                      >
+                        <SvgIcon
+                          icon={icon}
+                          size={{ width: '64px', height: '64px' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

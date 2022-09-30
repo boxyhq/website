@@ -1,10 +1,10 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-import FeatureSection from '../components/FeatureSection';
-import CustomersSection from '../components/CustomersSection';
 import HeroSection from '../components/HeroSection';
+import FeatureSection from '../components/FeatureSection';
 import BenefitsSection from '../components/BenefitsSection';
+import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 
 const title = 'SAML Jackson';
@@ -31,7 +31,7 @@ const benefits = [
     which prevents staff from password sharing, having the
     correct access and giving and removing access as needed
     from a central point.`,
-    icon: '/img/products/icons/lock.svg',
+    icon: require('../../static/img/products/icons/lock.svg').default,
   },
   {
     title: 'Improved user experience',
@@ -39,7 +39,7 @@ const benefits = [
     if you can allow your customers to simply go their IdP
     dashboard and click on an icon to login into your product
     they will have a much better experience with your product.`,
-    icon: '/img/products/icons/lock.svg',
+    icon: require('../../static/img/products/icons/lock.svg').default,
   },
   {
     title: 'Reduced cost',
@@ -48,7 +48,7 @@ const benefits = [
     you have to maintain account information across multiple
     services but when you use SAML this is all managed by the
     IdP.`,
-    icon: '/img/products/icons/lock.svg',
+    icon: require('../../static/img/products/icons/lock.svg').default,
   },
 ];
 
@@ -59,6 +59,7 @@ const SAMLSSO = () => {
         title="SAML Jackson"
         description="Deploy SAML SSO straight out of the box in as little as 8 days and
               become enterprise ready."
+        image="/img/feat-sso.svg"
         icon={ProductIcon}
         buttons={[
           {
@@ -128,9 +129,10 @@ const SAMLSSO = () => {
       <CustomersSection />
 
       <BenefitsSection
+        benefits={benefits}
+        title="Benefits"
         description="Deploying SAML SSO for your customer has many benefits and has become
           an expected feature if you have enterprise customers."
-        benefits={benefits}
       />
 
       <DeveloperCommunitySection />
