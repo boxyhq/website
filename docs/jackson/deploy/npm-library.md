@@ -183,7 +183,7 @@ Add a method to handle the SAML Response from IdP. Once the SAML response is val
 
 ##### IdP-initiated SAML flow
 
-To enable IdP-initiated SAML flow set https://boxyhq.com/docs/jackson/deploy/env-variables#idp_enabled. If [idpDiscoveryPath](https://boxyhq.com/docs/jackson/deploy/env-variables#idp_discovery_path) is not set then always the first connection will be chosen in case of multiple matches.
+To enable IdP-initiated SAML flow set [IDP_ENABLED](./env-variables#idp_enabled). If [IDP_DISCOVERY_PATH](./env-variables#idp_discovery_path) is not set then always the first connection will be chosen in case of multiple matches.
 
 If `oauthController.samlResponse` returns `app_select_form` with no `redirect_url`, then we have hit the case where the IdP-initiated flow has multiple matches for the same IdP. Users can select an app and the flow is resumed with the `idp_hint` containing the user selection. For reference on how to add an IdP selection page, see: https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx
 
