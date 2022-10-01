@@ -190,7 +190,7 @@ app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/ma
 
 ##### Resource routes
 
-Next, create the api files for [OAuth2.0 flow](../../../docs/jackson/sso-flow/index.md#3-oauth-20-flow) and [SAML Configuration](../../../docs/jackson/sso-flow/index.md#2-sso-connection-api):
+Next, create the api files for [OAuth2.0 flow](../../../docs/jackson/sso-flow/#3-oauth-20-flow) and [SAML Configuration](../../../docs/jackson/sso-flow/#2-sso-connection-api):
 
 ```bash
 app/routes $ mkdir api && cd api
@@ -495,11 +495,11 @@ client_id         : tenant=boxyhq.com&product=saml-demo.boxyhq.com
 Identity Provider : https://mocksaml.com
 ```
 
-We'll be using the above [pre-configured](../../../docs/jackson/sso-flow/index.md#2-sso-connection-api) tenant/product pointing to https://mocksaml.com as the IdP.
+We'll be using the above [pre-configured](../../../docs/jackson/sso-flow/#2-sso-connection-api) tenant/product pointing to https://mocksaml.com as the IdP.
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
-[Add a SAML config](../../../docs/jackson/sso-flow/index.md#21-add-connection) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
+[Add a SAML config](../../../docs/jackson/sso-flow/#21-add-connection) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
 
 <details>
 <summary>Below adds a SAML IdP config for https://mocksaml.com</summary>
