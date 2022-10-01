@@ -6,11 +6,11 @@ Please check the [Environment Variables](./deploy/env-variables.md#opentelemetry
 
 ## Metrics
 
-| Name                      | Description                             | Type  |
-| ------------------------- | --------------------------------------- | ----- |
-| `jackson.config.create`   | Number of SAML config create requests   | Count |
-| `jackson.config.get`      | Number of SAML config get requests      | Count |
-| `jackson.config.delete`   | Number of SAML config delete requests   | Count |
-| `jackson.oauth.authorize` | Number of SAML oauth authorize requests | Count |
-| `jackson.oauth.token`     | Number of SAML oauth token requests     | Count |
-| `jackson.oauth.userinfo`  | Number of SAML oauth user info requests | Count |
+| Name                        | Description                              | Type  |
+| --------------------------- | ---------------------------------------- | ----- |
+| `jackson.connection.create` | Number of SSO Connection create requests | Count |
+| `jackson.connection.get`    | Number of SSO Connection get requests    | Count |
+| `jackson.connection.delete` | Number of SSO Connection delete requests | Count |
+| `jackson.oauth.authorize`   | Number of oauth authorize requests       | Count |
+| `jackson.oauth.token`       | Number of oauth token requests           | Count |
+| `jackson.oauth.userinfo`    | Number of oauth user info requests       | Count |

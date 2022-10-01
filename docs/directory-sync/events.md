@@ -44,7 +44,6 @@ We'll notify you of the following 8 events.
       "locale": "en-US",
       "externalId": "00u1ldzzogFkXFmvT5d7",
       "groups": [],
-      "password": "7zy5TgxX",
       "active": true,
       "id": "038e767b-9bc6-4dbd-975e-fbc38a8e7d82"
     }
@@ -95,7 +94,6 @@ We'll notify you of the following 8 events.
       ],
       "locale": "en-US",
       "externalId": "00u3e3cmpdDydXdzV5d7",
-      "password": "XJkEp0O6",
       "active": true,
       "id": "ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92",
       "groups": []
@@ -146,7 +144,6 @@ We'll notify you of the following 8 events.
       ],
       "locale": "en-US",
       "externalId": "00u3e3cmpdDydXdzV5d7",
-      "password": "XJkEp0O6",
       "active": false,
       "id": "ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92",
       "groups": []
@@ -275,7 +272,6 @@ We'll notify you of the following 8 events.
       ],
       "locale": "en-US",
       "externalId": "00u3e3cmpdDydXdzV5d7",
-      "password": "XJkEp0O6",
       "active": true,
       "id": "ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92",
       "title": "Developer",
@@ -337,7 +333,6 @@ We'll notify you of the following 8 events.
       ],
       "locale": "en-US",
       "externalId": "00u3e3cmpdDydXdzV5d7",
-      "password": "XJkEp0O6",
       "active": true,
       "id": "ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92",
       "title": "Developer",
