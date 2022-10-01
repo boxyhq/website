@@ -117,7 +117,7 @@ Our strategy usage depends on how we integrate the SAML Service Provider into th
 <TabItem value="01" label="Host SAML SP as a separate service">
 
 To get going, you'll need a hosted instance of "SAML Jackson".  
-Refer to the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy `Jackson` to your favorite hosting provider.  
+Refer to the [documentation](../../../docs/jackson/deploy/service) in case you're planning to deploy `Jackson` to your favorite hosting provider.  
 Otherwise, fret not 🤗, we have a hosted instance of [`Jackson`](https://jackson-demo.boxyhq.com), that can be readily used without any configuration.
 
 </TabItem>
@@ -133,13 +133,13 @@ Install `@boxyhq/saml-jackson` first:
 npm i @boxyhq/saml-jackson
 ```
 
-Before you proceed,set up a [database](https://boxyhq.com/docs/jackson/deploy/service#database) for jackson. Refer to [db environment variables](https://boxyhq.com/docs/jackson/deploy/env-variables#database-configuration) for the npm library options.
+Before you proceed,set up a [database](../../../docs/jackson/deploy/service#database) for jackson. Refer to [db environment variables](../../../docs/jackson/deploy/env-variables#database-configuration) for the npm library options.
 
 ##### Setup `JacksonProvider`
 
 app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts
 
-> **NOTE: [clientSecretVerifier](https://boxyhq.com/docs/jackson/deploy/env-variables#client_secret_verifier) set below will be matched against client_secret coming from Authenticator &nbsp;**
+> **NOTE: [clientSecretVerifier](../../../docs/jackson/deploy/env-variables#client_secret_verifier) set below will be matched against client_secret coming from Authenticator &nbsp;**
 
 ```typescript
  const opts =  {
@@ -190,7 +190,7 @@ app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/ma
 
 ##### Resource routes
 
-Next, create the api files for [OAuth2.0 flow](https://boxyhq.com/docs/jackson/saml-flow#3-oauth-20-flow) and [SAML Configuration](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api):
+Next, create the api files for [OAuth2.0 flow](../../../docs/jackson/sso-flow/index.md#3-oauth-20-flow) and [SAML Configuration](../../../docs/jackson/sso-flow/index.md#2-sso-connection-api):
 
 ```bash
 app/routes $ mkdir api && cd api
@@ -495,11 +495,11 @@ client_id         : tenant=boxyhq.com&product=saml-demo.boxyhq.com
 Identity Provider : https://mocksaml.com
 ```
 
-We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api) tenant/product pointing to https://mocksaml.com as the IdP.
+We'll be using the above [pre-configured](../../../docs/jackson/sso-flow/index.md#2-sso-connection-api) tenant/product pointing to https://mocksaml.com as the IdP.
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
-[Add a SAML config](https://boxyhq.com/docs/jackson/saml-flow#21-saml-add-config-api) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
+[Add a SAML config](../../../docs/jackson/sso-flow/index.md#21-add-connection) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
 
 <details>
 <summary>Below adds a SAML IdP config for https://mocksaml.com</summary>
