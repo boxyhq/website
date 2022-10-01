@@ -9,8 +9,7 @@ module.exports = {
       type: 'category',
       label: 'SAML Jackson',
       collapsible: true,
-      //collapsed: false,
-      // link: { type: 'doc', id: 'jackson/overview' },
+      link: { type: 'doc', id: 'jackson/overview' },
       items: [
         { type: 'doc', id: 'jackson/overview', label: 'Overview' },
         {
@@ -60,8 +59,7 @@ module.exports = {
       type: 'category',
       label: 'Directory Sync (Beta)',
       collapsible: true,
-      //collapsed: false,
-      link: { type: 'doc', id: 'directory-sync/overview' },
+      link: { type: 'doc', id: 'directory-sync/getting-started' },
       items: [
         'directory-sync/getting-started',
         'directory-sync/api-reference',
@@ -87,7 +85,6 @@ module.exports = {
       type: 'category',
       label: 'Audit Logs (Beta)',
       collapsible: true,
-      collapsed: true,
       link: { type: 'doc', id: 'retraced/overview' },
       items: [
         'retraced/overview',
@@ -102,6 +99,16 @@ module.exports = {
             'retraced/getting-started/renaming-properties',
             'retraced/getting-started/searching-for-events',
             'retraced/getting-started/time-synchronization',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Deploy',
+          link: { type: 'doc', id: 'retraced/deploy/index' },
+          items: [
+            'retraced/deploy/env-variables',
+            'retraced/deploy/docker-compose',
+            'retraced/deploy/local',
           ],
         },
         {
@@ -174,6 +181,7 @@ module.exports = {
             'retraced/exposing-retraced-data/enterprise-api',
           ],
         },
+        'retraced/admin-ui',
         {
           type: 'category',
           label: 'Advanced Retraced',
