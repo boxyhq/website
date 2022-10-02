@@ -223,3 +223,11 @@ Set this to a random string. You can use `openssl rand -base64 32` to get one. T
 ### **NEXTAUTH_ACL**
 
 Set this to a comma separated string of email addresses or glob patterns like: `tonystark@gmail.com,*@marvel.com`. Access will be denied to email addresses which don't match. If you don't specify any value access is denied to all.
+
+### **RUN_MIGRATION**
+
+Set this to 1 to trigger `migration` execution when you execute Jackson docker image.
+
+Optionally you can run `bootstrap.sh` when not using docker, it will execute `migrations` if **RUN_MIGRATION** is set and start the Jackson service.
+
+
