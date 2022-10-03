@@ -39,13 +39,6 @@ const products = [
     url: null,
     icon: require('../../static/img/products/privacy-vault/logo.svg').default,
   },
-  {
-    title: 'Role-Based Access Control',
-    description:
-      'Add roles, groups and permissions into your product using a flexible schema. Query the schema at runtime in your product to enforce RBAC.',
-    url: null,
-    icon: require('../../static/img/products/rbac/logo.svg').default,
-  },
 ];
 
 const ProductsSection = () => {
