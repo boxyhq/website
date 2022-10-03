@@ -67,7 +67,7 @@ The preliminary step (marked by the green arrow above) is to add the SSO Connect
 
 #### Login flow
 
-Jackson supports both OAuth 2.0 as well OpenID flows. The OAuth 2.0 flow is made secure by supporting Authorization Code flow with PKCE. By including the scope `openid` in the client request Jackson will switch to OpenID flow.
+Jackson supports both OAuth 2.0 and OpenID flows. The OAuth 2.0 flow is made secure by supporting Authorization Code flow with PKCE. By including the scope `openid` in the client request Jackson will switch to OpenID flow.
 
 The login process follows the below steps:
 
