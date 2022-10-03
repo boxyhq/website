@@ -7,6 +7,10 @@ import ProductsSection from '../components/ProductsSection';
 import InvestorsSection from '../components/InvestorsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
+import FeatureSection from '../components/FeatureSection';
+
+const Icon3 =
+  require('../../static/img/products/saml-jackson/undraw_building_re_xfcm.svg').default;
 
 const title = 'SAML Jackson';
 const description =
@@ -63,7 +67,7 @@ const SAMLSSO = () => {
                       </p>
                     </div>
                     <div class="card__footer">
-                      <button class="button button--secondary button--block">
+                      <button class="button button--primary button--block button--outline">
                         Try it
                       </button>
                     </div>
@@ -95,7 +99,7 @@ const SAMLSSO = () => {
                       </p>
                     </div>
                     <div class="card__footer">
-                      <button class="button button--secondary button--block">
+                      <button class="button button--primary button--block button--outline">
                         Book an exploration call
                       </button>
                     </div>
@@ -106,6 +110,24 @@ const SAMLSSO = () => {
           </div>
         </div>
       </section>
+
+      <FeatureSection
+        title="DevSec Tools"
+        btnLink="https://awesome-oss-devsec.boxyhq.com/"
+        btnText="Read More"
+        image={Icon3}
+        direction="right"
+      >
+        <p>
+          List of awesome open-source developer security tools. Maintained by{' '}
+          <strong>BoxyHQ</strong>, and heavily inspired by <strong>MVSP</strong>
+          .
+        </p>
+        <p>
+          It includes security principles and controls relevant to popular
+          compliance certifications (like ISO27001, SOC2, MVSP, etc.)
+        </p>
+      </FeatureSection>
 
       <NewsSection />
       <InvestorsSection />

@@ -56,25 +56,41 @@ module.exports = {
           type: 'dropdown',
           items: [
             {
-              type: 'html',
-              value: `<a href="/saml-sso" class="product__dropdown__link dropdown__link"><img src="/img/products/saml-jackson/logo.svg" width="30px" height="30px" />SAML Jackson</a>`,
+              to: '/enterprise-sso',
+              label: 'Enterprise SSO',
             },
             {
-              type: 'html',
-              value: `<a href="/directory-sync" class="product__dropdown__link dropdown__link"><img src="/img/products/saml-jackson/logo.svg" width="30px" height="30px" />Directory Sync</a>`,
+              to: '/directory-sync',
+              label: 'Directory Sync',
             },
             {
-              type: 'html',
-              value: `<a href="/audit-logs" class="product__dropdown__link dropdown__link"><img src="/img/products/audit-logs/logo.svg" width="30px" height="30px" />Audit Logs</a>`,
+              to: '/audit-logs',
+              label: 'Audit Logs',
+            },
+            {
+              href: 'https://awesome-oss-devsec.boxyhq.com/',
+              label: 'DevSec Tools',
             },
           ],
         },
-        { to: '/blog', label: 'Blog' },
-        { to: '/careers', label: 'Careers' },
-        { to: '/team', label: 'Team' },
         { to: '/docs', label: 'Docs' },
         { to: '/guides', label: 'Guides' },
-        { to: '/resources', label: 'Resources' },
+        { to: '/blog', label: 'Blog' },
+        {
+          label: 'Company',
+          type: 'dropdown',
+          position: 'right',
+          items: [
+            {
+              to: '/team',
+              label: 'Team',
+            },
+            {
+              to: '/careers',
+              label: 'Careers',
+            },
+          ],
+        },
         {
           href: 'https://github.com/boxyhq',
           position: 'right',

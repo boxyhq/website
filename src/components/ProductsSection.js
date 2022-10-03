@@ -5,18 +5,25 @@ import SectionLayout from './SectionLayout';
 
 const products = [
   {
-    title: 'SAML SSO',
+    title: 'Enterprise SSO',
     description:
       'Add single sign on authentication into your product. Supports most identity providers via SAML 2.0',
-    url: 'https://github.com/boxyhq/jackson',
+    url: '/enterprise-sso',
     icon: require('../../static/img/products/saml-jackson/logo.svg').default,
   },
   {
     title: 'Directory Sync',
     description:
       'Add Directory Sync support into your product to provision and de-provision users.',
-    url: 'https://github.com/boxyhq/jackson#directory-sync',
+    url: '/directory-sync',
     icon: require('../../static/img/products/saml-jackson/logo.svg').default,
+  },
+  {
+    title: 'Audit Logs',
+    description:
+      'Add audit logs into your product with ease. Allow your customers to send security related events to their SIEM.',
+    url: 'audit-logs',
+    icon: require('../../static/img/products/audit-logs/logo.svg').default,
   },
   {
     title: 'Mock SAML',
@@ -26,11 +33,11 @@ const products = [
     icon: require('../../static/img/products/mock-saml/logo.svg').default,
   },
   {
-    title: 'Audit Logs',
+    title: 'Enterprise SaaS Starter Kit',
     description:
-      'Add audit logs into your product with ease. Allow your customers to send security related events to their SIEM.',
-    url: null,
-    icon: require('../../static/img/products/audit-logs/logo.svg').default,
+      'Next.js based Enterprise SaaS starter kit that saves you months of development.',
+    url: 'https://github.com/boxyhq/saas-starter-kit',
+    icon: require('../../static/img/products/saml-jackson/logo.svg').default,
   },
   {
     title: 'Privacy Vault',
@@ -43,11 +50,7 @@ const products = [
 
 const ProductsSection = () => {
   return (
-    <SectionLayout
-      title="Our Products"
-      description="Lorem Ipsum is simply dummy text of the printing and typesetting
-    industry"
-    >
+    <SectionLayout title="Our Products">
       <div className="row">
         {products.map(({ title, description, url, icon }, idx) => (
           <Card

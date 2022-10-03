@@ -10,7 +10,7 @@ import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import SectionLayout from '../components/SectionLayout';
 
-const title = 'SAML Jackson';
+const title = 'Enterprise SSO';
 const description =
   'Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready';
 
@@ -78,7 +78,7 @@ const SAMLSSO = () => {
       />
 
       <SectionLayout
-        title="SAML SSO with SAML Jackson"
+        title="Enterprise SSO with SAML Jackson"
         description="Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready"
       >
         <div className="row">
