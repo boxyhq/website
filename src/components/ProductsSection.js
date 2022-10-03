@@ -102,7 +102,7 @@ const ProductsSection = () => {
                       }
                     )}
                   >
-                    {url ? 'Learn More' : 'Coming Soon'}
+                    {url ? 'Learn More' : 'Join Private Beta'}
                   </Link>
                 </div>
               </div>
