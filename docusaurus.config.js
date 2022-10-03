@@ -56,17 +56,17 @@ module.exports = {
           type: 'dropdown',
           items: [
             {
-              label: 'SAML Jackson',
-              to: '/saml-sso',
+              type: 'html',
+              value: `<a href="/saml-sso" class="product__dropdown__link dropdown__link"><img src="/img/products/saml-jackson/logo.svg" width="30px" height="30px" />SAML Jackson</a>`,
             },
-            // {
-            //   label: 'Directory Sync',
-            //   to: '/directory-sync',
-            // },
-            // {
-            //   label: 'Audit Logs',
-            //   to: '/audit-logs',
-            // },
+            {
+              type: 'html',
+              value: `<a href="/directory-sync" class="product__dropdown__link dropdown__link"><img src="/img/products/saml-jackson/logo.svg" width="30px" height="30px" />Directory Sync</a>`,
+            },
+            {
+              type: 'html',
+              value: `<a href="/audit-logs" class="product__dropdown__link dropdown__link"><img src="/img/products/audit-logs/logo.svg" width="30px" height="30px" />Audit Logs</a>`,
+            },
           ],
         },
         { to: '/blog', label: 'Blog' },
