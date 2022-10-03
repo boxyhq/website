@@ -7,28 +7,33 @@ const DeveloperCommunitySection = () => {
   return (
     <SectionLayout
       title="Join our developer community"
-      description="Open-source is in the heart of BoxyHQ. Follow us on Twitter,
-    star our GitHub repo, and join our developer community on
-    Discord!"
+      description={`Open-source is in the ❤ of BoxyHQ.\nFollow us 🐦 on Twitter, ⭐ us on GitHub, and join our developer security community 🗣️ on Discord!`}
     >
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
-          gap: '20px',
+          gap: '10px',
+          flexWrap: 'wrap',
         }}
       >
         <Link
-          href="https://meetings.hubspot.com/deepakprab/demo"
+          href="https://twitter.com/boxyhq"
           className="button button--primary button--outline"
         >
-          Join Discord
+          Follow on Twitter
         </Link>
         <Link
           href="https://meetings.hubspot.com/deepakprab/demo"
           className="button button--primary button--outline"
         >
           Star on GitHub
+        </Link>
+        <Link
+          href="https://meetings.hubspot.com/deepakprab/demo"
+          className="button button--primary button--outline"
+        >
+          Join Discord
         </Link>
       </div>
     </SectionLayout>

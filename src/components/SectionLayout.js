@@ -10,7 +10,11 @@ const SectionLayout = ({ title, description, children }) => {
         >
           {title}
         </h2>
-        {description && <p className="text--center">{description}</p>}
+        {description && (
+          <p className="text--center" style={{ whiteSpace: 'pre-wrap' }}>
+            {description}
+          </p>
+        )}
         <div style={{ marginTop: '30px' }}>{children}</div>
       </div>
     </section>
