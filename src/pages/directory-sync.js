@@ -7,9 +7,9 @@ import BenefitsSection from '../components/BenefitsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 
-const title = 'SAML Jackson';
+const title = 'Directory Sync';
 const description =
-  'Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready';
+  'One Simple integration to automate user and group provisioning';
 
 const ProductIcon =
   require('../../static/img/products/saml-jackson/logo.svg').default;

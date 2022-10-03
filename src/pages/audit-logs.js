@@ -7,12 +7,12 @@ import BenefitsSection from '../components/BenefitsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 
-const title = 'SAML Jackson';
+const title = 'Audit Logs';
 const description =
-  'Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready';
+  'With BoxyHQ’s Audit logs you can become compliant and deploy audit logs with minimal disruption';
 
 const ProductIcon =
-  require('../../static/img/products/saml-jackson/logo.svg').default;
+  require('../../static/img/products/audit-logs/logo.svg').default;
 
 const Icon1 =
   require('../../static/img/products/saml-jackson/undraw_connected_world_wuay.svg').default;
