@@ -83,11 +83,8 @@ const SAMLSSO = () => {
       >
         <div className="row">
           <div className="col col--8 col--offset-2">
-            <div
-              className="col-demo"
-              style={{ justifyContent: 'center', display: 'flex' }}
-            >
-              <Tabs className="tabs--block">
+            <div className="col-demo center">
+              <Tabs className="center">
                 <TabItem value="apple" label="Without BoxyHQ" default>
                   <img
                     src="/img/blog/sso/without-boxyhq.png"
