@@ -24,13 +24,13 @@ const DeveloperCommunitySection = () => {
           Follow on Twitter
         </Link>
         <Link
-          href="https://meetings.hubspot.com/deepakprab/demo"
+          href="https://github.com/boxyhq"
           className="button button--primary button--outline"
         >
           Star on GitHub
         </Link>
         <Link
-          href="https://meetings.hubspot.com/deepakprab/demo"
+          href="https://discord.boxyhq.com/"
           className="button button--primary button--outline"
         >
           Join Discord
