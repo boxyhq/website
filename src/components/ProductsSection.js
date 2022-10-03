@@ -85,7 +85,12 @@ const ProductsSection = () => {
                   <h4 className="text--center" style={{ fontSize: '20px' }}>
                     {title}
                   </h4>
-                  <p className="text--center">{description}</p>
+                  <p
+                    className="text--center"
+                    style={{ fontSize: '16px', minHeight: '5.5rem' }}
+                  >
+                    {description}
+                  </p>
                 </div>
                 <div className="card__footer">
                   <Link
