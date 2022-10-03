@@ -74,6 +74,7 @@ module.exports = {
         { to: '/team', label: 'Team' },
         { to: '/docs', label: 'Docs' },
         { to: '/guides', label: 'Guides' },
+        { to: '/resources', label: 'Resources' },
         {
           href: 'https://github.com/boxyhq',
           position: 'right',
