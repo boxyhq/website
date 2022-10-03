@@ -118,3 +118,4 @@ apiKeysAndPermissions: acp.#AuthTokens & {
 ---
 ## API
 
+[Swagger API](https://github.com/boxyhq/terminus/blob/main/swagger/vault/swagger.json)
