@@ -1,11 +1,14 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 import HeroSection from '../components/HeroSection';
 import FeatureSection from '../components/FeatureSection';
 import BenefitsSection from '../components/BenefitsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
+import SectionLayout from '../components/SectionLayout';
 
 const title = 'SAML Jackson';
 const description =
@@ -73,6 +76,32 @@ const SAMLSSO = () => {
           },
         ]}
       />
+
+      <SectionLayout
+        title="SAML SSO with SAML Jackson"
+        description="Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready"
+      >
+        <div className="row">
+          <div className="col col--8 col--offset-2">
+            <div
+              className="col-demo"
+              style={{ justifyContent: 'center', display: 'flex' }}
+            >
+              <Tabs className="tabs--block">
+                <TabItem value="apple" label="Without BoxyHQ" default>
+                  <img
+                    src="/img/blog/sso/without-boxyhq.png"
+                    alt="Without BoxyHQ"
+                  />
+                </TabItem>
+                <TabItem value="orange" label="With BoxyHQ">
+                  <img src="/img/blog/sso/with-boxyhq.png" alt="With BoxyHQ" />
+                </TabItem>
+              </Tabs>
+            </div>
+          </div>
+        </div>
+      </SectionLayout>
 
       <FeatureSection
         title="Simple integration"
