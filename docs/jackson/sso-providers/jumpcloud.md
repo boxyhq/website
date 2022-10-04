@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for JumpCloud SAML
+title: Set up your own custom SAML application for JumpCloud SAML
 sidebar_label: JumpCloud SAML
 ---
 
