@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <Layout
       title="BoxyHQ"
-      description="BoxyHQ helps startups enable enterprise features in any SaaS aplication with just a few lines of code. Implement SAML Single Sign-On in record time today."
+      description="BoxyHQ helps startups enable enterprise features in any SaaS application with just a few lines of code. Implement SAML Single Sign-On in record time today."
     >
       <HeroSection {...mainHeroSection} />
       <TrustedBySection />
