@@ -67,21 +67,13 @@ const SAMLSSO = () => {
         buttons={[
           {
             title: 'Get Started',
-            href: '/',
+            href: 'https://github.com/boxyhq/jackson',
             className: 'button--primary',
-          },
-          {
-            title: 'Learn More',
-            href: '/',
-            className: 'button--primary button--outline',
           },
         ]}
       />
 
-      <SectionLayout
-        title="Enterprise SSO with SAML Jackson"
-        description="Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready"
-      >
+      <SectionLayout title="Enterprise SSO with SAML Jackson" description="">
         <div className="row">
           <div className="col col--8 col--offset-2">
             <div className="col-demo center">
@@ -104,7 +96,7 @@ const SAMLSSO = () => {
       <FeatureSection
         title="Simple integration"
         btnLink="/docs/jackson/overview"
-        btnText="Learn More"
+        btnText="View docs"
         image={Icon1}
         direction="right"
       >
@@ -118,8 +110,8 @@ const SAMLSSO = () => {
 
       <FeatureSection
         title="Save time"
-        btnLink="/docs/jackson/overview"
-        btnText="Learn More"
+        btnLink="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
+        btnText="Book a demo"
         image={Icon2}
         direction="left"
       >
@@ -131,16 +123,16 @@ const SAMLSSO = () => {
         </p>
         <p>
           With SAML Jackson you can go from the first line of code to deploying
-          in production in as little as 8 days! We also provide you with custom
-          integration support along the way so you have help each step of the
-          way.
+          in production in days instead of weeks! We also provide you with
+          custom integration support along the way so you have help each step of
+          the way.
         </p>
       </FeatureSection>
 
       <FeatureSection
         title="Become enterprise ready"
-        btnLink="/docs/jackson/overview"
-        btnText="Read More"
+        btnLink="/blog/sso-building-blocks"
+        btnText="Read more"
         image={Icon3}
         direction="right"
       >
