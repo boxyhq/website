@@ -15,13 +15,13 @@ const ProductIcon =
   require('../../static/img/products/audit-logs/logo.svg').default;
 
 const Icon1 =
-  require('../../static/img/products/saml-jackson/undraw_connected_world_wuay.svg').default;
+  require('../../static/img/products/saml-jackson/connected_world.svg').default;
 
 const Icon2 =
-  require('../../static/img/products/saml-jackson/undraw_time_management_re_tk5w.svg').default;
+  require('../../static/img/products/saml-jackson/time_management.svg').default;
 
 const Icon3 =
-  require('../../static/img/products/saml-jackson/undraw_building_re_xfcm.svg').default;
+  require('../../static/img/products/saml-jackson/building.svg').default;
 
 const benefits = [
   {

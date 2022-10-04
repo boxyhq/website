@@ -12,7 +12,7 @@ import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import FeatureSection from '../components/FeatureSection';
 
 const Icon3 =
-  require('../../static/img/products/saml-jackson/undraw_building_re_xfcm.svg').default;
+  require('../../static/img/products/saml-jackson/building.svg').default;
 
 const title = 'BoxyHQ';
 const description =
