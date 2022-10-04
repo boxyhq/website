@@ -53,7 +53,7 @@ const benefits = [
   },
 ];
 
-const SAMLSSO = () => {
+const AuditLogs = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
@@ -140,4 +140,4 @@ const SAMLSSO = () => {
   );
 };
 
-export default SAMLSSO;
+export default AuditLogs;

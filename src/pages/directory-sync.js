@@ -3,63 +3,29 @@ import Layout from '@theme/Layout';
 
 import HeroSection from '../components/HeroSection';
 import FeatureSection from '../components/FeatureSection';
-import BenefitsSection from '../components/BenefitsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 
 const title = 'Directory Sync';
 const description =
-  'One Simple integration to automate user and group provisioning';
+  'One simple integration to automate user and group provisioning';
 
 const ProductIcon =
   require('../../static/img/products/saml-jackson/logo.svg').default;
 
 const Icon1 =
-  require('../../static/img/products/saml-jackson/connected_world.svg').default;
+  require('../../static/img/products/dsync/meet_the_team.svg').default;
 
 const Icon2 =
-  require('../../static/img/products/saml-jackson/time_management.svg').default;
+  require('../../static/img/products/dsync/data_points.svg').default;
 
-const Icon3 =
-  require('../../static/img/products/saml-jackson/building.svg').default;
-
-const benefits = [
-  {
-    title: 'Increased Security',
-    description: `By deploying SAML SSO you are giving your customers the
-    ability to control access management on their own system
-    which prevents staff from password sharing, having the
-    correct access and giving and removing access as needed
-    from a central point.`,
-    icon: require('../../static/img/products/icons/security.svg').default,
-  },
-  {
-    title: 'Improved user experience',
-    description: `The login experience can be a tricky one to get right and
-    if you can allow your customers to simply go their IdP
-    dashboard and click on an icon to login into your product
-    they will have a much better experience with your product.`,
-    icon: require('../../static/img/products/icons/futuristic_interface.svg')
-      .default,
-  },
-  {
-    title: 'Reduced cost',
-    description: `Apart from the cost saving of using an out-of-the-box
-    solution v building your own custom version, Without SAML
-    you have to maintain account information across multiple
-    services but when you use SAML this is all managed by the
-    IdP.`,
-    icon: require('../../static/img/products/icons/savings.svg').default,
-  },
-];
-
-const SAMLSSO = () => {
+const DSync = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
         title={title}
         description={description}
-        image="/img/feat-sso.svg"
+        image="/img/products/dsync/add_friends.svg"
         icon={ProductIcon}
         buttons={[
           {
@@ -76,68 +42,57 @@ const SAMLSSO = () => {
       />
 
       <FeatureSection
-        title="Simple integration"
+        title="Give enterprises the user lifecycle management they need "
         btnLink="/docs/jackson/overview"
         btnText="Learn More"
         image={Icon1}
         direction="right"
       >
         <p>
-          With our open-source solution, you can deploy SAML SSO with a
-          straightforward integration that connects to all IdPs. You simply
-          integrate with SAML Jackson and then we provide you with integration
-          for all the IdPs.
+          Enterprise customers already use directories to manage user access. By
+          allowing them to use their active directory in your product you enable
+          them to have higher security standards and centrally manage their
+          user's access lifecycle. With Directory Sync by BoxyHQ you can enable
+          this with our simple API.{' '}
         </p>
       </FeatureSection>
 
       <FeatureSection
-        title="Save time"
+        title="Simple but powerful integration"
         btnLink="/docs/jackson/overview"
         btnText="Learn More"
         image={Icon2}
         direction="left"
       >
         <p>
-          Building your own SAML integration for each IdP can be very resource
-          heavy and take a long time. You will end up building a custom
-          integration for each IdP your customers use and this could take
-          months!
-        </p>
-        <p>
-          With SAML Jackson you can go from the first line of code to deploying
-          in production in as little as 8 days! We also provide you with custom
-          integration support along the way so you have help each step of the
-          way.
-        </p>
-      </FeatureSection>
-
-      <FeatureSection
-        title="Become enterprise ready"
-        btnLink="/docs/jackson/overview"
-        btnText="Read More"
-        image={Icon3}
-        direction="right"
-      >
-        <p>
-          Most enterprises already use an IdP and will prefer solution providers
-          who have a SAML SSO integration. This is because they already use SAML
-          for access management and security so anything outside this workflow
-          will be a hassle for them.
+          <p>
+            With our simple integration you can enable directory sync in your
+            application in days instead of months and seamlessly connect to
+            almost any directory service. With our API you can:
+          </p>
+          <p>
+            <b>Custom Mapping</b>
+            <br></br>
+            Easily fetch in the attributes that you need to use and map them
+            against the data you need.
+            <br></br>
+            <b>Bespoke requests</b>
+            <br></br>
+            Fetch and manipulate data from different entities as you need.
+            <br></br>
+            <b>Streamline Data</b>
+            <br></br>
+            Access data and integrate it in a seamless way so you can
+            standardise it across the board
+          </p>
         </p>
       </FeatureSection>
 
       <CustomersSection />
-
-      <BenefitsSection
-        benefits={benefits}
-        title="Benefits"
-        description="Deploying SAML SSO for your customer has many benefits and has become
-          an expected feature if you have enterprise customers."
-      />
 
       <DeveloperCommunitySection />
     </Layout>
   );
 };
 
-export default SAMLSSO;
+export default DSync;
