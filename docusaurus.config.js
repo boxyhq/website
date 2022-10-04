@@ -134,8 +134,10 @@ module.exports = {
             type: 'all',
             copyright,
           },
+
           blogSidebarTitle: 'Recent posts',
           blogSidebarCount: 5,
+          postsPerPage: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
