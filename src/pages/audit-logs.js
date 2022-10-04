@@ -3,7 +3,6 @@ import Layout from '@theme/Layout';
 
 import HeroSection from '../components/HeroSection';
 import FeatureSection from '../components/FeatureSection';
-import BenefitsSection from '../components/BenefitsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 
@@ -15,13 +14,13 @@ const ProductIcon =
   require('../../static/img/products/audit-logs/logo.svg').default;
 
 const Icon1 =
-  require('../../static/img/products/saml-jackson/connected_world.svg').default;
+  require('../../static/img/products/audit-logs/cloud_docs.svg').default;
 
 const Icon2 =
-  require('../../static/img/products/saml-jackson/time_management.svg').default;
+  require('../../static/img/products/audit-logs/reviewed_docs.svg').default;
 
 const Icon3 =
-  require('../../static/img/products/saml-jackson/building.svg').default;
+  require('../../static/img/products/audit-logs/export_files.svg').default;
 
 const AuditLogs = () => {
   return (
