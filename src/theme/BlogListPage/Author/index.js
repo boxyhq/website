@@ -13,10 +13,7 @@ const Author = ({ name, title, url, image }) => {
             {name}
           </Link>
         </div>
-        <small
-          className={`avatar__subtitle ${styles.avatarSubtitle}`}
-          style={{}}
-        >
+        <small className={`avatar__subtitle ${styles.avatarSubtitle}`}>
           {title}
         </small>
       </div>
