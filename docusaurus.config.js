@@ -123,6 +123,23 @@ module.exports = {
           ],
         },
         {
+          title: 'Social',
+          items: [
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/boxyhq',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/boxyhq',
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/boxyhq',
+            },
+          ],
+        },
+        {
           title: 'Legal',
           items: [
             {
