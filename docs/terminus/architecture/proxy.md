@@ -1,4 +1,4 @@
-# Proxy Service - WIP
+# Proxy Service
 
 The proxy service is the outermost client facing of Terminus. Amongst it's roles and responsibilities:
 - Enables no-code configuration of encryption and masking business data models

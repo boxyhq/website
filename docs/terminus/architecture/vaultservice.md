@@ -1,4 +1,4 @@
-# Vault Service - WIP
+# Vault Service
 
 The vault service acts as the middleware between the Proxy Service and the Persistence Vault. Amongst it's roles and responsibilities:
 - Supports multi-tenancy and multi-product logical segregation via API URL paths

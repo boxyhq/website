@@ -1,4 +1,4 @@
-# Persistence Vault - WIP
+# Persistence Vault
 
 The persistence vault is the persistent layer where data is stored. Amongst it's roles and responsibilities:
 - The persistent store implementation is one of the ones supported by [GORM](https://gorm.io/)
