@@ -14,24 +14,24 @@ const Icon3 =
 
 const title = 'SAML Jackson';
 const description =
-  'Deploy SAML SSO straight out of the box in as little as 8 days and become enterprise ready';
+  'Deploy enterprise readiness straight out of the box in minutes and become enterprise-ready';
 
 const SAMLSSO = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
         title="Enterprise readiness for your product, straight out the box"
-        description="At BoxyHQ we enable you to add enterprise-ready features to your SaaS product in as little as 8 days!"
+        description="At BoxyHQ we enable you to add enterprise-ready features to your SaaS product with simple integrations Comply with your enterprise customer requirements, open-source and free!"
         image="/img/home-hero.svg"
         buttons={[
           {
             title: 'Get Started',
-            href: '/',
+            href: 'https://github.com/boxyhq',
             className: 'button--primary',
           },
           {
-            title: 'Learn More',
-            href: '/',
+            title: 'Book a free developer-security session',
+            href: 'https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655',
             className: 'button--primary button--outline',
           },
         ]}

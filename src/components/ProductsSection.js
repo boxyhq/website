@@ -43,8 +43,9 @@ const products = [
     title: 'Privacy Vault',
     description:
       'Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data.',
-    url: null,
+    url: 'mailto:hello@boxyhq.com?subject=Privacy Vault Beta',
     icon: require('../../static/img/products/privacy-vault/logo.svg').default,
+    btnText: 'Join Private Beta',
   },
 ];
 
@@ -52,14 +53,14 @@ const ProductsSection = () => {
   return (
     <SectionLayout title="Our Products">
       <div className="row">
-        {products.map(({ title, description, url, icon }, idx) => (
+        {products.map(({ title, description, url, icon, btnText }, idx) => (
           <Card
             idx={idx}
             title={title}
             description={description}
             icon={icon}
             url={url}
-            btnText={url ? 'Learn More' : 'Join Private Beta'}
+            btnText={btnText ? btnText : 'Learn More'}
           />
         ))}
       </div>
