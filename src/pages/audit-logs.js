@@ -23,36 +23,6 @@ const Icon2 =
 const Icon3 =
   require('../../static/img/products/saml-jackson/building.svg').default;
 
-const benefits = [
-  {
-    title: 'Increased Security',
-    description: `By deploying SAML SSO you are giving your customers the
-    ability to control access management on their own system
-    which prevents staff from password sharing, having the
-    correct access and giving and removing access as needed
-    from a central point.`,
-    icon: require('../../static/img/products/icons/security.svg').default,
-  },
-  {
-    title: 'Improved user experience',
-    description: `The login experience can be a tricky one to get right and
-    if you can allow your customers to simply go their IdP
-    dashboard and click on an icon to login into your product
-    they will have a much better experience with your product.`,
-    icon: require('../../static/img/products/icons/futuristic_interface.svg')
-      .default,
-  },
-  {
-    title: 'Reduced cost',
-    description: `Apart from the cost saving of using an out-of-the-box
-    solution v building your own custom version, Without SAML
-    you have to maintain account information across multiple
-    services but when you use SAML this is all managed by the
-    IdP.`,
-    icon: require('../../static/img/products/icons/savings.svg').default,
-  },
-];
-
 const AuditLogs = () => {
   return (
     <Layout title={title} description={description}>
@@ -63,77 +33,60 @@ const AuditLogs = () => {
         icon={ProductIcon}
         buttons={[
           {
-            title: 'Get Started',
+            title: 'Book demo',
             href: '/',
             className: 'button--primary',
-          },
-          {
-            title: 'Learn More',
-            href: '/',
-            className: 'button--primary button--outline',
           },
         ]}
       />
 
       <FeatureSection
-        title="Simple integration"
-        btnLink="/docs/jackson/overview"
-        btnText="Learn More"
+        title="One Simple API"
+        btnLink="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
+        btnText="Book demo"
         image={Icon1}
         direction="right"
       >
         <p>
-          With our open-source solution, you can deploy SAML SSO with a
-          straightforward integration that connects to all IdPs. You simply
-          integrate with SAML Jackson and then we provide you with integration
-          for all the IdPs.
+          With Audit Logs by BoxyHQ you provide enterprise customers with the
+          ability to record and search events that happen on your application.
+          With our simple integration you can become compliant fast and save
+          your team building complex solutions from scratch.
         </p>
       </FeatureSection>
 
       <FeatureSection
-        title="Save time"
-        btnLink="/docs/jackson/overview"
-        btnText="Learn More"
+        title="Why are audit logs important?"
+        btnLink="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
+        btnText="Book demo"
         image={Icon2}
         direction="left"
       >
         <p>
-          Building your own SAML integration for each IdP can be very resource
-          heavy and take a long time. You will end up building a custom
-          integration for each IdP your customers use and this could take
-          months!
-        </p>
-        <p>
-          With SAML Jackson you can go from the first line of code to deploying
-          in production in as little as 8 days! We also provide you with custom
-          integration support along the way so you have help each step of the
-          way.
+          For all companies but in particular, for large companies the ability
+          to monitor the flow of data and be alerted to any breaches is
+          essential. Audit logs help to pinpoint any missues of information and
+          ensure that data policies are followed. Many larger enterprise
+          customers, they will demand this as a requirement if you plan to sell
+          to them.
         </p>
       </FeatureSection>
 
       <FeatureSection
-        title="Become enterprise ready"
-        btnLink="/docs/jackson/overview"
-        btnText="Read More"
+        title="Feature rich"
+        btnLink="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
+        btnText="Book demo"
         image={Icon3}
         direction="right"
       >
         <p>
-          Most enterprises already use an IdP and will prefer solution providers
-          who have a SAML SSO integration. This is because they already use SAML
-          for access management and security so anything outside this workflow
-          will be a hassle for them.
+          Our out-the-box solution is designed not only to make you compliant
+          but give your customers all the functionality and safety they need -
+          exportable, immutable, time synced and searchable audit logs.
         </p>
       </FeatureSection>
 
       <CustomersSection />
-
-      <BenefitsSection
-        benefits={benefits}
-        title="Benefits"
-        description="Deploying SAML SSO for your customer has many benefits and has become
-          an expected feature if you have enterprise customers."
-      />
 
       <DeveloperCommunitySection />
     </Layout>
