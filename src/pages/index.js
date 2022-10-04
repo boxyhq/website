@@ -1,5 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 
 import NewsSection from '../components/NewsSection';
 import HeroSection from '../components/HeroSection';
@@ -67,9 +69,12 @@ const SAMLSSO = () => {
                       </p>
                     </div>
                     <div class="card__footer">
-                      <button class="button button--primary button--block button--outline">
+                      <Link
+                        className={clsx('button button--primary button--block')}
+                        href="https://saml-demo.boxyhq.com"
+                      >
                         Try it
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -84,7 +89,7 @@ const SAMLSSO = () => {
                         className="text--center"
                         style={{ whiteSpace: 'pre-line' }}
                       >
-                        {`Build or buy? Neither! \n Use BoxyHQ’s free open-source solution`}
+                        {`Build or buy? \n Neither! Use BoxyHQ’s free open-source solution`}
                       </h3>
                     </div>
                     <div class="card__body">
@@ -99,9 +104,12 @@ const SAMLSSO = () => {
                       </p>
                     </div>
                     <div class="card__footer">
-                      <button class="button button--primary button--block button--outline">
-                        Book an exploration call
-                      </button>
+                      <Link
+                        className={clsx('button button--primary button--block')}
+                        href="mailto:hello@boxyhq.com"
+                      >
+                        Contact Us
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -119,9 +127,8 @@ const SAMLSSO = () => {
         direction="right"
       >
         <p>
-          List of awesome open-source developer security tools. Maintained by{' '}
-          <strong>BoxyHQ</strong>, and heavily inspired by <strong>MVSP</strong>
-          .
+          We have curated a list of awesome open-source developer security
+          tools.
         </p>
         <p>
           It includes security principles and controls relevant to popular

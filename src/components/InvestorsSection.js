@@ -24,10 +24,7 @@ const InvestorsList = [
 
 const InvestorsSection = () => {
   return (
-    <SectionLayout
-      title="Our investors"
-      description="Know who are the investors for BoxyHQ"
-    >
+    <SectionLayout title="Our investors" description="">
       <div
         className="row"
         style={{

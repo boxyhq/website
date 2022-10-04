@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from '@docusaurus/Link';
 
 import SvgIcon from './SvgIcon';
 import SectionLayout from './SectionLayout';
@@ -20,10 +19,7 @@ const NewsList = [
 
 const NewsSection = () => {
   return (
-    <SectionLayout
-      title="In the News"
-      description="A few of the stories about BoxyHQ in the press"
-    >
+    <SectionLayout title="In the News" description="">
       <div
         className="row"
         style={{
