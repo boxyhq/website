@@ -1,0 +1,11 @@
+.root {
+  max-width: var(--ifm-container-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 900px) {
+  .root {
+    margin-top: 5rem;
+  }
+}
