@@ -12,7 +12,7 @@ import FeatureSection from '../components/FeatureSection';
 const Icon3 =
   require('../../static/img/products/saml-jackson/undraw_building_re_xfcm.svg').default;
 
-const title = 'SAML Jackson';
+const title = 'BoxyHQ';
 const description =
   'Deploy enterprise readiness straight out of the box in minutes and become enterprise-ready';
 
