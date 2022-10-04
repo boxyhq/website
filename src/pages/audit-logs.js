@@ -9,7 +9,7 @@ import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 
 const title = 'Audit Logs';
 const description =
-  'With BoxyHQ’s Audit logs you can become compliant and deploy audit logs with minimal disruption';
+  'With BoxyHQ’s Audit Logs you can become compliant and deploy audit logs with minimal disruption';
 
 const ProductIcon =
   require('../../static/img/products/audit-logs/logo.svg').default;
@@ -59,7 +59,7 @@ const AuditLogs = () => {
       <HeroSection
         title={title}
         description={description}
-        image="/img/feat-sso.svg"
+        image="/img/feat-audit.svg"
         icon={ProductIcon}
         buttons={[
           {

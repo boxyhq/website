@@ -25,7 +25,7 @@ const DSync = () => {
       <HeroSection
         title={title}
         description={description}
-        image="/img/products/dsync/add_friends.svg"
+        image="/img/feat-dsync.svg"
         icon={ProductIcon}
         buttons={[
           {

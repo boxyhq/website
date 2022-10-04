@@ -11,8 +11,7 @@ import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import FeatureSection from '../components/FeatureSection';
 
-const Icon3 =
-  require('../../static/img/products/saml-jackson/building.svg').default;
+const Icon3 = require('../../static/img/home-buildingblocks.svg').default;
 
 const title = 'BoxyHQ';
 const description =
