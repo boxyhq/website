@@ -1,12 +1,12 @@
 import React from 'react';
 
-const SectionLayout = ({ title, description, children }) => {
+const SectionLayout = ({ title, description, children, style, titleStyle }) => {
   return (
-    <section className="page__section">
+    <section className="page__section" style={style}>
       <div className="container">
         <h2
           className="section__header text--center"
-          style={{ padding: '10px' }}
+          style={{ padding: '10px', ...titleStyle }}
         >
           {title}
         </h2>

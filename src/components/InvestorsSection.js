@@ -24,7 +24,11 @@ const InvestorsList = [
 
 const InvestorsSection = () => {
   return (
-    <SectionLayout title="Our investors" description="">
+    <SectionLayout
+      title="Our investors"
+      style={{ backgroundColor: 'white' }}
+      titleStyle={{ color: '#444950' }}
+    >
       <div
         className="row"
         style={{

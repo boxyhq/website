@@ -28,7 +28,11 @@ const customersList = [
 
 const CustomersSection = () => {
   return (
-    <SectionLayout title="What our customers say">
+    <SectionLayout
+      title="What our customers say"
+      style={{ backgroundColor: 'white' }}
+      titleStyle={{ color: '#444950' }}
+    >
       <div className="row">
         {customersList.map(({ quote, logo, url }, idx) => (
           <div className="col" key={idx}>
@@ -40,7 +44,7 @@ const CustomersSection = () => {
                   size={{ height: '50px', width: '120px' }}
                 />
                 <p style={{ fontSize: '15px' }}>
-                  <q>{quote}</q>
+                  <q style={{ color: '#444950' }}>{quote}</q>
                 </p>
               </div>
             </div>

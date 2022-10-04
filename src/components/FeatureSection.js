@@ -11,8 +11,6 @@ const FeatureSection = ({
   direction = 'left',
   children,
 }) => {
-  const Icon = image;
-
   return (
     <section className="page__section">
       <div className="container">

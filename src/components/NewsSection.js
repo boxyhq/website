@@ -19,7 +19,11 @@ const NewsList = [
 
 const NewsSection = () => {
   return (
-    <SectionLayout title="In the News" description="">
+    <SectionLayout
+      title="In the News"
+      style={{ backgroundColor: 'white' }}
+      titleStyle={{ color: '#444950' }}
+    >
       <div
         className="row"
         style={{
@@ -40,7 +44,7 @@ const NewsSection = () => {
               >
                 <SvgIcon icon={logo} url={url} size={{ width: '150px' }} />
               </div>
-              <h4>{title}</h4>
+              <h4 style={{ color: '#444950' }}>{title}</h4>
             </div>
           </div>
         ))}
