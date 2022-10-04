@@ -34,7 +34,7 @@ const benefits = [
     which prevents staff from password sharing, having the
     correct access and giving and removing access as needed
     from a central point.`,
-    icon: require('../../static/img/products/icons/lock.svg').default,
+    icon: require('../../static/img/products/icons/security.svg').default,
   },
   {
     title: 'Improved user experience',
@@ -42,7 +42,8 @@ const benefits = [
     if you can allow your customers to simply go their IdP
     dashboard and click on an icon to login into your product
     they will have a much better experience with your product.`,
-    icon: require('../../static/img/products/icons/lock.svg').default,
+    icon: require('../../static/img/products/icons/futuristic_interface.svg')
+      .default,
   },
   {
     title: 'Reduced cost',
@@ -51,7 +52,7 @@ const benefits = [
     you have to maintain account information across multiple
     services but when you use SAML this is all managed by the
     IdP.`,
-    icon: require('../../static/img/products/icons/lock.svg').default,
+    icon: require('../../static/img/products/icons/savings.svg').default,
   },
 ];
 
