@@ -51,11 +51,46 @@ module.exports = {
         srcDark: 'img/logo-dark.png',
       },
       items: [
-        { to: '/blog', label: 'Blog' },
-        { to: '/careers', label: 'Careers' },
-        { to: '/team', label: 'Team' },
+        {
+          label: 'Products',
+          type: 'dropdown',
+          items: [
+            {
+              to: '/enterprise-sso',
+              label: 'Enterprise SSO',
+            },
+            {
+              to: '/directory-sync',
+              label: 'Directory Sync',
+            },
+            {
+              to: '/audit-logs',
+              label: 'Audit Logs',
+            },
+            {
+              href: 'https://awesome-oss-devsec.boxyhq.com/',
+              label: 'Developer Security Tools',
+            },
+          ],
+        },
         { to: '/docs', label: 'Docs' },
         { to: '/guides', label: 'Guides' },
+        { to: '/blog', label: 'Blog' },
+        {
+          label: 'Company',
+          type: 'dropdown',
+          position: 'right',
+          items: [
+            {
+              to: '/team',
+              label: 'Team',
+            },
+            {
+              to: '/careers',
+              label: 'Careers',
+            },
+          ],
+        },
         {
           href: 'https://github.com/boxyhq',
           position: 'right',
@@ -84,6 +119,23 @@ module.exports = {
             {
               label: 'Twitter',
               href: 'https://twitter.com/boxyhq',
+            },
+          ],
+        },
+        {
+          title: 'Social',
+          items: [
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/boxyhq',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/boxyhq',
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/boxyhq',
             },
           ],
         },

@@ -17,16 +17,16 @@
   --ifm-code-font-size: 95%;
   --ifm-navbar-height: 5rem;
 
-  --aa-input-border-color-rgb: 190,195,201 !important;
-  --aa-selected-color-rgb: 141,148,158 !important;
+  --aa-input-border-color-rgb: 190, 195, 201 !important;
+  --aa-selected-color-rgb: 141, 148, 158 !important;
   --aa-muted-color-rgb: 37, 194, 160 !important;
   --aa-primary-color-rgb: 37, 194, 160 !important;
 }
 
 body[data-theme='dark'] {
-  --aa-input-border-color-rgb: 190,195,201 !important;
-  --aa-background-color-rgb: 27,27,29 !important;
-  --aa-selected-color-rgb: 190,195,201 !important;
+  --aa-input-border-color-rgb: 190, 195, 201 !important;
+  --aa-background-color-rgb: 27, 27, 29 !important;
+  --aa-selected-color-rgb: 190, 195, 201 !important;
   --aa-muted-color-rgb: 37, 194, 160 !important;
   --aa-primary-color-rgb: 37, 194, 160 !important;
 }
@@ -69,13 +69,76 @@ html[data-theme='dark'] .header-github-link:before {
   color: var(--ifm-color-content);
 }
 
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.3rem;
+}
+
+/* v2 CSS */
+
+.intro__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page__section {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  width: 100%;
+  padding: 40px 10px 40px;
+}
+
+.red {
+  border: 1px solid red;
+}
+
+.section__header {
+  font-size: 30px;
+  margin: 0%;
+}
+
+.card__description {
+  font-size: 14px;
+}
+
+.card {
+  border: 1px solid #e3dbdb !important;
+}
+
+.hero__title {
+  font-size: 2.25rem;
+  margin: 0%;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+}
+
+.hero__image {
+  display: none;
+  justify-content: center;
+}
+
+.product__dropdown__link {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile view */
+
 @media screen and (min-width: 996px) {
   .row.is-multiline .col {
     margin-top: var(--ifm-spacing-horizontal) !important;
     margin-bottom: var(--ifm-spacing-horizontal) !important;
   }
-}
 
-.markdown h1:first-child {
-  --ifm-h1-font-size: 2.3rem;
+  .hero__image {
+    display: flex;
+  }
 }

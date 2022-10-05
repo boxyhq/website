@@ -1,46 +1,62 @@
 import React from 'react';
-import SvgFeature from './SvgFeature';
-import styles from './InvestorsSection.module.css';
+import Link from '@docusaurus/Link';
+
+import SectionLayout from './SectionLayout';
 
 const InvestorsList = [
   {
     url: 'https://oss.capital',
-    Svg: require('../../static/img/investors/ossc-logo.svg').default,
+    logo: 'img/investors/ossc-logo.svg',
   },
   {
     url: 'https://nautacapital.com',
-    png: require('../../static/img/investors/nauta-logo.png').default,
+    logo: 'img/investors/nauta-logo.png',
   },
   {
     url: 'https://mmc.vc',
-    png: require('../../static/img/investors/mmc-logo.png').default,
+    logo: 'img/investors/mmc-logo.png',
   },
   {
     url: 'https://wayra.com',
-    png: require('../../static/img/investors/wayra-logo.png').default,
-    loading: 'lazy',
+    logo: 'img/investors/wayra-logo.png',
   },
 ];
 
-const InvestorsMain = {
-  title: 'Our investors',
-};
-
-export default function InvestorsSection() {
+const InvestorsSection = () => {
   return (
-    <div className={`${styles.investorsSection}`}>
-      <div className="row">
-        <SvgFeature
-          key="TrustedBySection"
-          {...InvestorsMain}
-          colSize="col--12"
-        />
-      </div>
-      <div className="row">
-        {InvestorsList.map((props, idx) => (
-          <SvgFeature key={idx} {...props} quotes={false} colSize="col--3" />
+    <SectionLayout
+      title="Our investors"
+      style={{ backgroundColor: 'white' }}
+      titleStyle={{ color: '#444950' }}
+    >
+      <div
+        className="row"
+        style={{
+          justifyContent: 'center',
+          gap: '5px',
+        }}
+      >
+        {InvestorsList.map(({ url, logo }, idx) => (
+          <div className="col col--2" key={idx}>
+            <div className="col-demo text--center">
+              <div
+                style={{
+                  minHeight: '70px',
+                  alignItems: 'center',
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <Link href={url}>
+                  <img src={logo} style={{ width: '150px' }} />
+                </Link>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
-    </div>
+    </SectionLayout>
   );
-}
+};
+
+export default InvestorsSection;
