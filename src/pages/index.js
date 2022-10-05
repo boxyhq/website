@@ -53,18 +53,19 @@ const SAMLSSO = () => {
                         className="text--center"
                         style={{ whiteSpace: 'pre-line' }}
                       >
-                        {`Spend more time building your core product, \n not standard features`}
+                        Why Developer Security?
                       </h3>
                     </div>
                     <div class="card__body">
                       <p className="text--center">
-                        We save you the hassle of building out lengthy standard
-                        features that enterprises require by creating simple
-                        API’s that do all the work for you.
+                        Cyber crimes will cost $10.5 trillion annually by 2025,
+                        but 70% of development teams always or frequently skip
+                        security steps due to time pressures.
                       </p>
-                      <p className="text--center">
-                        Simply integrate with BoxyHQ and be ready to offer
-                        enterprise features in a matter of days not months!
+                      <p>
+                        The days of focusing only on productivity are over; the
+                        faster a developer moves, the more security holes will
+                        be left behind.
                       </p>
                     </div>
                     <div class="card__footer">
@@ -88,14 +89,15 @@ const SAMLSSO = () => {
                         className="text--center"
                         style={{ whiteSpace: 'pre-line' }}
                       >
-                        {`Build or buy? \n Neither! Use BoxyHQ’s free open-source solution`}
+                        Build or buy?
                       </h3>
                     </div>
                     <div class="card__body">
                       <p className="text--center">
-                        By using our rapid deployment products you can save your
-                        team months of custom building or a hefty bill by simply
-                        using our free open-source products.
+                        Neither! Use BoxyHQ’s free open-source solution.
+                        Available on an Apache 2.0 license, helping developers
+                        collaborate and drive innovation by saving months of
+                        custom building or hefty bills.
                       </p>
                       <p className="text--center">
                         Our solutions run in your environment so you control

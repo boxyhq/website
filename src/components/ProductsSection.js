@@ -37,7 +37,7 @@ const products = [
     description:
       'Next.js based Enterprise SaaS starter kit that saves you months of development.',
     url: 'https://github.com/boxyhq/saas-starter-kit',
-    icon: require('../../static/img/products/saml-jackson/logo.svg').default,
+    icon: require('../../static/img/logo.svg').default,
   },
   {
     title: 'Privacy Vault',
