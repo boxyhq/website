@@ -52,8 +52,8 @@ const DSync = () => {
           Enterprise customers already use directories to manage user access. By
           allowing them to use their active directory in your product you enable
           them to have higher security standards and centrally manage their
-          user's access lifecycle. With Directory Sync by BoxyHQ you can enable
-          this with our simple API.{' '}
+          user's access lifecycle. With Directory Sync by BoxyHQ, you can enable
+          this with our simple API.
         </p>
       </FeatureSection>
 
@@ -66,7 +66,7 @@ const DSync = () => {
       >
         <p>
           <p>
-            With our simple integration you can enable directory sync in your
+            With our simple integration, you can enable directory sync in your
             application in days instead of months and seamlessly connect to
             almost any directory service. With our API you can:
           </p>
@@ -82,8 +82,8 @@ const DSync = () => {
             <br></br>
             <b>Streamline Data</b>
             <br></br>
-            Access data and integrate it in a seamless way so you can
-            standardise it across the board
+            Access data and integrate it seamlessly so you can standardize it
+            across the board
           </p>
         </p>
       </FeatureSection>

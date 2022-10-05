@@ -47,10 +47,10 @@ const AuditLogs = () => {
         direction="right"
       >
         <p>
-          With Audit Logs by BoxyHQ you provide enterprise customers with the
+          With Audit Logs by BoxyHQ, you provide enterprise customers with the
           ability to record and search events that happen on your application.
-          With our simple integration you can become compliant fast and save
-          your team building complex solutions from scratch.
+          With our simple integration, you can become compliant fast and save
+          your team from building complex solutions from scratch.
         </p>
       </FeatureSection>
 
@@ -62,12 +62,11 @@ const AuditLogs = () => {
         direction="left"
       >
         <p>
-          For all companies but in particular, for large companies the ability
-          to monitor the flow of data and be alerted to any breaches is
-          essential. Audit logs help to pinpoint any missues of information and
-          ensure that data policies are followed. Many larger enterprise
-          customers, they will demand this as a requirement if you plan to sell
-          to them.
+          For all companies but in particular large companies, the ability to
+          monitor the flow of data and be alerted to any breaches is essential.
+          Audit logs help to pinpoint any misuse of information and ensure that
+          data policies are followed. Many larger enterprise customers will
+          demand this as a requirement if you plan to sell to them.
         </p>
       </FeatureSection>
 

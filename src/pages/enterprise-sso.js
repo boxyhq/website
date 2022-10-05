@@ -39,7 +39,7 @@ const benefits = [
   {
     title: 'Improved user experience',
     description: `The login experience can be a tricky one to get right and
-    if you can allow your customers to simply go their IdP
+    if you can allow your customers to simply go to their IdP
     dashboard and click on an icon to login into your product
     they will have a much better experience with your product.`,
     icon: require('../../static/img/products/icons/futuristic_interface.svg')
