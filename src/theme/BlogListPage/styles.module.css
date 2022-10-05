@@ -4,6 +4,11 @@
   padding: 0 1rem;
 }
 
+.description {
+  line-height: 35px;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
 @media screen and (min-width: 900px) {
   .root {
     margin-top: 5rem;

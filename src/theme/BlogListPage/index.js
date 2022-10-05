@@ -20,7 +20,8 @@ export default function BlogListPage(props) {
       pageClassName={ThemeClassNames.page.blogListPage}
     >
       <main className={styles.root}>
-        <h2>{blogTitle}</h2>
+        <h1>{blogTitle}</h1>
+        <h2 className={styles.description}>{blogDescription}</h2>
         <div className="row">
           {posts.map(({ content }) => (
             <ListItem key={content.metadata.permalink} content={content} />
