@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for Google SAML
+title: Set up your own custom SAML application for Google SAML
 sidebar_label: Google SAML
 ---
 

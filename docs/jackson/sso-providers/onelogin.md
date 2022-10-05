@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for OneLogin SAML
+title: Set up your own custom SAML application for OneLogin SAML
 sidebar_label: OneLogin SAML
 ---
 
