@@ -12,7 +12,7 @@ import SectionLayout from '../components/SectionLayout';
 
 const title = 'Enterprise SSO';
 const description =
-  'Deploy SAML SSO straight out of the box in minutes and become enterprise ready';
+  'Save hundreds of development hours and integrate SSO to your SaaS app in minutes. Supports SAML & OIDC';
 
 const ProductIcon =
   require('../../static/img/products/saml-jackson/logo.svg').default;
@@ -73,7 +73,10 @@ const SAMLSSO = () => {
         ]}
       />
 
-      <SectionLayout title="Enterprise SSO with SAML Jackson" description="">
+      <SectionLayout
+        title="Here is what deploying SSO looks like with and without BoxyHQ"
+        description=""
+      >
         <div className="row">
           <div className="col col--8 col--offset-2">
             <div className="col-demo center">
@@ -106,6 +109,7 @@ const SAMLSSO = () => {
           integrate with SAML Jackson and then we provide you with integration
           for all the IdPs.
         </p>
+        <p>Since it's self-hosted, you keep full control over your data.</p>
       </FeatureSection>
 
       <FeatureSection
