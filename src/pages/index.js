@@ -22,7 +22,7 @@ const SAMLSSO = () => {
     <Layout title={title} description={description}>
       <HeroSection
         title="Enterprise readiness for your product, straight out the box"
-        description="At BoxyHQ we enable you to add enterprise-ready features to your SaaS product with simple integrations Comply with your enterprise customer requirements, open-source and free!"
+        description="At BoxyHQ we enable you to add plug-and-play enterprise-ready features to your SaaS product. Show enterprise customers and InfoSec teams you are ready to pass their processes with flying colors. We are open-source and free!"
         image="/img/home-hero.svg"
         buttons={[
           {
@@ -31,7 +31,7 @@ const SAMLSSO = () => {
             className: 'button--primary',
           },
           {
-            title: 'Book a free developer-security session',
+            title: 'Book a demo',
             href: 'https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655',
             className: 'button--primary button--outline',
           },
@@ -70,9 +70,9 @@ const SAMLSSO = () => {
                     <div class="card__footer">
                       <Link
                         className={clsx('button button--primary button--block')}
-                        href="https://saml-demo.boxyhq.com"
+                        href="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
                       >
-                        Try it
+                        Book a free developer-security session
                       </Link>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ const SAMLSSO = () => {
       </section>
 
       <FeatureSection
-        title="DevSec Tools"
+        title="Developer Security Tools"
         btnLink="https://awesome-oss-devsec.boxyhq.com/"
         btnText="Read More"
         image={Icon3}

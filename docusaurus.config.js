@@ -69,7 +69,7 @@ module.exports = {
             },
             {
               href: 'https://awesome-oss-devsec.boxyhq.com/',
-              label: 'DevSec Tools',
+              label: 'Developer Security Tools',
             },
           ],
         },

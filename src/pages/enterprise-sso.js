@@ -70,6 +70,11 @@ const SAMLSSO = () => {
             href: 'https://github.com/boxyhq/jackson',
             className: 'button--primary',
           },
+          {
+            title: 'Try It',
+            href: 'https://saml-demo.boxyhq.com',
+            className: 'button--primary button--outline',
+          },
         ]}
       />
 
