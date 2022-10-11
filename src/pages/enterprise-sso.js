@@ -109,7 +109,7 @@ const EnterpriseSSO = () => {
         direction="right"
       >
         <p>
-          With our open-source solution, you can deploy Eneterprise SSO with a
+          With our open-source solution, you can deploy Enterprise SSO with a
           straightforward integration that connects to all IdPs. You simply
           integrate with our product in a few lines of code.
         </p>
