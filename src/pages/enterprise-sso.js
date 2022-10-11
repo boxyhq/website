@@ -48,7 +48,7 @@ const benefits = [
   {
     title: 'Reduced cost',
     description: `Apart from the cost saving of using an out-of-the-box
-    solution v building your own custom version, Without SAML
+    solution vs building your own custom version, without SAML
     you have to maintain account information across multiple
     services but when you use SAML this is all managed by the
     IdP.`,
@@ -56,7 +56,7 @@ const benefits = [
   },
 ];
 
-const SAMLSSO = () => {
+const EnterpriseSSO = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
@@ -109,10 +109,9 @@ const SAMLSSO = () => {
         direction="right"
       >
         <p>
-          With our open-source solution, you can deploy SAML SSO with a
+          With our open-source solution, you can deploy Eneterprise SSO with a
           straightforward integration that connects to all IdPs. You simply
-          integrate with SAML Jackson and then we provide you with integration
-          for all the IdPs.
+          integrate with our product in a few lines of code.
         </p>
         <p>Since it's self-hosted, you keep full control over your data.</p>
       </FeatureSection>
@@ -125,16 +124,16 @@ const SAMLSSO = () => {
         direction="left"
       >
         <p>
-          Building your own SAML integration for each IdP can be very resource
-          heavy and take a long time. You will end up building a custom
-          integration for each IdP your customers use and this could take
-          months!
+          Building your own SAML or OpenID Connect integration for each IdP can
+          be very resource heavy and take a long time. You will end up building
+          a custom integration for each IdP your customers use and this could
+          take months!
         </p>
         <p>
-          With SAML Jackson you can go from the first line of code to deploying
-          in production in days instead of weeks! We also provide you with
-          custom integration support along the way so you have help each step of
-          the way.
+          With our SSO solution you can go from the first line of code to
+          deploying in production in days instead of weeks! We also provide you
+          with custom integration support along the way so you have help each
+          step of the way.
         </p>
       </FeatureSection>
 
@@ -147,9 +146,9 @@ const SAMLSSO = () => {
       >
         <p>
           Most enterprises already use an IdP and will prefer solution providers
-          who have a SAML SSO integration. This is because they already use SAML
-          for access management and security so anything outside this workflow
-          will be a hassle for them.
+          who have a Enterprise SSO integration. This is because they already
+          use SAML or OpenID Connect for access management and security so
+          anything outside this workflow will be a hassle for them.
         </p>
       </FeatureSection>
 
@@ -158,7 +157,7 @@ const SAMLSSO = () => {
       <BenefitsSection
         benefits={benefits}
         title="Benefits"
-        description="Deploying SAML SSO for your customer has many benefits and has become
+        description="Deploying Enterprise SSO for your customer has many benefits and has become
           an expected feature if you have enterprise customers."
       />
 
@@ -167,4 +166,4 @@ const SAMLSSO = () => {
   );
 };
 
-export default SAMLSSO;
+export default EnterpriseSSO;
