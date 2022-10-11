@@ -230,4 +230,4 @@ Set this to 1 to trigger `migration` execution when you execute Jackson docker i
 
 Optionally you can run `bootstrap.sh` when not using docker, it will execute `migrations` if **RUN_MIGRATION** is set and start the Jackson service.
 
-
+Make sure you have set the correct value for `DB_ENGINE` environment variable as the migration script checks that to run correct command and migration file.
