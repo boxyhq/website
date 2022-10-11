@@ -180,14 +180,16 @@ module.exports = {
         blog: {
           blogTitle: 'Blog',
           blogDescription:
-            'The BoxyHQ blog is an open discussion of thoughts from our team. We discuss everything from what SAML is to how we build certain elements of the products.',
+            'The BoxyHQ blog is where our team shares our thoughts and ideas about everything from our products to industry news and insights. We also welcome guest posts so please do get in touch if you have any thoughts you would like to share on our blog.',
           showReadingTime: true,
           feedOptions: {
             type: 'all',
             copyright,
           },
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+
+          blogSidebarTitle: 'Recent posts',
+          blogSidebarCount: 5,
+          postsPerPage: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
