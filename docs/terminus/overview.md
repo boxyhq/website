@@ -17,7 +17,6 @@ Check our our [Github repo](https://github.com/boxyhq/terminus/).
 ### Own your own data​
 
 - An open-source solution that allows you to keep control of your most sensitive data and the access to it
-- Supports Bring Your Own Database (BYOD) and can be used with any database
 - Built-in support for Postgres - more to come
 - Works with databases from popular hosting providers
 
