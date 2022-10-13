@@ -1,19 +1,18 @@
 # Environment Variables
 
-The env vars are split into: 
+The env vars are split into:
 
 - Docker Compose variables. Only relevant when running Terminus on docker
 - Terminus services configuration variables:
 
-    - The persistence layer
-    - The vault service
-    - The proxy service
+  - The persistence layer
+  - The vault service
+  - The proxy service
 
 When running via docker compose, all variables can be set in the [.env](https://docs.docker.com/compose/env-file/) file as well as environment variables.
 
-
-
 ---
+
 ## Docker Compose
 
 ### **VAULT_DB_IMAGE**
@@ -84,11 +83,11 @@ The mapping of the logs Proxy service volume on the host file system.
 
 Default: `./terminus-volumes/terminus-proxyservice-logs`
 
-
 ---
+
 ## Vault: Persistence Layer
 
-Terminus' vault persistence layer (or DB) currently uses [GORM](https://gorm.io/) with a default configuration using PostgreSQL as a provider. 
+Terminus' vault persistence layer (or DB) currently uses [GORM](https://gorm.io/) with a default configuration using PostgreSQL as a provider.
 
 ### **VAULT_DB_NAME**
 
@@ -120,12 +119,12 @@ The DB name within the server.
 
 Default: `postgres`
 
-
 ---
-## Vault: Service
-> :warning: **NOTE*: The vault service requires the following configuration to connect to the persistence layer. If running via docker compose, all will already be set. If running Terminus across different hosts, this needs to be set: VAULT_DB_USER, VAULT_DB_PASSWORD, VAULT_DB_DBNAME, VAULT_DB_NAME, VAULT_DB_PORT
 
-    
+## Vault: Service
+
+> :warning: \*_NOTE_: The vault service requires the following configuration to connect to the persistence layer. If running via docker compose, all will already be set. If running Terminus across different hosts, this needs to be set: VAULT_DB_USER, VAULT_DB_PASSWORD, VAULT_DB_DBNAME, VAULT_DB_NAME, VAULT_DB_PORT
+
 ### **VAULT_SERVICE_NAME**
 
 The name of the docker container if running on docker or the hostname of the vault service.
@@ -156,13 +155,14 @@ The vault service name for Open Telemetry (OTEL).
 
 Default: `terminus-vault-service`
 
-### **VAULT_SERVICE_OTEL_LIGHSTEP_ACCESS_TOKEN**
+### **VAULT_SERVICE_OTEL_LIGHTSTEP_ACCESS_TOKEN**
 
 The vault service Lightstep key for OTEL launcher. Currently being moved to a more generic OTEL provider.
 
 Default: No default.
 
 ---
+
 ## Proxy: Service
 
 ### **VAULT_SERVICE_ENDPOINT**
@@ -171,8 +171,7 @@ The URL of Terminus' vault service endpoint.
 
 Default: `http://${VAULT_SERVICE_NAME}:${VAULT_SERVICE_PORT}`
 
-> :warning: **NOTE*: The proxy service requires the following configuration to connect to the vault service. If running via docker compose, all will already be set. If running Terminus across different hosts, this needs to be set: VAULT_SERVICE_NAME, VAULT_SERVICE_PORT. Alternatively, hardcode the VAULT_SERVICE_ENDPOINT to the relevant endpoint.
-
+> :warning: \*_NOTE_: The proxy service requires the following configuration to connect to the vault service. If running via docker compose, all will already be set. If running Terminus across different hosts, this needs to be set: VAULT_SERVICE_NAME, VAULT_SERVICE_PORT. Alternatively, hardcode the VAULT_SERVICE_ENDPOINT to the relevant endpoint.
 
 ### **PROXY_SERVICE_NAME**
 
@@ -192,7 +191,7 @@ The proxy service name for Open Telemetry (OTEL).
 
 Default: `terminus-proxy-service`
 
-### **PROXY_SERVICE_OTEL_LIGHSTEP_ACCESS_TOKEN**
+### **PROXY_SERVICE_OTEL_LIGHTSTEP_ACCESS_TOKEN**
 
 The proxy service Lightstep key for OTEL launcher. Currently being moved to a more generic OTEL provider.
 
@@ -203,4 +202,3 @@ Default: No default.
 By default, Terminus encryption proxy is configured with AES. This is the 32 byte key to perform all the cryptographic operations.
 
 Default: `passphrasethatnneedstobe32byzes!`
-
