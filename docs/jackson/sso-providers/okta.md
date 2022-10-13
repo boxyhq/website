@@ -1,5 +1,5 @@
 ---
-title: Setup your own custom SAML application for Okta SAML
+title: Set up your own custom SAML application for Okta SAML
 sidebar_label: Okta SAML
 ---
 

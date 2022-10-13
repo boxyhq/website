@@ -6,7 +6,7 @@ export default function GuideSection({ items }) {
   return (
     <>
       {items.map((item) => (
-        <div key={item.name} className="col col--3">
+        <div key={item.name} className="col col--3 margin-bottom--sm">
           <Link className="card" to={item.href}>
             <div
               className="card__body"

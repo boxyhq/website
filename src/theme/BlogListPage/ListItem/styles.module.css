@@ -1,0 +1,15 @@
+.title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  min-height: 110px;
+  overflow: hidden;
+  color: var(--theme-text-color);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.cardImage {
+  height: 200px;
+  overflow: hidden;
+}

@@ -2,6 +2,7 @@
 title: Add SAML Single Sign On to a remix app
 sidebar_label: Remix
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -16,20 +17,22 @@ If you wish to dive straight into the source, Checkout: https://github.com/boxyh
 ### Create remix app
 
 ```bash
-npx create-remix@latest 
+npx create-remix@latest
 ```
+
 You can go with the Remix App Server as the deployment target. Feel free to choose either 'Typescript' or "Javascript". All the code samples in this guide are in typescript.
 
 ### Install the dependencies
+
 ```bash
 npm i remix-auth @boxyhq/remix-auth-saml
 ```
+
 [`remix-auth`](https://github.com/sergiodxa/remix-auth) is a complete open-source authentication solution for Remix applications. [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) provides a remix-auth strategy to interact with the SAML Service provider.
 
 ## Authenticator
 
-First, we need an `Authenticator` instance from `remix-auth`. `Authenticator` exposes the API for login and logout. 
-
+First, we need an `Authenticator` instance from `remix-auth`. `Authenticator` exposes the API for login and logout.
 
 ### Create sessionStorage for `Authenticator`
 
@@ -37,68 +40,69 @@ app/sessions.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/a
 
 > **NOTE: We will be relying on cookie-based sessions See: [createCookieSessionStorage](https://remix.run/docs/en/v1/api/remix#createcookiesessionstorage) from remix. **
 
- ```typescript
- import { createCookieSessionStorage } from "remix";
+```typescript
+import { createCookieSessionStorage } from 'remix';
 
- const sessionStorage = createCookieSessionStorage({
-   cookie: {
-     name: "__session",
-     httpOnly: true,
-     path: "/",
-     sameSite: "lax",
-     secrets: process.env.COOKIE_SECRETS!.split(","),
-     secure: process.env.NODE_ENV === "production",
-   },
- });
- 
- const { getSession, commitSession, destroySession } = sessionStorage;
- const JACKSON_ERROR_COOKIE_KEY = "jackson_error";
- 
- export default sessionStorage;
- export { getSession, commitSession, destroySession, JACKSON_ERROR_COOKIE_KEY };
- ```
+const sessionStorage = createCookieSessionStorage({
+  cookie: {
+    name: '__session',
+    httpOnly: true,
+    path: '/',
+    sameSite: 'lax',
+    secrets: process.env.COOKIE_SECRETS!.split(','),
+    secure: process.env.NODE_ENV === 'production',
+  },
+});
+
+const { getSession, commitSession, destroySession } = sessionStorage;
+const JACKSON_ERROR_COOKIE_KEY = 'jackson_error';
+
+export default sessionStorage;
+export { getSession, commitSession, destroySession, JACKSON_ERROR_COOKIE_KEY };
+```
 
 ### Create the `Authenticator` instance
-app/auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.server.ts  
+
+app/auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.server.ts
+
 > **NOTE: We haven't initialised the strategy use yet. That will be done in following sections**
 
- ```typescript
- import { Authenticator } from "remix-auth";
- import {
-   BoxyHQSAMLStrategy,
-   type BoxyHQSAMLProfile,
- } from "@boxyhq/remix-auth-saml";
- import invariant from "tiny-invariant";
- import sessionStorage from "./sessions.server";
- 
- let auth: Authenticator;
- declare global {
-   var __auth: Authenticator | undefined;
- }
- 
- function createAuthenticator() {
-   const auth = new Authenticator<BoxyHQSAMLProfile>(sessionStorage);
- 
-   // Strategy use for the hosted saml service provider goes here
-   
-   // Strategy use for the embedded saml service provider goes here
-   
-   return auth;
- }
- 
- if (process.env.NODE_ENV === "production") {
-   auth = createAuthenticator();
- } else {
-   //  In development we don't want to recreate the Authenticator for every change
-   if (!global.__auth) {
-     global.__auth = createAuthenticator();
-   }
-   auth = global.__auth;
- }
- 
- export { auth };
- ```
+```typescript
+import { Authenticator } from 'remix-auth';
+import {
+  BoxyHQSAMLStrategy,
+  type BoxyHQSAMLProfile,
+} from '@boxyhq/remix-auth-saml';
+import invariant from 'tiny-invariant';
+import sessionStorage from './sessions.server';
 
+let auth: Authenticator;
+declare global {
+  var __auth: Authenticator | undefined;
+}
+
+function createAuthenticator() {
+  const auth = new Authenticator<BoxyHQSAMLProfile>(sessionStorage);
+
+  // Strategy use for the hosted saml service provider goes here
+
+  // Strategy use for the embedded saml service provider goes here
+
+  return auth;
+}
+
+if (process.env.NODE_ENV === 'production') {
+  auth = createAuthenticator();
+} else {
+  //  In development we don't want to recreate the Authenticator for every change
+  if (!global.__auth) {
+    global.__auth = createAuthenticator();
+  }
+  auth = global.__auth;
+}
+
+export { auth };
+```
 
 ## Strategy Usage
 
@@ -107,17 +111,14 @@ Our strategy usage depends on how we integrate the SAML Service Provider into th
 1. Host SAML SP as a separate service.
 2. Embed SAML SP functionality leveraging remix resource routes.
 
-
-
 #### Setup
 
 <Tabs>
 <TabItem value="01" label="Host SAML SP as a separate service">
 
 To get going, you'll need a hosted instance of "SAML Jackson".  
-Refer to the [documentation](https://boxyhq.com/docs/jackson/deploy/service) in case you're planning to deploy `Jackson` to your favorite hosting provider.  
+Refer to the [documentation](../../../docs/jackson/deploy/service) in case you're planning to deploy `Jackson` to your favorite hosting provider.  
 Otherwise, fret not 🤗, we have a hosted instance of [`Jackson`](https://jackson-demo.boxyhq.com), that can be readily used without any configuration.
-
 
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
@@ -132,12 +133,13 @@ Install `@boxyhq/saml-jackson` first:
 npm i @boxyhq/saml-jackson
 ```
 
-Before you proceed,set up a [database](https://boxyhq.com/docs/jackson/deploy/service#database) for jackson. Refer to [db environment variables](https://boxyhq.com/docs/jackson/deploy/env-variables#database-configuration) for the npm library options.
+Before you proceed,set up a [database](../../../docs/jackson/deploy/service#database) for jackson. Refer to [db environment variables](../../../docs/jackson/deploy/env-variables#database-configuration) for the npm library options.
 
 ##### Setup `JacksonProvider`
 
-app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts  
-> **NOTE: [clientSecretVerifier](https://boxyhq.com/docs/jackson/deploy/env-variables#client_secret_verifier) set below will be matched against client_secret coming from Authenticator &nbsp;**
+app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.jackson.server.ts
+
+> **NOTE: [clientSecretVerifier](../../../docs/jackson/deploy/env-variables#client_secret_verifier) set below will be matched against client_secret coming from Authenticator &nbsp;**
 
 ```typescript
  const opts =  {
@@ -147,12 +149,12 @@ app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/ma
     url: "postgresql://postgres:postgres@localhost:5432/postgres",
     type: "postgres",
   },
-  clientSecretVerifier: process.env.CLIENT_SECRET_VERIFIER 
+  clientSecretVerifier: process.env.CLIENT_SECRET_VERIFIER
   ...
  }
- 
+
  ...
- 
+
  async function JacksonProvider({
    appBaseUrl,
  }: {
@@ -178,95 +180,97 @@ app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/ma
      apiController = global.__apiController;
      oauthController = global.__oauthController;
    }
- 
+
    return { apiController, oauthController };
  }
 
  ...
- 
- ```
+
+```
 
 ##### Resource routes
-Next, create the api files for [OAuth2.0 flow](https://boxyhq.com/docs/jackson/saml-flow#3-oauth-20-flow) and [SAML Configuration](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api):
+
+Next, create the api files for [OAuth2.0 flow](../../../docs/jackson/sso-flow/#3-oauth-20-flow) and [SAML Configuration](../../../docs/jackson/sso-flow/#2-sso-connection-api):
 
 ```bash
 app/routes $ mkdir api && cd api
 routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
 ```
 
- oauth.$slug.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/oauth.%24slug.ts
- ```typescript
- ...
-  
- // Handles GET /api/oauth/authorize, GET /api/oauth/userinfo
- export const loader: LoaderFunction = async ({ params, request }) => {
+oauth.$slug.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/oauth.%24slug.ts
 
-   ... // Some validation logic
-   const operation = params.slug;
-   const url = new URL(request.url);
- 
-   const { oauthController } = await JacksonProvider({
-     appBaseUrl: url.origin,
-   });
- 
-   // rightmost query param will win in case of multiple ones with same name
-   const queryParams = Object.fromEntries(url.searchParams.entries());
- 
-   switch (operation) {
-     case "authorize": {
-       ...
-       try {
-         const { redirect_url, authorize_form } =
-           await oauthController.authorize(
-             queryParams as unknown as OAuthReqBody
-           );
-         ...
-       } catch (err: any) {
-         ... // error handling, redirect to /error page
-       }
-     }
-     case "userinfo": {
-      ... // token validation
-       try {
-         const profile = await oauthController.userInfo(token);
-         return json(profile);
-       } catch (error: any) {
-         ... // error handling
-       }
-     }
-   }
- };
+```typescript
+...
 
- // Handles POST /api/oauth/saml, POST /api/oauth/token
- export const action: ActionFunction = async ({ params, request }) => {
- 
-   ... // Some validation logic
-   const operation = params.slug;
-   const url = new URL(request.url);
- 
-   const { oauthController } = await JacksonProvider({
-     appBaseUrl: url.origin,
-   });
-   switch (operation) {
-     case "saml": {
-       try {
-         const { redirect_url } = await oauthController.samlResponse(body);
-         return redirect(redirect_url, 302);
-       } catch (err: any) {
-         ... // error handling
-       }
-     }
-     case "token": {
-       try {
-         const tokenRes = await oauthController.token(body);
-         return json(tokenRes);
-       } catch (error: any) {
-         ... // error handling
-       }
-     }
-   }
- };
- ```
+// Handles GET /api/oauth/authorize, GET /api/oauth/userinfo
+export const loader: LoaderFunction = async ({ params, request }) => {
+
+  ... // Some validation logic
+  const operation = params.slug;
+  const url = new URL(request.url);
+
+  const { oauthController } = await JacksonProvider({
+    appBaseUrl: url.origin,
+  });
+
+  // rightmost query param will win in case of multiple ones with same name
+  const queryParams = Object.fromEntries(url.searchParams.entries());
+
+  switch (operation) {
+    case "authorize": {
+      ...
+      try {
+        const { redirect_url, authorize_form } =
+          await oauthController.authorize(
+            queryParams as unknown as OAuthReqBody
+          );
+        ...
+      } catch (err: any) {
+        ... // error handling, redirect to /error page
+      }
+    }
+    case "userinfo": {
+     ... // token validation
+      try {
+        const profile = await oauthController.userInfo(token);
+        return json(profile);
+      } catch (error: any) {
+        ... // error handling
+      }
+    }
+  }
+};
+
+// Handles POST /api/oauth/saml, POST /api/oauth/token
+export const action: ActionFunction = async ({ params, request }) => {
+
+  ... // Some validation logic
+  const operation = params.slug;
+  const url = new URL(request.url);
+
+  const { oauthController } = await JacksonProvider({
+    appBaseUrl: url.origin,
+  });
+  switch (operation) {
+    case "saml": {
+      try {
+        const { redirect_url } = await oauthController.samlResponse(body);
+        return redirect(redirect_url, 302);
+      } catch (err: any) {
+        ... // error handling
+      }
+    }
+    case "token": {
+      try {
+        const tokenRes = await oauthController.token(body);
+        return json(tokenRes);
+      } catch (error: any) {
+        ... // error handling
+      }
+    }
+  }
+};
+```
 
 v1.saml.config.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/v1.saml.config.ts
 
@@ -278,20 +282,20 @@ v1.saml.config.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/ro
    ) as unknown as { clientID?: string; tenant?: string; product?: string };
    ...// Validate apiKey
    const { apiController } = await JacksonProvider({ appBaseUrl: url.origin });
- 
+
    try {
      return json(await apiController.getConfig(queryParams));
    } catch (error: any) {
      ... // error handling
    }
  };
- 
+
  export const action: ActionFunction = async ({ request }) => {
    const url = new URL(request.url);
    const contentType = request.headers.get("Content-Type");
    ... // Validate body,apiKey
    const { apiController } = await JacksonProvider({ appBaseUrl: url.origin });
- 
+
    try {
      switch (request.method) {
        case "POST":
@@ -307,42 +311,46 @@ v1.saml.config.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/ro
      ... // error handling
    }
  };
- ```
+```
+
 </TabItem>
 </Tabs>
 
 #### Initialise Strategy
+
 Use the strategy with the `Authenticator` as shown below.The clientID/Secret values are expected to be set dynamically from the client side. For now set them to the value `dummy`.
 <Tabs>
 <TabItem value="01" label="Host SAML SP as a separate service">
 
-Point the `issuer` to the jackson service url. 
+Point the `issuer` to the jackson service url.
 
 auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.server.ts
- ```typescript
-invariant(process.env.BASE_URL, "Expected BASE_URL to be set in env");
+
+```typescript
+invariant(process.env.BASE_URL, 'Expected BASE_URL to be set in env');
 invariant(
   process.env.BOXYHQSAML_ISSUER,
-  "Expected BOXYHQSAML_ISSUER to be set in env"
+  'Expected BOXYHQSAML_ISSUER to be set in env'
 );
 
 const BASE_URL = process.env.BASE_URL;
 const BOXYHQSAML_ISSUER = process.env.BOXYHQSAML_ISSUER;
- // Strategy use for the hosted saml service provider goes here
-  auth.use(
-    new BoxyHQSAMLStrategy(
-      {
-        issuer: BOXYHQSAML_ISSUER, // Set BOXYHQSAML_ISSUER in env to "https://jackson-demo.boxyhq.com"
-        clientID: "dummy",
-        clientSecret: "dummy",
-        callbackURL: new URL("/auth/saml/callback", BASE_URL).toString(),
-      },
-      async ({ profile }) => {
-        return profile;
-      }
-    )
-  );
- ```
+// Strategy use for the hosted saml service provider goes here
+auth.use(
+  new BoxyHQSAMLStrategy(
+    {
+      issuer: BOXYHQSAML_ISSUER, // Set BOXYHQSAML_ISSUER in env to "https://jackson-demo.boxyhq.com"
+      clientID: 'dummy',
+      clientSecret: 'dummy',
+      callbackURL: new URL('/auth/saml/callback', BASE_URL).toString(),
+    },
+    async ({ profile }) => {
+      return profile;
+    }
+  )
+);
+```
+
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
@@ -353,87 +361,89 @@ auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.
 > **BOXYHQSAML_ISSUER in env is set to point to the app url: http://localhost:3366 or the actual url once hosted. Take a look at [.env.example](https://github.com/boxyhq/jackson-remix-auth/blob/main/.env.example) file &nbsp;**
 
 ```typescript
-invariant(process.env.BASE_URL, "Expected BASE_URL to be set in env");
+invariant(process.env.BASE_URL, 'Expected BASE_URL to be set in env');
 invariant(
   process.env.BOXYHQSAML_ISSUER,
-  "Expected BOXYHQSAML_ISSUER to be set in env"
+  'Expected BOXYHQSAML_ISSUER to be set in env'
 );
 
 const BASE_URL = process.env.BASE_URL;
 const BOXYHQSAML_ISSUER = process.env.BOXYHQSAML_ISSUER;
-  // Strategy use for the embedded saml service provider goes here
-  auth.use(
-    new BoxyHQSAMLStrategy(
-      {
-        issuer: BOXYHQSAML_ISSUER, //same as the APP URL
-        clientID: "dummy",
-        clientSecret: process.env.CLIENT_SECRET_VERIFIER || "dummy",
-        callbackURL: new URL("/auth/saml/embed/callback", BASE_URL).toString(),
-      },
-      async ({ profile }) => {
-        return profile;
-      }
-    ),
-    "boxyhq-saml-embed" // use a name here when using the same strategy again
-  );
- ```
+// Strategy use for the embedded saml service provider goes here
+auth.use(
+  new BoxyHQSAMLStrategy(
+    {
+      issuer: BOXYHQSAML_ISSUER, //same as the APP URL
+      clientID: 'dummy',
+      clientSecret: process.env.CLIENT_SECRET_VERIFIER || 'dummy',
+      callbackURL: new URL('/auth/saml/embed/callback', BASE_URL).toString(),
+    },
+    async ({ profile }) => {
+      return profile;
+    }
+  ),
+  'boxyhq-saml-embed' // use a name here when using the same strategy again
+);
+```
+
 </TabItem>
 </Tabs>
 
 #### Routes
-We need 2 routes:   
+
+We need 2 routes:  
 <Tabs>
 <TabItem value="01" label="Host SAML SP as a separate service">
 
 ~> [/auth/saml](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx) - Action handler for login  
-~> [/auth/saml/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile. 
+~> [/auth/saml/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.
 
-Create the following files under `app/routes`:  
-
+Create the following files under `app/routes`:
 
 app/routes/auth.saml.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx
- ```typescript
- ...
- export const action: ActionFunction = async ({ request }) => {
-   const formData = await request.formData();
-   const email = formData.get("email");
-   const product = formData.get("product");
- 
-   ... // Add some validation logic
- 
-   // extracting the tenant from email is one way to set it
-   const tenant = email.split("@")[1];
- 
-   return await auth.authenticate("boxyhq-saml", request, {
-     successRedirect: "/private",
-     failureRedirect: "/login",
-     context: {
-       clientID: `tenant=${tenant}&product=${product}`,
-       clientSecret: "dummy",
-     },
-   });
- };
- ``` 
+
+```typescript
+...
+export const action: ActionFunction = async ({ request }) => {
+  const formData = await request.formData();
+  const email = formData.get("email");
+  const product = formData.get("product");
+
+  ... // Add some validation logic
+
+  // extracting the tenant from email is one way to set it
+  const tenant = email.split("@")[1];
+
+  return await auth.authenticate("boxyhq-saml", request, {
+    successRedirect: "/private",
+    failureRedirect: "/login",
+    context: {
+      clientID: `tenant=${tenant}&product=${product}`,
+      clientSecret: "dummy",
+    },
+  });
+};
+```
 
 app/routes/auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx
- ```tsx
- ...
- export const loader: LoaderFunction = async ({ request, params }) => {
-   return auth.authenticate("boxyhq-saml", request, {
-     successRedirect: "/private",
-     failureRedirect: "/login",
-   });
- };
- ```
 
+```tsx
+...
+export const loader: LoaderFunction = async ({ request, params }) => {
+  return auth.authenticate("boxyhq-saml", request, {
+    successRedirect: "/private",
+    failureRedirect: "/login",
+  });
+};
+```
 
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
 ~> [/auth/saml/embed](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx) - Action handler for login  
-~> [/auth/saml/embed/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.  
+~> [/auth/saml/embed/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.
 
-Create the following files under `app/routes`:  
+Create the following files under `app/routes`:
 
 app/routes/auth.saml.embed.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx
 
@@ -461,6 +471,7 @@ export const action: ActionFunction = async ({ request }) => {
 ```
 
 app/routes/auth.saml.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx
+
 ```tsx
 ...
 export const loader: LoaderFunction = async ({ request, params }) => {
@@ -470,13 +481,9 @@ export const loader: LoaderFunction = async ({ request, params }) => {
   });
 };
 ```
+
 </TabItem>
 </Tabs>
-
-
-
-
-
 
 ## SAML configuration
 
@@ -488,11 +495,11 @@ client_id         : tenant=boxyhq.com&product=saml-demo.boxyhq.com
 Identity Provider : https://mocksaml.com
 ```
 
-We'll be using the above [pre-configured](https://boxyhq.com/docs/jackson/saml-flow#2-saml-config-api) tenant/product pointing to https://mocksaml.com as the IdP.
+We'll be using the above [pre-configured](../../../docs/jackson/sso-flow/#2-sso-connection-api) tenant/product pointing to https://mocksaml.com as the IdP.
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
-[Add a SAML config](https://boxyhq.com/docs/jackson/saml-flow#21-saml-add-config-api) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
+[Add a SAML config](../../../docs/jackson/sso-flow/#21-add-connection) for [mocksaml.com](https://mocksaml.com). You can start the app and call the config API as shown below:
 
 <details>
 <summary>Below adds a SAML IdP config for https://mocksaml.com</summary>
@@ -512,15 +519,14 @@ curl --location --request POST 'http://localhost:3366/api/v1/saml/config'
 </TabItem>
 </Tabs>
 
-
-
-
 ## App routes
+
 ### Login/Logout
 
 For the `Login` page we need a form that can accept email (for deriving tenant) and product. We also change the form action for the `embedded SAML provider` button.
 
 **login.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/login.tsx &nbsp;**
+
 ```tsx
   export const loader: LoaderFunction = async ({ request }) => {
     // check if authenticated then redirect to /private
@@ -529,7 +535,7 @@ For the `Login` page we need a form that can accept email (for deriving tenant) 
   }
 
    export default function Login() {
-     return ( 
+     return (
        ...
        <Form
         method="post"
@@ -545,41 +551,42 @@ For the `Login` page we need a form that can accept email (for deriving tenant) 
 ```
 
 **logout.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/logout.ts &nbsp;**
- ```typescript
-  export const loader: LoaderFunction = async ({ request }) => {
-    await auth.logout(request, { redirectTo: "/login" });
-  };
- ```
+
+```typescript
+export const loader: LoaderFunction = async ({ request }) => {
+  await auth.logout(request, { redirectTo: '/login' });
+};
+```
 
 ### Private
 
 This page renders the logged-in user profile.
 
 **private.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/private.tsx &nbsp;**
+
 ```tsx
-  export const loader: LoaderFunction = async ({ request }) => {
-    const profile = await auth.isAuthenticated(request, {
-      failureRedirect: "/login",
-    });
-  
-    return json<LoaderData>({ profile });
-  };
-  
-  export default function Private() {
-    const { profile } = useLoaderData<LoaderData>();
-    return (
-      <>
-        <h1 className="text-primary mb-4 font-bold md:text-3xl">Raw profile</h1>
-        <pre>
-          <code>{JSON.stringify(profile, null, 2)}</code>
-        </pre>
-      </>
-    );
-  }
+export const loader: LoaderFunction = async ({ request }) => {
+  const profile = await auth.isAuthenticated(request, {
+    failureRedirect: '/login',
+  });
+
+  return json<LoaderData>({ profile });
+};
+
+export default function Private() {
+  const { profile } = useLoaderData<LoaderData>();
+  return (
+    <>
+      <h1 className="text-primary mb-4 font-bold md:text-3xl">Raw profile</h1>
+      <pre>
+        <code>{JSON.stringify(profile, null, 2)}</code>
+      </pre>
+    </>
+  );
+}
 ```
 
 ### Error page (needed only for embedded SAML SP)
-
 
 For errors occuring in the SAML flow (/api/oauth/authorize and /api/oauth/saml), the user get's [redirected](https://github.com/boxyhq/jackson-remix-auth/blob/e75cb4a9c340b088749ec63d6932f2f4b206a07d/app/routes/api/oauth.%24slug.ts#L63) to an error page.
 
@@ -587,59 +594,58 @@ Create one at `/error`:
 
 **error.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/error.tsx &nbsp;**
 
- ```tsx
- export const loader: LoaderFunction = async ({ request }) => {
-   const session = await getSession(request.headers.get("Cookie"));
-   const { statusCode, message } = session.get(JACKSON_ERROR_COOKIE_KEY) || {
-     statusCode: null,
-     message: "",
-   };
-   return json({ statusCode, message });
- };
- 
- export default function Error() {
-   const { statusCode, message } = useLoaderData<LoaderData>();
- 
-   let statusText = "";
-   if (typeof statusCode === "number") {
-     if (statusCode >= 400 && statusCode <= 499) {
-       statusText = "client-side error";
-     }
-     if (statusCode >= 500 && statusCode <= 599) {
-       statusText = "server error";
-     }
-   }
- 
-   if (statusCode === null) {
-     return null;
-   }
- 
-   return (
-     <div className="h-full">
-       <div className="h-[20%] translate-y-[100%] px-[20%] text-[hsl(152,56%,40%)]">
-         <svg
-           className="mb-5 h-10 w-10"
-           fill="none"
-           viewBox="0 0 24 24"
-           stroke="currentColor"
-           strokeWidth={2}
-         >
-           <path
-             strokeLinecap="round"
-             strokeLinejoin="round"
-             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-           />
-         </svg>
-         <h1 className="text-xl font-extrabold md:text-6xl">{statusCode}</h1>
-         <h2 className="uppercase">{statusText}</h2>
-         <p className="mt-6 inline-block">SAML error: </p>
-         <p className="mr-2 text-xl font-bold">{message}</p>
-       </div>
-     </div>
-   );
- }
- ```
+```tsx
+export const loader: LoaderFunction = async ({ request }) => {
+  const session = await getSession(request.headers.get('Cookie'));
+  const { statusCode, message } = session.get(JACKSON_ERROR_COOKIE_KEY) || {
+    statusCode: null,
+    message: '',
+  };
+  return json({ statusCode, message });
+};
 
+export default function Error() {
+  const { statusCode, message } = useLoaderData<LoaderData>();
+
+  let statusText = '';
+  if (typeof statusCode === 'number') {
+    if (statusCode >= 400 && statusCode <= 499) {
+      statusText = 'client-side error';
+    }
+    if (statusCode >= 500 && statusCode <= 599) {
+      statusText = 'server error';
+    }
+  }
+
+  if (statusCode === null) {
+    return null;
+  }
+
+  return (
+    <div className="h-full">
+      <div className="h-[20%] translate-y-[100%] px-[20%] text-[hsl(152,56%,40%)]">
+        <svg
+          className="mb-5 h-10 w-10"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+        <h1 className="text-xl font-extrabold md:text-6xl">{statusCode}</h1>
+        <h2 className="uppercase">{statusText}</h2>
+        <p className="mt-6 inline-block">SAML error: </p>
+        <p className="mr-2 text-xl font-bold">{message}</p>
+      </div>
+    </div>
+  );
+}
+```
 
 ## Ready to go
 
