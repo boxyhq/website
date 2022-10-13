@@ -226,8 +226,8 @@ Set this to a comma separated string of email addresses or glob patterns like: `
 
 ### **RUN_MIGRATION**
 
-Set this to 1 to trigger `migration` execution when you execute Jackson docker image.
+Set this to true to trigger `migration` execution when you execute Jackson docker image.
 
-Optionally you can run `bootstrap.sh` when not using docker, it will execute `migrations` if **RUN_MIGRATION** is set and start the Jackson service.
+Optionally you can run the npm scripts present in `./npm/package.json` to run db specific migrations. 
 
 Make sure you have set the correct value for `DB_ENGINE` environment variable as the migration script checks that to run correct command and migration file.
