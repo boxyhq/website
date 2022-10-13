@@ -5,28 +5,33 @@
 The encryption and masking module of Terminus is written in [GO](https://go.dev/).
 
 The codebase is organised in a way so it can be used in Terminus' services:
+
 - [Proxy Service](../architecture/proxy.md): uses the encryption module for encryption/decryption and masking on the business objects
 - [Vault Service](../architecture/vaultservice.md) uses the encryption module for logical encryption/decryption of the vault payloads
 
 ## Encryption Types
 
-> :warning: **Terminus is in Alpha release**: Encryption types and their configuration, along with multitenant support will be extended.
+> :warning: **Terminus is in Beta release**: Encryption types and their configuration, along with multitenant support will be extended.
 
 These are the currently supported and future encryption types:
 
-### Supported 
+### Supported
+
 - AES_256 - default
 - B64 (obfuscation)
 - No encryption (clear)
 
 ### Not yet Supported
+
 - RSA_2048
 - Blowfish_448
 - TwoFish_256
 - FPE
 
 ### Default Configuration
+
 The [environment variables](../deploy/env-variables.md):
+
 - [VAULT_SERVICE_KEY_AES](../deploy/env-variables.md#vault_service_key_aes)
 - [PROXY_SERVICE_CONF_KEY_AES](../deploy/env-variables.md#proxy_service_conf_key_aes)
 
@@ -34,16 +39,18 @@ Define the keys for AES-256 encryption for the vault and the proxy service.
 
 ## Masking Types
 
-> :warning: **Terminus is in Alpha release**: Masking types and their configuration, along with multitenant support and role based mapping will be supported in the near future.
+> :warning: **Terminus is in Beta release**: Masking types and their configuration, along with multitenant support and role based mapping will be supported in the near future.
 
 These are the currently supported and future masking types:
 
-### Supported 
+### Supported
+
 - Redact
 - Clear
 - Generic
 
 ### Not yet Supported
+
 - Password
 - Name
 - Address
@@ -84,9 +91,9 @@ c_: crypto.#EnNoEncryption
 // The model
 
     EncryptedDefinitions: ["Passport"]
-    
+
 #Passport: {
-        #Definition: { 
+        #Definition: {
 			Code: defs.#Letters
 			ID: defs.#Alphanumerical
 			Name: defs.#AlphanumericalWithSpaces
@@ -97,7 +104,7 @@ c_: crypto.#EnNoEncryption
 			Issued: defs.#SimpleDateFormat
 			Expires: defs.#SimpleDateFormat
         }
-        #Encryption: { 
+        #Encryption: {
 			Code: crypto.#EnAES_256
 			ID: crypto.#EnAES_256
 			Name: crypto.#EnAES_256
@@ -108,7 +115,7 @@ c_: crypto.#EnNoEncryption
 			Issued: crypto.#EnNoEncryption
 			Expires: crypto.#EnNoEncryption
         }
-        #Mask_admin: { 
+        #Mask_admin: {
 			Code: masking.#MClear
 			ID: masking.#MClear
 			Name: masking.#MRedact
@@ -120,5 +127,5 @@ c_: crypto.#EnNoEncryption
 			Expires: masking.#MClear
         }
       }
-    
+
 ```

@@ -85,7 +85,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Terminus (Alpha)',
+      label: 'Terminus (Beta)',
       collapsible: true,
       //collapsed: false,
       link: { type: 'doc', id: 'terminus/overview' },
@@ -125,9 +125,7 @@ module.exports = {
           type: 'category',
           label: 'Deployment',
           link: { type: 'doc', id: 'terminus/deploy/index' },
-          items: [
-            'terminus/deploy/env-variables',
-          ],
+          items: ['terminus/deploy/env-variables'],
         },
       ],
     },
