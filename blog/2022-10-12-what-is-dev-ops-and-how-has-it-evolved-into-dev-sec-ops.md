@@ -37,10 +37,10 @@ Lastly, let's take a quick look at the main benefits of having solid DevSecOps i
 
 3. **Streamlines process that limits vulnerabilities**
 
-   Having security in every stage of the development process limits the chance that after the initial build and before a launch vulnerabilities are found that results in major delays in the release. The process of streamlining the process with automated security testing as part of the development process also ensures that possible vulnerabilities are caught at each stage.
+   Having security in every stage of the development process limits the chance of finding vulnerabilities much later, vulnerabilities which could delay the release. The process of streamlining the process with automated security testing as part of the development process also ensures that possible vulnerabilities are caught at each stage.
 
 4. **Cost**
 
-   Cost is also always a major benefit and by having a good DevSecOps process in palace you will find bugs and issues much faster which will result in less time and cost required to fix them.
+   Cost is also always a major benefit and by having a good DevSecOps process in place you will find bugs and issues much faster which will result in less time and cost required to fix them.
 
 ![DevSecOps](/img/blog/devsecops.png)
