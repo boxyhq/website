@@ -9,7 +9,7 @@ The proxy service is the outermost client facing of Terminus. Amongst it's roles
 - Implements Access Control Policies
 - Interacts with external KMSs enabling BYOK models
 
-It is written in [Go](https://go.dev/).
+It is written in [Go](https://go.dev/) and can be accessed by default here [http://localhost:3002](http://localhost:3002)
 
 ---
 ## Data Modelling, Encryption and Masking UI

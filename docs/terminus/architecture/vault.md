@@ -23,9 +23,9 @@ Implements AES encryption against the data store.
 
 ---
 ## Configuration
-Specific configuration depending on the store. 
+The specific configuration depends on the data store. 
 
-By default is PostgreSQL and gets configured via Docker Compose and environment variables.
+By default it is PostgreSQL and gets configured via Docker Compose and environment variables.
 
 ---
 ## Schema
