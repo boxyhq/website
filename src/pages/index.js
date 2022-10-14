@@ -21,7 +21,7 @@ const SAMLSSO = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
-        title="Enterprise readiness for B2B SaaS, straight out the box"
+        title="Enterprise readiness for B2B SaaS, straight out of the box"
         description="At BoxyHQ we enable you to add plug-and-play enterprise-ready features to your SaaS product. Show enterprise customers and InfoSec teams you are ready to pass their processes with flying colors. We are open-source and free!"
         image="/img/home-hero.svg"
         buttons={[
