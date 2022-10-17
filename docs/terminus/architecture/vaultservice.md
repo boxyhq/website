@@ -22,6 +22,12 @@ Implements AES encryption against the data store.
 
 ---
 ## Configuration
+
+### Running via Docker Compose
+When running on docker, all the environent variables are specified either as environment variables or in the `.env` file.
+
+**When running via `docker compose` the below does not apply.**
+
 ### Default vs Runtime
 The Vault Service ships with default configurations for the service components
 .
@@ -33,7 +39,7 @@ The configuration files are as follows:
 
 ### vault_conf.cue
 CUE lang based configuration file containing the necessary variables. These can be set both in this file or as ENVIRONMENT variables.
-If set as environment variables, those will take precedence over the runtime ones.
+**If set as environment variables, those will take precedence over the ones defined in the configuration default/runtime files.**
 
 ### access.cue
 
