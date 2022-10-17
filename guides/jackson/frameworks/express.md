@@ -1,5 +1,5 @@
 ---
-title: Connect the SAML SSO to a Express.js app
+title: Add SAML SSO to an Express.js app
 sidebar_label: Express.js
 ---
 
