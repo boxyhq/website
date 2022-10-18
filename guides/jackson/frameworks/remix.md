@@ -108,7 +108,7 @@ if (process.env.NODE_ENV === 'production') {
 export { auth };
 ```
 
-## Setup Jackson SSO feature
+## Set up Jackson SSO feature
 
 We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/v1/guides/resource-routes) in remix terminology).
 
