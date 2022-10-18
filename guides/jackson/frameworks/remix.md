@@ -25,10 +25,10 @@ You can go with the Remix App Server as the deployment target. Feel free to choo
 ### Install the dependencies
 
 ```bash
-npm i remix-auth @boxyhq/remix-auth-saml
+npm i remix-auth @boxyhq/remix-auth-sso
 ```
 
-[`remix-auth`](https://github.com/sergiodxa/remix-auth) is a complete open-source authentication solution for Remix applications. [`@boxyhq/remix-auth-saml`](https://github.com/boxyhq/remix-auth-saml) provides a remix-auth strategy to interact with the SAML Service provider.
+[`remix-auth`](https://github.com/sergiodxa/remix-auth) is a complete open-source authentication solution for Remix applications. [`@boxyhq/remix-auth-sso`](https://github.com/boxyhq/remix-auth-sso) provides a remix-auth strategy to interact with the SSO Service provider.
 
 ## Authenticator
 
@@ -70,9 +70,9 @@ app/auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/a
 ```typescript
 import { Authenticator } from 'remix-auth';
 import {
-  BoxyHQSAMLStrategy,
+  BoxyHQSSOStrategy,
   type BoxyHQSAMLProfile,
-} from '@boxyhq/remix-auth-saml';
+} from '@boxyhq/remix-auth-sso';
 import invariant from 'tiny-invariant';
 import sessionStorage from './sessions.server';
 
@@ -272,7 +272,7 @@ export const action: ActionFunction = async ({ params, request }) => {
 };
 ```
 
-v1.saml.config.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/v1.saml.config.ts
+v1.connections.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/v1.connections.ts
 
 ```typescript
   export const loader: LoaderFunction = async ({ request }) => {
@@ -329,17 +329,17 @@ auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.
 ```typescript
 invariant(process.env.BASE_URL, 'Expected BASE_URL to be set in env');
 invariant(
-  process.env.BOXYHQSAML_ISSUER,
-  'Expected BOXYHQSAML_ISSUER to be set in env'
+  process.env.BOXYHQSSO_ISSUER,
+  'Expected BOXYHQSSO_ISSUER to be set in env'
 );
 
 const BASE_URL = process.env.BASE_URL;
-const BOXYHQSAML_ISSUER = process.env.BOXYHQSAML_ISSUER;
-// Strategy use for the hosted saml service provider goes here
+const BOXYHQSSO_ISSUER = process.env.BOXYHQSSO_ISSUER;
+// Strategy use for the hosted sso service provider goes here
 auth.use(
-  new BoxyHQSAMLStrategy(
+  new BoxyHQSSOStrategy(
     {
-      issuer: BOXYHQSAML_ISSUER, // Set BOXYHQSAML_ISSUER in env to "https://jackson-demo.boxyhq.com"
+      issuer: BOXYHQSSO_ISSUER, // Set BOXYHQSSO_ISSUER in env to "https://jackson-demo.boxyhq.com"
       clientID: 'dummy',
       clientSecret: 'dummy',
       callbackURL: new URL('/auth/saml/callback', BASE_URL).toString(),
@@ -352,37 +352,37 @@ auth.use(
 ```
 
 </TabItem>
-<TabItem value="02" label="Embed SAML SP">
+<TabItem value="02" label="Embed SSO SP">
 
 Point the `issuer` to the app url. We are also setting a name for the strategy here in order for us to point to the right one.
 
 auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/auth.server.ts
 
-> **BOXYHQSAML_ISSUER in env is set to point to the app url: http://localhost:3366 or the actual url once hosted. Take a look at [.env.example](https://github.com/boxyhq/jackson-remix-auth/blob/main/.env.example) file &nbsp;**
+> **BOXYHQSSO_ISSUER in env is set to point to the app url: http://localhost:3366 or the actual url once hosted. Take a look at [.env.example](https://github.com/boxyhq/jackson-remix-auth/blob/main/.env.example) file &nbsp;**
 
 ```typescript
 invariant(process.env.BASE_URL, 'Expected BASE_URL to be set in env');
 invariant(
-  process.env.BOXYHQSAML_ISSUER,
-  'Expected BOXYHQSAML_ISSUER to be set in env'
+  process.env.BOXYHQSSO_ISSUER,
+  'Expected BOXYHQSSO_ISSUER to be set in env'
 );
 
 const BASE_URL = process.env.BASE_URL;
-const BOXYHQSAML_ISSUER = process.env.BOXYHQSAML_ISSUER;
-// Strategy use for the embedded saml service provider goes here
+const BOXYHQSSO_ISSUER = process.env.BOXYHQSSO_ISSUER;
+// Strategy use for the embedded sso service provider goes here
 auth.use(
-  new BoxyHQSAMLStrategy(
+  new BoxyHQSSOStrategy(
     {
-      issuer: BOXYHQSAML_ISSUER, //same as the APP URL
+      issuer: BOXYHQSSO_ISSUER, //same as the APP URL
       clientID: 'dummy',
       clientSecret: process.env.CLIENT_SECRET_VERIFIER || 'dummy',
-      callbackURL: new URL('/auth/saml/embed/callback', BASE_URL).toString(),
+      callbackURL: new URL('/auth/sso/embed/callback', BASE_URL).toString(),
     },
     async ({ profile }) => {
       return profile;
     }
   ),
-  'boxyhq-saml-embed' // use a name here when using the same strategy again
+  'boxyhq-sso-embed' // use a name here when using the same strategy again
 );
 ```
 
@@ -393,14 +393,14 @@ auth.use(
 
 We need 2 routes:  
 <Tabs>
-<TabItem value="01" label="Host SAML SP as a separate service">
+<TabItem value="01" label="Host SSO SP as a separate service">
 
-~> [/auth/saml](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx) - Action handler for login  
-~> [/auth/saml/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.
+~> [/auth/saml](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.tsx) - Action handler for login  
+~> [/auth/saml/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.
 
 Create the following files under `app/routes`:
 
-app/routes/auth.saml.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.tsx
+app/routes/auth.sso.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.tsx
 
 ```typescript
 ...
@@ -414,7 +414,7 @@ export const action: ActionFunction = async ({ request }) => {
   // extracting the tenant from email is one way to set it
   const tenant = email.split("@")[1];
 
-  return await auth.authenticate("boxyhq-saml", request, {
+  return await auth.authenticate("boxyhq-sso", request, {
     successRedirect: "/private",
     failureRedirect: "/login",
     context: {
@@ -425,12 +425,12 @@ export const action: ActionFunction = async ({ request }) => {
 };
 ```
 
-app/routes/auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.callback.tsx
+app/routes/auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.callback.tsx
 
 ```tsx
 ...
 export const loader: LoaderFunction = async ({ request, params }) => {
-  return auth.authenticate("boxyhq-saml", request, {
+  return auth.authenticate("boxyhq-sso", request, {
     successRedirect: "/private",
     failureRedirect: "/login",
   });
@@ -440,12 +440,12 @@ export const loader: LoaderFunction = async ({ request, params }) => {
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
-~> [/auth/saml/embed](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx) - Action handler for login  
-~> [/auth/saml/embed/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.
+~> [/auth/sso/embed](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.embed.tsx) - Action handler for login  
+~> [/auth/sso/embed/callback](https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.embed.callback.tsx) - After successful authorization, user is redirected here with the authorization code. The `code` is then exchanged to get the `token` and further the user profile.
 
 Create the following files under `app/routes`:
 
-app/routes/auth.saml.embed.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.tsx
+app/routes/auth.sso.embed.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.embed.tsx
 
 ```tsx
 ...
@@ -459,7 +459,7 @@ export const action: ActionFunction = async ({ request }) => {
   // extracting the tenant from email is one way to set it
   const tenant = email.split("@")[1];
 
-  return await auth.authenticate("boxyhq-saml-embed", request, {
+  return await auth.authenticate("boxyhq-sso-embed", request, {
     successRedirect: "/private",
     failureRedirect: "/login",
     context: {
@@ -470,12 +470,12 @@ export const action: ActionFunction = async ({ request }) => {
 };
 ```
 
-app/routes/auth.saml.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.saml.embed.callback.tsx
+app/routes/auth.sso.embed.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.embed.callback.tsx
 
 ```tsx
 ...
 export const loader: LoaderFunction = async ({ request, params }) => {
-  return auth.authenticate("boxyhq-saml-embed", request, {
+  return auth.authenticate("boxyhq-sso-embed", request, {
     successRedirect: "/private",
     failureRedirect: "/login",
   });
