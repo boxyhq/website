@@ -194,7 +194,7 @@ Next, create the api files for [OAuth2.0 flow](../../../docs/jackson/sso-flow/#3
 
 ```bash
 app/routes $ mkdir api && cd api
-routes/api $ touch oauth.\$slug.ts v1.saml.config.ts
+routes/api $ touch oauth.\$slug.ts v1.connections.ts
 ```
 
 oauth.$slug.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/api/oauth.%24slug.ts
@@ -425,7 +425,7 @@ export const action: ActionFunction = async ({ request }) => {
 };
 ```
 
-app/routes/auth.saml.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.callback.tsx
+app/routes/auth.sso.callback.tsx: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/routes/auth.sso.callback.tsx
 
 ```tsx
 ...
