@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Remix
 
-Let's look at how to authenticate users in a remix app using SAML Single-Sign-On (SSO).
+Let's look at how to authenticate users in a remix app using Enterprise Single-Sign-On (SSO).
 
 If you wish to dive straight into the source, Checkout: https://github.com/boxyhq/jackson-remix-auth
 
@@ -71,7 +71,7 @@ app/auth.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/main/app/a
 import { Authenticator } from 'remix-auth';
 import {
   BoxyHQSSOStrategy,
-  type BoxyHQSAMLProfile,
+  type BoxyHQSSOProfile,
 } from '@boxyhq/remix-auth-sso';
 import invariant from 'tiny-invariant';
 import sessionStorage from './sessions.server';
@@ -82,7 +82,7 @@ declare global {
 }
 
 function createAuthenticator() {
-  const auth = new Authenticator<BoxyHQSAMLProfile>(sessionStorage);
+  const auth = new Authenticator<BoxyHQSSOProfile>(sessionStorage);
 
   // Strategy use for the hosted saml service provider goes here
 
@@ -106,10 +106,10 @@ export { auth };
 
 ## Strategy Usage
 
-Our strategy usage depends on how we integrate the SAML Service Provider into the app. With [SAML Jackson](https://github.com/boxyhq/jackson) Provider you've got 2 options up your sleeve.
+Our strategy usage depends on how we integrate the SSO Service Provider into the app. With [SAML Jackson](https://github.com/boxyhq/jackson) Provider you've got 2 options up your sleeve.
 
-1. Host SAML SP as a separate service.
-2. Embed SAML SP functionality leveraging remix resource routes.
+1. Host Jackson as a separate service.
+2. Embed Jackson functionality leveraging remix resource routes.
 
 #### Setup
 
@@ -123,7 +123,7 @@ Otherwise, fret not 🤗, we have a hosted instance of [`Jackson`](https://jacks
 </TabItem>
 <TabItem value="02" label="Embed SAML SP">
 
-We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/v1/guides/resource-routes) in remix terminology) to handle the SAML SP flows.
+We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/v1/guides/resource-routes) in remix terminology) to handle the SSO SP flows.
 
 ##### Install jackson
 
