@@ -16,7 +16,7 @@ const products = [
     description:
       'Add Directory Sync support into your product to provision and de-provision users.',
     url: '/directory-sync',
-    icon: require('../../static/img/products/saml-jackson/logo.svg').default,
+    icon: require('../../static/img/products/dsync/logo.svg').default,
   },
   {
     title: 'Audit Logs',
@@ -55,6 +55,7 @@ const ProductsSection = () => {
       <div className="row">
         {products.map(({ title, description, url, icon, btnText }, idx) => (
           <Card
+            key={idx}
             idx={idx}
             title={title}
             description={description}
