@@ -23,10 +23,10 @@ module.exports = {
           label: 'Framework Guides',
           collapsed: false,
           items: [
+            'jackson/frameworks/adonis',
             'jackson/frameworks/express',
             'jackson/frameworks/nextjs',
             'jackson/frameworks/remix',
-            'jackson/frameworks/adonis',
             'jackson/frameworks/laravel',
             'jackson/frameworks/django',
           ],

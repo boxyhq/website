@@ -15,24 +15,27 @@ Visit the [GitHub repository](https://github.com/boxyhq/jackson-examples/tree/ma
 Adding SAML Single Sign-On to an app involves the following steps.
 
 - Install SAML Jackson
-- Configure SAML Jackson
+- Setup SAML Jackson
 - Enable SAML Single Sign-On
 - Authenticating with SAML Single Sign-On
 
 ## Install SAML Jackson
 
+To get started with SAML Jackson, use the Node Package Manager to add the package to your project's dependencies.
+
 ```bash
 npm i --save @boxyhq/saml-jackson
 ```
 
-## Configure SAML Jackson
+## Setup SAML Jackson
+
+Setup the SAML Jackson to work with AdonisJS app.
 
 ```js title="/lib/jackson.ts"
 import { type JacksonOption } from '@boxyhq/saml-jackson';
 
 export const appUrl = `http://${Env.get('HOST')}:${Env.get('PORT')}`;
 export const samlAudience = 'https://saml.boxyhq.com';
-export const acsUrl = `${appUrl}/sso/acs`;
 export const redirectUrl = `${appUrl}/sso/callback`;
 
 export const options: JacksonOption = {
@@ -46,6 +49,10 @@ export const options: JacksonOption = {
   },
 };
 ```
+
+`samlPath` is where the identity provider POST the SAML response after authenticating the user and `redirectUrl` is where the SAML Jackson redirects the user after authentication.
+
+Create a new custom Provider `JacksonProvider` that relies on the `@boxyhq/saml-jackson`. The `boot` method initializes the SAML Jackson and returns a singleton.
 
 ```js title="/providers/JacksonProvider.ts"
 import type { ApplicationContract } from '@ioc:Adonis/Core/Application';
@@ -82,6 +89,8 @@ export default class JacksonProvider {
 }
 ```
 
+Create a declaration file if you are working with TypeScript.
+
 ```js title="/contracts/jackson.ts"
 declare module '@ioc:BoxyHQ/Jackson' {
   import { type IOAuthController, type IConnectionAPIController } from '@boxyhq/saml-jackson';
@@ -106,19 +115,22 @@ We suggest you read the following articles before jumping into adding [SAML Sing
 - Article 1
 - Article 2
 
-### Make Authorization Request
+### Make Authentication Request
+
+Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
 ```js title="/apps/adonisjs/start/routes.ts"
 import LoginController from 'App/Controllers/Http/LoginController';
-
-Route.get('/login', async (ctx) => {
-  return ctx.view.render('login');
-});
 
 Route.post('/login', async (ctx) => {
   return new LoginController().store(ctx);
 });
 ```
+
+The `store` method of `LoginController` takes care of redirecting the user to the Identity Provider.
+
+<Tabs>
+<TabItem value="01" label="With Tenant and Product" default>
 
 ```js title="/app/Controllers/Http/LoginController.ts"
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
@@ -127,16 +139,15 @@ import { oauthController } from '@ioc:BoxyHQ/Jackson';
 import { type OAuthReq } from '@boxyhq/saml-jackson';
 import { redirectUrl } from '../../../lib/jackson';
 
-const product = 'saml-demo.boxyhq.com';
-
 export default class LoginController {
   public async store({ request, response }: HttpContextContract) {
-    const tenant = request.input('tenant');
+    const tenant = 'boxyhq.com'; // The user's tenant
+    const product = 'saml-demo.boxyhq.com'; // Your app or product name
 
     const { redirect_url } = await oauthController.authorize({
       tenant,
       product,
-      state: 'a-random-state-value',
+      state: 'a-random-state-value', // You can use the `state` parameter to restore application state between redirects.
       redirect_uri: redirectUrl,
     } as OAuthReq);
 
@@ -145,11 +156,44 @@ export default class LoginController {
 }
 ```
 
+</TabItem>
+
+<TabItem value="02" label="With Client ID">
+
+```js title="/app/Controllers/Http/LoginController.ts"
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
+
+import { oauthController } from '@ioc:BoxyHQ/Jackson';
+import { type OAuthReq } from '@boxyhq/saml-jackson';
+import { redirectUrl } from '../../../lib/jackson';
+
+export default class LoginController {
+  public async store({ request, response }: HttpContextContract) {
+    const clientId = '123456789'; // The tenant's client ID
+
+    const { redirect_url } = await oauthController.authorize({
+      client_id: clientId,
+      state: 'a-random-state-value', // You can use the `state` parameter to restore application state between redirects.
+      redirect_uri: redirectUrl,
+    } as OAuthReq);
+
+    return response.redirect(redirect_url as string);
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### User Authorizes Application
 
 [WIP]
 
 ### Receives SAML Response
+
+After successful authentication, Identity Provider POST the SAML response to the Assertion Consumer Service (ACS) URL.
+
+Let's add a route to handle the SAML response. Ensure the route matches the value of the `samlPath` you configured while initializing the SAML Jackson library and should be able to receives POST request.
 
 ```js title="/apps/adonisjs/start/routes.ts"
 import SSOController from 'App/Controllers/Http/SSOController';
@@ -159,16 +203,12 @@ Route.post('/sso/acs', async (ctx) => {
 });
 ```
 
+The `acs` method of `SSOController` takes care of handling the SAML response from the Identity Provider and redirecting the users to the `redirectUrl`.
+
 ```js title="/app/Controllers/Http/SSOController.ts"
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-import User from 'App/Models/User';
 
 import { oauthController } from '@ioc:BoxyHQ/Jackson';
-import { type OAuthTokenReqWithCredentials } from '@boxyhq/saml-jackson';
-import { redirectUrl } from '../../../lib/jackson';
-
-const tenant = 'boxyhq.com';
-const product = 'saml-demo.boxyhq.com';
 
 export default class SSOController {
   public async acs({ request, response }: HttpContextContract) {
@@ -187,50 +227,111 @@ export default class SSOController {
 
 ### Requests Access Token
 
+Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirectUrl` you configured previously.
+
 ```js title="/apps/adonisjs/start/routes.ts"
 import SSOController from 'App/Controllers/Http/SSOController';
 
-Route.post('/sso/callback', async (ctx) => {
+Route.get('/sso/callback', async (ctx) => {
   return new SSOController().callback(ctx);
 });
 ```
 
+The application requests an `access_token` by passing the authorization `code` along with authentication details, including the `client_id`, `client_secret`, and `redirect_uri`.
+
+The `callback` method of `SSOController` take care of this.
+
+<Tabs>
+<TabItem value="01" label="With Tenant and Product" default>
+
 ```js title="/app/Controllers/Http/SSOController.ts"
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-import User from 'App/Models/User';
 
 import { oauthController } from '@ioc:BoxyHQ/Jackson';
 import { type OAuthTokenReqWithCredentials } from '@boxyhq/saml-jackson';
 import { redirectUrl } from '../../../lib/jackson';
 
-const tenant = 'boxyhq.com';
-const product = 'saml-demo.boxyhq.com';
-
 export default class SSOController {
   public async callback({ request, response, auth }: HttpContextContract) {
     const { code, state } = request.qs();
 
-    // TODO: Validate the returned `state` value.
+    const tenant = 'boxyhq.com'; // The user's tenant
+    const product = 'saml-demo.boxyhq.com'; // Your app or product name
+
+    const clientId = `tenant=${tenant}&product=${product}`;
+    const clientSecret = 'dummy';
 
     // Exchange the `code` for `access_token`
     const { access_token } = await oauthController.token({
       code,
-      client_id: `tenant=${tenant}&product=${product}`,
-      client_secret: 'dummy',
+      client_id: clientId,
+      client_secret: clientSecret,
       redirect_uri: redirectUrl,
     } as OAuthTokenReqWithCredentials);
   }
 }
 ```
 
+</TabItem>
+
+<TabItem value="02" label="With Client ID">
+
+```js title="/app/Controllers/Http/SSOController.ts"
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
+
+import { oauthController } from '@ioc:BoxyHQ/Jackson';
+import { type OAuthTokenReqWithCredentials } from '@boxyhq/saml-jackson';
+import { redirectUrl } from '../../../lib/jackson';
+
+export default class SSOController {
+  public async callback({ request, response, auth }: HttpContextContract) {
+    const { code, state } = request.qs();
+
+    const clientId = '123456789'; // The tenant's client ID
+    const clientSecret = 'dUdSOmGoxr'; // The tenant's client Secret
+
+    // Exchange the `code` for `access_token`
+    const { access_token } = await oauthController.token({
+      code,
+      client_id: clientId,
+      client_secret: clientSecret,
+      redirect_uri: redirectUrl,
+    } as OAuthTokenReqWithCredentials);
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### Fetch User Profile
 
-Once the `access_token` has been fetched, you can use it to retrieve the user profile from the identity provider.
+Once the `access_token` has been fetched, you can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
 
 ```js
 const user = await oauthController.userInfo(access_token);
 ```
 
+The entire response will look something like this:
+
+```json
+{
+  "id":"<id from the Identity Provider>",
+  "email": "sjackson@coolstartup.com",
+  "firstName": "SAML",
+  "lastName": "Jackson",
+  "requested": {
+    "tenant": "<tenant>",
+    "product": "<product>",
+    "client_id": "<client_id>",
+    "state": "<state>"
+  },
+  "raw": {
+    ...
+  }
+}
+```
+
 ### Authenticate User
 
-Once the user has been retrieved from the identity provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
+Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
