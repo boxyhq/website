@@ -3,7 +3,7 @@ module.exports = {
     'index',
     {
       type: 'category',
-      label: 'SAML Jackson',
+      label: 'Enterprise SSO',
       collapsible: true,
       collapsed: true,
       link: { type: 'doc', id: 'jackson/overview' },
