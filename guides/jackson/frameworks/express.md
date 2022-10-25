@@ -12,13 +12,6 @@ This guide assumes that you have a Express.js app and want to enable SAML Single
 
 Visit the [GitHub repository](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express.js SAML SSO integration.
 
-Adding SAML Single Sign-On to an app involves the following steps.
-
-- Install SAML Jackson
-- Setup SAML Jackson
-- Enable SAML Single Sign-On
-- Authenticating with SAML Single Sign-On
-
 ## Install SAML Jackson
 
 To get started with SAML Jackson, use the Node Package Manager to add the package to your project's dependencies.
