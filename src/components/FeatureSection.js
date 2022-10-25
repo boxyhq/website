@@ -9,6 +9,7 @@ const FeatureSection = ({
   btnText,
   btnLink,
   direction = 'left',
+  children,
 }) => {
   return (
     <section className="page__section">
@@ -30,6 +31,7 @@ const FeatureSection = ({
               >
                 <div>
                   <h2>{title}</h2>
+                  {children ? <div>{children}</div> : null}
                   <Link
                     className="button button--outline button--primary"
                     to={btnLink}
