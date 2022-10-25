@@ -68,6 +68,10 @@ module.exports = {
               label: 'Audit Logs',
             },
             {
+              to: '/privacy-vault',
+              label: 'Privacy Vault',
+            },
+            {
               href: 'https://awesome-oss-devsec.boxyhq.com/',
               label: 'Developer Security Tools',
             },

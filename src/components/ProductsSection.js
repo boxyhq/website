@@ -43,9 +43,8 @@ const products = [
     title: 'Privacy Vault',
     description:
       'Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data.',
-    url: 'mailto:hello@boxyhq.com?subject=Privacy Vault Beta',
+    url: 'privacy-vault',
     icon: require('../../static/img/products/privacy-vault/logo.svg').default,
-    btnText: 'Join Private Beta',
   },
 ];
 
