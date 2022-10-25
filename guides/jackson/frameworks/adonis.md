@@ -12,13 +12,6 @@ This guide assumes that you have a AdonisJS app and want to enable SAML Single S
 
 Visit the [GitHub repository](https://github.com/boxyhq/jackson-examples/tree/main/apps/adonisjs) to see the source code for the AdonisJS SAML SSO integration.
 
-Adding SAML Single Sign-On to an app involves the following steps.
-
-- Install SAML Jackson
-- Setup SAML Jackson
-- Enable SAML Single Sign-On
-- Authenticating with SAML Single Sign-On
-
 ## Install SAML Jackson
 
 To get started with SAML Jackson, use the Node Package Manager to add the package to your project's dependencies.
@@ -102,7 +95,7 @@ declare module '@ioc:BoxyHQ/Jackson' {
 
 ## Enable SAML Single Sign-On
 
-This step allows your customers to configure the SAML SSO with their chosen IdP.
+This step allows your customers to configure the SAML SSO with their chosen Identity Provider.
 
 - Add UI to configure SAML SSO
 - Save the SAML connection
