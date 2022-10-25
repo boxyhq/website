@@ -45,11 +45,11 @@ const PrivacyVault = () => {
         direction="right"
       >
         <p>
-          Companies like yours are collecting more sensitive data these days and
-          with cybercrime, at an all-time high customers are more worried than
-          ever about how their data is secured. GDPR was a big step in how
-          customers' data is collected and used, but safeguarding this data is
-          ultimately what your customers are most worried about.
+          Companies like yours are collecting more and more sensitive data these
+          days and with cybercrime at an all-time high, customers are more
+          worried than ever about how their data is secured. GDPR was a big step
+          in how customers' data is collected and used, but safeguarding this
+          data is ultimately what your customers are most worried about.
         </p>
       </FeatureSection>
 
@@ -87,6 +87,7 @@ const PrivacyVault = () => {
                     Be equipped with the ability to respond to DSRs (Data
                     Subject Requests) from customers
                   </li>
+                  <li>Create Healthcare, Fintech or generic PII vaults</li>
                 </ul>
               </div>
             </div>
