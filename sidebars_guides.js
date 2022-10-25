@@ -30,6 +30,7 @@ module.exports = {
             'jackson/frameworks/nextjs',
             'jackson/frameworks/remix',
             'jackson/frameworks/laravel',
+            'jackson/frameworks/rails',
             'jackson/frameworks/django',
           ],
         },
