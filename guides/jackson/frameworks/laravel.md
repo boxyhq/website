@@ -12,20 +12,31 @@ This guide assumes that you have a Laravel app and want to enable SAML Single Si
 
 Visit the [GitHub repository](https://github.com/boxyhq/php-examples/tree/main/laravel-enterprise-sso) to see the source code for the Laravel SAML SSO integration.
 
+## Install SAML Jackson
+
+The first step is to deploy the SAML Jackson service. Follow the [deployment docs](/docs/jackson/deploy/service) to install and configure the SAML Jackson.
+
 ## Setup SAML Jackson
+
+Laravel Socialite provides an expressive, fluent interface to OAuth authentication with external authentication providers.
+
+Create a new config file to hold the SAML Jackson configuration values.
 
 ```php title="config/jackson.php"
 <?php
 
 return [
-  'host' => 'http://localhost:5225',
-  'api_key' => 'secret',
-  'product' => 'saml-demo.boxyhq.com',
+  'host' => 'http://localhost:5225', // SAML Jackson service URL
+  'product' => 'your-app-name',
   'client_id' => 'dummy', // Keep this as `dummy`, we'll pass the tenant & product as dynamic params
   'client_secret' => 'dummy', // Keep this as `dummy`, we'll pass the tenant & product as dynamic params
   'redirect' => env('APP_URL') . '/sso/callback'
 ];
 ```
+
+Set `host` to your running SAML Jackson service.
+
+Let's add a custom provider to the Laravel Socialite for the SAML Jackson.
 
 ```php title="app/BoxyHQ/JacksonProvider.php"
 <?php
@@ -96,6 +107,8 @@ class JacksonProvider extends AbstractProvider implements ProviderInterface
 }
 ```
 
+Bootstrap the `JacksonProvider` in the `AppServiceProvider`.
+
 ```php title="app/Providers/AppServiceProvider.php"
 <?php
 
@@ -138,7 +151,24 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
+## Enable SAML Single Sign-On
+
+This step allows your customers to configure the SAML SSO with their chosen IdP.
+
+- Add UI to configure SAML SSO
+- Save the SAML connection
+- Mention about displaying SP and delete connection
+
+## Authenticate with SAML Single Sign-On
+
+We suggest you read the following articles before jumping into adding [SAML Single Sign-On](/enterprise-sso) to your app. These articles summarize some of the best practices other apps followed to enable SAML SSO for enterprise customers.
+
+- Article 1
+- Article 2
+
 ### Make Authentication Request
+
+Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
 ```php title="routes/web.php"
 <?php
@@ -148,14 +178,14 @@ use Illuminate\Support\Facades\Route;
 Route::post('/sso', '\App\Http\Controllers\AuthController@store');
 ```
 
+The `store` method of `AuthController` takes care of redirecting the user to the Identity Provider.
+
 ```php title="app/Http/Controllers/AuthController.php"
 <?php
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
@@ -173,7 +203,13 @@ class AuthController extends Controller
 }
 ```
 
+### User Authorizes Application
+
+[WIP]
+
 ### Fetch User Profile
+
+Let's add another route for receiving the callback after the authentication.
 
 ```php title="routes/web.php"
 <?php
@@ -181,8 +217,15 @@ class AuthController extends Controller
 Route::get('/sso/callback', '\App\Http\Controllers\AuthController@callback');
 ```
 
+The `callback` method of `AuthController` takes care of fetching the user profile if the authorization is valid
+
 ```php title="app/Http/Controllers/AuthController.php"
 <?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
@@ -190,7 +233,7 @@ class AuthController extends Controller
   {
     $user = Socialite::driver('jackson')->user();
 
-    // Do your business logic here. $user has all the properties you need.
+    // $user has all the properties you need. Do your business logic here.
   }
 }
 ```
