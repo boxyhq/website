@@ -8,6 +8,8 @@ module.exports = {
       collapsed: true,
       link: { type: 'doc', id: 'jackson/overview' },
       items: [
+        'jackson/configuring-saml-sso',
+        'jackson/login-with-saml-sso',
         {
           type: 'category',
           label: 'Deployment Guides',
