@@ -73,22 +73,7 @@ let oauthController;
 })();
 ```
 
-## Enable SAML Single Sign-On
-
-This step allows your customers to configure the SAML SSO with their chosen IdP.
-
-- Add UI to configure SAML SSO
-- Save the SAML connection
-- Mention about displaying SP and delete connection
-
-## Authenticate with SAML Single Sign-On
-
-We suggest you read the following articles before jumping into adding [SAML Single Sign-On](/enterprise-sso) to your app. These articles summarize some of the best practices other apps followed to enable SAML SSO for enterprise customers.
-
-- Article 1
-- Article 2
-
-### Make Authentication Request
+## Make Authentication Request
 
 Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
@@ -131,11 +116,7 @@ router.post('/sso', async (req, res, next) => {
 </TabItem>
 </Tabs>
 
-### User Authorizes Application
-
-[WIP]
-
-### Receives SAML Response
+## Receives SAML Response
 
 After successful authentication, Identity Provider POST the SAML response to the Assertion Consumer Service (ACS) URL.
 
@@ -154,7 +135,7 @@ router.post('/sso/acs', async (req, res, next) => {
 });
 ```
 
-### Requests Access Token
+## Requests Access Token
 
 Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirectUrl` you configured previously.
 
@@ -207,7 +188,7 @@ router.get('/sso/callback', async (req, res, next) => {
 </TabItem>
 </Tabs>
 
-### Fetch User Profile
+## Fetch User Profile
 
 Once the `access_token` has been fetched, you can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
 
@@ -235,6 +216,6 @@ The entire response will look something like this:
 }
 ```
 
-### Authenticate User
+## Authenticate User
 
 Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
