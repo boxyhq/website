@@ -1,5 +1,6 @@
 ---
 title: Add SAML SSO to AdonisJS App with BoxyHQ
+description: Add SAML SSO to AdonisJS App with BoxyHQ
 sidebar_label: AdonisJS
 ---
 

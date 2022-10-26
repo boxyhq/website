@@ -1,5 +1,6 @@
 ---
 title: Add SAML SSO to Ruby on Rails App with BoxyHQ
+description: Add SAML SSO to Ruby on Rails App with BoxyHQ
 sidebar_label: Ruby on Rails
 ---
 

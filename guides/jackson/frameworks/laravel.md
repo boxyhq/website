@@ -1,5 +1,6 @@
 ---
 title: Add SAML SSO to Laravel App with BoxyHQ
+description: Add SAML SSO to Laravel App with BoxyHQ
 sidebar_label: Laravel
 ---
 

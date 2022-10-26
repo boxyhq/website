@@ -1,5 +1,6 @@
 ---
 title: Add SAML SSO to Next.js App with BoxyHQ
+description: Add SAML SSO to Next.js App with BoxyHQ
 sidebar_label: Next.js
 ---
 

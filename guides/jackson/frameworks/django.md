@@ -1,5 +1,6 @@
 ---
-title: Add SAML SSO to a Django app
+title: Add SAML SSO to Django App with BoxyHQ
+description: Add SAML SSO to Django App with BoxyHQ
 sidebar_label: Django
 ---
 
