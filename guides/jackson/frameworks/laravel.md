@@ -3,9 +3,6 @@ title: Add SAML SSO to Laravel App with BoxyHQ
 sidebar_label: Laravel
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Add SAML SSO to Laravel App
 
 This guide assumes that you have a Laravel app and want to enable SAML Single Sign-On authentication for your enterprise customers. By the end of this guide, you'll have an app that allows you to authenticate the users using SAML Single Sign-On.
@@ -18,7 +15,7 @@ The first step is to deploy the SAML Jackson service. Follow the [deployment doc
 
 ## Setup SAML Jackson
 
-Laravel Socialite provides an expressive, fluent interface to OAuth authentication with external authentication providers.
+We'll use the Laravel Socialite for the integration. Socialite provides an expressive, fluent interface to OAuth authentication with external authentication providers.
 
 Create a new config file to hold the SAML Jackson configuration values.
 
@@ -34,7 +31,7 @@ return [
 ];
 ```
 
-Set `host` to your running SAML Jackson service.
+Set `host` to URL of running SAML Jackson service.
 
 Let's add a custom provider to the Laravel Socialite for the SAML Jackson.
 
@@ -151,22 +148,7 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-## Enable SAML Single Sign-On
-
-This step allows your customers to configure the SAML SSO with their chosen IdP.
-
-- Add UI to configure SAML SSO
-- Save the SAML connection
-- Mention about displaying SP and delete connection
-
-## Authenticate with SAML Single Sign-On
-
-We suggest you read the following articles before jumping into adding [SAML Single Sign-On](/enterprise-sso) to your app. These articles summarize some of the best practices other apps followed to enable SAML SSO for enterprise customers.
-
-- Article 1
-- Article 2
-
-### Make Authentication Request
+## Make Authentication Request
 
 Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
@@ -203,13 +185,9 @@ class AuthController extends Controller
 }
 ```
 
-### User Authorizes Application
+## Fetch User Profile
 
-[WIP]
-
-### Fetch User Profile
-
-Let's add another route for receiving the callback after the authentication.
+Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirect` you configured previously.
 
 ```php title="routes/web.php"
 <?php
@@ -217,7 +195,7 @@ Let's add another route for receiving the callback after the authentication.
 Route::get('/sso/callback', '\App\Http\Controllers\AuthController@callback');
 ```
 
-The `callback` method of `AuthController` takes care of fetching the user profile if the authorization is valid
+The `callback` method of `AuthController` takes care of fetching the user profile if the authorization is valid.
 
 ```php title="app/Http/Controllers/AuthController.php"
 <?php
@@ -238,6 +216,6 @@ class AuthController extends Controller
 }
 ```
 
-### Authenticate User
+## Authenticate User
 
 Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
