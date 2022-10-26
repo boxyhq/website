@@ -216,6 +216,18 @@ export const loader: LoaderFunction = async ({ params, request }) => {
         ... // error handling, redirect to /error page
       }
     }
+    case "oidc": {
+      try {
+        const { redirect_url } = await oauthController.oidcAuthzResponse(
+          queryParams as unknown as OIDCAuthzResponsePayload
+        );
+        if (redirect_url) {
+          return redirect(redirect_url, 302);
+        }
+      } catch (err: any) {
+        ... // error handling, redirect to /error page
+      }
+    }
     case "userinfo": {
      ... // token validation
       try {
