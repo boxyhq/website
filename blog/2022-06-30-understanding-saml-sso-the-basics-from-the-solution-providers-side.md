@@ -5,7 +5,7 @@ author: Jay Singh
 author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
 author_image_url: https://boxyhq.com/img/team/jay.jpg
-tags: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
+tags_disabled: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
 image: img/blog/sso/with-boxyhq.png
 ---
 
