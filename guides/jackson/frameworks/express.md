@@ -28,7 +28,7 @@ This step allows your tenants to configure SAML connections for their users. Rea
 
 ## Authenticate with SAML Single Sign-On
 
-Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SML Jackson. The following sections focuses more on the SSO authentication side.
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focuses more on the SSO authentication side.
 
 ### Install SAML Jackson
 
@@ -153,7 +153,7 @@ router.post('/sso/acs', async (req, res, next) => {
 });
 ```
 
-### Requests Access Token
+### Request Access Token
 
 Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirectUrl` you configured previously.
 
@@ -219,7 +219,7 @@ The entire response will look something like this:
 ```json
 {
   "id":"<id from the Identity Provider>",
-  "email": "sjackson@coolstartup.com",
+  "email": "jackson@coolstartup.com",
   "firstName": "SAML",
   "lastName": "Jackson",
   "requested": {

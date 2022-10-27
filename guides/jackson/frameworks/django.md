@@ -27,6 +27,6 @@ This step allows your tenants to configure SAML connections for their users. Rea
 
 ## Authenticate with SAML Single Sign-On
 
-Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SML Jackson. The following sections focuses more on the SSO authentication side.
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focuses more on the SSO authentication side.
 
 [WIP - Coming Soon]

@@ -27,7 +27,7 @@ This step allows your tenants to configure SAML connections for their users. Rea
 
 ## Authenticate with SAML Single Sign-On
 
-Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SML Jackson. The following sections focuses more on the SSO authentication side.
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focuses more on the SSO authentication side.
 
 ### Install SAML Jackson
 
@@ -41,24 +41,28 @@ npm i --save @boxyhq/saml-jackson
 
 Setup the SAML Jackson to work with Next.js app.
 
-```js title="/lib/jackson.ts"
-import jackson, {
-  IOAuthController,
-  JacksonOption,
-} from '@boxyhq/saml-jackson';
+```bash title=".env"
+NEXTAUTH_URL=https://your-app.com
+NEXTAUTH_SECRET= #A random string is used to hash tokens, sign/encrypt cookies and generate cryptographic keys.
+```
 
-const baseUrl = 'https://your-app.com';
-const samlAudience = 'https://saml.boxyhq.com';
-const samlPath = '/sso/acs';
+```js title="lib/jackson.ts"
+import jackson, {
+  type IOAuthController,
+  type JacksonOption,
+} from "@boxyhq/saml-jackson";
+
+const samlAudience = "https://saml.boxyhq.com";
+const samlPath = "/api/auth/saml/acs";
 
 const opts: JacksonOption = {
-  externalUrl: baseUrl,
+  externalUrl: `${process.env.NEXTAUTH_URL}`,
   samlAudience,
   samlPath,
   db: {
-    engine: 'sql',
-    type: 'postgres',
-    url: 'postgres://postgres:postgres@localhost:5432/postgres',
+    engine: "sql",
+    type: "postgres",
+    url: "postgres://postgres:postgres@localhost:5432/postgres",
   },
 };
 
@@ -82,65 +86,54 @@ export default async function init() {
 }
 ```
 
-`samlPath` is where the identity provider POST the SAML response after authenticating the user and `redirectUrl` is where the SAML Jackson redirects the user after authentication.
+`samlPath` is where the identity provider POST the SAML response after authenticating the user.
+
+We'll use [NextAuth.js](https://next-auth.js.org/) for the authentication. NextAuth is a complete open-source authentication solution for Next.js applications.
+
+Let's add a custom provider called `saml-jackson` to the NextAuth.
 
 ```js title="pages/api/auth/[...nextauth].ts"
-import NextAuth, { NextAuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
-import type { OAuthTokenReqWithCredentials } from "@boxyhq/saml-jackson";
-
-import jackson from "lib/jackson";
+import NextAuth, { type NextAuthOptions } from 'next-auth';
 
 export const authOptions: NextAuthOptions = {
-  adapter: ...,
   providers: [
-    CredentialsProvider({
-      id: "saml-sso",
-      credentials: {
-        code: { type: "text" },
-        state: { type: "state" },
+    {
+      id: 'saml-jackson',
+      name: 'BoxyHQ',
+      type: 'oauth',
+      checks: ['pkce', 'state'],
+      authorization: {
+        url: `${process.env.NEXTAUTH_URL}/api/auth/saml/authorize`,
+        params: {
+          scope: '',
+          response_type: 'code',
+          provider: 'saml',
+        },
       },
-      async authorize(credentials) {
-        const code = credentials?.code;
-        const state = credentials?.state;
-
-        const { oauthController } = await jackson();
-
-        const { access_token } = await oauthController.token({
-          client_id: "dummy",
-          client_secret: "dummy",
-          code,
-          redirect_uri: `${process.env.APP_URL}/sso/callback`,
-        } as OAuthTokenReqWithCredentials);
-
-
-        const profile = await oauthController.userInfo(access_token);
-
-        // let user = await getUser({ email: profile.email });
-
-        // if (user === null) {
-        //   // Create user account if it doesn't exist
-        //   user = await createUser({
-        //     name: `${profile.firstName} ${profile.lastName}`,
-        //     email: profile.email,
-        //     password: await hashPassword(createRandomString()),
-        //   });
-
-        //   const team = await getTeam({
-        //     id: profile.requested.tenant,
-        //   });
-
-        //   await addTeamMember(team.id, user.id, team.defaultRole);
-        // }
-
-        return profile;
+      token: {
+        url: `${process.env.NEXTAUTH_URL}/api/auth/saml/token`,
+        params: { grant_type: 'authorization_code' },
       },
-    }),
+      userinfo: `${process.env.NEXTAUTH_URL}/api/auth/saml/userinfo`,
+      profile: (profile) => {
+        return {
+          id: profile.id || '',
+          firstName: profile.firstName || '',
+          lastName: profile.lastName || '',
+          email: profile.email || '',
+          name: `${profile.firstName || ''} ${profile.lastName || ''}`.trim(),
+          email_verified: true,
+        };
+      },
+      options: {
+        clientId: 'dummy',
+        clientSecret: 'dummy',
+      },
+    },
   ],
   session: {
-    strategy: "jwt",
+    strategy: 'jwt',
   },
-  secret: `${process.env.NEXTAUTH_SECRET}`,
 };
 
 export default NextAuth(authOptions);
@@ -150,143 +143,25 @@ export default NextAuth(authOptions);
 
 Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
-```js title="/pages/auth/sso.tsx"
-import React, { useState } from 'react';
-import { signIn } from 'next-auth/react';
-import axios from 'axios';
+```js title="pages/api/auth/saml/authorize.ts"
+import type { NextApiRequest, NextApiResponse } from "next";
+import type { OAuthReq } from "@boxyhq/saml-jackson";
 
-const SSO = () => {
-  const [tenant, setTenant] = useState("");
-
-  const handleSubmit = () => {
-    const response = await axios.post(`/api/auth/sso`, {
-      tenant,
-    });
-
-    const { data } = response.data;
-
-    // Redirect to the Identity Provider
-    if (data) {
-      window.location.href = data.redirect_url;
-    }
-  }
-
-  return (
-    <>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="tenant"
-            placeholder="boxyhq"
-            onChange={(e) => {setTenant(e.target.value)}}
-          />
-          <button type="submit">Continue with SAML SSO</Button>
-        </form>
-      </div>
-    </>
-  );
-};
-
-export default SSO;
-```
-
-```js title="/pages/api/auth/sso/index.ts"
-import type { NextApiRequest, NextApiResponse } from 'next';
-
-import jackson from 'lib/jackson';
+import jackson from "../../../../lib/jackson";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { method } = req;
-
-  switch (method) {
-    case 'POST':
-      return handlePOST(req, res);
-    default:
-      res.setHeader('Allow', ['POST']);
-      res.status(405).json({
-        data: null,
-        error: { message: `Method ${method} Not Allowed` },
-      });
-  }
-}
-
-const handlePOST = async (req: NextApiRequest, res: NextApiResponse) => {
   const { oauthController } = await jackson();
 
-  const { tenant } = req.body;
+  const { redirect_url } = await oauthController.authorize(
+    req.query as unknown as OAuthReq
+  );
 
-  const response = await oauthController.authorize({
-    tenant,
-    product: 'your-product-name',
-    redirect_uri: `${process.env.APP_URL}/sso/callback`,
-    state: 'some-random-state',
-  });
-
-  return res.status(200).json(response);
-};
-```
-
-The API route `api/auth/sso` takes care of redirecting the user to the Identity Provider. (Need change)
-
-<Tabs>
-<TabItem value="01" label="With Tenant and Product" default>
-
-```js title="/pages/auth/sso.tsx"
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-
-import { oauthController } from '@ioc:BoxyHQ/Jackson';
-import { type OAuthReq } from '@boxyhq/saml-jackson';
-import { redirectUrl } from '../../../lib/jackson';
-
-export default class LoginController {
-  public async store({ request, response }: HttpContextContract) {
-    const tenant = 'boxyhq.com'; // The user's tenant
-    const product = 'saml-demo.boxyhq.com'; // Your app or product name
-
-    const { redirect_url } = await oauthController.authorize({
-      tenant,
-      product,
-      state: 'a-random-state-value', // You can use the `state` parameter to restore application state between redirects.
-      redirect_uri: redirectUrl,
-    } as OAuthReq);
-
-    return response.redirect(redirect_url as string);
-  }
+  return res.redirect(302, redirect_url as string);
 }
 ```
-
-</TabItem>
-
-<TabItem value="02" label="With Client ID">
-
-```js title="/app/Controllers/Http/LoginController.ts"
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-
-import { oauthController } from '@ioc:BoxyHQ/Jackson';
-import { type OAuthReq } from '@boxyhq/saml-jackson';
-import { redirectUrl } from '../../../lib/jackson';
-
-export default class LoginController {
-  public async store({ request, response }: HttpContextContract) {
-    const clientId = '123456789'; // The tenant's client ID
-
-    const { redirect_url } = await oauthController.authorize({
-      client_id: clientId,
-      state: 'a-random-state-value', // You can use the `state` parameter to restore application state between redirects.
-      redirect_uri: redirectUrl,
-    } as OAuthReq);
-
-    return response.redirect(redirect_url as string);
-  }
-}
-```
-
-</TabItem>
-</Tabs>
 
 ### Receives SAML Response
 
@@ -294,121 +169,78 @@ After successful authentication, Identity Provider POST the SAML response to the
 
 Let's add a route to handle the SAML response. Ensure the route matches the value of the `samlPath` you configured while initializing the SAML Jackson library and should be able to receives POST request.
 
-```js title="/apps/adonisjs/start/routes.ts"
-import SSOController from 'App/Controllers/Http/SSOController';
+```js title="pages/api/auth/saml/acs.ts"
+import type { NextApiRequest, NextApiResponse } from "next";
 
-Route.post('/sso/acs', async (ctx) => {
-  return new SSOController().acs(ctx);
-});
-```
+import jackson from "../../../../lib/jackson";
 
-The `acs` method of `SSOController` takes care of handling the SAML response from the Identity Provider and redirecting the users to the `redirectUrl`.
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { oauthController } = await jackson();
 
-```js title="/app/Controllers/Http/SSOController.ts"
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
+  const { RelayState, SAMLResponse } = req.body;
 
-import { oauthController } from '@ioc:BoxyHQ/Jackson';
+  const { redirect_url } = await oauthController.samlResponse({
+    RelayState,
+    SAMLResponse,
+  });
 
-export default class SSOController {
-  public async acs({ request, response }: HttpContextContract) {
-    const relayState = request.input('RelayState');
-    const samlResponse = request.input('SAMLResponse');
-
-    const { redirect_url } = await oauthController.samlResponse({
-      RelayState: relayState,
-      SAMLResponse: samlResponse,
-    });
-
-    return response.redirect(redirect_url as string);
-  }
+  return res.redirect(302, redirect_url as string);
 }
 ```
 
-### Requests Access Token
+### Request Access Token
 
-Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirectUrl` you configured previously.
+Let's add another route for receiving the callback after the authentication.
 
-```js title="/apps/adonisjs/start/routes.ts"
-import SSOController from 'App/Controllers/Http/SSOController';
+The NextAuth requests an `access_token` by passing the authorization `code` along with authentication details, including the `grant_type`, `redirect_uri`, and `code_verifier`.
 
-Route.get('/sso/callback', async (ctx) => {
-  return new SSOController().callback(ctx);
-});
-```
+```js title="pages/api/auth/saml/token.ts"
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-The application requests an `access_token` by passing the authorization `code` along with authentication details, including the `client_id`, `client_secret`, and `redirect_uri`.
+import jackson from '../../../../lib/jackson';
 
-The `callback` method of `SSOController` take care of this.
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { oauthController } = await jackson();
 
-<Tabs>
-<TabItem value="01" label="With Tenant and Product" default>
+  const response = await oauthController.token(req.body);
 
-```js title="/app/Controllers/Http/SSOController.ts"
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-
-import { oauthController } from '@ioc:BoxyHQ/Jackson';
-import { type OAuthTokenReqWithCredentials } from '@boxyhq/saml-jackson';
-import { redirectUrl } from '../../../lib/jackson';
-
-export default class SSOController {
-  public async callback({ request, response, auth }: HttpContextContract) {
-    const { code, state } = request.qs();
-
-    const tenant = 'boxyhq.com'; // The user's tenant
-    const product = 'saml-demo.boxyhq.com'; // Your app or product name
-
-    const clientId = `tenant=${tenant}&product=${product}`;
-    const clientSecret = 'dummy';
-
-    // Exchange the `code` for `access_token`
-    const { access_token } = await oauthController.token({
-      code,
-      client_id: clientId,
-      client_secret: clientSecret,
-      redirect_uri: redirectUrl,
-    } as OAuthTokenReqWithCredentials);
-  }
+  return res.json(response);
 }
 ```
-
-</TabItem>
-
-<TabItem value="02" label="With Client ID">
-
-```js title="/app/Controllers/Http/SSOController.ts"
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
-
-import { oauthController } from '@ioc:BoxyHQ/Jackson';
-import { type OAuthTokenReqWithCredentials } from '@boxyhq/saml-jackson';
-import { redirectUrl } from '../../../lib/jackson';
-
-export default class SSOController {
-  public async callback({ request, response, auth }: HttpContextContract) {
-    const { code, state } = request.qs();
-
-    const clientId = '123456789'; // The tenant's client ID
-    const clientSecret = 'dUdSOmGoxr'; // The tenant's client Secret
-
-    // Exchange the `code` for `access_token`
-    const { access_token } = await oauthController.token({
-      code,
-      client_id: clientId,
-      client_secret: clientSecret,
-      redirect_uri: redirectUrl,
-    } as OAuthTokenReqWithCredentials);
-  }
-}
-```
-
-</TabItem>
-</Tabs>
 
 ### Fetch User Profile
 
-Once the `access_token` has been fetched, you can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
+Once the `access_token` has been fetched, NextAuth can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
 
-```js
-const user = await oauthController.userInfo(access_token);
+```js title="pages/api/auth/saml/userinfo.ts"
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+import jackson from '../../../../lib/jackson';
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { oauthController } = await jackson();
+
+  const authHeader = req.headers['authorization'];
+
+  if (!authHeader) {
+    throw new Error('Unauthorized');
+  }
+
+  const token = authHeader.split(' ')[1];
+
+  const user = await oauthController.userInfo(token);
+
+  return res.json(user);
+}
 ```
 
 The entire response will look something like this:
@@ -416,7 +248,7 @@ The entire response will look something like this:
 ```json
 {
   "id":"<id from the Identity Provider>",
-  "email": "sjackson@coolstartup.com",
+  "email": "jackson@coolstartup.com",
   "firstName": "SAML",
   "lastName": "Jackson",
   "requested": {
@@ -434,3 +266,36 @@ The entire response will look something like this:
 ### Authenticate User
 
 Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
+
+### Starts OAuth sign-in flow
+
+You can use NextAuth's `signIn` method to initiate the authentication with `saml-jackson` provider.
+
+You can pass the `tenant` and `product` as additional parameters to the `/api/auth/saml/authorize` endpoint through the third argument of signIn().
+
+```js title="pages/login.tsx"
+import type { NextPage } from 'next';
+import { useSession, signIn } from 'next-auth/react';
+
+const Login: NextPage = () => {
+  const { data: session, status } = useSession();
+
+  if (status === 'loading') {
+    return <>Loading...</>;
+  }
+
+  if (status === 'authenticated') {
+    return <>Authenticated</>;
+  }
+
+  // Starts OAuth sign-in flow
+  signIn('saml-jackson', undefined, {
+    tenant: 'boxyhq.com',
+    product: 'saml-demo.boxyhq.com',
+  });
+
+  return <>Unauthenticated</>;
+};
+
+export default Login;
+```
