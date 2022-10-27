@@ -2,6 +2,7 @@
 title: Add SAML SSO to Express.js App with BoxyHQ
 description: Add SAML SSO to Express.js App with BoxyHQ
 sidebar_label: Express.js
+image: https://1755-103-146-175-95.in.ngrok.io/img/sso/og-image.png
 ---
 
 import Tabs from '@theme/Tabs';
@@ -13,7 +14,23 @@ This guide assumes that you have a Express.js app and want to enable SAML Single
 
 Visit the [GitHub repository](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express.js SAML SSO integration.
 
-## Install SAML Jackson
+Integrating SAML SSO into an app involves the following steps.
+
+- Configure SAML Single Sign-On
+- Authenticate with SAML Single Sign-On
+
+## Configure SAML Single Sign-On
+
+This step allows your tenants to configure SAML connections for their users. Read the following guides to understand more about this.
+
+- [UI Best Practices for Configuring SAML Single Sign-On](/guides/jackson/configuring-saml-sso)
+- [SSO Connection API](/docs/jackson/sso-flow/)
+
+## Authenticate with SAML Single Sign-On
+
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SML Jackson. The following sections focuses more on the SSO authentication side.
+
+### Install SAML Jackson
 
 To get started with SAML Jackson, use the Node Package Manager to add the package to your project's dependencies.
 
@@ -21,7 +38,7 @@ To get started with SAML Jackson, use the Node Package Manager to add the packag
 npm i --save @boxyhq/saml-jackson
 ```
 
-## Setup SAML Jackson
+### Setup SAML Jackson
 
 Setup the SAML Jackson to work with Express.js app.
 
@@ -74,7 +91,7 @@ let oauthController;
 })();
 ```
 
-## Make Authentication Request
+### Make Authentication Request
 
 Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
@@ -117,7 +134,7 @@ router.post('/sso', async (req, res, next) => {
 </TabItem>
 </Tabs>
 
-## Receives SAML Response
+### Receives SAML Response
 
 After successful authentication, Identity Provider POST the SAML response to the Assertion Consumer Service (ACS) URL.
 
@@ -136,7 +153,7 @@ router.post('/sso/acs', async (req, res, next) => {
 });
 ```
 
-## Requests Access Token
+### Requests Access Token
 
 Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirectUrl` you configured previously.
 
@@ -189,7 +206,7 @@ router.get('/sso/callback', async (req, res, next) => {
 </TabItem>
 </Tabs>
 
-## Fetch User Profile
+### Fetch User Profile
 
 Once the `access_token` has been fetched, you can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
 
@@ -217,6 +234,6 @@ The entire response will look something like this:
 }
 ```
 
-## Authenticate User
+### Authenticate User
 
 Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.

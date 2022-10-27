@@ -10,11 +10,27 @@ This guide assumes that you have a Laravel app and want to enable SAML Single Si
 
 Visit the [GitHub repository](https://github.com/boxyhq/php-examples/tree/main/laravel-enterprise-sso) to see the source code for the Laravel SAML SSO integration.
 
-## Install SAML Jackson
+Integrating SAML SSO into an app involves the following steps.
+
+- Configure SAML Single Sign-On
+- Authenticate with SAML Single Sign-On
+
+## Configure SAML Single Sign-On
+
+This step allows your tenants to configure SAML connections for their users. Read the following guides to understand more about this.
+
+- [UI Best Practices for Configuring SAML Single Sign-On](/guides/jackson/configuring-saml-sso)
+- [SSO Connection API](/docs/jackson/sso-flow/)
+
+## Authenticate with SAML Single Sign-On
+
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SML Jackson. The following sections focuses more on the SSO authentication side.
+
+### Install SAML Jackson
 
 The first step is to deploy the SAML Jackson service. Follow the [deployment docs](/docs/jackson/deploy/service) to install and configure the SAML Jackson.
 
-## Setup SAML Jackson
+### Setup SAML Jackson
 
 We'll use the Laravel Socialite for the integration. Socialite provides an expressive, fluent interface to OAuth authentication with external authentication providers.
 
@@ -149,7 +165,7 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-## Make Authentication Request
+### Make Authentication Request
 
 Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
@@ -186,7 +202,7 @@ class AuthController extends Controller
 }
 ```
 
-## Fetch User Profile
+### Fetch User Profile
 
 Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirect` you configured previously.
 
@@ -217,6 +233,6 @@ class AuthController extends Controller
 }
 ```
 
-## Authenticate User
+### Authenticate User
 
 Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
