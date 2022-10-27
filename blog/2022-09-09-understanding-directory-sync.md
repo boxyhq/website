@@ -5,7 +5,8 @@ author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
 author_image_url: https://boxyhq.com/img/team/kiran.jpg
-tags: [enterprise-readiness, engineering, saml-jackson, directory-sync, scim]
+tags_disabled:
+  [enterprise-readiness, engineering, saml-jackson, directory-sync, scim]
 image: /img/blog/directory-sync-flow.png
 ---
 

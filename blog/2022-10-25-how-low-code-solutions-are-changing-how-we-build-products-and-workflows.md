@@ -5,7 +5,7 @@ author: Jay Singh
 author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
 author_image_url: https://boxyhq.com/img/team/jay.jpg
-tags: [low-code, no-code, speed of development]
+tags_disabled: [low-code, no-code, speed of development]
 image: /img/blog/lowcode-graph.png
 ---
 
