@@ -7,17 +7,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'SAML Jackson',
+      label: 'Enterprise SSO',
       collapsible: true,
-      //collapsed: false,
-      // link: { type: 'doc', id: 'jackson/overview' },
       items: [
-        { type: 'doc', id: 'jackson/overview', label: 'Overview' },
         {
           type: 'category',
           label: 'Deploy',
           link: { type: 'doc', id: 'jackson/deploy/index' },
           items: [
+            'jackson/deploy/index',
             'jackson/deploy/service',
             'jackson/deploy/npm-library',
             'jackson/deploy/env-variables',
@@ -60,7 +58,6 @@ module.exports = {
       type: 'category',
       label: 'Directory Sync (Beta)',
       collapsible: true,
-      //collapsed: false,
       link: { type: 'doc', id: 'directory-sync/overview' },
       items: [
         'directory-sync/getting-started',

@@ -1,6 +1,14 @@
-# Deploy
+---
+title: Getting Started with SAML Jackson
+description: Getting Started with SAML Single Sign-On authentication
+sidebar_label: Overview
+---
 
-There are two ways to use Jackson.
+# Overview
+
+SAML Jackson can be used with any web application to integrate the **SAML Single Sign-On authentication**.
+
+There are two ways to integrate SAML Jackson with an application. Depending on your use case, you can choose either one of them.
 
 ## As a [separate service](./service.md)
 
