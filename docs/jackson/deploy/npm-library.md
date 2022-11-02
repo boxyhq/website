@@ -321,7 +321,7 @@ await oauth.authorize({
 
 ### Handle IdP Response
 
-The response is sent back to your app after authentication at IdP. After the handling of the response, the profile of the authenticated user is extracted and stored against a short-lived code that is then sent back to the app.
+The response is sent back to your app after authentication at IdP. After the handling of this response, the profile of the authenticated user is extracted and stored against a short-lived code that is then sent back to the app. To handle the response use the appropriate method as detailed below:
 
 #### SAML Response
 
