@@ -379,7 +379,7 @@ await oauth.oidcAuthzResponse({
 
 ### Request Access Token
 
-Requests an `access_token` by passing the authorization `code` from the previous step along with other authentication details. The redirect URL will contain `code` and `state` as query strings.
+Requests an `access_token` by passing the authorization `code` from the previous step along with other authentication details.
 
 <Tabs>
 <TabItem value="01" label="Request" default>
