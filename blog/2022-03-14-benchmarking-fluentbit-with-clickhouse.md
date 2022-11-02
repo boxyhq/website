@@ -5,7 +5,7 @@ author: Utkarsh Mehta
 author_title: Senior Software Engineer (Open Source Dev Tools) @BoxyHQ
 author_url: https://www.linkedin.com/in/utkarsh-mehta2612/
 author_image_url: https://boxyhq.com/img/team/utkarsh.jpg
-tags:
+tags_disabled:
   [
     enterprise-readiness,
     engineering,

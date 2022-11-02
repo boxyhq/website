@@ -17,7 +17,7 @@ const title = 'BoxyHQ';
 const description =
   'Deploy enterprise readiness straight out of the box in minutes and become enterprise-ready';
 
-const SAMLSSO = () => {
+const IndexPage = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
@@ -46,9 +46,9 @@ const SAMLSSO = () => {
           <div className="row" style={{ gap: '10px', marginTop: '20px' }}>
             <div className="col col--5 col--offset-1">
               <div className="col-demo">
-                <div class="card-demo" style={{}}>
-                  <div class="card">
-                    <div class="card__header">
+                <div className="card-demo" style={{}}>
+                  <div className="card">
+                    <div className="card__header">
                       <h3
                         className="text--center"
                         style={{ whiteSpace: 'pre-line' }}
@@ -56,7 +56,7 @@ const SAMLSSO = () => {
                         Why Developer Security?
                       </h3>
                     </div>
-                    <div class="card__body">
+                    <div className="card__body">
                       <p className="text--center">
                         Cyber crimes will cost $10.5 trillion annually by 2025,
                         but 70% of development teams always or frequently skip
@@ -68,7 +68,7 @@ const SAMLSSO = () => {
                         be left behind.
                       </p>
                     </div>
-                    <div class="card__footer">
+                    <div className="card__footer">
                       <Link
                         className={clsx('button button--primary button--block')}
                         href="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
@@ -82,9 +82,9 @@ const SAMLSSO = () => {
             </div>
             <div className="col col--5">
               <div className="col-demo">
-                <div class="card-demo">
-                  <div class="card">
-                    <div class="card__header">
+                <div className="card-demo">
+                  <div className="card">
+                    <div className="card__header">
                       <h3
                         className="text--center"
                         style={{ whiteSpace: 'pre-line' }}
@@ -92,7 +92,7 @@ const SAMLSSO = () => {
                         Build or buy?
                       </h3>
                     </div>
-                    <div class="card__body">
+                    <div className="card__body">
                       <p className="text--center">
                         Neither! Use BoxyHQ’s free open-source solution.
                         Available on an Apache 2.0 license, helping developers
@@ -104,7 +104,7 @@ const SAMLSSO = () => {
                         everything, we just provide the building blocks.
                       </p>
                     </div>
-                    <div class="card__footer">
+                    <div className="card__footer">
                       <Link
                         className={clsx('button button--primary button--block')}
                         href="mailto:hello@boxyhq.com"
@@ -144,4 +144,4 @@ const SAMLSSO = () => {
   );
 };
 
-export default SAMLSSO;
+export default IndexPage;
