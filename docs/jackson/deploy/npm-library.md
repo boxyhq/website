@@ -352,7 +352,7 @@ await oauth.samlResponse({
 
 #### OIDC Response
 
-Handle the response from the OIDC Identity Provider. After successful authentication, IdP sends back (via browser redirect) the `code` and `state` to the redirect URL (`oidcPath`) that handles the OIDC response. You'll use the `oidcAuthzResponse` method within your `oidcPath` handler. This will exchange the `code` for "token and userinfo" from the OIDC Provider.
+Handle the response from the OIDC Identity Provider. After successful authentication, IdP sends back (via browser redirect) the `code` and `state` to the redirect URL (`oidcPath`) that handles the OIDC response. You'll use the `oidcAuthzResponse` method within your `oidcPath` handler. This will exchange the `code` for tokenSet (id_token and access_token) from the OIDC Provider. The "userinfo" endpoint of the OIDC Provider also gets invoked. Both the `id_token` claims and `userinfo` response are used to form the user profile.
 
 <Tabs>
 <TabItem value="01" label="Request" default>
