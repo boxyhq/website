@@ -325,7 +325,7 @@ The response is sent back to your app after authentication at IdP. After the han
 
 #### SAML Response
 
-Handle the response from the SAML Identity Provider. After successful authentication, IdP sends back (via browser POST) the `SAMLResponse` and `RelayState` to the Assertion Consumer Service (ACS) URL of the app. You'll use the `samlResponse` method within your ACS endpoint. This will parse and validate the SAML Response after which the user profile is extracted.
+Handle the response from the SAML Identity Provider. After successful authentication, IdP sends back (via browser POST) the `SAMLResponse` and `RelayState` to the Assertion Consumer Service (ACS) URL (`samlPath`) of the app. You'll use the `samlResponse` method within your ACS endpoint. This will parse and validate the SAML Response after which the user profile is extracted.
 
 <Tabs>
 <TabItem value="01" label="Request" default>
