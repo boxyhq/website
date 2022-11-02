@@ -13,7 +13,6 @@ module.exports = {
         {
           type: 'category',
           label: 'Deploy',
-          link: { type: 'doc', id: 'jackson/deploy/index' },
           items: [
             'jackson/deploy/index',
             'jackson/deploy/service',

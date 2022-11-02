@@ -6,7 +6,7 @@ sidebar_label: Configuring SAML SSO
 
 # Configuring SAML Single Sign-On
 
-To understand an overview of our SAML SSO, read [SSO Building blocks](/blog/sso-building-blocks).
+For an overview of our SAML SSO, read [SSO Building blocks](/blog/sso-building-blocks).
 
 This guide aims to give you some ideas about configuring the SAML SSO for your tenants and the best practices you can follow while implementing the same.
 

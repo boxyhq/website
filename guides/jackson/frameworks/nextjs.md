@@ -90,6 +90,10 @@ export default async function init() {
 
 We'll use [NextAuth.js](https://next-auth.js.org/) for the authentication. NextAuth is a complete open-source authentication solution for Next.js applications.
 
+```bash
+npm install next-auth
+```
+
 Let's add a custom provider called `saml-jackson` to the NextAuth.
 
 ```js title="pages/api/auth/[...nextauth].ts"
@@ -271,7 +275,7 @@ Once the user has been retrieved from the Identity Provider, you may determine i
 
 You can use NextAuth's `signIn` method to initiate the authentication with `saml-jackson` provider.
 
-You can pass the `tenant` and `product` as additional parameters to the `/api/auth/saml/authorize` endpoint through the third argument of signIn().
+You can pass the `tenant` and `product` as additional parameters to the `/api/auth/saml/authorize` endpoint through the third argument of `signIn()`.
 
 ```js title="pages/login.tsx"
 import type { NextPage } from 'next';
