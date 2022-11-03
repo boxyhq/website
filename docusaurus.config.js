@@ -20,6 +20,10 @@ module.exports = {
   ],
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ['php'],
+    },
     zoom: {
       selector: '.markdown :not(em) > img',
       config: {

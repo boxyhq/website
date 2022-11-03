@@ -1,363 +1,457 @@
 # NPM Library
 
-Jackson is available as an [npm package](https://www.npmjs.com/package/@boxyhq/saml-jackson) that can be integrated into any web application framework (like Express.js for example). Please file an issue or submit a PR if you encounter any issues with your choice of framework.
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+SAML Jackson is available as an [npm package](https://www.npmjs.com/package/@boxyhq/saml-jackson) that can be integrated into any **Node.js** based web application framework.
+
+Install the SDK using the command below.
 
 ```bash
-npm i @boxyhq/saml-jackson
+npm install @boxyhq/saml-jackson
 ```
 
-Integrating SAML Jackson with a Node.js app involves the following steps.
+---
 
-See the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express integration
+## Configuration Options
 
-## Express.js example
+Please note that the initialization of `@boxyhq/saml-jackson` is async, you cannot run it at the top level.
 
-### Requirements
+```js
+import jackson, {
+  type IConnectionAPIController,
+  type IOAuthController,
+} from "@boxyhq/saml-jackson";
 
-- Node.js version 14 or newer
-- A [supported database](./service.md#database)
-- An Express.js based app to add SAML Jackson
 
-### Install SAML Jackson library
+let oauth: IOAuthController;
+let connection: IConnectionAPIController;
 
-```bash
-npm i --save @boxyhq/saml-jackson
+(async function init() {
+  const jackson = await require('@boxyhq/saml-jackson').controllers({
+    externalUrl: "https://your-app.com",
+    samlAudience: "https://saml.boxyhq.com",
+    oidcPath: "/sso/oidc",
+    samlPath: "/sso/acs"
+    db: {
+      engine: "sql",
+      type: "postgres",
+      url: "postgres://postgres:postgres@localhost:5432/postgres",
+    },
+  });
+
+  oauth = jackson.oauthController;
+  connection = jackson.connectionAPIController;
+})();
 ```
 
-### Add Express Routes
+---
 
-```javascript
-// express
-const express = require('express');
-const router = express.Router();
-const cors = require('cors'); // needed if you are calling the token userinfo endpoints from the frontend
+## Single Sign-On Connections
 
-// Set the required options. Refer to `Environment Variables` for the full list
-const opts = {
-  externalUrl: 'https://my-cool-app.com',
-  samlAudience: 'https://my-cool-app.com',
-  samlPath: '/sso/oauth/saml',
-  oidcPath: '/sso/oauth/oidc',
-  db: {
-    engine: 'mongo',
-    url: 'mongodb://localhost:27017/my-cool-app',
+### Create SAML Connection
+
+Create a new SAML Single Sign-On connection.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+await connection.createSAMLConnection({
+  tenant: 'boxyhq',
+  product: 'your-app',
+  rawMetadata: '<raw-saml-metadata>', // Visit https://mocksaml.com to download Metadata
+  redirectUrl: ['https://your-app.com/*'],
+  defaultRedirectUrl: 'https://your-app.com/sso/callback',
+});
+```
+
+</TabItem>
+
+<TabItem value="02" label="Response">
+
+```json
+{
+  "defaultRedirectUrl": "https://your-app.com/sso/callback",
+  "redirectUrl": ["https://your-app.com/*"],
+  "tenant": "boxyhq",
+  "product": "your-app",
+  "clientID": "f7c909a5c72a5535847acf32558b2429a5172dd6",
+  "clientSecret": "cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdc",
+  "forceAuthn": false,
+  "idpMetadata": {
+    "sso": {
+      "postUrl": "https://mocksaml.com/api/saml/sso",
+      "redirectUrl": "https://mocksaml.com/api/saml/sso"
+    },
+    "slo": {},
+    "entityID": "https://saml.example.com/entityid",
+    "thumbprint": "d797f3829882233d3f01e49643f6a1195f242c94",
+    "validTo": "Jul  1 21:46:38 3021 GMT",
+    "loginType": "idp",
+    "provider": "saml.example.com"
   },
-};
-
-let connectionAPIController;
-let oauthController;
-let logoutController;
-let oidcDiscoveryController;
-// Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
-// Run this in a function where you initialize the express server.
-async function init() {
-  const ret = await require('@boxyhq/saml-jackson').controllers(opts);
-  connectionAPIController = ret.connectionAPIController;
-  oauthController = ret.oauthController;
-  logoutController = ret.logoutController;
-  oidcDiscoveryController = ret.oidcDiscoveryController;
+  "certs": {
+    "publicKey": "-----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----\r\n",
+    "privateKey": "-----BEGIN RSA PRIVATE KEY----- ... -----END RSA PRIVATE KEY-----\r\n"
+  }
 }
 ```
 
-- Add your app base URL as `externalUrl`
-- `samlPath` becomes part of the ACS URL. The ACS URL is an endpoint on the SP where the IdP will redirect to with its authentication response. For example: If `externalUrl` is `http://localhost`, and `samlPath` is `/sso/acs`, the ASC URL will be `http://localhost/sso/acs`
-- `oidcPath` is the endpoint which recieves the authentication response from an OIDC IdP. The `code` contained in the response is then exchanged to retrieve token/userprofile.
+</TabItem>
+</Tabs>
 
-### Add API routes for SSO Connections
+### Update SAML Connection
 
-[API Reference](../sso-flow/index.md#2-sso-connection-api)
+Update a SAML Single Sign-On connection.
 
-```javascript
-// express.js middlewares are needed to parse json and x-www-form-urlencoded
-router.use(express.json());
-router.use(express.urlencoded({ extended: true }));
+<Tabs>
+<TabItem value="01" label="Request" default>
 
-export const strategyChecker = (req) => {
-  const isSAML = 'rawMetadata' in req.body || 'encodedRawMetadata' in req.body;
-  const isOIDC = 'oidcDiscoveryUrl' in req.body;
-  return { isSAML, isOIDC };
-};
+```js
+await connection.updateSAMLConnection({
+  tenant: 'boxyhq',
+  product: 'your-app',
+  rawMetadata: '<raw-saml-metadata>',
+  redirectUrl: ['https://your-app.com/*'],
+  defaultRedirectUrl: 'https://your-app.com/sso/callback-updated',
+  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
+  clientSecret: 'cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdc',
+});
+```
 
+</TabItem>
 
-// SSO connections API. You should pass this route through your authentication checks, do not expose this on the public interface without proper authentication in place.
-router.post('/api/v1/connections', async (req, res) => {
-  const { isSAML, isOIDC } = strategyChecker(req);
-  try {
-    // apply your authentication flow (or ensure this route has passed through your auth middleware)
-    ...
-    if (isSAML) {
-     res.json(await connectionAPIController.createSAMLConnection(req.body));
-    } else if (isOIDC) {
-      res.json(await connectionAPIController.createOIDCConnection(req.body))
-    } else {
-      throw 'strategy not supported'
+</Tabs>
+
+### Create OIDC Connection
+
+Create a new OIDC Single Sign-On connection.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+await connection.createOIDCConnection({
+  tenant: 'boxyhq',
+  product: 'your-app',
+  redirectUrl: ['https://your-app.com/*'],
+  defaultRedirectUrl: 'https://your-app.com/sso/callback',
+  oidcDiscoveryUrl:
+    'https://accounts.google.com/.well-known/openid-configuration',
+  oidcClientId: '<OpenID Client ID>',
+  oidcClientSecret: '<OpenID Client Secret>',
+});
+```
+
+</TabItem>
+
+<TabItem value="02" label="Response">
+
+```json
+{
+  "defaultRedirectUrl": "https://your-app.com/sso/callback",
+  "redirectUrl": ["https://your-app.com/*"],
+  "tenant": "boxyhq",
+  "product": "your-app",
+  "clientID": "749f95c4bd02b4adb6c0633249e70d5ad45b75e2",
+  "clientSecret": "2d730ac71c74e7d49dccf362c9a61005b6246cc65d6d0fa4",
+  "oidcProvider": {
+    "discoveryUrl": "https://accounts.google.com/.well-known/openid-configuration",
+    "clientId": "<OpenID Client ID>",
+    "clientSecret": "<OpenID Client Secret>",
+    "provider": "accounts.google.com"
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+### Update OIDC Connection
+
+Update an OIDC Single Sign-On connection.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+await connection.updateOIDCConnection({
+  tenant: 'boxyhq',
+  product: 'your-app',
+  redirectUrl: ['https://your-app.com/*'],
+  defaultRedirectUrl: 'https://your-app.com/sso/callback',
+  oidcDiscoveryUrl:
+    'https://accounts.google.com/.well-known/openid-configuration',
+  oidcClientId: '<OpenID Client ID>',
+  oidcClientSecret: '<OpenID Client Secret>',
+  clientID: '749f95c4bd02b4adb6c0633249e70d5ad45b75e2',
+  clientSecret: '2d730ac71c74e7d49dccf362c9a61005b6246cc65d6d0fa4',
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+### Get SAML/OIDC Connections
+
+Get the details of an existing SAML or OIDC Single Sign-On connection.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+// Using tenant and product
+await connection.getConnections({
+  tenant: 'boxyhq',
+  product: 'your-app',
+});
+
+// Using the client ID
+await connection.getConnections({
+  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
+});
+```
+
+</TabItem>
+
+<TabItem value="02" label="Response">
+
+```json
+[
+  {
+    "defaultRedirectUrl": "https://your-app.com/sso/callback",
+    "redirectUrl": ["https://your-app.com/*"],
+    "tenant": "boxyhq",
+    "product": "your-app",
+    "clientID": "f7c909a5c72a5535847acf32558b2429a5172dd6",
+    "clientSecret": "cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdc",
+    "forceAuthn": false,
+    "idpMetadata": {
+      "sso": {
+        "postUrl": "https://mocksaml.com/api/saml/sso",
+        "redirectUrl": "https://mocksaml.com/api/saml/sso"
+      },
+      "slo": {},
+      "entityID": "https://saml.example.com/entityid",
+      "thumbprint": "d797f3829882233d3f01e49643f6a1195f242c94",
+      "validTo": "Jul  1 21:46:38 3021 GMT",
+      "loginType": "idp",
+      "provider": "saml.example.com"
+    },
+    "certs": {
+      "publicKey": "-----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----\r\n",
+      "privateKey": "-----BEGIN RSA PRIVATE KEY----- ... -----END RSA PRIVATE KEY-----\r\n"
     }
-  } catch (err) {
-    res.status(500).json({
-      error: err.message,
-    });
   }
-});
-// update connection
-router.patch('/api/v1/connections', async (req,res) => {
-  const { isSAML, isOIDC } = strategyChecker(req);
-   try {
-    // apply your authentication flow (or ensure this route has passed through your auth middleware)
-    ...
-  if (isSAML) {
-     res.json(await connectionAPIController.updateSAMLConnection(req.body));
-    } else if (isOIDC) {
-      res.json(await connectionAPIController.updateOIDCConnection(req.body))
-    } else {
-      throw 'strategy not supported'
-    }
-  } catch (err) {
-    res.status(500).json({
-      error: err.message,
-    });
-  }
-})
-// fetch connection
-router.get('/api/v1/connections', async (req, res) => {
-  try {
-    // apply your authentication flow (or ensure this route has passed through your auth middleware)
-    ...
+]
+```
 
-    res.json(await connectionAPIController.getConnections(req.query));
-  } catch (err) {
-    res.status(500).json({
-      error: err.message,
-    });
-  }
-});
-// delete connection
-router.delete('/api/v1/connections', async (req, res) => {
-  try {
-    // apply your authentication flow (or ensure this route has passed through your auth middleware)
-    ...
+</TabItem>
+</Tabs>
 
-    // only when properly authenticated, call the connection function
-    await connectionAPIController.deleteConnections(req.body);
-    res.status(200).end();
-  } catch (err) {
-    res.status(500).json({
-      error: err.message,
-    });
-  }
+### Delete SAML/OIDC Connection
+
+Update a SAML or OIDC Single Sign-On connection.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+// Using tenant and product
+await connection.deleteConnections({
+  tenant: 'boxyhq',
+  product: 'your-ap',
+});
+
+// Using client ID and client secret
+await connection.deleteConnections({
+  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
+  clientSecret: 'cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdcp',
 });
 ```
 
-### OAuth: Authorize URL
+</TabItem>
 
-The OAuth flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user. The returned `redirect_url` is the authorization endpoint on the IdP end, where user authentication takes place.
+</Tabs>
 
-[API Reference](../sso-flow/index.md#31-authorize)
+---
 
-```javascript
-// OAuth 2.0 / OpenID Connect 1.0 flow
-router.get('/oauth/authorize', async (req, res) => {
-  try {
-    const { redirect_url, authorize_form } = await oauthController.authorize(
-      req.query
-    );
-    if (redirect_url) {
-      res.redirect(302, redirect_url);
-    } else {
-      // For SAML Post Binding
-      res.set('Content-Type', 'text/html; charset=utf-8');
-      res.send(authorize_form);
-    }
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
+## Single Sign-On Authentication
 
-    res.status(statusCode).send(message);
-  }
+### Handle OAuth 2.0 (or OIDC) Authorization request
+
+To initiate the flow, the application must trigger an OAuth 2.0 (or OIDC) redirect to the authorization endpoint of your app. You'll use the `authorize` method within the authorization handler.
+
+`authorize` will resolve the SSO URL (`redirect_url`) based on the connection configured for the tenant/product. The app needs to redirect the user to this URL. Keep in mind that the SSO URL structure is different based on the type of SSO Connection. For a SAML Connection, this will contain the `SAMLRequest` whereas for an OIDC Connection the SSO URL will be the Authorization endpoint with the OIDC request params (scope, response_type, etc.) attached.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```ts
+await oauth.authorize({
+  tenant: "boxyhq",
+  product: "your-app",
+  redirect_uri: "https://your-app.com/sso/callback",
+  state: "c38ee339-6b82-43d3-838f-4036820acce9",
+  response_type: 'code';
+  code_challenge: string;
+  code_challenge_method: 'plain' | 'S256' | '';
+  scope?: string;
+  nonce?: string;
+  idp_hint?: string;
+  prompt?: string;
 });
 ```
 
-### Handle Response from IdP
+</TabItem>
 
-#### SAML
+<TabItem value="02" label="Response">
 
-Add a method to handle the SAML Response from IdP. Once the SAML response is validated and the user profile extracted, Jackson will generate the authorization response (authorization code) for the client.
+```json
+{
+  "redirect_url": "https://mocksaml.com/api/saml/sso?RelayState=boxyhq_jackson_...&SAMLRequest=nVbZkqs4En33V1T4...",
+  "authorize_form": ""
+}
+```
 
-##### IdP-initiated SAML flow
+</TabItem>
+</Tabs>
 
-To enable IdP-initiated SAML flow set [IDP_ENABLED](./env-variables#idp_enabled). If [IDP_DISCOVERY_PATH](./env-variables#idp_discovery_path) is not set then always the first connection will be chosen in case of multiple matches.
+### Handle IdP Response
 
-If `oauthController.samlResponse` returns `app_select_form` with no `redirect_url`, then we have hit the case where the IdP-initiated flow has multiple matches for the same IdP. Users can select an app and the flow is resumed with the `idp_hint` containing the user selection. For reference on how to add an IdP selection page, see: https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx
+The response is sent back to your app after authentication at IdP. After the handling of this response, the profile of the authenticated user is extracted and stored against a short-lived code that is then sent back to the app. To handle the response use the appropriate method as detailed below:
 
-:::info
-SAML Response - IdP issues an HTTP POST request to SP's Assertion Consumer Service (ACS URL) with 2 fields `SAMLResponse` and `RelayState`.
-:::
+#### SAML Response
 
-```javascript
-router.post('/sso/oauth/saml', async (req, res) => {
-  try {
-    const { redirect_url, app_select_form } =
-      await oauthController.samlResponse(req.body);
+Handle the response from the SAML Identity Provider. After successful authentication, IdP sends back (via browser POST) the `SAMLResponse` and `RelayState` to the Assertion Consumer Service (ACS) URL (`samlPath`) of the app. You'll use the `samlResponse` method within your ACS endpoint. This will parse and validate the SAML Response after which the user profile is extracted.
 
-    if (redirect_url) {
-      res.redirect(302, redirect_url);
-    } else {
-      // For IdP initiated SAML login where multiple apps are configured for same IdP. Here user choice is required to complete the flow
-      res.set('Content-Type', 'text/html; charset=utf-8');
-      res.send(app_select_form);
-    }
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
+<Tabs>
+<TabItem value="01" label="Request" default>
 
-    res.status(statusCode).send(message);
-  }
+```js
+await oauth.samlResponse({
+  SAMLResponse: '...',
+  RelayState: '...',
 });
 ```
 
-#### OIDC
+</TabItem>
 
-Add a method to handle OIDC authentication response from IdP. Once the response is processed and the user profile is retrieved, Jackson will generate the authorization response (authorization code) for the client.
+<TabItem value="02" label="Response">
 
-:::info
-OIDC Response - The successful Authentication response from the OIDC IdP contains the `authorization code` and `state` from the original authorization request (sent from jackson). Jackson will use the `authorization code` to obtain the token which is then exchanged for the user profile. The user profile is stored against a code which is then set in the returned `redirect_url`. In case of authorization failure at IdP the `error` and `error_description` from IdP will be set in the returned `redirect_url`
-:::
+```json
+{
+  "redirect_url": "https://your-app.com/sso/callback?code=5db7257fde94e062f6243572e31818d6e64c3097&state=c38ee339-6b82-43d3-838f-4036820acce9"
+}
+```
 
-```javascript
-router.post('/sso/oauth/oidc', async (req, res) => {
-  try {
-    const { redirect_url } = await oauthController.oidcAuthzResponse(req.query);
-    if (redirect_url) {
-      res.redirect(302, redirect_url);
-    }
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
+</TabItem>
+</Tabs>
 
-    res.status(statusCode).send(message);
-  }
+#### OIDC Response
+
+Handle the response from the OIDC Identity Provider. After successful authentication, IdP sends back (via browser redirect) the `code` and `state` to the redirect URL (`oidcPath`) that handles the OIDC response. You'll use the `oidcAuthzResponse` method within your `oidcPath` handler. This will exchange the `code` for tokenSet (id_token and access_token) from the OIDC Provider. The "userinfo" endpoint of the OIDC Provider also gets invoked. Both the `id_token` claims and `userinfo` response are used to form the user profile.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+await oauth.oidcAuthzResponse({
+  code: '...',
+  state: '...',
 });
 ```
 
-### OAuth: Code Exchange
+</TabItem>
 
-The code can then be exchanged for a token by making the following request. You should validate that the state matches the one you sent in the authorize request.
+<TabItem value="02" label="Response">
 
-[API Reference](../sso-flow/index.md#32-code-exchange)
+```json
+{
+  "redirect_url": "https://your-app.com/sso/callback?code=5db7257fde94e062f6243572e31818d6e64c3097&state=c38ee339-6b82-43d3-838f-4036820acce9"
+}
+```
 
-```javascript
-router.post('/oauth/token', cors(), async (req, res) => {
-  try {
-    const result = await oauthController.token(req.body);
+</TabItem>
+</Tabs>
 
-    res.json(result);
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
+### Request Access Token
 
-    res.status(statusCode).send(message);
-  }
+Requests an `access_token` by passing the authorization `code` from the previous step along with other authentication details.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+const tenant = 'boxyhq';
+const product = 'your-app';
+
+await oauth.token({
+  code: '5db7257fde94e062f6243572e31818d6e64c3097',
+  redirect_uri: 'https://your-app.com/sso/callback',
+  client_id: `tenant=${tenant}&product=${product}`,
+  client_secret: 'dummy',
+  grant_type: 'authorization_code',
 });
 ```
 
-### OAuth: Get User Profile
+</TabItem>
 
-The short-lived access token can now be used to request the user's profile.
+<TabItem value="02" label="Response">
 
-[API Reference](../sso-flow/index.md#33-profile-request)
-
-```javascript
-router.get('/oauth/userinfo', async (req, res) => {
-  try {
-    let token = extractAuthToken(req);
-
-    // check for query param
-    if (!token) {
-      token = req.query.access_token;
-    }
-
-    if (!token) {
-      res.status(401).json({ message: 'Unauthorized' });
-    }
-
-    const profile = await oauthController.userInfo(token);
-
-    res.json(profile);
-  } catch (err) {
-    const { message, statusCode = 500 } = err;
-
-    res.status(statusCode).json({ message });
-  }
-});
-
-// set the router
-app.use('/sso', router);
+```json
+{
+  "access_token": "6b81f03b60c34e46e740d96c7e6242923736a2d1",
+  "token_type": "bearer",
+  "expires_in": 300
+}
 ```
 
-### SLO: Create Logout Request
+</TabItem>
+</Tabs>
 
-Create the logout request by calling the method `createRequest()`.
+### Fetch User Profile
 
-```javascript
-router.get('/logout', async (req, res, next) => {
-  const { logoutUrl, logoutForm } = await logoutController.createRequest({
-    nameId: 'google-oauth2|108149256146623609101',
-    tenant: 'boxyhq.com',
-    product: 'demo',
-    redirectUrl: 'http://localhost:3000',
-  });
+Once the `access_token` has been fetched, you can use it to retrieve the user profile from the Identity Provider.
 
-  // HTTP-Redirect binding
-  if (logoutUrl) {
-    return res.redirect(logoutUrl);
-  }
+<Tabs>
+<TabItem value="01" label="Request" default>
 
-  // HTTP-POST binding
-  if (logoutForm) {
-    return res.send(logoutForm);
-  }
-});
+```js
+const accessToken = '6b81f03b60c34e46e740d96c7e6242923736a2d1';
+
+await oauth.userInfo(accessToken);
 ```
 
-### SLO: Handle the Response
+</TabItem>
 
-IdP will send a response back to a specific URL. You need to register this URL on the IdP to handle the response properly.
+<TabItem value="02" label="Response">
 
-```javascript
-router.post('/logout/callback', async (req, res, next) => {
-  const { SAMLResponse, RelayState } = req.body;
-
-  const { redirectUrl } = await logoutController.handleResponse({
-    SAMLResponse,
-    RelayState,
-  });
-
-  return res.redirect(redirectUrl);
-});
+```json
+{
+  "raw": {
+    "id": "1dda9fb491dc01bd24d2423ba2f22ae561f56ddf2376b29a11c80281d21201f9",
+    "email": "samuel@example.com",
+    "firstName": "Samuel",
+    "lastName": "Jackson",
+    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "samuel@example.com"
+  },
+  "id": "1dda9fb491dc01bd24d2423ba2f22ae561f56ddf2376b29a11c80281d21201f9",
+  "email": "samuel@example.com",
+  "firstName": "Samuel",
+  "lastName": "Jackson",
+  "requested": {
+    "client_id": "f7c909a5c72a5535847acf32558b2429a5172dd6",
+    "state": "c38ee339-6b82-43d3-838f-4036820acce9",
+    "redirect_uri": "https://your-app.com/sso/callback",
+    "tenant": "boxyhq",
+    "product": "your-app",
+    "scope": []
+  }
+}
 ```
 
-### OpenID Connect: Discovery endpoints
-
-To enable support for OpenID Connect clients (or Relying Parties), we must expose the location and other [metadata](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata) of Jackson (OpenID Issuer).
-
-Jackson exports `oidcDiscoveryController` which can be used to construct service endpoints for OIDC discovery as shown below.
-
-```javascript
-// https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfig
-router.get('/.well-known/openid-configuration', async (req, res, next) => {
-  try {
-    const config = oidcDiscoveryController.openidConfig();
-    const response = JSON.stringify(config, null, 2);
-    res.status(200).send(response);
-  } catch (err) {
-    next(err);
-  }
-});
-// jwks_uri
-router.get('/oauth/jwks', async (req, res, next) => {
-  try {
-    const jwks = await oidcDiscoveryController.jwks();
-    const response = JSON.stringify(jwks, null, 2);
-    res.status(200).send(response);
-  } catch (err) {
-    next(err);
-  }
-});
-```
-
-Make sure you have configured the OpenID environment variables mentioned in [Environment Variables](env-variables.md#openid-configuration).
+</TabItem>
+</Tabs>

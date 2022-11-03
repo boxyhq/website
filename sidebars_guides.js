@@ -3,11 +3,13 @@ module.exports = {
     'index',
     {
       type: 'category',
-      label: 'SAML Jackson',
+      label: 'Enterprise SSO',
       collapsible: true,
       collapsed: true,
       link: { type: 'doc', id: 'jackson/overview' },
       items: [
+        'jackson/configuring-saml-sso',
+        'jackson/login-with-saml-sso',
         {
           type: 'category',
           label: 'Deployment Guides',
@@ -23,9 +25,11 @@ module.exports = {
           label: 'Framework Guides',
           collapsed: false,
           items: [
+            'jackson/frameworks/adonis',
             'jackson/frameworks/express',
             'jackson/frameworks/nextjs',
             'jackson/frameworks/remix',
+            'jackson/frameworks/laravel',
           ],
         },
         {

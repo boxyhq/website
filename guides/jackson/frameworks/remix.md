@@ -1,5 +1,6 @@
 ---
-title: Add Single Sign On to a remix app
+title: Add SSO to Remix App with BoxyHQ
+description: Add SSO to Remix App with BoxyHQ
 sidebar_label: Remix
 ---
 
