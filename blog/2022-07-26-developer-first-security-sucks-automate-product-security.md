@@ -5,7 +5,7 @@ author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame/
 author_image_url: https://boxyhq.com/img/team/sama.jpg
-tags: [developer, security, cybersecurity, devsecops, appsec]
+tags_disabled: [developer, security, cybersecurity, devsecops, appsec]
 image: /img/blog/security-sucks-meme.jpeg
 ---
 

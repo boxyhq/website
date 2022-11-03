@@ -30,7 +30,8 @@ let connection: IConnectionAPIController;
 (async function init() {
   const jackson = await require('@boxyhq/saml-jackson').controllers({
     externalUrl: "https://your-app.com",
-    samlAudience: "https://saml.boxyhq.com"
+    samlAudience: "https://saml.boxyhq.com",
+    oidcPath: "/sso/oidc",
     samlPath: "/sso/acs"
     db: {
       engine: "sql",
@@ -169,7 +170,7 @@ await connection.createOIDCConnection({
 
 ### Update OIDC Connection
 
-Update a OIDC Single Sign-On connection.
+Update an OIDC Single Sign-On connection.
 
 <Tabs>
 <TabItem value="01" label="Request" default>
@@ -279,20 +280,29 @@ await connection.deleteConnections({
 
 ## Single Sign-On Authentication
 
-### Get Authorization URL
+### Handle OAuth 2.0 (or OIDC) Authorization request
 
-Generate an OAuth 2.0 authorization URL. SAML Jackson generates an OAuth 2.0 authorization URL that you can use to redirect a user to their Identity Provider.
+To initiate the flow, the application must trigger an OAuth 2.0 (or OIDC) redirect to the authorization endpoint of your app. You'll use the `authorize` method within the authorization handler.
+
+`authorize` will resolve the SSO URL (`redirect_url`) based on the connection configured for the tenant/product. The app needs to redirect the user to this URL. Keep in mind that the SSO URL structure is different based on the type of SSO Connection. For a SAML Connection, this will contain the `SAMLRequest` whereas for an OIDC Connection the SSO URL will be the Authorization endpoint with the OIDC request params (scope, response_type, etc.) attached.
 
 <Tabs>
 <TabItem value="01" label="Request" default>
 
-```js
+```ts
 await oauth.authorize({
   tenant: "boxyhq",
   product: "your-app",
   redirect_uri: "https://your-app.com/sso/callback",
   state: "c38ee339-6b82-43d3-838f-4036820acce9",
-} as OAuthReq);
+  response_type: 'code';
+  code_challenge: string;
+  code_challenge_method: 'plain' | 'S256' | '';
+  scope?: string;
+  nonce?: string;
+  idp_hint?: string;
+  prompt?: string;
+});
 ```
 
 </TabItem>
@@ -309,9 +319,13 @@ await oauth.authorize({
 </TabItem>
 </Tabs>
 
-### Handle SAML Response
+### Handle IdP Response
 
-Handle the response from the Identity Provider. After successful authentication, Identity Provider POST the `SAMLResponse` and `RelayState` to the Assertion Consumer Service (ACS) URL. You'll use below method within your ACS endpoint. SAML Jackson then returns a redirect URL to complete the authentication flow.
+The response is sent back to your app after authentication at IdP. After the handling of this response, the profile of the authenticated user is extracted and stored against a short-lived code that is then sent back to the app. To handle the response use the appropriate method as detailed below:
+
+#### SAML Response
+
+Handle the response from the SAML Identity Provider. After successful authentication, IdP sends back (via browser POST) the `SAMLResponse` and `RelayState` to the Assertion Consumer Service (ACS) URL (`samlPath`) of the app. You'll use the `samlResponse` method within your ACS endpoint. This will parse and validate the SAML Response after which the user profile is extracted.
 
 <Tabs>
 <TabItem value="01" label="Request" default>
@@ -336,9 +350,36 @@ await oauth.samlResponse({
 </TabItem>
 </Tabs>
 
+#### OIDC Response
+
+Handle the response from the OIDC Identity Provider. After successful authentication, IdP sends back (via browser redirect) the `code` and `state` to the redirect URL (`oidcPath`) that handles the OIDC response. You'll use the `oidcAuthzResponse` method within your `oidcPath` handler. This will exchange the `code` for tokenSet (id_token and access_token) from the OIDC Provider. The "userinfo" endpoint of the OIDC Provider also gets invoked. Both the `id_token` claims and `userinfo` response are used to form the user profile.
+
+<Tabs>
+<TabItem value="01" label="Request" default>
+
+```js
+await oauth.oidcAuthzResponse({
+  code: '...',
+  state: '...',
+});
+```
+
+</TabItem>
+
+<TabItem value="02" label="Response">
+
+```json
+{
+  "redirect_url": "https://your-app.com/sso/callback?code=5db7257fde94e062f6243572e31818d6e64c3097&state=c38ee339-6b82-43d3-838f-4036820acce9"
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### Request Access Token
 
-Requests an `access_token` by passing the authorization `code` along with other authentication details. The redirect URL will contain `code` and `state` as query strings.
+Requests an `access_token` by passing the authorization `code` from the previous step along with other authentication details.
 
 <Tabs>
 <TabItem value="01" label="Request" default>

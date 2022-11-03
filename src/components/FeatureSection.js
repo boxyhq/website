@@ -31,7 +31,7 @@ const FeatureSection = ({
               >
                 <div>
                   <h2>{title}</h2>
-                  <p>{children}</p>
+                  {children ? <div>{children}</div> : null}
                   <Link
                     className="button button--outline button--primary"
                     to={btnLink}

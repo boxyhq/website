@@ -5,7 +5,7 @@ author: Aswin V
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/av__2021
 author_image_url: https://boxyhq.com/img/team/aswin.jpg
-tags: [sso, engineering, saml-jackson, oauth-2.0]
+tags_disabled: [sso, engineering, saml-jackson, oauth-2.0]
 image: /img/sso-flow.png
 ---
 

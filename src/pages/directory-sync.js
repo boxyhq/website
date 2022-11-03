@@ -10,8 +10,7 @@ const title = 'Directory Sync';
 const description =
   'One simple integration to automate user and group provisioning. Supports SCIM 2.0 protocol for most major providers';
 
-const ProductIcon =
-  require('../../static/img/products/saml-jackson/logo.svg').default;
+const ProductIcon = require('../../static/img/products/dsync/logo.svg').default;
 
 const Icon1 =
   require('../../static/img/products/dsync/meet_the_team.svg').default;

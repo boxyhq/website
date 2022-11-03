@@ -16,7 +16,7 @@ const products = [
     description:
       'Add Directory Sync support into your product to provision and de-provision users.',
     url: '/directory-sync',
-    icon: require('../../static/img/products/saml-jackson/logo.svg').default,
+    icon: require('../../static/img/products/dsync/logo.svg').default,
   },
   {
     title: 'Audit Logs',
@@ -43,9 +43,8 @@ const products = [
     title: 'Privacy Vault',
     description:
       'Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data.',
-    url: 'mailto:hello@boxyhq.com?subject=Privacy Vault Beta',
+    url: 'privacy-vault',
     icon: require('../../static/img/products/privacy-vault/logo.svg').default,
-    btnText: 'Join Private Beta',
   },
 ];
 
@@ -55,6 +54,7 @@ const ProductsSection = () => {
       <div className="row">
         {products.map(({ title, description, url, icon, btnText }, idx) => (
           <Card
+            key={idx}
             idx={idx}
             title={title}
             description={description}
