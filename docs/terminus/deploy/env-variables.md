@@ -249,8 +249,9 @@ The proxy service Lightstep key for OTEL launcher. Currently being moved to a mo
 
 Default: No default.
 
-### **PROXY_SERVICE_CONF_KEY_AES**
+### **PROXY_SERVICE_CONF_DEFAULT_AES_KEK**
 
-By default, Terminus encryption proxy is configured with AES. This is the 32 byte key to perform all the cryptographic operations.
+By default, this is Terminus' KEK. Terminus encryption proxy is configured with AES. This is the 32 byte key to encrypt the DEKs generated via the relevant API.
+> :warning: \*_NOTE_: To be extended
 
 Default: `passphrasethatnneedstobe32byzes!`
