@@ -109,8 +109,8 @@ Defines:
 			methods: [ "POST" ]
 			permissions: [ "ADMIN" ]
 		}
-		registerTenantProductKEK: {
-			path: "/admin/{tenant}/{product}/kek"
+		registerTenantProductDEK: {
+			path: "/admin/{tenant}/{product}/dek"
 			methods: [ "POST" ]
 			permissions: [ "ADMIN" ]
 		}
