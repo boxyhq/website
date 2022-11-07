@@ -1,15 +1,19 @@
 ---
-title: SAML Jackson Guide
+title: Enterprise SSO
 hide_table_of_contents: true
 slug: /jackson
 ---
 
-# SAML Jackson Guide
+# Enterprise SSO
 
 The documentation is divided into 3 sections.
 
 import GuideSection from '../../src/components/GuideSection.js';
 const frameworks = [
+  {
+    name: 'AdonisJS',
+    href: '/guides/jackson/frameworks/adonis',
+  },
   {
     name: 'Express.js',
     href: '/guides/jackson/frameworks/express',
@@ -22,15 +26,27 @@ const frameworks = [
     name: 'Remix',
     href: '/guides/jackson/frameworks/remix',
   },
+  {
+    name: 'Laravel',
+    href: '/guides/jackson/frameworks/laravel',
+  },
 ];
 const integrations = [
   {
-    name: 'SuperTokens',
-    href: '/guides/jackson/integrations/supertokens',
+    name: 'Auth0',
+    href: '/guides/jackson/integrations/auth0',
   },
   {
-    name: 'Next-Auth',
+    name: 'Firebase',
+    href: '/guides/jackson/integrations/firebase',
+  },
+  {
+    name: 'NextAuth',
     href: '/guides/jackson/integrations/nextauth',
+  },
+  {
+    name: 'SuperTokens',
+    href: '/guides/jackson/integrations/supertokens',
   },
 ];
 const deployments = [
@@ -60,7 +76,7 @@ If you want to self host SAML Jackson, the recommended approach is to use one of
 
 ## Framework Guides
 
-SAML Jackson works with a large number of JavaScript frameworks.
+Step-by-step guides to quickly integrate SAML SSO into your application.
 
 <div className="container" style={{ padding: 0 }}>
   <div className="row is-multiline">

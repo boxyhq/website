@@ -5,7 +5,7 @@ author: Deepak Prabhakara
 author_title: Co-founder & CEO @BoxyHQ
 author_url: https://github.com/deepakprabhakara
 author_image_url: https://boxyhq.com/img/team/deepak.jpg
-tags: [enterprise-readiness]
+tags_disabled: [enterprise-readiness]
 image: /img/blog/xavi-cabrera-kn-UmDZQDjM-unsplash.jpg
 ---
 

@@ -20,6 +20,10 @@ module.exports = {
   ],
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ['php'],
+    },
     zoom: {
       selector: '.markdown :not(em) > img',
       config: {
@@ -68,13 +72,23 @@ module.exports = {
               label: 'Audit Logs',
             },
             {
+              to: '/privacy-vault',
+              label: 'Privacy Vault',
+            },
+          ],
+        },
+        {
+          label: 'Developers',
+          type: 'dropdown',
+          items: [
+            { to: '/docs', label: 'Docs' },
+            { to: '/guides', label: 'Guides' },
+            {
               href: 'https://awesome-oss-devsec.boxyhq.com/',
               label: 'Developer Security Tools',
             },
           ],
         },
-        { to: '/docs', label: 'Docs' },
-        { to: '/guides', label: 'Guides' },
         { to: '/blog', label: 'Blog' },
         {
           label: 'Company',
@@ -82,12 +96,12 @@ module.exports = {
           position: 'right',
           items: [
             {
-              to: '/team',
-              label: 'Team',
-            },
-            {
               to: '/careers',
               label: 'Careers',
+            },
+            {
+              to: '/team',
+              label: 'Team',
             },
           ],
         },

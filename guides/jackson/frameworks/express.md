@@ -1,70 +1,112 @@
 ---
-title: Connect the SAML SSO to a Express.js app
+title: Add SAML SSO to Express.js App with BoxyHQ
+description: Add SAML SSO to Express.js App with BoxyHQ
 sidebar_label: Express.js
+image: https://1755-103-146-175-95.in.ngrok.io/img/sso/og-image.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Express.js
+# Add SAML SSO to Express.js App
 
-This guide explains how to connect the SAML SSO to an Express.js app using SAML Jackson.
+This guide assumes that you have a Express.js app and want to enable SAML Single Sign-On authentication for your enterprise customers. By the end of this guide, you'll have an app that allows you to authenticate the users using SAML Single Sign-On.
 
-Visit the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express.js SAML SSO integration.
+Visit the [GitHub repository](https://github.com/boxyhq/jackson-examples/tree/main/apps/express) to see the source code for the Express.js SAML SSO integration.
 
-## Add SAML SSO to your app
+Integrating SAML SSO into an app involves the following steps.
 
-Let’s start by building the SAML SSO authentication workflow into your Express.js app.
+- Configure SAML Single Sign-On
+- Authenticate with SAML Single Sign-On
+
+## Configure SAML Single Sign-On
+
+This step allows your tenants to configure SAML connections for their users. Read the following guides to understand more about this.
+
+- [UI Best Practices for Configuring SAML Single Sign-On](/guides/jackson/configuring-saml-sso)
+- [SSO Connection API](/docs/jackson/sso-flow/)
+
+## Authenticate with SAML Single Sign-On
+
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focuses more on the SSO authentication side.
 
 ### Install SAML Jackson
+
+To get started with SAML Jackson, use the Node Package Manager to add the package to your project's dependencies.
 
 ```bash
 npm i --save @boxyhq/saml-jackson
 ```
 
-### Initialize SAML Jackson
+### Setup SAML Jackson
 
-```javascript
-const opts = {
-  externalUrl: 'https://my-cool-app.com',
-  samlAudience: 'https://my-cool-app.com',
-  samlPath: '/sso/acs', // The path to the SAML ACS endpoint
+Setup the SAML Jackson to work with Express.js app.
+
+```js title="jackson.js"
+const baseUrl = 'https://your-app.com';
+const samlAudience = 'https://saml.boxyhq.com';
+const product = 'saml-demo.boxyhq.com';
+const samlPath = '/sso/acs';
+const redirectUrl = `${baseUrl}/sso/callback`;
+
+// SAML Jackson options
+const options = {
+  externalUrl: baseUrl,
+  samlAudience,
+  samlPath,
   db: {
-    engine: 'mongo',
-    url: 'mongodb://localhost:27017/my-cool-app',
+    engine: 'sql',
+    type: 'postgres',
+    url: 'postgres://postgres:postgres@localhost:5432/postgres',
   },
 };
 
-let oauthController;
-
-// Please note that the initialization of @boxyhq/saml-jackson is async, you cannot run it at the top level
-// Run this in a function where you initialize the express server.
-async function init() {
-  const ret = await require('@boxyhq/saml-jackson').controllers(opts);
-
-  oauthController = ret.oauthController;
-}
+module.exports = {
+  baseUrl,
+  product,
+  samlPath,
+  redirectUrl,
+  samlAudience,
+  options,
+};
 ```
 
-### Add route to initiate SSO
+`samlPath` is where the identity provider POST the SAML response after authenticating the user and `redirectUrl` is where the SAML Jackson redirects the user after authentication.
 
-The authenticate flow begins with redirecting your user to the authorize URL. The response contains the `redirect_url` to which you should redirect the user.
+Initialize the SAML Jackson as below.
+
+Please note that the initialization of `@boxyhq/saml-jackson` is async. Therefore, you cannot run it at the top level. Instead, run this in a function where you initialize the express server.
+
+```js title="routes/index.js"
+const { options, product, redirectUrl } = require('../jackson');
+
+let apiController;
+let oauthController;
+
+(async function init() {
+  const jackson = await require('@boxyhq/saml-jackson').controllers(options);
+
+  apiController = jackson.connectionAPIController;
+  oauthController = jackson.oauthController;
+})();
+```
+
+### Make Authentication Request
+
+Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
 <Tabs>
 <TabItem value="01" label="With Tenant and Product" default>
 
-```javascript
-router.get('/sso/authorize', async (req, res) => {
-  const redirectURI = ''; // The callback URI the app should redirect to after the authentication
-  const state = ''; // Create a random state and store on your app
-  const tenant = ''; // The tenant ID of the tenant you want to authenticate against
-  const product = ''; // The product ID of the product you want to authenticate against
+```js title="/routes/index.js"
+router.post('/sso', async (req, res, next) => {
+  const tenant = 'boxyhq.com'; // The user's tenant
 
   const { redirect_url } = await oauthController.authorize({
-    tenant: tenant,
-    product: product,
-    redirect_uri: redirectURI,
-    state: state,
+    tenant,
+    product,
+    state: 'a-random-state-value',
+    redirect_uri: redirectUrl,
   });
 
   res.redirect(redirect_url);
@@ -75,16 +117,14 @@ router.get('/sso/authorize', async (req, res) => {
 
 <TabItem value="02" label="With Client ID">
 
-```javascript
-router.get('/sso/authorize', async (req, res) => {
-  const redirectURI = ''; // The callback URI JACKSON should redirect to after the authentication
-  const state = ''; // Create a random state and store on your app
-  const clientID = ''; // The client ID of your SAML configuration
+```js title="/routes/index.js"
+router.post('/sso', async (req, res, next) => {
+  const clientId = '123456789'; // The tenant's client ID
 
   const { redirect_url } = await oauthController.authorize({
-    client_id: clientID,
-    redirect_uri: redirectURI,
-    state: state,
+    client_id: clientId,
+    state: 'a-random-state-value', // You can use the `state` parameter to restore application state between redirects.
+    redirect_uri: redirectUrl,
   });
 
   res.redirect(redirect_url);
@@ -94,85 +134,106 @@ router.get('/sso/authorize', async (req, res) => {
 </TabItem>
 </Tabs>
 
-### Add route to handle response from IdP
+### Receives SAML Response
 
-Add a route to handle the SAML Response from IdP.
+After successful authentication, Identity Provider POST the SAML response to the Assertion Consumer Service (ACS) URL.
 
-```javascript
-router.post('/sso/acs', async (req, res) => {
-  const { SAMLResponse, RelayState } = req.body;
+Let's add a route to handle the SAML response. Ensure the route matches the value of the `samlPath` you configured while initializing the SAML Jackson library and should be able to receives POST request.
+
+```js title="/routes/index.js"
+router.post('/sso/acs', async (req, res, next) => {
+  const { RelayState, SAMLResponse } = req.body;
 
   const { redirect_url } = await oauthController.samlResponse({
-    SAMLResponse: SAMLResponse,
-    RelayState: RelayState,
+    RelayState,
+    SAMLResponse,
   });
 
   res.redirect(redirect_url);
 });
 ```
 
-### Add route to handle the callback
+### Request Access Token
 
-Add the route to handle the redirect endpoint which will handle the callback after a user has authenticated. This endpoint should exchange the authorization code with the authenticated user's profile.
+Let's add another route for receiving the callback after the authentication. Ensure the route matches the value of the `redirectUrl` you configured previously.
+
+The application requests an `access_token` by passing the authorization `code` along with authentication details, including the `client_id`, `client_secret`, and `redirect_uri`.
 
 <Tabs>
 <TabItem value="01" label="With Tenant and Product" default>
 
-```javascript
-router.get('/sso/callback', async (req, res) => {
+```js title="/routes/index.js"
+router.get('/sso/callback', async (req, res, next) => {
   const { code, state } = req.query;
 
-  const tenant = ''; // The tenant ID of the tenant
-  const product = ''; // The product ID of the product
+  const tenant = 'boxyhq.com'; // The user's tenant
+  const product = 'saml-demo.boxyhq.com'; // Your app or product name
 
-  const clientID = `tenant=${tenant}&product=${product}`;
+  const clientId = `tenant=${tenant}&product=${product}`;
   const clientSecret = 'dummy';
 
-  // TODO: Verify the `state` matches the state you stored on your app
-
+  // Exchange the `code` for `access_token`
   const { access_token } = await oauthController.token({
-    code: code,
-    client_id: clientID,
+    code,
+    client_id: clientId,
     client_secret: clientSecret,
+    redirect_uri: redirectUrl,
   });
-
-  const profile = await oauthController.userInfo(access_token);
-
-  // You can use the `profile` information for further business logic.
-
-  res.redirect('/');
 });
 ```
 
 </TabItem>
 
-<TabItem value="02" label="With Client ID and Secret">
+<TabItem value="02" label="With Client ID">
 
-```javascript
-router.get('/sso/callback', async (req, res) => {
+```js title="/routes/index.js"
+router.get('/sso/callback', async (req, res, next) => {
   const { code, state } = req.query;
 
-  const clientID = ''; // The client ID of your SAML configuration
-  const clientSecret = ''; // The client secret of your SAML configuration
+  const clientId = '123456789'; // The tenant's client ID
+  const clientSecret = 'dUdSOmGoxr'; // The tenant's client Secret
 
-  // TODO: Verify the `state` matches the state you stored on your app
-
+  // Exchange the `code` for `access_token`
   const { access_token } = await oauthController.token({
-    code: code,
-    client_id: clientID,
+    code,
+    client_id: clientId,
     client_secret: clientSecret,
+    redirect_uri: redirectUrl,
   });
-
-  const profile = await oauthController.userInfo(access_token);
-
-  // You can use the `profile` information for further business logic.
 });
 ```
 
 </TabItem>
-
 </Tabs>
 
-## Next steps
+### Fetch User Profile
 
-- Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)
+Once the `access_token` has been fetched, you can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
+
+```js
+const user = await oauthController.userInfo(access_token);
+```
+
+The entire response will look something like this:
+
+```json
+{
+  "id":"<id from the Identity Provider>",
+  "email": "jackson@coolstartup.com",
+  "firstName": "SAML",
+  "lastName": "Jackson",
+  "requested": {
+    "tenant": "<tenant>",
+    "product": "<product>",
+    "client_id": "<client_id>",
+    "state": "<state>"
+  },
+  "raw": {
+    ...
+  }
+}
+```
+
+### Authenticate User
+
+Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
