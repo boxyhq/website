@@ -18,7 +18,19 @@ Data modelling is done via a visual interface that allows the composition via pu
 
 >  :warning: **IMPORTANT**: changes on encryption policies on fields of stored datasets will most likely render the existing data useless due to the impossibility of interpret and/or decrypt the data. Thread carefully. Adding and removing fields is allowed.
 
-### Sample Model
+### Model Management
+- Terminus supports different business models - one per product. In order to select the relevant model, enter it in the input box below and click on the "Retrieve Model" button.
+
+![Sample Model: Passport](./proxy_assets/ProductModel.png)
+
+- In case the product doesn't exist, a sample model will be loaded as a starting point and once published, the relevant product will have the model associated.
+- When publishing the model, a serverside validation will ocurr. 
+>  :warning: **IMPORTANT**: The server will reject the publishing of an invalid model with a 400 Error code. TODO - needs to be handled in the UI
+
+>  :warning: **IMPORTANT**: Currently the proxy service keeps a historical of all the published model versions. In future releases it will be possible to manage such historical versions and rollback to previous business models. Currently it is not exposed via the visual interface.
+
+
+### Sample Model - Product Model
 - Below is an illustrated an example of the shallow model of a Passport, with its individual fields, restrictions on the type, type of encryption and decryption to be applied and the masking to apply once data is read. 
 
     **NOTE**: Future versions will include access-role-based masking policies and multitenancy on the proxy side, allowing for different clients to manage their own models.
@@ -94,6 +106,11 @@ Defines:
 		}
 		publishModel: {
 			path: "/admin/model"
+			methods: [ "POST" ]
+			permissions: [ "ADMIN" ]
+		}
+		registerTenantProductKEK: {
+			path: "/admin/{tenant}/{product}/kek"
 			methods: [ "POST" ]
 			permissions: [ "ADMIN" ]
 		}

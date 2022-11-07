@@ -5,13 +5,14 @@ There are two main ways of using terminus. Either by starting the services via d
 ## Via [Docker Compose](https://docs.docker.com/compose/)
 
 ### Intro
-The easiest way to get started with Terminus is by running it via docker compose. Terminus' services are deployed automatically in 3 containers comprising:
+The easiest way to get started with Terminus is by running it via docker compose. Terminus' services are deployed automatically in 4 containers comprising:
 
 + [Proxy service](../architecture/#proxy-service) with the embedded model management UI
++ Proxy persistence container
 + [Vault service](../architecture/#vault-service) container
 + [Vault persistence](../architecture/#persistence-vault) container
 
-The three services run on the same private network and can see each other. Additionally they expose the relevant ports for API interactions and communications.
+The four services run on the same private network and can see each other. Additionally they expose the relevant ports for API interactions and communications.
 
 The main entry point to Terminus is via the Proxy service. By default it runs here [http://localhost:3002](http://localhost:3002)
 
@@ -41,6 +42,7 @@ CONTAINER ID   IMAGE                          COMMAND                  CREATED  
 8e0997bb1b5f   boxyhq/terminus-proxy:latest   "./proxyservice"         About a minute ago   Up About a minute   0.0.0.0:3002->3002/tcp   terminus_proxy_service
 5be9dc1614e8   boxyhq/terminus-vault:latest   "./vault"                About a minute ago   Up About a minute   0.0.0.0:3005->3005/tcp   terminus_vault_service
 bf314b23c59d   postgres:14.4                  "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:5432->5432/tcp   terminus_vault_persistence
+491d81df72fd   postgres:14.4                  "docker-entrypoint.s…"   11 days ago          Up 19 minutes       5432/tcp, 0.0.0.0:5433->5433/tcp   terminus_proxy_persistence
 ```
 
 ## Via Separate Native Services
@@ -65,6 +67,18 @@ The configuration is as specified in the [proxy configuration](../architecture/p
 **Note**: [Terminus' UI](https://github.com/boxyhq/terminus-ui) must be bundled and deployed along with the proxy. See [deploy_dev.sh](https://github.com/boxyhq/terminus-ui/blob/main/deploy_dev.sh).
 Check out both terminus and terminus-ui repositories under the same directory and then run terminus-ui's `deploy_dev.sh`.
 
+### Proxy Persistence
+
+The proxy persistence layer is currently provided by default via PostgreSQL. 
+
+As such, an instance of PostgreSQL must be running and the Proxy Service configured to point at it.
+
+The easiest way to get started with PostgreSQL is to run it as a docker container:
+
+```
+docker run --name postgresProxy -p 5433:5433 -e POSTGRES_PASSWORD=postgres -d postgres -p 5433
+```
+
 
 ### [Vault service](../architecture/#vault-service) 
 
@@ -87,5 +101,5 @@ As such, an instance of PostgreSQL must be running and the Vault Service configu
 The easiest way to get started with PostgreSQL is to run it as a docker container:
 
 ```
-docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+docker run --name postgresVault -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 ```

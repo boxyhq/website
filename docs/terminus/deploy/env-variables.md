@@ -5,8 +5,9 @@ The env vars are split into:
 - Docker Compose variables. Only relevant when running Terminus on docker
 - Terminus services configuration variables:
 
-  - The persistence layer
+  - The vault persistence layer
   - The vault service
+  - The proxy persistence layer
   - The proxy service
 
 When running via docker compose, all variables can be set in the [.env](https://docs.docker.com/compose/env-file/) file as well as environment variables.
@@ -17,7 +18,7 @@ When running via docker compose, all variables can be set in the [.env](https://
 
 ### **VAULT_DB_IMAGE**
 
-See [vault](http://localhost:2699/docs/terminus/deploy/env-variables#vault-persistence-layer).
+See [vault](#vault-persistence-layer).
 
 The PostgreSQL docker image to use.
 
@@ -28,6 +29,21 @@ Default: `postgres:14.4`
 The mapping of the DB volume on the host file system.
 
 Default: `./terminus-volumes/terminus-vault-data`
+
+
+### **PROXY_DB_IMAGE**
+
+See [proxy persistence](#proxy-persistence-layer).
+
+The PostgreSQL docker image to use.
+
+Default: `postgres:14.4`
+
+### **PROXY_DB_VOLUME**
+
+The mapping of the DB volume on the host file system.
+
+Default: `./terminus-volumes/terminus-proxy-persistence-data`
 
 ### **UI_VERSION**
 
@@ -160,6 +176,42 @@ Default: `terminus-vault-service`
 The vault service Lightstep key for OTEL launcher. Currently being moved to a more generic OTEL provider.
 
 Default: No default.
+
+---
+
+## Proxy: Persistence Layer
+
+Terminus' proxy persistence layer (or DB) currently uses [GORM](https://gorm.io/) with a default configuration using PostgreSQL as a provider.
+
+### **PROXY_DB_NAME**
+
+The hostname or URL of Terminus' proxy DB server. When running on the same docker compose network, it is the name of the container.
+
+Default: `terminus_proxy_persistence`
+
+### **PROXY_DB_PORT**
+
+The port where Terminus' vault DB server runs. When running in docker is both the internal and external port.
+
+Default: `5433`
+
+### **PROXY_DB_USER**
+
+The username of the DB.
+
+Default: `postgres`
+
+### **PROXY_DB_PASSWORD**
+
+The password of the DB.
+
+Default: `postgres`
+
+### **PROXY_DB_DBNAME**
+
+The DB name within the server.
+
+Default: `postgres`
 
 ---
 

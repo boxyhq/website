@@ -17,6 +17,12 @@ From an architectural point of view, Terminus is made of the following component
 - Performs the relevant encryption/decryption/masking operations
 - Interacts with external KMSs enabling BYOK models
 
+
+## Proxy Persistence
+
+- Stores and retrieves data related to business models and product/tenant configuration
+
+
 ## [Vault Service](./vaultservice)
 
 - Exposes a private API primitive for the proxy to store and retrieve data

@@ -17,7 +17,7 @@ Check our our [Github repo](https://github.com/boxyhq/terminus/).
 ### Own your own data​
 
 - An open-source solution that allows you to keep control of your most sensitive data and the access to it
-- Built-in support for Postgres - more to come
+- Built-in support for Postgres - via GORM - more datastores to come
 - Works with databases from popular hosting providers
 
 ### Own your privacy vault
@@ -34,11 +34,12 @@ Check our our [Github repo](https://github.com/boxyhq/terminus/).
 
 ### Data encryption and PII made simple
 
-Terminus is composed of three main components
+Terminus is composed of four main components
 
-- The persistence vault, where the data is stored.
-- The vault service, which interfaces and optimizes access to the persistence vault and implements system level vault encryption on the data.
 - The proxy service, responsible for domain specific data models, the encryption strategies at different granularity (object, field), the masking strategies for restricted viewing access, the visual data model and masking editor and the access policies.
+- The proxy persistence layer, where data regarding business models, products and tenant configurations is stored.
+- The vault service, which interfaces and optimizes access to the persistence vault and implements system level vault encryption on the data.
+- The persistence vault, where the data is stored.
 
 ### Support > :warning: **TODO: EXTEND THIS SECTION**
 

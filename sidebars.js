@@ -123,6 +123,12 @@ module.exports = {
           link: { type: 'doc', id: 'terminus/deploy/index' },
           items: ['terminus/deploy/env-variables'],
         },
+        {
+          type: 'category',
+          label: 'Setup',
+          link: { type: 'doc', id: 'terminus/setup/overview' },
+          items: [],
+        },
       ],
     },
   ],
