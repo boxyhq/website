@@ -127,14 +127,6 @@ Default: `sql`
 
 NPM library option: `db.engine`
 
-### **DB_URL**
-
-The database URL to connect to.
-
-Example: `postgres://postgres:postgres@localhost:5432/postgres`
-
-NPM library option: `db.url`
-
 ### **DB_TYPE**
 
 Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `mariadb`
@@ -142,6 +134,14 @@ Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `ma
 Default: `postgres`
 
 NPM library option: `db.type`
+
+### **DB_URL**
+
+The database URL to connect to.
+
+Example: `postgres://postgres:postgres@localhost:5432/postgres`
+
+NPM library option: `db.url`
 
 ### **DB_TTL**
 
