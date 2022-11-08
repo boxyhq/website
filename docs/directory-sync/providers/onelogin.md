@@ -36,7 +36,7 @@ Enter the following information:
 - SCIM Base URL
 - SCIM Bearer Token
 
-You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin UI.
+You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin Portal.
 
 Click the button **Enable** to test the connection to see if the credentials are correct and click the button to **Save** to save the creditentials.
 

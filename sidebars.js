@@ -44,7 +44,6 @@ module.exports = {
           items: ['jackson/sso-flow/example-flow'],
         },
         'jackson/examples',
-        'jackson/admin-ui',
         'jackson/observability',
         'jackson/sbom',
         'jackson/container-signing',
@@ -62,7 +61,6 @@ module.exports = {
         'directory-sync/getting-started',
         'directory-sync/api-reference',
         'directory-sync/examples',
-        'directory-sync/admin-ui',
         'directory-sync/webhooks',
         'directory-sync/events',
         {
@@ -77,6 +75,16 @@ module.exports = {
             'directory-sync/providers/jumpcloud',
           ],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Admin Portal',
+      collapsible: true,
+      items: [
+        'admin-portal/index',
+        'admin-portal/enterprise-sso',
+        'admin-portal/directory-sync',
       ],
     },
   ],
