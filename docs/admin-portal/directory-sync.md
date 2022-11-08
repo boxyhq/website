@@ -13,7 +13,7 @@ On the Admin Portal **Directory Sync** menu, you can see the Directory connectio
 2. Click **Create New**.
 3. Enter the following information:
    - Enter **Directory name**
-   - Select the **Directory provider** from the list of [available providers](providers).
+   - Select the **Directory provider** from the list of [available providers](../directory-sync/providers/).
    - Add the **Tenant**
    - Add the **Product**
    - Enter the **Webhook URL**
