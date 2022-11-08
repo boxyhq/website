@@ -19,6 +19,7 @@ Default: `5225`
 The public URL to reach this service, need for constructing for the SAML request internally.
 
 Default: `http://{HOST_URL}:{HOST_PORT}`
+
 NPM library option: `externalUrl`
 
 ### **JACKSON_API_KEYS**
@@ -32,9 +33,12 @@ For example `JACKSON_API_KEYS=key1,key2,key3`
 This is just an identifier to validate the SAML audience, this value will also get configured in the SAML apps created by your customers. Once set do not change this value unless you get your customers to reconfigure their SAML again. It is case-sensitive. This does not have to be a real URL.
 
 Default: `https://saml.boxyhq.com`
+
 NPM library option: `samlAudience`
 
-### **SAML_PATH**
+### **samlPath**
+
+> **_NOTE:_** This is only applicable to our npm library.
 
 The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the SAML IdP. Set this when using the npm package.
 
@@ -65,6 +69,7 @@ For example: `/idp/select` - You can find an implementation of IdP/App Selection
 When `tenant` and `product` are used for the SAML flow (and PKCE is not being used) then we use `dummy` as placeholders for `client_id` and `client_secret`. This is not a security issue because SAML is tenanted and hence your Identity Provider will block access to anyone trying to log into your SAML tenant. However for additional security you should set `CLIENT_SECRET_VERIFIER` to a random secret and use that value as the `client_secret` during the OAuth 2.0 flow.
 
 Default: `dummy`
+
 NPM library option: `clientSecretVerifier`
 
 ### **IDP_ENABLED**
@@ -72,6 +77,7 @@ NPM library option: `clientSecretVerifier`
 Set to true to enable IdP initiated login for SAML. SP initiated login is the only recommended flow but you might have to support IdP login at times.
 
 Default: `false`
+
 NPM library option: `idpEnabled`
 
 ## OpenID configuration
@@ -83,6 +89,7 @@ For supporting OpenID flow, we need to set the algorithm and keys used to sign t
 The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
 
 Default: `RS256`
+
 NPM library option: `openid.jwsAlg`
 
 ### **OPENID_RSA_PRIVATE_KEY**
@@ -117,6 +124,7 @@ NPM library option: `openid.jwtSigningKeys.public`
 Supported values are `redis`, `sql`, `mongo`, `mem`, `planetscale`
 
 Default: `sql`
+
 NPM library option: `db.engine`
 
 ### **DB_URL**
@@ -132,6 +140,7 @@ NPM library option: `db.url`
 Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `mariadb`
 
 Default: `postgres`
+
 NPM library option: `db.type`
 
 ### **DB_TTL**
@@ -139,6 +148,7 @@ NPM library option: `db.type`
 TTL for the code, session and token stores (in seconds)
 
 Default: `300`
+
 NPM library option: `db.ttl`
 
 ### **DB_CLEANUP_LIMIT**
@@ -146,6 +156,7 @@ NPM library option: `db.ttl`
 Limit cleanup of TTL entries to this number
 
 Default: `1000`
+
 NPM library option: `db.cleanupLimit`
 
 ### **DB_ENCRYPTION_KEY**
