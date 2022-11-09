@@ -9,6 +9,7 @@ module.exports = {
       type: 'category',
       label: 'Enterprise SSO',
       collapsible: true,
+      link: { type: 'doc', id: 'jackson/overview' },
       items: [
         {
           type: 'category',
