@@ -31,4 +31,32 @@ This step allows your tenants to configure SAML connections for their users. Rea
 
 Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focus more on the SSO authentication side.
 
-[WIP - Coming Soon]
+### Deploy SAML Jackson
+
+The first step is to deploy the SAML Jackson service. Follow the [deployment docs](/docs/jackson/deploy/service) to install and configure the SAML Jackson.
+
+### Setup SAML Jackson Integration
+
+We will dive into Jackson integration with two popular authentication libraries:
+
+- [Sorcery](https://github.com/Sorcery/sorcery)
+- [OmniAuth](https://github.com/omniauth/omniauth)
+
+#### With Sorcery
+
+First, we need to install and configure sorcery.
+
+1. Install the `sorcery` gem using `bundle add sorcery`.
+2. Let's add the required database fields:
+
+   ```shell title="Generate migration scripts"
+   rails g sorcery:install external --only-submodules
+   ```
+
+   ```shell title="Run migration scripts"
+   rake db:migrate
+   ```
+
+   ```shell title="Generate the Authentication model"
+   rails g model Authentication --migration=false
+   ```
