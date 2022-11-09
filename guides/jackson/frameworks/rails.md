@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 This guide assumes that you have a Ruby on Rails app and want to enable SAML Single Sign-On authentication for your enterprise customers. By the end of this guide, you'll have an app that allows you to authenticate the users using SAML Single Sign-On.
 
-Visit the [GitHub repository](https://github.com/boxyhq/jackson-examples/tree/main/apps/adonisjs) to see the source code for the Ruby on Rails SAML SSO integration.
+Visit the [GitHub repository](https://github.com/boxyhq/ruby-examples/tree/main/rails-enterprise-sso) to see the source code for the Ruby on Rails SAML SSO integration.
 
 Integrating SAML SSO into an app involves the following steps.
 
@@ -27,6 +27,6 @@ This step allows your tenants to configure SAML connections for their users. Rea
 
 ## Authenticate with SAML Single Sign-On
 
-Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focuses more on the SSO authentication side.
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focus more on the SSO authentication side.
 
 [WIP - Coming Soon]
