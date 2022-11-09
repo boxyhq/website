@@ -37,7 +37,7 @@ On the Admin Portal **Directory Sync** menu, you can see the Directory connectio
 
 ---
 
-## Manage users
+## View directory users
 
 1. From your Admin Portal, go to **Directory Sync**.
 2. From the list of directory sync connections, click database icon.
@@ -48,7 +48,7 @@ On the Admin Portal **Directory Sync** menu, you can see the Directory connectio
 
 ---
 
-## Manage groups
+## View directory groups
 
 1. From your Admin Portal, go to **Directory Sync**.
 2. From the list of directory sync connections, click database icon.
@@ -59,7 +59,7 @@ On the Admin Portal **Directory Sync** menu, you can see the Directory connectio
 
 ---
 
-## Manage webhook events
+## View webhook events
 
 1. From your Admin Portal, go to **Directory Sync**.
 2. From the list of directory sync connections, click database icon.
