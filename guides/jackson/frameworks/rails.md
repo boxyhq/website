@@ -2,6 +2,8 @@
 title: Add SAML SSO to Ruby on Rails App with BoxyHQ
 description: Add SAML SSO to Ruby on Rails App with BoxyHQ
 sidebar_label: Ruby on Rails
+toc_min_heading_level: 2
+toc_max_heading_level: 5
 ---
 
 import Tabs from '@theme/Tabs';
