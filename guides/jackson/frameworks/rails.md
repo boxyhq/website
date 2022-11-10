@@ -39,12 +39,12 @@ The first step is to deploy the SAML Jackson service. Follow the [deployment doc
 
 We will dive into Jackson integration with two popular authentication libraries:
 
-- [Sorcery](https://github.com/Sorcery/sorcery)
+- [Sorcery](#with-sorcery)
 - [OmniAuth](https://github.com/omniauth/omniauth)
 
 #### With Sorcery
 
-First, we need to install and configure sorcery.
+First, we need to install and configure [sorcery](https://github.com/Sorcery/sorcery).
 
 1. Install the `sorcery` gem using `bundle add sorcery`.
 2. Let's configure the database:
