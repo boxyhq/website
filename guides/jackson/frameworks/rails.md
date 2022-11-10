@@ -66,7 +66,7 @@ First, we need to install and configure sorcery.
    ```ruby title="app/lib/sorcery/providers/boxyhqsso.rb"
    module Sorcery
      module Providers
-      # This class adds support for OAuth with BoxyHQ SAML.
+      # This class adds support for OAuth2.0 SSO flow with Jackson service.
       #
       #   config.boxyhqsso.site = <http://localhost:5225>
       #   config.boxyhqsso.key = <key>
