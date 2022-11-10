@@ -49,23 +49,25 @@ First, we need to install and configure sorcery.
 1. Install the `sorcery` gem using `bundle add sorcery`.
 2. Let's configure the database:
 
-   ```shell title="Generate migration scripts"
-   rails g sorcery:install external --only-submodules
+   ```shell title="Generate migration scripts for sorcery"
+   bin/rails g sorcery:install external --only-submodules
    ```
 
    ```shell title="Run migration scripts"
-   rake db:migrate
+   bin/rake db:migrate
    ```
 
    ```shell title="Generate the Authentication model"
-   rails g model Authentication --migration=false
+   bin/rails generate model Authentication --migration=false
    ```
 
    ```shell title="Modify the user schema"
    # remove the unused columns from the user table, we won't need the password field as the login is external
-   rails g migration RemoveColumnsFromUsers crypted_password:string salt:string
+   bin/rails generate migration RemoveColumnsFromUsers crypted_password:string salt:string
    # add the new columns
-   rails g migration AddColumnsToUsers firstName:string lastName:string uid:string
+   bin/rails generate migration AddColumnsToUsers firstName:string lastName:string uid:string
+   # run the migrations
+   bin/rake db:migrate
    ```
 
 3. Add a custom sorcery provider for Jackson.
