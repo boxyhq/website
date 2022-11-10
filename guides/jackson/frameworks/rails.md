@@ -72,6 +72,8 @@ First, we need to install and configure sorcery.
 
 3. Add a custom sorcery provider for Jackson.
 
+   We rely on the `Protocols::Oauth2` mixin from the sorcery package. In a nutshell, here we are wiring up the OAuth 2.0 flow with Jackson. Jackson will redirect to the configured IdP connection based on the tenant/product.
+
    ```ruby title="app/lib/sorcery/providers/boxyhqsso.rb"
    module Sorcery
      module Providers
