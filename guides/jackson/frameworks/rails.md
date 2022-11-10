@@ -61,6 +61,13 @@ First, we need to install and configure sorcery.
    rails g model Authentication --migration=false
    ```
 
+   ```shell title="Modify the user schema"
+   # remove the unused columns from the user table, we won't need the password field as the login is external
+   rails g migration RemoveColumnsFromUsers crypted_password:string salt:string
+   # add the new columns
+   rails g migration AddColumnsToUsers firstName:string lastName:string uid:string
+   ```
+
 3. Add a custom sorcery provider for Jackson.
 
    ```ruby title="app/lib/sorcery/providers/boxyhqsso.rb"
