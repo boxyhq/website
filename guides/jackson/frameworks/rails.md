@@ -147,4 +147,38 @@ First, we need to install and configure sorcery.
 
    ```
 
-4.
+4. Add an initializer file to configure the sorcery module. Here we tell sorcery to load the `:external` submodule and also add `boxyhqsso` custom provider from the previous step to the `external_providers` list. Also, see the inline comments for `boxyhqsso` provider settings.
+
+   ```ruby title="config/initializers/sorcery.rb"
+   Rails.application.config.sorcery.submodules = [:external]
+
+   # Here you can configure each submodule's features.
+   Rails.application.config.sorcery.configure do |config|
+
+     config.external_providers = [:boxyhqsso]
+
+     # URL of Jackson service
+     config.boxyhqsso.site = ENV['JACKSON_URL']
+     # This translates to client_id in OAuth 2.0. Setting it to dummy will allow us to use `tenant` and product` params instead
+     config.boxyhqsso.key = 'dummy'
+     # The url of the rails app to which Jackson sends back the authorization code
+     config.boxyhqsso.callback_url = 'http://localhost:3366/oauth/callback'
+     # This will be passed to Jackson token endpoint as part of credentials
+     config.boxyhqsso.secret = ENV['CLIENT_SECRET_VERIFIER']
+     # Takes care of converting the user info from the provider (Jackson) into the attributes of the User.
+     config.boxyhqsso.user_info_mapping = { email: 'email', uid: 'id', firstName: 'firstName', lastName: 'lastName'}
+
+     # --- user config ---
+     config.user_config do |user|
+
+      # -- external --
+      user.authentications_class = Authentication
+
+     end
+     # This line must come after the 'user config' block.
+     # Define which model authenticates with sorcery.
+     config.user_class = User
+
+   end
+
+   ```
