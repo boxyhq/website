@@ -182,3 +182,32 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
    end
 
    ```
+
+5. Finally, we need to add the routes and controller files that initiate the login flow.
+
+   <Tabs>
+   <TabItem value="routes" label="Routes" default>
+
+   ```ruby title="config/routes.rb"
+   Rails.application.routes.draw do
+     ...
+     get 'sso', to: 'logins#index', as: :login # Renders the login page
+     post 'sso', to: 'sorcery#oauth' # Initiates the OAuth 2.0 redirect to Jackson SSO service
+
+     delete 'logout' => 'logins#destroy', as: :logout # destroys the session
+
+     resource :oauth do
+       get :callback, to: 'sorcery#callback', on: :collection # handles the redirect back from Jackson SSO service. We create the user if not present in database, else return the one stored from first login.
+     end
+
+     get 'profile', to: 'profiles#index', as: :profile
+
+     ...
+   end
+
+   ```
+
+   </TabItem>
+   <TabItem value="controller" label="Controller" default>
+   </TabItem>
+   </Tabs>
