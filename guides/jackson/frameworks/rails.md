@@ -421,3 +421,21 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
     ```
 
 4.  Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service.
+
+    <Tabs>
+    <TabItem value="routes" label="Routes" default>
+
+    ```ruby title="config/routes.rb"
+    Rails.application.routes.draw do
+
+       get 'sso', to: 'logins#index', as: :login
+
+       # OmniAuth
+       get 'auth/boxyhqsso/callback', to: 'omniauth#callback'
+       get 'omniauth/profile', to: 'omniauth_profiles#show', as: :omniauth_profile
+       delete 'omniauth/logout' => 'omniauth#logout', as: :omniauth_logout
+    end
+    ```
+
+    </TabItem>
+    </Tabs>
