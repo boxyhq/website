@@ -196,7 +196,7 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
       post 'sso', to: 'sorcery#oauth'
       # logout the user
       delete 'logout' => 'logins#destroy', as: :logout
-      # handles the redirect back from Jackson SSO service, exchanges code with access_token and then fetches userprofile. We then create the user if not present in database, else return the one in the db.
+      # handles the redirect back from Jackson SSO service, exchanges code with access_token and then fetches userprofile. Sorcery creates the user if not present in database, else return the one in the db.
       resource :oauth do
         get :callback, to: 'sorcery#callback', on: :collection
       end
@@ -427,12 +427,14 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
 
     ```ruby title="config/routes.rb"
     Rails.application.routes.draw do
-
+      # Renders the login page
        get 'sso', to: 'logins#index', as: :login
 
-       # OmniAuth
+       # handles the redirect back from Jackson SSO service, exchanges code with access_token and then fetches userprofile.
        get 'auth/boxyhqsso/callback', to: 'omniauth#callback'
+       # Show profile data
        get 'omniauth/profile', to: 'omniauth_profiles#show', as: :omniauth_profile
+       # logout the user
        delete 'omniauth/logout' => 'omniauth#logout', as: :omniauth_logout
     end
     ```
