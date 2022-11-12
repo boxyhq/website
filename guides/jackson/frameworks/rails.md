@@ -298,7 +298,7 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
     ```
 
 2.  Add a custom omniauth strategy for Jackson. We will name it `Boxyhqsso`.
-    We rely on the `OmniAuth::Strategies::OAuth2` abstract strategy. By inheriting from it we can wire up the OAuth 2.0 flow.
+    By inheriting from `OmniAuth::Strategies::OAuth2`, we can wire up the OAuth 2.0 flow with Jackson. Jackson will redirect to the configured IdP connection based on the tenant/product.
 
     ```ruby title="app/lib/omniauth/strategies/boxyhqsso.rb"
       module OmniAuth
@@ -402,4 +402,20 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
 
     ```
 
-3.
+3.  Add an initializer file to insert omniauth into the middleware stack. `OmniAuth::Builder` allows us to load multiple strategies.
+
+    ```ruby title="config/initializers/omniauth.rb"
+    Rails.application.config.middleware.use OmniAuth::Builder do
+          provider(
+                :boxyhqsso,
+                'dummy',
+                ENV['CLIENT_SECRET_VERIFIER'],
+                ENV['JACKSON_URL'],
+                callback_path: '/auth/boxyhqsso/callback',
+                authorize_params: {
+                    scope: 'openid'
+                }
+            )
+
+    end
+    ```
