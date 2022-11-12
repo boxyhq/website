@@ -182,7 +182,7 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
     end
     ```
 
-5.  Finally, we need to add the routes and controller files that initiate the login flow.
+5.  Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service.
 
      <Tabs>
      <TabItem value="routes" label="Routes" default>
@@ -402,7 +402,7 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
 
     ```
 
-3.  Add an initializer file to insert omniauth into the middleware stack. `OmniAuth::Builder` allows us to load multiple strategies.
+3.  Add an initializer file to insert omniauth into the rack middleware pipeline. `OmniAuth::Builder` allows us to load multiple strategies.
 
     ```ruby title="config/initializers/omniauth.rb"
     Rails.application.config.middleware.use OmniAuth::Builder do
@@ -419,3 +419,5 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
 
     end
     ```
+
+4.  Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service.
