@@ -156,7 +156,7 @@ By including the file in the `app/lib` folder, rails will autoload the provider 
 
 ```
 
-##### Configure the custom provider
+##### Configure the custom sorcery provider
 
 Add an initializer file to configure the sorcery module. Here we tell sorcery to load the `:external` submodule and also add `boxyhqsso` custom provider from the previous step to the `external_providers` list. Also, see the inline comments for `boxyhqsso` provider settings.
 
@@ -302,18 +302,20 @@ Finally, we need to add the routes and controller files that initiate the login 
 
 First, we need to install and configure [omniauth](https://github.com/omniauth/omniauth).
 
-1.  Install the required gems:
+##### Install Dependencies
 
-    ```shell
+```shell
     bin/bundle add omniauth
     bin/bundle add omniauth-rails_csrf_protection # Used to protect against CSRF vulnerability
     bin/bundle add omniauth-oauth2 # generic OAuth2 strategy for OmniAuth that we will inherit from
-    ```
+```
 
-2.  Add a custom omniauth strategy for Jackson. We will name it `Boxyhqsso`.
-    By inheriting from `OmniAuth::Strategies::OAuth2`, we can wire up the OAuth 2.0 flow with Jackson. Jackson will redirect to the configured IdP connection based on the tenant/product.
+##### Add custom strategy for Jackson
 
-    ```ruby title="app/lib/omniauth/strategies/boxyhqsso.rb"
+Add a custom omniauth strategy for Jackson. We will name it `Boxyhqsso`.
+By inheriting from `OmniAuth::Strategies::OAuth2`, we can wire up the OAuth 2.0 flow with Jackson. Jackson will redirect to the configured IdP connection based on the tenant/product.
+
+```ruby title="app/lib/omniauth/strategies/boxyhqsso.rb"
       module OmniAuth
       module Strategies
           class Boxyhqsso < OmniAuth::Strategies::OAuth2
@@ -413,11 +415,13 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
         end
     end
 
-    ```
+```
 
-3.  Add an initializer file to insert omniauth into the rack middleware pipeline. `OmniAuth::Builder` allows us to load multiple strategies.
+##### Configure the custom omniauth provider
 
-    ```ruby title="config/initializers/omniauth.rb"
+Add an initializer file to insert omniauth into the rack middleware pipeline. `OmniAuth::Builder` allows us to load multiple strategies.
+
+```ruby title="config/initializers/omniauth.rb"
     Rails.application.config.middleware.use OmniAuth::Builder do
           provider(
                 :boxyhqsso,
@@ -431,15 +435,17 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
             )
 
     end
-    ```
+```
 
-4.  Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service. We also use a controller `concern` to control access to protected routes such as profile page.
+##### Routes and Controllers
 
-      <Tabs>
+Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service. We also use a controller `concern` to control access to protected routes such as profile page.
 
-      <TabItem value="routes" label="Routes" default>
+  <Tabs>
 
-    ```ruby title="config/routes.rb"
+  <TabItem value="routes" label="Routes" default>
+
+```ruby title="config/routes.rb"
     Rails.application.routes.draw do
       # Renders the login page
        get 'sso', to: 'logins#index', as: :login
@@ -450,71 +456,69 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
        # logout the user
        delete 'omniauth/logout' => 'omniauth#logout', as: :omniauth_logout
     end
-    ```
+```
 
-      </TabItem>
+  </TabItem>
 
-      <TabItem value="controllers" label="Controllers">
+  <TabItem value="controllers" label="Controllers">
 
-      <Tabs>
+  <Tabs>
 
-      <TabItem value="omniauth" label="OmniauthController" default>
+  <TabItem value="omniauth" label="OmniauthController" default>
 
-    ```ruby title="app/controllers/omniauth_controller.rb"
+```ruby title="app/controllers/omniauth_controller.rb"
     class OmniauthController < ApplicationController
-    skip_before_action :require_login, raise: false
+      skip_before_action :require_login, raise: false
+
       def callback
         user_info = request.env['omniauth.auth']
         session[:userinfo] = user_info['extra']['raw_info']
         redirect_to omniauth_profile_path,  notice: "Logged in using omniauth!"
       end
+
       def logout
         reset_session
         redirect_to root_path,  notice: "Logged out from Omniauth!"
       end
     end
-    ```
+```
 
-      </TabItem>
+  </TabItem>
 
-      <TabItem value="omniauth_profiles" label="OmniauthProfilesController">
+  <TabItem value="omniauth_profiles" label="OmniauthProfilesController">
 
-    ```ruby title="app/controllers/omniauth_profiles_controller.rb"
+```ruby title="app/controllers/omniauth_profiles_controller.rb"
     class OmniauthProfilesController < ApplicationController
         skip_before_action :require_login, raise: false
         include OmniauthSecured
+
         def show
           @user = session[:userinfo]
         end
     end
-    ```
+```
 
-      </TabItem>
+  </TabItem>
 
-      </Tabs>
+  </Tabs>
 
-      </TabItem>
-      <TabItem value="concern" label="Controller concern">
+  </TabItem>
+  <TabItem value="concern" label="Controller concern">
 
-    ```ruby title="app/controllers/concerns/omniauth_secured.rb"
+```ruby title="app/controllers/concerns/omniauth_secured.rb"
     module OmniauthSecured
         extend ActiveSupport::Concern
+
         included do
           before_action :logged_in_using_omniauth?
         end
+
         def logged_in_using_omniauth?
           redirect_to login_path, notice: "⚠️ Please login using omniauth" unless session[:userinfo].present?
         end
     end
-    ```
-
-      </TabItem>
-
-      </Tabs>
-
-````
-
 ```
 
-```
-````
+  </TabItem>
+
+  </Tabs>
