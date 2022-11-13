@@ -209,7 +209,7 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
     ```
 
      </TabItem>
-     <TabItem value="controllers" label="Controllers" default>
+     <TabItem value="controllers" label="Controllers">
      <Tabs>
      <TabItem value="SorceryController" label="SorceryController" default>
 
@@ -439,5 +439,45 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
     end
     ```
 
+    </TabItem>
+
+    <TabItem value="controllers" label="Controllers">
+    <Tabs>
+    <TabItem value="omniauth" label="OmniauthController" default>
+
+    ```ruby title="app/controllers/omniauth_controller.rb"
+    class OmniauthController < ApplicationController
+    skip_before_action :require_login, raise: false
+
+      def callback
+        user_info = request.env['omniauth.auth']
+        session[:userinfo] = user_info['extra']['raw_info']
+        redirect_to omniauth_profile_path,  notice: "Logged in using omniauth!"
+      end
+
+      def logout
+        reset_session
+        redirect_to root_path,  notice: "Logged out from Omniauth!"
+      end
+    end
+    ```
+
+    </TabItem>
+    <TabItem value="omniauth_profiles" label="OmniauthProfilesController">
+
+    ```ruby title="app/controllers/omniauth_profiles_controller.rb"
+    class OmniauthProfilesController < ApplicationController
+        skip_before_action :require_login, raise: false
+        include OmniauthSecured
+
+        def show
+          @user = session[:userinfo]
+        end
+    end
+
+    ```
+
+    </TabItem>
+    </Tabs>
     </TabItem>
     </Tabs>
