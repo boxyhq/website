@@ -300,6 +300,10 @@ Finally, we need to add the routes and controller files that initiate the login 
 
 #### With OmniAuth
 
+:::info
+Unlike sorcery, omniauth does not automatically associate with a User model nor persist the user in the database.
+:::
+
 First, we need to install and configure [omniauth](https://github.com/omniauth/omniauth).
 
 ##### Install Dependencies
