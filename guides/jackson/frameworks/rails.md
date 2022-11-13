@@ -420,16 +420,16 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
     end
     ```
 
-4.  Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service.
+4.  Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service. We also use a controller `concern` to control access to protected routes such as profile page.
 
-    <Tabs>
-    <TabItem value="routes" label="Routes" default>
+      <Tabs>
+
+      <TabItem value="routes" label="Routes" default>
 
     ```ruby title="config/routes.rb"
     Rails.application.routes.draw do
       # Renders the login page
        get 'sso', to: 'logins#index', as: :login
-
        # handles the redirect back from Jackson SSO service, exchanges code with access_token and then fetches userprofile.
        get 'auth/boxyhqsso/callback', to: 'omniauth#callback'
        # Show profile data
@@ -439,22 +439,22 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
     end
     ```
 
-    </TabItem>
+      </TabItem>
 
-    <TabItem value="controllers" label="Controllers">
-    <Tabs>
-    <TabItem value="omniauth" label="OmniauthController" default>
+      <TabItem value="controllers" label="Controllers">
+
+      <Tabs>
+
+      <TabItem value="omniauth" label="OmniauthController" default>
 
     ```ruby title="app/controllers/omniauth_controller.rb"
     class OmniauthController < ApplicationController
     skip_before_action :require_login, raise: false
-
       def callback
         user_info = request.env['omniauth.auth']
         session[:userinfo] = user_info['extra']['raw_info']
         redirect_to omniauth_profile_path,  notice: "Logged in using omniauth!"
       end
-
       def logout
         reset_session
         redirect_to root_path,  notice: "Logged out from Omniauth!"
@@ -462,22 +462,39 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
     end
     ```
 
-    </TabItem>
-    <TabItem value="omniauth_profiles" label="OmniauthProfilesController">
+      </TabItem>
+
+      <TabItem value="omniauth_profiles" label="OmniauthProfilesController">
 
     ```ruby title="app/controllers/omniauth_profiles_controller.rb"
     class OmniauthProfilesController < ApplicationController
         skip_before_action :require_login, raise: false
         include OmniauthSecured
-
         def show
           @user = session[:userinfo]
         end
     end
-
     ```
 
-    </TabItem>
-    </Tabs>
-    </TabItem>
-    </Tabs>
+      </TabItem>
+
+      </Tabs>
+
+      </TabItem>
+      <TabItem value="concern" label="Controller concern">
+
+    ```ruby title="app/controllers/concerns/omniauth_secured.rb"
+    module OmniauthSecured
+        extend ActiveSupport::Concern
+        included do
+          before_action :logged_in_using_omniauth?
+        end
+        def logged_in_using_omniauth?
+          redirect_to login_path, notice: "⚠️ Please login using omniauth" unless session[:userinfo].present?
+        end
+    end
+    ```
+
+      </TabItem>
+
+      </Tabs>
