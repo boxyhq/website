@@ -46,39 +46,48 @@ We will dive into Jackson integration with two popular authentication libraries:
 
 First, we need to install and configure [sorcery](https://github.com/Sorcery/sorcery).
 
-1.  Install the `sorcery` gem using `bundle add sorcery`.
-2.  Let's configure the database:
+##### Install Dependencies
 
-    ```shell title="Generate migration scripts for sorcery"
+Install the `sorcery` gem using
+
+```shell
+bundle add sorcery
+```
+
+##### Configure the database
+
+```shell title="Generate migration scripts for sorcery"
     bin/rails g sorcery:install external --only-submodules
-    ```
+```
 
-    ```shell title="Run migration scripts"
+```shell title="Run migration scripts"
     bin/rake db:migrate
-    ```
+```
 
-    ```shell title="Generate the Authentication model"
+```shell title="Generate the Authentication model"
     bin/rails generate model Authentication --migration=false
-    ```
+```
 
-    ```shell title="Modify the user schema"
+```shell title="Modify the user schema"
     # remove the unused columns from the user table, we won't need the password field as the login is external
     bin/rails generate migration RemoveColumnsFromUsers crypted_password:string salt:string
     # add the new columns
     bin/rails generate migration AddColumnsToUsers firstName:string lastName:string uid:string
     # run the migrations
     bin/rake db:migrate
-    ```
+```
 
-3.  Add a custom sorcery provider for Jackson. We will name it `Boxyhqsso`.
+##### Add Custom provider for Jackson
 
-    We rely on the `Protocols::Oauth2` mixin from the sorcery package. In a nutshell, here we are wiring up the OAuth 2.0 flow with Jackson. Jackson will redirect to the configured IdP connection based on the tenant/product.
+Add a custom sorcery provider for Jackson. We will name it `Boxyhqsso`.
 
-    :::info
-    By including the file in the `app/lib` folder, rails will autoload the provider class.
-    :::
+We rely on the `Protocols::Oauth2` mixin from the sorcery package. In a nutshell, here we are wiring up the OAuth 2.0 flow with Jackson. Jackson will redirect to the configured IdP connection based on the tenant/product.
 
-    ```ruby title="app/lib/sorcery/providers/boxyhqsso.rb"
+:::info
+By including the file in the `app/lib` folder, rails will autoload the provider class.
+:::
+
+```ruby title="app/lib/sorcery/providers/boxyhqsso.rb"
     module Sorcery
       module Providers
        # This class adds support for OAuth2.0 SSO flow with Jackson service.
@@ -145,11 +154,13 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
     end
     end
 
-    ```
+```
 
-4.  Add an initializer file to configure the sorcery module. Here we tell sorcery to load the `:external` submodule and also add `boxyhqsso` custom provider from the previous step to the `external_providers` list. Also, see the inline comments for `boxyhqsso` provider settings.
+##### Configure the custom provider
 
-    ```ruby title="config/initializers/sorcery.rb"
+Add an initializer file to configure the sorcery module. Here we tell sorcery to load the `:external` submodule and also add `boxyhqsso` custom provider from the previous step to the `external_providers` list. Also, see the inline comments for `boxyhqsso` provider settings.
+
+```ruby title="config/initializers/sorcery.rb"
     Rails.application.config.sorcery.submodules = [:external]
 
     # Here you can configure each submodule's features.
@@ -180,14 +191,16 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
       config.user_class = User
 
     end
-    ```
+```
 
-5.  Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service.
+##### Routes and Controllers
 
-     <Tabs>
+Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service.
+
+  <Tabs>
      <TabItem value="routes" label="Routes" default>
 
-    ```ruby title="config/routes.rb"
+```ruby title="config/routes.rb"
     Rails.application.routes.draw do
       ...
       # Renders the login page
@@ -206,14 +219,14 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
       ...
     end
 
-    ```
+```
 
-     </TabItem>
-     <TabItem value="controllers" label="Controllers">
+  </TabItem>
+  <TabItem value="controllers" label="Controllers">
      <Tabs>
      <TabItem value="SorceryController" label="SorceryController" default>
 
-    ```ruby title="app/controllers/sorcery_controller.rb"
+```ruby title="app/controllers/sorcery_controller.rb"
      class SorceryController < ApplicationController
          skip_before_action :require_login, raise: false
 
@@ -247,13 +260,13 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
 
     end
 
-    ```
+```
 
-    </TabItem>
+  </TabItem>
 
-    <TabItem value="LoginsController" label="LoginsController">
+  <TabItem value="LoginsController" label="LoginsController">
 
-    ```ruby title="app/controllers/logins_controller.rb"
+```ruby title="app/controllers/logins_controller.rb"
     class LoginsController < ApplicationController
           skip_before_action :require_login
 
@@ -267,23 +280,23 @@ First, we need to install and configure [sorcery](https://github.com/Sorcery/sor
 
     end
 
-    ```
+```
 
-    </TabItem>
+  </TabItem>
 
-    <TabItem value="ProfilesController" label="ProfilesController">
+  <TabItem value="ProfilesController" label="ProfilesController">
 
-    ```ruby title="app/controllers/profiles_controller.rb"
+```ruby title="app/controllers/profiles_controller.rb"
     class ProfilesController < ApplicationController
        def index; end # display profile information
     end
 
-    ```
+```
 
-    </TabItem>
-    </Tabs>
-    </TabItem>
-    </Tabs>
+  </TabItem>
+  </Tabs>
+  </TabItem>
+</Tabs>
 
 #### With OmniAuth
 
@@ -498,3 +511,10 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
       </TabItem>
 
       </Tabs>
+
+````
+
+```
+
+```
+````
