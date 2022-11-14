@@ -77,7 +77,7 @@ bundle add sorcery
     bin/rake db:migrate
 ```
 
-##### Add Custom provider for Jackson
+##### Add a custom provider for Jackson
 
 Add a custom sorcery provider for Jackson. We will name it `Boxyhqsso`.
 
@@ -314,7 +314,7 @@ First, we need to install and configure [omniauth](https://github.com/omniauth/o
     bin/bundle add omniauth-oauth2 # generic OAuth2 strategy for OmniAuth that we will inherit from
 ```
 
-##### Add custom strategy for Jackson
+##### Add a custom strategy for Jackson
 
 Add a custom omniauth strategy for Jackson. We will name it `Boxyhqsso`.
 By inheriting from `OmniAuth::Strategies::OAuth2`, we can wire up the OAuth 2.0 flow with Jackson. Jackson will redirect to the configured IdP connection based on the tenant/product.
@@ -443,7 +443,11 @@ Add an initializer file to insert omniauth into the rack middleware pipeline. `O
 
 ##### Routes and Controllers
 
-Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service. We also use a controller `concern` to control access to protected routes such as profile page.
+Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service. We also use a controller `concern` to control access to protected routes such as the profile page.
+
+:::info
+The login flow is initiated by redirecting to `/auth/boxyhqsso`
+:::
 
   <Tabs>
 
@@ -470,6 +474,8 @@ Finally, we need to add the routes and controller files that initiate the login 
 
   <TabItem value="omniauth" label="OmniauthController" default>
 
+After omniauth handles the callback from Jackson SSO service, it sets an authentication hash (`omniauth.auth`) on the rack environment of a request to `/auth/boxyhqsso/callback`. This contains the information about the logged-in user. We then set this value in the session which can then be displayed on the profile page.
+
 ```ruby title="app/controllers/omniauth_controller.rb"
     class OmniauthController < ApplicationController
       skip_before_action :require_login, raise: false
@@ -490,6 +496,8 @@ Finally, we need to add the routes and controller files that initiate the login 
   </TabItem>
 
   <TabItem value="omniauth_profiles" label="OmniauthProfilesController">
+
+Here we set the instance variable `@user` from the session. This can then be referenced in the profile view. Also by using the concern `OmniauthSecured`, we ensure that the profile view is rendered only if a user is logged in, else we redirect to the login page.
 
 ```ruby title="app/controllers/omniauth_profiles_controller.rb"
     class OmniauthProfilesController < ApplicationController
