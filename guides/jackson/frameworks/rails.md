@@ -197,6 +197,10 @@ Add an initializer file to configure the sorcery module. Here we tell sorcery to
 
 Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service.
 
+:::info
+The login flow is initiated by posting to `/sso`
+:::
+
   <Tabs>
      <TabItem value="routes" label="Routes" default>
 
@@ -225,6 +229,8 @@ Finally, we need to add the routes and controller files that initiate the login 
   <TabItem value="controllers" label="Controllers">
      <Tabs>
      <TabItem value="SorceryController" label="SorceryController" default>
+
+The `oauth` action initiates the OAuth 2.0 flow to Jackson SSO service. In the `callback` action, sorcery exchanges the code for access_token and user profile. If a user exists in the database, then the value of `@current_user` is loaded from the database. Else a new user is created in the database and returned.
 
 ```ruby title="app/controllers/sorcery_controller.rb"
      class SorceryController < ApplicationController
@@ -446,7 +452,7 @@ Add an initializer file to insert omniauth into the rack middleware pipeline. `O
 Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service. We also use a controller `concern` to control access to protected routes such as the profile page.
 
 :::info
-The login flow is initiated by redirecting to `/auth/boxyhqsso`
+The login flow is initiated by posting to `/auth/boxyhqsso`
 :::
 
   <Tabs>
