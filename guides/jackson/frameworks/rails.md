@@ -452,7 +452,7 @@ Add an initializer file to insert omniauth into the rack middleware pipeline. `O
 Finally, we need to add the routes and controller files that initiate the login flow and handle the callback from the Jackson service. We also use a controller `concern` to control access to protected routes such as the profile page.
 
 :::info
-The login flow is initiated by posting to `/auth/boxyhqsso`
+The login flow is initiated by posting to `/auth/boxyhqsso` which is handled by omniauth in the rack middleware pipeline.
 :::
 
   <Tabs>
