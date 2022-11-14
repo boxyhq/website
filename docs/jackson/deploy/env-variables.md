@@ -129,7 +129,7 @@ NPM library option: `db.engine`
 
 ### **DB_TYPE**
 
-Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `mariadb`
+Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `mariadb`, `mssql`
 
 Default: `postgres`
 
@@ -140,6 +140,8 @@ NPM library option: `db.type`
 The database URL to connect to.
 
 Example: `postgres://postgres:postgres@localhost:5432/postgres`
+
+For `mssql` the URL takes the form of `sqlserver://localhost:1433;database=<db name>;username=<username>;password=<password>;encrypt=true`
 
 NPM library option: `db.url`
 
