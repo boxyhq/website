@@ -5,7 +5,7 @@ sidebar_label: Get Started
 
 # Get Started with Admin Portal
 
-SAML Jackson comes with an Admin Portal that allows you to manage **Enterprise SSO**, **Directory Sync**, and **Setup Link** via an easy to use web interface.
+SAML Jackson comes with an Admin Portal that allows you to manage **Enterprise SSO** and **Directory Sync** products via an easy to use web interface. Our future products (where relevant) will also be available in the Admin Portal.
 
 To enable the Admin Portal, make sure you deploy the [Jackson as a service](../jackson/deploy/service).
 

@@ -55,7 +55,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Directory Sync (Beta)',
+      label: 'Directory Sync',
       collapsible: true,
       link: { type: 'doc', id: 'directory-sync/overview' },
       items: [
@@ -82,11 +82,8 @@ module.exports = {
       type: 'category',
       label: 'Admin Portal',
       collapsible: true,
-      items: [
-        'admin-portal/index',
-        'admin-portal/enterprise-sso',
-        'admin-portal/directory-sync',
-      ],
+      link: { type: 'doc', id: 'admin-portal/overview' },
+      items: ['admin-portal/enterprise-sso', 'admin-portal/directory-sync'],
     },
   ],
 };
