@@ -17,7 +17,7 @@ We currently only support SCIM 2.0 protocol because SCIM 1.1 is deprecated and s
 ## Overview
 
 - [API Reference](api-reference)
-- [Admin UI](admin-ui)
+- [Admin Portal](../admin-portal/directory-sync)
 - [Webhook](webhooks)
 - [Events and Types](events)
 - [Directory Sync Providers](providers)

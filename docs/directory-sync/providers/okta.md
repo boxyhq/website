@@ -40,7 +40,7 @@ Check the **Enable API Integration** checkbox and enter the following informatio
 - SCIM 2.0 Base URL
 - OAuth Bearer Token
 
-You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin UI.
+You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin Portal.
 
 Click **Test API Creditentials** to test the connection to see if the credentials are correct then click the **Save** to save the credentials.
 
