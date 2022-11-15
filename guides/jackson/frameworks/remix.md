@@ -7,7 +7,7 @@ sidebar_label: Remix
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remix
+# Add SAML SSO to Remix App
 
 Let's look at how to authenticate users in a remix app using Enterprise Single-Sign-On (SSO).
 
