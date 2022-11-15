@@ -1,5 +1,5 @@
 ---
-title: Directory Sync
+title: Directory Sync Docs
 ---
 
 # Directory Sync

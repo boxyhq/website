@@ -1,4 +1,4 @@
-# Examples & Resources
+# Examples & Resources | Directory Sync
 
 ## Examples
 
