@@ -29,5 +29,5 @@ You can visit the path `/api/hello` on your app to see if the Jackson was starte
 At this stage you have a functional SAML Jackson instance running on your server!
 
 - Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)
-- [Sign into Admin Portal](/docs/admin-portal/#sign-into-admin-portal)
+- [Sign into Admin Portal](/docs/admin-portal/overview#sign-into-admin-portal)
 - [Add SAML Configurations](/docs/admin-portal/enterprise-sso)
