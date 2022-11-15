@@ -1,6 +1,6 @@
 ---
-title: Add SSO to Remix App with BoxyHQ
-description: Add SSO to Remix App with BoxyHQ
+title: Add SAML SSO to Remix App with BoxyHQ
+description: Add SAML SSO to Remix App with BoxyHQ
 sidebar_label: Remix
 ---
 
