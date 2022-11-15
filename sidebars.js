@@ -9,6 +9,7 @@ module.exports = {
       type: 'category',
       label: 'Enterprise SSO',
       collapsible: true,
+      link: { type: 'doc', id: 'jackson/overview' },
       items: [
         {
           type: 'category',
@@ -44,7 +45,6 @@ module.exports = {
           items: ['jackson/sso-flow/example-flow'],
         },
         'jackson/examples',
-        'jackson/admin-ui',
         'jackson/observability',
         'jackson/sbom',
         'jackson/container-signing',
@@ -55,14 +55,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Directory Sync (Beta)',
+      label: 'Directory Sync',
       collapsible: true,
       link: { type: 'doc', id: 'directory-sync/overview' },
       items: [
         'directory-sync/getting-started',
         'directory-sync/api-reference',
         'directory-sync/examples',
-        'directory-sync/admin-ui',
         'directory-sync/webhooks',
         'directory-sync/events',
         {
@@ -78,6 +77,13 @@ module.exports = {
           ],
         },
       ],
+    },
+    {
+      type: 'category',
+      label: 'Admin Portal',
+      collapsible: true,
+      link: { type: 'doc', id: 'admin-portal/overview' },
+      items: ['admin-portal/enterprise-sso', 'admin-portal/directory-sync'],
     },
   ],
 };

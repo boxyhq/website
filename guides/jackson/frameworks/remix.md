@@ -1,13 +1,13 @@
 ---
-title: Add SSO to Remix App with BoxyHQ
-description: Add SSO to Remix App with BoxyHQ
+title: Add SAML SSO to Remix App with BoxyHQ
+description: Add SAML SSO to Remix App with BoxyHQ
 sidebar_label: Remix
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remix
+# Add SAML SSO to Remix App
 
 Let's look at how to authenticate users in a remix app using Enterprise Single-Sign-On (SSO).
 

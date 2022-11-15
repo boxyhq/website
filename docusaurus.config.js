@@ -250,5 +250,20 @@ module.exports = {
     ],
     ['@cmfcmf/docusaurus-search-local', {}],
     require.resolve('docusaurus-plugin-image-zoom'),
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/docs/jackson/admin-ui',
+            to: '/docs/admin-portal/enterprise-sso',
+          },
+          {
+            from: '/docs/directory-sync/admin-ui',
+            to: '/docs/admin-portal/directory-sync',
+          },
+        ],
+      },
+    ],
   ],
 };

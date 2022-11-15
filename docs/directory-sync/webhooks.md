@@ -14,9 +14,9 @@ SAML Jackson use webhooks to notify your application any time changes are made t
 
 ## Configure Webhooks
 
-SAML Jackson allows you to configure a webhook and secret while creating a directory sync connection either in the admin UI or the API. You can change the webhook and secret at any time.
+SAML Jackson allows you to configure a webhook and secret while creating a directory sync connection either in the Admin Portal or the API. You can change the webhook and secret at any time.
 
-- [Admin UI](admin-ui#create-directory-sync-connection)
+- [Admin Portal](../admin-portal/directory-sync)
 - [API Reference](api-reference#create-a-new-directory)
 
 ## Receive Events
@@ -56,7 +56,7 @@ BoxyHQ-Signature: t=xxx,s=xxxx
 ```
 
 :::caution
-If the webhook request fails, SAML Jackson will not retry the webhook request. A log will be created in the SAML Jackson admin UI if the you've enabled the webhook event logging.
+If the webhook request fails, SAML Jackson will not retry the webhook request. A log will be created in the SAML Jackson Admin Portal if the you've enabled the webhook event logging.
 :::
 
 ## Secure Webhooks
