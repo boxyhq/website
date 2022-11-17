@@ -262,6 +262,18 @@ module.exports = {
             from: '/docs/directory-sync/admin-ui',
             to: '/docs/admin-portal/directory-sync',
           },
+          {
+            from: '/docs/jackson/saml-flow',
+            to: '/docs/jackson/sso-flow',
+          },
+          {
+            from: '/docs/jackson/configure-saml-idp',
+            to: '/docs/jackson/sso-providers',
+          },
+          {
+            from: '/docs/jackson/deploy/pre-loaded-configuration',
+            to: '/docs/jackson/deploy/pre-loaded-connections',
+          },
         ],
       },
     ],
