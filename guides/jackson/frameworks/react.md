@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 This guide assumes that you have a React app and want to enable SAML Single Sign-On authentication for your enterprise customers. By the end of this guide, you'll have an app that allows you to authenticate the users using SAML Single Sign-On.
 
-Visit the [GitHub repository](https://github.com/boxyhq/saas-starter-kit) to see the source code for the React SAML SSO integration.
+If you wish to dive straight into the source, Checkout: https://github.com/boxyhq/jackson-examples/tree/main/apps/react
 
 Integrating SAML SSO into an app involves the following steps.
 
