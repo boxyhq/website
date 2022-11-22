@@ -65,7 +65,7 @@ export default function useOAuthClient({
         authorizationUrl: `${JACKSON_URL}/api/oauth/authorize`,
         tokenUrl: `${JACKSON_URL}/api/oauth/token`,
         // Setting the clientId dummy here. We pass additional query params for
-        // tenant and product in the authorize endpoint.
+        // tenant and product in the authorize request.
         clientId: 'dummy',
         redirectUrl,
         scopes: [],
@@ -89,6 +89,110 @@ export default function useOAuthClient({
 
   return oauthClient;
 }
+```
+
+### Setup global Authentication primitives
+
+#### AuthContext
+
+We need a way to make the logged-in `user` as well as the `signIn`, `signOut` methods accessible globally. This along with the `setTenant` (method used to select the tenant for the SSO flow) and `authStatus` (boolean which helps us to conditionally render content based on whether the authenticated status is fully known or being loaded) are made available throughout the application by using `AuthContext`.
+
+```tsx title="src/lib/AuthProvider.tsx"
+import React, { useState, useEffect, ReactNode, createContext } from 'react';
+import { useLocation } from 'react-router-dom';
+import useOAuthClient from '../hooks/useOAuthClient';
+import { authenticate, getProfileByJWT } from './backend';
+import devLogger from './devLogger';
+
+interface ProviderProps {
+  children: ReactNode;
+}
+
+interface AuthContextInterface {
+  setTenant?: React.Dispatch<React.SetStateAction<string>>;
+  authStatus: 'UNKNOWN' | 'FETCHING' | 'LOADED';
+  user: any;
+  signIn: () => void;
+  signOut: (callback: VoidFunction) => void;
+}
+
+// localstorage key to store from url
+const APP_FROM_URL = 'appFromUrl';
+
+export const AuthContext = createContext<AuthContextInterface>(null!);
+```
+
+#### AuthProvider
+
+We will wire up the flow inside the AuthProvider.
+
+1. Once the app shell is rendered, we run an effect that uses the `authClient` from `useOAuthClient`. Two scenarios need to be handled here. The first one is the case where we have secured an access_token from the SSO provider (Jackson) in which case we can retrieve the logged-in user profile by passing in the cookie. The second one is the case where the browser gets redirected back to the app, after signing in at IdP. The authorization code in the redirect is exchanged for an access token which is then passed to the app backend complete the login.
+
+```tsx title="src/lib/AuthProvider.tsx"
+const AuthProvider = ({ children }: ProviderProps) => {
+  const redirectUrl = process.env.REACT_APP_APP_URL + from;
+
+  const authClient = useOAuthClient({ redirectUrl });
+
+  useEffect(() => {
+    let didCancel = false;
+
+    const loadUser = async () => {
+      if (!authClient) {
+        return;
+      }
+      setAuthStatus('FETCHING');
+      if (authClient.isAuthorized()) {
+        devLogger(`authClient is already authorized`);
+        const { data, error } = await getProfileByJWT();
+        if (!didCancel && !error) {
+          setUser(data);
+          setAuthStatus('LOADED');
+        }
+      } else {
+        try {
+          const hasAuthCode = await authClient?.isReturningFromAuthServer();
+          if (!hasAuthCode) {
+            devLogger('no auth code detected...');
+          } else {
+            devLogger(authClient);
+            const token = !didCancel
+              ? await authClient?.getAccessToken()
+              : null;
+            token && localStorage.removeItem(APP_FROM_URL);
+            const profile = await authenticate(token?.token?.value);
+            if (!didCancel && profile) {
+              setUser(profile);
+            }
+          }
+        } catch (err) {
+          console.error(err);
+        } finally {
+          setAuthStatus('LOADED');
+        }
+      }
+    };
+
+    devLogger(`running effect loadUser`);
+    loadUser();
+    return () => {
+      devLogger(`cancelling effect`);
+      didCancel = true;
+    };
+  }, [authClient]);
+
+  const value = {
+    authStatus,
+    user,
+    setTenant,
+    signIn,
+    signOut,
+  };
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};
+
+export { AuthContext, AuthProvider };
 ```
 
 ### Make Authentication Request
