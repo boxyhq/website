@@ -40,7 +40,8 @@ curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 --data-urlencode 'description=Demo SAML connection'
 ```
 
-- `encodedRawMetadata`: Base64 encoding of the XML metadata your customer gets from their Identity Provider
+- `metadataUrl`: URL containing the SAML metadata contents. Either this or `encodedRawMetadata` needs to be specified
+- `encodedRawMetadata`: Base64 encoding of the XML metadata your customer gets from their Identity Provider. Either this or `metadataUrl` needs to be specified
 - `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
 - `redirectUrl`: Allowed redirect URL. Repeat this field multiple times to allow multiple redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above).
 - `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
