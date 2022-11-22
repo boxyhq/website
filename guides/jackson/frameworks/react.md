@@ -41,7 +41,7 @@ We'll use the client library `@bity/oauth2-auth-code-pkce` to implement the auth
 npm i --save @bity/oauth2-auth-code-pkce
 ```
 
-Let's configure the React client library to use the SAML Jackson service for authentication. Here we use a custom hook so that the OAuthClient can be reused elsewhere in the app.
+Let's configure the React client library to use the SAML Jackson service for authentication. Here we use a custom hook so that the `oauthClient` can be used elsewhere in the app.
 
 ```ts title="src/hooks/useOAuthClient.ts"
 import { OAuth2AuthCodePKCE } from '@bity/oauth2-auth-code-pkce';
