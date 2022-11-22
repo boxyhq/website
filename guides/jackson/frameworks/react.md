@@ -33,7 +33,7 @@ Once you add a SAML connection, the app can use this SAML connection to initiate
 
 The first step is to deploy the SAML Jackson service. Follow the [deployment docs](/docs/jackson/deploy/service) to install and configure the SAML Jackson.
 
-### Setup SAML Jackson
+### Setup SAML Jackson Integration
 
 We'll use the client library `@bity/oauth2-auth-code-pkce` to implement the authentication process. It is a zero-dependency OAuth 2.0 client supporting only the authorization code grant with PKCE for client-side protection.
 
@@ -41,36 +41,54 @@ We'll use the client library `@bity/oauth2-auth-code-pkce` to implement the auth
 npm i --save @bity/oauth2-auth-code-pkce
 ```
 
-Let's configure the React client library to use the SAML Jackson service for the authentication.
+Let's configure the React client library to use the SAML Jackson service for authentication. Here we use a custom hook so that the OAuthClient can be reused elsewhere in the app.
 
-```js title="src/lib/jackson.ts"
+```ts title="src/hooks/useOAuthClient.ts"
 import { OAuth2AuthCodePKCE } from '@bity/oauth2-auth-code-pkce';
+import { useEffect, useState } from 'react';
 
-// SAML Jackson service URL
-const jacksonUrl = 'http://localhost:5225';
+const JACKSON_URL = process.env.REACT_APP_JACKSON_URL;
 
-// React app URL
-const appUrl = 'http://localhost:3366';
+interface OauthClientOptions {
+  redirectUrl: string;
+}
+export default function useOAuthClient({
+  redirectUrl,
+}: OauthClientOptions): OAuth2AuthCodePKCE | null {
+  const [oauthClient, setOauthClient] = useState<OAuth2AuthCodePKCE | null>(
+    null
+  );
 
-export const oAuth2AuthCodePKCE = (tenant: string, product: string) => {
-  return new OAuth2AuthCodePKCE({
-    authorizationUrl: `${jacksonUrl}/api/oauth/authorize`,
-    tokenUrl: `${jacksonUrl}/api/oauth/token`,
-    clientId: `tenant=${tenant}&product=${product}`,
-    redirectUrl: `${appUrl}/login`,
-    scopes: [],
-    onAccessTokenExpiry(refreshAccessToken) {
-      // Expired! Access token needs to be renewed.
-      // We will try to get a new access token via grant code or refresh token.
-      return refreshAccessToken();
-    },
-    onInvalidGrant(refreshAuthCodeOrRefreshToken) {
-      // Expired! Auth code or refresh token needs to be renewed.
-      // Redirecting to auth server to obtain a new auth grant code.
-      return refreshAuthCodeOrRefreshToken();
-    },
-  });
-};
+  useEffect(() => {
+    setOauthClient(
+      new OAuth2AuthCodePKCE({
+        authorizationUrl: `${JACKSON_URL}/api/oauth/authorize`,
+        tokenUrl: `${JACKSON_URL}/api/oauth/token`,
+        // Setting the clientId dummy here. We pass additional query params for
+        // tenant and product in the authorize endpoint.
+        clientId: 'dummy',
+        redirectUrl,
+        scopes: [],
+        onAccessTokenExpiry(refreshAccessToken) {
+          console.log('Expired! Access token needs to be renewed.');
+          alert(
+            'We will try to get a new access token via grant code or refresh token.'
+          );
+          return refreshAccessToken();
+        },
+        onInvalidGrant(refreshAuthCodeOrRefreshToken) {
+          console.log(
+            'Expired! Auth code or refresh token needs to be renewed.'
+          );
+          alert('Redirecting to auth server to obtain a new auth grant code.');
+          //return refreshAuthCodeOrRefreshToken();
+        },
+      })
+    );
+  }, [redirectUrl]);
+
+  return oauthClient;
+}
 ```
 
 ### Make Authentication Request
