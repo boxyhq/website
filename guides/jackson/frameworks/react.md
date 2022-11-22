@@ -126,7 +126,7 @@ export const AuthContext = createContext<AuthContextInterface>(null!);
 
 We will wire up the flow inside the AuthProvider.
 
-1. Once the app shell is rendered, we run an effect that uses the `authClient` from `useOAuthClient`. Two scenarios need to be handled here. The first one is the case where we have secured an access_token from the SSO provider (Jackson) in which case we can retrieve the logged-in user profile by passing in the cookie. The second one is the case where the browser gets redirected back to the app, after signing in at IdP. The authorization code in the redirect is exchanged for an access token which is then passed to the app backend to complete the login.
+1. Once the app shell is rendered, we run an effect that uses the `authClient` from `useOAuthClient` to conduct the flow. Two scenarios need to be handled here. The first one is the case where we have secured an access_token from the SSO provider (Jackson) in which case we can retrieve the logged-in user profile by passing in the cookie. The second one is the case where the browser gets redirected back to the app, after signing in at IdP. The authorization code in the redirect is exchanged for an access token which is then passed to the app backend to complete the login.
 
 ```tsx title="src/lib/AuthProvider.tsx"
 const AuthProvider = ({ children }: ProviderProps) => {
