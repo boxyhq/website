@@ -95,14 +95,13 @@ export default function useOAuthClient({
 
 #### AuthContext
 
-We need a way to make the logged-in `user` as well as the `signIn`, `signOut` methods accessible globally. This along with the `setTenant` (method used to select the tenant for the SSO flow) and `authStatus` (boolean which helps us to conditionally render content based on whether the authenticated status is fully known or being loaded) are made available throughout the application by using `AuthContext`.
+We need a way to make the logged-in `user` as well as the `signIn`, `signOut` methods accessible globally. These, along with the `setTenant` (method used to select the tenant for the SSO flow) and `authStatus` (boolean which helps us to conditionally render content based on whether the authenticated status is fully known or being loaded) are made available throughout the application by using `AuthContext`.
 
 ```tsx title="src/lib/AuthProvider.tsx"
 import React, { useState, useEffect, ReactNode, createContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import useOAuthClient from '../hooks/useOAuthClient';
 import { authenticate, getProfileByJWT } from './backend';
-import devLogger from './devLogger';
 
 interface ProviderProps {
   children: ReactNode;
@@ -126,161 +125,204 @@ export const AuthContext = createContext<AuthContextInterface>(null!);
 
 We will wire up the flow inside the AuthProvider.
 
-1. Once the app shell is rendered, we run an effect that uses the `authClient` from `useOAuthClient` to conduct the flow. Two scenarios need to be handled here. The first one is the case where we have secured an access_token from the SSO provider (Jackson) in which case we can retrieve the logged-in user profile by passing in the cookie. The second one is the case where the browser gets redirected back to the app, after signing in at IdP. The authorization code in the redirect is exchanged for an access token which is then passed to the app backend to complete the login.
+1.  Once the app shell is rendered, we run an effect that uses the `authClient` from `useOAuthClient` to conduct the flow. Two scenarios need to be handled here. The first one is the case where we have secured an access_token from the SSO provider (Jackson) in which case we can retrieve the logged-in user profile by passing in the cookie. The second one is the case where the browser gets redirected back to the app, after signing in at IdP. The authorization code in the redirect is exchanged for an access token which is then passed to the app backend to complete the login.
 
-```tsx title="src/lib/AuthProvider.tsx"
-const AuthProvider = ({ children }: ProviderProps) => {
-  const [user, setUser] = useState<any>(null);
-  const [authStatus, setAuthStatus] = useState<AuthContextInterface['authStatus']>('UNKNOWN');
+    ```tsx title="src/lib/AuthProvider.tsx"
+      const AuthProvider = ({ children }: ProviderProps) => {
+        const [user, setUser] = useState<any>(null);
+        const [authStatus, setAuthStatus] = useState<AuthContextInterface['authStatus']>('UNKNOWN');
 
-  ...
+        ...
 
-  const redirectUrl = process.env.REACT_APP_APP_URL + from;
+        const redirectUrl = process.env.REACT_APP_APP_URL + from;
 
-  const authClient = useOAuthClient({ redirectUrl });
+        const authClient = useOAuthClient({ redirectUrl });
 
-  useEffect(() => {
-    let didCancel = false;
+        useEffect(() => {
+          let didCancel = false;
 
-    const loadUser = async () => {
-      if (!authClient) {
-        return;
-      }
-      setAuthStatus('FETCHING');
-      if (authClient.isAuthorized()) {
-        devLogger(`authClient is already authorized`);
-        const { data, error } = await getProfileByJWT();
-        if (!didCancel && !error) {
-          setUser(data);
-          setAuthStatus('LOADED');
-        }
-      } else {
-        try {
-          const hasAuthCode = await authClient?.isReturningFromAuthServer();
-          if (!hasAuthCode) {
-            devLogger('no auth code detected...');
-          } else {
-            devLogger(authClient);
-            const token = !didCancel
-              ? await authClient?.getAccessToken()
-              : null;
-            token && localStorage.removeItem(APP_FROM_URL);
-            // authentication happens at the backend where the above token is used
-            // to retrieve user profile
-            const profile = await authenticate(token?.token?.value);
-            if (!didCancel && profile) {
-              setUser(profile);
+          const loadUser = async () => {
+            if (!authClient) {
+              return;
             }
-          }
-        } catch (err) {
-          console.error(err);
-        } finally {
-          setAuthStatus('LOADED');
-        }
+            setAuthStatus('FETCHING');
+            if (authClient.isAuthorized()) {
+              const { data, error } = await getProfileByJWT();
+              if (!didCancel && !error) {
+                setUser(data);
+                setAuthStatus('LOADED');
+              }
+            } else {
+              try {
+                const hasAuthCode = await authClient?.isReturningFromAuthServer();
+                if (!hasAuthCode) {
+                  devLogger('no auth code detected...');
+                } else {
+                  const token = !didCancel
+                    ? await authClient?.getAccessToken()
+                    : null;
+                  token && localStorage.removeItem(APP_FROM_URL);
+                  // authentication happens at the backend where the above token is used
+                  // to retrieve user profile
+                  const profile = await authenticate(token?.token?.value);
+                  if (!didCancel && profile) {
+                    setUser(profile);
+                  }
+                }
+              } catch (err) {
+                console.error(err);
+              } finally {
+                setAuthStatus('LOADED');
+              }
+            }
+          };
+
+          loadUser();
+          return () => {
+            didCancel = true;
+          };
+        }, [authClient]);
+
+        ...
+
+         const value = {
+          authStatus,
+          user,
+        };
+
+        return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+      };
+
+      export { AuthContext, AuthProvider };
+    ```
+
+2.  When someone tries to access protected/private routes they will be redirected to the login page. Before we do this we save the current location they were trying to access in the history state. This logic is encapsulated in the `RequireAuth` wrapper component. Use it to protect routes that require authentication.
+
+    ```tsx title="src/components/RequireAuth.tsx"
+    const RequireAuth = ({ children }: { children: JSX.Element }) => {
+      let { user, authStatus } = useAuth();
+      let location = useLocation();
+
+      if (authStatus !== 'LOADED') {
+        return null;
       }
+
+      if (!user) {
+        // Redirect them to the /login page, but save the current location they were
+        // trying to go to when they were redirected. This allows us to send them
+        // along to that page after they login, which is a nicer user experience
+        // than dropping them off on the home page.
+        return <Navigate to="/login" state={{ from: location }} replace />;
+      }
+
+      return children;
     };
 
-    devLogger(`running effect loadUser`);
-    loadUser();
-    return () => {
-      devLogger(`cancelling effect`);
-      didCancel = true;
+    export default RequireAuth;
+    ```
+
+    We then use the `from` state in the `redirectUrl` to construct the `oAuthClient`.
+
+    ```ts title="src/lib/AuthProvider.tsx"
+    let location = useLocation();
+    let from =
+      location.state?.from?.pathname ||
+      localStorage.getItem(APP_FROM_URL) ||
+      '/profile';
+
+    const redirectUrl = process.env.REACT_APP_APP_URL + from;
+
+    const authClient = useOAuthClient({ redirectUrl });
+    ```
+
+3.  `signIn` and `signOut` methods can be implemented as follows:
+
+    ```tsx title="src/lib/AuthProvider.tsx"
+    const signIn = async () => {
+      // store the 'from' url before redirecting ... we need this to correctly initialize
+      // the oauthClient after getting redirected back from SSO Provider.
+      localStorage.setItem(APP_FROM_URL, from);
+      // Initiate the login flow
+      await authClient?.fetchAuthorizationCode({
+        tenant,
+        product: 'saml-demo.boxyhq.com',
+      });
     };
-  }, [authClient]);
 
-  ...
+    const signOut = async (callback: VoidFunction) => {
+      authClient?.reset();
+      setUser(null);
+      callback();
+    };
 
-   const value = {
-    authStatus,
-    user,
-  };
+    const value = {
+      signIn,
+      signOut,
+    };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
-
-export { AuthContext, AuthProvider };
-```
-
-2. For our app, when someone tries to access protected/private routes they will be redirected to the Login page. Before we do this we save the current location they were trying to access in the history state. This logic is encapsulated in the `RequireAuth` wrapper component. Use it to protect routes that require authentication.
-
-   ```tsx title="src/components/RequireAuth.tsx"
-   const RequireAuth = ({ children }: { children: JSX.Element }) => {
-     let { user, authStatus } = useAuth();
-     let location = useLocation();
-
-     if (authStatus !== 'LOADED') {
-       return null;
-     }
-
-     if (!user) {
-       devLogger(`Redirecting to login`);
-       // Redirect them to the /login page, but save the current location they were
-       // trying to go to when they were redirected. This allows us to send them
-       // along to that page after they login, which is a nicer user experience
-       // than dropping them off on the home page.
-       return <Navigate to="/login" state={{ from: location }} replace />;
-     }
-
-     return children;
-   };
-
-   export default RequireAuth;
-   ```
-
-3. `signIn` / `signOut`.
+    return (
+      <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+    );
+    ```
 
 ### Make Authentication Request
 
-Let's add a page to begin the authenticate flow; this page initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
+Let's add a page to begin the authenticate flow. This page initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
 The user will be redirected to the IdP when clicking the "Continue with SAML SSO" button.
 
-```js title="src/pages/login.tsx"
-import { useState, useEffect } from 'react';
-import { oAuth2AuthCodePKCE } from '../lib/jackson';
-
-// Your product name
-const product = 'saml-demo.boxyhq.com';
+```js title="src/pages/Login.tsx"
+import React from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 const Login = () => {
-  const [tenant, setTenant] = useState('boxyhq.com');
+  let location = useLocation();
 
-  const oauth = oAuth2AuthCodePKCE(tenant, product);
+  let from = location.state?.from?.pathname || '/profile';
 
-  useEffect(() => {
-    oauth
-      .isReturningFromAuthServer()
-      .then(async (hasAuthCode: boolean) => {
-        if (!hasAuthCode) {
-          return;
-        }
+  const { signIn, setTenant, authStatus, user } = useAuth();
 
-        return oauth.getAccessToken().then(async (accessToken) => {
-          // `accessToken` is available here.
-          // We need to fetch the user profile using the `accessToken`.
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  if (authStatus !== 'LOADED') {
+    return null;
+  }
 
-  // Start the authorize flow
-  const authorize = () => {
-    oauth.fetchAuthorizationCode();
-  };
+  if (authStatus === 'LOADED' && user) {
+    return <Navigate to={from} replace />;
+  }
 
   return (
-    <form method="POST" onSubmit={authorize}>
-      <input
-        type="text"
-        name="tenant"
-        required
-        onChange={(e) => setTenant(e.target.value)}
-        value={tenant}
-      />
-      <button type="submit">Continue with SAML SSO</button>
-    </form>
+    <div className="mx-auto h-screen max-w-7xl">
+      <div className="flex h-full flex-col justify-center space-y-5">
+        <h2 className="text-center text-3xl">Log in to App</h2>
+        <div className="mx-auto w-full max-w-md px-3 md:px-0">
+          <div className="rounded border border-gray-200 bg-white py-5 px-5">
+            <form className="space-y-3" method="POST" onSubmit={signIn}>
+              <label htmlFor="tenant" className="block text-sm">
+                Tenant ID
+              </label>
+              <input
+                type="text"
+                name="tenant"
+                placeholder="boxyhq"
+                defaultValue="boxyhq.com"
+                className="block w-full appearance-none rounded border border-gray-300 text-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
+                required
+                onChange={(e) =>
+                  typeof setTenant === 'function' && setTenant(e.target.value)
+                }
+              />
+              <button
+                type="submit"
+                className="w-full rounded border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white focus:outline-none"
+              >
+                Continue with SAML SSO
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -296,7 +338,7 @@ Typically you would use your backend service (Eg: Express.js) to call the SAML J
 Here is a sample Express route to fetch the user profile.
 
 ```js
-app.get('/api/fetch-user-profile', async function (req, res, next) {
+app.get('/api/authenticate', async function (req, res, next) {
   const accessToken = req.query.access_token;
 
   if (!accessToken) {
@@ -316,6 +358,17 @@ app.get('/api/fetch-user-profile', async function (req, res, next) {
   // you may determine if the user exists in your application and authenticate the user.
   // If the user does not exist in your application, you will typically create a new record in your database to represent the user.
 
+  const token = jsonwebtoken.sign(
+    {
+      id: profile.id,
+      email: profile.email,
+      firstName: profile.firstName,
+      lastName: profile.lastName,
+    },
+    jwtSecret
+  );
+
+  res.cookie('sso-token', token, { httpOnly: true });
   res.json(profile);
 });
 ```
