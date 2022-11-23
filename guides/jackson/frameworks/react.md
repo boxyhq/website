@@ -386,40 +386,7 @@ app.get('/api/authenticate', async function (req, res, next) {
 });
 ```
 
-The above API returns a response containing the user profile if the authorization is valid.
-
-Now make the following changes to the `Login` page. We'll call the `/api/fetch-user-profile` API to fetch the user profile.
-
-```js title="src/pages/login.tsx"
-useEffect(() => {
-  oauth
-    .isReturningFromAuthServer()
-    .then(async (hasAuthCode: boolean) => {
-      if (!hasAuthCode) {
-        return;
-      }
-
-      return oauth.getAccessToken().then(async (accessToken) => {
-        const token = accessToken.token?.value;
-
-        // highlight-start
-        await fetch(
-          `http://your-api-url/api/fetch-user-profile?access_token=${token}`,
-          {
-            method: 'GET',
-            credentials: 'include',
-          }
-        );
-
-        const profile = await response.json();
-        // highlight-end
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}, []);
-```
+The above API returns a response containing the user profile if the authorization is valid. We also set a JWT containing the user profile in a cookie.
 
 The profile will look something like this:
 
