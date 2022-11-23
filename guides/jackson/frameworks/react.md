@@ -130,6 +130,9 @@ We will wire up the flow inside the AuthProvider.
 
 ```tsx title="src/lib/AuthProvider.tsx"
 const AuthProvider = ({ children }: ProviderProps) => {
+  const [user, setUser] = useState<any>(null);
+  const [authStatus, setAuthStatus] = useState<AuthContextInterface['authStatus']>('UNKNOWN');
+
   ...
 
   const redirectUrl = process.env.REACT_APP_APP_URL + from;
@@ -162,6 +165,8 @@ const AuthProvider = ({ children }: ProviderProps) => {
               ? await authClient?.getAccessToken()
               : null;
             token && localStorage.removeItem(APP_FROM_URL);
+            // authentication happens at the backend where the above token is used
+            // to retrieve user profile
             const profile = await authenticate(token?.token?.value);
             if (!didCancel && profile) {
               setUser(profile);
@@ -184,10 +189,45 @@ const AuthProvider = ({ children }: ProviderProps) => {
   }, [authClient]);
 
   ...
+
+   const value = {
+    authStatus,
+    user,
+  };
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export { AuthContext, AuthProvider };
 ```
+
+2. For our app, when someone tries to access protected/private routes they will be redirected to the Login page. Before we do this we save the current location they were trying to access in the history state. This logic is encapsulated in the `RequireAuth` wrapper component. Use it to protect routes that require authentication.
+
+   ```tsx title="src/components/RequireAuth.tsx"
+   const RequireAuth = ({ children }: { children: JSX.Element }) => {
+     let { user, authStatus } = useAuth();
+     let location = useLocation();
+
+     if (authStatus !== 'LOADED') {
+       return null;
+     }
+
+     if (!user) {
+       devLogger(`Redirecting to login`);
+       // Redirect them to the /login page, but save the current location they were
+       // trying to go to when they were redirected. This allows us to send them
+       // along to that page after they login, which is a nicer user experience
+       // than dropping them off on the home page.
+       return <Navigate to="/login" state={{ from: location }} replace />;
+     }
+
+     return children;
+   };
+
+   export default RequireAuth;
+   ```
+
+3. `signIn` / `signOut`.
 
 ### Make Authentication Request
 
