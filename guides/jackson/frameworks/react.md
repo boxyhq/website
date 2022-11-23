@@ -121,6 +121,19 @@ const APP_FROM_URL = 'appFromUrl';
 export const AuthContext = createContext<AuthContextInterface>(null!);
 ```
 
+We also create a custom hook that returns a handle to the `AuthContext`
+
+```ts title="src/hooks/useAuth.ts"
+import { useContext } from 'react';
+import { AuthContext } from '../lib/AuthProvider';
+
+const useAuth = () => {
+  return useContext(AuthContext);
+};
+
+export default useAuth;
+```
+
 #### AuthProvider
 
 We will wire up the flow inside the AuthProvider.
