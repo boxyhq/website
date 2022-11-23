@@ -31,7 +31,7 @@ This step allows your tenants to configure SAML connections for their users. Rea
 
 ## Authenticate with SAML Single Sign-On
 
-Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focuses more on the SSO authentication side.
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focus more on the SSO authentication side.
 
 ### Deploy SAML Jackson
 
@@ -39,13 +39,13 @@ The first step is to deploy the SAML Jackson service. Follow the [deployment doc
 
 ### Setup SAML Jackson Integration
 
-We'll use the client library `@bity/oauth2-auth-code-pkce` to implement the authentication process. It is a zero-dependency OAuth 2.0 client supporting only the authorization code grant with PKCE for client-side protection.
+We'll use the client library `@bity/oauth2-auth-code-pkce` to implement the authentication process. It is a zero-dependency OAuth 2.0 client implementing the authorization code grant with PKCE for client-side protection.
 
 ```bash
 npm i --save @bity/oauth2-auth-code-pkce
 ```
 
-Let's configure the React client library to use the SAML Jackson service for authentication. Here we use a custom hook so that the `oauthClient` can be used elsewhere in the app.
+Let's configure the `OAuth2AuthCodePKCE` client to use the SAML Jackson service for authentication. Here we use a custom hook so that the `oauthClient` can be used elsewhere in the app.
 
 ```ts title="src/hooks/useOAuthClient.ts"
 import { OAuth2AuthCodePKCE } from '@bity/oauth2-auth-code-pkce';
@@ -352,7 +352,7 @@ Once the `accessToken` has been fetched, the React app can use it to retrieve th
 
 Typically you would use your backend service (Eg: Express.js) to call the SAML Jackson API to fetch the user profile using the `accessToken`.
 
-Here is a sample Express route to fetch the user profile.
+Here are the express.js routes that return the user profile either on login or by parsing the JWT from the client-side cookie.
 
 ```js
 app.get('/api/authenticate', async function (req, res, next) {
@@ -388,9 +388,23 @@ app.get('/api/authenticate', async function (req, res, next) {
   res.cookie('sso-token', token, { httpOnly: true });
   res.json(profile);
 });
-```
 
-The above API returns a response containing the user profile if the authorization is valid. We also set a JWT containing the user profile in a cookie.
+app.get('/api/profile', async function (req, res, next) {
+  const token = req.cookies['sso-token'];
+
+  if (!token) {
+    return res
+      .status(401)
+      .json({ data: null, error: { message: 'Missing JWT' } });
+  }
+
+  // You may fetch the user profile from your database using the user id.
+
+  const payload = jsonwebtoken.verify(token, jwtSecret);
+
+  return res.json({ data: payload, error: null });
+});
+```
 
 The profile will look something like this:
 
@@ -410,6 +424,39 @@ The profile will look something like this:
     ...
   }
 }
+```
+
+In the React app, we call the `getProfileByJWT` if an access_token is already in possession or we call the `authenticate` when returning back from SSO provider with the authorization code.
+
+```ts title="src/lib/backend.ts"
+const apiUrl = process.env.REACT_APP_API_URL;
+
+export const authenticate = async (token: string | undefined) => {
+  if (!token) {
+    throw new Error('Access token not found.');
+  }
+
+  const response = await fetch(
+    `${apiUrl}/api/authenticate?access_token=${token}`,
+    {
+      method: 'GET',
+      credentials: 'include',
+    }
+  );
+  if (response.ok) {
+    return await response.json();
+  }
+  return null;
+};
+
+export const getProfileByJWT = async () => {
+  const response = await fetch(`${apiUrl}/api/profile`, {
+    method: 'GET',
+    credentials: 'include',
+  });
+
+  return await response.json();
+};
 ```
 
 ### Authenticate User
