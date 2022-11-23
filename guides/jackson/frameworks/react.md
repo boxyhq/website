@@ -13,6 +13,10 @@ This guide assumes that you have a React app and want to enable SAML Single Sign
 
 If you wish to dive straight into the source, Checkout: https://github.com/boxyhq/jackson-examples/tree/main/apps/react
 
+:::info
+We use an express backend with the React Single Page App. The code for this can be found at https://github.com/boxyhq/jackson-examples/tree/main/apps/express-api
+:::
+
 Integrating SAML SSO into an app involves the following steps.
 
 - Configure SAML Single Sign-On
@@ -121,7 +125,7 @@ const APP_FROM_URL = 'appFromUrl';
 export const AuthContext = createContext<AuthContextInterface>(null!);
 ```
 
-We also create a custom hook that returns a handle to the `AuthContext`
+We also create a custom hook that returns a handle to the `AuthContext`.
 
 ```ts title="src/hooks/useAuth.ts"
 import { useContext } from 'react';
@@ -234,7 +238,7 @@ We will wire up the flow inside the AuthProvider.
     export default RequireAuth;
     ```
 
-    We then use the `from` state in the `redirectUrl` to construct the `oAuthClient`.
+    We then use the `from` state in the `redirectUrl` to construct the `oAuthClient` inside `AuthProvider`.
 
     ```ts title="src/lib/AuthProvider.tsx"
     let location = useLocation();
@@ -280,7 +284,7 @@ We will wire up the flow inside the AuthProvider.
 
 ### Make Authentication Request
 
-Let's add a page to begin the authenticate flow. This page initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
+Let's add a page to begin the authenticate flow. This page initiates (by calling `signIn` from the `AuthContext`) the SAML SSO flow by redirecting the users to their configured Identity Provider (via Jackson).
 
 The user will be redirected to the IdP when clicking the "Continue with SAML SSO" button.
 
