@@ -459,6 +459,10 @@ export const getProfileByJWT = async () => {
 };
 ```
 
-### Authenticate User
+## Ready to go
 
-Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
+That's it, your react app is ready for Single Sign-On. 🎉
+
+## Next steps
+
+- Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)
