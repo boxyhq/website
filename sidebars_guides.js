@@ -28,6 +28,7 @@ module.exports = {
             'jackson/frameworks/adonis',
             'jackson/frameworks/express',
             'jackson/frameworks/nextjs',
+            'jackson/frameworks/react',
             'jackson/frameworks/remix',
             'jackson/frameworks/laravel',
             'jackson/frameworks/rails',
