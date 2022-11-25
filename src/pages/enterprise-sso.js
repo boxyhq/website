@@ -110,8 +110,8 @@ const EnterpriseSSO = () => {
       >
         <p>
           With our open-source solution, you can deploy Enterprise SSO with a
-          straightforward integration that connects to all IdPs. You simply
-          integrate with our product in a few lines of code.
+          straightforward integration that connects to all Identity Providers.
+          You simply integrate with our product in a few lines of code.
         </p>
         <p>Since it's self-hosted, you keep full control over your data.</p>
       </FeatureSection>
