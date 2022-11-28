@@ -1,6 +1,6 @@
 ---
 title: Implement Directory Sync (SCIM) to your Next.js App using Jackson
-sidebar_label: Next.js 
+sidebar_label: Next.js
 ---
 
 import Tabs from '@theme/Tabs';
@@ -49,7 +49,7 @@ export default async function init() {
   if (!g.directorySync) {
     const ret = await jackson(opts);
 
-    directorySync = ret.directorySync;
+    directorySync = ret.directorySyncController;
     g.directorySync = directorySync;
   } else {
     directorySync = g.directorySync;
@@ -119,12 +119,12 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 
 #### Users Provisioning
 
-| Route       | Methods    |
-| ----------- | ---------- |
-| /Users      | POST       |
-| /Users/:id  | GET        |
-| /Users/:id  | PUT, PATCH |
-| /Users/:id  | DELETE     |
+| Route      | Methods    |
+| ---------- | ---------- |
+| /Users     | POST       |
+| /Users/:id | GET        |
+| /Users/:id | PUT, PATCH |
+| /Users/:id | DELETE     |
 
 #### Push Groups and Group Memberships
 
@@ -167,7 +167,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       filter: req.query.filter as string,
     },
   };
-  
+
   // Handle the requests
   // highlight-start
   const { status, data } = await directorySync.requests.handle(request, async (event: DirectorySyncEvent) => {

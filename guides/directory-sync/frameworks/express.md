@@ -1,6 +1,6 @@
 ---
 title: Implement Directory Sync (SCIM) to your Express.js App using Jackson
-sidebar_label: Express.js 
+sidebar_label: Express.js
 ---
 
 import Tabs from '@theme/Tabs';
@@ -36,14 +36,14 @@ const opts = {
   db: {
     engine: 'sql',
     type: 'postgres',
-    url: "postgres://username:password@localhost:5432/your-database-name",
+    url: 'postgres://username:password@localhost:5432/your-database-name',
   },
 };
 
 async function init() {
   const ret = await require('@boxyhq/saml-jackson').controllers(opts);
 
-  directorySync = ret.directorySync;
+  directorySync = ret.directorySyncController;
 }
 ```
 
@@ -105,12 +105,12 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 
 #### Users Provisioning
 
-| Route       | Methods    |
-| ----------- | ---------- |
-| /Users      | POST       |
-| /Users/:id  | GET        |
-| /Users/:id  | PUT, PATCH |
-| /Users/:id  | DELETE     |
+| Route      | Methods    |
+| ---------- | ---------- |
+| /Users     | POST       |
+| /Users/:id | GET        |
+| /Users/:id | PUT, PATCH |
+| /Users/:id | DELETE     |
 
 #### Push Groups and Group Memberships
 
@@ -126,37 +126,43 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 Now let's add the route to handle the incoming requests from the Directory Sync providers.
 
 ```javascript
-router.all('/api/scim/:directoryId/:resourceType/:resourceId?', async (req, res, next) => {
-  const { params, method, body, headers, query } = req;
-  const { directoryId, resourceType, resourceId } = params;
+router.all(
+  '/api/scim/:directoryId/:resourceType/:resourceId?',
+  async (req, res, next) => {
+    const { params, method, body, headers, query } = req;
+    const { directoryId, resourceType, resourceId } = params;
 
-  const authToken = headers.authorization.split(' ')[1];
+    const authToken = headers.authorization.split(' ')[1];
 
-  // Construct the event
-  const request = {
-    method: method,
-    body: body ? JSON.parse(body) : undefined,
-    directoryId: directoryId,
-    resourceId: resourceId,
-    resourceType: resourceType.toLowerCase(),
-    apiSecret: authToken,
-    query: {
-      count: query.count ? parseInt(query.count) : undefined,
-      startIndex: query.startIndex ? parseInt(query.startIndex) : undefined,
-      filter: query.filter,
-    },
-  };
-  
-  // Handle the requests
-  // highlight-start
-  const { status, data } = await directorySync.requests.handle(request, async (event) => {
-    console.log(event); // Do something with the event
-  });
-  // highlight-end
+    // Construct the event
+    const request = {
+      method: method,
+      body: body ? JSON.parse(body) : undefined,
+      directoryId: directoryId,
+      resourceId: resourceId,
+      resourceType: resourceType.toLowerCase(),
+      apiSecret: authToken,
+      query: {
+        count: query.count ? parseInt(query.count) : undefined,
+        startIndex: query.startIndex ? parseInt(query.startIndex) : undefined,
+        filter: query.filter,
+      },
+    };
 
-  // Send the response back
-  return res.status(status).json(data);
-});
+    // Handle the requests
+    // highlight-start
+    const { status, data } = await directorySync.requests.handle(
+      request,
+      async (event) => {
+        console.log(event); // Do something with the event
+      }
+    );
+    // highlight-end
+
+    // Send the response back
+    return res.status(status).json(data);
+  }
+);
 ```
 
 `router.all('/api/scim/:directoryId/:resourceType/:resourceId?', async (req, res, next) => {...})` is a catch all paths route. Matched parameters will be sent as a parameter to the route.
