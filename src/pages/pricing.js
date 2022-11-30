@@ -1,138 +1,206 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import SectionLayout from '../components/SectionLayout';
 
-const title = 'Pricing';
+const title = 'Pricing for teams and companies of all sizes';
 const description =
   'BoxyHQ is proudly open-source and all of our solutions are available to self-host for free.';
 
 const Pricing = () => {
   return (
     <Layout title={title} description={description}>
-      <SectionLayout title={title} description={description}>
-        <table style={{ width: '100%' }}>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Self Hosted</th>
-              <th>Self-hosted Premium</th>
-              <th>SaaS</th>
-              <th>Enterprise</th>
-            </tr>
-          </thead>
-          <tbody>
-            {pricingPlans.map((pricingPlan) => (
+      <div className="container" style={{ padding: '50px 20px 50px 20px' }}>
+        <h1 className="text--center">{title}</h1>
+        <h2 className="text--center" style={{ fontWeight: 'normal' }}>
+          {description}
+        </h2>
+        <div className="pricing__section__desktop">
+          <table className="pricing__table">
+            <thead>
               <tr>
-                <td>{pricingPlan.feature}</td>
-                <td>{pricingPlan.plans['self-hosted']}</td>
-                <td>{pricingPlan.plans['self-hosted-premium']}</td>
-                <td>{pricingPlan.plans['saas']}</td>
-                <td>{pricingPlan.plans['enterprise']}</td>
+                <th></th>
+                <th>Self-Hosted</th>
+                <th>Self-Hosted Premium</th>
+                <th>SaaS</th>
+                <th>Enterprise</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </SectionLayout>
-      {/* <div className="container">
-        <div className="row">
-          <div className="col col--12">
-            
-          </div>
+            </thead>
+            <tbody>
+              {pricingPlans.map((pricingPlan) => (
+                <tr key={pricingPlan.feature}>
+                  <td
+                    style={{
+                      textAlign: 'left',
+                      fontWeight: '500',
+                    }}
+                  >
+                    {pricingPlan.feature}
+                  </td>
+                  <td>{pricingPlan.tiers['self-hosted']}</td>
+                  <td>{pricingPlan.tiers['self-hosted-premium']}</td>
+                  <td>{pricingPlan.tiers['saas']}</td>
+                  <td>{pricingPlan.tiers['enterprise']}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </div> */}
+        <div className="pricing__section__mobile">
+          <PricingTableMobile title="Self-Hosted" tier="self-hosted" />
+          <PricingTableMobile
+            title="Self-Hosted Premium"
+            tier="self-hosted-premium"
+          />
+          <PricingTableMobile title="SaaS" tier="saas" />
+          <PricingTableMobile title="Enterprise" tier="enterprise" />
+        </div>
+      </div>
     </Layout>
   );
 };
 
-export default Pricing;
+const PricingTableMobile = ({ title, tier }) => {
+  return (
+    <table className="pricing__table">
+      <thead>
+        <tr>
+          <th colSpan={2} style={{ textAlign: 'left' }}>
+            {title}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {pricingPlans.map((pricingPlan) => (
+          <tr key={pricingPlan.feature}>
+            <td
+              style={{
+                textAlign: 'left',
+                fontWeight: '400',
+                fontSize: '.875rem',
+              }}
+            >
+              {pricingPlan.feature}
+            </td>
+            <td style={{ textAlign: 'right' }}>{pricingPlan.tiers[tier]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+const ContactUs = () => {
+  return <a href="mailto:deepak@boxyhq.com">Contact us</a>;
+};
 
 const pricingPlans = [
   {
     feature: 'Premium features',
-    plans: {
-      'self-hosted': '✅',
+    tiers: {
+      'self-hosted': '❌',
       'self-hosted-premium': '✅',
       saas: '✅',
-      enterprise: '❌',
+      enterprise: '✅',
     },
   },
   {
     feature: 'Admin Portal',
-    plans: {
+    tiers: {
       'self-hosted': '✅',
+      'self-hosted-premium': '✅',
+      saas: '✅',
+      enterprise: '✅',
+    },
+  },
+  {
+    feature: 'Discord Support',
+    tiers: {
+      'self-hosted': '✅',
+      'self-hosted-premium': '✅',
+      saas: '✅',
+      enterprise: '✅',
+    },
+  },
+  {
+    feature: 'Email and chat Support',
+    tiers: {
+      'self-hosted': '❌',
+      'self-hosted-premium': '✅',
+      saas: '✅',
+      enterprise: '✅',
+    },
+  },
+  {
+    feature: 'Phone support',
+    tiers: {
+      'self-hosted': '❌',
+      'self-hosted-premium': '✅',
+      saas: '✅',
+      enterprise: '✅',
+    },
+  },
+  {
+    feature: 'Custom deployment',
+    tiers: {
+      'self-hosted': '❌',
       'self-hosted-premium': '✅',
       saas: '❌',
       enterprise: '✅',
     },
   },
   {
-    feature: 'Discord Support',
-    plans: {
-      'self-hosted': '✅',
-      'self-hosted-premium': '✅',
-      saas: '✅',
-      enterprise: '❌',
+    feature: 'Custom SLAs',
+    tiers: {
+      'self-hosted': '❌',
+      'self-hosted-premium': '❌',
+      saas: '❌',
+      enterprise: '✅',
     },
   },
   {
-    feature: 'Enterprise SSO  Directory Sync',
-    plans: {
+    feature: 'Dedicated infrastructure capacity',
+    tiers: {
+      'self-hosted': '❌',
+      'self-hosted-premium': '❌',
+      saas: '❌',
+      enterprise: '✅',
+    },
+  },
+  {
+    feature: 'Custom terms & contract',
+    tiers: {
+      'self-hosted': '❌',
+      'self-hosted-premium': '❌',
+      saas: '❌',
+      enterprise: '✅',
+    },
+  },
+  {
+    feature: 'Enterprise SSO & Directory Sync',
+    tiers: {
       'self-hosted': 'Free forever',
       'self-hosted-premium': '$49 per SSO or Directory Sync connection',
       saas: '$49 per SSO or Directory Sync connection',
-      enterprise: 'Contact us',
+      enterprise: <ContactUs />,
     },
   },
   {
     feature: 'Audit logs',
-    plans: {
+    tiers: {
       'self-hosted': 'Free forever',
-      'self-hosted-premium': 'Contact us',
-      saas: 'Contact us',
-      enterprise: 'Contact us',
+      'self-hosted-premium': <ContactUs />,
+      saas: <ContactUs />,
+      enterprise: <ContactUs />,
     },
   },
   {
     feature: 'Privacy Vault',
-    plans: {
+    tiers: {
       'self-hosted': 'Free forever',
-      'self-hosted-premium': 'Contact us',
-      saas: 'Contact us',
-      enterprise: 'Contact us',
+      'self-hosted-premium': <ContactUs />,
+      saas: <ContactUs />,
+      enterprise: <ContactUs />,
     },
   },
 ];
 
-// 'self-hosted': '',
-// 'self-hosted-premium': '',
-// saas: '',
-// enterprise: '',
-
-// {
-/* <div className="row">
-<div class="col">
-  <div class="col-demo">1</div>
-</div>
-<div class="col">
-  <div class="col-demo red">
-    <h3>Self Hosted</h3>
-    <span className="pricing__feature">Free</span>
-    <span className="pricing__feature">❌</span>
-    <span className="pricing__feature">✅</span>
-    {/* <ul>
-      <li>❌</li>
-      <li>✅</li>
-    </ul> */
-// }
-//   </div>
-// </div>
-// <div class="col">
-//   <div class="col-demo red">3</div>
-// </div>
-// <div class="col">
-//   <div class="col-demo">4</div>
-// </div>
-// <div class="col">
-//   <div class="col-demo">5</div>
-// </div>
-// </div> */}
+export default Pricing;

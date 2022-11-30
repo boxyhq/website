@@ -130,10 +130,32 @@ html[data-theme='dark'] .header-github-link:before {
   flex-wrap: wrap;
 }
 
-.pricing__feature {
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
+/* Pricing page */
+
+.pricing__table {
+  width: 100%;
+  display: inline-table !important;
+  table-layout: fixed;
+  margin-top: 20px;
+  border: 1px solid #f1f3f5;
+}
+
+.pricing__table td,
+.pricing__table th {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #f1f3f5;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.pricing__table tr,
+.pricing__table tr:nth-child(2n) {
+  background-color: white;
+}
+
+.pricing__section__desktop {
+  display: none;
 }
 
 /* Mobile view */
@@ -146,5 +168,13 @@ html[data-theme='dark'] .header-github-link:before {
 
   .hero__image {
     display: flex;
+  }
+
+  .pricing__section__desktop {
+    display: block;
+  }
+
+  .pricing__section__mobile {
+    display: none;
   }
 }
