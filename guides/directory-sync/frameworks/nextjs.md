@@ -27,10 +27,10 @@ npm i --save @boxyhq/saml-jackson
 Create a new file, `jackson.ts` that holds the Jackson initialization.
 
 ```javascript title="lib/jackson.ts"
-import type { JacksonOption, DirectorySync } from '@boxyhq/saml-jackson';
+import type { JacksonOption, IDirectorySyncController } from '@boxyhq/saml-jackson';
 import jackson from '@boxyhq/saml-jackson';
 
-let directorySyncController: DirectorySync;
+let directorySyncController: IDirectorySyncController;
 
 const g = global as any;
 
@@ -146,7 +146,7 @@ import type { DirectorySyncRequest, HTTPMethod, DirectorySyncEvent } from '@boxy
 import jackson from '../../../lib/jackson';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { directorySync } = await jackson();
+  const { directorySyncController } = await jackson();
 
   const { method, query, body } = req;
 
