@@ -130,6 +130,12 @@ html[data-theme='dark'] .header-github-link:before {
   flex-wrap: wrap;
 }
 
+.pricing__feature {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
 /* Mobile view */
 
 @media screen and (min-width: 996px) {
