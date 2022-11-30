@@ -151,7 +151,7 @@ html[data-theme='dark'] .header-github-link:before {
 
 .pricing__table tr,
 .pricing__table tr:nth-child(2n) {
-  background-color: white;
+  background: none;
 }
 
 .pricing__section__desktop {
