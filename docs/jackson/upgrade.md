@@ -1,5 +1,9 @@
 # Upgrade Guide
 
+## Upgrading to v1.3.10
+
+1. For users of our npm library, `directorySync` has been renamed to `directorySyncController`.
+
 ## Upgrading to v1.3.6
 
 1. `samlSPConfig.get()` is now async since we introduced a global certificate instead of per tenant certificate to ease the SAML setup process.
