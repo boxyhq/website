@@ -47,7 +47,11 @@ const PricingSectionDesktop = () => {
               <td>
                 <Text text={pricingPlan.tiers['self-hosted']} />
               </td>
-              <td>
+              <td
+                style={{
+                  background: 'rgb(37 194 160 / 31%)',
+                }}
+              >
                 <Text text={pricingPlan.tiers['self-hosted-premium']} />
               </td>
               <td>
