@@ -30,7 +30,7 @@ Create a new file, `jackson.ts` that holds the Jackson initialization.
 import type { JacksonOption, DirectorySync } from '@boxyhq/saml-jackson';
 import jackson from '@boxyhq/saml-jackson';
 
-let directorySync: DirectorySync;
+let directorySyncController: DirectorySync;
 
 const g = global as any;
 
@@ -46,17 +46,17 @@ const opts = {
 } as JacksonOption;
 
 export default async function init() {
-  if (!g.directorySync) {
+  if (!g.directorySyncController) {
     const ret = await jackson(opts);
 
-    directorySync = ret.directorySyncController;
-    g.directorySync = directorySync;
+    directorySyncController = ret.directorySyncController;
+    g.directorySyncController = directorySyncController;
   } else {
-    directorySync = g.directorySync;
+    directorySyncController = g.directorySyncController;
   }
 
   return {
-    directorySync,
+    directorySyncController,
   };
 }
 ```
@@ -68,7 +68,7 @@ The first step towards the integration is creating a directory for a tenant.
 Directory Sync providers (Identity Providers) require you to provide a **SCIM Base URL** and **SCIM Auth token**. Both are unique for each directory your app users create.
 
 ```javascript
-const { data, error } = await directorySync.directories.create({
+const { data, error } = await directorySyncController.directories.create({
   name: 'any-name',
   type: 'okta-scim-v2',
   tenant: "tenant-identifier"
@@ -109,7 +109,7 @@ For example, see the demo below.
 
 ![create-directory](/videos/create-directory.gif)
 
-You can retrieve the supported list of Directory Sync providers by calling the method `directorySync.providers()`.
+You can retrieve the supported list of Directory Sync providers by calling the method `directorySyncController.providers()`.
 
 ### Understand SCIM API Requests
 
@@ -170,7 +170,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Handle the requests
   // highlight-start
-  const { status, data } = await directorySync.requests.handle(request, async (event: DirectorySyncEvent) => {
+  const { status, data } = await directorySyncController.requests.handle(request, async (event: DirectorySyncEvent) => {
     console.log(event); // Do something with the event
   });
   // highlight-end
@@ -189,7 +189,7 @@ const extractAuthToken = (req: NextApiRequest): string | null => {
 
 `pages/api/scim/[...directory].ts` is a catch all paths route. Matched parameters will be sent as a query parameter to the page, and it will always be an array.
 
-Look at the highlighted lines, and you can pass an async callback method to the `directorySync.requests.handle` as a second argument. This method will be called with SCIM event as the first argument.
+Look at the highlighted lines, and you can pass an async callback method to the `directorySyncController.requests.handle` as a second argument. This method will be called with SCIM event as the first argument.
 
 Checkout the documentation for [SCIM events and Types](/docs/directory-sync/events) to understand more about the events.
 
