@@ -10,9 +10,9 @@ import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import SectionLayout from '../components/SectionLayout';
 
-const title = 'Enterprise SSO';
+const title = 'Quickly integrate Enterprise SSO';
 const description =
-  'Save hundreds of development hours and integrate SSO to your SaaS app in minutes. Supports SAML & OIDC';
+  'Save hundreds of development hours by easily integrating SSO into your SaaS app. Our solution supports SAML & OIDC.';
 
 const ProductIcon =
   require('../../static/img/products/saml-jackson/logo.svg').default;
@@ -28,30 +28,28 @@ const Icon3 =
 
 const benefits = [
   {
-    title: 'Increased Security',
-    description: `By deploying SAML SSO you are giving your customers the
-    ability to control access management on their own system
-    which prevents staff from password sharing, having the
-    correct access and giving and removing access as needed
-    from a central point.`,
+    title: 'Improved Security',
+    description: `By deploying SAML SSO, you can enable your customers to manage 
+    access control on their own systems. This helps prevent password sharing, 
+    ensures that staff have the correct access, and allows them to easily grant 
+    and revoke access from a central location.`,
     icon: require('../../static/img/products/icons/security.svg').default,
   },
   {
-    title: 'Improved user experience',
-    description: `The login experience can be a tricky one to get right and
-    if you can allow your customers to simply go to their IdP
-    dashboard and click on an icon to login into your product
-    they will have a much better experience with your product.`,
+    title: 'Enhanced user experience',
+    description: `Improving the login experience is crucial for providing a good 
+    user experience. By allowing your customers to log in to your product via 
+    their IdP dashboard with a single click, you can significantly improve their 
+    experience with your product.`,
     icon: require('../../static/img/products/icons/futuristic_interface.svg')
       .default,
   },
   {
-    title: 'Reduced cost',
-    description: `Apart from the cost saving of using an out-of-the-box
-    solution vs building your own custom version, without SAML
-    you have to maintain account information across multiple
-    services but when you use SAML this is all managed by the
-    IdP.`,
+    title: 'Reduced costs',
+    description: `In addition to the cost savings of using an out-of-the-box 
+    solution instead of building a custom version, implementing SAML can also
+     save you money by eliminating the need to maintain account information 
+     across multiple services. With SAML, this is all managed by the IdP.`,
     icon: require('../../static/img/products/icons/savings.svg').default,
   },
 ];
@@ -102,53 +100,55 @@ const EnterpriseSSO = () => {
       </SectionLayout>
 
       <FeatureSection
-        title="Simple integration"
+        title="Effortless integration"
         btnLink="/docs/jackson/overview"
         btnText="View docs"
         image={Icon1}
         direction="right"
       >
         <p>
-          With our open-source solution, you can deploy Enterprise SSO with a
-          straightforward integration that connects to all Identity Providers.
-          You simply integrate with our product in a few lines of code.
+          Our open-source solution makes it easy to deploy Enterprise SSO with a
+          simple integration that connects to all Identity Providers. You can
+          integrate with our product using just a few lines of code.
         </p>
-        <p>Since it's self-hosted, you keep full control over your data.</p>
+        <p>
+          Since our solution is self-hosted, you maintain complete control over
+          your data.
+        </p>
       </FeatureSection>
 
       <FeatureSection
-        title="Save time"
+        title="Reduce development time"
         btnLink="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
         btnText="Book a demo"
         image={Icon2}
         direction="left"
       >
         <p>
-          Building your own SAML or OpenID Connect integration for each IdP can
-          be very resource heavy and take a long time. You will end up building
-          a custom integration for each IdP your customers use and this could
-          take months!
+          Creating a custom SAML or OpenID Connect integration for each IdP can
+          be very time-consuming and require a significant amount of resources.
+          This can lead to months of development time spent building custom
+          integrations for each IdP your customers use.
         </p>
         <p>
-          With our SSO solution you can go from the first line of code to
-          deploying in production in days instead of weeks! We also provide you
-          with custom integration support along the way so you have help each
-          step of the way.
+          Our SSO solution allows you to go from the first line of code to
+          deployment in just a few days, saving you time and effort. Plus, we
+          offer custom integration support to help you every step of the way.{' '}
         </p>
       </FeatureSection>
 
       <FeatureSection
-        title="Become enterprise ready"
+        title="Achieve enterprise-readiness"
         btnLink="/blog/sso-building-blocks"
         btnText="Read more"
         image={Icon3}
         direction="right"
       >
         <p>
-          Most enterprises already use an IdP and will prefer solution providers
-          who have a Enterprise SSO integration. This is because they already
-          use SAML or OpenID Connect for access management and security so
-          anything outside this workflow will be a hassle for them.
+          Most enterprises already use an IdP, so they prefer solution providers
+          with an Enterprise SSO integration. This is because they are already
+          using SAML or OpenID Connect for access management and security, so
+          anything outside of this workflow will be inconvenient for them.
         </p>
       </FeatureSection>
 
@@ -156,9 +156,9 @@ const EnterpriseSSO = () => {
 
       <BenefitsSection
         benefits={benefits}
-        title="Benefits"
-        description="Deploying Enterprise SSO for your customer has many benefits and has become
-          an expected feature if you have enterprise customers."
+        title="The advantages of Enterprise SSO"
+        description="
+        Deploying Enterprise SSO for your customers has many benefits and is now an expected feature for enterprises."
       />
 
       <DeveloperCommunitySection />
