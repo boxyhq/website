@@ -158,6 +158,10 @@ html[data-theme='dark'] .header-github-link:before {
   display: none;
 }
 
+.pricing__table .highlight {
+  background: rgb(37 194 160 / 31%);
+}
+
 /* Mobile view */
 
 @media screen and (min-width: 996px) {

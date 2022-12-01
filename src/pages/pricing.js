@@ -34,34 +34,44 @@ const PricingSectionDesktop = () => {
           </tr>
         </thead>
         <tbody>
-          {pricingPlans.map((pricingPlan) => (
-            <tr key={pricingPlan.feature}>
-              <td
-                style={{
-                  textAlign: 'left',
-                  fontWeight: '500',
-                }}
-              >
-                {pricingPlan.feature}
-              </td>
-              <td>
-                <Text text={pricingPlan.tiers['self-hosted']} />
-              </td>
-              <td
-                style={{
-                  background: 'rgb(37 194 160 / 31%)',
-                }}
-              >
-                <Text text={pricingPlan.tiers['self-hosted-premium']} />
-              </td>
-              <td>
-                <Text text={pricingPlan.tiers['saas']} />
-              </td>
-              <td>
-                <Text text={pricingPlan.tiers['enterprise']} />
-              </td>
-            </tr>
-          ))}
+          {pricingPlans.map((pricingPlan) => {
+            return (
+              <>
+                <tr key={pricingPlan.feature}>
+                  <td
+                    style={{
+                      textAlign: 'left',
+                      fontWeight: '500',
+                    }}
+                  >
+                    {pricingPlan.feature}
+                  </td>
+                  <td>
+                    <Text text={pricingPlan.tiers['self-hosted']} />
+                  </td>
+                  <td className="highlight">
+                    <Text text={pricingPlan.tiers['self-hosted-premium']} />
+                  </td>
+                  <td>
+                    <Text text={pricingPlan.tiers['saas']} />
+                  </td>
+                  <td>
+                    <Text text={pricingPlan.tiers['enterprise']} />
+                  </td>
+                </tr>
+                {pricingPlan.lineBreak && (
+                  <tr key={pricingPlan.feature}>
+                    <td
+                      colSpan={5}
+                      style={{
+                        padding: '20px 0',
+                      }}
+                    ></td>
+                  </tr>
+                )}
+              </>
+            );
+          })}
         </tbody>
       </table>
     </div>
@@ -248,6 +258,7 @@ const pricingPlans = [
       saas: 'no',
       enterprise: 'yes',
     },
+    lineBreak: true,
   },
   {
     feature: 'Enterprise SSO & Directory Sync',
