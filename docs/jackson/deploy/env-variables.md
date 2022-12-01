@@ -80,6 +80,30 @@ Default: `false`
 
 NPM library option: `idpEnabled`
 
+### **PUBLIC_KEY**
+
+This is the public key of the private key used to sign the SAML requests. Jackson expects the public key to be base64 encoded.
+
+NPM library option: `certs.publicKey`
+
+### **PRIVATE_KEY**
+
+This is the private key used to sign the SAML requests. Jackson expects the private key to be base64 encoded.
+
+NPM library option: `certs.privateKey`
+
+To generate a private key and public key pair you can use the following command:
+
+```bash
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out public.crt -sha256 -days 365 -nodes
+
+# Convert the public key to base64
+cat public.crt | base64
+
+# Convert the private key to base64
+cat key.pem | base64
+```
+
 ## OpenID configuration
 
 For supporting OpenID flow, we need to set the algorithm and keys used to sign the ID token JWT.
