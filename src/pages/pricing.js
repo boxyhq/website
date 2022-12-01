@@ -29,7 +29,7 @@ const PricingSectionDesktop = () => {
             <th></th>
             <th>Self-Hosted</th>
             <th>Self-Hosted Premium</th>
-            <th>SaaS</th>
+            <th>SaaS (hosted by us)</th>
             <th>Enterprise</th>
           </tr>
         </thead>
@@ -117,7 +117,7 @@ const PricingSectionMobile = () => {
         title="Self-Hosted Premium"
         tier="self-hosted-premium"
       />
-      <PricingTableMobile title="SaaS" tier="saas" />
+      <PricingTableMobile title="SaaS (hosted by us)" tier="saas" />
       <PricingTableMobile title="Enterprise" tier="enterprise" />
     </div>
   );
