@@ -181,7 +181,7 @@ const pricingPlans = [
   {
     feature: 'Premium features',
     tiers: {
-      'self-hosted': 'yes',
+      'self-hosted': 'no',
       'self-hosted-premium': 'yes',
       saas: 'yes',
       enterprise: 'yes',
