@@ -25,10 +25,10 @@ You will also need to map some attributes of the claims so we can fetch the prof
 9. Mapping attributes:
    On the Configure Claim Rule screen, enter a Claim Rule Name of your choice, select Active Directory as the Attribute Store, then add the following mapping:
 
-- From the LDAP Attribute column, select E-Mail-Addresses. From the Outgoing Claim Type, type E-Mail Address.
-- From the LDAP Attribute column, select Given-Name. From the Outgoing Claim Type, type Given Name.
-- From the LDAP Attribute column, select Surname. From the Outgoing Claim Type, type Surname.
-- From the LDAP Attribute column, select User-Principal-Name. From the Outgoing Claim Type, type Name ID.
+- From the LDAP Attribute column, select `E-Mail-Addresses`. From the Outgoing Claim Type, type `E-Mail Address`.
+- From the LDAP Attribute column, select `Given-Name`. From the Outgoing Claim Type, type `Given Name`.
+- From the LDAP Attribute column, select `Surname`. From the Outgoing Claim Type, type `Surname`.
+- From the LDAP Attribute column, select `User-Principal-Name`. From the Outgoing Claim Type, type `Name ID`.
 
 10. Finally open Windows PowerShell as an administrator, then run the following command:
 
