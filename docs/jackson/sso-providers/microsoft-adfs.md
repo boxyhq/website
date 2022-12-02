@@ -5,7 +5,11 @@ sidebar_label: Microsoft AD FS
 
 # Microsoft AD FS SAML SSO
 
-In AD FS a relying party (RP) trust needs to be setup for SAML SSO. You can supply our SP metadata file and let AD FS automatically pick up the configuration. Or you can manually enter the details of our SSO service URL and public certificate.
+In this section, we will show you how to set up your own custom SAML application for Microsoft AD FS.
+
+In AD FS, a relying party (RP) trust needs to be set up. You can supply our SP metadata file, usually located at `https://<your-hosted-url>/.well-known/sp-metadata` and let AD FS automatically pick up the configuration.
+
+If you are manually entering the details then you'll find the details you need in [this section](./generic-saml.md). The public certificate is needed for Signature verification and is usually located at `https://<your-hosted-url>/.well-known/saml.cer` for Signature verification.
 
 You will also need to map some attributes of the claims so we can fetch the profile information for your user.
 

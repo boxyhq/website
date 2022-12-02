@@ -15,5 +15,5 @@ SAML Jackson supports the following SSO providers:
 - [Okta](./okta.md)
 - [OneLogin](./onelogin.md)
 - [PingOne](./pingone.md)
-- [Generic SAML](./generic-saml.md)
+- [Generic SAML 2.0 Provider](./generic-saml.md)
 - [OpenID Connect Provider](./generic-oidc.md)

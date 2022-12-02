@@ -1,6 +1,6 @@
 ---
 title: Set up your own custom SAML application for a Generic IdP
-sidebar_label: Generic SAML
+sidebar_label: Generic SAML 2.0 Provider
 ---
 
 # Generic SAML
