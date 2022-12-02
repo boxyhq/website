@@ -29,6 +29,7 @@ module.exports = {
           items: [
             'jackson/sso-providers/auth0',
             'jackson/sso-providers/azure',
+            'jackson/sso-providers/microsoft-adfs',
             'jackson/sso-providers/google',
             'jackson/sso-providers/jumpcloud',
             'jackson/sso-providers/okta',
