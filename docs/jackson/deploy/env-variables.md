@@ -189,17 +189,25 @@ NPM library option: `preLoadedConnection`
 
 Jackson supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
 
-### **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
+### **OTEL_EXPORTER_OTLP_ENDPOINT** or **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
 
 Target URL to which the exporter is going to send metrics.
 
 Example: `https://ingest.lightstep.com:443/metrics/otlp/v0.6`
 
-### **OTEL_EXPORTER_OTLP_HEADERS**
+### **OTEL_EXPORTER_OTLP_HEADERS** or **OTEL_EXPORTER_OTLP_METRICS_HEADERS**
 
 Headers relevant for the endpoint, useful for specifying authentication details for providers.
 
 Example: `lightstep-access-token=<token>,...`
+
+### **OTEL_EXPORTER_OTLP_PROTOCOL** or **OTEL_EXPORTER_OTLP_METRICS_PROTOCOL**
+
+The transport protocol. Options MUST be one of: `grpc`, `http/protobuf` or `http/json`.
+
+### **OTEL_EXPORTER_DEBUG**
+
+Set this to `true` to enable debug logs for Opentelemetry. This is only meant for purposes of debugging otel locally.
 
 ## Admin Portal configuration
 
