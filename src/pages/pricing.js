@@ -1,36 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Layout from '@theme/Layout';
 
 import Modal from '../components/Modal';
-import { HubSpotContactForm } from '../components/HubSpotForm';
+import { HubSpotPricingContactForm } from '../components/HubSpotForm';
 
 const title = 'Pricing for teams and companies of all sizes';
 const description =
   'BoxyHQ is proudly open-source and all of our solutions are available to self-host for free.';
+
+const ModalContext = React.createContext();
+
+const ModalProvider = ({ setOpened, children }) => {
+  return (
+    <ModalContext.Provider value={{ setOpened }}>
+      {children}
+    </ModalContext.Provider>
+  );
+};
 
 const Pricing = () => {
   const [opened, setOpened] = useState(false);
 
   return (
     <Layout title={title} description={description}>
-      <div className="container" style={{ padding: '50px 20px 50px 20px' }}>
-        <h1 className="text--center">{title}</h1>
-        <h2 className="text--center" style={{ fontWeight: 'normal' }}>
-          {description}
-        </h2>
-        <PricingSectionDesktop setOpened={setOpened} />
-        <PricingSectionMobile setOpened={setOpened} />
-      </div>
-      {opened && (
-        <Modal setOpened={setOpened}>
-          <HubSpotContactForm />
+      <ModalProvider setOpened={setOpened}>
+        <div
+          className="container"
+          style={{ padding: '50px 20px 50px 20px' }}
+          id="page-pricing"
+        >
+          <h1 className="text--center">{title}</h1>
+          <h2 className="text--center" style={{ fontWeight: 'normal' }}>
+            {description}
+          </h2>
+          <PricingSectionDesktop />
+          <PricingSectionMobile />
+        </div>
+        <Modal opened={opened} title="Contact Us">
+          <HubSpotPricingContactForm />
         </Modal>
-      )}
+      </ModalProvider>
     </Layout>
   );
 };
 
-const PricingSectionDesktop = ({ setOpened }) => {
+const PricingSectionDesktop = () => {
   return (
     <div className="pricing__section__desktop">
       <table className="pricing__table">
@@ -62,20 +76,13 @@ const PricingSectionDesktop = ({ setOpened }) => {
                   <td className="highlight">
                     <TextToComponent
                       text={pricingPlan.tiers['self-hosted-premium']}
-                      setOpened={setOpened}
                     />
                   </td>
                   <td>
-                    <TextToComponent
-                      text={pricingPlan.tiers['saas']}
-                      setOpened={setOpened}
-                    />
+                    <TextToComponent text={pricingPlan.tiers['saas']} />
                   </td>
                   <td>
-                    <TextToComponent
-                      text={pricingPlan.tiers['enterprise']}
-                      setOpened={setOpened}
-                    />
+                    <TextToComponent text={pricingPlan.tiers['enterprise']} />
                   </td>
                 </tr>
                 {pricingPlan.lineBreak && (
@@ -97,7 +104,7 @@ const PricingSectionDesktop = ({ setOpened }) => {
   );
 };
 
-const PricingTableMobile = ({ title, tier, setOpened }) => {
+const PricingTableMobile = ({ title, tier }) => {
   return (
     <table className="pricing__table">
       <thead>
@@ -119,10 +126,7 @@ const PricingTableMobile = ({ title, tier, setOpened }) => {
               {pricingPlan.feature}
             </td>
             <td style={{ textAlign: 'right' }}>
-              <TextToComponent
-                text={pricingPlan.tiers[tier]}
-                setOpened={setOpened}
-              />
+              <TextToComponent text={pricingPlan.tiers[tier]} />
             </td>
           </tr>
         ))}
@@ -131,25 +135,16 @@ const PricingTableMobile = ({ title, tier, setOpened }) => {
   );
 };
 
-const PricingSectionMobile = ({ setOpened }) => {
+const PricingSectionMobile = () => {
   return (
     <div className="pricing__section__mobile">
       <PricingTableMobile title="Self-Hosted" tier="self-hosted" />
       <PricingTableMobile
         title="Self-Hosted Premium"
         tier="self-hosted-premium"
-        setOpened={setOpened}
       />
-      <PricingTableMobile
-        title="SaaS (hosted by us)"
-        tier="saas"
-        setOpened={setOpened}
-      />
-      <PricingTableMobile
-        title="Enterprise"
-        tier="enterprise"
-        setOpened={setOpened}
-      />
+      <PricingTableMobile title="SaaS (hosted by us)" tier="saas" />
+      <PricingTableMobile title="Enterprise" tier="enterprise" />
     </div>
   );
 };
@@ -194,13 +189,15 @@ const IconNo = () => {
   );
 };
 
-const ContactUsBtn = ({ setOpened }) => {
+const ContactUsBtn = () => {
+  const { setOpened } = useContext(ModalContext);
+
   return (
     <a
-      href="javascript:void(0);"
       onClick={() => {
         setOpened(true);
       }}
+      className="button button--link"
     >
       Contact us
     </a>
@@ -211,7 +208,7 @@ const TextToComponent = ({ text, setOpened }) => {
   const componentsMap = {
     yes: <IconYes />,
     no: <IconNo />,
-    contactUs: <ContactUsBtn setOpened={setOpened} />,
+    contactUs: <ContactUsBtn />,
   };
 
   return componentsMap[text] || <span>{text}</span>;

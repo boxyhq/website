@@ -26,7 +26,7 @@ const HubSpotForm = ({ region, portalId, formId }) => {
   );
 };
 
-export const HubSpotContactForm = () => {
+export const HubSpotPricingContactForm = () => {
   return (
     <HubSpotForm
       region="na1"

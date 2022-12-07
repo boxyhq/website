@@ -1,40 +1,57 @@
 import React from 'react';
+import ReactModal from 'react-modal';
 
-import styles from './Modal.module.css';
-
-const Modal = ({ title, setOpened, children }) => {
+const Modal = ({ children, title, opened }) => {
   return (
-    <>
-      <div className={styles.darkBG} onClick={() => setOpened(false)} />
-      <div className={styles.centered}>
-        <div className={styles.modal}>
-          <div className={styles.modalHeader}>
-            <h4 className={styles.heading}>{title || 'Contact Us'}</h4>
-          </div>
-          <button className={styles.closeBtn} onClick={() => setOpened(false)}>
-            x
-          </button>
-          <div className={styles.modalContent}>{children}</div>
-          {/* <div className={styles.modalActions}>
-            <div className={styles.actionsContainer}>
-              <button
-                className={styles.deleteBtn}
-                onClick={() => setIsOpen(false)}
-              >
-                Delete
-              </button>
-              <button
-                className={styles.cancelBtn}
-                onClick={() => setIsOpen(false)}
-              >
-                Cancel
-              </button>
-            </div>
-          </div> */}
-        </div>
+    <ReactModal
+      isOpen={opened}
+      style={{
+        overlay: {
+          position: 'fixed',
+          top: '80px',
+          backgroundColor: 'rgb(78 78 78 / 75%)',
+          display: 'flex',
+          justifyContent: 'center',
+        },
+        content: {
+          position: 'absolute',
+          border: '1px solid #ccc',
+          background: '#fff',
+          overflow: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          borderRadius: '4px',
+          outline: 'none',
+          padding: '30px',
+          margin: 'auto',
+          height: '550px',
+          width: '400px',
+        },
+      }}
+    >
+      <div>
+        <h4
+          style={{
+            fontSize: '25px',
+          }}
+        >
+          {title}
+        </h4>
+        {children}
       </div>
-    </>
+    </ReactModal>
   );
 };
+
+// TODO: Fix it
+
+// const ModalContext = React.createContext();
+
+// export const ModalProvider = ({ setOpened, children }) => {
+//   return (
+//     <ModalContext.Provider value={{ setOpened }}>
+//       {children}
+//     </ModalContext.Provider>
+//   );
+// };
 
 export default Modal;
