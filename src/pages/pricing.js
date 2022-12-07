@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '@theme/Layout';
+
+import Modal from '../components/Modal';
+import { HubSpotContactForm } from '../components/HubSpotForm';
 
 const title = 'Pricing for teams and companies of all sizes';
 const description =
   'BoxyHQ is proudly open-source and all of our solutions are available to self-host for free.';
 
 const Pricing = () => {
+  const [opened, setOpened] = useState(false);
+
   return (
     <Layout title={title} description={description}>
       <div className="container" style={{ padding: '50px 20px 50px 20px' }}>
@@ -13,14 +18,19 @@ const Pricing = () => {
         <h2 className="text--center" style={{ fontWeight: 'normal' }}>
           {description}
         </h2>
-        <PricingSectionDesktop />
-        <PricingSectionMobile />
+        <PricingSectionDesktop setOpened={setOpened} />
+        <PricingSectionMobile setOpened={setOpened} />
       </div>
+      {opened && (
+        <Modal setOpened={setOpened}>
+          <HubSpotContactForm />
+        </Modal>
+      )}
     </Layout>
   );
 };
 
-const PricingSectionDesktop = () => {
+const PricingSectionDesktop = ({ setOpened }) => {
   return (
     <div className="pricing__section__desktop">
       <table className="pricing__table">
@@ -47,16 +57,25 @@ const PricingSectionDesktop = () => {
                     {pricingPlan.feature}
                   </td>
                   <td>
-                    <Text text={pricingPlan.tiers['self-hosted']} />
+                    <TextToComponent text={pricingPlan.tiers['self-hosted']} />
                   </td>
                   <td className="highlight">
-                    <Text text={pricingPlan.tiers['self-hosted-premium']} />
+                    <TextToComponent
+                      text={pricingPlan.tiers['self-hosted-premium']}
+                      setOpened={setOpened}
+                    />
                   </td>
                   <td>
-                    <Text text={pricingPlan.tiers['saas']} />
+                    <TextToComponent
+                      text={pricingPlan.tiers['saas']}
+                      setOpened={setOpened}
+                    />
                   </td>
                   <td>
-                    <Text text={pricingPlan.tiers['enterprise']} />
+                    <TextToComponent
+                      text={pricingPlan.tiers['enterprise']}
+                      setOpened={setOpened}
+                    />
                   </td>
                 </tr>
                 {pricingPlan.lineBreak && (
@@ -78,7 +97,7 @@ const PricingSectionDesktop = () => {
   );
 };
 
-const PricingTableMobile = ({ title, tier }) => {
+const PricingTableMobile = ({ title, tier, setOpened }) => {
   return (
     <table className="pricing__table">
       <thead>
@@ -100,7 +119,10 @@ const PricingTableMobile = ({ title, tier }) => {
               {pricingPlan.feature}
             </td>
             <td style={{ textAlign: 'right' }}>
-              <Text text={pricingPlan.tiers[tier]} />
+              <TextToComponent
+                text={pricingPlan.tiers[tier]}
+                setOpened={setOpened}
+              />
             </td>
           </tr>
         ))}
@@ -109,16 +131,25 @@ const PricingTableMobile = ({ title, tier }) => {
   );
 };
 
-const PricingSectionMobile = () => {
+const PricingSectionMobile = ({ setOpened }) => {
   return (
     <div className="pricing__section__mobile">
       <PricingTableMobile title="Self-Hosted" tier="self-hosted" />
       <PricingTableMobile
         title="Self-Hosted Premium"
         tier="self-hosted-premium"
+        setOpened={setOpened}
       />
-      <PricingTableMobile title="SaaS (hosted by us)" tier="saas" />
-      <PricingTableMobile title="Enterprise" tier="enterprise" />
+      <PricingTableMobile
+        title="SaaS (hosted by us)"
+        tier="saas"
+        setOpened={setOpened}
+      />
+      <PricingTableMobile
+        title="Enterprise"
+        tier="enterprise"
+        setOpened={setOpened}
+      />
     </div>
   );
 };
@@ -163,22 +194,27 @@ const IconNo = () => {
   );
 };
 
-const ContactUs = () => {
+const ContactUsBtn = ({ setOpened }) => {
   return (
-    <a href="https://get.boxyhq.com/pricing-enquiry" target="_blank">
+    <a
+      href="javascript:void(0);"
+      onClick={() => {
+        setOpened(true);
+      }}
+    >
       Contact us
     </a>
   );
 };
 
-const Text = ({ text }) => {
-  const iconsMap = {
+const TextToComponent = ({ text, setOpened }) => {
+  const componentsMap = {
     yes: <IconYes />,
     no: <IconNo />,
-    contactUs: <ContactUs />,
+    contactUs: <ContactUsBtn setOpened={setOpened} />,
   };
 
-  return iconsMap[text] || <span>{text}</span>;
+  return componentsMap[text] || <span>{text}</span>;
 };
 
 const pricingPlans = [
