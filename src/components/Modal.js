@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 
-const styles = {
+const reactModalStyles = {
   overlay: {
     position: 'fixed',
     top: '80px',
@@ -19,14 +19,12 @@ const styles = {
     outline: 'none',
     padding: '30px',
     margin: 'auto',
-    height: '550px',
-    width: '400px',
   },
 };
 
 export const Modal = ({ children, title, opened, setOpened }) => {
   return (
-    <ReactModal isOpen={opened} style={styles}>
+    <ReactModal isOpen={opened} style={reactModalStyles}>
       <div>
         <h4
           style={{

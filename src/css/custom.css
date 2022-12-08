@@ -162,6 +162,10 @@ html[data-theme='dark'] .header-github-link:before {
   background: rgb(37 194 160 / 31%);
 }
 
+.ReactModal__Content {
+  width: 80%;
+}
+
 /* Mobile view */
 
 @media screen and (min-width: 996px) {
@@ -180,5 +184,10 @@ html[data-theme='dark'] .header-github-link:before {
 
   .pricing__section__mobile {
     display: none;
+  }
+
+  .ReactModal__Content {
+    width: 500px;
+    height: 550px;
   }
 }
