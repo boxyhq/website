@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 
-import { Modal } from '../../components/Modal';
-import { PricingSectionMobile } from './PricingSectionMobile';
-import { PricingSectionDesktop } from './PricingSectionDesktop';
-import { HubSpotPricingContactForm } from '../../components/HubSpotForm';
+import { Modal } from '../components/Modal';
+import { HubSpotPricingContactForm } from '../components/HubSpotForm';
+import { PricingSectionDesktop } from '../components/Pricing/PricingSectionDesktop';
+import { PricingSectionMobile } from '../components/Pricing/PricingSectionMobile';
 
 const title = 'Pricing for teams and companies of all sizes';
 const description =

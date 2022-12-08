@@ -6,7 +6,7 @@ export const ContactUsBtn = ({ setOpened }) => {
       onClick={() => {
         setOpened(true);
       }}
-      className="button button--link"
+      className="button--link cursor"
     >
       Contact us
     </a>

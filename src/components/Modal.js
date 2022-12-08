@@ -35,15 +35,8 @@ export const Modal = ({ children, title, opened, setOpened }) => {
         </h4>
         <button
           onClick={() => setOpened(false)}
-          style={{
-            position: 'absolute',
-            top: '10px',
-            right: '10px',
-            border: 'none',
-            background: 'transparent',
-            fontSize: '25px',
-            cursor: 'pointer',
-          }}
+          className="modal__close__btn"
+          aria-label="Close"
         >
           x
         </button>
