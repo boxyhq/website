@@ -15,8 +15,8 @@ The following guides provide information about the APIs and SDKs that are availa
 #### Properties
 
 - `name`: The name of the directory
-- `tenant`: The tenant ID of the tenant you want to create the directory for
-- `product`: The product ID of the product you want to create the directory for
+- `tenant`: The tenant ID of the tenant you want to create the directory for. **Should not contain the : character since we use it as a delimiter internally**
+- `product`: The product ID of the product you want to create the directory for. **Should not contain the : character since we use it as a delimiter internally**
 - `type`: The directory provider type. See the [Directory Providers](./providers) for more information.
 - `webhook_url`: The webhook URL to which the directory connection will POST the events
 - `webhook_secret`: The webhook secret used to sign the webhook payload
@@ -597,9 +597,7 @@ Typically, you will want to add the following routes to your application to hand
 #### User Requests
 
 ```javascript showLineNumbers
-const { data, status } = await directorySyncController.requests.handle(
-  request
-);
+const { data, status } = await directorySyncController.requests.handle(request);
 ```
 
 The shape of the `request` should be as follows:
@@ -625,9 +623,7 @@ The shape of the `request` should be as follows:
 Handling the group requests is similar to handling the user requests.
 
 ```javascript showLineNumbers
-const { data, status } = await directorySyncController.requests.handle(
-  request
-);
+const { data, status } = await directorySyncController.requests.handle(request);
 ```
 
 The shape of the `request` should be as follows:

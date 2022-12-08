@@ -44,8 +44,8 @@ curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 - `encodedRawMetadata`: Base64 encoding of the XML metadata your customer gets from their Identity Provider. Either this or `metadataUrl` needs to be specified
 - `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
 - `redirectUrl`: Allowed redirect URL. Repeat this field multiple times to allow multiple redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above).
-- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
-- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
+- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id. **Should not contain the : character since we use it as a delimiter internally**
+- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using. **Should not contain the : character since we use it as a delimiter internally**
 - `name`: A friendly name to identify the SAML connection
 - `description`: A short description with some information of the connection
 
@@ -78,8 +78,8 @@ curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 - `oidcClientSecret`: The client secret issued to the client during the IdP registration process.
 - `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
 - `redirectUrl`: Allowed redirect URL. Repeat this field multiple times to allow multiple redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above).
-- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
-- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
+- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id. **Should not contain the : character since we use it as a delimiter internally**
+- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using. **Should not contain the : character since we use it as a delimiter internally**
 - `name`: A friendly name to identify the OIDC connection
 - `description`: A short description with some information of the connection
 
