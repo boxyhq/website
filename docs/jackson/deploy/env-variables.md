@@ -19,6 +19,7 @@ Default: `5225`
 The public URL to reach this service, need for constructing for the SAML request internally.
 
 Default: `http://{HOST_URL}:{HOST_PORT}`
+
 NPM library option: `externalUrl`
 
 ### **JACKSON_API_KEYS**
@@ -32,9 +33,12 @@ For example `JACKSON_API_KEYS=key1,key2,key3`
 This is just an identifier to validate the SAML audience, this value will also get configured in the SAML apps created by your customers. Once set do not change this value unless you get your customers to reconfigure their SAML again. It is case-sensitive. This does not have to be a real URL.
 
 Default: `https://saml.boxyhq.com`
+
 NPM library option: `samlAudience`
 
-### **SAML_PATH**
+### **samlPath**
+
+> **_NOTE:_** This is only applicable to our npm library.
 
 The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the SAML IdP. Set this when using the npm package.
 
@@ -65,6 +69,7 @@ For example: `/idp/select` - You can find an implementation of IdP/App Selection
 When `tenant` and `product` are used for the SAML flow (and PKCE is not being used) then we use `dummy` as placeholders for `client_id` and `client_secret`. This is not a security issue because SAML is tenanted and hence your Identity Provider will block access to anyone trying to log into your SAML tenant. However for additional security you should set `CLIENT_SECRET_VERIFIER` to a random secret and use that value as the `client_secret` during the OAuth 2.0 flow.
 
 Default: `dummy`
+
 NPM library option: `clientSecretVerifier`
 
 ### **IDP_ENABLED**
@@ -72,7 +77,32 @@ NPM library option: `clientSecretVerifier`
 Set to true to enable IdP initiated login for SAML. SP initiated login is the only recommended flow but you might have to support IdP login at times.
 
 Default: `false`
+
 NPM library option: `idpEnabled`
+
+### **PUBLIC_KEY**
+
+This is the public key of the private key used to sign the SAML requests. Jackson expects the public key to be base64 encoded.
+
+NPM library option: `certs.publicKey`
+
+### **PRIVATE_KEY**
+
+This is the private key used to sign the SAML requests. Jackson expects the private key to be base64 encoded.
+
+NPM library option: `certs.privateKey`
+
+To generate a private key and public key pair you can use the following command:
+
+```bash
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out public.crt -sha256 -days 365 -nodes
+
+# Convert the public key to base64
+cat public.crt | base64
+
+# Convert the private key to base64
+cat key.pem | base64
+```
 
 ## OpenID configuration
 
@@ -83,6 +113,7 @@ For supporting OpenID flow, we need to set the algorithm and keys used to sign t
 The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
 
 Default: `RS256`
+
 NPM library option: `openid.jwsAlg`
 
 ### **OPENID_RSA_PRIVATE_KEY**
@@ -117,7 +148,16 @@ NPM library option: `openid.jwtSigningKeys.public`
 Supported values are `redis`, `sql`, `mongo`, `mem`, `planetscale`
 
 Default: `sql`
+
 NPM library option: `db.engine`
+
+### **DB_TYPE**
+
+Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `mariadb`, `mssql`
+
+Default: `postgres`
+
+NPM library option: `db.type`
 
 ### **DB_URL**
 
@@ -125,20 +165,16 @@ The database URL to connect to.
 
 Example: `postgres://postgres:postgres@localhost:5432/postgres`
 
+For `mssql` the URL takes the form of `sqlserver://localhost:1433;database=<db name>;username=<username>;password=<password>;encrypt=true`
+
 NPM library option: `db.url`
-
-### **DB_TYPE**
-
-Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `mariadb`
-
-Default: `postgres`
-NPM library option: `db.type`
 
 ### **DB_TTL**
 
 TTL for the code, session and token stores (in seconds)
 
 Default: `300`
+
 NPM library option: `db.ttl`
 
 ### **DB_CLEANUP_LIMIT**
@@ -146,6 +182,7 @@ NPM library option: `db.ttl`
 Limit cleanup of TTL entries to this number
 
 Default: `1000`
+
 NPM library option: `db.cleanupLimit`
 
 ### **DB_ENCRYPTION_KEY**
@@ -176,21 +213,29 @@ NPM library option: `preLoadedConnection`
 
 Jackson supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
 
-### **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
+### **OTEL_EXPORTER_OTLP_ENDPOINT** or **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
 
 Target URL to which the exporter is going to send metrics.
 
 Example: `https://ingest.lightstep.com:443/metrics/otlp/v0.6`
 
-### **OTEL_EXPORTER_OTLP_HEADERS**
+### **OTEL_EXPORTER_OTLP_HEADERS** or **OTEL_EXPORTER_OTLP_METRICS_HEADERS**
 
 Headers relevant for the endpoint, useful for specifying authentication details for providers.
 
 Example: `lightstep-access-token=<token>,...`
 
-## Admin UI configuration
+### **OTEL_EXPORTER_OTLP_PROTOCOL** or **OTEL_EXPORTER_OTLP_METRICS_PROTOCOL**
 
-Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin UI. The **SMTP\_** variables are used for sending email which contain the magic link (one-time use) for sign in.
+The transport protocol. Options MUST be one of: `grpc`, `http/protobuf` or `http/json`.
+
+### **OTEL_EXPORTER_DEBUG**
+
+Set this to `true` to enable debug logs for Opentelemetry. This is only meant for purposes of debugging otel locally.
+
+## Admin Portal configuration
+
+Below variables are used to enable [Magic link](https://next-auth.js.org/providers/email) based authentication for Admin Portal. The **SMTP\_** variables are used for sending email which contain the magic link (one-time use) for sign in.
 
 ### **SMTP_HOST**
 

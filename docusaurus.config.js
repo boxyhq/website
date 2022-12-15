@@ -20,6 +20,10 @@ module.exports = {
   ],
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ['php'],
+    },
     zoom: {
       selector: '.markdown :not(em) > img',
       config: {
@@ -51,11 +55,56 @@ module.exports = {
         srcDark: 'img/logo-dark.png',
       },
       items: [
+        {
+          label: 'Products',
+          type: 'dropdown',
+          items: [
+            {
+              to: '/enterprise-sso',
+              label: 'Enterprise SSO',
+            },
+            {
+              to: '/directory-sync',
+              label: 'Directory Sync',
+            },
+            {
+              to: '/audit-logs',
+              label: 'Audit Logs',
+            },
+            {
+              to: '/privacy-vault',
+              label: 'Privacy Vault',
+            },
+          ],
+        },
+        {
+          label: 'Developers',
+          type: 'dropdown',
+          items: [
+            { to: '/docs', label: 'Docs' },
+            { to: '/guides', label: 'Guides' },
+            {
+              href: 'https://awesome-oss-devsec.boxyhq.com/',
+              label: 'Developer Security Tools',
+            },
+          ],
+        },
         { to: '/blog', label: 'Blog' },
-        { to: '/careers', label: 'Careers' },
-        { to: '/team', label: 'Team' },
-        { to: '/docs', label: 'Docs' },
-        { to: '/guides', label: 'Guides' },
+        {
+          label: 'Company',
+          type: 'dropdown',
+          position: 'right',
+          items: [
+            {
+              to: '/careers',
+              label: 'Careers',
+            },
+            {
+              to: '/team',
+              label: 'Team',
+            },
+          ],
+        },
         {
           href: 'https://github.com/boxyhq',
           position: 'right',
@@ -84,6 +133,23 @@ module.exports = {
             {
               label: 'Twitter',
               href: 'https://twitter.com/boxyhq',
+            },
+          ],
+        },
+        {
+          title: 'Social',
+          items: [
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/boxyhq',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/boxyhq',
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/boxyhq',
             },
           ],
         },
@@ -128,14 +194,16 @@ module.exports = {
         blog: {
           blogTitle: 'Blog',
           blogDescription:
-            'The BoxyHQ blog is an open discussion of thoughts from our team. We discuss everything from what SAML is to how we build certain elements of the products.',
+            'The BoxyHQ blog is where our team shares our thoughts and ideas about everything from our products to industry news and insights. We also welcome guest posts so please do get in touch if you have any thoughts you would like to share on our blog.',
           showReadingTime: true,
           feedOptions: {
             type: 'all',
             copyright,
           },
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+
+          blogSidebarTitle: 'Recent posts',
+          blogSidebarCount: 5,
+          postsPerPage: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -182,5 +250,32 @@ module.exports = {
     ],
     ['@cmfcmf/docusaurus-search-local', {}],
     require.resolve('docusaurus-plugin-image-zoom'),
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/docs/jackson/admin-ui',
+            to: '/docs/admin-portal/enterprise-sso',
+          },
+          {
+            from: '/docs/directory-sync/admin-ui',
+            to: '/docs/admin-portal/directory-sync',
+          },
+          {
+            from: '/docs/jackson/saml-flow',
+            to: '/docs/jackson/sso-flow',
+          },
+          {
+            from: '/docs/jackson/configure-saml-idp',
+            to: '/docs/jackson/sso-providers',
+          },
+          {
+            from: '/docs/jackson/deploy/pre-loaded-configuration',
+            to: '/docs/jackson/deploy/pre-loaded-connections',
+          },
+        ],
+      },
+    ],
   ],
 };

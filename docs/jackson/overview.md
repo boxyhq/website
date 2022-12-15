@@ -1,10 +1,16 @@
-# SAML Jackson
+---
+title: Enterprise SSO Docs
+---
+
+# Enterprise SSO
 
 Single Sign-On (SSO) service for SAML/OIDC Identity Providers [SSO in a box from BoxyHQ].
 
 Jackson implements SSO as an OAuth 2.0 flow, abstracting away all the complexities of the underlying SAML/OIDC protocol. Check out our [GitHub repo](https://github.com/boxyhq/jackson).
 
 ## Architecture
+
+![img alt](/img/enterprise-sso-arch.png)
 
 We have developed Jackson from scratch adopting a modular architecture as shown below. The business logic is separated into controllers which helps us in incremental adoption of features.
 

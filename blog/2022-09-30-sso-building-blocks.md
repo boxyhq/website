@@ -5,7 +5,8 @@ author: Aswin V
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/av__2021
 author_image_url: https://boxyhq.com/img/team/aswin.jpg
-tags: [sso, engineering, saml-jackson, oauth-2.0]
+tags_disabled: [sso, engineering, saml-jackson, oauth-2.0]
+image: /img/sso-flow.png
 ---
 
 We have already covered SAML at a high level from both [user](2022-06-30-understanding-saml-sso-the-basics-from-the-user-side.md) and [application provider](2022-06-30-understanding-saml-sso-the-basics-from-the-solution-providers-side.md) points of view.
@@ -55,7 +56,7 @@ OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. 
 
 Now that we have all the pieces of the SSO puzzle, bringing it together in Jackson would look something like the one below.
 
-![img alt](/img/sso-flow.png)
+![SSO Flow](/img/sso-flow.png)
 
 Allow me to explain.
 
@@ -67,7 +68,7 @@ The preliminary step (marked by the green arrow above) is to add the SSO Connect
 
 #### Login flow
 
-Jackson supports both OAuth 2.0 as well OpenID flows. The OAuth 2.0 flow is made secure by supporting Authorization Code flow with PKCE. By including the scope `openid` in the client request Jackson will switch to OpenID flow.
+Jackson supports both OAuth 2.0 and OpenID flows. The OAuth 2.0 flow is made secure by supporting Authorization Code flow with PKCE. By including the scope `openid` in the client request Jackson will switch to OpenID flow.
 
 The login process follows the below steps:
 

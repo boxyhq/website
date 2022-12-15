@@ -1,6 +1,14 @@
 # Upgrade Guide
 
-## Upgrading to 1.3.0
+## Upgrading to v1.3.10
+
+1. For users of our npm library, `directorySync` has been renamed to `directorySyncController`.
+
+## Upgrading to v1.3.6
+
+1. `samlSPConfig.get()` is now async since we introduced a global certificate instead of per tenant certificate to ease the SAML setup process.
+
+## Upgrading to v1.3.0
 
 1. Landed support for OpenID Identity Providers.
 2. Landed new API (`/api/v1/connections`) to support setting up both SAML/OIDC SSO Connections.

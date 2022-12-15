@@ -7,16 +7,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'SAML Jackson',
+      label: 'Enterprise SSO',
       collapsible: true,
       link: { type: 'doc', id: 'jackson/overview' },
       items: [
-        { type: 'doc', id: 'jackson/overview', label: 'Overview' },
         {
           type: 'category',
           label: 'Deploy',
-          link: { type: 'doc', id: 'jackson/deploy/index' },
           items: [
+            'jackson/deploy/index',
             'jackson/deploy/service',
             'jackson/deploy/npm-library',
             'jackson/deploy/env-variables',
@@ -28,14 +27,15 @@ module.exports = {
           label: 'Configure your SSO provider',
           link: { type: 'doc', id: 'jackson/sso-providers/index' },
           items: [
-            'jackson/sso-providers/auth0',
+            'jackson/sso-providers/generic-saml',
             'jackson/sso-providers/azure',
-            'jackson/sso-providers/google',
-            'jackson/sso-providers/jumpcloud',
+            'jackson/sso-providers/microsoft-adfs',
             'jackson/sso-providers/okta',
+            'jackson/sso-providers/auth0',
+            'jackson/sso-providers/google',
             'jackson/sso-providers/onelogin',
             'jackson/sso-providers/pingone',
-            'jackson/sso-providers/generic-saml',
+            'jackson/sso-providers/jumpcloud',
             'jackson/sso-providers/generic-oidc',
           ],
         },
@@ -46,7 +46,6 @@ module.exports = {
           items: ['jackson/sso-flow/example-flow'],
         },
         'jackson/examples',
-        'jackson/admin-ui',
         'jackson/observability',
         'jackson/sbom',
         'jackson/container-signing',
@@ -57,14 +56,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Directory Sync (Beta)',
+      label: 'Directory Sync',
       collapsible: true,
-      link: { type: 'doc', id: 'directory-sync/getting-started' },
+      link: { type: 'doc', id: 'directory-sync/overview' },
       items: [
         'directory-sync/getting-started',
         'directory-sync/api-reference',
         'directory-sync/examples',
-        'directory-sync/admin-ui',
         'directory-sync/webhooks',
         'directory-sync/events',
         {
@@ -83,7 +81,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Audit Logs (Beta)',
+      label: 'Audit Logs',
       collapsible: true,
       link: { type: 'doc', id: 'retraced/overview' },
       items: [
@@ -196,6 +194,13 @@ module.exports = {
           ],
         },
       ],
+    },
+    {
+      type: 'category',
+      label: 'Admin Portal',
+      collapsible: true,
+      link: { type: 'doc', id: 'admin-portal/overview' },
+      items: ['admin-portal/enterprise-sso', 'admin-portal/directory-sync'],
     },
   ],
 };

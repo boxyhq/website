@@ -5,7 +5,7 @@ author: Deepak Prabhakara
 author_title: Co-founder & CEO @BoxyHQ
 author_url: https://github.com/deepakprabhakara
 author_image_url: https://boxyhq.com/img/team/deepak.jpg
-tags: [enterprise-readiness, ikea-effect]
+tags_disabled: [enterprise-readiness, ikea-effect]
 image: /img/blog/jay-wennington-BdeMttZx6Fs-unsplash.jpg
 ---
 
@@ -23,4 +23,4 @@ We have seen software eat the world. This has led to more surface area for secur
 
 BoxyHQ will build IKEA desks for all our customers so they don’t have to. Just sit at your pre-assembled desk and continue working on cool things that you set out to build in the first place.
 
-PS: Announcing SAML Jackson (who doesn’t like a bit of Pulp Fiction), a SAML SSO service that works seamlessly as an OAuth 2.0 flow and abstracts away the tedious XML bits of the SAML protocol. Check out <https://github.com/boxyhq/jackson> and the demo at <https://github.com/boxyhq/jackson-examples/tree/main/apps/next-client-auth>. If SAML SSO is not relevant to you at this moment don’t forget to bookmark us and check back again. We are building a **"DevSecMesh"** over time so you can expect a lot of other exciting features over the next few months.
+PS: Announcing SAML Jackson (who doesn’t like a bit of Pulp Fiction), a SAML SSO service that works seamlessly as an OAuth 2.0 flow and abstracts away the tedious XML bits of the SAML protocol. Check out <https://github.com/boxyhq/jackson> and the demo at <https://github.com/boxyhq/jackson-examples/tree/main/apps/next-auth>. If SAML SSO is not relevant to you at this moment don’t forget to bookmark us and check back again. We are building a **"DevSecMesh"** over time so you can expect a lot of other exciting features over the next few months.
