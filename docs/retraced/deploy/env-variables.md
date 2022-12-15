@@ -47,22 +47,27 @@ Default: `10000`
 If set `true` Retraced will use Postgres to `index & search` the audit logs instead of `Elasticsearch`.
 
 Default: `false`
+
 ### **RETRACED_API_LOG_FILE**
 
 If set to a valid file path, Retraced will use the file to save `Retraced API` logs.
+
 ### **RETRACED_PROCESSOR_LOG_FILE**
 
 If set to a valid file path, Retraced will use the file to save `Retraced processor` logs.
+
 ### **RETRACED_API_SCHEMES**
 
 The api schema to used for swagger.
 
 Default: `http,https`
+
 ### **PROCESSOR_NORMALIZE_REPAIRER_MIN_AGE_MS**
 
 The minimum age in microseconds used by processor to select audit logs to process.
 
 Default: `120000`
+
 ### **PROCESSOR_NORMALIZE_REPAIRER_MAX_EVENTS**
 
 The maximum number of events processor will select to process.
@@ -73,6 +78,7 @@ Default: `10000`
 
 If set to true, Retraced disables db level caching.<br />
 Caching is used for `Actor`, `Target` & `Groups` SELECT queries of audit log.
+
 ### **TMPDIR**
 
 The path of the temporary folder used for Geo data sync.<br />
@@ -81,6 +87,7 @@ Retraced looks for `"GeoLite2` files to import IP address and location data.
 ### **RETRACED_APP_BASE**
 
 The base path of the Retraced instance which is used for links in the emails.
+
 ## [Postgres](https://www.postgresql.org/) Configuration
 
 ### **POSTGRES_HOST**
@@ -170,22 +177,26 @@ You can find more details [here](https://github.com/aptible/supercronic/releases
 Elasticsearch node address or a `comma seperated` list of Elasticsearch nodes.
 
 Ex:<br />
- `https://localhost:9200`<br />
+`https://localhost:9200`<br />
 or <br />
 `https://localhost:9200,https://localhost:9201,https://localhost:9202`
 
 ### **ELASTICSEARCH_CAFILE**
 
 The CA file to use when connecting with `SSL enabled Elasticsearch`.
+
 ### **ELASTICSEARCH_REQUEST_RETRIES**
 
 Max retries for Elasticsearch client.
+
 ### **ELASTICSEARCH_REQUEST_TIMEOUT**
 
 Request timeout for Elasticsearch client.
+
 ### **ELASTICSEARCH_BACKOFF**
 
 The backoff interval for retries used by `internal wrapper of Elasticsearch`.
+
 ### **ELASTICSEARCH_TOTAL_TIMEOUT**
 
 The total timeout used by wrapper for `all Elasticsearch requests` & `retries with backoffs`.
@@ -193,6 +204,7 @@ The total timeout used by wrapper for `all Elasticsearch requests` & `retries wi
 ## Headless Mode configuration
 
 `Headless mode bootstraps the db configuration required for a tenant to use Retraced right away.`
+
 ### **HEADLESS_ENV_ID**
 
 Environment Id to be used in the headless mode.
@@ -200,9 +212,11 @@ Environment Id to be used in the headless mode.
 ### **HEADLESS_API_KEY**
 
 API key to be used in the headless mode.
+
 ### **HEADLESS_PROJECT_ID**
 
 Project Id to be used in the headless mode.
+
 ### **HEADLESS_PROJECT_ENV**
 
 Environment Id to be used for Project in the headless mode.
@@ -212,6 +226,7 @@ Environment Id to be used for Project in the headless mode.
 ### **BUGSNAG_TOKEN**
 
 Token to be used for bugsnag [error reporting](https://docs.bugsnag.com/api/error-reporting/).
+
 ### **STAGE**
 
 [ReleaseStage](https://docs.bugsnag.com/product/releases/#configuring-the-release-stage) configuration to be used for bugsnag.
@@ -257,46 +272,57 @@ The path of the ssl private key file.
 ### **STATSD_HOST**
 
 The hostpath for the statsd reporter.
+
 ### **STATSD_PORT**
 
 The port for the statsd reporter.
+
 ### **STATSD_INTERVAL_MILLIS**
 
 The miliseconds time interval for the statsd reporter to send stats.
+
 ### **STATSD_PREFIX**
 
 The prefix for the statsd reporter.
+
 ### **STATSD_USE_SYSDIG_NAME_REWRITER**
 
 If set true, rewrite argument of the statsd reporter will be set to true.
 
 ## [Statuspage](https://www.statuspage.io) configuration
+
 ### **STATUSPAGEIO_TOKEN**
 
 Token to be used for statuspage config.
+
 ### **STATUSPAGEIO_PAGE_ID**
 
 Page ID to be used for statuspage config.
+
 ### **STATUSPAGEIO_URL**
 
 URL to be used for statuspage config.
+
 ### **STATUSPAGEIO_INTERVAL_MILLIS**
 
 Interval Milliseconds to be used for statuspage config.
 
-## [SSH EVENT STREAMING](/docs/retraced/advanced-retraced/ssh-streaming/) configuration
+## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
 
 ### **NO_WARP_PIPE**
 
 If not set, Retraced will enable SSH streaming of events.
+
 ### **WARP_PIPE_REDIS_DB**
 
 The redis db id used for SSH streaming.
+
 ## [Redis](https://redis.io/) configuration
 
 ### **REDIS_URI**
 
 The uri to be used for redis connection.
+
 ## Email configuration
 
 ### **EMAIL_FROM**
@@ -312,6 +338,7 @@ SMTP connection url to be used to send emails using [nodemailer](https://www.npm
 ### **MANDRILL_KEY**
 
 The API key to be used to send emails using [Mandrill By Mailchimp](https://mailchimp.com/en-gb/features/transactional-email/?utm_source=mandrill&utm_medium=mc-site&utm_campaign=aoc_product-mktg_tnx_redirect_wld_20200515).
+
 ## [Auth0](https://auth0.com/) configuration
 
 ### **AUTH0_CLIENT_DOMAIN**
@@ -321,6 +348,7 @@ The domain to be used for Auth0 web auth.
 ### **AUTH0_CLIENT_ID**
 
 The client id to be used for Auth0 web auth.
+
 ## Publisher configuration
 
 ### **PUBLISHER_BULK_CREATE_MAX_EVENTS**
