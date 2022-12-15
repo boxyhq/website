@@ -12,7 +12,7 @@ On this page, we get you up and running with Retraced's SDK in your application.
 The Retraced NodeJS SDK can be installed with npm:
 
 ```bash
-npm install -s retraced
+npm install -s @retraced-hq/retraced
 ```
 
 ## Basic Usage
@@ -20,11 +20,11 @@ npm install -s retraced
 ### Initialize a client
 
 ```javascript
-import * as Retraced from "retraced";
+import * as Retraced from 'retraced';
 
 const retraced = new Retraced.Client({
-  apiKey: "your api key goes here",
-  projectId: "your project id goes here",
+  apiKey: 'your api key goes here',
+  projectId: 'your project id goes here',
 });
 ```
 

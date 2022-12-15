@@ -8,7 +8,7 @@ Note: Currently, a React-based site is required to embed the viewer, but support
 
 There are a few short steps to getting the embedded viewer integrated into your site.
 
-1. Install the `retraced-logs-viewer` package from npm and include in your site.
+1. Install the `@retraced-hq/logs-viewer` package from npm and include in your site.
 1. Request a token from the Retraced API to identify which group/scope the viewer should be limited to. This should be initiated from your backend server, not the browser.
 1. Render the `<RetracedEventsBrowser/>` React component as part of your application
 
