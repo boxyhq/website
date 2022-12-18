@@ -5,9 +5,9 @@ sidebar_label: Overview
 
 # Introduction To Retraced
 
-Retraced service [Audit logs in a box from BoxyHQ]
-
 Retraced provides an audit log feature for your application; one that meets all of the principles of [what makes a good audit log](/docs/retraced/how-to-audit-log). Retraced provides both an API to send audit events to, and several different methods for your customers to view and extract their events.
+
+Brought to you by BoxyHQ and [Replicated](https://www.replicated.com/). Check out our [GitHub repo](https://github.com/retracedhq/retraced)
 
 ## About Retraced
 
