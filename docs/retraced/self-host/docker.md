@@ -1,5 +1,5 @@
 ---
-title: Self-host Retraced
+title: Self-host Audit Logs on Docker
 sidebar_label: Docker
 ---
 

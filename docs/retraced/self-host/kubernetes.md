@@ -1,5 +1,5 @@
 ---
-title: Self-host Retraced
+title: Self-host Audit Logs on Kubernetes
 sidebar_label: Kubernetes
 ---
 

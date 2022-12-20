@@ -1,4 +1,4 @@
-# Examples & Resources | Enterprise SSO
+# Examples & Resources (Enterprise SSO)
 
 ## Examples
 

@@ -1,5 +1,5 @@
 ---
-title: Self-host Retraced
+title: Self-host Audit Logs on DigitalOcean
 sidebar_label: DigitalOcean
 ---
 

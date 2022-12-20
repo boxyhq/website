@@ -1,4 +1,4 @@
-# Environment Variables
+# Environment Variables (Audit Logs)
 
 The environment variables are set in `.env` or `docker-compose` files.
 
