@@ -1,3 +1,8 @@
+---
+title: Running Locally
+description: Running Locally
+---
+
 # Running Locally
 
 ## Clone the project
@@ -41,9 +46,11 @@ Create tables and indexes required for Retraced in Elasticsearch.
 ## Bootstrap dev environment
 
 `node -r ts-node/register src/retracedctl.ts bootstrap --projectName dev --projectId dev --environmentId dev --apiKey dev`
+
 ## Start the API
 
 `node -r ts-node/register src/index.ts`
+
 ## Start the processor
 
 `node -r ts-node/register src/_processor/index.ts`
