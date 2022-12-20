@@ -1,3 +1,9 @@
+---
+title: Admin API
+sidebar_label: Admin API
+description: Admin API
+---
+
 # Admin API
 
 ### [Swagger JSON](http://localhost:3000/auditlog/admin/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)

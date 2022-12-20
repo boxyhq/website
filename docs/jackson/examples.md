@@ -1,3 +1,9 @@
+---
+title: Examples & Resources (Enterprise SSO)
+sidebar_label: Examples & Resources
+description: Examples & Resources for our Enterprise SSO product
+---
+
 # Examples & Resources (Enterprise SSO)
 
 ## Examples

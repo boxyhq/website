@@ -1,3 +1,9 @@
+---
+title: Environment Variables (Audit Logs)
+sidebar_label: Environment Variables
+description: Environment Variables for Audit Logs
+---
+
 # Environment Variables (Audit Logs)
 
 The environment variables are set in `.env` or `docker-compose` files.

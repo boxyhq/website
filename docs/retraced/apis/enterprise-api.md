@@ -1,3 +1,9 @@
+---
+title: Enterprise API
+sidebar_label: Enterprise API
+description: Enterprise API
+---
+
 # Enterprise API
 
 ### [Swagger JSON](http://localhost:3000/auditlog/enterprise/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)

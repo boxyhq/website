@@ -5,7 +5,7 @@ sidebar_label: NodeJS
 
 # NodeJS
 
-On this page, we get you up and running with Retraced's SDK in your application.
+On this page, we get you up and running with Retraced's NodeJS SDK in your application.
 
 ## Installation
 

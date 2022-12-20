@@ -1,3 +1,9 @@
+---
+title: Publisher API
+sidebar_label: Publisher API
+description: Publisher API
+---
+
 # Publisher API
 
 ### [Swagger JSON](http://localhost:3000/auditlog/publisher/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)

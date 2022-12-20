@@ -1,11 +1,11 @@
 ---
-title: Retraced Golang SDK
-sidebar_label: Golang
+title: Retraced Go SDK
+sidebar_label: Go
 ---
 
-# Golang
+# Go
 
-On this page, we get you up and running with Retraced's SDK in your application.
+On this page, we get you up and running with Retraced's Go SDK in your application.
 
 ## Installation
 
