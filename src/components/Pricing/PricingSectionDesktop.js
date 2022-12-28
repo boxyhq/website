@@ -3,7 +3,7 @@ import React from 'react';
 import { pricingPlans } from './pricingPlans';
 import { TextToComponent } from './TextToComponent';
 
-export const PricingSectionDesktop = ({ setOpened }) => {
+export const PricingSectionDesktop = ({ setOpened, setFormId }) => {
   return (
     <div className="pricing__section__desktop">
       <table className="pricing__table">
@@ -36,18 +36,21 @@ export const PricingSectionDesktop = ({ setOpened }) => {
                     <TextToComponent
                       text={pricingPlan.tiers['self-hosted-premium']}
                       setOpened={setOpened}
+                      setFormId={setFormId}
                     />
                   </td>
                   <td>
                     <TextToComponent
                       text={pricingPlan.tiers['saas']}
                       setOpened={setOpened}
+                      setFormId={setFormId}
                     />
                   </td>
                   <td>
                     <TextToComponent
                       text={pricingPlan.tiers['enterprise']}
                       setOpened={setOpened}
+                      setFormId={setFormId}
                     />
                   </td>
                 </tr>

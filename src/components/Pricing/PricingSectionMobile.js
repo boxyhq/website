@@ -3,34 +3,38 @@ import React from 'react';
 import { pricingPlans } from './pricingPlans';
 import { TextToComponent } from './TextToComponent';
 
-export const PricingSectionMobile = ({ setOpened }) => {
+export const PricingSectionMobile = ({ setOpened, setFormId }) => {
   return (
     <div className="pricing__section__mobile">
       <PricingTableMobile
         title="Self-Hosted"
         tier="self-hosted"
         setOpened={setOpened}
+        setFormId={setFormId}
       />
       <PricingTableMobile
         title="Self-Hosted Premium"
         tier="self-hosted-premium"
         setOpened={setOpened}
+        setFormId={setFormId}
       />
       <PricingTableMobile
         title="SaaS (hosted by us)"
         tier="saas"
         setOpened={setOpened}
+        setFormId={setFormId}
       />
       <PricingTableMobile
         title="Enterprise"
         tier="enterprise"
         setOpened={setOpened}
+        setFormId={setFormId}
       />
     </div>
   );
 };
 
-const PricingTableMobile = ({ title, tier, setOpened }) => {
+const PricingTableMobile = ({ title, tier, setOpened, setFormId }) => {
   return (
     <table className="pricing__table">
       <thead>
@@ -55,6 +59,7 @@ const PricingTableMobile = ({ title, tier, setOpened }) => {
               <TextToComponent
                 text={pricingPlan.tiers[tier]}
                 setOpened={setOpened}
+                setFormId={setFormId}
               />
             </td>
           </tr>

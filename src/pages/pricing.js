@@ -12,6 +12,7 @@ const description =
 
 const Pricing = () => {
   const [opened, setOpened] = useState(false);
+  const [formId, setFormId] = useState('');
 
   return (
     <Layout title={title} description={description}>
@@ -24,11 +25,11 @@ const Pricing = () => {
         <h2 className="text--center" style={{ fontWeight: 'normal' }}>
           {description}
         </h2>
-        <PricingSectionDesktop setOpened={setOpened} />
-        <PricingSectionMobile setOpened={setOpened} />
+        <PricingSectionDesktop setOpened={setOpened} setFormId={setFormId} />
+        <PricingSectionMobile setOpened={setOpened} setFormId={setFormId} />
       </div>
       <Modal title="Contact Us" opened={opened} setOpened={setOpened}>
-        <HubSpotPricingContactForm />
+        <HubSpotPricingContactForm formId={formId} />
       </Modal>
     </Layout>
   );

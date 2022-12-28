@@ -26,12 +26,8 @@ const HubSpotForm = ({ region, portalId, formId }) => {
   );
 };
 
-export const HubSpotPricingContactForm = () => {
-  return (
-    <HubSpotForm
-      region="na1"
-      portalId="19966347"
-      formId="3c3888d4-3f37-470a-8c7d-d7641f32fd4c"
-    />
-  );
+export const HubSpotPricingContactForm = ({ formId }) => {
+  if (!formId) return null;
+
+  return <HubSpotForm region="na1" portalId="19966347" formId={formId} />;
 };

@@ -24,7 +24,7 @@ const reactModalStyles = {
 
 export const Modal = ({ children, title, opened, setOpened }) => {
   return (
-    <ReactModal isOpen={opened} style={reactModalStyles}>
+    <ReactModal isOpen={opened} style={reactModalStyles} ariaHideApp={false}>
       <div>
         <h4
           style={{
