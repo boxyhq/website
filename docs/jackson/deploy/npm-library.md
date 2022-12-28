@@ -31,8 +31,8 @@ let connection: IConnectionAPIController;
   const jackson = await require('@boxyhq/saml-jackson').controllers({
     externalUrl: "https://your-app.com",
     samlAudience: "https://saml.boxyhq.com",
-    oidcPath: "/sso/oidc",
-    samlPath: "/sso/acs"
+    oidcPath: "/api/oauth/oidc",
+    samlPath: "/api/oauth/saml"
     db: {
       engine: "sql",
       type: "postgres",

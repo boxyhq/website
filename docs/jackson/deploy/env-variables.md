@@ -1,3 +1,9 @@
+---
+title: Environment Variables (Enterprise SSO)
+sidebar_label: Environment Variables
+description: Environment Variables for Enterprise SSO
+---
+
 # Environment Variables
 
 The env vars are only applicable to the Jackson service. If you are using the npm then look for the options below when initializing the library.
@@ -79,6 +85,30 @@ Set to true to enable IdP initiated login for SAML. SP initiated login is the on
 Default: `false`
 
 NPM library option: `idpEnabled`
+
+### **PUBLIC_KEY**
+
+This is the public key of the private key used to sign the SAML requests. Jackson expects the public key to be base64 encoded.
+
+NPM library option: `certs.publicKey`
+
+### **PRIVATE_KEY**
+
+This is the private key used to sign the SAML requests. Jackson expects the private key to be base64 encoded.
+
+NPM library option: `certs.privateKey`
+
+To generate a private key and public key pair you can use the following command:
+
+```bash
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out public.crt -sha256 -days 365 -nodes
+
+# Convert the public key to base64
+cat public.crt | base64
+
+# Convert the private key to base64
+cat key.pem | base64
+```
 
 ## OpenID configuration
 
@@ -189,17 +219,25 @@ NPM library option: `preLoadedConnection`
 
 Jackson supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
 
-### **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
+### **OTEL_EXPORTER_OTLP_ENDPOINT** or **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
 
 Target URL to which the exporter is going to send metrics.
 
 Example: `https://ingest.lightstep.com:443/metrics/otlp/v0.6`
 
-### **OTEL_EXPORTER_OTLP_HEADERS**
+### **OTEL_EXPORTER_OTLP_HEADERS** or **OTEL_EXPORTER_OTLP_METRICS_HEADERS**
 
 Headers relevant for the endpoint, useful for specifying authentication details for providers.
 
 Example: `lightstep-access-token=<token>,...`
+
+### **OTEL_EXPORTER_OTLP_PROTOCOL** or **OTEL_EXPORTER_OTLP_METRICS_PROTOCOL**
+
+The transport protocol. Options MUST be one of: `grpc`, `http/protobuf` or `http/json`.
+
+### **OTEL_EXPORTER_DEBUG**
+
+Set this to `true` to enable debug logs for Opentelemetry. This is only meant for purposes of debugging otel locally.
 
 ## Admin Portal configuration
 
