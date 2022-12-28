@@ -29,6 +29,7 @@ export const Modal = ({ children, title, opened, setOpened }) => {
         <h4
           style={{
             fontSize: '25px',
+            color: '#1C1E21',
           }}
         >
           {title}
@@ -37,6 +38,9 @@ export const Modal = ({ children, title, opened, setOpened }) => {
           onClick={() => setOpened(false)}
           className="modal__close__btn"
           aria-label="Close"
+          style={{
+            color: '#1C1E21',
+          }}
         >
           x
         </button>
