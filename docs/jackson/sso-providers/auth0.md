@@ -31,11 +31,11 @@ Enter your **Application Callback URL** on the next screen and click **Enable**.
 
 Replace the values with the ones you have received from SAML Jackson.
 
-![img alt](/img/sso-providers/auth0/4.png)
+![img alt](/img/sso-providers/auth0/3.png)
 
 Click the tab **Usage** and download the **Identity Provider Metadata**.
 
-![img alt](/img/sso-providers/auth0/3.png)
+![img alt](/img/sso-providers/auth0/4.png)
 
 ## Attribute Mapping
 
