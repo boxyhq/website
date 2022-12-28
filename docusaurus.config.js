@@ -90,6 +90,7 @@ module.exports = {
           ],
         },
         { to: '/blog', label: 'Blog' },
+        { to: '/pricing', label: 'Pricing' },
         {
           label: 'Company',
           type: 'dropdown',
