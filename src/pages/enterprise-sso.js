@@ -138,7 +138,7 @@ const EnterpriseSSO = () => {
       </FeatureSection>
 
       <FeatureSection
-        title="Achieve enterprise-readiness"
+        title="Become enterprise ready"
         btnLink="/blog/sso-building-blocks"
         btnText="Read more"
         image={Icon3}

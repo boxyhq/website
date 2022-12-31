@@ -21,7 +21,7 @@ const IndexPage = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
-        title="Achieve enterprise-readiness with our plug-and-play solutions"
+        title="Enterprise readiness for B2B SaaS, straight out of the box"
         description="At BoxyHQ, we make it easy to add enterprise-ready features to your SaaS product. Impress enterprise customers and InfoSec teams with your ability to pass their processes with ease. Our solutions are open-source and free to use!"
         image="/img/home-hero.svg"
         buttons={[
