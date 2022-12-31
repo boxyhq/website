@@ -274,3 +274,9 @@ Set this to a random string. You can use `openssl rand -base64 32` to get one. T
 ### **NEXTAUTH_ACL**
 
 Set this to a comma separated string of email addresses or glob patterns like: `tonystark@gmail.com,*@marvel.com`. Access will be denied to email addresses which don't match. If you don't specify any value access is denied to all.
+
+## Anonymous Analytics
+
+### **BOXYHQ_NO_TELEMETRY** or **DO_NOT_TRACK**
+
+Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in form.
