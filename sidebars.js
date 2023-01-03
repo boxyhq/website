@@ -52,6 +52,7 @@ module.exports = {
         'jackson/security',
         'jackson/upgrade',
         'jackson/local-development',
+        'jackson/federated-saml/index',
       ],
     },
     {
@@ -200,7 +201,11 @@ module.exports = {
       label: 'Admin Portal',
       collapsible: true,
       link: { type: 'doc', id: 'admin-portal/overview' },
-      items: ['admin-portal/enterprise-sso', 'admin-portal/directory-sync'],
+      items: [
+        'admin-portal/enterprise-sso',
+        'admin-portal/directory-sync',
+        'admin-portal/federated-saml',
+      ],
     },
   ],
 };
