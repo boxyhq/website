@@ -284,3 +284,9 @@ If you'd like to use the Admin Portal to manage our Audit Logs service ([Retrace
 If you'd like to use the Admin Portal to manage our Audit Logs service ([Retraced](https://github.com/retracedhq/retraced)) then set this env var to the Public URL of the service. If this is the same as `RETRACED_HOST_URL` above then you can skip this and it will default to the value of `RETRACED_HOST_URL`.
 
 Default: It is set to `RETRACED_HOST_URL` if `RETRACED_EXTERNAL_URL` is not defined.
+
+## Anonymous Analytics
+
+### **BOXYHQ_NO_TELEMETRY** or **DO_NOT_TRACK**
+
+Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in form.
