@@ -52,6 +52,7 @@ module.exports = {
         'jackson/security',
         'jackson/upgrade',
         'jackson/local-development',
+        'jackson/saml-federation/index',
       ],
     },
     {
