@@ -22,7 +22,7 @@ const IndexPage = () => {
     <Layout title={title} description={description}>
       <HeroSection
         title="Enterprise readiness for B2B SaaS, straight out of the box"
-        description="At BoxyHQ we enable you to add plug-and-play enterprise-ready features to your SaaS product. Show enterprise customers and InfoSec teams you are ready to pass their processes with flying colors. We are open-source and free!"
+        description="At BoxyHQ, we make it easy to add enterprise-ready features to your SaaS product. Impress enterprise customers and InfoSec teams with your ability to pass their processes with ease. Our solutions are open-source and free to use!"
         image="/img/home-hero.svg"
         buttons={[
           {
@@ -53,19 +53,20 @@ const IndexPage = () => {
                         className="text--center"
                         style={{ whiteSpace: 'pre-line' }}
                       >
-                        Why Developer Security?
+                        The Importance of Developer Security
                       </h3>
                     </div>
                     <div className="card__body">
                       <p className="text--center">
-                        Cyber crimes will cost $10.5 trillion annually by 2025,
-                        but 70% of development teams always or frequently skip
-                        security steps due to time pressures.
+                        Cyber crimes are predicted to cost $10.5 trillion
+                        annually by 2025, but time pressures often cause 70% of
+                        development teams to skip crucial security steps.
                       </p>
                       <p>
-                        The days of focusing only on productivity are over; the
-                        faster a developer moves, the more security holes will
-                        be left behind.
+                        In today's world, it is no longer sufficient to
+                        prioritize productivity alone. The faster a developer
+                        moves, the more potential security holes will be left
+                        unaddressed.{' '}
                       </p>
                     </div>
                     <div className="card__footer">
@@ -94,14 +95,16 @@ const IndexPage = () => {
                     </div>
                     <div className="card__body">
                       <p className="text--center">
-                        Neither! Use BoxyHQ’s free open-source solution.
-                        Available on an Apache 2.0 license, helping developers
-                        collaborate and drive innovation by saving months of
-                        custom building or hefty bills.
+                        Save time and money with BoxyHQ's free open-source
+                        solution. Available under an Apache 2.0 license, our
+                        solutions make it easy for developers to collaborate and
+                        innovate, without the need for custom building or
+                        expensive fees.
                       </p>
                       <p className="text--center">
-                        Our solutions run in your environment so you control
-                        everything, we just provide the building blocks.
+                        Our solutions run in your environment, giving you full
+                        control. We simply provide the building blocks to help
+                        you succeed.
                       </p>
                     </div>
                     <div className="card__footer">
