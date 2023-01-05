@@ -201,11 +201,7 @@ module.exports = {
       label: 'Admin Portal',
       collapsible: true,
       link: { type: 'doc', id: 'admin-portal/overview' },
-      items: [
-        'admin-portal/enterprise-sso',
-        'admin-portal/directory-sync',
-        'admin-portal/saml-federation',
-      ],
+      items: ['admin-portal/enterprise-sso', 'admin-portal/directory-sync'],
     },
   ],
 };

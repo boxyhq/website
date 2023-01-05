@@ -22,4 +22,4 @@ Here is how the SAML Federation flow works if you are using Jackson as a SAML Id
 - Jackson process SAML Response from the IdP and create a new SAML Response to send (POST) back to the SP's ACS endpoint
 - SP process SAML Response from Jackson and create a new session for the user (Depending on the SP's implementation)
 
-Visit [Create SAML Federation App](/docs/admin-portal/saml-federation) to learn how to create and configure a SAML Federation App.
+Visit [Create SAML Federation App](/docs/admin-portal/enterprise-sso#saml-federation) to learn how to create and configure a SAML Federation App.
