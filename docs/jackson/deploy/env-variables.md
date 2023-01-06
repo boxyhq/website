@@ -285,6 +285,10 @@ If you'd like to use the Admin Portal to manage our Audit Logs service ([Retrace
 
 Default: It is set to `RETRACED_HOST_URL` if `RETRACED_EXTERNAL_URL` is not defined.
 
+### **RETRACED_ADMIN_ROOT_TOKEN**
+
+you need to set the admin root token for Retraced so that we can connect to Retraced and fetch projects and audit logs.
+
 ## Anonymous Analytics
 
 ### **BOXYHQ_NO_TELEMETRY** or **DO_NOT_TRACK**
