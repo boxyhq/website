@@ -9,7 +9,7 @@ jobs:
     name: Check broken links
     runs-on: ubuntu-latest
     env:
-      USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36
+      USER_AGENT: Chrome/108.0.0.0
     steps:
       - name: Check
         uses: ruzickap/action-my-broken-link-checker@v2.3.1
