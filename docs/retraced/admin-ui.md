@@ -23,7 +23,7 @@ Follow the below steps to login into the Admin dashboard.
 
 ## Fresh Start
 
-When you are setting up the Audit logs for the first time with Retraced, you won't have any **Projects** in the system.
+When you are setting up the Audit logs for the first time with Retraced, you won't have any **Projects** in the system or in case you run bootstrap script as a part of your deployment you will have **dev** project.
 
 <img class="mask-img" src="/images/product_images/admin-ui-retraced/fresh-start.png" />
 
@@ -38,6 +38,7 @@ You just need to enter the name of the project and click on **Create Project** b
 
 You will get see the **Project Information** after the Project is created.
 This page shows,
+
 1. Project ID
 2. Production Token
 3. Staging Token
@@ -59,14 +60,16 @@ After execution of command you should see **id & hash** as output.
 Now if you click on Audit Logs you should see newly created Project there.
 
 You can perform following actions:
-- You can click on the **i** button to open the **Project Information** page.
-- You can click on the button with **magnifying glass** to see the **logs**.
+
+- You can click on first button under actions the **tools** button to open the **Project Information** page.
+- You can click on second button under actions, the button with **magnifying glass** to see the **logs**.
 
 <img class="mask-img" src="/images/product_images/admin-ui-retraced/project-list-page.png" />
 
 ## Select Environment & Group
 
 When you create a Project by default following environments are created
+
 - Production
 - Staging
 

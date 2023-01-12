@@ -7,7 +7,7 @@ description: Running Locally
 
 ## Clone the project
 
-`git clone https://github.com/boxyhq/retraced`
+`git clone https://github.com/boxyhq/retraced && cd retraced`
 
 ## Install Dependancies
 

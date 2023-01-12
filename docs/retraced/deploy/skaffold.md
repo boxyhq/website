@@ -1,23 +1,19 @@
 ---
-title: With Docker Compose
-description: With Docker Compose
+title: With Skaffold
+description: With Skaffold
 ---
 
-# With Docker Compose
+# With Skaffold
 
 ## Clone the project
 
 `git clone https://github.com/boxyhq/retraced && cd retraced`
 
-Make sure you have set the environement variables in **docker-compose** file for `Jackson` & `ADMIN_ROOT_TOKEN`.
+You can change the environment variables from `/kustomize/overlays/dev/secrets.yaml`.
 
 ## Run Retraced
 
-`docker-compose up`
-
-## Run Retraced (Without Elasticsearch)
-
-You can set `PG_SEARCH=1` under **x-common-variables** in `docker-compose.yaml`.
+`skaffold dev --status-check=false --force=true`
 
 ## See it in action
 

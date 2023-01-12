@@ -86,13 +86,11 @@ module.exports = {
       collapsible: true,
       link: { type: 'doc', id: 'retraced/overview' },
       items: [
-        'retraced/overview',
         {
           type: 'category',
           label: 'Getting Started',
           link: { type: 'doc', id: 'retraced/getting-started/retraced-basics' },
           items: [
-            'retraced/getting-started/retraced-basics',
             'retraced/getting-started/embedded-viewer',
             'retraced/getting-started/first-audit-event',
             'retraced/getting-started/renaming-properties',
@@ -127,7 +125,6 @@ module.exports = {
           label: 'Architecture',
           link: { type: 'doc', id: 'retraced/architecture/index' },
           items: [
-            'retraced/architecture/index',
             'retraced/architecture/immutability-guarantee',
             'retraced/architecture/hashing-formula',
           ],
@@ -137,7 +134,6 @@ module.exports = {
           label: 'How to Audit Log',
           link: { type: 'doc', id: 'retraced/how-to-audit-log/index' },
           items: [
-            'retraced/how-to-audit-log/index',
             'retraced/how-to-audit-log/actions',
             'retraced/how-to-audit-log/actors',
             'retraced/how-to-audit-log/exportable',
@@ -152,18 +148,13 @@ module.exports = {
           type: 'category',
           label: 'SDKs',
           link: { type: 'doc', id: 'retraced/sdks/available-sdks' },
-          items: [
-            'retraced/sdks/available-sdks',
-            'retraced/sdks/golang',
-            'retraced/sdks/nodejs',
-          ],
+          items: ['retraced/sdks/golang', 'retraced/sdks/nodejs'],
         },
         {
           type: 'category',
           label: 'APIs',
           link: { type: 'doc', id: 'retraced/apis/overview' },
           items: [
-            'retraced/apis/overview',
             'retraced/apis/publisher-api',
             'retraced/apis/enterprise-api',
             'retraced/apis/admin-api',
@@ -175,7 +166,6 @@ module.exports = {
           label: 'Exposing Events',
           link: { type: 'doc', id: 'retraced/exposing-retraced-data/overview' },
           items: [
-            'retraced/exposing-retraced-data/overview',
             'retraced/exposing-retraced-data/viewer',
             'retraced/exposing-retraced-data/enterprise-api',
           ],
@@ -186,7 +176,6 @@ module.exports = {
           label: 'Advanced Retraced',
           link: { type: 'doc', id: 'retraced/advanced/index' },
           items: [
-            'retraced/advanced/index',
             'retraced/advanced/display-templates',
             'retraced/advanced/template-comparators',
             'retraced/advanced/ssh-streaming',
