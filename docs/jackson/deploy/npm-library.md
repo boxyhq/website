@@ -21,22 +21,21 @@ Please note that the initialization of `@boxyhq/saml-jackson` is async, you cann
 import jackson, {
   type IConnectionAPIController,
   type IOAuthController,
-} from "@boxyhq/saml-jackson";
-
+} from '@boxyhq/saml-jackson';
 
 let oauth: IOAuthController;
 let connection: IConnectionAPIController;
 
 (async function init() {
   const jackson = await require('@boxyhq/saml-jackson').controllers({
-    externalUrl: "https://your-app.com",
-    samlAudience: "https://saml.boxyhq.com",
-    oidcPath: "/api/oauth/oidc",
-    samlPath: "/api/oauth/saml"
+    externalUrl: 'https://your-app.com',
+    samlAudience: 'https://saml.boxyhq.com',
+    oidcPath: '/api/oauth/oidc',
+    samlPath: '/api/oauth/saml',
     db: {
-      engine: "sql",
-      type: "postgres",
-      url: "postgres://postgres:postgres@localhost:5432/postgres",
+      engine: 'sql',
+      type: 'postgres',
+      url: 'postgres://postgres:postgres@localhost:5432/postgres',
     },
   });
 
