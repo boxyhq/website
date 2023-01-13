@@ -290,17 +290,17 @@ To initiate the flow, the application must trigger an OAuth 2.0 (or OIDC) redire
 
 ```ts
 await oauth.authorize({
-  tenant: "boxyhq",
-  product: "your-app",
-  redirect_uri: "https://your-app.com/sso/callback",
-  state: "c38ee339-6b82-43d3-838f-4036820acce9",
+  tenant: "...",
+  product: "...",
+  redirect_uri: "...",
+  state: "...",
   response_type: 'code';
-  code_challenge: string;
-  code_challenge_method: 'plain' | 'S256' | '';
-  scope?: string;
-  nonce?: string;
-  idp_hint?: string;
-  prompt?: string;
+  code_challenge: '...';
+  code_challenge_method: '...';
+  scope: '...';
+  nonce: '...';
+  idp_hint: '...';
+  prompt: '...';
 });
 ```
 
@@ -388,10 +388,10 @@ const tenant = 'boxyhq';
 const product = 'your-app';
 
 await oauth.token({
-  code: '5db7257fde94e062f6243572e31818d6e64c3097',
-  redirect_uri: 'https://your-app.com/sso/callback',
-  client_id: `tenant=${tenant}&product=${product}`,
-  client_secret: 'dummy',
+  code: '...',
+  redirect_uri: '...',
+  client_id: `...`,
+  client_secret: '...',
   grant_type: 'authorization_code',
 });
 ```
