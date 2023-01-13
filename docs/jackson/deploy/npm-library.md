@@ -209,7 +209,7 @@ await connection.getConnections({
 
 // Using the client ID
 await connection.getConnections({
-  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
+  clientID: '...',
 });
 ```
 
@@ -224,8 +224,8 @@ await connection.getConnections({
     "redirectUrl": ["https://your-app.com/*"],
     "tenant": "boxyhq",
     "product": "your-app",
-    "clientID": "f7c909a5c72a5535847acf32558b2429a5172dd6",
-    "clientSecret": "cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdc",
+    "clientID": "...",
+    "clientSecret": "...",
     "forceAuthn": false,
     "idpMetadata": {
       "sso": {
@@ -266,8 +266,8 @@ await connection.deleteConnections({
 
 // Using client ID and client secret
 await connection.deleteConnections({
-  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
-  clientSecret: 'cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdcp',
+  clientID: '...',
+  clientSecret: '...',
 });
 ```
 
