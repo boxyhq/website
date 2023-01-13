@@ -114,8 +114,8 @@ await connection.updateSAMLConnection({
   rawMetadata: '<raw-saml-metadata>',
   redirectUrl: ['https://your-app.com/*'],
   defaultRedirectUrl: 'https://your-app.com/sso/callback-updated',
-  clientID: '...',
-  clientSecret: '...',
+  clientID: '<clientID of the SAML SSO Connection>',
+  clientSecret: '<clientSecret of the SAML SSO Connection>'
 });
 ```
 
@@ -184,8 +184,8 @@ await connection.updateOIDCConnection({
     'https://accounts.google.com/.well-known/openid-configuration',
   oidcClientId: '<OpenID Client ID>',
   oidcClientSecret: '<OpenID Client Secret>',
-  clientID: '...',
-  clientSecret: '...',
+  clientID: '<clientID of the OIDC SSO Connection>',
+  clientSecret: '<clientSecret of the OIDC SSO Connection>',
 });
 ```
 
@@ -266,8 +266,8 @@ await connection.deleteConnections({
 
 // Using client ID and client secret
 await connection.deleteConnections({
-  clientID: '...',
-  clientSecret: '...',
+  clientID: '<clientID of the SSO Connection>',
+  clientSecret: '<clientSecret of the SSO Connection>',
 });
 ```
 
@@ -331,8 +331,8 @@ Handle the response from the SAML Identity Provider. After successful authentica
 
 ```js
 await oauth.samlResponse({
-  SAMLResponse: '...',
-  RelayState: '...',
+  SAMLResponse: '<SAML Response from the SAML IdP>',
+  RelayState: '<Relaystate from the original SAML request to the IdP>',
 });
 ```
 
@@ -358,8 +358,8 @@ Handle the response from the OIDC Identity Provider. After successful authentica
 
 ```js
 await oauth.oidcAuthzResponse({
-  code: '...',
-  state: '...',
+  code: '<code received from OIDC IdP after authentication>',
+  state: '<state from the original OIDC request to the IdP>',
 });
 ```
 
@@ -390,8 +390,8 @@ const product = 'your-app';
 await oauth.token({
   code: '...',
   redirect_uri: '...',
-  client_id: `...`,
-  client_secret: '...',
+  client_id: `<clientID of the SSO Connection>`,
+  client_secret: '<clientSecret of the SSO Connection>',
   grant_type: 'authorization_code',
 });
 ```
