@@ -292,15 +292,22 @@ To initiate the flow, the application must trigger an OAuth 2.0 (or OIDC) redire
 await oauth.authorize({
   tenant: 'boxyhq',
   product: 'your-app',
-  redirect_uri: '...',
-  state: '...',
+  redirect_uri:
+    '<app redirect URI to which Jackson sents back the authorization code after authentication>',
+  state:
+    '<opaque value from the app which will be returned back from Jackson, this is need to prevent CSRF attacks>',
   response_type: 'code',
-  code_challenge: '...',
-  code_challenge_method: '...',
-  scope: '...',
-  nonce: '...',
-  idp_hint: '...',
-  prompt: '...',
+  code_challenge:
+    '<transformed value of code_verifier used to prevent interception of authorization_code in PKCE flow>',
+  code_challenge_method:
+    '<transformation method applied on code_verifier to generate code_challenge>',
+  scope:
+    '<can contain space separated values such as openid or even encoded tenant/product>',
+  nonce:
+    '<string value used to associate a Client session with an ID Token in openid flow, and to mitigate replay attacks>',
+  idp_hint:
+    '<this will contain the clientID of the SSO connection that the user selects in the case of multiple ones configured for a tenant/product>',
+  prompt: '<pass "login" to force authentication at the SAML IdP>',
 });
 ```
 
