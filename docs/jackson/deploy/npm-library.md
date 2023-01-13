@@ -304,7 +304,7 @@ await oauth.authorize({
   scope:
     '<can contain space separated values such as openid or even encoded tenant/product>',
   nonce:
-    '<string value used to associate a Client session with an ID Token in openid flow, and to mitigate replay attacks>',
+    '<string value used to associate a client session with an ID Token in openid flow, and to mitigate replay attacks>',
   idp_hint:
     '<this will contain the clientID of the SSO connection that the user selects in the case of multiple ones configured for a tenant/product>',
   prompt: '<pass "login" to force authentication at the SAML IdP>',
