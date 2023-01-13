@@ -115,7 +115,7 @@ await connection.updateSAMLConnection({
   redirectUrl: ['https://your-app.com/*'],
   defaultRedirectUrl: 'https://your-app.com/sso/callback-updated',
   clientID: '<clientID of the SAML SSO Connection>',
-  clientSecret: '<clientSecret of the SAML SSO Connection>'
+  clientSecret: '<clientSecret of the SAML SSO Connection>',
 });
 ```
 
@@ -290,17 +290,17 @@ To initiate the flow, the application must trigger an OAuth 2.0 (or OIDC) redire
 
 ```ts
 await oauth.authorize({
-  tenant: "...",
-  product: "...",
-  redirect_uri: "...",
-  state: "...",
-  response_type: 'code';
-  code_challenge: '...';
-  code_challenge_method: '...';
-  scope: '...';
-  nonce: '...';
-  idp_hint: '...';
-  prompt: '...';
+  tenant: 'boxyhq',
+  product: 'your-app',
+  redirect_uri: '...',
+  state: '...',
+  response_type: 'code',
+  code_challenge: '...',
+  code_challenge_method: '...',
+  scope: '...',
+  nonce: '...',
+  idp_hint: '...',
+  prompt: '...',
 });
 ```
 
@@ -389,9 +389,10 @@ const product = 'your-app';
 
 await oauth.token({
   code: '<Authorization code received from Jackson at redirect_url after login at IdP>',
-  redirect_uri: '<redirect_uri used in original authorization request to Jackson>',
-  client_id: `<clientID of the SSO Connection>`,
-  client_secret: '<clientSecret of the SSO Connection>',
+  redirect_uri:
+    '<redirect_uri used in original authorization request to Jackson>',
+  client_id: `tenant=${tenant}&product=${product}`,
+  client_secret: 'dummy',
   grant_type: 'authorization_code',
 });
 ```
