@@ -261,7 +261,7 @@ Update a SAML or OIDC Single Sign-On connection.
 // Using tenant and product
 await connection.deleteConnections({
   tenant: 'boxyhq',
-  product: 'your-ap',
+  product: 'your-app',
 });
 
 // Using client ID and client secret
