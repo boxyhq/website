@@ -388,8 +388,8 @@ const tenant = 'boxyhq';
 const product = 'your-app';
 
 await oauth.token({
-  code: '...',
-  redirect_uri: '...',
+  code: '<Authorization code received from Jackson at redirect_url after login at IdP>',
+  redirect_uri: '<redirect_uri used in original authorization request to Jackson>',
   client_id: `<clientID of the SSO Connection>`,
   client_secret: '<clientSecret of the SSO Connection>',
   grant_type: 'authorization_code',
