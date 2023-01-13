@@ -419,7 +419,7 @@ Once the `access_token` has been fetched, you can use it to retrieve the user pr
 <TabItem value="01" label="Request" default>
 
 ```js
-const accessToken = '6b81f03b60c34e46e740d96c7e6242923736a2d1';
+const accessToken = '<Access token from code exchange step above>';
 
 await oauth.userInfo(accessToken);
 ```
