@@ -19,15 +19,11 @@ You need the following installed in your system:
 Please see the docker directory in the Retraced repo.
 
 ```bash
-
 # Get the code
 git clone https://github.com/retracedhq/retraced.git
 
-# Go to the docker folder
-cd retraced/docker
-
-# Copy the env vars and add your values to .env
-cp .env.example .env
+# Go to the root folder
+cd retraced
 
 # Start the Docker compose
 docker-compose up

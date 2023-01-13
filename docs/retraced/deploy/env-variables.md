@@ -85,6 +85,10 @@ Default: `10000`
 If set to true, Retraced disables db level caching.<br />
 Caching is used for `Actor`, `Target` & `Groups` SELECT queries of audit log.
 
+### **MAXMIND_GEOLITE2_LICENSE_KEY**
+
+The `MaxMind` license key to fetch `"GeoLite2"` data.
+
 ### **TMPDIR**
 
 The path of the temporary folder used for Geo data sync.<br />

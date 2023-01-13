@@ -7,5 +7,7 @@ There are two ways to use Retraced.
 ### 1. [Configure the environment variables](/docs/retraced/deploy/env-variables)
 
 ### 2. Start the service
-- ### a. [Running with Docker-Compose](/docs/retraced/deploy/docker-compose)
-- ### b. [Running Locally](/docs/retraced/deploy/local)
+
+- ### [Running with Docker-Compose](/docs/retraced/deploy/docker-compose)
+- ### [Running Locally](/docs/retraced/deploy/local)
+- ### [Running with Skaffold](/docs/retraced/deploy/skaffold)
