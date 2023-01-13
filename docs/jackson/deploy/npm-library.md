@@ -209,7 +209,7 @@ await connection.getConnections({
 
 // Using the client ID
 await connection.getConnections({
-  clientID: '...',
+  clientID: '<clientID of the SSO Connection to be retrieved>.',
 });
 ```
 
