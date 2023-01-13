@@ -21,22 +21,21 @@ Please note that the initialization of `@boxyhq/saml-jackson` is async, you cann
 import jackson, {
   type IConnectionAPIController,
   type IOAuthController,
-} from "@boxyhq/saml-jackson";
-
+} from '@boxyhq/saml-jackson';
 
 let oauth: IOAuthController;
 let connection: IConnectionAPIController;
 
 (async function init() {
   const jackson = await require('@boxyhq/saml-jackson').controllers({
-    externalUrl: "https://your-app.com",
-    samlAudience: "https://saml.boxyhq.com",
-    oidcPath: "/api/oauth/oidc",
-    samlPath: "/api/oauth/saml"
+    externalUrl: 'https://your-app.com',
+    samlAudience: 'https://saml.boxyhq.com',
+    oidcPath: '/api/oauth/oidc',
+    samlPath: '/api/oauth/saml',
     db: {
-      engine: "sql",
-      type: "postgres",
-      url: "postgres://postgres:postgres@localhost:5432/postgres",
+      engine: 'sql',
+      type: 'postgres',
+      url: 'postgres://postgres:postgres@localhost:5432/postgres',
     },
   });
 
@@ -115,8 +114,8 @@ await connection.updateSAMLConnection({
   rawMetadata: '<raw-saml-metadata>',
   redirectUrl: ['https://your-app.com/*'],
   defaultRedirectUrl: 'https://your-app.com/sso/callback-updated',
-  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
-  clientSecret: 'cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdc',
+  clientID: '<clientID of the SAML SSO Connection>',
+  clientSecret: '<clientSecret of the SAML SSO Connection>',
 });
 ```
 
@@ -185,8 +184,8 @@ await connection.updateOIDCConnection({
     'https://accounts.google.com/.well-known/openid-configuration',
   oidcClientId: '<OpenID Client ID>',
   oidcClientSecret: '<OpenID Client Secret>',
-  clientID: '749f95c4bd02b4adb6c0633249e70d5ad45b75e2',
-  clientSecret: '2d730ac71c74e7d49dccf362c9a61005b6246cc65d6d0fa4',
+  clientID: '<clientID of the OIDC SSO Connection>',
+  clientSecret: '<clientSecret of the OIDC SSO Connection>',
 });
 ```
 
@@ -210,7 +209,7 @@ await connection.getConnections({
 
 // Using the client ID
 await connection.getConnections({
-  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
+  clientID: '<clientID of the SSO Connection to be retrieved>.',
 });
 ```
 
@@ -225,8 +224,8 @@ await connection.getConnections({
     "redirectUrl": ["https://your-app.com/*"],
     "tenant": "boxyhq",
     "product": "your-app",
-    "clientID": "f7c909a5c72a5535847acf32558b2429a5172dd6",
-    "clientSecret": "cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdc",
+    "clientID": "...",
+    "clientSecret": "...",
     "forceAuthn": false,
     "idpMetadata": {
       "sso": {
@@ -262,13 +261,13 @@ Update a SAML or OIDC Single Sign-On connection.
 // Using tenant and product
 await connection.deleteConnections({
   tenant: 'boxyhq',
-  product: 'your-ap',
+  product: 'your-app',
 });
 
 // Using client ID and client secret
 await connection.deleteConnections({
-  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
-  clientSecret: 'cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdcp',
+  clientID: '<clientID of the SSO Connection>',
+  clientSecret: '<clientSecret of the SSO Connection>',
 });
 ```
 
@@ -291,17 +290,24 @@ To initiate the flow, the application must trigger an OAuth 2.0 (or OIDC) redire
 
 ```ts
 await oauth.authorize({
-  tenant: "boxyhq",
-  product: "your-app",
-  redirect_uri: "https://your-app.com/sso/callback",
-  state: "c38ee339-6b82-43d3-838f-4036820acce9",
-  response_type: 'code';
-  code_challenge: string;
-  code_challenge_method: 'plain' | 'S256' | '';
-  scope?: string;
-  nonce?: string;
-  idp_hint?: string;
-  prompt?: string;
+  tenant: 'boxyhq',
+  product: 'your-app',
+  redirect_uri:
+    '<app redirect URI to which Jackson sents back the authorization code after authentication>',
+  state:
+    '<opaque value from the app which will be returned back from Jackson, this is need to prevent CSRF attacks>',
+  response_type: 'code',
+  code_challenge:
+    '<transformed value of code_verifier used to prevent interception of authorization_code in PKCE flow>',
+  code_challenge_method:
+    '<transformation method applied on code_verifier to generate code_challenge>',
+  scope:
+    '<can contain space separated values such as openid or even encoded tenant/product>',
+  nonce:
+    '<string value used to associate a client session with an ID Token in openid flow, and to mitigate replay attacks>',
+  idp_hint:
+    '<this will contain the clientID of the SSO connection that the user selects in the case of multiple ones configured for a tenant/product>',
+  prompt: '<pass "login" to force authentication at the SAML IdP>',
 });
 ```
 
@@ -332,8 +338,8 @@ Handle the response from the SAML Identity Provider. After successful authentica
 
 ```js
 await oauth.samlResponse({
-  SAMLResponse: '...',
-  RelayState: '...',
+  SAMLResponse: '<SAML Response from the SAML IdP>',
+  RelayState: '<Relaystate from the original SAML request to the IdP>',
 });
 ```
 
@@ -359,8 +365,8 @@ Handle the response from the OIDC Identity Provider. After successful authentica
 
 ```js
 await oauth.oidcAuthzResponse({
-  code: '...',
-  state: '...',
+  code: '<code received from OIDC IdP after authentication>',
+  state: '<state from the original OIDC request to the IdP>',
 });
 ```
 
@@ -389,8 +395,9 @@ const tenant = 'boxyhq';
 const product = 'your-app';
 
 await oauth.token({
-  code: '5db7257fde94e062f6243572e31818d6e64c3097',
-  redirect_uri: 'https://your-app.com/sso/callback',
+  code: '<Authorization code received from Jackson at redirect_url after login at IdP>',
+  redirect_uri:
+    '<redirect_uri used in original authorization request to Jackson>',
   client_id: `tenant=${tenant}&product=${product}`,
   client_secret: 'dummy',
   grant_type: 'authorization_code',
@@ -420,7 +427,7 @@ Once the `access_token` has been fetched, you can use it to retrieve the user pr
 <TabItem value="01" label="Request" default>
 
 ```js
-const accessToken = '6b81f03b60c34e46e740d96c7e6242923736a2d1';
+const accessToken = '<Access token from code exchange step above>';
 
 await oauth.userInfo(accessToken);
 ```
