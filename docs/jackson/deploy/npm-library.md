@@ -114,8 +114,8 @@ await connection.updateSAMLConnection({
   rawMetadata: '<raw-saml-metadata>',
   redirectUrl: ['https://your-app.com/*'],
   defaultRedirectUrl: 'https://your-app.com/sso/callback-updated',
-  clientID: 'f7c909a5c72a5535847acf32558b2429a5172dd6',
-  clientSecret: 'cc6ba07bc42c2f449c9b0a3cc41c256dea08f705e1b44fdc',
+  clientID: '...',
+  clientSecret: '...',
 });
 ```
 
@@ -184,8 +184,8 @@ await connection.updateOIDCConnection({
     'https://accounts.google.com/.well-known/openid-configuration',
   oidcClientId: '<OpenID Client ID>',
   oidcClientSecret: '<OpenID Client Secret>',
-  clientID: '749f95c4bd02b4adb6c0633249e70d5ad45b75e2',
-  clientSecret: '2d730ac71c74e7d49dccf362c9a61005b6246cc65d6d0fa4',
+  clientID: '...',
+  clientSecret: '...',
 });
 ```
 
