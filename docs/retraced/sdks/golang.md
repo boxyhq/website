@@ -22,7 +22,7 @@ Error handling omitted for brevity.
 ```go
 import "github.com/retracedhq/retraced-go"
 
-client, _ := retraced.NewClient("You Retraced project id goes here", "Your Retraced Publisher API token goes here")
+client, _ := retraced.NewClient("The host, defaults to http://localhost:3000/auditlog", "You Retraced project id goes here", "Your Retraced Publisher API token goes here")
 ```
 
 ### Report an event
