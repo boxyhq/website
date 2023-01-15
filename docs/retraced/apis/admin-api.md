@@ -10,7 +10,7 @@ description: Admin API
 
 ## Authentication
 
-The Admin API expects a base64-ecoded hmac-signed [JSON Web Token](https://tools.ietf.org/html/rfc7519) in an `Authorization` header:
+The Admin API expects a base64-encoded hmac-signed [JSON Web Token](https://tools.ietf.org/html/rfc7519) in an `Authorization` header:
 
 ```
 Authorization: WU9VUl9TSUdORURfSldUX1RPS0VOX18K...

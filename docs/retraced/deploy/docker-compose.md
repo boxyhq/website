@@ -9,7 +9,7 @@ description: With Docker Compose
 
 `git clone https://github.com/boxyhq/retraced && cd retraced`
 
-Make sure you have set the environement variables in **docker-compose** file for `Jackson` & `ADMIN_ROOT_TOKEN`.
+Make sure you have set the environment variables in **docker-compose** file for `Jackson` & `ADMIN_ROOT_TOKEN`.
 
 ## Run Retraced
 
