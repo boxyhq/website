@@ -7,6 +7,31 @@ sidebar_label: Overview
 
 An audit log is a centralized stream of all user activity in an application.
 
+The JSON structure
+
+```json
+{
+  "action": "some.record.created",
+  "teamId": "boxyhq",
+  "group": {
+    "id": "boxyhq",
+    "name": "BoxyHQ"
+  },
+  "crud": "c",
+  "created": "2023-01-13T11:24:07.575Z",
+  "source_ip": "127.0.0.1",
+  "actor": {
+    "id": "jackson@boxyhq.com",
+    "name": "Jackson"
+  },
+  "target": {
+    "id": "100",
+    "name": "tasks",
+    "type": "Tasks"
+  }
+}
+```
+
 An audit log event is a single line that represents an [action](/docs/retraced/how-to-audit-log/actions) that an [actor](/docs/retraced/how-to-audit-log/actors) took, most often on a [target](/docs/retraced/how-to-audit-log/targets).
 
 Sometimes it's easiest to think about this with a concrete example. Let's consider a multi-user, collaborative spreadsheet application.
