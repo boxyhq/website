@@ -339,7 +339,7 @@ The uri to be used for redis connection.
 
 The email address to be used to send email from Retraced.
 
-Default: `Retraced <contact@retraced.io>`
+Default: `Retraced <retraced@boxyhq.com>`
 
 ### **SMTP_CONNECTION_URL**
 

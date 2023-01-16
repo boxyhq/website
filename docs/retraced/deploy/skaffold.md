@@ -7,7 +7,7 @@ description: With Skaffold
 
 ## Clone the project
 
-`git clone https://github.com/boxyhq/retraced && cd retraced`
+`git clone https://github.com/retracedhq/retraced && cd retraced`
 
 You can change the environment variables from `/kustomize/overlays/dev/secrets.yaml`.
 

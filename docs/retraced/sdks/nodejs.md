@@ -12,7 +12,7 @@ On this page, we get you up and running with Retraced's NodeJS SDK in your appli
 The Retraced NodeJS SDK can be installed with npm:
 
 ```bash
-npm install -s @retraced-hq/retraced
+npm install -s @retracedhq/retraced
 ```
 
 ## Basic Usage

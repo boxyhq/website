@@ -7,7 +7,7 @@ description: With Docker Compose
 
 ## Clone the project
 
-`git clone https://github.com/boxyhq/retraced && cd retraced`
+`git clone https://github.com/retracedhq/retraced && cd retraced`
 
 Make sure you have set the environment variables in **docker-compose** file for `Jackson` & `ADMIN_ROOT_TOKEN`.
 
