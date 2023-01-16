@@ -7,7 +7,45 @@ sidebar_label: Overview
 
 An audit log is a centralized stream of all user activity in an application.
 
-The JSON structure
+The JSON structure looks like this
+
+```typescript
+{
+  "action": string,
+  "group"?: {
+  "id": string,
+    "name"?: string,
+  },
+  "crud"?: string,
+  "created"?: Date,
+  "actor"?: {
+    "id": string,
+    "name"?: string,
+    "href"?: string,
+    "fields"?: {
+      [key: string]: string
+    },
+  },
+  "target"?: {
+    "id": string,
+    "name"?: string,
+    "href"?: string,
+    "type"?: string,
+    "fields"?: {
+      [key: string]: string
+    },
+  },
+  "sourceIp"?: string,
+  "description"?: string,
+  "isFailure"?: boolean,
+  "isAnonymous"?: boolean,
+  "fields"?: {
+    [key: string]: string
+  },
+}
+```
+
+You can see the example below,
 
 ```json
 {
