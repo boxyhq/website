@@ -317,7 +317,7 @@ URL to be used for statuspage config.
 
 Interval Milliseconds to be used for statuspage config.
 
-## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
+<!-- ## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
 
 ### **NO_WARP_PIPE**
 
@@ -325,13 +325,13 @@ If not set, Retraced will enable SSH streaming of events.
 
 ### **WARP_PIPE_REDIS_DB**
 
-The redis db id used for SSH streaming.
+The Redis DB to be used for SSH streaming.
 
 ## [Redis](https://redis.io/) configuration
 
 ### **REDIS_URI**
 
-The uri to be used for redis connection.
+The URI to be used for Redis. -->
 
 ## Email configuration
 
