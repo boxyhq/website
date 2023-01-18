@@ -15,3 +15,4 @@ Self-hosting Retraced means managing the service yourself and taking care of upg
 - [DigitalOcean](digitalocean.md)
 - [AWS](aws.md)
 - [Kubernetes](kubernetes.md)
+- [Skaffold](skaffold.md)

@@ -45,6 +45,7 @@ module.exports = {
           link: { type: 'doc', id: 'jackson/sso-flow/index' },
           items: ['jackson/sso-flow/example-flow'],
         },
+        'jackson/setup-link',
         'jackson/examples',
         'jackson/observability',
         'jackson/sbom',
@@ -66,6 +67,7 @@ module.exports = {
         'directory-sync/examples',
         'directory-sync/webhooks',
         'directory-sync/events',
+        'directory-sync/setup-link',
         {
           type: 'category',
           label: 'Providers',
@@ -100,24 +102,16 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Deploy',
-          link: { type: 'doc', id: 'retraced/deploy/index' },
-          items: [
-            'retraced/deploy/env-variables',
-            'retraced/deploy/docker-compose',
-            'retraced/deploy/local',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Self Hosting',
           link: { type: 'doc', id: 'retraced/self-host/index' },
           items: [
-            'retraced/self-host/index',
+            'retraced/self-host/env-variables',
+            'retraced/self-host/local',
             'retraced/self-host/docker',
             'retraced/self-host/digitalocean',
             'retraced/self-host/aws',
             'retraced/self-host/kubernetes',
+            'retraced/self-host/skaffold',
           ],
         },
         {
@@ -170,7 +164,6 @@ module.exports = {
             'retraced/exposing-retraced-data/enterprise-api',
           ],
         },
-        'retraced/admin-ui',
         {
           type: 'category',
           label: 'Advanced Retraced',
@@ -190,7 +183,11 @@ module.exports = {
       label: 'Admin Portal',
       collapsible: true,
       link: { type: 'doc', id: 'admin-portal/overview' },
-      items: ['admin-portal/enterprise-sso', 'admin-portal/directory-sync'],
+      items: [
+        'admin-portal/enterprise-sso',
+        'admin-portal/directory-sync',
+        'admin-portal/audit-logs',
+      ],
     },
   ],
 };

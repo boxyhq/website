@@ -349,16 +349,6 @@ SMTP connection url to be used to send emails using [nodemailer](https://www.npm
 
 The API key to be used to send emails using [Mandrill By Mailchimp](https://mailchimp.com/en-gb/features/transactional-email/?utm_source=mandrill&utm_medium=mc-site&utm_campaign=aoc_product-mktg_tnx_redirect_wld_20200515).
 
-## [Auth0](https://auth0.com/) configuration
-
-### **AUTH0_CLIENT_DOMAIN**
-
-The domain to be used for Auth0 web auth.
-
-### **AUTH0_CLIENT_ID**
-
-The client id to be used for Auth0 web auth.
-
 ## Publisher configuration
 
 ### **PUBLISHER_BULK_CREATE_MAX_EVENTS**
