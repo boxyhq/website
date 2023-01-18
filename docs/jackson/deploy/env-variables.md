@@ -6,7 +6,7 @@ description: Environment Variables for Enterprise SSO
 
 # Environment Variables
 
-The env vars are only applicable to the Jackson service. If you are using the npm then look for the options below when initializing the library.
+The env vars are only applicable to the Jackson service. If you are using the npm library then look for the options below when initializing the library.
 
 ## General configuration
 
@@ -167,13 +167,25 @@ NPM library option: `db.type`
 
 ### **DB_URL**
 
-The database URL to connect to.
+The database URL to connect to. If you are using self-signed certificates then pass `sslmode=noverify` instead of `sslmode=require` in the `DB_URL`. This is because self-signed certs will be rejected as unauthorized in strict mode. Also set `DB_SSL=true` and `DB_SSL_REJECT_UNAUTHORIZED=false` (see env vars below for more details).
 
-Example: `postgres://postgres:postgres@localhost:5432/postgres`
+Example: `postgres://postgres:postgres@localhost:5432/postgres` or `postgres://postgres:postgres@localhost:5432/postgres?sslmode=no-verify`
 
 For `mssql` the URL takes the form of `sqlserver://localhost:1433;database=<db name>;username=<username>;password=<password>;encrypt=true`
 
 NPM library option: `db.url`
+
+### **DB_SSL**
+
+This needs to be set to `true` if you are using SSL with your database (You should definitely be using SSL if the database needs to be access via a public url).
+
+Default: `false`
+
+### **DB_SSL_REJECT_UNAUTHORIZED**
+
+If you are using a self-signed certificate then set this to `false`, otherwise it will be rejected due to Certificate Authority checks.
+
+Default: `true`
 
 ### **DB_TTL**
 
