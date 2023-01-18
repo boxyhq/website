@@ -287,6 +287,18 @@ Set this to a random string. You can use `openssl rand -base64 32` to get one. T
 
 Set this to a comma separated string of email addresses or glob patterns like: `tonystark@gmail.com,*@marvel.com`. Access will be denied to email addresses which don't match. If you don't specify any value access is denied to all.
 
+### **ADMIN_PORTAL_SSO_TENANT**
+
+This will be used as the tenant for the SSO connections (added from Settings tab) used to login into the Admin portal itself. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
+
+Default: `_jackson_boxyhq`
+
+### **ADMIN_PORTAL_SSO_PRODUCT**
+
+This will be used as the product for the SSO connections (added from Settings tab) used to login into the Admin portal itself. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
+
+Default: `_jackson_admin_portal`
+
 ### **RETRACED_HOST_URL**
 
 If you'd like to use the Admin Portal to manage our Audit Logs service ([Retraced](https://github.com/retracedhq/retraced)) then set this env var to the URL of the service.
