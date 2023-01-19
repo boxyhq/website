@@ -5,7 +5,7 @@ sidebar_label: Audit Logs
 
 # Admin UI
 
-Retraced can be accessed using Admin interface that allows you to manage Projects & Environments via UI. To enable the Admin UI, make sure you deploy the [Retraced with Docker Compose](../retraced/deploy/docker-compose.md)
+Retraced can be accessed using Admin interface that allows you to manage Projects & Environments via UI. To enable the Admin UI, make sure you deploy the [Retraced with Docker Compose](../retraced/self-host/docker.md)
 
 You can open the Admin UI on port `5225`.
 
