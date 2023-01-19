@@ -171,7 +171,6 @@ module.exports = {
           items: [
             'retraced/advanced/display-templates',
             'retraced/advanced/template-comparators',
-            'retraced/advanced/ssh-streaming',
             'retraced/advanced/tracking-application-versions',
             'retraced/advanced/automated-audit-events',
           ],

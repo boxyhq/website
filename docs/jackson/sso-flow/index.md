@@ -233,7 +233,7 @@ https://localhost:5225/api/oauth/authorize
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete
 - `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks.
 - `nonce` (for OIDC flow): String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token. Sufficient entropy MUST be present in the nonce values used to prevent attackers from guessing values.
-- `prompt` (for SAML SSO Connections): If passed in with the value `login`, the outgoing SAML request to IdP will have the param `ForceAuthn` set as true forcing the user to re-authenticate even if they have an active session.
+- `forceAuthn` (for SAML SSO Connections): If passed in with the value `true`, the outgoing SAML request to IdP will have the param `ForceAuthn` set as true forcing the user to re-authenticate even if they have an active session.
 
 **NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` or `resource` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically.
 

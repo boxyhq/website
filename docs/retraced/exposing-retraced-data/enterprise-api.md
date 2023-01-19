@@ -120,9 +120,9 @@ query Search($query: String!, $last: Int, $before: String) {
 
 This example only requests a few event fields: `id`, `action`, `crud`, `created`, and `actor.name`, but there are many other fields available, as described in the [Event Schema](/docs/retraced/apis/graphql/#event).
 
-The GraphQL APIs for consuming events are specified fully in [GraphQL API Guide](/docs/retraced/apis/graphql/). There are example queries and usage in the [Golang SDK](https://github.com/retracedhq/retraced-go/blob/master/graphql.go#L216) and the [Javascript SDK](https://github.com/retracedhq/retraced-js/blob/master/src/graphql.ts#L334)
+The GraphQL APIs for consuming events are specified fully in [GraphQL API Guide](/docs/retraced/apis/graphql/). There are example queries and usage in the [Go SDK](https://github.com/retracedhq/retraced-go/blob/master/graphql.go#L216) and the [Javascript SDK](https://github.com/retracedhq/retraced-js/blob/master/src/graphql.ts#L334)
 
-## SSH Event Stream
+<!-- ## SSH Event Stream
 
 You can also use your Enterprise API Token to stream events over SSH in real time. You can use your token as the username, and ssh `tail.retraced.io`:
 
@@ -145,7 +145,7 @@ Events will continue to appear as long as the ssh session is open. These events 
 
 **Note**: SSH Streaming may not be available in all Retraced environments.
 
-For more information, check out [SSH Streaming](/docs/retraced/advanced/ssh-streaming/).
+For more information, check out [SSH Streaming](/docs/retraced/advanced/ssh-streaming/). -->
 
 ## Saved Searches
 
