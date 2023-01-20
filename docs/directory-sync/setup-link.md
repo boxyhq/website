@@ -13,46 +13,52 @@ Let's go through the steps to create a new Setup link
 
 You can create a new Setup link for Directory Sync from the Connections page using `New Setup Link` button
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/dsync-connections-page.png" />
+![dsync connections page](/images/product_images/setup-link/dsync/dsync-connections-page.png)
 
 Another way is to go to the `Setup Links` section under `Directory Sync` menu and Click on Create New/New Setup Link button
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/dsync-setup-link-list-empty.png" />
+![dsync setup link list empty](/images/product_images/setup-link/dsync/dsync-setup-link-list-empty.png)
 
 The create Setup Link for Directory Sync page looks like below
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/dsync-setup-link-create-page.png" />
+![dsync setup link create page](/images/product_images/setup-link/dsync/dsync-setup-link-create-page.png)
 
 Once the link is created you can see the the link info section at the bottom
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/setup-link-created.png" />
+![setup link created](/images/product_images/setup-link/dsync/setup-link-created.png)
 
 You can copy the link by clicking on the `Copy` button
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/setup-link-copied.png" />
+![setup link copied](/images/product_images/setup-link/dsync/setup-link-copied.png)
 
 ### Regenerate Link
 
 You can regenerate the link by clicking on `Regenerate` button
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/setup-link-regenerate-init.png" />
+![setup link regenerate init](/images/product_images/setup-link/dsync/setup-link-regenerate-init.png)
 
 Once you confirm Regenerate action you will see the new setup link in the link info section
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/setup-link-regenerated.png" />
+![setup link regenerated](/images/product_images/setup-link/dsync/setup-link-regenerated.png)
 
-### You can go to the `Setup Links` section under `Enterprise SSO` menu and you will see the newly created link there. You can perform `ACTIONS` like `Copy`, `View`, `Regenerate` & `Delete` from this page
+### Actions from Setup Link list page
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/setup-link-list-page.png" />
+You can perform `ACTIONS` like `Copy`, `View`, `Regenerate` & `Delete` from this page
 
-### When you open the setup link you will see the following
+![setup link list page](/images/product_images/setup-link/dsync/setup-link-list-page.png)
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/setup-link-page-dsync.png" />
+### Setup Link Page
 
-### You can open create Directory Sync by clicking on `New Directory` button & filling the correct details
+When you open the setup link you will see the following
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/dsync-setup-link-created.png" />
+![setup link page dsync](/images/product_images/setup-link/dsync/setup-link-page-dsync.png)
+
+### Create Directory Sync Connection
+
+You can open create Directory Sync by clicking on `New Directory` button & filling the correct details
+
+![dsync setup link created](/images/product_images/setup-link/dsync/dsync-setup-link-created.png)
 
 After creation of the directory sync you will see the info section
 
-<img class="mask-img" src="/images/product_images/setup-link/dsync/dsync-created-info.png" />
+![dsync created info](/images/product_images/setup-link/dsync/dsync-created-info.png)

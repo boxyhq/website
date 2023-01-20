@@ -7,7 +7,7 @@ sidebar_label: Overview
 
 Retraced is more than a traditional database to store and retrieve objects. The "Architecture" documentation provides an overview of some of the features that Retraced provides to provide immutability and verifiability of your audit log data.
 
-<img src="/img/audit-logs/audit-logs-architecture.png" />
+![Audit logs Architecture](/img/audit-logs/audit-logs-architecture.png)
 
 ## Cryptographically Guarantee Immutability
 

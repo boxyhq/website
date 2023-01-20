@@ -20,4 +20,4 @@ Next, in your Login API handler, you'll want to add a call to the Publisher API'
 The response from the Publisher API will include a hash of the received event computed according to the Retraced [event hashing formula](/docs/retraced/architecture/hashing-formula). You can choose to verify this hash to ensure
 the event your api sent is identical to the one received by Retraced. If you are using one of the [Retraced SDKs](/docs/retraced/sdks/available-sdks), you can take advantage of built-in functionality for verifying event hashes.
 
-<img height="720" src="https://www.lucidchart.com/publicSegments/view/a68dd763-6aa0-4835-be1f-91f7728befc7/image.png"/>
+![flow](https://www.lucidchart.com/publicSegments/view/a68dd763-6aa0-4835-be1f-91f7728befc7/image.png)
