@@ -173,6 +173,7 @@ module.exports = {
             'retraced/advanced/automated-audit-events',
           ],
         },
+        'retraced/sbom',
       ],
     },
     {
