@@ -160,26 +160,6 @@ Default: `4150`
 
 The circuit breaker threshold used for NSQ client.
 
-## [Supercronic](https://github.com/aptible/supercronic) Configuration
-
-### **SUPERCRONIC_URL**
-
-The release url of `supercronic`.
-
-You can find more details [here](https://github.com/aptible/supercronic/releases/).
-
-### **SUPERCRONIC_SHA1SUM**
-
-Checksum to verify the `supercronic` binary.
-
-You can find more details [here](https://github.com/aptible/supercronic/releases/).
-
-### **SUPERCRONIC**
-
-The name of the `supercronic` release according to the platform you are using.
-
-You can find more details [here](https://github.com/aptible/supercronic/releases/).
-
 ## [Elasticsearch](https://www.elastic.co/) Configuration
 
 ### **ELASTICSEARCH_NODES**
@@ -252,7 +232,7 @@ The RPC address to be used for Signal Sciences API protection.
 ## **ADMIN_ROOT_TOKEN**
 
 When this is set, Retraced makes api `/admin/v1/user/_login` available.
-Admin can make a post request to above api with `token=<ADMIN_ROOT_TOKEN>` in Authorization Header to create users in case they does not exists.
+Admin can make a post request to above api with `token=<ADMIN_ROOT_TOKEN>` in Authorization Header to create users.
 
 ## [Prometheus](https://prometheus.io/) configuration
 
@@ -319,10 +299,6 @@ Interval Milliseconds to be used for statuspage config.
 
 <!-- ## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
 
-### **NO_WARP_PIPE**
-
-If not set, Retraced will enable SSH streaming of events.
-
 ### **WARP_PIPE_REDIS_DB**
 
 The Redis DB to be used for SSH streaming.
@@ -359,7 +335,7 @@ default: `50`
 
 ### **PUBLISHER_CREATE_EVENT_TIMEOUT**
 
-The timeout used by publister for delay while registering events.
+The timeout used by publisher for delay while registering events.
 
 default: `1000`
 
