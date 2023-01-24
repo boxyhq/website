@@ -1,6 +1,6 @@
 ---
-title: Setup Link
-sidebar_label: Setup Link
+title: Setup Link (Enterprise SSO)
+sidebar_label: Enterprise SSO
 description: Setup Link to create a SSO Connection
 ---
 

@@ -45,7 +45,6 @@ module.exports = {
           link: { type: 'doc', id: 'jackson/sso-flow/index' },
           items: ['jackson/sso-flow/example-flow'],
         },
-        'jackson/setup-link',
         'jackson/examples',
         'jackson/observability',
         'jackson/sbom',
@@ -67,7 +66,6 @@ module.exports = {
         'directory-sync/examples',
         'directory-sync/webhooks',
         'directory-sync/events',
-        'directory-sync/setup-link',
         {
           type: 'category',
           label: 'Providers',
@@ -186,6 +184,15 @@ module.exports = {
         'admin-portal/enterprise-sso',
         'admin-portal/directory-sync',
         'admin-portal/audit-logs',
+        {
+          type: 'category',
+          label: 'Setup Link',
+          link: { type: 'doc', id: 'admin-portal/setup-links/index' },
+          items: [
+            'admin-portal/setup-links/jackson',
+            'admin-portal/setup-links/directory-sync',
+          ],
+        },
       ],
     },
   ],

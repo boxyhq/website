@@ -1,6 +1,6 @@
 ---
-title: Setup Link
-sidebar_label: Setup Link
+title: Setup Link (Directory-Sync)
+sidebar_label: Directory Sync
 description: Setup Link to create a Directory Sync
 ---
 
