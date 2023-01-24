@@ -35,10 +35,10 @@ The JSON structure looks like this
       [key: string]: string
     },
   },
-  "sourceIp"?: string,
+  "source_ip"?: string,
   "description"?: string,
-  "isFailure"?: boolean,
-  "isAnonymous"?: boolean,
+  "is_failure"?: boolean,
+  "is_anonymous"?: boolean,
   "fields"?: {
     [key: string]: string
   },

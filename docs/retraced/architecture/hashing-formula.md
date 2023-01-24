@@ -6,15 +6,15 @@ To calculate the digest, Retraced will build a colon (:) delimited string of all
 
 The order of the fields is important, and is defined as:
 
-1. `EVENT_ID`: The string ID that is returned from the Retraced API when calling create event.
-1. `ACTION`: The [action](/docs/retraced/how-to-audit-log/actions/) parameter provided when creating an event.
-1. `TARGET_ID`: The ID of the [target](/docs/retraced/how-to-audit-log/targets/) parameter provided when creating an event. If no target was provided, this is an empty string.
-1. `ACTOR_ID`: The ID of the [actor](/docs/retraced/how-to-audit-log/actors/) parameter provided when creating an event. If no actor was provided, this is an empty string.
-1. `GROUP_ID`: The ID of the [group]/(/docs/retraced/architecture/groups/) parameter provided when creating an event. If no group was provided, this is an empty string.
-1. `SOURCE_IP`: The IP address sent with the event. If no IP address was known, this is an empty string.
-1. `IS_FAILURE`: An integer ("1" or "0") representation of the is_failure parameter provided when creating an event. This is required, and will default to "0".
-1. `IS_ANONYMOUS`: An integer ("1" or "0") representation of the is_anonymous parameter provided when creating an event. This is required, and will default to "0".
-1. `FIELDS`: A semicolon (`;`) separated list of the field=value parameters provided in the event. The fields are sorted alphabetically by the key name before encoding. A trailing `;` is included, if there are fields. If there are no fields, a single colon (`:`) should be appended in place of the fields list.
+1. `event_id`: The string ID that is returned from the Retraced API when calling create event.
+1. `action`: The [action](/docs/retraced/how-to-audit-log/actions/) parameter provided when creating an event.
+1. `target_id`: The ID of the [target](/docs/retraced/how-to-audit-log/targets/) parameter provided when creating an event. If no target was provided, this is an empty string.
+1. `actor_id`: The ID of the [actor](/docs/retraced/how-to-audit-log/actors/) parameter provided when creating an event. If no actor was provided, this is an empty string.
+1. `group_id`: The ID of the [group]/(/docs/retraced/architecture/groups/) parameter provided when creating an event. If no group was provided, this is an empty string.
+1. `source_ip`: The IP address sent with the event. If no IP address was known, this is an empty string.
+1. `is_failure`: An integer ("1" or "0") representation of the is_failure parameter provided when creating an event. This is required, and will default to "0".
+1. `is_anonymous`: An integer ("1" or "0") representation of the is_anonymous parameter provided when creating an event. This is required, and will default to "0".
+1. `fields`: A semicolon (`;`) separated list of the field=value parameters provided in the event. The fields are sorted alphabetically by the key name before encoding. A trailing `;` is included, if there are fields. If there are no fields, a single colon (`:`) should be appended in place of the fields list.
 
 ## Examples
 
@@ -111,7 +111,7 @@ Any values used for hashing should have the following replacements applied:
 1. `%` -- any percent symbols (`%`) should be converted to `%25`
 1. `:` -- any colons (`:`) should be converted to `%3A`
 
-Further, any values in the `FIELDS` section should also have the following escapes applied in a second pass:
+Further, any values in the `fields` section should also have the following escapes applied in a second pass:
 
 1. `=` -- any equals signs (`=`) should be converted to `%3D`
 1. `;` -- any semicolons (`;`) should be converted to `%3B`

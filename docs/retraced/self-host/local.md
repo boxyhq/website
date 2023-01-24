@@ -15,21 +15,21 @@ description: Running Locally
 
 ## Set the environment variables
 
-Use `.env` file to set the [Environment Variables](/docs/retraced/deploy/env-variables).
+Use `.env` file to set the [Environment Variables](./env-variables).
 
 ## Tools (DBs, queues, etc.)
 
 Make sure the tools configured in `.env` file are up & running.
 
-### [Postgres](/docs/retraced/deploy/env-variables#postgres-configuration)
+### [Postgres](./env-variables#postgres-configuration)
 
-### [NSQ](/docs/retraced/deploy/env-variables#nsqd-configuration)
+### [NSQ](./env-variables#nsqd-configuration)
 
-### [Elasticsearch](/docs/retraced/deploy/env-variables#elasticsearch-configuration)
+### [Elasticsearch](./env-variables#elasticsearch-configuration)
 
-### [Supercronic](/docs/retraced/deploy/env-variables#supercronic-configuration)
+### [Supercronic](./env-variables#supercronic-configuration)
 
-### [Redis](/docs/retraced/deploy/env-variables#redis-configuration)
+### [Redis](./env-variables#redis-configuration)
 
 ## Postgres Migration
 

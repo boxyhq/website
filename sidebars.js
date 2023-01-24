@@ -100,24 +100,16 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Deploy',
-          link: { type: 'doc', id: 'retraced/deploy/index' },
-          items: [
-            'retraced/deploy/env-variables',
-            'retraced/deploy/docker-compose',
-            'retraced/deploy/local',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Self Hosting',
           link: { type: 'doc', id: 'retraced/self-host/index' },
           items: [
-            'retraced/self-host/index',
+            'retraced/self-host/env-variables',
+            'retraced/self-host/local',
             'retraced/self-host/docker',
             'retraced/self-host/digitalocean',
             'retraced/self-host/aws',
             'retraced/self-host/kubernetes',
+            'retraced/self-host/skaffold',
           ],
         },
         {
@@ -170,7 +162,6 @@ module.exports = {
             'retraced/exposing-retraced-data/enterprise-api',
           ],
         },
-        'retraced/admin-ui',
         {
           type: 'category',
           label: 'Advanced Retraced',
@@ -182,6 +173,7 @@ module.exports = {
             'retraced/advanced/automated-audit-events',
           ],
         },
+        'retraced/sbom',
       ],
     },
     {
@@ -189,7 +181,20 @@ module.exports = {
       label: 'Admin Portal',
       collapsible: true,
       link: { type: 'doc', id: 'admin-portal/overview' },
-      items: ['admin-portal/enterprise-sso', 'admin-portal/directory-sync'],
+      items: [
+        'admin-portal/enterprise-sso',
+        'admin-portal/directory-sync',
+        'admin-portal/audit-logs',
+        {
+          type: 'category',
+          label: 'Setup Link',
+          link: { type: 'doc', id: 'admin-portal/setup-links/index' },
+          items: [
+            'admin-portal/setup-links/jackson',
+            'admin-portal/setup-links/directory-sync',
+          ],
+        },
+      ],
     },
   ],
 };
