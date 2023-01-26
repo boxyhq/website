@@ -8,7 +8,7 @@ description: Publisher API
 
 ### [Swagger JSON](http://localhost:3000/auditlog/publisher/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)
 
-The Publisher API is the API that most applications will embed into a production system. This API contains the methods necessary to send new events into Retraced, create [viewer tokens](/docs/retraced/getting-started/embedded-viewer) and to programatically search events when the embedded viewer is not being used.
+The Publisher API is the API that most applications will embed into a production system. This API contains the methods necessary to send new events into Retraced, create [viewer tokens](/docs/retraced/getting-started/embedded-viewer) and to programmatically search events when the embedded viewer is not being used.
 
 When possible, it's recommended to use one of the supported [SDKs](/docs/retraced/sdks/available-sdks) as these provide an easier way to get started.
 
@@ -63,8 +63,3 @@ The Publisher API endpoints expect the token to be provided in a header of the f
 ```
 Authorization: token=YOUR_PUBLISHER_TOKEN
 ```
-
-## Publisher API Tokens
-
-Publisher API tokens can be managed from the [Retraced admin website](https://app.retraced.io)
-in the "Settings" section.
