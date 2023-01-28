@@ -201,6 +201,7 @@ await connection.getConnections({
 
 </TabItem>
 <TabItem value="02" label="Response">
+
 ```json
 [
   {
