@@ -104,9 +104,6 @@ await connection.createSAMLConnection({
 
 Update a SAML Single Sign-On connection.
 
-<Tabs>
-<TabItem value="01" label="Request" default>
-
 ```js
 await connection.updateSAMLConnection({
   tenant: 'boxyhq',
@@ -118,10 +115,6 @@ await connection.updateSAMLConnection({
   clientSecret: '<clientSecret of the SAML SSO Connection>',
 });
 ```
-
-</TabItem>
-
-</Tabs>
 
 ### Create OIDC Connection
 
@@ -171,9 +164,6 @@ await connection.createOIDCConnection({
 
 Update an OIDC Single Sign-On connection.
 
-<Tabs>
-<TabItem value="01" label="Request" default>
-
 ```js
 await connection.updateOIDCConnection({
   tenant: 'boxyhq',
@@ -188,10 +178,6 @@ await connection.updateOIDCConnection({
   clientSecret: '<clientSecret of the OIDC SSO Connection>',
 });
 ```
-
-</TabItem>
-
-</Tabs>
 
 ### Get SAML/OIDC Connections
 
@@ -214,9 +200,7 @@ await connection.getConnections({
 ```
 
 </TabItem>
-
 <TabItem value="02" label="Response">
-
 ```json
 [
   {
@@ -254,9 +238,6 @@ await connection.getConnections({
 
 Update a SAML or OIDC Single Sign-On connection.
 
-<Tabs>
-<TabItem value="01" label="Request" default>
-
 ```js
 // Using tenant and product
 await connection.deleteConnections({
@@ -270,10 +251,6 @@ await connection.deleteConnections({
   clientSecret: '<clientSecret of the SSO Connection>',
 });
 ```
-
-</TabItem>
-
-</Tabs>
 
 ---
 

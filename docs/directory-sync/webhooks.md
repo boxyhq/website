@@ -88,9 +88,6 @@ You can verify the webhook signature by using the following steps:
 
 Once the signature is verified, you can use the webhook payload to perform any action in your application.
 
-<Tabs>
-<TabItem value="01" label="Node.js" default>
-
 ```javascript showLineNumbers
 // Your webhook secret
 const secret = 'your-secret-here';
@@ -121,6 +118,3 @@ if(signature === expectedSignature) {
   // The webhook request is invalid
 }
 ```
-
-</TabItem>
-</Tabs>
