@@ -207,7 +207,7 @@ curl -X "DELETE" --location 'http://localhost:5225/api/v1/connections' \
 Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](../deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
 :::
 
-Jackson has been designed to abstract the underlying IdP login flow as a pure OAuth 2.0 flow. This means it's compatible with any standard OAuth 2.0 library out there, both client-side and server-side. It is important to remember that SSO Connection is configured per customer unlike OAuth 2.0 where you can have a single OAuth app supporting logins for all customers.
+Jackson has been designed to abstract the underlying SAML/OIDC login flow as a pure OAuth 2.0 flow. This means it's compatible with any standard OAuth 2.0 library out there, both client-side and server-side. It is important to remember that SSO Connection is configured per customer unlike OAuth 2.0 where you can have a single OAuth app supporting logins for all customers.
 
 Jackson also supports the PKCE authorization flow (<https://oauth.net/2/pkce/>), so you can protect your SPAs.
 
