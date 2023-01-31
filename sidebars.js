@@ -174,6 +174,7 @@ module.exports = {
           ],
         },
         'retraced/sbom',
+        'retraced/container-signing',
       ],
     },
     {
