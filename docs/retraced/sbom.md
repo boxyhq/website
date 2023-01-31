@@ -8,17 +8,17 @@ SBOM reports primarily use [SPDX](https://en.wikipedia.org/wiki/Software_Package
 
 ## Reports
 
-**Note:** This is supported for all versions >=1.5.1
+**Note:** This is supported for all versions >=1.5.3
 
 You can find the SBOM reports as artifacts in our container registry at the locations below. They are updated every time there is change in the codebase and tagged by the exact version we release.
 
-| Location                                        | Files                         | Context                           |
-| ----------------------------------------------- | ----------------------------- | --------------------------------- |
-| `ghcr.io/retracedhq/retraced/service:<version>` | `sbom.spdx`, `sbom.cyclonedx` | Retraced service                  |
-| `ghcr.io/retracedhq/retraced/docker:<version>`  | `sbom.spdx`, `sbom.cyclonedx` | Docker Image for Retraced service |
+| Location                                             | Files                         | Context                           |
+| ---------------------------------------------------- | ----------------------------- | --------------------------------- |
+| `ghcr.io/retracedhq/retraced/sbom:service-<version>` | `sbom.spdx`, `sbom.cyclonedx` | Retraced service                  |
+| `ghcr.io/retracedhq/retraced/sbom:docker-<version>`  | `sbom.spdx`, `sbom.cyclonedx` | Docker Image for Retraced service |
 
 You can use [oras](https://oras.land/cli) (or a similar OCI artifacts tool) to retrieve these files.
 
 ```bash
-oras pull ghcr.io/retracedhq/retraced/service:<version>
+oras pull ghcr.io/retracedhq/retraced/sbom:service-<version>
 ```
