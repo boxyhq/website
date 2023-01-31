@@ -26,7 +26,7 @@ You will also need to map some attributes of the claims so we can fetch the prof
 6. On the Choose Issuance Authorization Rules page, select either Permit all users to access this relying party or Deny all users access to this relying party, and then click Next.
 7. On the Ready to Add Trust page, review the settings, and then click Next to save your relying party trust information.
 8. On the Finish page, click Close. This action automatically displays the Edit Claim Rules dialog box.
-9. Mapping attributes:
+9. **Mapping attributes**:
    On the Configure Claim Rule screen, enter a Claim Rule Name of your choice, select Active Directory as the Attribute Store, then add the following mapping:
 
 - From the LDAP Attribute column, select `E-Mail-Addresses`. From the Outgoing Claim Type, type `E-Mail Address`.
@@ -34,6 +34,18 @@ You will also need to map some attributes of the claims so we can fetch the prof
 - From the LDAP Attribute column, select `Surname`. From the Outgoing Claim Type, type `Surname`.
 - From the LDAP Attribute column, select `User-Principal-Name`. From the Outgoing Claim Type, type `Name ID`.
 
-10. Finally open Windows PowerShell as an administrator, then run the following command:
+10. **Transform Rule**: Create a transform rule mapping the incoming `Email-Address` to outgoing `NameID` (of type `Email`), ADFS by default sends `NameID` as `Unspecified` which results in an `InvalidNameIDPolicy` error if this step is missed.
 
-`Set-ADFSRelyingPartyTrust -TargetName <display-name> -SamlResponseSignature "MessageAndAssertion"`
+![Transform rule](/img/sso-providers/adfs/nameid-email.png)
+
+If you'd rather use Claim rule language then the following rule can be applied:
+
+```sh
+c:[Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"] => issue(Type = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", Issuer = c.Issuer, OriginalIssuer = c.OriginalIssuer, Value = c.Value, ValueType = c.ValueType, Properties["http://schemas.xmlsoap.org/ws/2005/05/identity/claimproperties/format"] = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress");
+```
+
+11. Finally open Windows PowerShell as an administrator, then run the following command:
+
+```sh
+ Set-ADFSRelyingPartyTrust -TargetName <display-name> -SamlResponseSignature "MessageAndAssertion"
+```
