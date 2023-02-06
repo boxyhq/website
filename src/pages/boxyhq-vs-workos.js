@@ -8,8 +8,6 @@ import { IconNo, IconYes } from '../components/Pricing/Icons';
 const title = 'BoxyHQ vs WorkOS';
 const description =
   'BoxyHQ is a fast, secure open-source platform that brings enterprise SSO capabilities to SaaS applications.';
-const ProductIcon =
-  require('../../static/img/products/audit-logs/logo.svg').default;
 
 const AuditLogs = () => {
   return (
