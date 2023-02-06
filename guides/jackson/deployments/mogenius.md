@@ -1,5 +1,5 @@
 ---
-title: Deploy SAML Jackson on mogenius
+title: Deploy Enterprise SSO on mogenius
 sidebar_label: mogenius
 ---
 

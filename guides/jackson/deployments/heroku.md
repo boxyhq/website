@@ -1,5 +1,5 @@
 ---
-title: Deploy SAML Jackson on Heroku
+title: Deploy Enterprise SSO on Heroku
 sidebar_label: Heroku
 ---
 
