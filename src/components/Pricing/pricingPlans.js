@@ -85,8 +85,9 @@ export const pricingPlans = [
     feature: 'Enterprise SSO & Directory Sync',
     tiers: {
       'self-hosted': 'Free forever',
-      'self-hosted-premium': '$49 per SSO or Directory Sync connection',
-      saas: '$49 per SSO or Directory Sync connection',
+      'self-hosted-premium':
+        '$49 per SSO or Directory Sync connection (per month)',
+      saas: '$49 per SSO or Directory Sync connection (per month)',
       enterprise: 'contactUs:435f5b51-f9ea-4f96-aac3-0c6e6d8a07b4',
     },
   },
