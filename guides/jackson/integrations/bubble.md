@@ -15,8 +15,6 @@ Please note that you need a self-hosted instance of SAML Jackson to use this plu
 
 Please follow the instructions in the [SAML Jackson Deployment Guides](https://boxyhq.com/guides/jackson#deployment-guides) to setup your SAML Jackson instance.
 
-Please reach out to our team for any questions or help with the setup. We are happy to help!
-
 Try the [Example Bubble App](https://boxyhq-saml-sso.bubbleapps.io/version-test) to see the plugin in action.
 
 ## Install the plugin
@@ -36,6 +34,8 @@ Next step is to configure the plugin. Make sure you add the following values in 
 - `Callback URL`: The URL where the user will be redirected after successful authentication with the IdP. This URL should be the same as the URL you have configured while adding the SAML connection in SAML Jackson.
 
 - `Client Secret Verifier`: This is optional. If you have configured a client secret verifier in SAML Jackson, you can add it here. If you have not configured a client secret verifier, you can leave this field blank.
+
+![Configure the plugin](/img/bubble-io/step-1.png)
 
 Now you are ready to setup Workflows in your application to use the plugin.
 
@@ -61,6 +61,8 @@ This workflow will be triggered when the user clicks on SAML SSO login button on
 
 Choose **BoxyHQ - Get Authorization URL** from the list of Actions.
 
+![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-2.png)
+
 Add the following values in the Action:
 
 - `tenant`: A multi-tenant enterprise app must attach SSO connections to a tenant identifier. For example, an app can use any of the following as its tenant identifier: `domain`, `organization id`, `team id` or other unique identifier. This value will be used to fetch the SAML connection from SAML Jackson. For example: `boxyhq`.
@@ -69,7 +71,11 @@ Add the following values in the Action:
 
 - `state`: A random string that will be used to verify the state of the request. This value will be passed back to your application in the `Callback URL`. You can use this value to verify the authenticity of the request.
 
+![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-3.png)
+
 This action will return `Authorization URL` which you can use to redirect the user to the IdP for authentication.
+
+![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-4.png)
 
 ### SSO Callback Workflow
 
@@ -110,6 +116,8 @@ The Action will return the following values:
 - `requested product` - The product identifier that was passed in the `Login Workflow`.
 - `profile raw attributes` - The raw attributes that was returned by the IdP. This value will be a JSON string.
 
+![BoxyHQ - Fetch User Profile Action](/img/bubble-io/step-5.png)
+
 #### Action: Create an user account for someone else
 
 You can use the **Create an user account for someone else** Action to create a new user account in your application. This Action will create a new user account in your application if the user does not already exist. If the user already exists, it will update the user account with the new values.
@@ -117,6 +125,8 @@ You can use the **Create an user account for someone else** Action to create a n
 Make sure you checked the **Return the user if the account already exists** checkbox in the Action.
 
 You can configure the values as per your requirements.
+
+![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-6.png)
 
 #### Action: Assign a temp password to a user
 
@@ -135,8 +145,6 @@ Add the following values in the Action:
 
 You can use the **Redirect to a page** Action to redirect the user to an authenticated page in your application.
 
-## Additional Links
+## Next Steps
 
-- [Live Bubble Example App](https://boxyhq-saml-sso.bubbleapps.io/version-test)
-- [SAML Jackson Documentation](https://boxyhq.com/docs/jackson/overview)
-- [SAML Jackson Github Repository](https://github.com/boxyhq/jackson)
+Please reach out to our team for any questions or help with the setup. We are happy to help!
