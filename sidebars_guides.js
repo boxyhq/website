@@ -43,6 +43,7 @@ module.exports = {
             'jackson/integrations/firebase',
             'jackson/integrations/nextauth',
             'jackson/integrations/supertokens',
+            'jackson/integrations/bubble',
           ],
         },
       ],
