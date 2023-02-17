@@ -344,3 +344,9 @@ default: `1000`
 ### **SEGMENT_WRITE_KEY**
 
 The write keys used for [Analytics](https://segment.com/docs/connections/sources/catalog/libraries/server/node/#identify). Reports the project as a `user segment`.
+
+## Anonymous Analytics
+
+### **RETRACED_NO_TELEMETRY** or **DO_NOT_TRACK**
+
+Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in any form.

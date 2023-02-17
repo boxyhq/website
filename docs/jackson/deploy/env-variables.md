@@ -287,6 +287,10 @@ Set this to a random string. You can use `openssl rand -base64 32` to get one. T
 
 Set this to a comma separated string of email addresses or glob patterns like: `tonystark@gmail.com,*@marvel.com`. Access will be denied to email addresses which don't match. If you don't specify any value access is denied to all.
 
+### **NEXTAUTH_ADMIN_CREDENTIALS**
+
+Set this to a comma separated string of the pattern `email:password` to enable login to the Admin Portal, for example `NEXTAUTH_ADMIN_CREDENTIALS=deepak@boxyhq.com:Password123`. If you don't specify any value access is denied to all.
+
 ### **ADMIN_PORTAL_SSO_TENANT**
 
 This will be used as the tenant for the SSO connections (added from Settings tab) used to login into the Admin portal itself. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
@@ -317,4 +321,4 @@ you need to set the admin root token for Retraced so that we can connect to Retr
 
 ### **BOXYHQ_NO_TELEMETRY** or **DO_NOT_TRACK**
 
-Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in form.
+Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in any form.
