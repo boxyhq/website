@@ -19,7 +19,7 @@ Try the [Example Bubble App](https://boxyhq-saml-sso.bubbleapps.io/version-test)
 
 ## Install the plugin
 
-Here is the quick steps to install the plugin from the Bubble editor:
+Here are the quick steps to install the plugin from the Bubble editor:
 
 - Go to your application's Plugins tab from left navigation.
 - Click on the **Add plugins** button from the top right corner.
