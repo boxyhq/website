@@ -1,6 +1,12 @@
+---
+title: Environment Variables (Enterprise SSO)
+sidebar_label: Environment Variables
+description: Environment Variables for Enterprise SSO
+---
+
 # Environment Variables
 
-The env vars are only applicable to the Jackson service. If you are using the npm then look for the options below when initializing the library.
+The env vars are only applicable to the Jackson service. If you are using the npm library then look for the options below when initializing the library.
 
 ## General configuration
 
@@ -80,6 +86,30 @@ Default: `false`
 
 NPM library option: `idpEnabled`
 
+### **PUBLIC_KEY**
+
+This is the public key of the private key used to sign the SAML requests. Jackson expects the public key to be base64 encoded.
+
+NPM library option: `certs.publicKey`
+
+### **PRIVATE_KEY**
+
+This is the private key used to sign the SAML requests. Jackson expects the private key to be base64 encoded.
+
+NPM library option: `certs.privateKey`
+
+To generate a private key and public key pair you can use the following command:
+
+```bash
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out public.crt -sha256 -days 365 -nodes
+
+# Convert the public key to base64
+cat public.crt | base64
+
+# Convert the private key to base64
+cat key.pem | base64
+```
+
 ## OpenID configuration
 
 For supporting OpenID flow, we need to set the algorithm and keys used to sign the ID token JWT.
@@ -137,13 +167,25 @@ NPM library option: `db.type`
 
 ### **DB_URL**
 
-The database URL to connect to.
+The database URL to connect to. If you are using self-signed certificates then pass `sslmode=noverify` instead of `sslmode=require` in the `DB_URL`. This is because self-signed certs will be rejected as unauthorized in strict mode. Also set `DB_SSL=true` and `DB_SSL_REJECT_UNAUTHORIZED=false` (see env vars below for more details).
 
-Example: `postgres://postgres:postgres@localhost:5432/postgres`
+Example: `postgres://postgres:postgres@localhost:5432/postgres` or `postgres://postgres:postgres@localhost:5432/postgres?sslmode=no-verify`
 
 For `mssql` the URL takes the form of `sqlserver://localhost:1433;database=<db name>;username=<username>;password=<password>;encrypt=true`
 
 NPM library option: `db.url`
+
+### **DB_SSL**
+
+This needs to be set to `true` if you are using SSL with your database (You should definitely be using SSL if the database needs to be access via a public url).
+
+Default: `false`
+
+### **DB_SSL_REJECT_UNAUTHORIZED**
+
+If you are using a self-signed certificate then set this to `false`, otherwise it will be rejected due to Certificate Authority checks.
+
+Default: `true`
 
 ### **DB_TTL**
 
@@ -189,17 +231,25 @@ NPM library option: `preLoadedConnection`
 
 Jackson supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
 
-### **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
+### **OTEL_EXPORTER_OTLP_ENDPOINT** or **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
 
 Target URL to which the exporter is going to send metrics.
 
 Example: `https://ingest.lightstep.com:443/metrics/otlp/v0.6`
 
-### **OTEL_EXPORTER_OTLP_HEADERS**
+### **OTEL_EXPORTER_OTLP_HEADERS** or **OTEL_EXPORTER_OTLP_METRICS_HEADERS**
 
 Headers relevant for the endpoint, useful for specifying authentication details for providers.
 
 Example: `lightstep-access-token=<token>,...`
+
+### **OTEL_EXPORTER_OTLP_PROTOCOL** or **OTEL_EXPORTER_OTLP_METRICS_PROTOCOL**
+
+The transport protocol. Options MUST be one of: `grpc`, `http/protobuf` or `http/json`.
+
+### **OTEL_EXPORTER_DEBUG**
+
+Set this to `true` to enable debug logs for Opentelemetry. This is only meant for purposes of debugging otel locally.
 
 ## Admin Portal configuration
 
@@ -236,3 +286,39 @@ Set this to a random string. You can use `openssl rand -base64 32` to get one. T
 ### **NEXTAUTH_ACL**
 
 Set this to a comma separated string of email addresses or glob patterns like: `tonystark@gmail.com,*@marvel.com`. Access will be denied to email addresses which don't match. If you don't specify any value access is denied to all.
+
+### **NEXTAUTH_ADMIN_CREDENTIALS**
+
+Set this to a comma separated string of the pattern `email:password` to enable login to the Admin Portal, for example `NEXTAUTH_ADMIN_CREDENTIALS=deepak@boxyhq.com:Password123`. If you don't specify any value access is denied to all.
+
+### **ADMIN_PORTAL_SSO_TENANT**
+
+This will be used as the tenant for the SSO connections (added from Settings tab) used to login into the Admin portal itself. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
+
+Default: `_jackson_boxyhq`
+
+### **ADMIN_PORTAL_SSO_PRODUCT**
+
+This will be used as the product for the SSO connections (added from Settings tab) used to login into the Admin portal itself. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
+
+Default: `_jackson_admin_portal`
+
+### **RETRACED_HOST_URL**
+
+If you'd like to use the Admin Portal to manage our Audit Logs service ([Retraced](https://github.com/retracedhq/retraced)) then set this env var to the URL of the service.
+
+### **RETRACED_EXTERNAL_URL**
+
+If you'd like to use the Admin Portal to manage our Audit Logs service ([Retraced](https://github.com/retracedhq/retraced)) then set this env var to the Public URL of the service. If this is the same as `RETRACED_HOST_URL` above then you can skip this and it will default to the value of `RETRACED_HOST_URL`.
+
+Default: It is set to `RETRACED_HOST_URL` if `RETRACED_EXTERNAL_URL` is not defined.
+
+### **RETRACED_ADMIN_ROOT_TOKEN**
+
+you need to set the admin root token for Retraced so that we can connect to Retraced and fetch projects and audit logs.
+
+## Anonymous Analytics
+
+### **BOXYHQ_NO_TELEMETRY** or **DO_NOT_TRACK**
+
+Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in any form.

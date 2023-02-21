@@ -44,8 +44,8 @@ curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 - `encodedRawMetadata`: Base64 encoding of the XML metadata your customer gets from their Identity Provider. Either this or `metadataUrl` needs to be specified
 - `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
 - `redirectUrl`: Allowed redirect URL. Repeat this field multiple times to allow multiple redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above).
-- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
-- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
+- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id. **Should not contain the : character since we use it as a delimiter internally**
+- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using. **Should not contain the : character since we use it as a delimiter internally**
 - `name`: A friendly name to identify the SAML connection
 - `description`: A short description with some information of the connection
 
@@ -78,8 +78,8 @@ curl --location --request POST 'http://localhost:5225/api/v1/connections' \
 - `oidcClientSecret`: The client secret issued to the client during the IdP registration process.
 - `defaultRedirectUrl`: The redirect URL to use in the IdP login flow. Jackson will call this URL after completing an IdP login flow
 - `redirectUrl`: Allowed redirect URL. Repeat this field multiple times to allow multiple redirect URLs. Jackson will disallow any redirects not on this list (or not the default URL above).
-- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id
-- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using
+- `tenant`: Jackson supports a multi-tenant architecture, this is a unique identifier you set from your side that relates back to your customer's tenant. This is normally an email, domain, an account id, or user-id. **Should not contain the : character since we use it as a delimiter internally**
+- `product`: Jackson support multiple products, this is a unique identifier you set from your side that relates back to the product your customer is using. **Should not contain the : character since we use it as a delimiter internally**
 - `name`: A friendly name to identify the OIDC connection
 - `description`: A short description with some information of the connection
 
@@ -207,7 +207,7 @@ curl -X "DELETE" --location 'http://localhost:5225/api/v1/connections' \
 Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-core-1_0.html). By including `openid` in the `scope` param, an additional `id_token` is returned from the token endpoint which contains the user claims: `id, email, firstName, and lastName`. To enable the flow on Jackson, be sure to configure the keys and algorithm in [OpenID configuration](../deploy/env-variables.md#openid-configuration). If the authentication request contained `nonce` then it is passed unmodified to the ID Token, which the client can use to validate and mitigate replay attacks.
 :::
 
-Jackson has been designed to abstract the underlying IdP login flow as a pure OAuth 2.0 flow. This means it's compatible with any standard OAuth 2.0 library out there, both client-side and server-side. It is important to remember that SSO Connection is configured per customer unlike OAuth 2.0 where you can have a single OAuth app supporting logins for all customers.
+Jackson has been designed to abstract the underlying SAML/OIDC login flow as a pure OAuth 2.0 flow. This means it's compatible with any standard OAuth 2.0 library out there, both client-side and server-side. It is important to remember that SSO Connection is configured per customer unlike OAuth 2.0 where you can have a single OAuth app supporting logins for all customers.
 
 Jackson also supports the PKCE authorization flow (<https://oauth.net/2/pkce/>), so you can protect your SPAs.
 
@@ -233,7 +233,7 @@ https://localhost:5225/api/oauth/authorize
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete
 - `state`: Use a randomly generated string as the state, this will be echoed back as a query parameter when taking the user back to the `redirect_uri` above. You should validate the state to prevent XSRF attacks.
 - `nonce` (for OIDC flow): String value used to associate a Client session with an ID Token, and to mitigate replay attacks. The value is passed through unmodified from the Authentication Request to the ID Token. Sufficient entropy MUST be present in the nonce values used to prevent attackers from guessing values.
-- `prompt` (for SAML SSO Connections): If passed in with the value `login`, the outgoing SAML request to IdP will have the param `ForceAuthn` set as true forcing the user to re-authenticate even if they have an active session.
+- `forceAuthn` (for SAML SSO Connections): If passed in with the value `true`, the outgoing SAML request to IdP will have the param `ForceAuthn` set as true forcing the user to re-authenticate even if they have an active session.
 
 **NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` or `resource` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically.
 

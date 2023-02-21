@@ -84,6 +84,7 @@ Jackson currently supports the following databases.
 
 - Postgres
 - MySQL
+- Microsoft SQL Server
 - MariaDB
 - MongoDB
 - Redis

@@ -36,7 +36,7 @@ module.exports = {
     announcementBar: {
       id: 'announcement-bar',
       content:
-        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star us on GitHub</a>',
+        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star Enterprise SSO on GitHub</a>     <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/retracedhq/retraced">⭐ Star Audit Logs on GitHub</a>',
       isCloseable: false,
     },
     image: 'img/website-preview-image.png',
@@ -90,6 +90,7 @@ module.exports = {
           ],
         },
         { to: '/blog', label: 'Blog' },
+        { to: '/pricing', label: 'Pricing' },
         {
           label: 'Company',
           type: 'dropdown',

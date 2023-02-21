@@ -130,6 +130,57 @@ html[data-theme='dark'] .header-github-link:before {
   flex-wrap: wrap;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
+/* Pricing page */
+
+.pricing__table {
+  width: 100%;
+  display: inline-table !important;
+  table-layout: fixed;
+  margin-top: 20px;
+  border: 1px solid #f1f3f5;
+}
+
+.pricing__table td,
+.pricing__table th {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #f1f3f5;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.pricing__table tr,
+.pricing__table tr:nth-child(2n) {
+  background: none;
+}
+
+.pricing__section__desktop {
+  display: none;
+}
+
+.pricing__table .highlight {
+  background: rgb(37 194 160 / 31%);
+}
+
+.modal__close__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Override "react-model" container width */
+.ReactModal__Content {
+  width: 80%;
+}
+
 /* Mobile view */
 
 @media screen and (min-width: 996px) {
@@ -140,5 +191,18 @@ html[data-theme='dark'] .header-github-link:before {
 
   .hero__image {
     display: flex;
+  }
+
+  .pricing__section__desktop {
+    display: block;
+  }
+
+  .pricing__section__mobile {
+    display: none;
+  }
+
+  .ReactModal__Content {
+    width: 500px;
+    height: 550px;
   }
 }

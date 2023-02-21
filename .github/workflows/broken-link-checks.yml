@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check
-        uses: ruzickap/action-my-broken-link-checker@v2.3.0
+        uses: ruzickap/action-my-broken-link-checker@v2.3.1
         with:
           url: https://boxyhq.com
-          cmd_params: '--max-connections=10 --timeout=60 --buffer-size=8192 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org|instagram.com)" --skip-tls-verification --ignore-fragments --header="User-Agent:curl/7.84.0"'
+          cmd_params: '--max-connections=10 --timeout=60 --buffer-size=8192 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org|instagram.com)" --skip-tls-verification --ignore-fragments --header="User-Agent:Chrome/108.0.0.0"'
       - name: Post to Slack
         if: ${{ failure() }}
         uses: slackapi/slack-github-action@v1.23.0

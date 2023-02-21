@@ -1,4 +1,10 @@
-# Examples & Resources | Directory Sync
+---
+title: Examples & Resources (Directory Sync)
+sidebar_label: Examples & Resources
+description: Examples & Resources for our Directory Sync product
+---
+
+# Examples & Resources (Directory Sync)
 
 ## Examples
 

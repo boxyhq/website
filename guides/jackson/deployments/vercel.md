@@ -1,5 +1,5 @@
 ---
-title: Deploy SAML Jackson on Vercel
+title: Deploy Enterprise SSO on Vercel
 sidebar_label: Vercel
 ---
 
