@@ -55,11 +55,18 @@ Follow the below steps to login into the Admin Portal.
 - Visit the path `/api/auth/signin` on your app.
 - Enter the email address and password that matches the `NEXTAUTH_ADMIN_CREDENTIALS` and click the button **Sign In**.
 
-### 3. SAML Single Sign-On
+### 3. SAML/OIDC Single Sign-On
 
-With SAML Single Sign-On, you can sign in to the Admin Portal using your SAML Identity Provider. The app will redirect you to your SAML Identity Provider to sign in. Once you've signed in, you'll be redirected back to the Admin Portal.
+With SAML/OIDC Single Sign-On, you can sign in to the Admin Portal using your Identity Provider. The app will redirect you to your Identity Provider to sign in. Once you've signed in, you'll be redirected back to the Admin Portal.
 
-To enable SAML Single Sign-On, you'll need to access the Admin Portal using either [Magic Links](#1-magic-links) or [Email and Password](#2-email-and-password). Once you've logged in, you can configure SAML Single Sign-On from the Admin Portal.
+Configure the following environment variables to enable SAML/OIDC Single Sign-On.
+
+- `ADMIN_PORTAL_SSO_TENANT`: This will be used as the tenant for the SSO connections. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
+- `ADMIN_PORTAL_SSO_PRODUCT`: This will be used as the product for the SSO connections. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
+
+If not set, the default values will be used which are `_jackson_boxyhq` and `_jackson_admin_portal`.
+
+To enable SAML/OIDC Single Sign-On, you'll need to access the Admin Portal using either [Magic Links](#1-magic-links) or [Email and Password](#2-email-and-password). Once you've logged in, you can configure SAML/OIDC Single Sign-On from the Admin Portal.
 
 Go to **Settings** > **SSO for Admin Portal** and add a new SSO connection. We support both SAML and OIDC protocols.
 
