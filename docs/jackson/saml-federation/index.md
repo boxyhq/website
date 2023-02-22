@@ -13,12 +13,12 @@ This feature allows you to federate multiple Identity Providers (IdPs) without n
 
 Here is how the SAML Federation flow works if you are using Jackson as a SAML IdP and want to federate with another identity provider (IdP) (Eg: Okta):
 
-- The user access the SP's login page
-- The user click on the "Login with SAML" button
-- The SP send SAML Request to Jackson's SSO endpoint
-- Jackson display the list of IdP available for the user to choose from (if there is more than one IdP) based on requested tenant and product combination
-- Jackson redirect the user to the chosen IdP for authentication
-- After successful authentication, IdP send (POST) SAML Response to Jackson's ACS endpoint
+- The user access the Service Provider's (SP) login page
+- The user clicks on the "Login with SAML" button
+- The SP sends SAML Request to Jackson's SSO endpoint
+- Jackson displays the list of IdP available for the user to choose from (if there is more than one IdP) based on the requested tenant and product combination
+- Jackson redirects the user to the chosen IdP for authentication
+- After successful authentication, IdP sends (POST) SAML Response to Jackson's ACS endpoint
 - Jackson process SAML Response from the IdP and create a new SAML Response to send (POST) back to the SP's ACS endpoint
 - SP process SAML Response from Jackson and create a new session for the user (Depending on the SP's implementation)
 

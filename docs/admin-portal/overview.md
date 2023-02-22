@@ -22,7 +22,7 @@ We use [NextAuth](https://next-auth.js.org) to handle authentication. Set the fo
 
 ### 1. Magic Links
 
-With Magic Links, you can sign in to the Admin Portal without having to enter a password. The app will send you an email with a link to sign in. You'll need a **SMTP server credentials** to send emails.
+With Magic Links, you can sign in to the Admin Portal without having to enter a password. The app will send you an email with a link to sign in. You'll need **SMTP server credentials** to send emails.
 
 Configure the following environment variables to enable Magic Links.
 
@@ -48,7 +48,7 @@ Configure the environment variable to enable Email and Password authentication.
 
 - `NEXTAUTH_ADMIN_CREDENTIALS`: A comma separated list of email and password pairs. For example: `david@acme.com:secretpassword,john@acme.com:anotherpassword`
 
-At the moment, set the password as plain text. We'll add support for encrypted passwords in the near future.
+At the moment, set the password as plain text. We'll add support for encrypted passwords soon.
 
 Follow the below steps to login into the Admin Portal.
 
