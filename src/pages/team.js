@@ -66,7 +66,6 @@ function Team() {
 
         <div className="row">
           <div className="col col--1 margin-bottom--lg"></div>
-
           <Profile
             img={'/img/team/utkarsh.jpg'}
             name={'Utkarsh Mehta: Senior Software Engineer'}
@@ -74,6 +73,16 @@ function Team() {
             subtitle={`There is an easy way and a hard way. The hard part is finding the easy way.`}
             github={'https://github.com/ukrocks007'}
             twitter={'https://twitter.com/ukrocks007'}
+          ></Profile>
+          <div className="col col--2 margin-bottom--lg"></div>
+
+          <Profile
+            img={'/img/team/nathan.jpg'}
+            name={'Nathan Tarbert: Community Success Manager'}
+            bio={`After a 20+ year career in the transportation industry, Nathan Tabert's love of programming led him to retool as a full-stack JavaScript developer. After building an award-winning kids' finance crypto app as part of a team hackathon, he found his way to application security and BoxyHQ. Now he gets to spearhead BoxyHQ's developer-first community outreach efforts and advocate for developers as part of their security and compliance journey.`}
+            subtitle={`Words of Advice: Friends don't let friends deploy on Fridays...`}
+            github={'https://github.com/NathanTarbert'}
+            twitter={'https://twitter.com/nathan_tarbert'}
           ></Profile>
           <div className="col col--1 margin-bottom--lg"></div>
         </div>
