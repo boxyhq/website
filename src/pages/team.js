@@ -78,7 +78,7 @@ function Team() {
 
           <Profile
             img={'/img/team/nathan.jpg'}
-            name={'Nathan Tarbert: Community Success Manager'}
+            name={'Nathan Tarbert: Community Success Engineer'}
             bio={`After a 20+ year career in the transportation industry, Nathan Tabert's love of programming led him to retool as a full-stack JavaScript developer. After building an award-winning kids' finance crypto app as part of a team hackathon, he found his way to application security and BoxyHQ. Now he gets to spearhead BoxyHQ's developer-first community outreach efforts and advocate for developers as part of their security and compliance journey.`}
             subtitle={`Words of Advice: Friends don't let friends deploy on Fridays...`}
             github={'https://github.com/NathanTarbert'}
