@@ -20,7 +20,7 @@ Integrating SAML SSO into an app involves the following steps.
 - Configure SAML Single Sign-On
 - Authenticate with SAML Single Sign-On
 
-## Configure SAML Single Sign-On
+## Configure Enterprise SSO on Rails
 
 This step allows your tenants to configure SAML connections for their users. Read the following guides to understand more about this.
 

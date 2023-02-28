@@ -1,5 +1,9 @@
 # Upgrade Guide
 
+## Upgrading to v1.8.0
+
+1. We support bringing your own database (BYOD), this is a very tricky feature to support and we are still iterating on the schema which works as seamlessly as possible across the range of databases we support. Unfortunately not everything goes smoothly here and we have encountered some length issues on newer versions of MySQL and MariaDB. The best way forward was to change the schema of the keys we use from length 1500 to 250 which is compatible with the newer versions. As a result this will break your updates if you are using MySQL, MariaDB or MS SQL Server. If you encounter this please reach out and we'll guide you through the update process. If you haven't gone into production yet then please update to v1.8.0 before you deploy it to production.
+
 ## Upgrading to v1.3.10
 
 1. For users of our npm library, `directorySync` has been renamed to `directorySyncController`.
