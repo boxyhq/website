@@ -7,14 +7,14 @@ import { IconNo, IconYes } from '../components/Pricing/Icons';
 
 const title = 'BoxyHQ vs WorkOS';
 const description =
-  'BoxyHQ is a fast, secure open-source platform that brings enterprise SSO capabilities to SaaS applications.';
+  'BoxyHQ is a flexible, secure, open-source alternative to WorkOS that brings enterprise readiness capabilities to your SaaS applications. It integrates with your tech stack no matter how bespoke.';
 
 const AuditLogs = () => {
   return (
     <Layout title={title} description={description}>
       <div className="container margin-vert--xl">
         <div className="row">
-          <div className="col col--6">
+          <div className="col col--12">
             <div className="col-demo">
               <div
                 style={{
@@ -67,7 +67,7 @@ const AuditLogs = () => {
                       <p>
                         Instead of paying thousands of dollars for the large
                         number of connections that your app will have, use
-                        BoxyHQ's FREE open-source solution. Allocate resources
+                        BoxyHQ's free open-source solution. Allocate resources
                         to your core value proposition and maximize the benefits
                         for your customers.
                       </p>
@@ -162,7 +162,7 @@ const AuditLogs = () => {
       {/* Section 3 */}
       <SectionLayout
         title="Open Source"
-        description="BoxyHQ’s main core value is Developer Obsession, and its products are secure by design"
+        description="BoxyHQ is developer obsessed, and our products are secure by design so you can focus on your core value proposition."
       >
         <div class="container">
           <div class="row">
