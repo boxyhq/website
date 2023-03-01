@@ -5,7 +5,7 @@ sidebar_label: Audit Logs
 
 # Admin Portal
 
-Retraced can be accessed using Admin interface that allows you to manage Projects & Environments via UI. To enable the Admin Portal, make sure you deploy the [Retraced with Docker Compose](../retraced/self-host/docker.md)
+Retraced can be accessed using Admin interface that allows you to manage Projects & Environments via UI. To enable the Admin Portal, make sure you deploy [Retraced with Docker Compose](../retraced/self-host/docker.md)
 
 You can open the Admin Portal on port `5225`.
 

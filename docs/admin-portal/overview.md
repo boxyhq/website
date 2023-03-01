@@ -9,7 +9,7 @@ SAML Jackson comes with an Admin Portal that allows you to manage **Enterprise S
 
 Our future products (where relevant) will also be available in the Admin Portal.
 
-To enable the Admin Portal, make sure you deploy the [Jackson as a service](../jackson/deploy/service).
+To enable the Admin Portal, make sure you deploy [Jackson as a service](../jackson/deploy/service).
 
 ## Authentication Methods
 
