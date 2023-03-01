@@ -128,10 +128,6 @@ module.exports = {
               href: 'https://discord.boxyhq.com',
             },
             {
-              label: 'Aviyel',
-              href: 'https://aviyel.com/projects/11/boxyhq',
-            },
-            {
               label: 'Twitter',
               href: 'https://twitter.com/boxyhq',
             },
