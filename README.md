@@ -30,7 +30,7 @@ This website is deployed on render.com
 
 ## Contributing
 
-Thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are appreciated.
+Thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody and are appreciated.
 
 Please try to create bug reports that are:
 
