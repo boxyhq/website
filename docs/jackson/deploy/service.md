@@ -88,7 +88,8 @@ Jackson currently supports the following databases.
 - MariaDB
 - MongoDB
 - Redis
-- PlanetScale
+- [PlanetScale](https://planetscale.com/) (MySQL compatible)
+- [Neon](https://neon.tech) (Serverless Postgres)
 
 ## Deployment Guides (Coming soon)
 
