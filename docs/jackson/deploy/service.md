@@ -10,13 +10,19 @@ The `/api/health` GET endpoint returns a 200 when the service ready and healthy 
 
 The docker container can be found at [boxyhq/jackson](https://hub.docker.com/r/boxyhq/jackson/tags). It is preferable to use a specific version instead of the `latest` tag.
 
+Replace the values for `DB_URL`, `JACKSON_API_KEYS`, `NEXTAUTH_SECRET` and `NEXTAUTH_ADMIN_CREDENTIALS` with your own values before running docker run command.
+
 ```bash
 docker run \
   -p 5225:5225 \
-  -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="sql" \
   -e DB_TYPE="postgres" \
   -e DB_URL="postgres://postgres:postgres@postgres:5432/postgres" \
+  -e JACKSON_API_KEYS="secret" \
+  -e NEXTAUTH_URL="http://localhost:5225" \
+  -e EXTERNAL_URL="http://localhost:5225" \
+  -e NEXTAUTH_SECRET="super-secret" \
+  -e NEXTAUTH_ADMIN_CREDENTIALS="admin@company.com:secretpassword" \
   -d boxyhq/jackson
 ```
 
@@ -25,9 +31,13 @@ OR
 ```bash
 docker run \
   -p 5225:5225 \
-  -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="mongo" \
   -e DB_URL="mongodb://localhost:27017/jackson" \
+  -e JACKSON_API_KEYS="secret" \
+  -e NEXTAUTH_URL="http://localhost:5225" \
+  -e EXTERNAL_URL="http://localhost:5225" \
+  -e NEXTAUTH_SECRET="super-secret" \
+  -e NEXTAUTH_ADMIN_CREDENTIALS="admin@company.com:secretpassword" \
   -d boxyhq/jackson
 ```
 
@@ -45,6 +55,9 @@ You can clone the source from the [Jackson GitHub repo](https://github.com/boxyh
 
 ```bash
 git clone https://github.com/boxyhq/jackson
+```
+
+```bash
 cd jackson
 ```
 
