@@ -104,6 +104,29 @@ Jackson currently supports the following databases.
 - [PlanetScale](https://planetscale.com/) (MySQL compatible)
 - [Neon](https://neon.tech) (Serverless Postgres)
 
+### PlanetScale
+
+To connect PlanetScale database with Jackson, follow the below steps:
+
+1. Create a new database on PlanetScale
+2. Get your database [connection URL from the PlanetScale](https://planetscale.com/docs/tutorials/deploy-to-netlify#get-your-connection-string-from-planetscale)
+3. Set the following environment variables
+
+   - `DB_ENGINE=planetscale`
+   - `DB_TYPE=mysql`
+   - `DB_SSL=true`
+   - `DATABASE_URL=<PlanetScale connection URL>`
+
+4. Run the database migration to create the tables required by SAML Jackson
+
+```bash
+cd npm && PLANETSCALE_URL=<PlanetScale connection URL> npm run db:migration:run:planetscale
+```
+
+Make sure you have `?ssl={"rejectUnauthorized":true}` at the end of the PlanetScale connection URL.
+
+Now you are ready to start the service.
+
 ## Deployment Guides (Coming soon)
 
 - Heroku
