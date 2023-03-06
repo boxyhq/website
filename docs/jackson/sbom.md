@@ -1,6 +1,6 @@
 # Software Bill Of Materials (SBOM) Reports
 
-[SBOM](https://en.wikipedia.org/wiki/Software_bill_of_materials) is a list of components in a piece of software. It is like a list of ingredients of a product. Is it quickly becoming a standard for software supply chain risk and the ecosystem is growing with tools that help you verify, scan and monitor all your dependencies.
+[SBOM](https://en.wikipedia.org/wiki/Software_bill_of_materials) is a list of components in a piece of software. It is like a list of ingredients of a product and is quickly becoming a standard for software supply chain risk management. The ecosystem is growing with tools that help you verify, scan and monitor all your dependencies.
 
 ## Report Standards
 
