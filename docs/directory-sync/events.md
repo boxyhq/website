@@ -7,7 +7,9 @@ sidebar_label: Events
 
 SAML Jackson uses webhooks to notify your application any time changes are made to directory users and groups.
 
-We'll notify you of the following 8 events.
+## Webhook Events
+
+We'll notify you of the following 8 events. Each event will be sent to the webhook URL you've configured in the Directory Sync app.
 
 <details>
   <summary>user.created - New user has been assigned to the app.</summary>
@@ -106,7 +108,7 @@ We'll notify you of the following 8 events.
 </details>
 
 <details>
-  <summary>user.deleted - A user has been removed from the IdP.</summary>
+  <summary>user.deleted - A user has been removed from the Directory Provider.</summary>
   <p>
 
 ```json
@@ -354,3 +356,20 @@ We'll notify you of the following 8 events.
 
   </p>
 </details>
+
+## Frequently Asked Questions
+
+### How to determine whether a user has been deleted if the Identity Provider does not send a webhook event for user deletion?
+
+To receive notifications when a user is deleted, it's important to note that not all Identity Providers send requests for this. However, you can listen for the `user.updated` event from SAML Jackson and examine the `active` property to determine whether a user has been deleted. In case the user is deleted, the `active` property will be assigned the value `false`.
+
+### Which Identity Providers do not send an event for user deletion?
+
+Following Identity Providers do not send `user.deleted` event:
+
+- Okta
+- Azure AD
+
+### Which SCIM version does SAML Jackson support?
+
+At the moment, SAML Jackson supports SCIM version 2.0.
