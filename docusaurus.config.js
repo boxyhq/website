@@ -104,6 +104,10 @@ module.exports = {
               to: '/team',
               label: 'Team',
             },
+            {
+              to: '/pledge',
+              label: 'Pledge',
+            },
           ],
         },
         {
