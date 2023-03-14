@@ -72,7 +72,7 @@ const { data, error } = await directorySyncController.directories.create({
 ```bash
 curl --request POST \
   --url http://localhost:5225/api/v1/directory-sync \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json' \
   --data '{
 	"name": "App",
@@ -140,7 +140,7 @@ const { data, error } =
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -199,7 +199,7 @@ const { data, error } = await directorySyncController.directories.get(
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/58b5cd9dfaa39d47eb8f5f88631f9a629a232016' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -257,7 +257,7 @@ const { data, error } = await directorySyncController.users
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/users?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -374,7 +374,7 @@ const users = await directorySyncController.users
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/users/ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -451,7 +451,7 @@ const users = await directorySyncController.groups
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/groups?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -516,7 +516,7 @@ const users = await directorySyncController.groups
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/groups/44d08c0e-d185-4a5e-80a6-b47a717ffaa5?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 

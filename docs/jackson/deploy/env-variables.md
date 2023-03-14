@@ -34,6 +34,8 @@ A comma separated list of API keys that will be validated when serving the SSO C
 
 For example `JACKSON_API_KEYS=key1,key2,key3`
 
+The API requests will then need to specify an `Authorization` header which contains one of the API keys above in this format: `Api-Key key1`
+
 ### **SAML_AUDIENCE**
 
 This is just an identifier to validate the SAML audience, this value will also get configured in the SAML apps created by your customers. Once set do not change this value unless you get your customers to reconfigure their SAML again. It is case-sensitive. This does not have to be a real URL.
