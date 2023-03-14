@@ -4,7 +4,7 @@ import Profile from '../components/Profile';
 
 const title = 'Team';
 const description =
-  'At BoxyHQ we are a diverse team of individuals from all over the world who share a passion for building a simpler and more open way to be enterprise-ready. ';
+  'At BoxyHQ we are a diverse team of individuals from all over the world who share a passion for building a simpler and more open way to be enterprise-ready.';
 
 function Team() {
   return (
