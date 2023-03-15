@@ -9,6 +9,8 @@ Getting a production environment of Retraced up and running is probably one of t
 
 Self-hosting Retraced means managing the service yourself and taking care of upgrades, scaling, security etc.
 
+The docker container can be found at [boxyhq/retraced](https://hub.docker.com/r/boxyhq/retraced/tags). It is preferable to use a specific version instead of the `latest` tag.
+
 ## Deployment options
 
 - [Docker](docker.md)
