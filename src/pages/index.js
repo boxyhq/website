@@ -27,7 +27,7 @@ const IndexPage = () => {
         buttons={[
           {
             title: 'Get Started',
-            href: 'https://github.com/boxyhq',
+            href: 'https://boxyhq.com/docs',
             className: 'button--primary',
           },
           {
