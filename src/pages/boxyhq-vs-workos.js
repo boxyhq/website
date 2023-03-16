@@ -194,7 +194,7 @@ const AuditLogs = () => {
                               paddingBottom: '10px',
                             }}
                           >
-                            <IconYes /> Check BoxyHQ’s Github repositories
+                            <IconYes /> Check BoxyHQ’s GitHub repositories
                           </div>
                         </li>
                         <li>
