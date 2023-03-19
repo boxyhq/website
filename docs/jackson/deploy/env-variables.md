@@ -225,12 +225,6 @@ NPM library option: `db.encryptionKey`
 
 If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See [Heroku docs](https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js) for more details
 
-dynamodb: {
-  region: process.env.DB_DYNAMODB_REGION,
-  readCapacityUnits: process.env.DB_DYNAMODB_RCUS ? Number(process.env.DB_DYNAMODB_RCUS) : undefined,
-  writeCapacityUnits: process.env.DB_DYNAMODB_RCUS ? Number(process.env.DB_DYNAMODB_WCUS) : undefined,
-},
-
 ### **DB_DYNAMODB_REGION**
 
 If you are using DynamoDB then you can specify the region.
