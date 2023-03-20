@@ -103,6 +103,7 @@ Jackson currently supports the following databases.
 - Redis
 - [PlanetScale](https://planetscale.com/) (MySQL compatible)
 - [Neon](https://neon.tech) (Serverless Postgres)
+- Amazon DynamoDB
 
 ### PlanetScale
 

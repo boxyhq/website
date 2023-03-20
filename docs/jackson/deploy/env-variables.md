@@ -153,11 +153,13 @@ NPM library option: `openid.jwtSigningKeys.public`
 
 ### **DB_ENGINE**
 
-Supported values are `redis`, `sql`, `mongo`, `mem`, `planetscale`
+Supported values are `redis`, `sql`, `mongo`, `mem`, `planetscale`, `dynamodb`
 
 Default: `sql`
 
 NPM library option: `db.engine`
+
+> **_NOTE:_** If you are using DynamoDB then you also need to set `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. For additional options like region and capacity units check [this section](#db_dynamodb_region)
 
 ### **DB_TYPE**
 
@@ -174,6 +176,8 @@ The database URL to connect to. If you are using self-signed certificates then p
 Example: `postgres://postgres:postgres@localhost:5432/postgres` or `postgres://postgres:postgres@localhost:5432/postgres?sslmode=no-verify`
 
 For `mssql` the URL takes the form of `sqlserver://localhost:1433;database=<db name>;username=<username>;password=<password>;encrypt=true`
+
+If you are using DynamoDB then check additional options here -
 
 NPM library option: `db.url`
 
@@ -220,6 +224,30 @@ NPM library option: `db.encryptionKey`
 ### **PGSSLMODE**
 
 If you use Heroku to deploy Postgres (or use self-signed certs for Postgres) then set this to `no-verify`. See [Heroku docs](https://devcenter.heroku.com/articles/connecting-heroku-postgres#connecting-in-node-js) for more details
+
+### **DB_DYNAMODB_REGION**
+
+If you are using DynamoDB then you can specify the region.
+
+Default: `us-east-1`
+
+NPM library option: `db.dynamodb.region`
+
+### **DB_DYNAMODB_RCUS**
+
+If you are using DynamoDB then you can specify the read capacity units. Check [AWS docs](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html) for more details
+
+Default: 5
+
+NPM library option: `db.dynamodb.readCapacityUnits`
+
+### **DB_DYNAMODB_WCUS**
+
+If you are using DynamoDB then you can specify the write capacity units.
+
+Default: 5
+
+NPM library option: `db.dynamodb.writeCapacityUnits`
 
 ## Pre-loaded Connections
 
