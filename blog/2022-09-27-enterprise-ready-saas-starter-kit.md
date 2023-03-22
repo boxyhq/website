@@ -115,4 +115,4 @@ npx prisma studio
 
 Contributions make the open-source community a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-We also invite new supporters to contribute to the repository if you are interested.
+We also invite new supporters to contribute to the [saas-starter-kit](https://github.com/boxyhq/saas-starter-kit) repository.
