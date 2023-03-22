@@ -1,6 +1,6 @@
 ---
-slug: sbom-explained-the-recipe-to-reduce-cybersecurity-enterprise-risks
-title: 'SBOM Explained: The recipe to reduce cybersecurity enterprise risks'
+slug: sbom-explained-an-enterprise-guide-to-security-risk-management
+title: 'SBOM Explained: An enterprise guide to security risk management'
 author: Nathan Tarbert
 author_title: Communnity Success Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
