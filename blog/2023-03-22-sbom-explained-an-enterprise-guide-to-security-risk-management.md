@@ -2,7 +2,7 @@
 slug: sbom-explained-an-enterprise-guide-to-security-risk-management
 title: 'SBOM Explained: An enterprise guide to security risk management'
 author: Nathan Tarbert
-author_title: Communnity Success Engineer @BoxyHQ
+author_title: Community Success Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 tags_disabled: [open-source]
@@ -18,7 +18,7 @@ In this age of technology, software companies are quickly shifting towards a str
 
 ## What is an SBOM or Software Bill of Materials? 
 
-You can think of an SBOM as a cake you are baking. That cake has an ingredients list or in the case of software, open-source or private dependencies, and third-party components. This list can be massive and can range from hundreds to thousands, especially when you factor in transitive dependencies (an indirect dependency of the component it relies on). This list gets very complex and is impossible to manage at scale at the enterprise level. Gone are the days when most enterprises or smaller-scale organizations would write applications from scratch. Rather, most applications are assembled using pre-built software packages, i.e open-source. Over the past decade, this has led to the rise and use of publicly available software components and agile development at an enormous rate. 
+You can think of your modern application as a cake you are baking. The list of ingredients you use to bake that cake would be the SBOM (Software Bill of Materials). In the case of software, it's open-source or private dependencies and third-party components. This list can be massive and can range from hundreds to thousands, especially when you factor in transitive dependencies (an indirect dependency of the component it relies on). This list gets very complex and is impossible to manage at scale at the enterprise level. Gone are the days when most enterprises or smaller-scale organizations would write applications from scratch. Rather, most applications are assembled using pre-built software packages, i.e open-source. Over the past decade, this has led to the rise and use of publicly available software components and agile development at an enormous rate. 
 
 ## Security
 
