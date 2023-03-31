@@ -58,6 +58,11 @@ function Team() {
 
         <p>
           <em>
+            * Inspired by{' '}
+            <a href="https://www.fermyon.com/open-source-promise">Ferymon</a>
+          </em>
+          <br></br>
+          <em>
             * Thanks to JJ and Heather from OSS Capital for reviewing drafts of
             this post
           </em>
