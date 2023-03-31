@@ -14,15 +14,14 @@ import FeatureSection from '../components/FeatureSection';
 const Icon3 = require('../../static/img/home-buildingblocks.svg').default;
 
 const title = 'BoxyHQ';
-const description =
-  'Deploy enterprise readiness straight out of the box in minutes and become enterprise-ready';
+const description = 'Security Building Blocks for Developers';
 
 const IndexPage = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
-        title="Enterprise readiness for B2B SaaS, straight out of the box"
-        description="At BoxyHQ, we make it easy to add enterprise-ready features to your SaaS product. Impress enterprise customers and InfoSec teams with your ability to pass their processes with ease. Our solutions are open-source and free to use!"
+        title="Security Building Blocks for Developers"
+        description="Reduce Time to Market without sacrificing your security posture! BoxyHQ’s suite of APIs for security and privacy helps engineering teams build and ship compliant cloud applications faster."
         image="/img/home-hero.svg"
         buttons={[
           {

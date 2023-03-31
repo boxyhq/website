@@ -84,7 +84,15 @@ module.exports = {
             { to: '/docs', label: 'Docs' },
             { to: '/guides', label: 'Guides' },
             {
-              href: 'https://awesome-oss-devsec.boxyhq.com/',
+              href: 'https://mocksaml.com',
+              label: 'Mock SAML',
+            },
+            {
+              href: 'https://github.com/boxyhq/saas-starter-kit',
+              label: 'Enterprise SaaS Starter Kit',
+            },
+            {
+              href: 'https://awesome-oss-devsec.boxyhq.com',
               label: 'Developer Security Tools',
             },
           ],

@@ -4,9 +4,13 @@ import clsx from 'clsx';
 
 import SvgIcon from './SvgIcon';
 
-const Card = ({ idx, icon, title, description, url, btnText }) => {
+const Card = ({ idx, icon, title, description, url, btnText, colClass }) => {
   return (
-    <div className="col col--4" style={{ marginBottom: '30px' }} key={idx}>
+    <div
+      className={'col ' + (colClass ? colClass : 'col--4')}
+      style={{ marginBottom: '30px' }}
+      key={idx}
+    >
       <div className="card-demo">
         <div className="card">
           <div className="card__header">

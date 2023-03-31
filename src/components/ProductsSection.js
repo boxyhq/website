@@ -26,20 +26,6 @@ const products = [
     icon: require('../../static/img/products/audit-logs/logo.svg').default,
   },
   {
-    title: 'Mock SAML',
-    description:
-      'A free mock SAML 2.0 Identity Provider for testing your SAML SSO integrations.',
-    url: 'https://mocksaml.com',
-    icon: require('../../static/img/products/mock-saml/logo.svg').default,
-  },
-  {
-    title: 'Enterprise SaaS Starter Kit',
-    description:
-      'Next.js based Enterprise SaaS starter kit that saves you months of development.',
-    url: 'https://github.com/boxyhq/saas-starter-kit',
-    icon: require('../../static/img/products/mock-saml/logo.svg').default,
-  },
-  {
     title: 'Privacy Vault',
     description:
       'Protect your customers sensitive data by safely encrypting it in a Privacy vault. Add policies to govern access to the protected data.',
@@ -52,17 +38,36 @@ const ProductsSection = () => {
   return (
     <SectionLayout title="Our Products">
       <div className="row">
-        {products.map(({ title, description, url, icon, btnText }, idx) => (
-          <Card
-            key={idx}
-            idx={idx}
-            title={title}
-            description={description}
-            icon={icon}
-            url={url}
-            btnText={btnText ? btnText : 'Learn More'}
-          />
-        ))}
+        {products
+          .slice(0, 2)
+          .map(({ title, description, url, icon, btnText }, idx) => (
+            <Card
+              colClass={'col--6'}
+              key={idx}
+              idx={idx}
+              title={title}
+              description={description}
+              icon={icon}
+              url={url}
+              btnText={btnText ? btnText : 'Learn More'}
+            />
+          ))}
+      </div>
+      <div className="row">
+        {products
+          .slice(2)
+          .map(({ title, description, url, icon, btnText }, idx) => (
+            <Card
+              colClass={'col--6'}
+              key={idx}
+              idx={idx}
+              title={title}
+              description={description}
+              icon={icon}
+              url={url}
+              btnText={btnText ? btnText : 'Learn More'}
+            />
+          ))}
       </div>
     </SectionLayout>
   );
