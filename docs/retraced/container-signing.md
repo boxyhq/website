@@ -14,8 +14,8 @@ oras pull ghcr.io/boxyhq/cosign.pub:latest
 
 **Note:** This is supported for all versions >=1.5.0
 
-Our container images are hosted on [Docker Hub](https://hub.docker.com/r/boxyhq/retraced/tags). You can verify it by using the following command.
+Our container images are hosted on [Docker Hub](https://hub.docker.com/r/retracedhq/retraced/tags). You can verify it by using the following command.
 
 ```bash
-cosign verify --key cosign.pub boxyhq/retraced:<version>
+cosign verify --key cosign.pub retracedhq/retraced:<version>
 ```
