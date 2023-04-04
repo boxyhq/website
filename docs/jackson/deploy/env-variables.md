@@ -177,7 +177,7 @@ Example: `postgres://postgres:postgres@localhost:5432/postgres` or `postgres://p
 
 For `mssql` the URL takes the form of `sqlserver://localhost:1433;database=<db name>;username=<username>;password=<password>;encrypt=true`
 
-If you are using DynamoDB then check additional options here -
+> **_NOTE:_** If you are using DynamoDB then you also need to set `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. For additional options like region and capacity units check [this section](#db_dynamodb_region)
 
 NPM library option: `db.url`
 
