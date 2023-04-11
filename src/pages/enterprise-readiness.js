@@ -13,15 +13,16 @@ import FeatureSection from '../components/FeatureSection';
 
 const Icon3 = require('../../static/img/home-buildingblocks.svg').default;
 
-const title = 'BoxyHQ';
-const description = 'Security Building Blocks for Developers';
+const title = 'BoxyHQ for Startups';
+const description =
+  'Enterprise readiness for B2B SaaS startups, straight out of the box';
 
-const IndexPage = () => {
+const EnterpriseReadiness = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
-        title="Security Building Blocks for Developers"
-        description="Reduce Time to Market without sacrificing your security posture! BoxyHQ’s suite of APIs for security and privacy helps engineering teams build and ship compliant cloud applications faster."
+        title="Enterprise readiness for B2B SaaS, straight out of the box"
+        description="BoxyHQ for Startups makes it easy to add enterprise-ready features to your SaaS product. with just a few lines of code. Impress enterprise customers and InfoSec teams with your ability to pass their processes with ease. Implement SAML SSO, Directory Sync, Audit Logs, and Privacy Vault in minutes and become enterprise-ready! Our solutions are open-source and free to use!"
         image="/img/home-hero.svg"
         buttons={[
           {
@@ -52,20 +53,26 @@ const IndexPage = () => {
                         className="text--center"
                         style={{ whiteSpace: 'pre-line' }}
                       >
-                        The Importance of Developer Security
+                        Become Enterprise Ready
                       </h3>
                     </div>
                     <div className="card__body">
                       <p className="text--center">
-                        Cyber crimes are predicted to cost $10.5 trillion
-                        annually by 2025, but time pressures often cause 70% of
-                        development teams to skip crucial security steps.
+                        As a startup you need to build fast, test and make sure
+                        your solution achieves product-market fit. But if you
+                        are planning to sell to enterprises you will need to
+                        implement security and compliance features that could be
+                        expensive and time consuming.
                       </p>
                       <p>
-                        In today's world, it is no longer sufficient to
-                        prioritize productivity alone. The faster a developer
-                        moves, the more potential security holes will be left
-                        unaddressed.{' '}
+                        Here is a good guide on what becoming enterprise ready
+                        means:{' '}
+                        <a
+                          href="https://www.enterpriseready.io"
+                          target="_blank"
+                        >
+                          EnterpriseReady - Build SaaS features enterprises love
+                        </a>
                       </p>
                     </div>
                     <div className="card__footer">
@@ -73,7 +80,7 @@ const IndexPage = () => {
                         className={clsx('button button--primary button--block')}
                         href="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
                       >
-                        Book a free developer-security session
+                        Book a free enterprise-readiness session
                       </Link>
                     </div>
                   </div>
@@ -122,23 +129,6 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <FeatureSection
-        title="Developer Security Tools"
-        btnLink="https://awesome-oss-devsec.boxyhq.com/"
-        btnText="Read More"
-        image={Icon3}
-        direction="right"
-      >
-        <p>
-          We have curated a list of awesome open-source developer security
-          tools.
-        </p>
-        <p>
-          It includes security principles and controls relevant to popular
-          compliance certifications (like ISO27001, SOC2, MVSP, etc.)
-        </p>
-      </FeatureSection>
-
       <NewsSection />
       <InvestorsSection />
       <DeveloperCommunitySection />
@@ -146,4 +136,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default EnterpriseReadiness;
