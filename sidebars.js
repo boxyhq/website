@@ -53,6 +53,7 @@ module.exports = {
         'jackson/upgrade',
         'jackson/local-development',
         'jackson/saml-federation/index',
+        'jackson/events',
       ],
     },
     {

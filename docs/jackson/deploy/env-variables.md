@@ -249,6 +249,22 @@ Default: 5
 
 NPM library option: `db.dynamodb.writeCapacityUnits`
 
+## Webhook configuration
+
+### **WEBHOOK_URL**
+
+Specify a webhook URL to receive events about sso and directory connections.
+
+NPM library option: `webhook.endpoint`
+
+### **WEBHOOK_SECRET**
+
+Specify a secret to be used to sign the webhook payload. This is used to verify the authenticity of the webhook payload.
+
+NPM library option: `webhook.secret`
+
+Both the `WEBHOOK_URL` and `WEBHOOK_SECRET` are required to enable webhook events.
+
 ## Pre-loaded Connections
 
 ### **PRE_LOADED_CONNECTION**

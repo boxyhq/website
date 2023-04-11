@@ -3,13 +3,13 @@ title: Directory Sync Webhook Events
 sidebar_label: Events
 ---
 
-# Events and Types
+# Events
 
-SAML Jackson uses webhooks to notify your application any time changes are made to directory users and groups.
+SAML Jackson uses webhooks to notify your application any time changes are made to directory, users, groups, and memberships.
 
-## Webhook Events
+## User Events
 
-We'll notify you of the following 8 events. Each event will be sent to the webhook URL you've configured in the Directory Sync app.
+We'll notify you of the following 3 events related to users. Each event will be sent to the webhook URL you've configured in the Directory Sync app.
 
 <details>
   <summary>user.created - New user has been assigned to the app.</summary>
@@ -156,6 +156,10 @@ We'll notify you of the following 8 events. Each event will be sent to the webho
 
   </p>
 </details>
+
+## Group Events
+
+We'll notify you of the following 5 events related to groups and memberships. Each event will be sent to the webhook URL you've configured in the Directory Sync app.
 
 <details>
   <summary>group.created - New group has been added to the app.</summary>
@@ -355,6 +359,103 @@ We'll notify you of the following 8 events. Each event will be sent to the webho
 ```
 
   </p>
+</details>
+
+## Directory Events
+
+We'll notify you of the following 4 events related to the directory connections.
+
+To configure the webhook, you have to set the following environment variables.
+
+- `WEBHOOK_URL` - The URL to which the webhook events will be sent.
+- `WEBHOOK_SECRET` - The secret key used to sign the webhook events.
+
+<details>
+<summary>
+  dsync.created - New connection has been created.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.created",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>
+  dsync.deactivated - A connection has been deactivated.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.deactivated",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>
+  dsync.activated - A connection has been activated.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.activated",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>
+  dsync.deleted - A connection has been deleted.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.deleted",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
 </details>
 
 ## Frequently Asked Questions
