@@ -1,12 +1,18 @@
 ---
 slug: sso-wall-of-shame-vs-wall-of-fame
 title: 'SSO "Wall of Shame" vs "Wall of Fame"'
-author: Sama - Carlos Samame
-author_title: Co-founder & COO @BoxyHQ
-author_url: https://www.linkedin.com/in/samame/
-author_image_url: https://boxyhq.com/img/team/sama.jpg
-tags_disabled: [developer, security, cybersecurity, devsecops, appsec, sso, open-source]
+tags_disabled:
+  [developer, security, cybersecurity, devsecops, appsec, sso, open-source]
 image: /img/blog/shame-vs-fame.png
+authors:
+  - name: Sama - Carlos Samame
+    title: Co-founder & COO @BoxyHQ
+    url: https://www.linkedin.com/in/samame
+    image_url: https://boxyhq.com/img/team/sama.jpg
+  - name: Deepak Prabhakara
+    title: Co-founder & CEO @BoxyHQ
+    url: https://github.com/deepakprabhakara
+    image_url: https://boxyhq.com/img/team/deepak.jpg
 ---
 
 Unless you have been living under a rock, you have probably heard of the SSO Wall of Shame. This is a list of vendors that treat single sign-on as a luxury feature, not a core security requirement. There have been numerous complaints regarding the companies that have made it onto this list, and rightfully so. In a downturn economy and in times when security and privacy are critical, many organizations see an opportunity to generate even more revenue.
@@ -31,7 +37,3 @@ To take it full circle, it would be nice to see a full list of the SSO Wall of F
 We are trying to do our part by providing a free open–source enterprise-grade SSO (called SAML Jackson), that any developer, team, or organization can plug into with just a few lines of code. Check out the GitHub repo [here](https://github.com/boxyhq/jackson). Feedback is much appreciated and a star will help us raise security awareness. 🙂
 
 Stay safe, do good, and avoid the dark side of the SSO tax!
-
-
-
-
