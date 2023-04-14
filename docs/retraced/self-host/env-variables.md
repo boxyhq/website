@@ -257,46 +257,6 @@ The path of the ssl certificate file.
 
 The path of the ssl private key file.
 
-## Statsd Reporter configuration
-
-### **STATSD_HOST**
-
-The hostpath for the statsd reporter.
-
-### **STATSD_PORT**
-
-The port for the statsd reporter.
-
-### **STATSD_INTERVAL_MILLIS**
-
-The miliseconds time interval for the statsd reporter to send stats.
-
-### **STATSD_PREFIX**
-
-The prefix for the statsd reporter.
-
-### **STATSD_USE_SYSDIG_NAME_REWRITER**
-
-If set true, rewrite argument of the statsd reporter will be set to true.
-
-## [Statuspage](https://www.statuspage.io) configuration
-
-### **STATUSPAGEIO_TOKEN**
-
-Token to be used for statuspage config.
-
-### **STATUSPAGEIO_PAGE_ID**
-
-Page ID to be used for statuspage config.
-
-### **STATUSPAGEIO_URL**
-
-URL to be used for statuspage config.
-
-### **STATUSPAGEIO_INTERVAL_MILLIS**
-
-Interval Milliseconds to be used for statuspage config.
-
 <!-- ## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
 
 ### **WARP_PIPE_REDIS_DB**
