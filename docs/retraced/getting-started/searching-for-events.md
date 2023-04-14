@@ -21,4 +21,4 @@ This table shows the supported advanced searches:
 | actor.name | Matches events performed by an actor whose name contains the value. | actor:Smith |
 | actor.id | Matches events performed by the actor with the exact id value. | actor:b82c4cfa428342ac822c42c1f6b89200 |
 | description | Matches events with a description containing the terms in the value. | description:"elevated escalated" |
-| location | Matches events performed in a geographic region equal to the value. | description:"Los Angeles" |
+| location | Matches events performed in a geographic region equal to the value. | location:"Los Angeles" |
