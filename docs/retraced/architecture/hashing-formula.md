@@ -95,7 +95,7 @@ Given the following audit event:
 A string is built with the fields, as described above:
 
 ```
-event-id:user.login:target-id:actor-id:group-id:8.8.8.8:0:0:permission_granted=view;resulting_permission=view,edit;
+event-id:document.share:target-id:actor-id:group-id:8.8.8.8:0:0:permission_granted=view;resulting_permission=view,edit;
 ```
 
 Finally, a SHA256 digest of the above string returns:
