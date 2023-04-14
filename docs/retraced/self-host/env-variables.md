@@ -234,17 +234,6 @@ The RPC address to be used for Signal Sciences API protection.
 When this is set, Retraced makes api `/admin/v1/user/_login` available.
 Admin can make a post request to above api with `token=<ADMIN_ROOT_TOKEN>` in Authorization Header to create users.
 
-## [Prometheus](https://prometheus.io/) configuration
-
-### **RETRACED_PROMETHEUS_ENDPOINT**
-
-Prometheus endpoint url to be used for export.
-
-### **RETRACED_ENABLE_PROMETHEUS**
-
-When this is set Retraced exposes an endpoint for Prometheus exporter. <br />
-`/<RETRACED_PROMETHEUS_ENDPOINT>/metrics`
-
 ## SSL configuration
 
 Used to enable https mode of Retraced.
