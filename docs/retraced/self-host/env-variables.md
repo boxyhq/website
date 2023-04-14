@@ -246,6 +246,18 @@ The path of the ssl certificate file.
 
 The path of the ssl private key file.
 
+<!-- ## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
+
+### **WARP_PIPE_REDIS_DB**
+
+The Redis DB to be used for SSH streaming.
+
+## [Redis](https://redis.io/) configuration
+
+### **REDIS_URI**
+
+The URI to be used for Redis. -->
+
 ## Statsd Reporter configuration
 
 ### **STATSD_HOST**
@@ -279,18 +291,6 @@ The transport protocol. Options MUST be one of: `grpc`, `http/protobuf` or `http
 ### **OTEL_EXPORTER_DEBUG**
 
 Set this to `true` to enable debug logs for Opentelemetry. This is only meant for purposes of debugging otel locally.
-
-<!-- ## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
-
-### **WARP_PIPE_REDIS_DB**
-
-The Redis DB to be used for SSH streaming.
-
-## [Redis](https://redis.io/) configuration
-
-### **REDIS_URI**
-
-The URI to be used for Redis. -->
 
 ## Email configuration
 
