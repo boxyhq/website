@@ -246,6 +246,16 @@ The path of the ssl certificate file.
 
 The path of the ssl private key file.
 
+## Statsd Reporter configuration
+
+### **STATSD_HOST**
+
+The hostpath for the statsd reporter.
+
+### **STATSD_PORT**
+
+The port for the statsd reporter.
+
 <!-- ## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
 
 ### **WARP_PIPE_REDIS_DB**
@@ -257,16 +267,6 @@ The Redis DB to be used for SSH streaming.
 ### **REDIS_URI**
 
 The URI to be used for Redis. -->
-
-## Statsd Reporter configuration
-
-### **STATSD_HOST**
-
-The hostpath for the statsd reporter.
-
-### **STATSD_PORT**
-
-The port for the statsd reporter.
 
 ## Opentelemetry configuration
 
