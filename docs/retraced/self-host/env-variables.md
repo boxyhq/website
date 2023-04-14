@@ -269,6 +269,16 @@ The Redis DB to be used for SSH streaming.
 
 The URI to be used for Redis. -->
 
+## Statsd Reporter configuration
+
+### **STATSD_HOST**
+
+The hostpath for the statsd reporter.
+
+### **STATSD_PORT**
+
+The port for the statsd reporter.
+
 ## Opentelemetry configuration
 
 Retraced supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
