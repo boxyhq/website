@@ -12,7 +12,7 @@ The service always respects `.env` file but in case of compose based deployments
 
 The codebase has most of the things configured, we expect users to configure `ADMIN_ROOT_TOKEN` variable for security reasons.
 
-So just set the `ADMIN_ROOT_TOKEN` and you are good to gofor your first run of Audit log service.
+So just set the `ADMIN_ROOT_TOKEN` and you are good to go for your first run of Audit log service.
 
 You can check the complete list of environment variables below,
 
