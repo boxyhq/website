@@ -234,17 +234,6 @@ The RPC address to be used for Signal Sciences API protection.
 When this is set, Retraced makes api `/admin/v1/user/_login` available.
 Admin can make a post request to above api with `token=<ADMIN_ROOT_TOKEN>` in Authorization Header to create users.
 
-## [Prometheus](https://prometheus.io/) configuration
-
-### **RETRACED_PROMETHEUS_ENDPOINT**
-
-Prometheus endpoint url to be used for export.
-
-### **RETRACED_ENABLE_PROMETHEUS**
-
-When this is set Retraced exposes an endpoint for Prometheus exporter. <br />
-`/<RETRACED_PROMETHEUS_ENDPOINT>/metrics`
-
 ## SSL configuration
 
 Used to enable https mode of Retraced.
@@ -267,36 +256,6 @@ The hostpath for the statsd reporter.
 
 The port for the statsd reporter.
 
-### **STATSD_INTERVAL_MILLIS**
-
-The miliseconds time interval for the statsd reporter to send stats.
-
-### **STATSD_PREFIX**
-
-The prefix for the statsd reporter.
-
-### **STATSD_USE_SYSDIG_NAME_REWRITER**
-
-If set true, rewrite argument of the statsd reporter will be set to true.
-
-## [Statuspage](https://www.statuspage.io) configuration
-
-### **STATUSPAGEIO_TOKEN**
-
-Token to be used for statuspage config.
-
-### **STATUSPAGEIO_PAGE_ID**
-
-Page ID to be used for statuspage config.
-
-### **STATUSPAGEIO_URL**
-
-URL to be used for statuspage config.
-
-### **STATUSPAGEIO_INTERVAL_MILLIS**
-
-Interval Milliseconds to be used for statuspage config.
-
 <!-- ## [SSH EVENT STREAMING](/docs/retraced/advanced/ssh-streaming/) configuration
 
 ### **WARP_PIPE_REDIS_DB**
@@ -308,6 +267,30 @@ The Redis DB to be used for SSH streaming.
 ### **REDIS_URI**
 
 The URI to be used for Redis. -->
+
+## Opentelemetry configuration
+
+Retraced supports observability via OpenTelemetry. The following env vars are available for configuration (along with the rest of the [supported ones](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md))
+
+### **OTEL_EXPORTER_OTLP_ENDPOINT** or **OTEL_EXPORTER_OTLP_METRICS_ENDPOINT**
+
+Target URL to which the exporter is going to send metrics.
+
+Example: `https://ingest.lightstep.com:443/metrics/otlp/v0.6`
+
+### **OTEL_EXPORTER_OTLP_HEADERS** or **OTEL_EXPORTER_OTLP_METRICS_HEADERS**
+
+Headers relevant for the endpoint, useful for specifying authentication details for providers.
+
+Example: `lightstep-access-token=<token>,...`
+
+### **OTEL_EXPORTER_OTLP_PROTOCOL** or **OTEL_EXPORTER_OTLP_METRICS_PROTOCOL**
+
+The transport protocol. Options MUST be one of: `grpc`, `http/protobuf` or `http/json`.
+
+### **OTEL_EXPORTER_DEBUG**
+
+Set this to `true` to enable debug logs for Opentelemetry. This is only meant for purposes of debugging otel locally.
 
 ## Email configuration
 
