@@ -30,6 +30,12 @@ As a result, it streamlines the user lifecycle management process by saving valu
 
 Directory Sync is integrated with the help of [SAML Jackson](https://github.com/boxyhq/jackson#directory-sync)
 
+## Audit Logs (coming soon)
+
+Provide enterprise customers with the ability to record and search events that happen within your application. With our simple integration, you can become compliant fast and save your team from building complex solutions from scratch. 
+
+Organizations gain the ability to monitor the flow of data and be alerted to any breaches. Audit logs help to pinpoint any misuse of information and ensure that data policies are followed.
+
 ## Webhooks & Events
 
 Webhooks are a way for systems to notify external applications that a specific event has occurred in your SaaS app without receiving a request.
@@ -115,4 +121,6 @@ npx prisma studio
 
 Contributions make the open-source community a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-We also invite new supporters to contribute to the [saas-starter-kit](https://github.com/boxyhq/saas-starter-kit) repository.
+We always invite new supporters and community members to contribute to the [saas-starter-kit](https://github.com/boxyhq/saas-starter-kit) repository.
+
+For more help or you have a question about getting started building a SaaS app please join our [Community Discord.](https://discord.boxyhq.com)
