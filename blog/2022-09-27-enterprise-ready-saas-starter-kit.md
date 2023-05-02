@@ -12,7 +12,7 @@ Enterprise-ready SaaS Starter Kit is a **Next.js** based SaaS Starter Kit that c
 
 [Kickstart your enterprise app development with Next.js SaaS Starter Kit](https://github.com/boxyhq/saas-starter-kit)
 
-Let's look at some of the enterprise-ready features the SaaS kit offers.
+Check out the [video tutorial](https://www.youtube.com/watch?v=oxbEHmhTYQo) that walks through setting up your local environment and running enterprise-ready features the SaaS kit offers.
 
 ## SAML SSO
 
@@ -30,7 +30,7 @@ As a result, it streamlines the user lifecycle management process by saving valu
 
 Directory Sync is integrated with the help of [SAML Jackson](https://github.com/boxyhq/jackson#directory-sync)
 
-## Audit Logs (coming soon)
+## Audit Logs
 
 Provide enterprise customers with the ability to record and search events that happen within your application. With our simple integration, you can become compliant fast and save your team from building complex solutions from scratch. 
 
@@ -119,8 +119,8 @@ npx prisma studio
 
 ## Contributing guide
 
-Contributions make the open-source community a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions make the open-source community a fantastic place to learn, inspire, and create. Any contributions are greatly appreciated by the whole community.
 
-We always invite new supporters and community members to contribute to the [saas-starter-kit](https://github.com/boxyhq/saas-starter-kit) repository.
+We encourage and invite users and community members to contribute to the [saas-starter-kit](https://github.com/boxyhq/saas-starter-kit) repository.
 
-For more help or you have a question about getting started building a SaaS app please join our [Community Discord.](https://discord.boxyhq.com)
+For more help or if you have a question about getting started building a SaaS app please join our [Community Discord.](https://discord.boxyhq.com)
