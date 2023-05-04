@@ -22,9 +22,9 @@ Default: `5225`
 
 ### **EXTERNAL_URL**
 
-The public URL to reach this service, need for constructing for the SAML request internally.
+The public URL to reach this service. This is used internally to construct the callback url at which the SAML/OIDC IdP sends back the authorization response.
 
-Default: `http://{HOST_URL}:{HOST_PORT}`
+Default: `http://{HOST_URL}:{PORT}`
 
 NPM library option: `externalUrl`
 
