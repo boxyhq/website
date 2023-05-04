@@ -38,7 +38,7 @@ The API requests will then need to specify an `Authorization` header which conta
 
 ### **SAML_AUDIENCE**
 
-The value of this setting allows the Jackson instance to verify that it is the intended recipient of a SAML response. The same value is also set in the SAML App created on the IdP end by your customers. Once set do not change this value unless you get your customers to reconfigure their SAML App again. It is case-sensitive. This does not have to be a real URL.
+The value of this setting (same as EntityID of Jackson) allows the Jackson instance to verify that it is the intended recipient of a SAML response. The same value is also set in the SAML App created on the IdP end by your customers. Once set do not change this value unless you get your customers to reconfigure their SAML App again. It is case-sensitive. This does not have to be a real URL.
 
 Default: `https://saml.boxyhq.com`
 
