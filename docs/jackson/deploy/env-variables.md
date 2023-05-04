@@ -30,7 +30,7 @@ NPM library option: `externalUrl`
 
 ### **JACKSON_API_KEYS**
 
-A comma separated list of API keys that will be validated when serving the SSO Connection requests at `/api/v1/connections`.
+A comma separated list of API keys that will be validated when serving the API requests for SSO connection (`/api/v1/connections`) and Directory Sync (`/api/v1/directory-sync`).
 
 For example `JACKSON_API_KEYS=key1,key2,key3`
 
