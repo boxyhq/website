@@ -54,7 +54,9 @@ NPM library option: `samlPath`
 
 For example: `/api/oauth/saml`
 
-### **OIDC_PATH**
+### **oidcPath**
+
+> **_NOTE:_** This is only applicable to our npm library.
 
 The `redirect_uri` at which the Authorization response is sent back from the OpenID Connect IdP. Set this when using the npm package.
 
