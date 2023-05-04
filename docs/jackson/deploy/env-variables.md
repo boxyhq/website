@@ -15,7 +15,7 @@ The env vars are only applicable to the Jackson service. If you are using the np
 The URL to bind to.
 Default: `localhost`
 
-### **HOST_PORT**
+### **PORT**
 
 The port to bind to.
 Default: `5225`
