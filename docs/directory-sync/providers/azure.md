@@ -52,7 +52,7 @@ Expand the **Mappings** section and ensure group and user attribute mappings are
 
 Expand the **Settings** section and make the following changes:
 
-- Select **Sycn only assigned users and groups** from the **Scope** dropdown.
+- Select **Sync only assigned users and groups** from the **Scope** dropdown.
 - Confirm the **Provisioning Status** is set to **On**.
 
 ![img alt](/img/dsync/providers/azure/8.png)
