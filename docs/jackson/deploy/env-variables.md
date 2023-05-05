@@ -66,7 +66,7 @@ For example: `/api/oauth/oidc`
 
 ### **IDP_DISCOVERY_PATH**
 
-This is the path for showing the IdP Selection screen in case there are multiple SAML SSO Connections for the same `tenant` and `product`.
+This is the path for showing the IdP Selection screen in case there are multiple SSO Connections for the same `tenant` and `product`.
 This path is also used to show the App Selection screen in the case of IdP-initiated SAML login (Different apps using the same SAML IdP).
 Set this when using the npm package.
 
