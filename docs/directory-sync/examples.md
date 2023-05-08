@@ -13,4 +13,4 @@ description: Examples & Resources for our Directory Sync product
 
 ## Resources
 
-- [SCIM 2.0 Protocol](https://www.simplecloud.info)
+- [SCIM 2.0 Protocol](https://datatracker.ietf.org/doc/html/rfc7644)
