@@ -40,7 +40,7 @@ Directory sync allows programmatic access to the user identity data via a standa
 
 Directory sync implementation typically involves a client and a server. A client is an identity provider (IDP) with a directory of user identities. A service provider (SP) is an enterprise SaaS app that needs a subset of data from those identities.
 
-When you make changes to the user identities, the changes are automatically synced to the SP according to the SCIM protocol. SP can now process these data according to the way they want.
+When you make changes to the user identities, the changes are automatically synced to the SP according to the SCIM protocol. SP can now process this data according to the way they want.
 
 Some common user identity changes include adding new users to the organization, updating existing users, removing users from the organization, adding users to groups, etc.
 
