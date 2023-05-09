@@ -15,22 +15,22 @@ The env vars are only applicable to the Jackson service. If you are using the np
 The URL to bind to.
 Default: `localhost`
 
-### **HOST_PORT**
+### **PORT**
 
 The port to bind to.
 Default: `5225`
 
 ### **EXTERNAL_URL**
 
-The public URL to reach this service, need for constructing for the SAML request internally.
+The public URL to reach this service. This is used internally to construct the callback url at which the SAML/OIDC IdP sends back the authorization response.
 
-Default: `http://{HOST_URL}:{HOST_PORT}`
+Default: `http://{HOST_URL}:{PORT}`
 
 NPM library option: `externalUrl`
 
 ### **JACKSON_API_KEYS**
 
-A comma separated list of API keys that will be validated when serving the SSO Connection requests at `/api/v1/connections`.
+A comma separated list of API keys that will be validated when serving the API requests for SSO connection (`/api/v1/connections`) and Directory Sync (`/api/v1/directory-sync`).
 
 For example `JACKSON_API_KEYS=key1,key2,key3`
 
@@ -38,7 +38,7 @@ The API requests will then need to specify an `Authorization` header which conta
 
 ### **SAML_AUDIENCE**
 
-This is just an identifier to validate the SAML audience, this value will also get configured in the SAML apps created by your customers. Once set do not change this value unless you get your customers to reconfigure their SAML again. It is case-sensitive. This does not have to be a real URL.
+The value of this setting (same as SP EntityID of Jackson) allows the Jackson instance to verify that it is the intended recipient of a SAML response. The same value is also set in the SAML App created on the IdP end by your customers. Once set do not change this value unless you get your customers to reconfigure their SAML App again. It is case-sensitive. This does not have to be a real URL.
 
 Default: `https://saml.boxyhq.com`
 
@@ -54,7 +54,9 @@ NPM library option: `samlPath`
 
 For example: `/api/oauth/saml`
 
-### **OIDC_PATH**
+### **oidcPath**
+
+> **_NOTE:_** This is only applicable to our npm library.
 
 The `redirect_uri` at which the Authorization response is sent back from the OpenID Connect IdP. Set this when using the npm package.
 
@@ -64,7 +66,7 @@ For example: `/api/oauth/oidc`
 
 ### **IDP_DISCOVERY_PATH**
 
-This is the path for showing the IdP Selection screen in case there are multiple SAML SSO Connections for the same `tenant` and `product`.
+This is the path for showing the IdP Selection screen in case there are multiple SSO Connections for the same `tenant` and `product`.
 This path is also used to show the App Selection screen in the case of IdP-initiated SAML login (Different apps using the same SAML IdP).
 Set this when using the npm package.
 
