@@ -10,10 +10,10 @@ const IFrame = () => {
 
   return (
     <iframe
-      title="Privasee - BoxyHQ Inc."
+      title="Privacy Policy - BoxyHQ Inc."
       id="privacy-policy-iframe"
       frameBorder="0"
-      src={`https://app.privasee.io/embedded-privacy-portal/62b05b7a239a600013f95e77?theme=${colorMode}`}
+      src={`https://platform.illow.io/#/policy/privacy/c1cf3d5e-686e-49ec-b897-15c27a66cdeb?theme=${colorMode}`}
       style={{ width: '100%', height: '100vh' }}
     ></iframe>
   );
