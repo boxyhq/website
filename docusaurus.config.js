@@ -14,7 +14,7 @@ module.exports = {
   projectName: 'website', // Usually your repo name.
   scripts: [
     {
-      src: 'https://cmp.osano.com/169lWRSfch3C32VM2/2cd324ff-6a09-4e61-94fa-6af31f004e67/osano.js',
+      src: 'https://platform.illow.io/banner.js?siteId=c1cf3d5e-686e-49ec-b897-15c27a66cdeb',
       defer: true,
     },
   ],
