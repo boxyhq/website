@@ -54,7 +54,7 @@ You have to configure the following attributes under the **Attributes & Claims**
 
 | Name                                                                 | Value                  |
 | -------------------------------------------------------------------- | ---------------------- |
-| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | user.email             |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | user.mail              |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`    | user.givenname         |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`         | user.userprincipalname |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`      | user.surname           |

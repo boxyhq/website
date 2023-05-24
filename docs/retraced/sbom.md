@@ -17,7 +17,7 @@ You can find the SBOM reports as artifacts in our container registry at the loca
 | `ghcr.io/retracedhq/retraced/sbom:service-<version>` | `sbom.spdx`, `sbom.cyclonedx` | Retraced service                  |
 | `ghcr.io/retracedhq/retraced/sbom:docker-<version>`  | `sbom.spdx`, `sbom.cyclonedx` | Docker Image for Retraced service |
 
-You can use [oras](https://oras.land/cli) (or a similar OCI artifacts tool) to retrieve these files.
+You can use [oras](https://oras.land/docs/category/cli) (or a similar OCI artifacts tool) to retrieve these files.
 
 ```bash
 oras pull ghcr.io/retracedhq/retraced/sbom:service-<version>
