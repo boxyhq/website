@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const Author = ({ authors, name, title, url, image }) => {
   return (
     <div className="avatar">
-      {authors ? (
+      {authors && authors.length > 1 ? (
         <>
           <a href={authors[0].url} target="_blank">
             <img
