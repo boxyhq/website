@@ -1,14 +1,12 @@
 ---
 slug: build-enterprise-software-with-no-code-thanks-to-bubble.io
 title: 'Build Enterprise Software with No-Code Thanks to Bubble.io'
-tags_disabled:
-  [developer, security, no code, sso, open-source]
+author: Nathan Tarbert
+author_title: Community Success Engineer @BoxyHQ
+author_url: https://github.com/NathanTarbert
+author_image_url: https://boxyhq.com/img/team/nathan.jpg
+tags_disabled: [open-source, sso, enterprise-ready]
 image: /img/blog/bubble-small.jpg
-authors:
-  - name: Nathan Tarbert
-    title: Community Success Engineer @BoxyHQ
-    url: https://www.linkedin.com/in/nathan-tarbert
-    image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
 
 Building your enterprise applications on Bubble is now easier than ever with BoxyHQ, a single API to connect to enterprise Single Sign-On (SSO), and multiple security compliance features.
