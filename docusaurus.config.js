@@ -12,7 +12,12 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
-  scripts: [],
+  scripts: [
+    {
+      src: 'https://platform.illow.io/banner.js?siteId=c1cf3d5e-686e-49ec-b897-15c27a66cdeb',
+      defer: true,
+    },
+  ],
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
     prism: {
