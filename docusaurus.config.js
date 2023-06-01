@@ -144,6 +144,10 @@ module.exports = {
               label: 'Twitter',
               href: 'https://twitter.com/boxyhq',
             },
+            {
+              label: 'OSS Friends',
+              href: 'oss-friends',
+            },
           ],
         },
         {

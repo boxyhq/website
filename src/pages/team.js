@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Profile from '../components/Profile';
+import TitleHeader from '../components/TitleHeader';
 
 const title = 'Team';
 const description =
@@ -10,10 +11,7 @@ function Team() {
   return (
     <Layout title={title} description={description}>
       <main className="container margin-vert--lg">
-        <div className="text--center margin-bottom--lg">
-          <h1>{title}</h1>
-        </div>
-
+        <TitleHeader title={title} />
         <div className="row">
           <div className="col col--1 margin-bottom--lg"></div>
 
