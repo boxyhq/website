@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Profile from '../components/Profile';
+import TitleHeader from '../components/TitleHeader';
 
 const title = 'BoxyHQ pledges to keep our core open-source code open';
 const description = 'BoxyHQ pledges to keep our core open-source code open';
@@ -9,9 +9,7 @@ function Team() {
   return (
     <Layout title={title} description={description}>
       <main className="container margin-vert--lg">
-        <div className="text--center margin-bottom--lg">
-          <h1>{title}</h1>
-        </div>
+        <TitleHeader title={title} />
         <p>
           As long-time users and contributors to the open-source ecosystem, we
           want to do the right thing for the community. That means we will make
