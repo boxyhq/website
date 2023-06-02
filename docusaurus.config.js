@@ -141,7 +141,7 @@ module.exports = {
             },
             {
               label: 'OSS Friends',
-              href: 'oss-friends',
+              href: 'https://boxyhq.com/oss-friends',
             },
           ],
         },
