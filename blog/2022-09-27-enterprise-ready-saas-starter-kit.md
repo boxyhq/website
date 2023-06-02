@@ -12,7 +12,7 @@ Enterprise-ready SaaS Starter Kit is a **Next.js** based SaaS Starter Kit that c
 
 [Kickstart your enterprise app development with Next.js SaaS Starter Kit](https://github.com/boxyhq/saas-starter-kit)
 
-Check out the [video tutorial](https://www.youtube.com/watch?v=oxbEHmhTYQo) that walks through setting up your local environment and running enterprise-ready features the SaaS kit offers.
+Check out the [video tutorial](https://youtu.be/oF8QIwQIhyo) that walks through setting up your local environment and running enterprise-ready features the SaaS kit offers.
 
 ## SAML SSO
 
