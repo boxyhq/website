@@ -16,4 +16,5 @@ SAML Jackson supports the following SSO providers:
 - [OneLogin](./onelogin.md)
 - [PingOne](./pingone.md)
 - [JumpCloud](./jumpcloud.md)
+- [Rippling](./rippling.md)
 - [OpenID Connect Provider](./generic-oidc.md)
