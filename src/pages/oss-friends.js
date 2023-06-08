@@ -10,98 +10,92 @@ const description = 'Open-source projects and tools for an open world.';
 const friends = [
   {
     name: 'Cal.com',
-    title:
+    description:
       'Cal.com is a scheduling tool that helps you schedule meetings without the back-and-forth emails.',
-    url: 'https://cal.com',
+    href: 'https://cal.com',
   },
   {
     name: 'Crowd.dev',
-    title:
+    description:
       'Centralize community, product, and customer data to understand which companies are engaging with your open source project.',
-    url: 'https://www.crowd.dev',
+    href: 'https://www.crowd.dev',
   },
   {
     name: 'Documenso',
-    title:
+    description:
       'The Open-Source DocuSign Alternative. We aim to earn your trust by enabling you to self-host the platform and examine its inner workings.',
-    url: 'https://documenso.com',
+    href: 'https://documenso.com',
   },
   {
     name: 'Erxes',
-    title:
+    description:
       'The Open-Source HubSpot Alternative. A single XOS enables to create unique and life-changing experiences ​​that work for all types of business.',
-    url: 'https://erxes.io',
+    href: 'https://erxes.io',
   },
   {
     name: 'Formbricks',
-    title:
+    description:
       'Survey granular user segments at any point in the user journey. Gather up to 6x more insights with targeted micro-surveys. All open-source.',
-    url: 'https://formbricks.com',
-  },
-  {
-    name: 'Forward Email',
-    title:
-      'Free email forwarding for custom domains. For 6 years and counting, we are the go-to email service for thousands of creators, developers, and businesses.',
-    url: 'https://forwardemail.net',
+    href: 'https://formbricks.com',
   },
   {
     name: 'GitWonk',
-    title:
+    description:
       'GitWonk is an open-source technical documentation tool, designed and built focusing on the developer experience.',
-    url: 'https://gitwonk.com',
+    href: 'https://gitwonk.com',
   },
   {
     name: 'Hanko',
-    title:
+    description:
       'Open-source authentication and user management for the passkey era. Integrated in minutes, for web and mobile apps.',
-    url: 'https://hanko.io',
+    href: 'https://www.hanko.io',
   },
   {
     name: 'HTMX',
-    title:
+    description:
       'HTMX is a dependency-free JavaScript library that allows you to access AJAX, CSS Transitions, WebSockets, and Server Sent Events directly in HTML.',
-    url: 'https://htmx.org',
+    href: 'https://htmx.org',
   },
   {
     name: 'Infisical',
-    title:
+    description:
       'Open source, end-to-end encrypted platform that lets you securely manage secrets and configs across your team, devices, and infrastructure.',
-    url: 'https://infisical.com',
+    href: 'https://infisical.com',
   },
   {
     name: 'Novu',
-    title:
+    description:
       'The open-source notification infrastructure for developers. Simple components and APIs for managing all communication channels in one place.',
-    url: 'https://novu.co',
+    href: 'https://novu.co',
   },
   {
     name: 'OpenBB',
-    title:
+    description:
       'Democratizing investment research through an open source financial ecosystem. The OpenBB Terminal allows everyone to perform investment research, from everywhere.',
-    url: 'https://openbb.co',
+    href: 'https://openbb.co',
   },
   {
     name: 'Sniffnet',
-    title:
+    description:
       'Sniffnet is a network monitoring tool to help you easily keep track of your Internet traffic.',
-    url: 'https://www.sniffnet.net',
+    href: 'https://www.sniffnet.net',
   },
   {
     name: 'Typebot',
-    title:
+    description:
       'Typebot gives you powerful blocks to create unique chat experiences. Embed them anywhere on your apps and start collecting results like magic.',
-    url: 'https://typebot.io',
+    href: 'https://typebot.io',
   },
   {
     name: 'Webiny',
-    title:
+    description:
       'Open-source enterprise-grade serverless CMS. Own your data. Scale effortlessly. Customize everything.',
-    url: 'https://www.webiny.com',
+    href: 'https://www.webiny.com',
   },
   {
     name: 'Webstudio',
-    title: 'Webstudio is an open source alternative to Webflow.',
-    url: 'https://webstudio.is',
+    description: 'Webstudio is an open source alternative to Webflow',
+    href: 'https://webstudio.is',
   },
 ];
 
@@ -131,13 +125,15 @@ const OSSFriends = () => {
                                 {friend.name}
                               </h3>
                             </div>
-                            <div className="card__body">{friend.title}</div>
+                            <div className="card__body">
+                              {friend.description}
+                            </div>
                             <div className="card__footer">
                               <Link
                                 className={clsx(
                                   'button button--primary button--block'
                                 )}
-                                href={friend.url}
+                                href={friend.href}
                               >
                                 Learn More
                               </Link>
