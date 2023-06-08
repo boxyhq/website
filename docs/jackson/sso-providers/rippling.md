@@ -34,13 +34,15 @@ Copy the **Idp Metadata URL** or **Idp Metadata XML** from the next screen. You'
 
 You'll need to enter the **ACS URL** and **Entity ID**. You'll get these values from SAML Jackson.
 
+![img alt](/img/sso-providers/rippling/4.png)
+
 Make sure that **Service Provider Entity ID** matches the **SAML Audience (SP Entity ID)** value from SAML Jackson.
 
 From the **Settings** tab of custom app you just created. Go to **Advanced SAML Settings** section and check the box for **Disable InResponseTo field in assertions for IdP initiated SSO**.
 
 This is because Rippling sends dummy values for the **InResponseTo** field and SAML Jackson will try to validate the **InResponseTo** field if it is present.
 
-![img alt](/img/sso-providers/rippling/4.png)
+![img alt](/img/sso-providers/rippling/5.png)
 
 ## Next steps
 
