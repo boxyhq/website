@@ -1,5 +1,9 @@
 # Upgrade Guide
 
+## Upgrading to v1.10.0
+
+We have patched the SSO connection (`/api/v1/connections`) DELETE handler to accept payload (client/Secret or tenant/product/strategy) as part of query parameters. 
+
 ## Upgrading to v1.9.7
 
 We discovered and fixed a database connection leak introduced in v1.9.1, if you are using versions 1.9.1 to 1.9.6 then please upgrade to v1.9.7
