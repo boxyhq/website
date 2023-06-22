@@ -37,37 +37,37 @@ const text = (
     <p>Key Features and Benefits:</p>
     <ul>
       <li>
-        <b>Reduce time to market:</b>Build and ship enterprise-grade products
+        <b>Reduce time to market:</b> Build and ship enterprise-grade products
       </li>
       <li>
-        <b>Cost Savings:</b>Save money optimizing development costs
+        <b>Cost Savings:</b> Save money optimizing development costs
       </li>
       <li>
-        <b>Develop secure applications:</b>Our APIs integrate security best
+        <b>Develop secure applications:</b> Our APIs integrate security best
         practices into your development process
       </li>
       <li>
-        <b>Enhanced Efficiency:</b>With an intuitive interface and powerful
+        <b>Enhanced Efficiency:</b> With an intuitive interface and powerful
         features, businesses can automate tasks, optimize workflows, and
         maximize efficiency
       </li>
       <li>
-        <b>Full Support:</b>BoxyHQ is committed to providing exceptional support
+        <b>Full Support:</b> BoxyHQ is committed to providing exceptional support
         to its customers, ensuring a smooth onboarding process and continued
         assistance throughout their journey
       </li>
       <li>
-        <b>Unmatched Flexibility:</b>The platform offers customizable options,
+        <b>Unmatched Flexibility:</b> The platform offers customizable options,
         allowing businesses to tailor the solution to their unique needs and
         scale as they grow.
       </li>
       <li>
-        <b>Advanced Security:</b>BoxyHQ prioritizes data security, employing
+        <b>Advanced Security:</b> BoxyHQ prioritizes data security, employing
         robust measures to safeguard sensitive information and ensure peace of
         mind
       </li>
       <li>
-        <b>Seamless Integrations:</b>Integrate with the most popular SSO
+        <b>Seamless Integrations:</b> Integrate with the most popular SSO
         providers such as Okta, Azure AD, Auth0, Google and more
       </li>
     </ul>
