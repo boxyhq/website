@@ -155,13 +155,14 @@ NPM library option: `openid.jwtSigningKeys.public`
 
 ### **DB_ENGINE**
 
-Supported values are `redis`, `sql`, `mongo`, `mem`, `planetscale`, `dynamodb`
+Supported values are `redis`, `sql`, `mongo`, `mem`<sup>See note below</sup>, `planetscale`, `dynamodb`
 
 Default: `sql`
 
 NPM library option: `db.engine`
 
 > **_NOTE:_** If you are using DynamoDB then you also need to set `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. For additional options like region and capacity units check [this section](#db_dynamodb_region)
+> **_NOTE:_**  MemDB is useful to test the Jackson setup locally and is not intended for production. In a serverless deployment like Vercel, the mem db won't persist across API calls since each call is a fresh lambda invocation with an entirely new context. 
 
 ### **DB_TYPE**
 
@@ -173,7 +174,7 @@ NPM library option: `db.type`
 
 ### **DB_URL**
 
-The database URL to connect to. If you are using self-signed certificates then pass `sslmode=noverify` instead of `sslmode=require` in the `DB_URL`. This is because self-signed certs will be rejected as unauthorized in strict mode. Also set `DB_SSL=true` and `DB_SSL_REJECT_UNAUTHORIZED=false` (see env vars below for more details).
+The database URL to connect to. If you are using self-signed certificates then pass `sslmode=noverify` instead of `sslmode=require` in the `DB_URL`. This is because self-signed certs will be rejected as unauthorized in strict mode. Also, set `DB_SSL=true` and `DB_SSL_REJECT_UNAUTHORIZED=false` (see env vars below for more details).
 
 Example: `postgres://postgres:postgres@localhost:5432/postgres` or `postgres://postgres:postgres@localhost:5432/postgres?sslmode=no-verify`
 
@@ -271,9 +272,7 @@ Both the `WEBHOOK_URL` and `WEBHOOK_SECRET` are required to enable webhook event
 
 ### **PRE_LOADED_CONNECTION**
 
-If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenID and SAML)connections. It works well with the mem DB<sup>[See note below](#memdb)</sup> engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
-
-**NOTE:** <a id="memdb">MemDB is useful to test Jackson setup locally.In a serverless deployment like Vercel, the mem db won't persist across API calls since each call is a fresh lambda invocation with an entirely new context.</a>
+If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenID and SAML)connections. It works well with the mem DB<sup>[not for production use](#db_engine)</sup> engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
 
 NPM library option: `preLoadedConnection`
 
