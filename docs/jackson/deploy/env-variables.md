@@ -271,7 +271,9 @@ Both the `WEBHOOK_URL` and `WEBHOOK_SECRET` are required to enable webhook event
 
 ### **PRE_LOADED_CONNECTION**
 
-If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenID and SAML)connections. It works well with the mem DB engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
+If you only need a single tenant or a handful of pre-configured tenants then this config will help you read and load IdP (both OpenID and SAML)connections. It works well with the mem DB<sup>[See note below](#memdb)</sup> engine so you don't have to configure any external databases for this to work (though it works with those as well). This is a path (absolute or relative) to a directory that contains files organized in the format described in the next section. Check [this section](./pre-loaded-connections.md) for more details
+
+**NOTE:** <a id="memdb">In a serverless deployment like Vercel, the mem db won't persist across API calls since each call is a fresh lambda invocation with an entirely new context.</a>
 
 NPM library option: `preLoadedConnection`
 
