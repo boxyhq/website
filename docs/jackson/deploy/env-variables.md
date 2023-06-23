@@ -163,7 +163,7 @@ NPM library option: `db.engine`
 
 > **_NOTE:_** If you are using DynamoDB then you also need to set `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. For additional options like region and capacity units check [this section](#db_dynamodb_region)
 
-> **_NOTE:_**  `mem` (In memory database) is useful to test the Jackson setup locally and is not intended for production. In a serverless deployment like Vercel, the mem db won't persist across API calls since each call is a fresh lambda invocation with an entirely new context. 
+> **_NOTE:_**  `mem` DB (In memory database) is useful to test the Jackson setup locally and is not intended for production. In a serverless deployment like Vercel, the mem DB won't persist across API calls since each call is a fresh lambda invocation with an entirely new context. 
 
 ### **DB_TYPE**
 
