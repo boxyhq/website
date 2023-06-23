@@ -130,7 +130,7 @@ Now you are ready to start the service.
 
 ## SAML Tracer
 
-Each error event in the SAML request/ response phase is captured to aid in troubleshooting the SAML setup. The record or trace contains context related to the flow, like tenant, product, etc. The Admin Portal will have a new tab under Enterprise SSO -> SAML Tracer showing a paginated list of traces over time. Developers can inspect a trace and will be able to ascertain the real reason for the failure.
+Each error event in the SAML request/ response phase is captured to aid in troubleshooting the SAML setup. The record or trace contains context related to the flow, like tenant, product, etc. The Admin Portal will have a tab under Enterprise SSO -> SAML Tracer showing a paginated list of traces over time. Developers can inspect a trace and will be able to ascertain the real reason for the failure.
 
 ## Deployment Guides (Coming soon)
 
