@@ -163,6 +163,8 @@ NPM library option: `db.engine`
 
 > **_NOTE:_** If you are using DynamoDB then you also need to set `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. For additional options like region and capacity units check [this section](#db_dynamodb_region)
 
+> **_NOTE:_**  `mem` DB (In memory database) is useful to test the Jackson setup locally and is not intended for production. In a serverless deployment like Vercel, the mem DB won't persist across API calls since each call is a fresh lambda invocation with an entirely new context. 
+
 ### **DB_TYPE**
 
 Only needed when DB_ENGINE is sql. Supported values are `postgres`, `mysql`, `mariadb`, `mssql`
@@ -173,7 +175,7 @@ NPM library option: `db.type`
 
 ### **DB_URL**
 
-The database URL to connect to. If you are using self-signed certificates then pass `sslmode=noverify` instead of `sslmode=require` in the `DB_URL`. This is because self-signed certs will be rejected as unauthorized in strict mode. Also set `DB_SSL=true` and `DB_SSL_REJECT_UNAUTHORIZED=false` (see env vars below for more details).
+The database URL to connect to. If you are using self-signed certificates then pass `sslmode=noverify` instead of `sslmode=require` in the `DB_URL`. This is because self-signed certs will be rejected as unauthorized in strict mode. Also, set `DB_SSL=true` and `DB_SSL_REJECT_UNAUTHORIZED=false` (see env vars below for more details).
 
 Example: `postgres://postgres:postgres@localhost:5432/postgres` or `postgres://postgres:postgres@localhost:5432/postgres?sslmode=no-verify`
 

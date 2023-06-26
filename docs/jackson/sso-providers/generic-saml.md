@@ -23,6 +23,10 @@ Create them exactly as shown below:
 
 - Assertion Encryption: `Unencrypted`
 
+:::info
+The deployed Jackson service has a Service Provider (SP) endpoint that exposes the above metadata and the same can be accessed at `<jackson_endpoint>/.well-known/saml-configuration`. 
+:::
+
 ## SAML profile/claims/attributes mapping
 
 As outlined in the guide above we try and support 4 attributes in the SAML claims - `id`, `email`, `firstName`, `lastName`. This is how the common SAML attributes map over for most providers, but some providers have custom mappings. Please refer to the documentation on Identity Provider to understand the exact mapping.
