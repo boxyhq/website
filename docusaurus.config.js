@@ -70,6 +70,8 @@ module.exports = {
               to: '/privacy-vault',
               label: 'Privacy Vault',
             },
+            { to: '/saas-registration', label: 'SaaS Registration'
+            },
           ],
         },
         {
@@ -78,7 +80,6 @@ module.exports = {
           items: [
             { to: '/docs', label: 'Docs' },
             { to: '/guides', label: 'Guides' },
-            { to: '/saas-registration', label: 'SaaS Registration'},
             { to: '/enterprise-readiness', label: 'Enterprise Readiness' },
             {
               href: 'https://mocksaml.com',
