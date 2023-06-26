@@ -1,6 +1,6 @@
 # Upgrade Guide
 
-## Upgrading to v1.10.0
+## Upgrading to v1.11.0
 
 We have patched the SSO connection (`/api/v1/connections`) DELETE handler to accept payload (client/Secret or tenant/product/strategy) as part of query parameters. Earlier, the payload was expected to be part of the body which is non-standard and is no longer supported in Next.js. 
 
