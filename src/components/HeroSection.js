@@ -23,15 +23,24 @@ const HeroSection = ({ title, description, image, buttons, icon = null }) => {
             </div>
             <p className="hero__subtitle margin-top--lg">{description}</p>
             <div className="intro__buttons margin-top--lg">
-              {buttons.map(({ href, title, className }, idx) => (
-                <Link
-                  className={clsx('button button--lg', className)}
-                  href={href}
-                  key={idx}
-                >
-                  {title}
-                </Link>
-              ))}
+              {buttons.map(({ href, title, className, onClick }, idx) =>
+                onClick ? (
+                  <a
+                    onClick={onClick}
+                    className={clsx('button button--lg', className)}
+                  >
+                    {title}
+                  </a>
+                ) : (
+                  <Link
+                    className={clsx('button button--lg', className)}
+                    href={href}
+                    key={idx}
+                  >
+                    {title}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>

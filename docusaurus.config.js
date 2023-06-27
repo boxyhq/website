@@ -70,6 +70,7 @@ module.exports = {
               to: '/privacy-vault',
               label: 'Privacy Vault',
             },
+            { to: '/saas-registration', label: 'SaaS Early Access' },
           ],
         },
         {
