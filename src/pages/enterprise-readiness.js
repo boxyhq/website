@@ -9,9 +9,6 @@ import ProductsSection from '../components/ProductsSection';
 import InvestorsSection from '../components/InvestorsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
-import FeatureSection from '../components/FeatureSection';
-
-const Icon3 = require('../../static/img/home-buildingblocks.svg').default;
 
 const title = 'BoxyHQ for Startups';
 const description =
