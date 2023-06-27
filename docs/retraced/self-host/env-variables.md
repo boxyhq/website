@@ -85,9 +85,24 @@ Default: `10000`
 If set to true, Retraced disables db level caching.<br />
 Caching is used for `Actor`, `Target` & `Groups` SELECT queries of audit log.
 
+## [MaxMind](https://www.maxmind.com/) Geo IP Configuration
+
+There are two modes for Geo IP download, lookup & updates.
+
+- Using GeoLite2 file downloads
+- Using mmdb download
+
 ### **MAXMIND_GEOLITE2_LICENSE_KEY**
 
 The `MaxMind` license key to fetch `"GeoLite2"` data.
+
+### **GEO_USE_MMDB**
+
+Indicates whether the service should use the `mmdb format`` for Geo IP database download.
+
+### **GEO_MMDB_PATH**
+
+Custom path of `mmdb` file which will be used for Geo IP lookups.
 
 ### **TMPDIR**
 
