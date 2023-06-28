@@ -185,17 +185,15 @@ This endpoint can be used to delete existing connections either by tenant/produc
 ```bash
 curl -X "DELETE" --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'tenant=boxyhq.com' \
---data-urlencode 'product=demo'
+--url-query 'tenant=boxyhq.com' \
+--url-query 'product=demo'
 ```
 
 ```bash
 curl -X "DELETE" --location 'http://localhost:5225/api/v1/connections' \
 --header 'Authorization: Api-Key <Jackson API Key>' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'clientID=<Client ID>'
---data-urlencode 'clientSecret=<Client Secret>'
+--url-query 'clientID=<Client ID>'
+--url-query 'clientSecret=<Client Secret>'
 ```
 
 ## 3. OAuth 2.0 Flow
