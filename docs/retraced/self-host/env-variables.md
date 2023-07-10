@@ -92,17 +92,21 @@ There are two modes for Geo IP download, lookup & updates.
 - Using GeoLite2 file downloads
 - Using mmdb download
 
-### **MAXMIND_GEOLITE2_LICENSE_KEY**
+### **GEOIPUPDATE_LICENSE_KEY**
 
-The `MaxMind` license key to fetch `"GeoLite2"` data.
+The `MaxMind` license key to fetch `"GeoLite2"` data or mmdb file.
 
-### **GEO_USE_MMDB**
+### **GEOIPUPDATE_ACCOUNT_ID**
+
+The `MaxMind` account id to download/update `"GeoLite2"` mmdb file.
+
+### **GEOIPUPDATE_USE_MMDB**
 
 Indicates whether the service should use the `mmdb format`` for Geo IP database download.
 
-### **GEO_MMDB_PATH**
+### **GEOIPUPDATE_DB_DIR**
 
-Custom path of `mmdb` file which will be used for Geo IP lookups.
+Custom path of `mmdb` file directory which will be used for Geo IP lookups.
 
 ### **TMPDIR**
 
