@@ -85,29 +85,6 @@ Default: `10000`
 If set to true, Retraced disables db level caching.<br />
 Caching is used for `Actor`, `Target` & `Groups` SELECT queries of audit log.
 
-## [MaxMind](https://www.maxmind.com/) Geo IP Configuration
-
-There are two modes for Geo IP download, lookup & updates.
-
-- Using GeoLite2 file downloads
-- Using mmdb download
-
-### **GEOIPUPDATE_LICENSE_KEY**
-
-The `MaxMind` license key to fetch `"GeoLite2"` data or mmdb file.
-
-### **GEOIPUPDATE_ACCOUNT_ID**
-
-The `MaxMind` account id to download/update `"GeoLite2"` mmdb file.
-
-### **GEOIPUPDATE_USE_MMDB**
-
-Indicates whether the service should use the `mmdb format`` for Geo IP database download.
-
-### **GEOIPUPDATE_DB_DIR**
-
-Custom path of `mmdb` file directory which will be used for Geo IP lookups.
-
 ### **TMPDIR**
 
 The path of the temporary folder used for Geo data sync.<br />
@@ -116,6 +93,32 @@ Retraced looks for `"GeoLite2` files to import IP address and location data.
 ### **RETRACED_APP_BASE**
 
 The base path of the Retraced instance which is used for links in the emails.
+
+## [MaxMind](https://www.maxmind.com/) Geo IP Configuration
+
+There are two modes for Geo IP download, lookup & updates.
+
+- Using GeoLite2 file downloads
+- Using [geoipupdate](https://github.com/maxmind/geoipupdate) to download mmdb file
+
+For GeoLite2 file downloads only `GEOIPUPDATE_LICENSE_KEY` is required.
+For mmdb downloads `GEOIPUPDATE_USE_MMDB`, `GEOIPUPDATE_LICENSE_KEY` and `GEOIPUPDATE_ACCOUNT_ID` are mandatory & `GEOIPUPDATE_DB_DIR` is optional.
+
+### **GEOIPUPDATE_LICENSE_KEY**
+
+The `MaxMind` license key to fetch `"GeoLite2"` data or mmdb file.
+
+### **GEOIPUPDATE_USE_MMDB**
+
+Indicates whether the service should use the `mmdb format`` for Geo IP database download.
+
+### **GEOIPUPDATE_ACCOUNT_ID**
+
+The `MaxMind` account id to download/update `"GeoLite2"` mmdb file.
+
+### **GEOIPUPDATE_DB_DIR**
+
+Custom path of `mmdb` file directory which will be used for Geo IP lookups. **(Default: `/etc/mmdb`)**
 
 ## [Postgres](https://www.postgresql.org/) Configuration
 
