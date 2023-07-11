@@ -17,8 +17,7 @@ authors:
 
 ## The new era of Application Security: Security Building Blocks for Developers
 
-![Security building blocks](/img/blog/purple-building-blocks.jpg)
-Photo by [shubham Dhage](https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)on [Unsplash](https://unsplash.com/photos/UxDU0Gg5pqQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Xavi Cabrera</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
 With the proliferation of data breaches and cyber-attacks, developers must take a proactive approach to security. BoxyHQ's Security Building Blocks for Developers are designed to help developers build and deploy secure applications with minimal effort and expertise.
 
