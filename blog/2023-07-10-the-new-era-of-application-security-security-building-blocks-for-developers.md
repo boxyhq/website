@@ -17,8 +17,6 @@ authors:
 
 ## The new era of Application Security: Security Building Blocks for Developers
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Xavi Cabrera</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
-
 With the proliferation of data breaches and cyber-attacks, developers must take a proactive approach to security. BoxyHQ's Security Building Blocks for Developers are designed to help developers build and deploy secure applications with minimal effort and expertise.
 
 In addition to their core products security teams are finding it hard to keep pace with new no-code and low-code apps that are being created in the company. The arrival of Generative AI and ChatGPT has complicated the landscape even further.
@@ -36,6 +34,10 @@ Building and shipping security features in hours instead of months is now a real
 The developer community has long embraced the open-source movement. Open-source software fosters collaboration, innovation, and rapid evolution. By offering Security Building Blocks as open-source projects, BoxyHQ empowers developers to contribute, customize, and tailor security features to suit their specific needs. This flexibility not only enables developers to address unique requirements but also creates an ecosystem where best practices and security advancements are shared, benefiting the entire community. We hypothesize that in the future many of these security features will be a commodity, and will be implemented by any software product, not just the ones that need to be enterprise-grade.
 
 ## Minimum Viable Security (MVS): Building a Strong Foundation
+
+![Security Building Blocks](/img/blog/purple-building-blocks.jpg)
+
+<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Xavi Cabrera</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
 Minimum Viable Security (MVS) is a concept focused on identifying and implementing the essential security measures necessary to protect an application from common threats. BoxyHQ embraces the principles of MVS and provides developers with Security Building Blocks that address these foundational security needs. By adopting an MVS approach, developers can prioritize the integration of critical security features, ensuring a solid foundation for their applications while minimizing unnecessary complexity and overhead.
 
