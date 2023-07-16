@@ -17,7 +17,7 @@ You can find the SBOM reports as artifacts in our container registry at the loca
 | `ghcr.io/retracedhq/retraced/sbom:service-<version>` | `sbom.spdx`, `sbom.cyclonedx` | Retraced service                  |
 | `ghcr.io/retracedhq/retraced/sbom:docker-<version>`  | `sbom.spdx`, `sbom.cyclonedx` | Docker Image for Retraced service |
 
-You can use [oras](https://oras.land/docs/how_to_guides/installation) (or a similar OCI artifacts tool) to retrieve these files.
+You can use [oras](https://oras.land) (or a similar OCI artifacts tool) to retrieve these files.
 
 ```bash
 oras pull ghcr.io/retracedhq/retraced/sbom:service-<version>
@@ -35,7 +35,7 @@ You can find the SBOM reports as artifacts in our container registry at the loca
 | --------------------------------------------------- | ----------------------------- | --------------- |
 | `ghcr.io/retracedhq/retraced-js/sbom:npm-<version>` | `sbom.spdx`, `sbom.cyclonedx` | Retraced JS SDK |
 
-You can use [oras](https://oras.land/docs/how_to_guides/installation) (or a similar OCI artifacts tool) to retrieve these files.
+You can use [oras](https://oras.land) (or a similar OCI artifacts tool) to retrieve these files.
 
 ```bash
 oras pull ghcr.io/retracedhq/retraced-js/sbom:npm-<version>
@@ -53,7 +53,7 @@ You can find the SBOM reports as artifacts in our container registry at the loca
 | --------------------------------------------------- | ----------------------------- | ------------------ |
 | `ghcr.io/retracedhq/logs-viewer/sbom:npm-<version>` | `sbom.spdx`, `sbom.cyclonedx` | Retraced React SDK |
 
-You can use [oras](https://oras.land/docs/how_to_guides/installation) (or a similar OCI artifacts tool) to retrieve these files.
+You can use [oras](https://oras.land) (or a similar OCI artifacts tool) to retrieve these files.
 
 ```bash
 oras pull ghcr.io/retracedhq/logs-viewer/sbom:npm-<version>
