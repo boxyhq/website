@@ -27,7 +27,7 @@ const AuditLogs = () => {
       <HeroSection
         title={title}
         description={description}
-        image="/img/feat-audit.svg"
+        image="/img/audit-logs/audit-logs-widget.png"
         icon={ProductIcon}
         buttons={[
           {
