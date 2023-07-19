@@ -12,7 +12,7 @@ const title = 'BoxyHQ for Startups';
 const description = 'Developer First Security Week';
 
 const DeveloperSecurityWeek = () => {
-  const [opened, setOpened] = useState(false);
+const [opened, setOpened] = useState(false);
 
   return (
     <Layout title={title} description={description}>
@@ -25,7 +25,6 @@ const DeveloperSecurityWeek = () => {
             title: 'The Future of Security Engineers',
             onClick: () => {
             setOpened(true);
-
             },
             className: 'button--primary',
           },
