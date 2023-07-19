@@ -121,9 +121,9 @@ const [opened, setOpened] = useState(false);
         </div>
       </Modal>
 
-      <CustomersSection />
+      {/* <CustomersSection />
       <NewsSection />
-      <InvestorsSection />
+      <InvestorsSection /> */}
       <DeveloperCommunitySection />
     </Layout>
   );
