@@ -7,14 +7,12 @@ import InvestorsSection from '../components/InvestorsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import SectionLayout from '../components/SectionLayout';
-import { DevFirstSecurityWeekForm } from '../components/DevFirstSecurityWeekForm';
 
 const title = 'BoxyHQ for Startups';
 const description = 'Developer First Security Week';
 
-const SaasRegistration = () => {
+const DeveloperSecurityWeek = () => {
   const [opened, setOpened] = useState(false);
-  const [formId, setFormId] = useState('');
 
   return (
     <Layout title={title} description={description}>
@@ -26,7 +24,6 @@ const SaasRegistration = () => {
           {
             title: 'Register',
             onClick: () => {
-              setFormId(formId);
               setOpened(true);
             },
             className: 'button--primary',
@@ -34,49 +31,64 @@ const SaasRegistration = () => {
         ]}
       />
 
-      <SectionLayout title="World-class Guest Speakers!" description="">
+      <SectionLayout title="World-class Guest Speakers!">
         <div className="row">
           <div className="col col--8 col--offset-2">
             <div className="col-demo center">
               <div>
-                <h2>
-                  Panels
-                </h2>
+                <h2>Panels</h2>
                 <ul>
                   <li>
-                    <b>The Future of Security Engineers</b> 
+                    <b>The Future of Security Engineers</b>
                   </li>
                   <li>
-                    <b>The Future of Authentication</b> 
+                    <b>The Future of Authentication</b>
                   </li>
                   <li>
-                    <b>The Future of Authorization</b> 
+                    <b>The Future of Authorization</b>
                   </li>
                   <li>
-                    <b>The Future of Data Privacy</b> 
+                    <b>The Future of Data Privacy</b>
                   </li>
                   <li>
-                    <b>And more...</b> 
+                    <b>And more...</b>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        
       </SectionLayout>
-      <SectionLayout>
-        <div style={{ width: "50%", height: "0px", position: "relative", paddingBottom: "56.25%" }} id="streamyardForm" ><iframe style={{ width: "100%",height: "100%",position: "absolute", left: "0px", top: "0px", overflow: "hidden" }} src="https://streamyard.com/watch/fx4hdxDwCpaK?embed=true" width="100%" height="100%" frameborder="0" allowfullscreen ></iframe ></div>
-      </SectionLayout>
-        
-      
 
-
-      <Modal title="" opened={opened} setOpened={setOpened}>
-        <DevFirstSecurityWeekForm formId={formId} />
+      <Modal opened={opened} setOpened={setOpened}>
+        <div
+          style={{
+            width: '100%',
+            height: '0px',
+            position: 'relative',
+            paddingBottom: '96.25%',
+          }}
+          id="streamyardForm"
+        >
+          <iframe
+            style={{
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              left: '0px',
+              top: '0px',
+              overflow: 'hidden',
+            }}
+            src="https://streamyard.com/watch/fx4hdxDwCpaK?embed=true"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
       </Modal>
-      <CustomersSection />
 
+      <CustomersSection />
       <NewsSection />
       <InvestorsSection />
       <DeveloperCommunitySection />
@@ -84,4 +96,4 @@ const SaasRegistration = () => {
   );
 };
 
-export default SaasRegistration;
+export default DeveloperSecurityWeek;
