@@ -99,7 +99,7 @@ module.exports = {
           type: 'dropdown',
           items: [
             {
-              href: 'https://github.com/developer-first-security-week',
+              href: 'https://boxyhq.com/developer-first-security-week',
               label: 'Developer First Security Week',
             },
           ],
