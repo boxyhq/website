@@ -19,29 +19,21 @@ const DeveloperSecurityWeek = () => {
         description="Register early and join us for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
         image="/img/devSecFirstWeekFlyer.svg"
         imageWidth={null}
-        buttons={
-          [
-            // {
-            //   title: 'Register Now',
-            //   onClick: () => {
-            //   },
-            //   className: 'button--primary',
-            // }, 
-          ]
-        }
+        buttons={[
+          {
+            href: '#register',
+            title: 'Register Now',
+            className: 'button button--primary button--outline',
+          },
+        ]}
       />
-      
-      <div className='col col--2'>
-        <a href='#register' className='button button--primary button--solid'
-        >Register Now</a>
-      </div>
-        
-      
+
       <SectionLayout
         title="World class guest speakers!"
         description="Panel Discussions"
+        id="register"
       >
-        <div className="row" id="register">
+        <div className="row">
           <Event
             setEventId={() => {
               setEventId('fx4hdxDwCpaK');
@@ -128,7 +120,7 @@ const Event = ({ title, date, description, id, setEventId }) => {
         <div className="card padding--md">
           <div className="card__header text--center">
             <h2 className="text--primary">{title}</h2>
-            <h3 className="text--primary">{date}</h3>
+            <h3>{date}</h3>
           </div>
           <div className="card__body">
             <p className="text--center">{description}</p>
@@ -157,27 +149,32 @@ const Speakers = () => {
     {
       name: 'Advait Ruia',
       title: 'Co-Founder SuperTokens',
-      avatar: 'img/developer-first-security-week-avatars/advait-ruia-supertokens.jpeg',
+      avatar:
+        'img/developer-first-security-week-avatars/advait-ruia-supertokens.jpeg',
     },
     {
       name: 'Randall Degges',
       title: 'Head of Developer Relations @ Snyk',
-      avatar: '/img/developer-first-security-week-avatars/randall-degges-snyk.jpg',
+      avatar:
+        '/img/developer-first-security-week-avatars/randall-degges-snyk.jpg',
     },
     {
       name: 'Alex Olivier',
       title: 'Product @ Cerbos',
-      avatar: '/img/developer-first-security-week-avatars/alex-olivier-cerbos.jpeg',
+      avatar:
+        '/img/developer-first-security-week-avatars/alex-olivier-cerbos.jpeg',
     },
     {
       name: 'Joe Toscano',
       title: 'Author/Keynote / Cyber Collective',
-      avatar: '/img/developer-first-security-week-avatars/joe-toscano-cyber-collective.jpeg',
+      avatar:
+        '/img/developer-first-security-week-avatars/joe-toscano-cyber-collective.jpeg',
     },
     {
       name: 'Guillaume Montard',
       title: 'Founder & CEO @ Bearer',
-      avatar: '/img/developer-first-security-week-avatars/guillaume-montard-bearer.jpeg',
+      avatar:
+        '/img/developer-first-security-week-avatars/guillaume-montard-bearer.jpeg',
     },
   ];
 
