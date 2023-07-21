@@ -31,24 +31,24 @@ const DeveloperSecurityWeek = () => {
         }
       />
       
-      <div className='col col--2'>
+      <div className='col col--2' style={{paddingLeft: "500px"}}>
         <a href='#register' className='button button--primary button--solid'
         >Register Now</a>
       </div>
         
-      
+      <div id="register">
       <SectionLayout
         title="World class guest speakers!"
         description="Panel Discussions"
       >
-        <div className="row" id="register">
+        <div className="row">
           <Event
             setEventId={() => {
               setEventId('fx4hdxDwCpaK');
               setOpened(true);
             }}
             title="The Future of Security Engineers"
-            date="August 7th."
+            date="August 7th. @ 1 PM EST"
             description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like.
             "
           />
@@ -58,7 +58,7 @@ const DeveloperSecurityWeek = () => {
               setOpened(true);
             }}
             title="The Future of Authentication"
-            date="August 8th."
+            date="August 8th. @ 1 PM EST"
             description="Join us as our experts delve into the transformative trends and cutting-edge innovations reshaping authentication methods, from biometrics and AI-driven approaches to context-aware verification, to secure digital identities and provide seamless user experiences while fortifying online security."
           />
           <Event
@@ -67,7 +67,7 @@ const DeveloperSecurityWeek = () => {
               setOpened(true);
             }}
             title="The Future of Authorization"
-            date="August 9th."
+            date="August 9th. @ 1 PM EST"
             description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization.  
             "
           />
@@ -77,14 +77,14 @@ const DeveloperSecurityWeek = () => {
               setOpened(true);
             }}
             title="The Future of Data Privacy"
-            date="August 10th."
+            date="August 10th. @ 1 PM EST"
             description="Join our expert panelists' discussion as they highlight the critical significance of data privacy in a data-driven world, exploring emerging privacy regulations, encryption techniques, and privacy-enhancing technologies that will safeguard user information, foster trust, and enable responsible data practices for businesses and individuals alike.
             "
           />
         </div>
       </SectionLayout>
-
-      <SectionLayout title="Speaker title" description="Speaker description">
+      </div>
+      <SectionLayout title="Guest Speakers" description="">
         <Speakers />
       </SectionLayout>
 
@@ -124,7 +124,7 @@ const DeveloperSecurityWeek = () => {
 const Event = ({ title, date, description, id, setEventId }) => {
   return (
     <div className="col col--6" style={{ marginBottom: '30px' }}>
-      <div className="card-demo" a href="#register">
+      <div className="card-demo">
         <div className="card padding--md">
           <div className="card__header text--center">
             <h2 className="text--primary">{title}</h2>
