@@ -15,29 +15,42 @@ const DeveloperSecurityWeek = () => {
   return (
     <Layout title={title} description={description}>
       <HeroSection
-        title="The Developer-First Security Week Event"
+        title="The Developer-First Security Week"
         description="Register early and join us for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
         image="/img/devSecFirstWeekFlyer.svg"
         imageWidth={null}
         buttons={
           [
-            //removed buttons from the HeroSection
+            // {
+            //   title: 'Register Now',
+            //   onClick: () => {
+            //   },
+            //   className: 'button--primary',
+            // }, 
           ]
         }
       />
-
+      
+      <div className='col col--2'>
+        <a href='#register' className='button button--primary button--solid'
+        >Register Now</a>
+      </div>
+        
+      
       <SectionLayout
-        title="World-class event, world class guest speakers!"
+        title="World class guest speakers!"
         description="Panel Discussions"
       >
-        <div className="row">
+        <div className="row" id="register">
           <Event
             setEventId={() => {
               setEventId('fx4hdxDwCpaK');
               setOpened(true);
             }}
             title="The Future of Security Engineers"
-            description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like."
+            date="August 7th."
+            description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like.
+            "
           />
           <Event
             setEventId={() => {
@@ -45,7 +58,8 @@ const DeveloperSecurityWeek = () => {
               setOpened(true);
             }}
             title="The Future of Authentication"
-            description="Join us our experts delve into the transformative trends and cutting-edge innovations reshaping authentication methods, from biometrics and AI-driven approaches to context-aware verification, to secure digital identities and provide seamless user experiences while fortifying online security."
+            date="August 8th."
+            description="Join us as our experts delve into the transformative trends and cutting-edge innovations reshaping authentication methods, from biometrics and AI-driven approaches to context-aware verification, to secure digital identities and provide seamless user experiences while fortifying online security."
           />
           <Event
             setEventId={() => {
@@ -53,12 +67,9 @@ const DeveloperSecurityWeek = () => {
               setOpened(true);
             }}
             title="The Future of Authorization"
-            description="In this session we glimpse into the future of
-            authorization, where we envision dynamic and intelligent
-            access control mechanisms that leverage AI and blockchain
-            technologies to grant appropriate permissions in
-            real-time, mitigating risks and empowering users with
-            precise, context-sensitive authorization."
+            date="August 9th."
+            description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization.  
+            "
           />
           <Event
             setEventId={() => {
@@ -66,12 +77,9 @@ const DeveloperSecurityWeek = () => {
               setOpened(true);
             }}
             title="The Future of Data Privacy"
-            description="This session highlights the critical significance of data
-            privacy in a data-driven world, exploring emerging privacy
-            regulations, encryption techniques, and privacy-enhancing
-            technologies that will safeguard user information, foster
-            trust, and enable responsible data practices for
-            businesses and individuals alike."
+            date="August 10th."
+            description="Join our expert panelists' discussion as they highlight the critical significance of data privacy in a data-driven world, exploring emerging privacy regulations, encryption techniques, and privacy-enhancing technologies that will safeguard user information, foster trust, and enable responsible data practices for businesses and individuals alike.
+            "
           />
         </div>
       </SectionLayout>
@@ -116,7 +124,7 @@ const DeveloperSecurityWeek = () => {
 const Event = ({ title, date, description, id, setEventId }) => {
   return (
     <div className="col col--6" style={{ marginBottom: '30px' }}>
-      <div className="card-demo">
+      <div className="card-demo" a href="#register">
         <div className="card padding--md">
           <div className="card__header text--center">
             <h2 className="text--primary">{title}</h2>
@@ -127,7 +135,7 @@ const Event = ({ title, date, description, id, setEventId }) => {
           </div>
           <div className="card__footer text--center">
             <button
-              className="button button--primary button--outline"
+              className="button button--primary button--solid"
               onClick={setEventId}
             >
               Register Now
@@ -147,9 +155,29 @@ const Speakers = () => {
       avatar: 'https://boxyhq.com/img/team/deepak.jpg',
     },
     {
-      name: 'Deepak Prabhakara',
-      title: 'CEO @ BoxyHQ',
-      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
+      name: 'Advait Ruia',
+      title: 'Co-Founder SuperTokens',
+      avatar: 'img/developer-first-security-week-avatars/advait-ruia-supertokens.jpeg',
+    },
+    {
+      name: 'Randall Degges',
+      title: 'Head of Developer Relations @ Snyk',
+      avatar: '/img/developer-first-security-week-avatars/randall-degges-snyk.jpg',
+    },
+    {
+      name: 'Alex Olivier',
+      title: 'Product @ Cerbos',
+      avatar: '/img/developer-first-security-week-avatars/alex-olivier-cerbos.jpeg',
+    },
+    {
+      name: 'Joe Toscano',
+      title: 'Author/Keynote / Cyber Collective',
+      avatar: '/img/developer-first-security-week-avatars/joe-toscano-cyber-collective.jpeg',
+    },
+    {
+      name: 'Guillaume Montard',
+      title: 'Founder & CEO @ Bearer',
+      avatar: '/img/developer-first-security-week-avatars/guillaume-montard-bearer.jpeg',
     },
   ];
 
