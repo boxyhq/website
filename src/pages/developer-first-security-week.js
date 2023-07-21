@@ -19,11 +19,12 @@ const DeveloperSecurityWeek = () => {
         description="Register early and join us for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
         image="/img/devSecFirstWeekFlyer.svg"
         imageWidth={null}
-        buttons={[
-         //removed buttons from the HeroSection
-        ]}
+        buttons={
+          [
+            //removed buttons from the HeroSection
+          ]
+        }
       />
-
 
       <SectionLayout
         title="World-class event, world class guest speakers!"
@@ -144,16 +145,6 @@ const Speakers = () => {
       name: 'Deepak Prabhakara',
       title: 'CEO @ BoxyHQ',
       avatar: 'https://boxyhq.com/img/team/deepak.jpg',
-    },
-    {
-      name: 'Deepak Prabhakara',
-      title: 'CEO @ BoxyHQ',
-      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
-    },
-    {
-      name: 'Deepak Prabhakara',
-      title: 'CEO @ BoxyHQ',
-      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
     },
     {
       name: 'Deepak Prabhakara',
