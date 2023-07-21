@@ -25,6 +25,11 @@ const DeveloperSecurityWeek = () => {
             title: 'Register Now',
             className: 'button button--primary',
           },
+          {
+            href: '#speakers',
+            title: 'Speakers',
+            className: 'button button--primary',
+          },
         ]}
       />
 
@@ -180,7 +185,7 @@ const Speakers = () => {
   ];
 
   return (
-    <div className="row">
+    <div className="row" id="speakers">
       {speakers.map((speaker) => (
         <div className="col">
           <div className="col-demo">
