@@ -151,11 +151,6 @@ const Speakers = () => {
       title: 'CEO @ BoxyHQ',
       avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
     },
-    {
-      name: 'Deepak Prabhakara',
-      title: 'CEO @ BoxyHQ',
-      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
-    },
   ];
 
   return (
