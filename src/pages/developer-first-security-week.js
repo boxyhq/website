@@ -20,96 +20,10 @@ const DeveloperSecurityWeek = () => {
         image="/img/devSecFirstWeekFlyer.svg"
         imageWidth={null}
         buttons={[
-          {
-            title: 'The Future of Security Engineers',
-            onClick: () => {
-              setOpened(true);
-            },
-            className: 'button--primary',
-          },
-          {
-            title: 'The Future of Security Authentication',
-            onClick: () => {
-              setOpened(true);
-            },
-            className: 'button--primary',
-          },
-          {
-            title: 'The Future of Security Authorization',
-            onClick: () => {
-              setOpened(true);
-            },
-            className: 'button--primary',
-          },
-          {
-            title: 'The Future of Data Privacy',
-            onClick: () => {
-              setOpened(true);
-            },
-            className: 'button--primary',
-          },
+         //removed buttons from the HeroSection
         ]}
       />
 
-      <SectionLayout title="World-class event, world class guest speakers!">
-        <div className="row">
-          <div className="col col--8 col--offset-2">
-            <div className="col-demo center">
-              <div>
-                <h2 style={{ textAlign: 'center' }}>Panel Discussions</h2>
-                <ul>
-                  <li>
-                    <b>The Future of Security Engineers</b>
-                    <p>
-                      Security Engineers are the safeguards for technological
-                      advancements, combating cyber threats, and ensuring the
-                      privacy and integrity of digital infrastructure. Join our
-                      experts as they discuss where we are headed and what the
-                      future of security engineering will look like.
-                    </p>
-                  </li>
-                  <li>
-                    <b>The Future of Authentication</b>
-                    <p>
-                      Join us our experts delve into the transformative trends
-                      and cutting-edge innovations reshaping authentication
-                      methods, from biometrics and AI-driven approaches to
-                      context-aware verification, to secure digital identities
-                      and provide seamless user experiences while fortifying
-                      online security.
-                    </p>
-                  </li>
-                  <li>
-                    <b>The Future of Authorization</b>
-                    <p>
-                      In this session we glimpse into the future of
-                      authorization, where we envision dynamic and intelligent
-                      access control mechanisms that leverage AI and blockchain
-                      technologies to grant appropriate permissions in
-                      real-time, mitigating risks and empowering users with
-                      precise, context-sensitive authorization.
-                    </p>
-                  </li>
-                  <li>
-                    <b>The Future of Data Privacy</b>
-                    <p>
-                      This session highlights the critical significance of data
-                      privacy in a data-driven world, exploring emerging privacy
-                      regulations, encryption techniques, and privacy-enhancing
-                      technologies that will safeguard user information, foster
-                      trust, and enable responsible data practices for
-                      businesses and individuals alike.
-                    </p>
-                  </li>
-                  <li>
-                    <b>And more...</b>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </SectionLayout>
 
       <SectionLayout
         title="World-class event, world class guest speakers!"
@@ -126,7 +40,7 @@ const DeveloperSecurityWeek = () => {
           />
           <Event
             setEventId={() => {
-              setEventId('fx4hdxDwCpaK');
+              setEventId('PKN33MW2nys3');
               setOpened(true);
             }}
             title="The Future of Authentication"
@@ -134,7 +48,7 @@ const DeveloperSecurityWeek = () => {
           />
           <Event
             setEventId={() => {
-              setEventId('fx4hdxDwCpaK');
+              setEventId('wjhKi73A28vu');
               setOpened(true);
             }}
             title="The Future of Authorization"
@@ -147,7 +61,7 @@ const DeveloperSecurityWeek = () => {
           />
           <Event
             setEventId={() => {
-              setEventId('fx4hdxDwCpaK');
+              setEventId('sZGB3SxB5GcH');
               setOpened(true);
             }}
             title="The Future of Data Privacy"
@@ -198,13 +112,14 @@ const DeveloperSecurityWeek = () => {
   );
 };
 
-const Event = ({ title, description, id, setEventId }) => {
+const Event = ({ title, date, description, id, setEventId }) => {
   return (
     <div className="col col--6" style={{ marginBottom: '30px' }}>
       <div className="card-demo">
         <div className="card padding--md">
           <div className="card__header text--center">
             <h2 className="text--primary">{title}</h2>
+            <h3 className="text--primary">{date}</h3>
           </div>
           <div className="card__body">
             <p className="text--center">{description}</p>
