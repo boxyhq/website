@@ -161,6 +161,10 @@ const DeveloperSecurityWeek = () => {
         </div>
       </SectionLayout>
 
+      <SectionLayout title="Speaker title" description="Speaker description">
+        <Speakers />
+      </SectionLayout>
+
       <Modal opened={opened} setOpened={setOpened}>
         <div
           style={{
@@ -215,6 +219,57 @@ const Event = ({ title, description, id, setEventId }) => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const Speakers = () => {
+  const speakers = [
+    {
+      name: 'Deepak Prabhakara',
+      title: 'CEO @ BoxyHQ',
+      avatar: 'https://boxyhq.com/img/team/deepak.jpg',
+    },
+    {
+      name: 'Deepak Prabhakara',
+      title: 'CEO @ BoxyHQ',
+      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
+    },
+    {
+      name: 'Deepak Prabhakara',
+      title: 'CEO @ BoxyHQ',
+      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
+    },
+    {
+      name: 'Deepak Prabhakara',
+      title: 'CEO @ BoxyHQ',
+      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
+    },
+    {
+      name: 'Deepak Prabhakara',
+      title: 'CEO @ BoxyHQ',
+      avatar: 'https://avatars1.githubusercontent.com/u/977348?s=460&v=4',
+    },
+  ];
+
+  return (
+    <div className="row">
+      {speakers.map((speaker) => (
+        <div className="col">
+          <div className="col-demo">
+            <div class="avatar avatar--vertical">
+              <img
+                class="avatar__photo avatar__photo--xl"
+                src={speaker.avatar}
+              />
+              <div class="avatar__intro">
+                <div class="avatar__name">{speaker.name}</div>
+                <small class="avatar__subtitle">{speaker.title}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
