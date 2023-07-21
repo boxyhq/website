@@ -28,7 +28,7 @@ const DeveloperSecurityWeek = () => {
           {
             href: '#speakers',
             title: 'Speakers',
-            className: 'button button--primary',
+            className: 'button--primary button--outline',
           },
         ]}
       />
