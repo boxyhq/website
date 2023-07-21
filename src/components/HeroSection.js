@@ -2,7 +2,14 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 
-const HeroSection = ({ title, description, image, buttons, icon = null }) => {
+const HeroSection = ({
+  title,
+  description,
+  image,
+  buttons,
+  icon = null,
+  imageWidth = '400px',
+}) => {
   const Icon = icon;
 
   return (
@@ -47,7 +54,7 @@ const HeroSection = ({ title, description, image, buttons, icon = null }) => {
         <div className="col col--6">
           <div className="col-demo">
             <div className="hero__image hero__image__mobile">
-              <img src={image} style={{ width: '400px' }} />
+              <img src={image} style={{ width: imageWidth }} />
             </div>
           </div>
         </div>
