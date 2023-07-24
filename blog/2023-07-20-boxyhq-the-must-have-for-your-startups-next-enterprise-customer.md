@@ -12,11 +12,11 @@ link:
     href: https://blog.scoutflo.com/boxyhq-the-must-have-for-your-startups-next-enterprise-customer/
 ---
 
-<div style={{ color: "gray", fontSize: "25px", paddingTop: "40px" }}>
+<div style={{ color: "gray", fontSize: "25px", paddingTop: "10px" }}>
 Add plug-and-play features to your SaaS product with BoxyHQ's product suite. Become enterprise-ready!
 </div>
 
-<div style={{ marginBottom: "-40px" }}>
+<div style={{ marginBottom: "-90px", marginTop: "-10px" }}>
 <img src="/img/blog/scoutflo-blog-banner.png"></img>
 </div>
 
