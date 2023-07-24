@@ -1,11 +1,12 @@
 ---
-slug: cerbos-boxyhq
-title: Cerbos + BoxyHQ
+slug: boxyhq-cerbos-merging-sso-and-authorization
+title: 'BoxyHQ + Cerbos: Merging SSO and Authorization'
 author: Kiran K
 author_title: Senior Developer @ BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
 author_image_url: https://boxyhq.com/img/team/kiran.jpg
 tags_disabled: [enterprise-readiness, saml, saml-jackson, sso]
+image: /img/blog/merging-sso-and-authorization.png
 ---
 
 In this article, we will see how to enable Enterprise SSO login (based on the SAML single sign-on protocol) using Okta for your Next.js app and relay role-based access directly from the Identity Provider to Cerbos.
