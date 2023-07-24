@@ -94,16 +94,6 @@ module.exports = {
             },
           ],
         },
-        {
-          label: 'Events',
-          type: 'dropdown',
-          items: [
-            {
-              href: 'https://boxyhq.com/developer-first-security-week',
-              label: 'Developer First Security Week',
-            },
-          ],
-        },
         { to: '/blog', label: 'Blog' },
         { to: '/pricing', label: 'Pricing' },
         {
