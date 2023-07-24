@@ -12,9 +12,7 @@ link:
     href: https://blog.scoutflo.com/boxyhq-the-must-have-for-your-startups-next-enterprise-customer/
 ---
 
-<div style={{ fontSize: "10px", marginTop: "-20px", paddingTop: "2rem", marginBottom: "2rem" }}>Cover photo by <a href="https://unsplash.com/@danny144?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Nelson</a> on <a href="https://unsplash.com/photos/ah-HeguOe9k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
-
-<div style={{ color: "gray", fontSize: "25px" }}>
+<div style={{ color: "gray", fontSize: "25px", paddingTop: "40px" }}>
 Add plug-and-play features to your SaaS product with BoxyHQ's product suite. Become enterprise-ready!
 </div>
 
@@ -326,3 +324,5 @@ Check out BoxyHQ’s [GitHub page](https://github.com/boxyhq), official [documen
 And don’t forget to follow [Scoutflo](https://atlas-home.scoutflo.com/?ref=blog.scoutflo.com) on [Twitter](https://twitter.com/scout_flo?ref=blog.scoutflo.com) if you haven’t already! ✨
 
 We’re also active on LinkedIn 💙
+
+<div style={{ fontSize: "10px", marginTop: "-20px", paddingTop: "2rem", marginBottom: "2rem" }}>Cover photo by <a href="https://unsplash.com/@danny144?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Nelson</a> on <a href="https://unsplash.com/photos/ah-HeguOe9k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
