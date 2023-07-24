@@ -6,8 +6,21 @@ author_title: Content & Marketing Head @Scoutflo
 author_url: https://www.linkedin.com/in/penaazvalecha/
 author_image_url: /img/blog/Penaaz-headshot.png
 tags_disabled: [developer, security, saas, devsecops, appsec]
-image: /img/blog/scoutflo-blog-banner.png
+image: /img/blog/scoutflo-blog-dan-nelson-unsplash.jpg
+link:
+  - rel: canonical
+    href: https://blog.scoutflo.com/boxyhq-the-must-have-for-your-startups-next-enterprise-customer/
 ---
+
+<div style={{ fontSize: "10px", marginTop: "-20px", paddingTop: "2rem", marginBottom: "2rem" }}>Cover photo by <a href="https://unsplash.com/@danny144?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Nelson</a> on <a href="https://unsplash.com/photos/ah-HeguOe9k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+
+<div style={{ color: "gray", fontSize: "25px" }}>
+Add plug-and-play features to your SaaS product with BoxyHQ's product suite. Become enterprise-ready!
+</div>
+
+<div style={{ marginBottom: "-40px" }}>
+<img src="/img/blog/scoutflo-blog-banner.png"></img>
+</div>
 
 ## Introduction
 
@@ -21,7 +34,7 @@ And with the growing cybersecurity attacks, they need to start thinking about se
 
 ![locks](/img/blog/scoutflo-blog-locks.jpeg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FLY:D</a> on <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex">Unsplash</a></div>
+<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Photo by <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FLY:D</a> on <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex">Unsplash</a></div>
 
 [Cyber-crimes are predicted to cost $10.5 trillion annually by 2025]
 
@@ -37,9 +50,11 @@ That’s where BoxyHQ comes in.
 
 #### <i>But wait… What is enterprise-readiness?</i>
 
+![Question](/img/blog/scoutflo-blog-question.png)
+
 In a nutshell, it’s being secure, scalable, stable, and easy to run in production.
 
-According to Sama — Carlos Samame (Co-Founder), there are 2 paths for startups towards the need to be enterprise-ready:
+According to <b>Sama — Carlos Samame (Co-Founder)</b>, there are 2 paths for startups towards the need to be enterprise-ready:
 
 1. Initially focused on smaller customers and now looking to expand.
 
@@ -61,11 +76,12 @@ They look for quite a few standards to be met in a solution provider 👇🏻
 
 ![enterprise-ready1](/img/blog/scoutflo-blog-enterprise-ready1.webp)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> </div>
+<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> 
+</div>
 
 ![enterprise-ready2](/img/blog/scoutflo-blog-enterprise-ready2.webp)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> </div>
+<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> </div>
 
 Before you feel overwhelmed, he further adds that you don’t need to start building all of this, and focus on 3 key areas:
 
@@ -146,7 +162,7 @@ All the account information is maintained and managed by the IdP vs. multiple se
 
 ![SSO connection without BoxyHQ](/img/blog/scoutflo-blog-sso-connection.webp)
 
-<p style={{textAlign: "center"}}>Without BoxyHQ</p>
+<p style={{ textAlign: "center" }}>Without BoxyHQ</p>
 
 - Spend a long time to build a SAML integration
 - Create integrations for each of your customer’s identity providers (IdP)
@@ -156,7 +172,7 @@ All the account information is maintained and managed by the IdP vs. multiple se
 
 ![SSO connection with BoxyHQ](/img/blog/scoutflo-blog-sso-connection2.webp)
 
-<p style={{textAlign: "center"}}>With BoxyHQ</p>
+<p style={{ textAlign: "center" }}>With BoxyHQ</p>
 
 - Centralize management
 - Improve security
@@ -168,11 +184,11 @@ All the account information is maintained and managed by the IdP vs. multiple se
 
 ![SSO connection without BoxyHQ](/img/blog/scoutflo-blog-sso-connection3.webp)
 
-<p style={{textAlign: "center"}}>Without BoxyHQ</p>
+<p style={{ textAlign: "center" }}>Without BoxyHQ</p>
 
 ![SSO connection with BoxyHQ](/img/blog/scoutflo-blog-sso-connection4.webp)
 
-<p style={{textAlign: "center"}}>With BoxyHQ</p>
+<p style={{ textAlign: "center" }}>With BoxyHQ</p>
 
 Here, you only have to connect your product with a direct integration to BoxyHQ and then it manages and connects you to all the IDPs. You can deploy SAML SSO with just a few lines of code!
 
@@ -199,9 +215,9 @@ BoxyHQ’s Directory Sync lets orgs activate and deactivate user accounts, creat
 - Have higher security standards
 - Centrally manage their user’s access lifecycle
 
-It supports the SCIM 2.0 protocol\*
+It supports the SCIM 2.0 protocol
 
-\*SCIM: System for Cross-domain Identity Management
+SCIM: System for Cross-domain Identity Management
 
 <i>“Directory Sync streamlines the user lifecycle management process by saving valuable organizational hours, creating a single truth source of the user identity data, and facilitating them to keep the data secure.”</i>
 
@@ -219,9 +235,7 @@ Note: Retraced was initially built by Replicated and has been enhanced by BoxyHQ
 
 They provide a detailed record of user actions, and can be used to monitor potential security breaches, compliance violations, and other issues.
 
-<i>“The world’s best SaaS companies offer detailed Audit Logs, your SaaS should too as you move into serving the enterprise segment.”</i>
-
--<i>Vanshika Srivastava</i>
+<i>“The world’s best SaaS companies offer detailed Audit Logs, your SaaS should too as you move into serving the enterprise segment.”</i> -<i>Vanshika Srivastava</i>
 
 #### Why are Audit Logs important?
 
@@ -271,7 +285,9 @@ Privacy vault is BoxyHQ’s open-source solution to centralize, isolate, and gov
 
 <i>“It let our team focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it’s open-source and free?”</i>
 
-![SuperTokens](/img/blog/scoutflo-blog-supertokens.webp)
+<div style={{ textAlign: "center", paddingTop: "2rem", paddingBottom: "2rem" }} > 
+   <img src="/img/blog/scoutflo-blog-supertokens.webp"/>
+</div>
 
 Super Tokens — An open-source authentication solution
 
@@ -279,13 +295,13 @@ Super Tokens — An open-source authentication solution
 
 ![News](/img/blog/scoutflo-blog-news.webp)
 
-<p style={{textAlign: "center"}}>Media Features</p>
+<p style={{ textAlign: "center" }}>Media Features</p>
 
 ### Meet the Founders ✨
 
 ![Founders - Deepak](/img/blog/scoutflo-blog-founders-deepak.webp)
 
-<p style={{textAlign: "center"}}>Deepak Prabhakara, CEO & Co-founder</p>
+<p style={{ textAlign: "center" }}>Deepak Prabhakara, CEO & Co-founder</p>
 
 [Deepak](https://twitter.com/deepakprab) has over 2 decades of experience in design, architecture and development of complex software products across different SaaS and mobile platforms.
 
@@ -305,4 +321,8 @@ Learn more here: [BoxyHQ pledges to keep our core open-source code open](https:/
 
 You can [sign up for the waitlist](https://boxyhq.com/saas-registration) before August 1, and make the most of this limited-time offer.
 
-Check out BoxyHQ’s [GitHub page](https://github.com/boxyhq), official [documentation](https://boxyhq.com/docs), and [Twitter](https://twitter.com/boxyhq) profile. 💙
+Check out BoxyHQ’s [GitHub page](https://github.com/boxyhq), official [documentation](https://boxyhq.com/docs), and [Twitter](https://twitter.com/boxyhq) profile. 🚀
+
+And don’t forget to follow [Scoutflo](https://atlas-home.scoutflo.com/?ref=blog.scoutflo.com) on [Twitter](https://twitter.com/scout_flo?ref=blog.scoutflo.com) if you haven’t already! ✨
+
+We’re also active on LinkedIn 💙
