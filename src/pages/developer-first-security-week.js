@@ -4,6 +4,7 @@ import { Modal } from '../components/Modal';
 import HeroSection from '../components/HeroSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import SectionLayout from '../components/SectionLayout';
+import LinkedInLogo from '/img/developer-first-security-week-images/linkedIn_logo.png'
 
 const title = 'BoxyHQ for Startups';
 const description = 'Developer First Security Week';
@@ -16,8 +17,8 @@ const DeveloperSecurityWeek = () => {
     <Layout title={title} description={description}>
       <HeroSection
         title="The Developer-First Security Week"
-        description="Register early and join us for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
-        image="/img/devSecFirstWeekFlyer.svg"
+        description="Join us for the Devoloper-First Security Week, August 7-11 and register early for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
+        image="img/developer-first-security-week-images/DevSecFirstWeekFlyer.svg"
         imageWidth={null}
         buttons={[
           {
@@ -148,39 +149,57 @@ const Event = ({ title, date, description, id, setEventId }) => {
 const Speakers = () => {
   const speakers = [
     {
+      name: 'Brian Levine',
+      title: 'Managing Director, Cybersecurity & Data Privacy @ EY-Parthenon',
+      avatar: '/img/developer-first-security-week-images/brian-levine-ey-parthenon.jpeg',
+      socials: 'https://www.linkedin.com/in/brian-levine-cyberlaw/'
+    },
+    {
+      name: 'Chris John Riley',
+      title: 'Staff Security Engineer @ Google',
+      avatar: '/img/developer-first-security-week-images/chris-john-riley-google.jpeg',
+      socials: 'https://www.linkedin.com/in/chrisjohnriley/'
+    },
+    {
       name: 'Deepak Prabhakara',
       title: 'CEO @ BoxyHQ',
       avatar: 'https://boxyhq.com/img/team/deepak.jpg',
+      socials: 'https://www.linkedin.com/in/deepakp/'
     },
     {
       name: 'Advait Ruia',
       title: 'Co-Founder SuperTokens',
       avatar:
-        'img/developer-first-security-week-avatars/advait-ruia-supertokens.jpeg',
+        'img/developer-first-security-week-images/advait-ruia-supertokens.jpeg',
+      socials: 'https://www.linkedin.com/in/advait-ruia-2aa52a85/'
     },
     {
       name: 'Randall Degges',
       title: 'Head of Developer Relations @ Snyk',
       avatar:
-        '/img/developer-first-security-week-avatars/randall-degges-snyk.jpg',
+        '/img/developer-first-security-week-images/randall-degges-snyk.jpg',
+      socials: 'https://www.linkedin.com/in/rdegges/'
     },
     {
       name: 'Alex Olivier',
       title: 'Product @ Cerbos',
       avatar:
-        '/img/developer-first-security-week-avatars/alex-olivier-cerbos.jpeg',
+        '/img/developer-first-security-week-images/alex-olivier-cerbos.jpeg',
+      socials: 'https://www.linkedin.com/in/alexolivier/'
     },
     {
       name: 'Joe Toscano',
       title: 'Author/Keynote / Cyber Collective',
       avatar:
-        '/img/developer-first-security-week-avatars/joe-toscano-cyber-collective.jpeg',
+        '/img/developer-first-security-week-images/joe-toscano-cyber-collective.jpeg',
+      socials: 'https://www.linkedin.com/in/realjoet/'
     },
     {
       name: 'Guillaume Montard',
       title: 'Founder & CEO @ Bearer',
       avatar:
-        '/img/developer-first-security-week-avatars/guillaume-montard-bearer.jpeg',
+        '/img/developer-first-security-week-images/guillaume-montard-bearer.jpeg',
+      socials: 'https://www.linkedin.com/in/guillaumemontard/'
     },
   ];
 
@@ -194,6 +213,16 @@ const Speakers = () => {
                 class="avatar__photo avatar__photo--xl"
                 src={speaker.avatar}
               />
+              <div>
+                <a href={speaker.socials} target="_blank" rel="noreferrer">
+                <image
+                  src={LinkedInLogo}
+                  alt='LinkedIn logo'
+                >
+                  LinkedIn
+                </image>               
+                </a>
+                </div>
               <div class="avatar__intro">
                 <div class="avatar__name">{speaker.name}</div>
                 <small class="avatar__subtitle">{speaker.title}</small>
