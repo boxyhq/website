@@ -94,6 +94,16 @@ module.exports = {
             },
           ],
         },
+        {
+          label: 'Events',
+          type: 'dropdown',
+          items: [
+            {
+              href: '/developer-first-security-week',
+              label: 'Developer First Security Week',
+            },
+          ],
+        },
         { to: '/blog', label: 'Blog' },
         { to: '/pricing', label: 'Pricing' },
         {

@@ -20,10 +20,12 @@ const Card = ({ idx, icon, title, description, url, btnText, colClass }) => {
                   className="avatar__photo avatar__photo--lg"
                   style={{ borderRadius: '0px' }}
                 >
-                  <SvgIcon
-                    icon={icon}
-                    size={{ width: '64px', height: '64px' }}
-                  />
+                  {icon && (
+                    <SvgIcon
+                      icon={icon}
+                      size={{ width: '64px', height: '64px' }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
