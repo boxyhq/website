@@ -158,6 +158,7 @@ const Speakers = () => {
       name: 'Chris John Riley',
       title: 'Staff Security Engineer @ Google',
       avatar: '/img/developer-first-security-week-images/chris-john-riley-google.png',
+
       socials: 'https://www.linkedin.com/in/chrisjohnriley/'
     },
     {
