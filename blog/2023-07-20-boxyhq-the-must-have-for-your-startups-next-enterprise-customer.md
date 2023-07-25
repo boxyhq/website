@@ -16,7 +16,7 @@ link:
 Add plug-and-play features to your SaaS product with BoxyHQ's product suite. Become enterprise-ready!
 </div>
 
-<div style={{ marginBottom: "-90px", marginTop: "-10px" }}>
+<div style={{ marginBottom: "-90px", marginTop: "-4px" }}>
 <img src="/img/blog/scoutflo-blog-banner.png"></img>
 </div>
 
