@@ -134,7 +134,7 @@ const Event = ({ title, date, description, speakers, setEventId }) => {
             <p className="text--center">{description}</p>
           </div>
           <div className="card__body">
-            <p style={{ fontWeight: 'bold' }} className="text--center">{speakers}</p>
+            <p style={{ fontWeight: 'bold', fontSize: '17px' }} className="text--center">{speakers}</p>
           </div>
           <div className="card__footer text--center">
             <button
