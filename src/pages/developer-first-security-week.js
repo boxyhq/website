@@ -48,8 +48,8 @@ const DeveloperSecurityWeek = () => {
               }}
               title="The Future of Security Engineers"
               date="August 7th. @ 1 PM EST"
-              description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like.
-            "
+              description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like." 
+              speakers="Speakers: Chris John Riley, Guillaume Montard, Deepak Prabhakara"
             />
             <Event
               setEventId={() => {
@@ -59,6 +59,7 @@ const DeveloperSecurityWeek = () => {
               title="The Future of Authentication"
               date="August 8th. @ 1 PM EST"
               description="Join us as our experts delve into the transformative trends and cutting-edge innovations reshaping authentication methods, from biometrics and AI-driven approaches to context-aware verification, to secure digital identities and provide seamless user experiences while fortifying online security."
+              speakers="Speakers: Randall Degges, Advait Ruia, Deepak Prabhakara"
             />
             <Event
               setEventId={() => {
@@ -67,8 +68,8 @@ const DeveloperSecurityWeek = () => {
               }}
               title="The Future of Authorization"
               date="August 9th. @ 1 PM EST"
-              description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization.  
-            "
+              description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization."
+              speakers="Speakers: Alex Olivier , Deepak Prabhakara"
             />
             <Event
               setEventId={() => {
@@ -77,8 +78,8 @@ const DeveloperSecurityWeek = () => {
               }}
               title="The Future of Data Privacy"
               date="August 10th. @ 1 PM EST"
-              description="Join our expert panelists' discussion as they highlight the critical significance of data privacy in a data-driven world, exploring emerging privacy regulations, encryption techniques, and privacy-enhancing technologies that will safeguard user information, foster trust, and enable responsible data practices for businesses and individuals alike.
-            "
+              description="Join our expert panelists' discussion as they highlight the critical significance of data privacy in a data-driven world, exploring emerging privacy regulations, encryption techniques, and privacy-enhancing technologies that will safeguard user information, foster trust, and enable responsible data practices for businesses and individuals alike."
+              speakers="Speakers: Joe Toscano,Brian Levine, Deepak Prabhakara"
             />
           </div>
         </SectionLayout>
@@ -120,7 +121,7 @@ const DeveloperSecurityWeek = () => {
   );
 };
 
-const Event = ({ title, date, description, id, setEventId }) => {
+const Event = ({ title, date, description, speakers, setEventId }) => {
   return (
     <div className="col col--6" style={{ marginBottom: '30px' }}>
       <div className="card-demo">
@@ -131,6 +132,9 @@ const Event = ({ title, date, description, id, setEventId }) => {
           </div>
           <div className="card__body">
             <p className="text--center">{description}</p>
+          </div>
+          <div className="card__body">
+            <p style={{ fontWeight: 'bold' }} className="text--center">{speakers}</p>
           </div>
           <div className="card__footer text--center">
             <button
@@ -158,18 +162,17 @@ const Speakers = () => {
       name: 'Chris John Riley',
       title: 'Staff Security Engineer @ Google',
       avatar: '/img/developer-first-security-week-images/chris-john-riley-google.png',
-
       socials: 'https://www.linkedin.com/in/chrisjohnriley/'
     },
     {
       name: 'Deepak Prabhakara',
       title: 'CEO @ BoxyHQ',
-      avatar: 'https://boxyhq.com/img/team/deepak.jpg',
+      avatar: '/img/developer-first-security-week-images/deepak-prabhakara-boxyhq.jpeg',
       socials: 'https://www.linkedin.com/in/deepakp/'
     },
     {
       name: 'Advait Ruia',
-      title: 'Co-Founder SuperTokens',
+      title: 'Co-Founder @ SuperTokens',
       avatar:
         'img/developer-first-security-week-images/advait-ruia-supertokens.jpeg',
       socials: 'https://www.linkedin.com/in/advait-ruia-2aa52a85/'
@@ -190,7 +193,7 @@ const Speakers = () => {
     },
     {
       name: 'Joe Toscano',
-      title: 'Author/Keynote / Cyber Collective',
+      title: 'Author/Keynote/Cyber Collective',
       avatar:
         '/img/developer-first-security-week-images/joe-toscano-cyber-collective.jpeg',
       socials: 'https://www.linkedin.com/in/realjoet/'
