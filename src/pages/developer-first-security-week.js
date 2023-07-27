@@ -16,19 +16,20 @@ const DeveloperSecurityWeek = () => {
   return (
     <Layout title={title} description={description}>
        <SectionLayout style={{ marginBottom: '-40px'}}>
+
         <div>
           <p style={{ textAlign: 'center', fontSize: '70px', fontWeight: 'bold', marginBottom: '-5px', marginTop: '-50px' }}>
-            The Developer-First Security Week
+            Developer-First Security Week
           </p>
           <h3 style={{ textAlign: 'center' }}>
             Powered by BoxyHQ
           </h3>
-        
         </div>
+
        </SectionLayout>
       <HeroSection
         title=""
-        description="Join us for the Developer-First Security Week, August 7-11 and register early for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
+        description="Join us for the Developer-First Security Week event, August 7-11 and register early for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
         image="/img/developer-first-security-week-images/DevFirstSecWeekFlyer.svg"
         imageWidth={null}
         buttons={[
@@ -84,7 +85,7 @@ const DeveloperSecurityWeek = () => {
               date="August 9th. @ 1 PM EST"
               description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization."
               speakers="Speakers:"
-              speakerNames="Alex Olivier / Deepak Prabhakara"
+              speakerNames="Mohini Soodan / Alex Olivier / Deepak Prabhakara"
             />
             <Event
               setEventId={() => {
@@ -174,7 +175,7 @@ const Speakers = () => {
   const speakers = [
     {
       name: 'Brian Levine',
-      title: 'Managing Director, Cybersecurity & Data Privacy @ EY-Parthenon',
+      title: 'Director, Cybersecurity & Data Privacy @ EY-Parthenon',
       avatar: '/img/developer-first-security-week-images/brian-levine-ey-parthenon.jpeg',
       socials: 'https://www.linkedin.com/in/brian-levine-cyberlaw/'
     },
@@ -193,36 +194,37 @@ const Speakers = () => {
     {
       name: 'Advait Ruia',
       title: 'Co-Founder @ SuperTokens',
-      avatar:
-        'img/developer-first-security-week-images/advait-ruia-supertokens.jpeg',
+      avatar: 'img/developer-first-security-week-images/advait-ruia-supertokens.jpeg',
       socials: 'https://www.linkedin.com/in/advait-ruia-2aa52a85/'
+    },
+    {
+      name: 'Mohini Soodan',
+      title: 'Sr Security Architect @ Microsoft',
+      avatar: '/img/developer-first-security-week-images/mohini-soodan-microsoft.png',
+      socials: 'https://www.linkedin.com/in/mohini-soodan-47604958/'
     },
     {
       name: 'Randall Degges',
       title: 'Head of Developer Relations @ Snyk',
-      avatar:
-        '/img/developer-first-security-week-images/randall-degges-snyk.jpg',
+      avatar: '/img/developer-first-security-week-images/randall-degges-snyk.jpg',
       socials: 'https://www.linkedin.com/in/rdegges/'
     },
     {
       name: 'Alex Olivier',
       title: 'Product @ Cerbos',
-      avatar:
-        '/img/developer-first-security-week-images/alex-olivier-cerbos.jpeg',
+      avatar: '/img/developer-first-security-week-images/alex-olivier-cerbos.jpeg',
       socials: 'https://www.linkedin.com/in/alexolivier/'
     },
     {
       name: 'Joe Toscano',
-      title: 'Author/Keynote/Cyber Collective',
-      avatar:
-        '/img/developer-first-security-week-images/joe-toscano-cyber-collective.jpeg',
+      title: 'Author/Keynote/ @ Cyber Collective',
+      avatar: '/img/developer-first-security-week-images/joe-toscano-cyber-collective.jpeg',
       socials: 'https://www.linkedin.com/in/realjoet/'
     },
     {
       name: 'Guillaume Montard',
       title: 'Founder & CEO @ Bearer',
-      avatar:
-        '/img/developer-first-security-week-images/guillaume-montard-bearer.jpeg',
+      avatar: '/img/developer-first-security-week-images/guillaume-montard-bearer.jpeg',
       socials: 'https://www.linkedin.com/in/guillaumemontard/'
     },
   ];
