@@ -65,7 +65,7 @@ const searchQuery = `query Search($query: String!, $last: Int, $before: String) 
 
 ```
 const vars = {
-  query: "action:user.login location:German",
+  query: "action:user.login location:Germany",
   last: 50,
   before: "opaquecursor",
 };
