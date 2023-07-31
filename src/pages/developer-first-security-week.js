@@ -45,12 +45,12 @@ const DeveloperSecurityWeek = () => {
           },
         ]}
       />
-
+     
       <div id="register">
      
         <SectionLayout
-          title="World class guest speakers!"
-          description="Panel Discussions"
+          title="Panel Discussions"
+          description=""
           id="register"
         >
           <div className="row">
@@ -60,10 +60,10 @@ const DeveloperSecurityWeek = () => {
                 setOpened(true);
               }}
               title="The Future of Security Engineers"
-              date="August 7th. @ 1 PM EST"
+              date="August 7th. @ 12:30 PM EST"
               description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like." 
               speakers="Speakers:"
-              speakerNames="Chris John Riley / Guillaume Montard / Deepak Prabhakara"
+              speakerNames="Sonya Moisset (Snyk) / Chris John Riley (Google) / Guillaume Montard (Bearer) / Deepak Prabhakara (BoxyHQ)"
             />
             <Event
               setEventId={() => {
@@ -74,7 +74,7 @@ const DeveloperSecurityWeek = () => {
               date="August 8th. @ 1 PM EST"
               description="Join us as our experts delve into the transformative trends and cutting-edge innovations reshaping authentication methods, from biometrics and AI-driven approaches to context-aware verification, to secure digital identities and provide seamless user experiences while fortifying online security."
               speakers="Speakers:"
-              speakerNames="Randall Degges / Advait Ruia / Deepak Prabhakara"
+              speakerNames="Randall Degges (Snyk) / Advait Ruia (SuperTokens) / Deepak Prabhakara (BoxyHQ)"
             />
             <Event
               setEventId={() => {
@@ -82,10 +82,10 @@ const DeveloperSecurityWeek = () => {
                 setOpened(true);
               }}
               title="The Future of Authorization"
-              date="August 9th. @ 1 PM EST"
+              date="August 9th. @ 12:30 PM EST"
               description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization."
               speakers="Speakers:"
-              speakerNames="Mohini Soodan / Alex Olivier / Deepak Prabhakara"
+              speakerNames="Sameer Kamani (Gitlab) / Mohini Soodan (Microsoft) / Alex Olivier (Cerbos) / Deepak Prabhakara (BoxyHQ)"
             />
             <Event
               setEventId={() => {
@@ -96,15 +96,16 @@ const DeveloperSecurityWeek = () => {
               date="August 10th. @ 1 PM EST"
               description="Join our expert panelists' discussion as they highlight the critical significance of data privacy in a data-driven world, exploring emerging privacy regulations, encryption techniques, and privacy-enhancing technologies that will safeguard user information, foster trust, and enable responsible data practices for businesses and individuals alike."
               speakers="Speakers:"
-              speakerNames="Joe Toscano / Brian Levine / Deepak Prabhakara"
+              speakerNames="Joe Toscano (Forbs/Cyber Collective) / Brian Levine (EY Parthenon) / Deepak Prabhakara (BoxyHQ)"
             />
           </div>
           
         </SectionLayout>
       </div>
-      <SectionLayout title="Guest Speakers" description="">
-        <Speakers />
-      </SectionLayout>
+       <SectionLayout title="World-Class Guest Speakers" description="" id="speakers">
+       
+       </SectionLayout>
+       <Speakers />
 
       <Modal opened={opened} setOpened={setOpened}>
         <div
@@ -152,7 +153,7 @@ const Event = ({ title, date, description, speakers, speakerNames, setEventId })
             <p className="text--center">{description}</p>
           </div>
           <div className="card__body">
-            <p style={{ fontWeight: 'bold', fontSize: '17px', marginBottom: '-15px', marginTop: '-15px' }} className="text--center">{speakers}</p>
+            <p style={{ fontWeight: 'bold', fontSize: '19px', marginBottom: '-15px', marginTop: '-15px' }} className="text--center">{speakers}</p>
           </div>
           <div className="card__body">
             <p style={{ fontWeight: 'bold', fontSize: '17px' }} className="text--center">{speakerNames}</p>
@@ -192,6 +193,12 @@ const Speakers = () => {
       socials: 'https://www.linkedin.com/in/deepakp/'
     },
     {
+      name: 'Sonya Moisset',
+      title: 'Senior Developer Advacate @ Snyk',
+      avatar: '/img/developer-first-security-week-images/sonya-moisset-snyk.jpeg',
+      socials: 'https://www.linkedin.com/in/sonyamoisset/'
+    },
+    {
       name: 'Advait Ruia',
       title: 'Co-Founder @ SuperTokens',
       avatar: 'img/developer-first-security-week-images/advait-ruia-supertokens.jpeg',
@@ -202,6 +209,12 @@ const Speakers = () => {
       title: 'Sr Security Architect @ Microsoft',
       avatar: '/img/developer-first-security-week-images/mohini-soodan-microsoft.png',
       socials: 'https://www.linkedin.com/in/mohini-soodan-47604958/'
+    },
+    {
+      name: 'Sameer Kamani',
+      title: 'Federal Staff Solutions Architect @ Gitlab',
+      avatar: '/img/developer-first-security-week-images/sameer-kamani-gitlab.jpg',
+      socials: 'https://www.linkedin.com/in/sameer-kamani-0149/'
     },
     {
       name: 'Randall Degges',
@@ -232,15 +245,16 @@ const Speakers = () => {
   return (
     <div className="row" id="speakers">
       {speakers.map((speaker) => (
-        <div className="col">
-          <div className="col-demo">
-            <div class="avatar avatar--vertical">
-              <img
+        <div className="col col--2" style={{ marginBottom: '30px', paddingLeft: '40px' }}>
+        <div className="card-demo">
+            <div  class="avatar avatar--vertical">
+              <img 
+                style={{ width: '140px', height: '140px', verticalAlign: 'middle', borderRadius: '50%' }}
                 class="avatar__photo avatar__photo--xl"
                 src={speaker.avatar}
               />
               <div>
-                <a href={speaker.socials} target="_blank" rel="noreferrer">
+                <a style={{ fontSize: '19px'}} href={speaker.socials} target="_blank" rel="noreferrer">
                 <image
                   src={LinkedInLogo}
                   alt='LinkedIn logo'
@@ -250,8 +264,8 @@ const Speakers = () => {
                 </a>
                 </div>
               <div class="avatar__intro">
-                <div class="avatar__name">{speaker.name}</div>
-                <small class="avatar__subtitle">{speaker.title}</small>
+                <div style={{ fontSize: '19px'}} class="avatar__name">{speaker.name}</div>
+                <p style={{ fontSize: '16px'}} class="avatar__subtitle">{speaker.title}</p>
               </div>
             </div>
           </div>
