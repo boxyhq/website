@@ -2,18 +2,18 @@
 
 The recommended way to search events using an API is to POST your query and variables to the appropriate Retraced GraphQL endpoint.
 
-| API        | Endpoint                                                                                        |
-| ---------- | ----------------------------------------------------------------------------------------------- |
-| Publisher  | http://localhost:3000/auditlog/publisher/v1/project/{projectId}/graphql                         |
-| Admin      | http://localhost:3000/auditlog/admin/v1/project/{projectId}/environment/{environmentId}/graphql |
-| Enterprise | http://localhost:3000/auditlog/enterprise/v1/graphql                                            |
-| Viewer     | http://localhost:3000/auditlog/viewer/v1/graphql                                                |
+| API        | Endpoint                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------- |
+| Publisher  | <http://localhost:3000/auditlog/publisher/v1/project/{projectId}/graphql>                         |
+| Admin      | <http://localhost:3000/auditlog/admin/v1/project/{projectId}/environment/{environmentId}/graphql> |
+| Enterprise | <http://localhost:3000/auditlog/enterprise/v1/graphql>                                            |
+| Viewer     | <http://localhost:3000/auditlog/viewer/v1/graphql>                                                |
 
 ## Search
 
 The query root provides a search method. A fully-formed query for a subset of event fields would look like this:
 
-```
+```js
 {
   search(query:"action:user.login location:Germany", last:50, before:"opaquecursor") {
     totalCount
@@ -28,7 +28,7 @@ The query root provides a search method. A fully-formed query for a subset of ev
           name
         }
         created
-	country
+        country
       }
     }
   }
@@ -39,7 +39,7 @@ The query root provides a search method. A fully-formed query for a subset of ev
 
 Use `query`, `last`, and `before` variables to enable reuse of your query templates. If you define a parameterized query like this...
 
-```
+```js
 const searchQuery = `query Search($query: String!, $last: Int, $before: String) {
   search(query:"action:user.login location:Germany", last:50, before:"opaquecursor") {
     totalCount
@@ -54,7 +54,7 @@ const searchQuery = `query Search($query: String!, $last: Int, $before: String) 
           name
         }
         created
-	country
+        country
       }
     }
   }
@@ -63,24 +63,27 @@ const searchQuery = `query Search($query: String!, $last: Int, $before: String) 
 
 ... then you can execute searches like this:
 
-```
+```js
 const vars = {
-  query: "action:user.login location:Germany",
+  query: 'action:user.login location:Germany',
   last: 50,
-  before: "opaquecursor",
+  before: 'opaquecursor',
 };
-const res = fetch("http://localhost:3000/auditlog/publisher/v1/project/3hf140713bn302/graphql", {
-  method: "POST",
-  headers: {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-    "Authorization": "Token token=2ba3059ad7f14071b9befb2a7a2e195e",
-  },
-  body: JSON.stringify({
-    query: searchQuery,
-    variables: vars,
-  }),
-});
+const res = fetch(
+  'http://localhost:3000/auditlog/publisher/v1/project/3hf140713bn302/graphql',
+  {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: 'Token token=2ba3059ad7f14071b9befb2a7a2e195e',
+    },
+    body: JSON.stringify({
+      query: searchQuery,
+      variables: vars,
+    }),
+  }
+);
 ```
 
 # Schema Types
