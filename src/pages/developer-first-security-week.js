@@ -29,7 +29,7 @@ const DeveloperSecurityWeek = () => {
        </SectionLayout>
       <HeroSection
         title=""
-        description="Join us for the Developer-First Security Week event, August 7-11 and register early for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
+        description="Join us for the Developer-First Security Week event, August 7-11, and register early for a week-long celebration of Shift Left, where developers and security come together. Explore a multitude of engaging talks and discussions aimed at empowering developers to prioritize security from the start. Discover the latest trends, best practices, and innovative solutions to build secure software. Let's make security a seamless part of every developer's journey!"
         image="/img/developer-first-security-week-images/DevFirstSecWeekFlyer.svg"
         imageWidth={null}
         buttons={[
@@ -194,7 +194,7 @@ const Speakers = () => {
     },
     {
       name: 'Sonya Moisset',
-      title: 'Senior Developer Advacate @ Snyk',
+      title: 'Senior Developer Advocate @ Snyk',
       avatar: '/img/developer-first-security-week-images/sonya-moisset-snyk.jpeg',
       socials: 'https://www.linkedin.com/in/sonyamoisset/'
     },
