@@ -140,7 +140,7 @@ const DeveloperSecurityWeek = () => {
   );
 };
 
-const Event = ({ title, date, description, speakers, speakerNames, setEventId }) => {
+const Event = ({ title, date, description, speakers, speakerNames,talk, panel, setEventId }) => {
   return (
     <div className="col col--6" style={{ marginBottom: '30px' }}>
       <div className="card-demo">
