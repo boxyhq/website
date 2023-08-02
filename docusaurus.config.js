@@ -70,6 +70,7 @@ module.exports = {
               to: '/privacy-vault',
               label: 'Privacy Vault',
             },
+            { to: '/saas-registration', label: 'SaaS Early Access' },
           ],
         },
         {
@@ -90,6 +91,16 @@ module.exports = {
             {
               href: 'https://awesome-oss-devsec.boxyhq.com',
               label: 'Developer Security Tools',
+            },
+          ],
+        },
+        {
+          label: 'Events',
+          type: 'dropdown',
+          items: [
+            {
+              href: '/developer-first-security-week',
+              label: 'Developer First Security Week',
             },
           ],
         },

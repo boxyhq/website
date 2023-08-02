@@ -2,7 +2,14 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 
-const HeroSection = ({ title, description, image, buttons, icon = null }) => {
+const HeroSection = ({
+  title,
+  description,
+  image,
+  buttons,
+  icon = null,
+  imageWidth = '400px',
+}) => {
   const Icon = icon;
 
   return (
@@ -23,22 +30,31 @@ const HeroSection = ({ title, description, image, buttons, icon = null }) => {
             </div>
             <p className="hero__subtitle margin-top--lg">{description}</p>
             <div className="intro__buttons margin-top--lg">
-              {buttons.map(({ href, title, className }, idx) => (
-                <Link
-                  className={clsx('button button--lg', className)}
-                  href={href}
-                  key={idx}
-                >
-                  {title}
-                </Link>
-              ))}
+              {buttons.map(({ href, title, className, onClick }, idx) =>
+                onClick ? (
+                  <a
+                    onClick={onClick}
+                    className={clsx('button button--lg', className)}
+                  >
+                    {title}
+                  </a>
+                ) : (
+                  <Link
+                    className={clsx('button button--lg', className)}
+                    href={href}
+                    key={idx}
+                  >
+                    {title}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>
         <div className="col col--6">
           <div className="col-demo">
             <div className="hero__image hero__image__mobile">
-              <img src={image} style={{ width: '400px' }} />
+              <img src={image} style={{ width: imageWidth }} />
             </div>
           </div>
         </div>

@@ -205,4 +205,9 @@ html[data-theme='dark'] .header-github-link:before {
     width: 500px;
     height: 550px;
   }
+
+  html {
+    scroll-behavior: smooth 
+    !important;
+  }
 }
