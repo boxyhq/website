@@ -59,7 +59,7 @@ const DeveloperSecurityWeek = () => {
                 setEventId('fx4hdxDwCpaK');
                 setOpened(true);
               }}
-              title="The Future of Security Engineers"
+              title="Sonya Moisett (keynote) + The Future of Security Engineers (panel discussion)"
               date="August 7th. @ 12:30 PM EST"
               description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like." 
               speakers="Speakers:"
@@ -70,7 +70,7 @@ const DeveloperSecurityWeek = () => {
                 setEventId('PKN33MW2nys3');
                 setOpened(true);
               }}
-              title="The Future of Authentication"
+              title="The Future of Authentication (panel discussion)"
               date="August 8th. @ 1 PM EST"
               description="Join us as our experts delve into the transformative trends and cutting-edge innovations reshaping authentication methods, from biometrics and AI-driven approaches to context-aware verification, to secure digital identities and provide seamless user experiences while fortifying online security."
               speakers="Speakers:"
@@ -81,18 +81,18 @@ const DeveloperSecurityWeek = () => {
                 setEventId('wjhKi73A28vu');
                 setOpened(true);
               }}
-              title="The Future of Authorization"
+              title="Mohini Soodan (keynote) + The Future of Authorization (panel discussion)"
               date="August 9th. @ 12:30 PM EST"
               description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization."
               speakers="Speakers:"
-              speakerNames="Sameer Kamani (Gitlab) / Mohini Soodan (Microsoft) / Alex Olivier (Cerbos) / Deepak Prabhakara (BoxyHQ)"
+              speakerNames="Mohini Soodan (Microsoft) / Sameer Kamani (Gitlab) / Alex Olivier (Cerbos) / Deepak Prabhakara (BoxyHQ)"
             />
             <Event
               setEventId={() => {
                 setEventId('sZGB3SxB5GcH');
                 setOpened(true);
               }}
-              title="The Future of Data Privacy"
+              title="The Future of Data Privacy (panel discussion)"
               date="August 10th. @ 1 PM EST"
               description="Join our expert panelists' discussion as they highlight the critical significance of data privacy in a data-driven world, exploring emerging privacy regulations, encryption techniques, and privacy-enhancing technologies that will safeguard user information, foster trust, and enable responsible data practices for businesses and individuals alike."
               speakers="Speakers:"
