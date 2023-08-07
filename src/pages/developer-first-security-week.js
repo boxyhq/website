@@ -59,7 +59,7 @@ const DeveloperSecurityWeek = () => {
                 setEventId('fx4hdxDwCpaK');
                 setOpened(true);
               }}
-              title="Sonya Moisett + The Future of Security Engineers (panel discussion)"
+              title="Sonya Moisett (keynote) + The Future of Security Engineers (panel discussion)"
               date="August 7th. @ 12:30 PM EST"
               description="Security Engineers are the safeguards for technological advancements, combating cyber threats, and ensuring the privacy and integrity of digital infrastructure. Join our experts as they discuss where we are headed and what the future of security engineering will look like." 
               speakers="Speakers:"
@@ -81,7 +81,7 @@ const DeveloperSecurityWeek = () => {
                 setEventId('wjhKi73A28vu');
                 setOpened(true);
               }}
-              title="Mohini Soodan + The Future of Authorization (panel discussion)"
+              title="Mohini Soodan (keynote) + The Future of Authorization (panel discussion)"
               date="August 9th. @ 12:30 PM EST"
               description="In this session we glimpse into the future of authorization, where we envision dynamic and intelligent access control mechanisms that potentially leverage AI or blockchain technologies to grant appropriate permissions in real-time, mitigating risks and empowering users with precise, context-sensitive authorization."
               speakers="Speakers:"
