@@ -12,7 +12,7 @@ tags_disabled:
     open-source,
     developerfirst,
   ]
-image: /img/blog/developer-first-security-week-schedule.png
+image: /img/blog/DevFirstSecWeekFlyer.png
 authors:
   - name: Sama - Carlos Samame
     title: Co-founder & COO @BoxyHQ
@@ -64,7 +64,7 @@ Date: 8/8/2023 - 1:00 PM EST
 
 Date: 8/9/2023 - 12:30 PM EST
 
-![Keynote Talk](/img/blog/speaker-card-sameer-kamani.png)
+![Keynote Talk](/img/blog/speaker-card-mohini-soodan-keynote.png)
 
 #### Panel: The Future of Authorization
 
