@@ -47,7 +47,7 @@ This event is designed to be completely free and virtual, allowing us to reach a
 Date: 8/7/2023 - 12:30 PM EST
 
 ![Keynote Talk](/img/blog/speaker-card-sonya-moisett.png)
-[Youtube Link](https://www.youtube.com/watch?v=qVECqnuw1H8)
+[Video Link](https://www.youtube.com/watch?v=qVECqnuw1H8)
 
 #### Panel: The Future of Security Engineers
 
