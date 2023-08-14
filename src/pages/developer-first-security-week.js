@@ -34,7 +34,7 @@ const DeveloperSecurityWeek = () => {
         imageWidth={null}
         buttons={[
           {
-            href: 'https://www.youtube.com/@boxyhq',
+            href: 'https://www.youtube.com/playlist?list=PLYY5NdbX3tI9_zNsAmrxp6pZCtlwnSDhy',
             title: 'Watch on Youtube',
             className: 'button button--primary',
           },
