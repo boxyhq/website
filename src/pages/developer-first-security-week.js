@@ -34,8 +34,8 @@ const DeveloperSecurityWeek = () => {
         imageWidth={null}
         buttons={[
           {
-            href: '#register',
-            title: 'Register Now',
+            href: 'https://www.youtube.com/@boxyhq',
+            title: 'Watch on Youtube',
             className: 'button button--primary',
           },
           {
@@ -159,12 +159,12 @@ const Event = ({ title, date, description, speakers, speakerNames, setEventId })
             <p style={{ fontWeight: 'bold', fontSize: '17px' }} className="text--center">{speakerNames}</p>
           </div>
           <div className="card__footer text--center">
-            <button
+            {/* <button
               className="button button--primary button--solid"
               onClick={setEventId}
             >
               Register Now
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
