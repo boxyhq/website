@@ -7,9 +7,6 @@ author_url: https://www.linkedin.com/in/hungoboss/
 author_image_url: /img/blog/hung-ngo-headshot.jpeg
 tags_disabled: [developer, security, saas, devsecops, appsec]
 image: /img/blog/openssf-image-title.png
-link:
-  - rel: canonical
-    href: https://hungoboss.hashnode.dev/leverage-openssf-for-evaluating-open-source-software-projects
 ---
 
 Here at BoxyHQ, we are passionate about open-source. We love the idea behind it and it's engraved in our hearts. In fact, did you know that our project is open-source? You can check it yourself at <https://github.com/boxyhq>. But when it comes to open-source, there is a lingering question of open-source and security.
