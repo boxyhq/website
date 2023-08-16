@@ -207,7 +207,12 @@ html[data-theme='dark'] .header-github-link:before {
   }
 
   html {
-    scroll-behavior: smooth 
-    !important;
+    scroll-behavior: smooth !important;
   }
+}
+
+/* Medium zoom, navbar z-index is 200 */
+.medium-zoom-overlay,
+.medium-zoom-image {
+  z-index: 9999;
 }
