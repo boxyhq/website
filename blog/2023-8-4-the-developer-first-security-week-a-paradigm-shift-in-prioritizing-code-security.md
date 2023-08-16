@@ -45,9 +45,12 @@ This event is designed to be completely free and virtual, allowing us to reach a
 #### Talk: Your Attack Surface Just Got Bigger
 
 Date: 8/7/2023 - 12:30 PM EST
+<a href="https://www.youtube.com/watch?v=qVECqnuw1H8">
+Link to Video
 
 ![Keynote Talk](/img/blog/speaker-card-sonya-moisett.png)
-[Video link](https://www.youtube.com/watch?v=qVECqnuw1H8)
+
+</a>
 
 #### Panel: The Future of Security Engineers
 
@@ -64,8 +67,12 @@ Date: 8/8/2023 - 1:00 PM EST
 #### Talk: Automating Security to enable Developer-First in DevOps
 
 Date: 8/9/2023 - 12:30 PM EST
+<a href="https://www.youtube.com/watch?v=iyxvBcm86OY">
+Link to Video
 
 ![Keynote Talk](/img/blog/speaker-card-mohini-soodan-keynote.png)
+
+</a>
 
 #### Panel: The Future of Authorization
 
