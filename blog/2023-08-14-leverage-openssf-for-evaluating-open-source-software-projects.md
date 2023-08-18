@@ -37,7 +37,7 @@ In late 2018, people started wondering how to make sure that the components we a
 
 - Does the project also use any dependency update tools?
 
-Answering every one of them might be pretty tiresome, which is why we can leverage scorecards to evaluate them for us. Scorecards can help you enforce the best practices and protect yourself and your organisation against:
+Answering every one of them might be pretty tiresome, which is why we can leverage scorecards to evaluate them for us. Scorecards can help you enforce the best practices and protect yourself and your organization against:
 
 - Malicious maintainers
 
@@ -47,7 +47,7 @@ Answering every one of them might be pretty tiresome, which is why we can levera
 
 - Malicious packages
 
-It does so by checking for vulnerabilities that would affect the software supply chain. The checks are automated, and every check returns a score on the scale from 0 to 10 and the associated risk level, which is either low, medium, high, or critical. The risk level affects the returned score by adding weight and helps to calculate the final score.
+It does so by checking for vulnerabilities that would affect the software supply chain. The checks are automated, and every check returns a score on a scale from 0 to 10 and the associated risk level, which is either low, medium, high, or critical. The risk level affects the returned score by adding weight and helps to calculate the final score.
 
 ![](https://lh4.googleusercontent.com/tHb-KjPlooIU8Nb94fF8UIJQHHI0H1GqIUjqOfwtf4zfisy3Ftq2mbD5BHYp5uwjZhW6YSWYDU4jGDjsW0tcYHP_3k1eNrJGo-NM8I4x4yOG_m1gjbbNuglwo_0pr4XpUY8t6MP24G4L-OvJDwTfDGc)
 
@@ -63,7 +63,7 @@ In the left menu, scroll down to the last item - "Developer Settings".
 
 ![](https://lh6.googleusercontent.com/b7jBPxtPdplexChd_WlIdbjAXfBrL2NVXBtwmfpT7_z9LcoSnG6ap4cvdqRm8YCsidczO-ou1Aa-eYuy_PpwSW9c-hHZGQjr8d45XrPcwOhW0A0vvLUZ9beAcvIsrvacyfl_XmRPdHL63u1Vrp_uBO4)
 
-Within the "Developer Settings", we can select "Personal access tokens" and choose between fine-grained and classic tokens. For the purposes of our demo, we are going to go with the fine grained one as they contain all the required configuration. After generating the token, make sure that you copy and save your token somewhere as it can not be viewed more than once.
+Within the "Developer Settings", we can select "Personal access tokens" and choose between fine-grained and classic tokens. For the purposes of our demo, we are going to go with the fine-grained one as they contain all the required configuration. After generating the token, make sure that you copy and save your token somewhere as it can not be viewed more than once.
 
 ![](https://lh3.googleusercontent.com/LRBG1OY3avMyrtqt0Peo-aekRkgL1PayCgihlFnoS4EIk8twx4TtWI2lJwFrs2PErCwgrbEKNC6zqW0-Vu4DULyZbmzJ_2UDzrNx9UlmjQujXLb21arAuyBDu_uOj2oBKMR89JAOW3ZaEiYziSuy7bA)
 
@@ -88,7 +88,5 @@ Under the aggregated score, we can see the detailed report with the score for ea
 ![](https://lh4.googleusercontent.com/78MQqaN7m-kjG2Ps9cbcZm1CcoQxa8GmpGla1aQL5-cnP1meO79jlHGs7XyCqrD_UPR1D6c4yg6ujN0RPQRfy86ct-kh20VLa841P1NddsETWywBRpW9EC_ZSIqfLldDQSfy0_-faD-qekwcPElLHfY)
 
 We have scanned the 10 most popular open-source projects on GitHub using Scorecards and these are the results.
-
-![](https://lh6.googleusercontent.com/7Pli6PJ-NRP1UDVQoW-1HZa0FZ1AnunK1qwRuPO7m6HGfRglFDQLp9luG0-29u9YzP531e44z6SHFoNQTEYBBcjsSsmAwe1YVbW6RfZ2lxPJ49I_bvm1gw22-O6ppc7wrWKWX_ZMuJduxtdkCPMAPbA)
 
 Open-source security is an important topic, and at BoxyHQ, we take it seriously. If you want to make sure that your project dependencies are safe, you should use them too!
