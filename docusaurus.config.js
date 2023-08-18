@@ -126,7 +126,7 @@ module.exports = {
           ],
         },
         {
-          href: 'https://github.com/boxyhq',
+          href: 'https://github.com/boxyhq/jackson',
           position: 'right',
           className: 'header-github-link',
         },
@@ -140,7 +140,7 @@ module.exports = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/boxyhq',
+              href: 'https://github.com/boxyhq/jackson',
             },
             {
               label: 'Discord',
