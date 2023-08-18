@@ -24,7 +24,7 @@ const DeveloperCommunitySection = () => {
           Follow on Twitter
         </Link>
         <Link
-          href="https://github.com/boxyhq"
+          href="https://github.com/boxyhq/jackson"
           className="button button--primary button--outline"
         >
           Star on GitHub
