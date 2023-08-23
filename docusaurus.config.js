@@ -95,16 +95,24 @@ module.exports = {
           ],
         },
         {
-          label: 'Events',
+          label: 'Blog & Resources',
           type: 'dropdown',
           items: [
-            {
-              href: '/developer-first-security-week',
-              label: 'Developer First Security Week',
+            { 
+              to: '/blog', 
+              label: 'Blog' 
+            },
+            { 
+              to: '/success-stories', 
+              label: 'Success Stories' 
+            },
+            { 
+              to: '/developer-first-security-week', 
+              label: 'Events' 
             },
           ],
         },
-        { to: '/blog', label: 'Blog' },
+        
         { to: '/pricing', label: 'Pricing' },
         {
           label: 'Company',
@@ -153,6 +161,10 @@ module.exports = {
             {
               label: 'OSS Friends',
               href: 'https://boxyhq.com/oss-friends',
+            },
+            {
+              label: 'Developer-First Security Week',
+              href: 'https://boxyhq.com/developer-first-security-week',
             },
           ],
         },
@@ -266,6 +278,15 @@ module.exports = {
         path: 'guides',
         routeBasePath: 'guides',
         sidebarPath: require.resolve('./sidebars_guides.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'success-stories',
+        path: 'success-stories',
+        routeBasePath: 'success-stories',
+        sidebarPath: require.resolve('./sidebars_success-stories.js'),
       },
     ],
     ['@cmfcmf/docusaurus-search-local', {}],
