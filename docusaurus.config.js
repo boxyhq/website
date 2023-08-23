@@ -98,21 +98,21 @@ module.exports = {
           label: 'Blog & Resources',
           type: 'dropdown',
           items: [
-            { 
-              to: '/blog', 
-              label: 'Blog' 
+            {
+              to: '/blog',
+              label: 'Blog',
             },
-            { 
-              to: '/success-stories', 
-              label: 'Success Stories' 
+            {
+              to: '/success-stories',
+              label: 'Success Stories',
             },
-            { 
-              to: '/developer-first-security-week', 
-              label: 'Events' 
+            {
+              to: '/developer-first-security-week',
+              label: 'Events',
             },
           ],
         },
-        
+
         { to: '/pricing', label: 'Pricing' },
         {
           label: 'Company',
@@ -281,12 +281,23 @@ module.exports = {
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      '@docusaurus/plugin-content-blog',
       {
+        /**
+         * Required for any multi-instance plugin
+         */
         id: 'success-stories',
-        path: 'success-stories',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
         routeBasePath: 'success-stories',
-        sidebarPath: require.resolve('./sidebars_success-stories.js'),
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './success-stories',
+        blogTitle: 'Success Stories',
+        blogDescription: '',
       },
     ],
     ['@cmfcmf/docusaurus-search-local', {}],
