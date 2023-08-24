@@ -2,11 +2,11 @@
 slug: transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team
 title: "Transforming Security and Access with BoxyHQ's SSO Solution - A Conversation with the Spike Team"
 tags_disabled:
-  [developer, security, cybersecurity, devsecops, open-source, developerfirst]
+  [developer, security, cybersecurity, devsecops, open-source, developerfirst, case-study]
 image: /img/success-stories/spike-image.png
 ---
 
-### Spike is a global service that provides website uptime monitoring and incident management. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
+### Spike is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
 
 **Q:** Can you share the motivation behind implementing enterprise Single Sign-On (SSO) at Spike?
 
