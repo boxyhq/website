@@ -9,7 +9,7 @@ image: /img/success-stories/spike-image.png
 
 <div style={{ textAlign: "center" }}>
 <button style={{ width: "170px", height: "50px", borderRadius: "5px", fontSize: "120%" }}>
-<a href="https://spike.sh/" target="_blank">Learn More</a>
+<a href="https://spike.sh/" target="_blank">Learn More about Spike</a>
 </button>
 </div>
 

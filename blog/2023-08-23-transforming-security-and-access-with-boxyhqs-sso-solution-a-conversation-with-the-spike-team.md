@@ -2,7 +2,15 @@
 slug: transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team
 title: "Transforming Security and Access with BoxyHQ's SSO Solution - A Conversation with the Spike Team"
 tags_disabled:
-  [developer, security, cybersecurity, devsecops, open-source, developerfirst, case-study]
+  [
+    developer,
+    security,
+    cybersecurity,
+    devsecops,
+    open-source,
+    developerfirst,
+    case-study,
+  ]
 image: /img/success-stories/spike-image.png
 ---
 
@@ -56,3 +64,9 @@ Besides, Boxy’s team was incredibly supportive throughout our transition and w
 **Q:** Thank you for sharing your insights. We're excited to witness the journey of Spike and BoxyHQ as it continues to unfold. We appreciate you taking the time to tell your success story.
 
 **Kaushik:** Thank you, we appreciate the opportunity to share our story. Stay tuned for more updates on our evolving collaboration!
+
+<div style={{ textAlign: "center" }}>
+<button style={{  width: "230px", height: "70px", borderRadius: "5px", fontSize: "100%" }}>
+<a href="/success-stories/spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solutionn" target="_blank">Read Spike's success story</a>
+</button>
+</div>
