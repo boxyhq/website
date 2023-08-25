@@ -12,9 +12,13 @@ tags_disabled:
     case-study,
   ]
 image: /img/success-stories/spike-image.png
+hide_table_of_contents: true
+author: Nathan Tarbert
+author_title: Community Success Engineer @BoxyHQ
+author_url: https://github.com/NathanTarbert
 ---
 
-### Spike is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
+Spike is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
 
 **Q:** Can you share the motivation behind implementing enterprise Single Sign-On (SSO) at Spike?
 
@@ -66,7 +70,5 @@ Besides, Boxy’s team was incredibly supportive throughout our transition and w
 **Kaushik:** Thank you, we appreciate the opportunity to share our story. Stay tuned for more updates on our evolving collaboration!
 
 <div style={{ textAlign: "center" }}>
-<button style={{  width: "230px", height: "70px", borderRadius: "5px", fontSize: "100%" }}>
-<a href="/success-stories/spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solutionn" target="_blank">Read Spike's success story</a>
-</button>
+  <a href="/success-stories/spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solution" class="button button--primary button--outline">Read Spike's success story</a>
 </div>

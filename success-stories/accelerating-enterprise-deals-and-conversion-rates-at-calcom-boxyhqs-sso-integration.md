@@ -4,6 +4,9 @@ title: 'Accelerating Enterprise Deals and Conversion Rates at Cal.com - BoxyHQâ€
 tags_disabled: [security, cybersecurity, devsecops]
 image: img/success-stories/calcom-image.png
 hide_table_of_contents: true
+author: Nathan Tarbert
+author_title: Community Success Engineer @BoxyHQ
+author_url: https://github.com/NathanTarbert
 ---
 
 import Quote from "../src/components/Quote";
@@ -12,7 +15,9 @@ Cal.com provides an innovative scheduling and time management platform for indiv
 
 Their mission is to connect one billion people through the use of their platform by 2031. To achieve this, BoxyHQâ€™s enterprise-ready SSO would provide the reliable authentication they needed to maintain their customer's security and trust.
 
-<a href="https://cal.com" target="_blank" class="button button--primary button--outline">Learn more about Cal.com</a>
+<div style={{ textAlign: "center" }}>
+  <a href="https://cal.com" target="_blank" class="button button--primary button--outline">Learn more about Cal.com</a>
+</div>
 
 ## Introduction
 
