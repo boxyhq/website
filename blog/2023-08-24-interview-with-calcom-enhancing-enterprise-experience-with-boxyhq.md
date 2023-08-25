@@ -12,6 +12,10 @@ tags_disabled:
     case-study,
   ]
 image: img/success-stories/calcom-image.png
+author: Nathan Tarbert
+author_title: Community Success Engineer @BoxyHQ
+author_url: https://github.com/NathanTarbert
+author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
 
 Cal.com provides an innovative scheduling and time management platform for individuals and enterprises to streamline their calendar and appointment processes.
