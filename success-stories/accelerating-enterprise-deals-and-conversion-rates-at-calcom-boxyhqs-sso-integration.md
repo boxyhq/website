@@ -4,10 +4,6 @@ title: 'Accelerating Enterprise Deals and Conversion Rates at Cal.com - BoxyHQâ€
 tags_disabled: [security, cybersecurity, devsecops]
 image: img/success-stories/calcom-image.png
 hide_table_of_contents: true
-author: Nathan Tarbert
-author_title: Community Success Engineer @BoxyHQ
-author_url: https://github.com/NathanTarbert
-author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
 
 import Quote from "../src/components/Quote";

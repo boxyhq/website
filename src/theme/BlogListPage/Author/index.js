@@ -25,17 +25,21 @@ const Author = ({ authors, name, title, url, image }) => {
         </>
       ) : (
         <>
-          <img className="avatar__photo" src={image} alt={name} />
-          <div className="avatar__intro">
-            <div className="avatar__name">
-              <Link to={url} className={styles.authorUrl}>
-                {name}
-              </Link>
-            </div>
-            <small className={`avatar__subtitle ${styles.avatarSubtitle}`}>
-              {title}
-            </small>
-          </div>
+          {image && name && url && (
+            <>
+              <img className="avatar__photo" src={image} alt={name} />
+              <div className="avatar__intro">
+                <div className="avatar__name">
+                  <Link to={url} className={styles.authorUrl}>
+                    {name}
+                  </Link>
+                </div>
+                <small className={`avatar__subtitle ${styles.avatarSubtitle}`}>
+                  {title}
+                </small>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
