@@ -31,7 +31,6 @@ const Quote = ({ children, author, title, avatar }) => {
           <small className="avatar__subtitle">{title}</small>
         </div>
       </div>
-      {/* <span style={authorStyle}>{author}</span> */}
     </div>
   );
 };
