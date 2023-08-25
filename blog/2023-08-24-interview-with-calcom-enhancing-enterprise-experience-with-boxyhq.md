@@ -14,7 +14,9 @@ tags_disabled:
 image: img/success-stories/calcom-image.png
 ---
 
-### Cal.com provides an innovative scheduling and time management platform for individuals and enterprises to streamline their calendar and appointment processes. Their mission is to connect one billion people through the use of their platform by 2031. To achieve this, BoxyHQ’s enterprise-ready SSO would provide the reliable authentication they needed to maintain their customer's security and trust.
+Cal.com provides an innovative scheduling and time management platform for individuals and enterprises to streamline their calendar and appointment processes.
+
+Their mission is to connect one billion people through the use of their platform by 2031. To achieve this, BoxyHQ’s enterprise-ready SSO would provide the reliable authentication they needed to maintain their customer's security and trust.
 
 **Q:** Can you please share your role at Cal.com?
 
@@ -51,7 +53,5 @@ On the soft benefits front, we've witnessed a boost in team morale due to the si
 **Bailey (Cal.com):** Thank you, We really appreciate having the chance to explain how BoxyHQ stands out as a reliable partner in the realm of authentication solutions and we look forward to what the future holds for our ongoing partnership.
 
 <div style={{ textAlign: "center" }}>
-<button style={{  width: "230px", height: "70px", borderRadius: "5px", fontSize: "100%" }}>
-<a href="/success-stories/accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution" target="_blank">Read Cal.com's success story</a>
-</button>
+  <a href="/success-stories/accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution" class="button button--primary button--outline">Read Cal.com's success story</a>
 </div>

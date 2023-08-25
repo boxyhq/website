@@ -1,29 +1,26 @@
 ---
 slug: accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution
-title: 'Accelerating Enterprise Deals and Conversion Rates at Cal.com: BoxyHQ’s SSO Integration'
+title: 'Accelerating Enterprise Deals and Conversion Rates at Cal.com - BoxyHQ’s SSO Integration'
 tags_disabled: [security, cybersecurity, devsecops]
 image: img/success-stories/calcom-image.png
+hide_table_of_contents: true
 ---
 
-### Cal.com provides an innovative scheduling and time management platform for individuals and enterprises to streamline their calendar and appointment processes. Their mission is to connect one billion people through the use of their platform by 2031. To achieve this, BoxyHQ’s enterprise-ready SSO would provide the reliable authentication they needed to maintain their customer's security and trust.
+import Quote from "../src/components/Quote";
 
-<div style={{ textAlign: "center" }}>
-<button style={{ width: "170px", height: "50px", borderRadius: "5px", fontSize: "120%" }}>
-<a href="https://cal.com" target="_blank">Learn More about Cal.com</a>
-</button>
-</div>
+Cal.com provides an innovative scheduling and time management platform for individuals and enterprises to streamline their calendar and appointment processes.
+
+Their mission is to connect one billion people through the use of their platform by 2031. To achieve this, BoxyHQ’s enterprise-ready SSO would provide the reliable authentication they needed to maintain their customer's security and trust.
+
+<a href="https://cal.com" target="_blank" class="button button--primary button--outline">Learn more about Cal.com</a>
 
 ## Introduction
 
 Cal.com, a leading scheduling and appointment management platform, embarked on a journey to implement enterprise Single Sign-On (SSO) in response to growing demand from enterprises and government organizations.
 
-<div style={{ textAlign: "center", paddingTop: "10px", border: "solid", borderRadius: "5px", backgroundColor: "#f8f8f8"  }}>
-<i>"Boxy’s SSO solution just works, really well. We’re extremely satisfied and with very minimal effort to maintain on our part."
-</i>
-<p>
-Bailey: Co-Founder Cal.com
-</p>
-</div>
+<Quote author="Bailey, Co-Founder, Cal.com">
+  Boxy’s SSO solution just works, really well. We’re extremely satisfied and with very minimal effort to maintain on our part.
+</Quote>
 
 ## Reasons for Adopting Enterprise Single Sign-On
 
@@ -33,13 +30,9 @@ The decision to implement enterprise SSO stemmed from a significant demand from 
 
 Cal.com's dedication to open source led them to choose BoxyHQ (Jackson) for their SSO implementation. The commitment to open source aligned perfectly with Cal.com's ethos of providing customers with the freedom to choose and ensuring they weren't locked into proprietary solutions. By adopting BoxyHQ, Cal.com offered clients an enterprise-grade authentication solution that catered to their security and flexibility needs.
 
-<div style={{ textAlign: "center", paddingTop: "10px", border: "solid", borderRadius: "5px", backgroundColor: "#f8f8f8"}}>
-<i>"Building enterprise features takes a lot of time and resources, thankfully BoxyHQ packages it up in a box. Their SSO offering is exactly what we needed. It allowed our team to focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it's open-source and free?"
-</i>
-<p>
-Peer, Co-Founder, Cal.com
-</p>
-</div>
+<Quote author="Peer, Co-Founder, Cal.com">
+  Building enterprise features takes a lot of time and resources, thankfully BoxyHQ packages it up in a box. Their SSO offering is exactly what we needed. It allowed our team to focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it's open-source and free?
+</Quote>
 
 ## Tangible Gains from Implementation to Deployment
 
@@ -64,7 +57,5 @@ Cal.com's implementation experience with BoxyHQ was marked by collaboration and 
 Cal.com's successful implementation of BoxyHQ's SSO solution not only satisfied the growing demand for streamlined authentication but also aligned with their principles of transparency and client-centricity. By partnering with BoxyHQ, Cal.com provided their clients with a seamless and secure authentication experience, while reaping tangible benefits in terms of time savings, enterprise client acquisition, and user satisfaction. The collaboration between Cal.com and BoxyHQ exemplifies the power of open-source solutions in driving innovation and value for businesses and their clients.
 
 <div style={{ textAlign: "center" }}>
-<button style={{  width: "190px", height: "50px", borderRadius: "5px", fontSize: "100%" }}>
-<a href="/blog/interview-with-calcom-enhancing-enterprise-experience-with-boxyhq" target="_blank">Read the full interview</a>
-</button>
+  <a href="/blog/interview-with-calcom-enhancing-enterprise-experience-with-boxyhq" class="button button--primary button--outline">Read the full interview</a>
 </div>
