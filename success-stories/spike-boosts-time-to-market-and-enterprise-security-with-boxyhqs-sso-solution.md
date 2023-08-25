@@ -18,7 +18,7 @@ Spike is a powerful incident management platform with customers across 40+ count
 
 Spike, a fast-growing incident management platform, recognized the growing demand for secure access and authentication, particularly within enterprise environments. In response, they embarked on a journey to implement enterprise Single Sign-On (SSO) capabilities. BoxyHQ's SSO solution proved to be a game-changing asset in fulfilling Spikes security and enterprise customer onboarding needs.
 
-<Quote author="Kaushik" title="Co-Founder Spike" avatar="https://avatars1.githubusercontent.com/u/165856?s=460&v=4">
+<Quote author="Kaushik Thirthappa" title="Co-Founder Spike" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
   Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.
 </Quote>
 
@@ -34,7 +34,7 @@ The pursuit of a suitable SSO solution wasn't without its challenges. Despite ex
 
 Spike choice was further bolstered by BoxyHQ's unwavering support throughout the transition, ensuring a smooth adoption process.
 
-<Quote author="Kaushik" title="Co-Founder Spike" avatar="https://avatars1.githubusercontent.com/u/165856?s=460&v=4">
+<Quote author="Kaushik Thirthappa" title="Co-Founder Spike" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
   Boxy's flexibility and easy solutions meant we could implement this fast, really really fast!
 </Quote>
 
@@ -42,7 +42,7 @@ Spike choice was further bolstered by BoxyHQ's unwavering support throughout the
 
 Spike realized both direct and secondary benefits from BoxyHQ's SSO solution. The seamless implementation significantly reduced the barriers to entry, making the process swift and efficient. Divyansh from Spike elaborates on the impact:
 
-<Quote author="Divyansh" title="Co-Founder Spike" avatar="https://avatars1.githubusercontent.com/u/165856?s=460&v=4">
+<Quote author="Divyansh Khandelwal" title="Co-Founder Spike" avatar="/img/success-stories/divyansh-spike-headshot.jpeg">
   We've saved considerable time and effort, enabling us to focus on our core mission - aiding engineering teams in incident management.
 </Quote>
 
