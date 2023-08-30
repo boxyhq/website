@@ -56,7 +56,7 @@ BoxyHQ-Signature: t=xxx,s=xxxx
 ```
 
 :::caution
-If the webhook request fails, SAML Jackson will not retry the webhook request. A log will be created in the SAML Jackson Admin Portal if the you've enabled the webhook event logging.
+If the webhook request fails, SAML Jackson will not retry the webhook request. A log will be created in the SAML Jackson Admin Portal if you've enabled webhook event logging.
 :::
 
 ## Secure Webhooks
