@@ -95,16 +95,24 @@ module.exports = {
           ],
         },
         {
-          label: 'Events',
+          label: 'Blog & Resources',
           type: 'dropdown',
           items: [
             {
-              href: '/developer-first-security-week',
-              label: 'Developer First Security Week',
+              to: '/blog',
+              label: 'Blog',
+            },
+            {
+              to: '/success-stories',
+              label: 'Success Stories',
+            },
+            {
+              to: '/developer-first-security-week',
+              label: 'Events',
             },
           ],
         },
-        { to: '/blog', label: 'Blog' },
+
         { to: '/pricing', label: 'Pricing' },
         {
           label: 'Company',
@@ -153,6 +161,10 @@ module.exports = {
             {
               label: 'OSS Friends',
               href: 'https://boxyhq.com/oss-friends',
+            },
+            {
+              label: 'Developer-First Security Week',
+              href: 'https://boxyhq.com/developer-first-security-week',
             },
           ],
         },
@@ -266,6 +278,26 @@ module.exports = {
         path: 'guides',
         routeBasePath: 'guides',
         sidebarPath: require.resolve('./sidebars_guides.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'success-stories',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'success-stories',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './success-stories',
+        blogTitle: 'Success Stories',
+        blogDescription: '',
       },
     ],
     ['@cmfcmf/docusaurus-search-local', {}],
