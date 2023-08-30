@@ -34,7 +34,7 @@ The pursuit of a suitable SSO solution wasn't without its challenges. Despite ex
 
 Spike choice was further bolstered by BoxyHQ's unwavering support throughout the transition, ensuring a smooth adoption process.
 
-<Quote author="Kaushik Thirthappa" title="Co-Founder Spike" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
+<Quote author="Kaushik Thirthappa" title="Founder Spike.sh" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
   Boxy's flexibility and easy solutions meant we could implement this fast, really really fast!
 </Quote>
 
@@ -42,7 +42,7 @@ Spike choice was further bolstered by BoxyHQ's unwavering support throughout the
 
 Spike realized both direct and secondary benefits from BoxyHQ's SSO solution. The seamless implementation significantly reduced the barriers to entry, making the process swift and efficient. Divyansh from Spike elaborates on the impact:
 
-<Quote author="Divyansh Khandelwal" title="Co-Founder Spike" avatar="/img/success-stories/divyansh-spike-headshot.jpeg">
+<Quote author="Divyansh Khandelwal" title="Founding Engineer Spike.sh" avatar="/img/success-stories/divyansh-spike-headshot.jpeg">
   We've saved considerable time and effort, enabling us to focus on our core mission - aiding engineering teams in incident management.
 </Quote>
 
@@ -60,7 +60,7 @@ BoxyHQ's support team played a pivotal role in Spike.sh's journey. Their respons
 
 ## Long-Term Relationship
 
-The Spike.sh-BoxyHQ relationship is grounded in reliability, flexibility, an open-source ethos, and outstanding support. This partnership demonstrates how a solution should simply work, paving the way for future collaborations.
+The Spike-BoxyHQ relationship is grounded in reliability, flexibility, an open-source ethos, and outstanding support. This partnership demonstrates how a solution should simply work, paving the way for future collaborations.
 
 In essence, Spike collaboration with BoxyHQ showcases the pivotal role SSO solutions can play in enhancing security, streamlining processes, and driving customer growth within the enterprise domain. The partnership underlines the potential of innovative technology to transform the operational landscape while fostering long-lasting relationships based on trust and shared values.
 
