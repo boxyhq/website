@@ -329,5 +329,6 @@ module.exports = {
         ],
       },
     ],
+    './plugins/fetch-oss-friends',
   ],
 };
