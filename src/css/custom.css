@@ -62,7 +62,7 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 .card {
-  border: 1px solid #333;
+  border: 1px solid #e3dbdb;
   box-shadow: none;
   border-radius: 5px;
   text-decoration: none !important;
@@ -98,10 +98,6 @@ html[data-theme='dark'] .header-github-link:before {
 
 .card__description {
   font-size: 14px;
-}
-
-.card {
-  border: 1px solid #e3dbdb !important;
 }
 
 .hero__title {
