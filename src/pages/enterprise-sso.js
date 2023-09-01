@@ -73,6 +73,11 @@ const EnterpriseSSO = () => {
             href: 'https://saml-demo.boxyhq.com',
             className: 'button--primary button--outline',
           },
+          {
+            title: 'Early SaaS access',
+            href: 'https://boxyhq.com/saas-registration',
+            className: 'button--primary',
+          },
         ]}
       />
 

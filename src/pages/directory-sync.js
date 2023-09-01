@@ -37,6 +37,11 @@ const DSync = () => {
             href: '/docs/directory-sync/overview',
             className: 'button--primary button--outline',
           },
+          {
+            title: 'Early SaaS access',
+            href: 'https://boxyhq.com/saas-registration',
+            className: 'button--primary',
+          },
         ]}
       />
 

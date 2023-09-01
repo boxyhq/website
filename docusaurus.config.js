@@ -70,7 +70,10 @@ module.exports = {
               to: '/privacy-vault',
               label: 'Privacy Vault',
             },
-            { to: '/saas-registration', label: 'SaaS Early Access' },
+            {
+              href: 'https://github.com/boxyhq/saas-starter-kit',
+              label: 'Enterprise SaaS Starter Kit',
+            },
           ],
         },
         {
@@ -92,6 +95,7 @@ module.exports = {
               href: 'https://awesome-oss-devsec.boxyhq.com',
               label: 'Developer Security Tools',
             },
+            { to: '/saas-registration', label: 'SaaS Early Access' },
           ],
         },
         {
