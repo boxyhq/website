@@ -74,6 +74,7 @@ module.exports = {
               href: 'https://github.com/boxyhq/saas-starter-kit',
               label: 'Enterprise SaaS Starter Kit',
             },
+            { to: '/saas-registration', label: 'SaaS Early Access' },
           ],
         },
         {
@@ -88,14 +89,14 @@ module.exports = {
               label: 'Mock SAML',
             },
             {
-              href: 'https://github.com/boxyhq/saas-starter-kit',
-              label: 'Enterprise SaaS Starter Kit',
-            },
-            {
               href: 'https://awesome-oss-devsec.boxyhq.com',
               label: 'Developer Security Tools',
             },
-            { to: '/saas-registration', label: 'SaaS Early Access' },
+            {
+              href: 'https://github.com/boxyhq/saas-starter-kit',
+              label: 'Enterprise SaaS Starter Kit',
+            },
+           
           ],
         },
         {
