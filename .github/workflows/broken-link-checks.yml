@@ -13,7 +13,7 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2.3.1
         with:
           url: https://boxyhq.com
-          cmd_params: '--max-connections=10 --timeout=60 --buffer-size=16384 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org|instagram.com|admin.google.com)" --skip-tls-verification --ignore-fragments --header="User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"'
+          cmd_params: '--max-connections=10 --timeout=60 --buffer-size=16384 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org|instagram.com|admin.google.com)" --skip-tls-verification --ignore-fragments --header="User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:58.0)"'
       - name: Post to Slack
         if: ${{ failure() }}
         uses: slackapi/slack-github-action@v1.23.0
