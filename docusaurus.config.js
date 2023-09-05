@@ -31,7 +31,7 @@ module.exports = {
     announcementBar: {
       id: 'announcement-bar',
       content:
-        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star Enterprise SSO on GitHub</a>     <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/retracedhq/retraced">⭐ Star Audit Logs on GitHub</a> <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/saas-starter-kit">⭐ Star SaaS Starter Kit on GitHub</a> ', 
+        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star Enterprise SSO on GitHub</a>     <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/retracedhq/retraced">⭐ Star Audit Logs on GitHub</a> <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/saas-starter-kit">⭐ Star SaaS Starter Kit on GitHub</a> ',
       isCloseable: false,
     },
     image: 'img/website-preview-image.png',
@@ -70,11 +70,11 @@ module.exports = {
               to: '/privacy-vault',
               label: 'Privacy Vault',
             },
+            { to: '/saas-registration', label: 'SaaS Early Access' },
             {
               href: 'https://github.com/boxyhq/saas-starter-kit',
               label: 'Enterprise SaaS Starter Kit',
             },
-            { to: '/saas-registration', label: 'SaaS Early Access' },
           ],
         },
         {
@@ -96,7 +96,6 @@ module.exports = {
               href: 'https://github.com/boxyhq/saas-starter-kit',
               label: 'Enterprise SaaS Starter Kit',
             },
-           
           ],
         },
         {
