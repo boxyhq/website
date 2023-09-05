@@ -10,6 +10,8 @@ import InvestorsSection from '../components/InvestorsSection';
 import CustomersSection from '../components/CustomersSection';
 import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import FeatureSection from '../components/FeatureSection';
+import SectionLayout from '../components/Card';
+import Card from '../components/Card';
 
 const Icon3 = require('../../static/img/home-buildingblocks.svg').default;
 
@@ -19,6 +21,7 @@ const description = 'Security Building Blocks for Developers';
 const IndexPage = () => {
   return (
     <Layout title={title} description={description}>
+     
       <HeroSection
         title="Security Building Blocks for Developers"
         description="Reduce Time to Market without sacrificing your security posture! BoxyHQ’s suite of APIs for security and privacy helps engineering teams build and ship compliant cloud applications faster."
@@ -34,8 +37,15 @@ const IndexPage = () => {
             href: 'https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655',
             className: 'button--primary button--outline',
           },
+          {
+            title: 'Early SaaS access',
+            href: 'https://boxyhq.com/saas-registration',
+            className: 'button--primary',
+          },
         ]}
       />
+
+     
 
       <CustomersSection />
       <ProductsSection />

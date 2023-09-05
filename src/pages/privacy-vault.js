@@ -34,6 +34,11 @@ const PrivacyVault = () => {
             href: 'https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655',
             className: 'button--primary',
           },
+          {
+            title: 'Early SaaS access',
+            href: 'https://boxyhq.com/saas-registration',
+            className: 'button--primary button--outline',
+          },
         ]}
       />
 
