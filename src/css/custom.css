@@ -212,3 +212,28 @@ html[data-theme='dark'] .header-github-link:before {
 .medium-zoom-image {
   z-index: 9999;
 }
+
+/* Markdown CSS */
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (prefers-color-scheme: dark) {
+  .image-container img:nth-child(2) {
+    display: block;
+  }
+  .image-container img:nth-child(1) {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .image-container img:nth-child(2) {
+    display: none;
+  }
+  .image-container img:nth-child(1) {
+    display: block;
+  }
+}
