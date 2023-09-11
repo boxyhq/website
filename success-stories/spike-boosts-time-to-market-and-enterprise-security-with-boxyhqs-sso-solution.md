@@ -19,6 +19,7 @@ Spike is a powerful incident management platform with customers across 40+ count
 Spike, a fast-growing incident management platform, recognized the growing demand for secure access and authentication, particularly within enterprise environments. In response, they embarked on a journey to implement enterprise Single Sign-On (SSO) capabilities. BoxyHQ's SSO solution proved to be a game-changing asset in fulfilling Spikes security and enterprise customer onboarding needs.
 
 <Quote author="Kaushik Thirthappa" title="Founder Spike.sh" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
+
   Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.
 </Quote>
 
@@ -60,7 +61,7 @@ BoxyHQ's support team played a pivotal role in Spike.sh's journey. Their respons
 
 ## Long-Term Relationship
 
-The Spike.sh-BoxyHQ relationship is grounded in reliability, flexibility, an open-source ethos, and outstanding support. This partnership demonstrates how a solution should simply work, paving the way for future collaborations.
+The Spike-BoxyHQ relationship is grounded in reliability, flexibility, an open-source ethos, and outstanding support. This partnership demonstrates how a solution should simply work, paving the way for future collaborations.
 
 In essence, Spike collaboration with BoxyHQ showcases the pivotal role SSO solutions can play in enhancing security, streamlining processes, and driving customer growth within the enterprise domain. The partnership underlines the potential of innovative technology to transform the operational landscape while fostering long-lasting relationships based on trust and shared values.
 
