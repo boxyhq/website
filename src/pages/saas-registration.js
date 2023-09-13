@@ -75,8 +75,8 @@ const SaasRegistration = () => {
                   </li>
                   <li>
                     <b>Seamless Integrations:</b> Integrate with the most
-                    popular SSO providers such as Okta, Azure AD, Auth0, Google
-                    and more
+                    popular SSO providers such as Okta, Microsoft Entra ID,
+                    Auth0, Google and more
                   </li>
                 </ul>
               </div>

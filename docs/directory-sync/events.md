@@ -469,7 +469,7 @@ To receive notifications when a user is deleted, it's important to note that not
 Following Identity Providers do not send `user.deleted` event:
 
 - Okta
-- Azure AD
+- Microsoft Entra ID (formerly Azure AD)
 
 ### Which SCIM version does SAML Jackson support?
 
