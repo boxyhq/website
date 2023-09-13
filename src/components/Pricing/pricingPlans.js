@@ -1,5 +1,6 @@
 export const pricingPlans = [
   {
+    subfeature: `<p><i>* Custom Branding</i><br><i>* <a href="https://boxyhq.com/docs/jackson/saml-federation" target="_blank">SAML Federation</a></i></p>`,
     feature: 'Premium features',
     tiers: {
       'self-hosted': 'no',

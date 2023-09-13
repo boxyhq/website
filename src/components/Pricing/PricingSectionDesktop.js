@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { pricingPlans } from './pricingPlans';
 import { TextToComponent } from './TextToComponent';
@@ -28,6 +28,13 @@ export const PricingSectionDesktop = ({ setOpened, setFormId }) => {
                     }}
                   >
                     {pricingPlan.feature}
+                    {pricingPlan.subfeature && (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: pricingPlan.subfeature,
+                        }}
+                      ></div>
+                    )}
                   </td>
                   <td>
                     <TextToComponent text={pricingPlan.tiers['self-hosted']} />
