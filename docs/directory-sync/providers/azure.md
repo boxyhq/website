@@ -1,11 +1,11 @@
 ---
-title: Azure AD SCIM v2.0
-sidebar_label: Azure SCIM v2.0
+title: Microsoft Entra ID SCIM v2.0
+sidebar_label: Microsoft Entra ID SCIM v2.0
 ---
 
-# Azure AD SCIM v2.0
+# Microsoft Entra ID SCIM v2.0
 
-The following guide will walk you through the process of configuring SAML Jackson to use the Azure AD SCIM v2.0 directory provider.
+The following guide will walk you through the process of configuring SAML Jackson to use the Microsoft Entra ID SCIM v2.0 directory provider.
 
 ---
 
@@ -57,7 +57,7 @@ Expand the **Settings** section and make the following changes:
 
 ![img alt](/img/dsync/providers/azure/8.png)
 
-At this stage, you've successfully configured the Azure AD SCIM API integration.
+At this stage, you've successfully configured the Microsoft Entra ID SCIM API integration.
 
 ---
 
