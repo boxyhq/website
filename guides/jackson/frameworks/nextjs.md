@@ -11,7 +11,9 @@ import TabItem from '@theme/TabItem';
 
 This guide assumes that you have a Next.js app and want to enable SAML Single Sign-On authentication for your enterprise customers. By the end of this guide, you'll have an app that allows you to authenticate the users using SAML Single Sign-On.
 
-Visit the [GitHub repository](https://github.com/boxyhq/saas-starter-kit) to see the source code for the Next.js SAML SSO integration.
+Visit the [GitHub repository](https://github.com/boxyhq/jackson) to view **BoxyHQ's SAML SSO.**
+
+Visit the [GitHub repository](https://github.com/boxyhq/saas-starter-kit) to view the source code for the **Next.js SAML SSO integration.**
 
 Integrating SAML SSO into an app involves the following steps.
 
