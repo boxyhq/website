@@ -1,52 +1,47 @@
 import React, { useEffect, useState } from 'react';
 
 function ToggleImages() {
-    
-    const [isDark, setIsDark] = useState(true);
+  
+// Define a state variable to track the user's login status
+const [currentTheme, setcurrentTheme] = useState(localStorage.getItem('theme'));
 
-  useEffect(() => {
-    function darkLight() {
-      const lightModeImage = document.getElementById('light-mode-image');
-      const darkModeImage = document.getElementById('dark-mode-image');
-      
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      console.log("dark", prefersDarkMode)
+// Add an event listener for the 'storage' event inside a useEffect
+useEffect(() => {
+  const handleStorageChange = (event) => {
+    console.log('Storage event detected:', event);
 
-      if (prefersDarkMode) {
-        lightModeImage.style.display = 'none';
-        darkModeImage.style.display = 'block';
-      } else {
-        lightModeImage.style.display = 'block';
-        darkModeImage.style.display = 'none';
-      }
-    
-
-    // Call the function to set initial image based on user preference
-    setIsDark(prefersDarkMode)
+    // Check the changed key and update the state accordingly
+    console.log("event", event.key)
+    if (event.key === 'theme') {
+      setcurrentTheme(event.newValue);
     }
-    darkLight();
+  };
 
-    // Listen for changes in color scheme preference and update the images accordingly
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', darkLight);
+  window.addEventListener('storage', handleStorageChange);
 
-    // Cleanup the event listener when the component unmounts
-    return () => {
-      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', darkLight);
-    };
-  }, [isDark]); // Empty dependency array ensures that this effect runs only once
+  // Clean up the event listener when the component unmounts
+  return () => {
+    window.removeEventListener('storage', handleStorageChange);
+  };
+}, []); // The empty dependency array ensures that this effect runs once when the component mounts
+
+
 
   return (
     <div className="image-container">
+      {currentTheme == 'light'? (
         <img
         id="light-mode-image"
-        src="/img/blog/boxyhq-banner-white-bg.png"
+        src="/img/blog/boxyhq-banner-light-bg.png"
         alt="Light Mode Image"
         ></img>
+      ):(
         <img
         id="dark-mode-image"
-        src="/img/blog/boxyhq-banner-black-bg.png"
+        src="/img/blog/boxyhq-banner-dark-bg.png"
         alt="Dark Mode Image"
         ></img>
+      )}
     </div>
   );
 }
