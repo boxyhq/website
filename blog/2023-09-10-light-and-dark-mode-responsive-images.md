@@ -1,5 +1,5 @@
 ---
-slug: light-and-dark-mode
+slug: light-and-dark-mode-resonsive-images
 title: 'Light and Dark Mode Responsive Images'
 tags_disabled:
   [
