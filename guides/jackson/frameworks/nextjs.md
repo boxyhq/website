@@ -55,7 +55,7 @@ import jackson, {
 } from "@boxyhq/saml-jackson";
 
 const samlAudience = "https://saml.boxyhq.com";
-const samlPath = "/api/auth/saml/acs";
+const samlPath = "/api/oauth/saml";
 
 const opts: JacksonOption = {
   externalUrl: `${process.env.NEXTAUTH_URL}`,
@@ -93,49 +93,26 @@ export default async function init() {
 We'll use [NextAuth.js](https://next-auth.js.org/) for the authentication. NextAuth is a complete open-source authentication solution for Next.js applications.
 
 ```bash
-npm install next-auth
+npm i --save next-auth
 ```
 
-Let's add a custom provider called `saml-jackson` to the NextAuth.
+NextAuth ships with BoxyHQ SAML `boxyhq-saml` as a built-in SAML authentication provider. We'll use this provider to authenticate the users.
 
 ```js title="pages/api/auth/[...nextauth].ts"
 import NextAuth, { type NextAuthOptions } from 'next-auth';
+import BoxyHQSAMLProvider from 'next-auth/providers/boxyhq-saml';
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    {
-      id: 'saml-jackson',
-      name: 'BoxyHQ',
-      type: 'oauth',
-      checks: ['pkce', 'state'],
-      authorization: {
-        url: `${process.env.NEXTAUTH_URL}/api/auth/saml/authorize`,
-        params: {
-          scope: '',
-          response_type: 'code',
-          provider: 'saml',
-        },
+    BoxyHQSAMLProvider({
+      authorization: { params: { scope: '' } },
+      issuer: `${process.env.NEXTAUTH_URL}`,
+      clientId: 'dummy',
+      clientSecret: 'dummy',
+      httpOptions: {
+        timeout: 30000,
       },
-      token: {
-        url: `${process.env.NEXTAUTH_URL}/api/auth/saml/token`,
-        params: { grant_type: 'authorization_code' },
-      },
-      userinfo: `${process.env.NEXTAUTH_URL}/api/auth/saml/userinfo`,
-      profile: (profile) => {
-        return {
-          id: profile.id || '',
-          firstName: profile.firstName || '',
-          lastName: profile.lastName || '',
-          email: profile.email || '',
-          name: `${profile.firstName || ''} ${profile.lastName || ''}`.trim(),
-          email_verified: true,
-        };
-      },
-      options: {
-        clientId: 'dummy',
-        clientSecret: 'dummy',
-      },
-    },
+    }),
   ],
   session: {
     strategy: 'jwt',
@@ -149,7 +126,7 @@ export default NextAuth(authOptions);
 
 Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
-```js title="pages/api/auth/saml/authorize.ts"
+```js title="pages/api/oauth/authorize.ts"
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { OAuthReq } from "@boxyhq/saml-jackson";
 
@@ -175,7 +152,7 @@ After successful authentication, Identity Provider POST the SAML response to the
 
 Let's add a route to handle the SAML response. Ensure the route matches the value of the `samlPath` you configured while initializing the SAML Jackson library and should be able to receives POST request.
 
-```js title="pages/api/auth/saml/acs.ts"
+```js title="pages/api/oauth/saml.ts"
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import jackson from "../../../../lib/jackson";
@@ -203,7 +180,7 @@ Let's add another route for receiving the callback after the authentication.
 
 The NextAuth requests an `access_token` by passing the authorization `code` along with authentication details, including the `grant_type`, `redirect_uri`, and `code_verifier`.
 
-```js title="pages/api/auth/saml/token.ts"
+```js title="pages/api/oauth/token.ts"
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import jackson from '../../../../lib/jackson';
@@ -224,7 +201,7 @@ export default async function handler(
 
 Once the `access_token` has been fetched, NextAuth can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
 
-```js title="pages/api/auth/saml/userinfo.ts"
+```js title="pages/api/oauth/userinfo.ts"
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import jackson from '../../../../lib/jackson';
@@ -275,9 +252,15 @@ Once the user has been retrieved from the Identity Provider, you may determine i
 
 ### Starts OAuth sign-in flow
 
-You can use NextAuth's `signIn` method to initiate the authentication with `saml-jackson` provider.
+You can use NextAuth's `signIn` method to initiate the authentication with `boxyhq-saml` provider.
 
-You can pass the `tenant` and `product` as additional parameters to the `/api/auth/saml/authorize` endpoint through the third argument of `signIn()`.
+You can pass the `tenant` and `product` as additional parameters to the `/api/oauth/authorize` endpoint through the third argument of `signIn()`.
+
+:::info
+Make sure you add a valid SAML connection for the tenant and product combination. Otherwise, the authentication will fail. Read about creating SAML connections [here](/docs/jackson/deploy/npm-library#create-saml-connection)
+:::
+
+For this example app to work, you need to add a SAML connection for the tenant `boxyhq.com` and product `saml-demo.boxyhq.com` before you can authenticate the users.
 
 ```js title="pages/login.tsx"
 import type { NextPage } from 'next';
@@ -295,7 +278,7 @@ const Login: NextPage = () => {
   }
 
   // Starts OAuth sign-in flow
-  signIn('saml-jackson', undefined, {
+  signIn('boxyhq-saml', undefined, {
     tenant: 'boxyhq.com',
     product: 'saml-demo.boxyhq.com',
   });
