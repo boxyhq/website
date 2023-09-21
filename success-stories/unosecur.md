@@ -1,6 +1,6 @@
 ---
-slug: unosecurs-sso-triumph-the-role-of-boxyhq-in-accelerating-development
-title: "Unosecur's SSO Triumph: The Role of BoxyHQ in Accelerating Development"
+slug: unosecur-leverages-boxyhqs-security-building-blocks-for-enterprise-peace-of-mind
+title: "Unosecur Leverages BoxyHQ's Security Building Blocks for Enterprise Peace of Mind"
 tags_disabled: [security, cybersecurity, devsecops]
 image: /img/success-stories/unosecur-logo.png
 hide_table_of_contents: true
