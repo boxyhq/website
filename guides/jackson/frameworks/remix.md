@@ -111,7 +111,7 @@ export { auth };
 
 ## Set up Jackson SSO feature
 
-We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/v1/guides/resource-routes) in remix terminology).
+We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/main/guides/resource-routes) in remix terminology).
 
 ### Install jackson
 
