@@ -381,10 +381,16 @@ The following env vars are used to configure the Google Workspace directories. T
 
 The Google authentication client ID.
 
+NPM library option: `dsync.providers.google.clientId`
+
 ### GOOGLE_CLIENT_SECRET
 
 The Google authentication client secret.
 
+NPM library option: `dsync.providers.google.clientSecret`
+
 ### GOOGLE_REDIRECT_URI
 
 The URI to redirect to after completing the authentication request.
+
+NPM library option: `dsync.providers.google.callbackUrl`
