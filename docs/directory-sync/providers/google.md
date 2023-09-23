@@ -1,15 +1,15 @@
 ---
-title: Google
-sidebar_label: Google
+title: Google Workspace Directory
+sidebar_label: Google Workspace
 ---
 
-# Google
+# Google Workspace
 
-The following guide will walk you through the process of configuring SAML Jackson to use Google as a directory provider.
+The following guide will walk you through the process of configuring SAML Jackson to use Google Workspace as a directory sync provider.
 
 ---
 
-### Create Application
+### Configure Application
 
 ### Assign Users
 
