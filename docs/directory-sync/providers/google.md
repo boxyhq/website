@@ -9,6 +9,10 @@ The following guide will walk you through the process of configuring SAML Jackso
 
 ---
 
+### Google OAuth Setup
+
+- Add instructions to setup Google OAuth
+
 ### Configure Application
 
 ### Assign Users
