@@ -78,6 +78,7 @@ module.exports = {
             'directory-sync/providers/okta',
             'directory-sync/providers/onelogin',
             'directory-sync/providers/jumpcloud',
+            'directory-sync/providers/google',
           ],
         },
       ],

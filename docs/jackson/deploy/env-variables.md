@@ -372,3 +372,19 @@ you need to set the admin root token for Retraced so that we can connect to Retr
 ### **BOXYHQ_NO_TELEMETRY** or **DO_NOT_TRACK**
 
 Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in any form.
+
+## Google Directory API
+
+The following env vars are used to configure the Google Workspace directories. These are only needed if you are using Google Workspace as a directory sync provider.
+
+### GOOGLE_CLIENT_ID
+
+The Google authentication client ID.
+
+### GOOGLE_CLIENT_SECRET
+
+The Google authentication client secret.
+
+### GOOGLE_REDIRECT_URI
+
+The URI to redirect to after completing the authentication request.
