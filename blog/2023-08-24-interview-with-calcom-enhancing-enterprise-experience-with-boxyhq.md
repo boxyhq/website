@@ -13,7 +13,7 @@ tags_disabled:
   ]
 image: img/success-stories/calcom-image.png
 author: Nathan Tarbert
-author_title: Community Success Engineer @BoxyHQ
+author_title: Community Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
@@ -24,7 +24,7 @@ Their mission is to connect one billion people through the use of their platform
 
 **Q:** Can you please share your role at Cal.com?
 
-**Bailey (Cal.com):** I’m the Co-Founder and Co-CEO
+**Bailey (Cal.com):** I’m the Co-founder and Co-CEO
 
 **Q:** What was the motivation at Cal.com to implement enterprise SSO & OIDC?
 

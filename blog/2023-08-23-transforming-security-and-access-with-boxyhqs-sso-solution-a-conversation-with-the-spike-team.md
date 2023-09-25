@@ -14,7 +14,7 @@ tags_disabled:
 image: /img/success-stories/spike-image.png
 hide_table_of_contents: true
 author: Nathan Tarbert
-author_title: Community Success Engineer @BoxyHQ
+author_title: Community Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---

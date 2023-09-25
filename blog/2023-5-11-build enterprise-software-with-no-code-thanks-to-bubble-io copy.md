@@ -2,7 +2,7 @@
 slug: build-enterprise-software-with-no-code-thanks-to-bubble-io
 title: 'Build Enterprise Software with No-Code Thanks to Bubble.io'
 author: Nathan Tarbert
-author_title: Community Success Engineer @BoxyHQ
+author_title: Community Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 tags_disabled: [open-source, sso, enterprise-ready]

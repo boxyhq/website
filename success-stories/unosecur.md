@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 import Quote from "../src/components/Quote";
 
-<Quote author="Santosh Jayaprakash" title="Co-Founder Unosecur" avatar="/img/success-stories/santosh-unosecur-headshot.jpeg">
+<Quote author="Santosh Jayaprakash" title="Co-founder Unosecur" avatar="/img/success-stories/santosh-unosecur-headshot.jpeg">
  With BoxyHQ, we can focus on building our core product without worrying too much about the enterprise readiness features. We seamlessly integrated the SAML SSO offering to our platform, enabling us to onboard enterprise co-development customers
 </Quote>
 
