@@ -672,6 +672,36 @@ await directorySyncController.google.setToken({
 }
 ```
 
+#### 4. Sync Directory
+
+Jackson can be configured to sync your Google Workspace directory.
+
+<Tabs>
+<TabItem value="01" label="Node.js" default>
+
+```javascript showLineNumbers
+const callback = (event: DirectorySyncEvent) => {
+  console.log(event);
+};
+
+await directorySyncController.sync(callback);
+```
+
+</TabItem>
+<TabItem value="02" label="Shell">
+
+```bash
+curl --request GET \
+  --url 'http://localhost:5225/api/scim/cron?apiKey=your-api-key' \
+```
+
+</TabItem>
+</Tabs>
+
+You'll ideally want to run the sync on a schedule (e.g. every 2 hours). You can use a cron job to invoke this URL on a schedule.
+
+See more information about the [Directory Sync Event](#handle-the-requests-from-identity-providers) below.
+
 ---
 
 ### Handle the Requests from Identity Providers

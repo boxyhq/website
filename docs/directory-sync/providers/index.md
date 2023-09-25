@@ -6,4 +6,4 @@ SAML Jackson supports the following directory providers:
 - [Okta SCIM v2.0](./okta)
 - [OneLogin SCIM v2.0](./onelogin)
 - [JumpCloud SCIM v2.0](./jumpcloud)
-- [Google](./google)
+- [Google Workspace](./google)

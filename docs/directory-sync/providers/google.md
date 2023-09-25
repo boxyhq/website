@@ -27,7 +27,7 @@ Give your credentials a name and select **Web application** as the **Application
 
 Add the following **Authorised redirect URIs** and then click **Create**.
 
-`https://<your-jackson-domain>/api/scim/oauth/callback`
+`https://<your-domain>/api/scim/oauth/callback`
 
 ![img alt](/img/dsync/providers/google/oauth/3.png)
 
@@ -45,8 +45,14 @@ See the [Environment Variables](/docs/directory-sync/api-reference#google-direct
 
 Once configuring Jackson, you can authenticate the tenants with Google OAuth and sync their Workspace directory.
 
-### Configure Jackson
+### Schedule Sync
 
-### Assign Users
+Jackson can be configured to sync your Google Workspace directory on a schedule (e.g. every 2 hours).
 
-### Push Groups
+Jackson service exposes the below API URL that can be called to trigger a sync. You can use a cron job to invoke this URL on a schedule.
+
+Depending on the number of Google directories you have, the sync can take a few minutes to complete.
+
+`https://<your-domain>/api/scim/cron`
+
+Learn more about [Google Directory Sync API](/docs/directory-sync/api-reference#4-sync-directory).
