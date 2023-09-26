@@ -24,7 +24,7 @@ Their mission is to connect one billion people through the use of their platform
 
 **Q:** Can you please share your role at Cal.com?
 
-**Bailey (Cal.com):** I’m the Co-founder and Co-CEO
+**Bailey (Cal.com):** I’m the Co-Founder and Co-CEO
 
 **Q:** What was the motivation at Cal.com to implement enterprise SSO & OIDC?
 
