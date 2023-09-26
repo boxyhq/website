@@ -17,7 +17,7 @@ function Team() {
 
           <Profile
             img={'/img/team/deepak.jpg'}
-            name={'Deepak Prabhakara: CEO & Co-founder'}
+            name={'Deepak Prabhakara: CEO & Co-Founder'}
             bio={`Deepak brings close to two decades of expertise in the design, architecture and development of complex software products. Prior to BoxyHQ he was the CTO at Red Sift, a fast-growing cybersecurity startup. Prior to that, he was the founder of ContentSift and the first technical hire at Apsmart (acquired by Thomson Reuters). He has led product and engineering teams at several startups and worked on the Opera Mini and Mobile browsers, a product loved and used by millions of users across the globe.`}
             subtitle={'Deepak and Debug are interchangeable.'}
             github={'https://github.com/deepakprabhakara'}
@@ -28,7 +28,7 @@ function Team() {
 
           <Profile
             img={'/img/team/sama.jpg'}
-            name={'Carlos Samame: COO & Co-founder'}
+            name={'Carlos Samame: COO & Co-Founder'}
             bio={`Sama has 15+ years of experience working at tech companies across different business areas and continents. Prior to BoxyHQ he was at Amazon Web Services leading AWS Connections in Europe, Middle East, and Africa, a program that connects enterprises with global startups. Before, Sama was the Head of Acceleration at Wayra UK (O2 - Telefonica), where he invested and managed a portfolio of 100+ startups. He was also the founder of Lava Innovation, and worked for Groupon and IBM.`}
             subtitle={'Sama’s superpower is solving problems.'}
             linkedin={'https://www.linkedin.com/in/samame/'}
