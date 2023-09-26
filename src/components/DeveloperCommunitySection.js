@@ -7,7 +7,7 @@ const DeveloperCommunitySection = () => {
   return (
     <SectionLayout
       title="Join our developer community"
-      description={`Open-source is in the ❤ of BoxyHQ.\nFollow us 🐦 on Twitter, ⭐ us on GitHub, and join our developer security community 🗣️ on Discord!`}
+      description={`Open-source is in the ❤ of BoxyHQ.\nFollow us on 𝕏 (Twitter), ⭐ us on GitHub, and join our developer security community 🗣️ on Discord!`}
     >
       <div
         style={{
