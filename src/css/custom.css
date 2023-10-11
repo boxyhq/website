@@ -67,7 +67,6 @@ html[data-theme='dark'] .header-github-link:before {
   border-radius: 5px;
   text-decoration: none !important;
   color: var(--ifm-color-content);
-  overflow: hidden;
 }
 
 .markdown h1:first-child {
