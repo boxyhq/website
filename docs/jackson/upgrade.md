@@ -1,5 +1,9 @@
 # Upgrade Guide
 
+## Upgrading to v1.14.0
+
+We have changed the schema bit to introduce a new column called `namespace` to speed up scans. You will have to run the migration scripts if you are manually managing migrations. For example PlanetScale where auto migrations are not supported due to a difference between MySQL and PlanetScale.
+
 ## Upgrading to v1.11.0
 
 We have patched the SSO connection (`/api/v1/connections`) DELETE handler to accept payload (client/Secret or tenant/product/strategy) as part of query parameters. Earlier, the payload was expected to be part of the body which is non-standard and is no longer supported in Next.js.
