@@ -197,6 +197,17 @@ If you are using a self-signed certificate then set this to `false`, otherwise i
 
 Default: `true`
 
+### **DB_MANUAL_MIGRATION**
+
+Set this to true to trigger execution of migration scripts when you use our Jackson docker image.
+
+Optionally you can run the npm scripts present in `./npm/package.json` to run db specific migrations.
+
+Make sure you have set the correct value for `DB_ENGINE` environment variable as the migration script checks that to run correct command and migration file.
+
+NPM library option: `db.manualMigration`
+Default: `false`
+
 ### **DB_TTL**
 
 TTL for the code, session and token stores (in seconds)
