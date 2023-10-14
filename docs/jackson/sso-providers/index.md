@@ -7,12 +7,14 @@ sidebar_label: SSO Providers
 
 SAML Jackson supports the following SSO providers:
 
-- [Auth0](./auth0.md)
+- [Generic SAML 2.0 Provider](./generic-saml.md)
 - [Azure](./azure.md)
-- [Google](./google.md)
-- [JumpCloud](./jumpcloud.md)
+- [Microsoft AD FS](./microsoft-adfs.md)
 - [Okta](./okta.md)
+- [Auth0](./auth0.md)
+- [Google](./google.md)
 - [OneLogin](./onelogin.md)
 - [PingOne](./pingone.md)
-- [Generic SAML](./generic-saml.md)
+- [JumpCloud](./jumpcloud.md)
+- [Rippling](./rippling.md)
 - [OpenID Connect Provider](./generic-oidc.md)

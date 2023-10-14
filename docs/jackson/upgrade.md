@@ -1,6 +1,26 @@
 # Upgrade Guide
 
-## Upgrading to 1.3.0
+## Upgrading to v1.11.0
+
+We have patched the SSO connection (`/api/v1/connections`) DELETE handler to accept payload (client/Secret or tenant/product/strategy) as part of query parameters. Earlier, the payload was expected to be part of the body which is non-standard and is no longer supported in Next.js.
+
+## Upgrading to v1.9.7
+
+We discovered and fixed a database connection leak introduced in v1.9.1, if you are using versions 1.9.1 to 1.9.6 then please upgrade to v1.9.7
+
+## Upgrading to v1.8.0
+
+1. We support bringing your own database (BYOD), this is a very tricky feature to support and we are still iterating on the schema which works as seamlessly as possible across the range of databases we support. Unfortunately, not everything goes smoothly here and we have encountered some length issues on newer versions of MySQL and MariaDB. The best way forward was to change the schema of the keys we use from length 1500 to 250 which is compatible with the newer versions. As a result, this will break your updates if you are using MySQL, MariaDB, or MS SQL Server. If you encounter this please reach out and we'll guide you through the update process. If you haven't gone into production yet then please update to v1.8.0 before you deploy it to production.
+
+## Upgrading to v1.3.10
+
+1. For users of our npm library, `directorySync` has been renamed to `directorySyncController`.
+
+## Upgrading to v1.3.6
+
+1. `samlSPConfig.get()` is now async since we introduced a global certificate instead of per tenant certificate to ease the SAML setup process.
+
+## Upgrading to v1.3.0
 
 1. Landed support for OpenID Identity Providers.
 2. Landed new API (`/api/v1/connections`) to support setting up both SAML/OIDC SSO Connections.

@@ -5,7 +5,9 @@ author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
 author_image_url: https://boxyhq.com/img/team/kiran.jpg
-tags: [enterprise-readiness, engineering, saml-jackson, directory-sync, scim]
+tags_disabled:
+  [enterprise-readiness, engineering, saml-jackson, directory-sync, scim]
+image: /img/blog/directory-sync-flow.png
 ---
 
 This article will walk you through everything you should know about SCIM and Directory Sync.
@@ -38,7 +40,7 @@ Directory sync allows programmatic access to the user identity data via a standa
 
 Directory sync implementation typically involves a client and a server. A client is an identity provider (IDP) with a directory of user identities. A service provider (SP) is an enterprise SaaS app that needs a subset of data from those identities.
 
-When you make changes to the user identities, the changes are automatically synced to the SP according to the SCIM protocol. SP can now process these data according to the way they want.
+When you make changes to the user identities, the changes are automatically synced to the SP according to the SCIM protocol. SP can now process this data according to the way they want.
 
 Some common user identity changes include adding new users to the organization, updating existing users, removing users from the organization, adding users to groups, etc.
 
@@ -65,7 +67,7 @@ BoxyHQ can help enterprises to add Directory Sync to any SaaS app with just a fe
 
 Enterprise SaaS apps can provide a Webhook endpoint to SAML Jackson, and Jackson will notify the Webhook every time a change occurs in the user identity data within the IDP.
 
-![Lego](/img/blog/directory-sync-flow.png)
+![Directory Sync Flow](/img/blog/directory-sync-flow.png)
 
 In short, Jackson hides all the complexities involved with Directory Sync implementation and makes your integration easier.
 

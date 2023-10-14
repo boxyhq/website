@@ -1,25 +1,23 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Profile from '../components/Profile';
+import TitleHeader from '../components/TitleHeader';
 
 const title = 'Team';
 const description =
-  'At BoxyHQ we are a diverse team of individuals from all over the world who share a passion for building a simpler and more open way to be enterprise-ready. ';
+  'At BoxyHQ we are a diverse team of individuals from all over the world who share a passion for building a simpler and more open way to be enterprise-ready.';
 
 function Team() {
   return (
     <Layout title={title} description={description}>
       <main className="container margin-vert--lg">
-        <div className="text--center margin-bottom--lg">
-          <h1>{title}</h1>
-        </div>
-
+        <TitleHeader title={title} />
         <div className="row">
           <div className="col col--1 margin-bottom--lg"></div>
 
           <Profile
             img={'/img/team/deepak.jpg'}
-            name={'Deepak Prabhakara: CEO & Co-founder'}
+            name={'Deepak Prabhakara: CEO & Co-Founder'}
             bio={`Deepak brings close to two decades of expertise in the design, architecture and development of complex software products. Prior to BoxyHQ he was the CTO at Red Sift, a fast-growing cybersecurity startup. Prior to that, he was the founder of ContentSift and the first technical hire at Apsmart (acquired by Thomson Reuters). He has led product and engineering teams at several startups and worked on the Opera Mini and Mobile browsers, a product loved and used by millions of users across the globe.`}
             subtitle={'Deepak and Debug are interchangeable.'}
             github={'https://github.com/deepakprabhakara'}
@@ -30,7 +28,7 @@ function Team() {
 
           <Profile
             img={'/img/team/sama.jpg'}
-            name={'Carlos Samame: COO & Co-founder'}
+            name={'Carlos Samame: COO & Co-Founder'}
             bio={`Sama has 15+ years of experience working at tech companies across different business areas and continents. Prior to BoxyHQ he was at Amazon Web Services leading AWS Connections in Europe, Middle East, and Africa, a program that connects enterprises with global startups. Before, Sama was the Head of Acceleration at Wayra UK (O2 - Telefonica), where he invested and managed a portfolio of 100+ startups. He was also the founder of Lava Innovation, and worked for Groupon and IBM.`}
             subtitle={'Sama’s superpower is solving problems.'}
             linkedin={'https://www.linkedin.com/in/samame/'}
@@ -66,7 +64,6 @@ function Team() {
 
         <div className="row">
           <div className="col col--1 margin-bottom--lg"></div>
-
           <Profile
             img={'/img/team/utkarsh.jpg'}
             name={'Utkarsh Mehta: Senior Software Engineer'}
@@ -74,6 +71,16 @@ function Team() {
             subtitle={`There is an easy way and a hard way. The hard part is finding the easy way.`}
             github={'https://github.com/ukrocks007'}
             twitter={'https://twitter.com/ukrocks007'}
+          ></Profile>
+          <div className="col col--2 margin-bottom--lg"></div>
+
+          <Profile
+            img={'/img/team/nathan.jpg'}
+            name={'Nathan Tarbert: Community Success Engineer'}
+            bio={`After a 20+ year career in the transportation industry, Nathan Tabert's love of programming led him to retool as a full-stack JavaScript developer. After building an award-winning kids' finance crypto app as part of a team hackathon, he found his way to application security and BoxyHQ. Now he gets to spearhead BoxyHQ's developer-first community outreach efforts and advocate for developers as part of their security and compliance journey.`}
+            subtitle={`Words of Advice: Friends don't let friends deploy on Fridays...`}
+            github={'https://github.com/NathanTarbert'}
+            twitter={'https://twitter.com/nathan_tarbert'}
           ></Profile>
           <div className="col col--1 margin-bottom--lg"></div>
         </div>

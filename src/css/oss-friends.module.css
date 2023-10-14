@@ -1,0 +1,16 @@
+.card {
+  height: 100%;
+}
+
+.cardDiv {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 996px) {
+  .cardDiv {
+    margin-bottom: 0;
+  }
+  .row {
+    margin-bottom: 20px;
+  }
+}

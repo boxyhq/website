@@ -15,11 +15,15 @@ The following guides provide information about the APIs and SDKs that are availa
 #### Properties
 
 - `name`: The name of the directory
-- `tenant`: The tenant ID of the tenant you want to create the directory for
-- `product`: The product ID of the product you want to create the directory for
+- `tenant`: The tenant ID of the tenant you want to create the directory for.
+- `product`: The product ID of the product you want to create the directory for.
 - `type`: The directory provider type. See the [Directory Providers](./providers) for more information.
-- `webhook_url`: The webhook URL to which the directory connection will POST the events
-- `webhook_secret`: The webhook secret used to sign the webhook payload
+- `webhook_url`: The webhook URL to which the directory connection will POST the events.
+- `webhook_secret`: The webhook secret used to sign the webhook payload.
+
+:::info
+The `tenant` and `product` should not contain the `:` character since we use it as a delimiter internally.
+:::
 
 ### Initialize Directory Sync
 
@@ -68,7 +72,7 @@ const { data, error } = await directorySyncController.directories.create({
 ```bash
 curl --request POST \
   --url http://localhost:5225/api/v1/directory-sync \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json' \
   --data '{
 	"name": "App",
@@ -110,9 +114,9 @@ curl --request POST \
 
 ---
 
-### List directories
+### Get directories
 
-List all the available directory connections.
+Get the list of directories for the given tenant and product. A tenant can have multiple directories for same or different products.
 
 #### Request
 
@@ -120,7 +124,14 @@ List all the available directory connections.
 <TabItem value="01" label="Node.js" default>
 
 ```javascript showLineNumbers
-const { data, error } = await directorySyncController.directories.list({});
+const tenant = 'boxyhq';
+const product = 'jackson';
+
+const { data, error } =
+  await directorySyncController.directories.getByTenantAndProduct(
+    tenant,
+    product
+  );
 ```
 
 </TabItem>
@@ -128,8 +139,8 @@ const { data, error } = await directorySyncController.directories.list({});
 
 ```bash
 curl --request GET \
-  --url http://localhost:5225/api/v1/directory-sync \
-  --header 'Authorization: Bearer secret' \
+  --url 'http://localhost:5225/api/v1/directory-sync?tenant=boxyhq&product=jackson' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -167,7 +178,7 @@ curl --request GET \
 
 ### Get a directory
 
-Get the details of a directory connection.
+Get the details of a directory by its unique id.
 
 #### Request
 
@@ -175,19 +186,6 @@ Get the details of a directory connection.
 <TabItem value="01" label="Node.js" default>
 
 ```javascript showLineNumbers
-// Get the directory by tenant and product
-
-const tenant = 'boxyhq';
-const product = 'jackson';
-
-const { data, error } =
-  await directorySyncController.directories.getByTenantAndProduct(
-    tenant,
-    product
-  );
-
-// Get the directory by id
-
 const directoryId = '58b5cd9dfaa39d47eb8f5f88631f9a629a232016';
 
 const { data, error } = await directorySyncController.directories.get(
@@ -199,20 +197,10 @@ const { data, error } = await directorySyncController.directories.get(
 <TabItem value="02" label="Shell">
 
 ```bash
-# Get the directory by tenant and product
-
 curl --request GET \
-  --url 'http://localhost:5225/api/v1/directory-sync?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --url 'http://localhost:5225/api/v1/directory-sync/58b5cd9dfaa39d47eb8f5f88631f9a629a232016' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
-
-# Get the directory by id
-
-curl --request GET \
-  --url http://localhost:5225/api/v1/directory-sync/58b5cd9dfaa39d47eb8f5f88631f9a629a232016 \
-  --header 'Authorization: Bearer secret' \
-  --header 'Content-Type: application/json'
-
 ```
 
 </TabItem>
@@ -260,7 +248,7 @@ const product = 'jackson';
 
 const { data, error } = await directorySyncController.users
   .setTenantAndProduct(tenant, product)
-  .list({});
+  .getAll();
 ```
 
 </TabItem>
@@ -269,7 +257,7 @@ const { data, error } = await directorySyncController.users
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/users?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -386,7 +374,7 @@ const users = await directorySyncController.users
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/users/ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -454,7 +442,7 @@ const product = 'jackson';
 
 const users = await directorySyncController.groups
   .setTenantAndProduct(tenant, product)
-  .list({});
+  .getAll();
 ```
 
 </TabItem>
@@ -463,7 +451,7 @@ const users = await directorySyncController.groups
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/groups?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -528,7 +516,7 @@ const users = await directorySyncController.groups
 ```bash
 curl --request GET \
   --url 'http://localhost:5225/api/v1/directory-sync/groups/44d08c0e-d185-4a5e-80a6-b47a717ffaa5?tenant=boxyhq&product=jackson' \
-  --header 'Authorization: Bearer secret' \
+  --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json'
 ```
 
@@ -597,9 +585,7 @@ Typically, you will want to add the following routes to your application to hand
 #### User Requests
 
 ```javascript showLineNumbers
-const { data, status } = await directorySyncController.requests.handle(
-  request
-);
+const { data, status } = await directorySyncController.requests.handle(request);
 ```
 
 The shape of the `request` should be as follows:
@@ -625,9 +611,7 @@ The shape of the `request` should be as follows:
 Handling the group requests is similar to handling the user requests.
 
 ```javascript showLineNumbers
-const { data, status } = await directorySyncController.requests.handle(
-  request
-);
+const { data, status } = await directorySyncController.requests.handle(request);
 ```
 
 The shape of the `request` should be as follows:

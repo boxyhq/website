@@ -6,11 +6,14 @@ Please check the [Environment Variables](./deploy/env-variables.md#opentelemetry
 
 ## Metrics
 
-| Name                        | Description                              | Type  |
-| --------------------------- | ---------------------------------------- | ----- |
-| `jackson.connection.create` | Number of SSO Connection create requests | Count |
-| `jackson.connection.get`    | Number of SSO Connection get requests    | Count |
-| `jackson.connection.delete` | Number of SSO Connection delete requests | Count |
-| `jackson.oauth.authorize`   | Number of oauth authorize requests       | Count |
-| `jackson.oauth.token`       | Number of oauth token requests           | Count |
-| `jackson.oauth.userinfo`    | Number of oauth user info requests       | Count |
+| Name                              | Description                                         | Type  |
+| --------------------------------- | --------------------------------------------------- | ----- |
+| `jackson.connection.create`       | Number of SSO Connection create requests            | Count |
+| `jackson.connection.get`          | Number of SSO Connection get requests               | Count |
+| `jackson.connection.delete`       | Number of SSO Connection delete requests            | Count |
+| `jackson.oauth.authorize`         | Number of oauth authorize requests                  | Count |
+| `jackson.oauth.token`             | Number of oauth token requests                      | Count |
+| `jackson.oauth.userinfo`          | Number of oauth user info requests                  | Count |
+| `jackson.dsync.connection.create` | Number of directory sync connection create requests | Count |
+| `jackson.dsync.connection.get`    | Number of directory sync connection get requests    | Count |
+| `jackson.dsync.connection.delete` | Number of directory sync connection delete requests | Count |

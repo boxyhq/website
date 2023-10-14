@@ -1,362 +1,290 @@
 ---
-title: Connect the SAML SSO to a Next.js app
+title: Add SAML SSO to Next.js App with BoxyHQ
+description: Add SAML SSO to Next.js App with BoxyHQ
 sidebar_label: Next.js
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Next.js
+# Add SAML SSO to Next.js App
 
-In this guide, you'll learn to authenticate users in your Next.js apps using SAML SSO. We'll use NextAuth.js which is complete open source authentication solution for Next.js applications.
+This guide assumes that you have a Next.js app and want to enable SAML Single Sign-On authentication for your enterprise customers. By the end of this guide, you'll have an app that allows you to authenticate the users using SAML Single Sign-On.
 
-NextAuth support SAML Jackson as an OAuth Provider in the name **BoxyHQ SAML Provider**.
+Visit the [GitHub repository](https://github.com/boxyhq/jackson) to view **BoxyHQ's SAML SSO.**
 
-Visit the [GitHub repo](https://github.com/boxyhq/jackson-examples/tree/main/apps/next-auth) to see the source code for the Next.js SAML SSO integration.
+Visit the [GitHub repository](https://github.com/boxyhq/saas-starter-kit) to view the source code for the **Next.js SAML SSO integration.**
 
-## Add SAML SSO to your app
+Integrating SAML SSO into an app involves the following steps.
 
-Let’s start by building the SAML SSO authentication workflow into your Next.js app.
+- Configure SAML Single Sign-On
+- Authenticate with SAML Single Sign-On
 
-### Project Setup
+## Configure SAML Single Sign-On
 
-We'll use our [Next.js boilerplate](https://github.com/boxyhq/jackson-nextjs) and integrate the SAML SSO into it.
+This step allows your tenants to configure SAML connections for their users. Read the following guides to understand more about this.
 
-The Next.js boilerplate comes with 3 default routes:
+- [UI Best Practices for Configuring SAML Single Sign-On](/guides/jackson/configuring-saml-sso)
+- [SSO Connection API](/docs/jackson/sso-flow/)
 
-- `index.tsx` : A static home page
-- `login.tsx` : A simple login page
-- `me.tsx` : A route to display user profile
+## Authenticate with SAML Single Sign-On
 
-Launch a terminal and clone the GitHub repo:
+Once you add a SAML connection, the app can use this SAML connection to initiate the SSO authentication flow using SAML Jackson. The following sections focus more on the SSO authentication side.
 
-```sh
-git clone https://github.com/boxyhq/jackson-nextjs
+### Install SAML Jackson
+
+To get started with SAML Jackson, use the Node Package Manager to add the package to your project's dependencies.
+
+```bash
+npm i --save @boxyhq/saml-jackson
 ```
 
-```sh
-cd jackson-nextjs
+### Setup SAML Jackson
+
+Setup the SAML Jackson to work with Next.js app.
+
+```bash title=".env"
+NEXTAUTH_URL=https://your-app.com
+NEXTAUTH_SECRET= #A random string is used to hash tokens, sign/encrypt cookies and generate cryptographic keys.
 ```
 
-Now, install the dependencies:
+```js title="lib/jackson.ts"
+import jackson, {
+  type IOAuthController,
+  type JacksonOption,
+} from "@boxyhq/saml-jackson";
 
-```sh
-npm install
+const samlAudience = "https://saml.boxyhq.com";
+const samlPath = "/api/oauth/saml";
+
+const opts: JacksonOption = {
+  externalUrl: `${process.env.NEXTAUTH_URL}`,
+  samlAudience,
+  samlPath,
+  db: {
+    engine: "sql",
+    type: "postgres",
+    url: "postgres://postgres:postgres@localhost:5432/postgres",
+  },
+};
+
+let oauthController: IOAuthController;
+
+const g = global as any;
+
+export default async function init() {
+  if (!g.oauthController) {
+    const ret = await jackson(opts);
+
+    oauthController = ret.oauthController;
+    g.oauthController = oauthController;
+  } else {
+    oauthController = g.oauthController;
+  }
+
+  return {
+    oauthController,
+  };
+}
 ```
 
-### Install NextAuth.js
+`samlPath` is where the identity provider POST the SAML response after authenticating the user.
 
-Now let's install the NextAuth.js
+We'll use [NextAuth.js](https://next-auth.js.org/) for the authentication. NextAuth is a complete open-source authentication solution for Next.js applications.
 
-```sh
-npm install --save next-auth
+```bash
+npm i --save next-auth
 ```
 
-### Configure BoxyHQ SAML Provider
+NextAuth ships with BoxyHQ SAML `boxyhq-saml` as a built-in SAML authentication provider. We'll use this provider to authenticate the users.
 
-To add NextAuth.js to your app, create a file called `[...nextauth].ts` in `pages/api/auth` and configure the [BoxyHQ SAML Provider](https://next-auth.js.org/providers/boxyhq-saml).
-
-<Tabs>
-<TabItem value="01" label="With Tenant and Product" default>
-
-```javascript title="pages/api/auth/[...nextauth].ts"
-import NextAuth from 'next-auth';
+```js title="pages/api/auth/[...nextauth].ts"
+import NextAuth, { type NextAuthOptions } from 'next-auth';
 import BoxyHQSAMLProvider from 'next-auth/providers/boxyhq-saml';
 
-const issuer = ''; // The issuer of the SAML request
-
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     BoxyHQSAMLProvider({
-      issuer: issuer,
+      authorization: { params: { scope: '' } },
+      issuer: `${process.env.NEXTAUTH_URL}`,
       clientId: 'dummy',
       clientSecret: 'dummy',
+      httpOptions: {
+        timeout: 30000,
+      },
     }),
   ],
-});
+  session: {
+    strategy: 'jwt',
+  },
+};
 
-// The `dummy` here is necessary since we'll pass `tenant` and `product` as custom attributes on the client-side.
+export default NextAuth(authOptions);
 ```
 
-</TabItem>
+### Make Authentication Request
 
-<TabItem value="02" label="With Client ID and Secret">
+Let's add a route to begin the authenticate flow; this route initiates the SAML SSO flow by redirecting the users to their configured Identity Provider.
 
-```javascript title="pages/api/auth/[...nextauth].ts"
-import NextAuth from 'next-auth';
-import BoxyHQSAMLProvider from 'next-auth/providers/boxyhq-saml';
+```js title="pages/api/oauth/authorize.ts"
+import type { NextApiRequest, NextApiResponse } from "next";
+import type { OAuthReq } from "@boxyhq/saml-jackson";
 
-const issuer = ''; // The issuer of the SAML request
-const clientID = ''; // The client ID of your SAML configuration
-const clientSecret = ''; // The client secret of your SAML configuration
+import jackson from "../../../../lib/jackson";
 
-export default NextAuth({
-  providers: [
-    BoxyHQSAMLProvider({
-      issuer: issuer,
-      clientId: clientID,
-      clientSecret: clientSecret,
-    }),
-  ],
-});
-```
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { oauthController } = await jackson();
 
-</TabItem>
-
-</Tabs>
-
-You've now setup the server side of your Next.js application.
-
-### Configure Shared Session
-
-To setup the client side, wrap your `pages/_app.ts` component in the `SessionProvider` component.
-
-This allows other components that call `useSession()` anywhere in your application to access the `session` object.
-
-```javascript title="pages/_app.ts"
-import type { AppProps } from 'next/app';
-import Navbar from '../components/Navbar';
-import '../styles/globals.css';
-import { SessionProvider } from 'next-auth/react';
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    // highlight-next-line
-    <SessionProvider session={pageProps.session}>
-      <Navbar />
-      <Component {...pageProps} />
-      // highlight-next-line
-    </SessionProvider>
+  const { redirect_url } = await oauthController.authorize(
+    req.query as unknown as OAuthReq
   );
+
+  return res.redirect(302, redirect_url as string);
 }
-export default MyApp;
 ```
 
-### Add Login Component
+### Receives SAML Response
 
-Let's wire up the NextAuth on the client side.
+After successful authentication, Identity Provider POST the SAML response to the Assertion Consumer Service (ACS) URL.
 
-Open the `pages/login.tsx` and make the following changes.
+Let's add a route to handle the SAML response. Ensure the route matches the value of the `samlPath` you configured while initializing the SAML Jackson library and should be able to receives POST request.
 
-<Tabs>
-<TabItem value="01" label="With Tenant and Product" default>
+```js title="pages/api/oauth/saml.ts"
+import type { NextApiRequest, NextApiResponse } from "next";
 
-Here we'll use domain of the user entered email address to figure out which tenant they belong to. You can also use a unique tenant ID (string) for this, typically some kind of account or organization ID.
+import jackson from "../../../../lib/jackson";
 
-```javascript title="pages/login.tsx"
-import type { NextPage } from 'next';
-import Container from '../components/Container';
-import { FormEvent, useState } from 'react';
-// highlight-next-line
-import { signIn } from 'next-auth/react';
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { oauthController } = await jackson();
 
-const Login: NextPage = () => {
-  const [state, setState] = useState({
-    email: '',
+  const { RelayState, SAMLResponse } = req.body;
+
+  const { redirect_url } = await oauthController.samlResponse({
+    RelayState,
+    SAMLResponse,
   });
 
-  const handleChange = (e: FormEvent<HTMLInputElement>): void => {
-    const { name, value } = e.currentTarget;
-
-    setState({
-      ...state,
-      [name]: value,
-    });
-  };
-
-  // highlight-start
-  const loginUser = async (event: FormEvent) => {
-    event.preventDefault();
-
-    const tenant = state.email.split('@')[1];
-    const product = 'flex';
-
-    signIn('boxyhq-saml', { callbackUrl: '/me' }, { tenant, product });
-  };
-  // highlight-end
-
-  return (
-    <Container title="Sign in">
-      <div className="flex flex-col py-20 max-w-md mx-auto">
-        <h2 className="text-center text-3xl mt-5">Log in to App</h2>
-        <p className="text-center mt-4 font-medium text-gray-500">
-          Click `Continue with SAML SSO` and you will be redirected to your
-          third-party authentication provider to finish authenticating.
-        </p>
-        <div className="mt-3 mx-auto w-full max-w-sm">
-          <div className="bg-white py-6 px-6 rounded">
-            <form className="space-y-6" onSubmit={loginUser}>
-              <div>
-                <label htmlFor="email" className="block text-sm text-gray-600">
-                  Work Email
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="username@boxyhq.com"
-                    className="appearance-none text-sm block w-full border border-gray-300 rounded placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
-                    value={state.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="px-4 py-2 w-full border border-transparent rounded text-sm font-medium text-white bg-indigo-600 focus:outline-none"
-                >
-                  Continue with SAML SSO
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </Container>
-  );
-};
-
-export default Login;
+  return res.redirect(302, redirect_url as string);
+}
 ```
 
-</TabItem>
+### Request Access Token
 
-<TabItem value="02" label="With Client ID and Secret">
+Let's add another route for receiving the callback after the authentication.
 
-```javascript title="pages/login.tsx"
+The NextAuth requests an `access_token` by passing the authorization `code` along with authentication details, including the `grant_type`, `redirect_uri`, and `code_verifier`.
+
+```js title="pages/api/oauth/token.ts"
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+import jackson from '../../../../lib/jackson';
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { oauthController } = await jackson();
+
+  const response = await oauthController.token(req.body);
+
+  return res.json(response);
+}
+```
+
+### Fetch User Profile
+
+Once the `access_token` has been fetched, NextAuth can use it to retrieve the user profile from the Identity Provider. The `userInfo` method returns a response containing the user profile if the authorization is valid.
+
+```js title="pages/api/oauth/userinfo.ts"
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+import jackson from '../../../../lib/jackson';
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { oauthController } = await jackson();
+
+  const authHeader = req.headers['authorization'];
+
+  if (!authHeader) {
+    throw new Error('Unauthorized');
+  }
+
+  const token = authHeader.split(' ')[1];
+
+  const user = await oauthController.userInfo(token);
+
+  return res.json(user);
+}
+```
+
+The entire response will look something like this:
+
+```json
+{
+  "id":"<id from the Identity Provider>",
+  "email": "jackson@coolstartup.com",
+  "firstName": "SAML",
+  "lastName": "Jackson",
+  "requested": {
+    "tenant": "<tenant>",
+    "product": "<product>",
+    "client_id": "<client_id>",
+    "state": "<state>"
+  },
+  "raw": {
+    ...
+  }
+}
+```
+
+### Authenticate User
+
+Once the user has been retrieved from the Identity Provider, you may determine if the user exists in your application and authenticate the user. If the user does not exist in your application, you will typically create a new record in your database to represent the user.
+
+### Starts OAuth sign-in flow
+
+You can use NextAuth's `signIn` method to initiate the authentication with `boxyhq-saml` provider.
+
+You can pass the `tenant` and `product` as additional parameters to the `/api/oauth/authorize` endpoint through the third argument of `signIn()`.
+
+:::info
+Make sure you add a valid SAML connection for the tenant and product combination. Otherwise, the authentication will fail. Read about creating SAML connections [here](/docs/jackson/deploy/npm-library#create-saml-connection)
+:::
+
+For this example app to work, you need to add a SAML connection for the tenant `boxyhq.com` and product `saml-demo.boxyhq.com` before you can authenticate the users.
+
+```js title="pages/login.tsx"
 import type { NextPage } from 'next';
-import Container from '../components/Container';
-import { FormEvent, useState } from 'react';
-// highlight-next-line
-import { signIn } from 'next-auth/react';
+import { useSession, signIn } from 'next-auth/react';
 
 const Login: NextPage = () => {
-  const [state, setState] = useState({
-    email: '',
-  });
-
-  const handleChange = (e: FormEvent<HTMLInputElement>): void => {
-    const { name, value } = e.currentTarget;
-
-    setState({
-      ...state,
-      [name]: value,
-    });
-  };
-
-  // highlight-start
-  const loginUser = async (event: FormEvent) => {
-    event.preventDefault();
-
-    signIn('boxyhq-saml', { callbackUrl: '/me' });
-  };
-  // highlight-end
-
-  return (
-    <Container title="Sign in">
-      <div className="flex flex-col py-20 max-w-md mx-auto">
-        <h2 className="text-center text-3xl mt-5">Log in to App</h2>
-        <p className="text-center mt-4 font-medium text-gray-500">
-          Click `Continue with SAML SSO` and you will be redirected to your
-          third-party authentication provider to finish authenticating.
-        </p>
-        <div className="mt-3 mx-auto w-full max-w-sm">
-          <div className="bg-white py-6 px-6 rounded">
-            <form className="space-y-6" onSubmit={loginUser}>
-              <div>
-                <label htmlFor="email" className="block text-sm text-gray-600">
-                  Work Email
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="username@boxyhq.com"
-                    className="appearance-none text-sm block w-full border border-gray-300 rounded placeholder-gray-400 focus:outline-none focus:ring-indigo-500"
-                    value={state.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="px-4 py-2 w-full border border-transparent rounded text-sm font-medium text-white bg-indigo-600 focus:outline-none"
-                >
-                  Continue with SAML SSO
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </Container>
-  );
-};
-
-export default Login;
-```
-
-</TabItem>
-
-</Tabs>
-
-### Add User Profile Component
-
-The `useSession()` React Hook in the NextAuth.js client is the easiest way to check if someone is signed in.
-
-Open the `pages/me.tsx` and make the following changes.
-
-```javascript title="pages/me.tsx"
-import type { NextPage } from 'next';
-import Link from 'next/link';
-import Container from '../components/Container';
-// highlight-next-line
-import { useSession } from 'next-auth/react';
-
-const Me: NextPage = () => {
-  // highlight-start
   const { data: session, status } = useSession();
 
-  // You can use the `session` information for further business logic.
+  if (status === 'loading') {
+    return <>Loading...</>;
+  }
 
   if (status === 'authenticated') {
-    return (
-      <Container title="Me">
-        <div className="space-y-4">
-          <h2 className="text-2xl mb-5">User Profile</h2>
-          <p>Name: {session.user?.name}</p>
-          <p>Email: {session.user?.email}</p>
-        </div>
-      </Container>
-    );
+    return <>Authenticated</>;
   }
-  // highlight-end
 
-  return (
-    <Container title="Me">
-      <div className="space-y-4">
-        <h2 className="text-2xl">Access Denied</h2>
-        <p>
-          <Link href="/login">
-            <a className="underline underline-offset-4">
-              You must be signed in to view this page
-            </a>
-          </Link>
-        </p>
-      </div>
-    </Container>
-  );
+  // Starts OAuth sign-in flow
+  signIn('boxyhq-saml', undefined, {
+    tenant: 'boxyhq.com',
+    product: 'saml-demo.boxyhq.com',
+  });
+
+  return <>Unauthenticated</>;
 };
 
-export default Me;
+export default Login;
 ```
-
-## Next steps
-
-- Got a question? [Ask here](https://discord.gg/uyb7pYt4Pa)

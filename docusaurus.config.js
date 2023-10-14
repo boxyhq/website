@@ -2,7 +2,7 @@ const copyright = '2021-present © BoxyHQ Inc.';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Enterprise Readiness made simple',
+  title: 'Security Building Blocks for Developers',
   tagline:
     'BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes. Open source and free.',
   url: 'https://boxyhq.com',
@@ -12,14 +12,13 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
-  scripts: [
-    {
-      src: 'https://cmp.osano.com/169lWRSfch3C32VM2/2cd324ff-6a09-4e61-94fa-6af31f004e67/osano.js',
-      defer: true,
-    },
-  ],
+  scripts: [],
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ['php'],
+    },
     zoom: {
       selector: '.markdown :not(em) > img',
       config: {
@@ -32,7 +31,7 @@ module.exports = {
     announcementBar: {
       id: 'announcement-bar',
       content:
-        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star us on GitHub</a>',
+        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star Enterprise SSO on GitHub</a>     <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/retracedhq/retraced">⭐ Star Audit Logs on GitHub</a> <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/saas-starter-kit">⭐ Star SaaS Starter Kit on GitHub</a> ',
       isCloseable: false,
     },
     image: 'img/website-preview-image.png',
@@ -51,13 +50,95 @@ module.exports = {
         srcDark: 'img/logo-dark.png',
       },
       items: [
-        { to: '/blog', label: 'Blog' },
-        { to: '/careers', label: 'Careers' },
-        { to: '/team', label: 'Team' },
-        { to: '/docs', label: 'Docs' },
-        { to: '/guides', label: 'Guides' },
         {
-          href: 'https://github.com/boxyhq',
+          label: 'Products',
+          type: 'dropdown',
+          items: [
+            {
+              to: '/enterprise-sso',
+              label: 'Enterprise SSO',
+            },
+            {
+              to: '/directory-sync',
+              label: 'Directory Sync',
+            },
+            {
+              to: '/audit-logs',
+              label: 'Audit Logs',
+            },
+            {
+              to: '/privacy-vault',
+              label: 'Privacy Vault',
+            },
+            { to: '/saas-registration', label: 'SaaS Early Access' },
+            {
+              href: 'https://github.com/boxyhq/saas-starter-kit',
+              label: 'Enterprise SaaS Starter Kit',
+            },
+          ],
+        },
+        {
+          label: 'Developers',
+          type: 'dropdown',
+          items: [
+            { to: '/docs', label: 'Docs' },
+            { to: '/guides', label: 'Guides' },
+            { to: '/enterprise-readiness', label: 'Enterprise Readiness' },
+            {
+              href: 'https://mocksaml.com',
+              label: 'Mock SAML',
+            },
+            {
+              href: 'https://awesome-oss-devsec.boxyhq.com',
+              label: 'Developer Security Tools',
+            },
+            {
+              href: 'https://github.com/boxyhq/saas-starter-kit',
+              label: 'Enterprise SaaS Starter Kit',
+            },
+          ],
+        },
+        {
+          label: 'Blog & Resources',
+          type: 'dropdown',
+          items: [
+            {
+              to: '/blog',
+              label: 'Blog',
+            },
+            {
+              to: '/success-stories',
+              label: 'Success Stories',
+            },
+            {
+              to: '/developer-first-security-week',
+              label: 'Events',
+            },
+          ],
+        },
+
+        { to: '/pricing', label: 'Pricing' },
+        {
+          label: 'Company',
+          type: 'dropdown',
+          position: 'right',
+          items: [
+            {
+              to: '/careers',
+              label: 'Careers',
+            },
+            {
+              to: '/team',
+              label: 'Team',
+            },
+            {
+              to: '/pledge',
+              label: 'Pledge',
+            },
+          ],
+        },
+        {
+          href: 'https://github.com/boxyhq/jackson',
           position: 'right',
           className: 'header-github-link',
         },
@@ -71,19 +152,40 @@ module.exports = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/boxyhq',
+              href: 'https://github.com/boxyhq/jackson',
             },
             {
               label: 'Discord',
               href: 'https://discord.boxyhq.com',
             },
             {
-              label: 'Aviyel',
-              href: 'https://aviyel.com/projects/11/boxyhq',
-            },
-            {
               label: 'Twitter',
               href: 'https://twitter.com/boxyhq',
+            },
+            {
+              label: 'OSS Friends',
+              href: 'https://boxyhq.com/oss-friends',
+            },
+            {
+              label: 'Developer-First Security Week',
+              href: 'https://boxyhq.com/developer-first-security-week',
+            },
+          ],
+        },
+        {
+          title: 'Social',
+          items: [
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/boxyhq',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/boxyhq',
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/boxyhq',
             },
           ],
         },
@@ -128,14 +230,16 @@ module.exports = {
         blog: {
           blogTitle: 'Blog',
           blogDescription:
-            'The BoxyHQ blog is an open discussion of thoughts from our team. We discuss everything from what SAML is to how we build certain elements of the products.',
+            'The BoxyHQ blog is where our team shares our thoughts and ideas about everything from our products to industry news and insights. We also welcome guest posts so please do get in touch if you have any thoughts you would like to share on our blog.',
           showReadingTime: true,
           feedOptions: {
             type: 'all',
             copyright,
           },
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+
+          blogSidebarTitle: 'Recent posts',
+          blogSidebarCount: 5,
+          postsPerPage: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -180,7 +284,55 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars_guides.js'),
       },
     ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'success-stories',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'success-stories',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './success-stories',
+        blogTitle: 'Success Stories',
+        blogDescription: '',
+      },
+    ],
     ['@cmfcmf/docusaurus-search-local', {}],
     require.resolve('docusaurus-plugin-image-zoom'),
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/docs/jackson/admin-ui',
+            to: '/docs/admin-portal/enterprise-sso',
+          },
+          {
+            from: '/docs/directory-sync/admin-ui',
+            to: '/docs/admin-portal/directory-sync',
+          },
+          {
+            from: '/docs/jackson/saml-flow',
+            to: '/docs/jackson/sso-flow',
+          },
+          {
+            from: '/docs/jackson/configure-saml-idp',
+            to: '/docs/jackson/sso-providers',
+          },
+          {
+            from: '/docs/jackson/deploy/pre-loaded-configuration',
+            to: '/docs/jackson/deploy/pre-loaded-connections',
+          },
+        ],
+      },
+    ],
+    './plugins/fetch-oss-friends',
   ],
 };
