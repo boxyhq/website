@@ -25,7 +25,7 @@ const FALLBACK_DATA = [
   {
     name: 'Erxes',
     description:
-      'The Open-Source HubSpot Alternative. A single XOS enables to create unique and life-changing experiences that work for all types of business.',
+      'The Open-Source HubSpot Alternative. A single XOS enables users to create unique and life-changing experiences that work for all types of business.',
     href: 'https://erxes.io',
   },
   {
@@ -37,7 +37,7 @@ const FALLBACK_DATA = [
   {
     name: 'Ghostfolio',
     description:
-      'Ghostfolio is a privacy-first, open source dashboard for your personal finances. Designed to simplify asset tracking and empower informed investment decisions.',
+      'Ghostfolio is a privacy-first, open-source dashboard for your personal finances. Designed to simplify asset tracking and empower informed investment decisions.',
     href: 'https://ghostfol.io',
   },
   {
@@ -133,6 +133,12 @@ const FALLBACK_DATA = [
     description:
       'The .NET Web Framework for Makers. Build production ready, full-stack web applications fast without sweating the small stuff.',
     href: 'https://spark-framework.net',
+  },
+  {
+    name: 'Dub',
+    description:
+      'Dub is an open-source link management tool for modern marketing teams to create, share, and track short links.',
+    href: 'https://dub.co',
   },
 ];
 
