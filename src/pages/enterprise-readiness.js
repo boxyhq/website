@@ -29,7 +29,7 @@ const EnterpriseReadiness = () => {
           },
           {
             title: 'Book a demo',
-            href: 'https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655',
+            href: 'https://cal.com/deepak-boxyhq/demo',
             className: 'button--primary button--outline',
           },
         ]}
@@ -75,7 +75,7 @@ const EnterpriseReadiness = () => {
                     <div className="card__footer">
                       <Link
                         className={clsx('button button--primary button--block')}
-                        href="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
+                        href="https://cal.com/deepak-boxyhq/demo"
                       >
                         Book a free enterprise-readiness session
                       </Link>

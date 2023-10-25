@@ -31,7 +31,7 @@ const PrivacyVault = () => {
         buttons={[
           {
             title: 'Book an exploration call',
-            href: 'https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655',
+            href: 'https://cal.com/deepak-boxyhq/demo',
             className: 'button--primary',
           },
           {
@@ -102,7 +102,7 @@ const PrivacyVault = () => {
 
       <FeatureSection
         title="Benefits"
-        btnLink="https://meetings.hubspot.com/deepakprab/demo?__hstc=213510283.9a563789bb583fca1e9fb20a629c5c94.1651597904536.1664893584285.1664895920328.169&__hssc=213510283.1.1664895920328&__hsfp=498882655"
+        btnLink="https://cal.com/deepak-boxyhq/demo"
         btnText="Speak to an expert"
         image={Icon2}
         direction="left"
