@@ -13,7 +13,7 @@ image: /img/blog/enterprise-ready-saas.jpg
 
 Discover the Game-Changing Power of an Enterprise-Ready Solution that will help you save thousands of dollars in development costs.
 
-Are you a SaaS founder striving for accelerated success in the highly competitive landscape? Look no further! At BoxyHQ we've curated a revolutionary tool that will supercharge your SaaS journey like never before. Introducing the Best Free and Open-Source SaaS Starter Kit, designed to ignite your growth and transform your startup dreams into reality.
+Are you a SaaS founder striving for accelerated success in the highly competitive landscape? Look no further! At BoxyHQ we've curated a revolutionary tool that will supercharge your SaaS journey like never before. Introducing the Best Free and Open-Source [SaaS Starter Kit](https://github.com/boxyhq/saas-starter-kit), designed to ignite your growth and transform your startup dreams into reality.
 
 ## Enterprise-Ready Powerhouse
 
