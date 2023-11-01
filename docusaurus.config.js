@@ -1,4 +1,5 @@
 const copyright = '2021-present © BoxyHQ Inc.';
+import { themes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -16,7 +17,7 @@ module.exports = {
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
+      theme: themes.dracula,
       additionalLanguages: ['php'],
     },
     zoom: {
