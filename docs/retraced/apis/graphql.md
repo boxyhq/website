@@ -2,12 +2,12 @@
 
 The recommended way to search events using an API is to POST your query and variables to the appropriate Retraced GraphQL endpoint.
 
-| API        | Endpoint                                                                                                                                                                                           |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Publisher  | [http://localhost:3000/auditlog/publisher/v1/project/{projectId}/graphql](http://localhost:3000/auditlog/publisher/v1/project/{projectId}/graphql)                                                 |
-| Admin      | [http://localhost:3000/auditlog/admin/v1/project/{projectId}/environment/{environmentId}/graphql](http://localhost:3000/auditlog/admin/v1/project/{projectId}/environment/{environmentId}/graphql) |
-| Enterprise | [http://localhost:3000/auditlog/enterprise/v1/graphql](http://localhost:3000/auditlog/enterprise/v1/graphql)                                                                                       |
-| Viewer     | [http://localhost:3000/auditlog/viewer/v1/graphql](http://localhost:3000/auditlog/viewer/v1/graphql)                                                                                               |
+| API        | Endpoint                                                                                            |
+| ---------- | --------------------------------------------------------------------------------------------------- |
+| Publisher  | `http://localhost:3000/auditlog/publisher/v1/project/{project_id}/graphql`                          |
+| Admin      | `http://localhost:3000/auditlog/admin/v1/project/{project_id}/environment/{environment_id}/graphql` |
+| Enterprise | `http://localhost:3000/auditlog/enterprise/v1/graphql`                                              |
+| Viewer     | `http://localhost:3000/auditlog/viewer/v1/graphql`                                                  |
 
 ## Search
 
