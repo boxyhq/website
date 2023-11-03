@@ -74,7 +74,8 @@ They look for quite a few standards to be met in a solution provider 👇🏻
 
 ![enterprise-ready1](/img/blog/scoutflo-blog-enterprise-ready1.webp)
 
-<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> 
+<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>
+Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> 
 </div>
 
 ![enterprise-ready2](/img/blog/scoutflo-blog-enterprise-ready2.webp)

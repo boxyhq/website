@@ -207,7 +207,7 @@ Jackson also supports the [OIDC flow](https://openid.net/specs/openid-connect-co
 
 Jackson has been designed to abstract the underlying SAML/OIDC login flow as a pure OAuth 2.0 flow. This means it's compatible with any standard OAuth 2.0 library out there, both client-side and server-side. It is important to remember that SSO Connection is configured per customer unlike OAuth 2.0 where you can have a single OAuth app supporting logins for all customers.
 
-Jackson also supports the PKCE authorization flow (<https://oauth.net/2/pkce/>), so you can protect your SPAs.
+Jackson also supports the [PKCE authorization flow](https://oauth.net/2/pkce/), so you can protect your SPAs.
 
 If for any reason you need to implement the flow on your own, the steps are outlined below:
 
