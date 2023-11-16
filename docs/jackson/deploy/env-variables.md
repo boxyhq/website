@@ -12,10 +12,8 @@ The env vars are only applicable to the Jackson service. If you are using the np
 
 ### **HOSTNAME**
 
-The container network that the service starts listening on. 
-
-If you are planning to use Docker health check like `wget -q --spider http://localhost:{PORT}/api/health || exit 1` you will need to set `HOSTNAME=0.0.0.0` to be able to reach the service on localhost.
-Check [NextJS Standalone Good to know](https://nextjs.org/docs/pages/api-reference/next-config-js/output#automatically-copying-traced-files)
+If you need to bind to a specific hostname, you can define `HOSTNAME` environment variable. 
+For example, if you are planning to use a Docker health check like `wget -q --spider http://localhost:{PORT}/api/health || exit 1` set `HOSTNAME=0.0.0.0` to listen to localhost.
 
 ### **HOST_URL**
 
