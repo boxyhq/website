@@ -11,7 +11,7 @@ If you don’t have a mogenius account, create one [here](https://studio.mogeniu
 
 ## Deploy SAML Jackson
 
-- Head over to [mogenius](https://docs.mogenius.com/services/various/saml-jackson) and follow the instructions to deploy SAML Jackson as a docker container.
+- Head over to [mogenius](https://docs.mogenius.com/templates-and-services/various/saml-jackson) and follow the instructions to deploy SAML Jackson as a docker container.
 - You should deploy the latest version from [Docker Hub](https://hub.docker.com/r/boxyhq/jackson/tags) and please keep your image up to date for additional security.
 
 ### Verify deployment
