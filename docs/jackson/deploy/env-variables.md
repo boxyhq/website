@@ -10,6 +10,11 @@ The env vars are only applicable to the Jackson service. If you are using the np
 
 ## General configuration
 
+### **HOSTNAME**
+
+If you need to bind to a specific hostname, you can define `HOSTNAME` environment variable. 
+For example, if you are planning to use a Docker health check like `wget -q --spider http://localhost:{PORT}/api/health || exit 1` set `HOSTNAME=0.0.0.0` to listen to localhost.
+
 ### **HOST_URL**
 
 The URL to bind to.
