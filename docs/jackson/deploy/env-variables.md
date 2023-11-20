@@ -10,6 +10,11 @@ The env vars are only applicable to the Jackson service. If you are using the np
 
 ## General configuration
 
+### **HOSTNAME**
+
+If you need to bind to a specific hostname, you can define `HOSTNAME` environment variable. 
+For example, if you are planning to use a Docker health check like `wget -q --spider http://localhost:{PORT}/api/health || exit 1` set `HOSTNAME=0.0.0.0` to listen to localhost.
+
 ### **HOST_URL**
 
 The URL to bind to.
@@ -196,6 +201,17 @@ Default: `false`
 If you are using a self-signed certificate then set this to `false`, otherwise it will be rejected due to Certificate Authority checks.
 
 Default: `true`
+
+### **DB_MANUAL_MIGRATION**
+
+Set this to true to trigger execution of migration scripts when you use our Jackson docker image.
+
+Optionally you can run the npm scripts present in `./npm/package.json` to run db specific migrations.
+
+Make sure you have set the correct value for `DB_ENGINE` environment variable as the migration script checks that to run correct command and migration file.
+
+NPM library option: `db.manualMigration`
+Default: `false`
 
 ### **DB_TTL**
 

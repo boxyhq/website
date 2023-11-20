@@ -42,6 +42,6 @@ As a user using SAML is very simple and pleasant to use as you only have to log 
 
 Without SAML you have to maintain account information across multiple services but when you use SAML this is all managed by the IdP.
 
-BoxyHQ is open source and our SAML SSO product, SAML Jackson is just the first product we have built to help companies become enterprise-ready. If you are interested in discussing your authentication strategy or deploying SAML SSO you can book a call with our CEO [here](https://meetings.hubspot.com/deepakprab/demo) to discuss how we can support you.
+BoxyHQ is open source and our SAML SSO product, SAML Jackson is just the first product we have built to help companies become enterprise-ready. If you are interested in discussing your authentication strategy or deploying SAML SSO you can book a call with our CEO [here](https://cal.com/deepak-boxyhq/demo) to discuss how we can support you.
 
 I hope you have found this high-level explanation of SAML and its use cases helpful. If you have any questions please don't hesitate to reach out to us on our live chat on our website https://boxyhq.com/

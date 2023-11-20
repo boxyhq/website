@@ -25,4 +25,4 @@ In the diagram above we can see what it looks like when you build a custom SAML 
 
 As you can see from the image above with BoxyHQ you only have to connect your product with a straightforward integration to BoxyHQ and then we manage and connect you to all the IDPs! It is that simple and you can deploy SAML SSO for your clients in as little as 8 days. We are also open source and free so you don't need to worry about big maintenance bills, we will even offer you custom support during the integration.
 
-If you are interested in becoming enterprise-ready without the hassle then let's chat! You can [book](https://meetings.hubspot.com/deepakprab/demo) a free consultation call and chat with our CEO about how we can help. Let's start the journey together.
+If you are interested in becoming enterprise-ready without the hassle then let's chat! You can [book](https://cal.com/deepak-boxyhq/demo) a free consultation call and chat with our CEO about how we can help. Let's start the journey together.

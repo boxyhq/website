@@ -52,16 +52,26 @@ Through Teams, SaaS app users invite others to collaboratively use the applicati
 
 ## Other Features
 
-Let's also look at other standard features the SaaS kit offers.
+Now, let's take a look at the other conventional features that the SaaS kit provides. 🥇
 
 - Create account
 - Sign in with Email and Password
 - Sign in with Magic Link
+- Sign in with SAML SSO
+- Sign in with Google [[Setting up Google OAuth](https://support.google.com/cloud/answer/6158849?hl=en)]
+- Sign in with GitHub [[Creating a Github OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)]
+- Directory Sync (SCIM)
 - Update account
-- Manage team
-- Manage team members
+- Create team
 - Invite users to the team
-- Accept invitation
+- Manage team members
+- Update team settings
+- Webhooks & Events
+- Internationalization
+- Audit logs
+- Roles and Permissions
+- Dark mode
+
 
 ## Getting Started
 
