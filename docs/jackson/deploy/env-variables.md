@@ -393,20 +393,22 @@ Set one of these to `1` or `true` to turn off our anonymous analytics. We only t
 
 The following env vars are used to configure the directory sync feature.
 
+`GOOGLE_CLIENT_` env vars are only applicable if you are using Google Workspace as a directory sync provider.
+
 ### **GOOGLE_CLIENT_ID**
 
-The Google authentication client ID. This is only needed if you are using Google Workspace as a directory sync provider.
+The Google authentication client ID.
 
 NPM library option: `dsync.providers.google.clientId`
 
 ### **GOOGLE_CLIENT_SECRET**
 
-The Google authentication client secret. This is only needed if you are using Google Workspace as a directory sync provider.
+The Google authentication client secret.
 
 NPM library option: `dsync.providers.google.clientSecret`
 
 ### **GOOGLE_REDIRECT_URI**
 
-The URI to redirect to after completing the authentication request. This is only needed if you are using Google Workspace as a directory sync provider.
+The URI to redirect to after completing the authentication request.
 
 NPM library option: `dsync.providers.google.callbackUrl`
