@@ -12,7 +12,7 @@ The env vars are only applicable to the Jackson service. If you are using the np
 
 ### **HOSTNAME**
 
-If you need to bind to a specific hostname, you can define `HOSTNAME` environment variable. 
+If you need to bind to a specific hostname, you can define `HOSTNAME` environment variable.
 For example, if you are planning to use a Docker health check like `wget -q --spider http://localhost:{PORT}/api/health || exit 1` set `HOSTNAME=0.0.0.0` to listen to localhost.
 
 ### **HOST_URL**
@@ -389,24 +389,24 @@ you need to set the admin root token for Retraced so that we can connect to Retr
 
 Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in any form.
 
-## Google Directory API
+## Directory Sync
 
-The following env vars are used to configure the Google Workspace directories. These are only needed if you are using Google Workspace as a directory sync provider.
+The following env vars are used to configure the directory sync feature.
 
-### GOOGLE_CLIENT_ID
+### **GOOGLE_CLIENT_ID**
 
-The Google authentication client ID.
+The Google authentication client ID. This is only needed if you are using Google Workspace as a directory sync provider.
 
 NPM library option: `dsync.providers.google.clientId`
 
-### GOOGLE_CLIENT_SECRET
+### **GOOGLE_CLIENT_SECRET**
 
-The Google authentication client secret.
+The Google authentication client secret. This is only needed if you are using Google Workspace as a directory sync provider.
 
 NPM library option: `dsync.providers.google.clientSecret`
 
-### GOOGLE_REDIRECT_URI
+### **GOOGLE_REDIRECT_URI**
 
-The URI to redirect to after completing the authentication request.
+The URI to redirect to after completing the authentication request. This is only needed if you are using Google Workspace as a directory sync provider.
 
 NPM library option: `dsync.providers.google.callbackUrl`
