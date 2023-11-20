@@ -692,7 +692,7 @@ await directorySyncController.sync(callback);
 
 ```bash
 curl --request GET \
-  --url 'http://localhost:5225/api/scim/cron?apiKey=your-api-key' \
+  --url 'http://localhost:5225/api/scim/cron/sync-google?apiKey=your-api-key' \
 ```
 
 </TabItem>
