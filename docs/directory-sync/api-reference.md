@@ -646,3 +646,20 @@ const { data, status } = await directorySyncController.requests.handle(
   callback
 );
 ```
+
+### Batch processing events
+
+You can enable batch processing of directory sync events instead of receiving events in real-time on your webhook endpoint. Once enabled, Jackson will queue the events and process them in batches. The batch size can be configured using the [DSYNC_WEBHOOK_BATCH_SIZE](/docs/jackson/deploy/env-variables#dsync_webhook_batch_size) environment variable.
+
+You'll ideally want to run the events processing endpoint on a schedule. You can use a cron job to do this.
+
+<Tabs>
+<TabItem value="02" label="Shell">
+
+```bash
+curl --request GET \
+  --url 'http://localhost:5225/api/scim/cron/process-events?apiKey=your-api-key' \
+```
+
+</TabItem>
+</Tabs>
