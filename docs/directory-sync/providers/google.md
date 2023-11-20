@@ -53,6 +53,6 @@ Jackson service exposes the below API URL that can be called to trigger a sync. 
 
 Depending on the number of Google directories you have, the sync can take a few minutes to complete.
 
-`https://<your-domain>/api/scim/cron`
+`https://<your-domain>/api/scim/cron/sync-google`
 
 Learn more about [Google Directory Sync API](/docs/directory-sync/api-reference#4-sync-directory).
