@@ -14,17 +14,24 @@ const ProductHuntSaas = () => {
       <div
         style={{
           textAlign: 'center',
-          marginTop: '-320px',
+          marginTop: '40px',
         }}
       >
-        <img
-          src="/img/product-hunt/boxyhq-banner-white-bg.svg"
-          width={800}
-          height={750}
-          alt="logo"
-        ></img>
+        <div>
+          <p
+            style={{
+              textAlign: 'center',
+              fontSize: '50px',
+              fontWeight: 'bold',
+              marginBottom: '40px',
+              marginTop: '-40px',
+            }}
+          >
+            Sucurity Building Blocks for Developers
+          </p>
+        </div>
 
-        <div style={{ marginTop: '-320px', display: 'flow' }}>
+        <div style={{ display: 'flow' }}>
           <iframe
             width="810"
             height="515"
@@ -97,7 +104,7 @@ const ProductHuntSaas = () => {
                   <li>
                     <b>
                       🔨 Single integration with an instant connection to most
-                      IdPs: {' '}
+                      IdPs:{' '}
                     </b>
                     Connect to Okta, Microsoft AD FS, Entra ID (formerly Azure
                     AD), PingIdentity, OneLogin, JumpCloud and other SAML 2.0
