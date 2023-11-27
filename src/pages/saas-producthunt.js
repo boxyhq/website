@@ -49,7 +49,7 @@ const ProductHuntSaas = () => {
         image="/img/product-hunt/render-ss.svg"
         buttons={[
           {
-            title: 'Sign Up',
+            title: 'Sign up',
             href: 'https://app.eu.boxyhq.com/auth/join',
             className: 'button--primary',
           },
@@ -156,7 +156,7 @@ const ProductHuntSaas = () => {
             className="button button--primary button-outline button--lg"
             href="https://app.eu.boxyhq.com/auth/join"
           >
-            Sign Up
+            Sign up
           </Link>
         </div>
       </SectionLayout>

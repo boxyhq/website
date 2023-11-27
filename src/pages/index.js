@@ -27,7 +27,12 @@ const IndexPage = () => {
         image="/img/home-hero.svg"
         buttons={[
           {
-            title: 'Get Started',
+            title: 'Sign up',
+            href: 'https://app.eu.boxyhq.com/auth/join',
+            className: 'button--primary',
+          },
+          {
+            title: 'Open Source',
             href: 'https://boxyhq.com/docs',
             className: 'button--primary',
           },
@@ -35,11 +40,6 @@ const IndexPage = () => {
             title: 'Book a demo',
             href: 'https://cal.com/deepak-boxyhq/demo',
             className: 'button--primary button--outline',
-          },
-          {
-            title: 'Early SaaS access',
-            href: 'https://boxyhq.com/saas-registration',
-            className: 'button--primary',
           },
         ]}
       />

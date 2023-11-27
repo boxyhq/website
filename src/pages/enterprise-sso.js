@@ -64,19 +64,19 @@ const EnterpriseSSO = () => {
         icon={ProductIcon}
         buttons={[
           {
-            title: 'Get Started',
+            title: 'Sign up',
+            href: 'https://app.eu.boxyhq.com/auth/join',
+            className: 'button--primary',
+          },
+          {
+            title: 'Open Source',
             href: 'https://github.com/boxyhq/jackson',
             className: 'button--primary',
           },
           {
-            title: 'Try It',
+            title: 'Demo',
             href: 'https://saml-demo.boxyhq.com',
             className: 'button--primary button--outline',
-          },
-          {
-            title: 'Early SaaS access',
-            href: 'https://boxyhq.com/saas-registration',
-            className: 'button--primary',
           },
         ]}
       />
