@@ -97,7 +97,7 @@ const ProductHuntSaas = () => {
                   <li>
                     <b>
                       🔨 Single integration with an instant connection to most
-                      IdPs
+                      IdPs: {' '}
                     </b>
                     Connect to Okta, Microsoft AD FS, Entra ID (formerly Azure
                     AD), PingIdentity, OneLogin, JumpCloud and other SAML 2.0
