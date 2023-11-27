@@ -691,8 +691,9 @@ await directorySyncController.sync(callback);
 <TabItem value="02" label="Shell">
 
 ```bash
-curl --request GET \
-  --url 'http://localhost:5225/api/scim/cron/sync-google?apiKey=your-api-key' \
+curl -X POST \
+  -H "Authorization: Api-Key YOUR_API_KEY" \
+  http://localhost:5225/api/v1/dsync/cron/sync-google
 ```
 
 </TabItem>
