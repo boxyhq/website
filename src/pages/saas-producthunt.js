@@ -240,11 +240,6 @@ const customersList = [
     url: 'https://supertokens.com',
     logo: require('/img/product-hunt/supertokens.svg').default,
   },
-
-  {
-    url: 'https://www.cerbos.dev',
-    logo: require('/img/product-hunt/cerbos.svg').default,
-  },
   {
     url: 'https://www.salita.no',
     logo: require('/img/product-hunt/salita.svg').default,
@@ -253,10 +248,6 @@ const customersList = [
     url: 'https://www.unosecur.com',
     logo: require('/img/product-hunt/unosecur.svg').default,
   },
-  // {
-  //   url: 'https://www.unicis.tech',
-  //   logo: require('/img/product-hunt/unicis.svg').default,
-  // },
 ];
 
 const CustomersSection = () => {
@@ -268,39 +259,31 @@ const CustomersSection = () => {
     >
       <div className="row">
         {customersList.map(({ logo, url }, idx) => (
-          <div className="col" key={idx}>
-            <div className="col-demo">
-              <div
-                style={{
-                  height: '80px',
-                  width: '180px',
-                  alignItems: 'center',
-                  display: 'flex',
-                  justifyContent: 'center',
-                }}
-              >
-                <SvgIcon
-                  icon={logo}
-                  url={url}
-                  size={{ height: '60px', width: '190px' }}
-                />
-              </div>
-            </div>
+          <div
+            className="col"
+            key={idx}
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <SvgIcon
+              icon={logo}
+              url={url}
+              size={{ height: '60px', width: '160px' }}
+            />
           </div>
         ))}
       </div>
-      <h2
+      <div
         className="section__header text--center"
         style={{
           color: '#444950',
-          paddingTop: '2rem',
+          paddingTop: '1rem',
           textAlign: 'center',
-          fontSize: '2rem',
+          fontSize: '1.25rem',
           fontWeight: 'bold',
         }}
       >
         and more
-      </h2>
+      </div>
     </SectionLayout>
   );
 };
