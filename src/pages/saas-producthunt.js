@@ -266,7 +266,7 @@ const CustomersSection = () => {
               <div
                 style={{
                   height: '80px',
-                  width: '160px',
+                  width: '180px',
                   alignItems: 'center',
                   display: 'flex',
                   justifyContent: 'center',
@@ -275,7 +275,7 @@ const CustomersSection = () => {
                 <SvgIcon
                   icon={logo}
                   url={url}
-                  size={{ height: '60px', width: '150px' }}
+                  size={{ height: '60px', width: '190px' }}
                 />
               </div>
             </div>
