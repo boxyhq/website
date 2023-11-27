@@ -14,7 +14,7 @@ const ProductHuntSaas = () => {
       <div
         style={{
           textAlign: 'center',
-          marginTop: '-240px',
+          marginTop: '-320px',
         }}
       >
         <img
@@ -24,7 +24,7 @@ const ProductHuntSaas = () => {
           alt="logo"
         ></img>
 
-        <div style={{ marginTop: '-220px', display: 'flow' }}>
+        <div style={{ marginTop: '-320px', display: 'flow' }}>
         <iframe 
         width="810" 
         height="515" 
@@ -127,13 +127,8 @@ const ProductHuntSaas = () => {
                     enterprise-grade solution for centralized management.
                   </li>
                   <br />
-                  <li>
-                    <b>🖥️ DynamoDB Integration:</b> Leverage seamless
-                    integration with DynamoDB for efficient data storage and
-                    retrieval, enhancing the overall performance and scalability
-                    of your system.
-                  </li>
-                  <br />
+                 
+                 
                   <li>
                     <b>🔨 SAML Tracer for Error Troubleshooting:</b> Empower
                     administrators with a SAML Tracer tool for efficient and
