@@ -68,6 +68,7 @@ module.exports = {
         'directory-sync/examples',
         'directory-sync/webhooks',
         'directory-sync/events',
+        'directory-sync/observability',
         {
           type: 'category',
           label: 'Providers',
@@ -78,6 +79,7 @@ module.exports = {
             'directory-sync/providers/okta',
             'directory-sync/providers/onelogin',
             'directory-sync/providers/jumpcloud',
+            'directory-sync/providers/google',
           ],
         },
       ],

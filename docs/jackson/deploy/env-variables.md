@@ -393,6 +393,26 @@ Set one of these to `1` or `true` to turn off our anonymous analytics. We only t
 
 The following env vars are used to configure the directory sync feature.
 
+`DSYNC_GOOGLE_` env vars are only applicable if you are using Google Workspace as a directory sync provider.
+
 ### **DSYNC_WEBHOOK_BATCH_SIZE**
 
 Enable batch processing of directory sync events. The value represents the number of events to batch together instead of sending each event individually. This requires you to configure a cron job to [process the queued events](/docs/directory-sync/api-reference#batch-processing-events)
+
+### **DSYNC_GOOGLE_CLIENT_ID**
+
+The Google authentication client ID.
+
+NPM library option: `dsync.providers.google.clientId`
+
+### **DSYNC_GOOGLE_CLIENT_SECRET**
+
+The Google authentication client secret.
+
+NPM library option: `dsync.providers.google.clientSecret`
+
+### **DSYNC_GOOGLE_REDIRECT_URI**
+
+The URI to redirect to after completing the authentication request.
+
+NPM library option: `dsync.providers.google.callbackUrl`

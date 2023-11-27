@@ -12,14 +12,18 @@ The following guides provide information about the APIs and SDKs that are availa
 
 ### Directory
 
+Below are the properties of a directory connection.
+
 #### Properties
 
 - `name`: The name of the directory
 - `tenant`: The tenant ID of the tenant you want to create the directory for.
 - `product`: The product ID of the product you want to create the directory for.
 - `type`: The directory provider type. See the [Directory Providers](./providers) for more information.
-- `webhook_url`: The webhook URL to which the directory connection will POST the events.
-- `webhook_secret`: The webhook secret used to sign the webhook payload.
+- `webhook.endpoint`: The webhook URL to which the directory connection will POST the events.
+- `webhook.secret`: The webhook secret used to sign the webhook payload.
+- `log_webhook_events`: Indicate if the webhook events should be logged.
+- `deactivated`: Indicate if the directory connection is deactivated.
 
 :::info
 The `tenant` and `product` should not contain the `:` character since we use it as a delimiter internally.
@@ -89,7 +93,7 @@ curl --request POST \
 
 #### Response
 
-```javascript
+```json
 {
   "data": {
     "id": "58b5cd9dfaa39d47eb8f5f88631f9a629a232016",
@@ -149,7 +153,7 @@ curl --request GET \
 
 #### Response
 
-```javascript
+```json
 {
   "data": [
     {
@@ -208,7 +212,7 @@ curl --request GET \
 
 #### Response
 
-```javascript
+```json
 {
   "data": {
     "id": "58b5cd9dfaa39d47eb8f5f88631f9a629a232016",
@@ -266,7 +270,7 @@ curl --request GET \
 
 #### Response
 
-```javascript
+```json
 {
   "data": [
     {
@@ -276,9 +280,7 @@ curl --request GET \
       "email": "aswin@boxyhq.com",
       "active": true,
       "raw": {
-        "schemas": [
-          "urn:ietf:params:scim:schemas:core:2.0:User"
-        ],
+        "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"],
         "userName": "aswin@boxyhq.com",
         "name": {
           "givenName": "Aswin",
@@ -313,9 +315,7 @@ curl --request GET \
       "email": "kiran@boxyhq.com",
       "active": true,
       "raw": {
-        "schemas": [
-          "urn:ietf:params:scim:schemas:core:2.0:User"
-        ],
+        "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"],
         "userName": "kiran@boxyhq.com",
         "name": {
           "givenName": "Kiran",
@@ -383,7 +383,7 @@ curl --request GET \
 
 #### Response
 
-```javascript
+```json
 {
   "data": {
     "id": "ebc31d6e-7d62-4f81-b9e5-eb5f1a04ee92",
@@ -392,9 +392,7 @@ curl --request GET \
     "email": "kiran@boxyhq.com",
     "active": true,
     "raw": {
-      "schemas": [
-        "urn:ietf:params:scim:schemas:core:2.0:User"
-      ],
+      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"],
       "userName": "kiran@boxyhq.com",
       "name": {
         "givenName": "Kiran",
@@ -460,16 +458,14 @@ curl --request GET \
 
 #### Response
 
-```javascript
+```json
 {
   "data": [
     {
       "id": "44d08c0e-d185-4a5e-80a6-b47a717ffaa5",
       "name": "Developers",
       "raw": {
-        "schemas": [
-          "urn:ietf:params:scim:schemas:core:2.0:Group"
-        ],
+        "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
         "displayName": "Developers",
         "members": [
           {
@@ -525,15 +521,13 @@ curl --request GET \
 
 #### Response
 
-```javascript
+```json
 {
   "data": {
     "id": "44d08c0e-d185-4a5e-80a6-b47a717ffaa5",
     "name": "Developers",
     "raw": {
-      "schemas": [
-        "urn:ietf:params:scim:schemas:core:2.0:Group"
-      ],
+      "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group"],
       "displayName": "Developers",
       "members": [
         {
@@ -561,6 +555,153 @@ curl --request GET \
   "error": null
 }
 ```
+
+---
+
+### Google Directory Sync
+
+Google Directory Sync specific properties:
+
+- `google_domain`: The Google Workspace domain name.
+- `google_access_token`: The Google Admin access token.
+- `google_refresh_token`: The Google Admin refresh token.
+
+Jackson requires following API scopes:
+
+- `https://www.googleapis.com/auth/admin.directory.group.member.readonly`
+- `https://www.googleapis.com/auth/admin.directory.group.readonly`
+
+#### 1. Get Authentication URL
+
+Get the URL to authenticate with admin credentials. Google will prompt the user to authenticate with the admin credentials and authorize the application to access the Google Workspace directories.
+
+#### Request
+
+<Tabs>
+<TabItem value="01" label="Node.js" default>
+
+```javascript showLineNumbers
+await directorySyncController.google.generateAuthorizationUrl({
+  directoryId: '58b5cd9dfaa39d47eb8f5f88631f9a629a232016',
+});
+```
+
+</TabItem>
+</Tabs>
+
+#### Response
+
+```json
+{
+  "data": {
+    "authorizationUrl": "https://accounts.google.com/..."
+  },
+  "error": null
+}
+```
+
+#### 2. Get Access Token
+
+Get the access token from the authorization code.
+
+#### Request
+
+<Tabs>
+<TabItem value="01" label="Node.js" default>
+
+```javascript showLineNumbers
+await directorySyncController.google.getAccessToken({
+  directoryId: '58b5cd9dfaa39d47eb8f5f88631f9a629a232016',
+  code: 'authorization-code',
+});
+```
+
+</TabItem>
+</Tabs>
+
+#### Response
+
+```json
+{
+  "data": {
+    "access_token": "ya29.a0AWY7CknlXtELCHzdKuS...",
+    "refresh_token": "1//03MJpa-zseicbCgYIARAAGAMSNwF-...",
+    "scope": "https://www.googleapis.com/auth/admin.directory.group.member.readonly https://www.googleapis.com/auth/admin.directory.group.readonly",
+    "token_type": "Bearer",
+    "expiry_date": 1684343934305
+  },
+  "error": null
+}
+```
+
+#### 3. Set Access Token to Directory
+
+Set the access token and refresh token to the directory. We'll use the access token to make requests to the Google Directory API.
+
+#### Request
+
+<Tabs>
+<TabItem value="01" label="Node.js" default>
+
+```javascript showLineNumbers
+await directorySyncController.google.setToken({
+  directoryId: '58b5cd9dfaa39d47eb8f5f88631f9a629a232016',
+  accessToken: 'ya29.a0AWY7CknlXtELCHzdKuS...',
+  refreshToken: '1//03MJpa-zseicbCgYIARAAGAMSNwF-...',
+});
+```
+
+</TabItem>
+</Tabs>
+
+#### Response
+
+```json
+{
+  "data": {
+    "id": "58b5cd9dfaa39d47eb8f5f88631f9a629a232016",
+    "name": "App",
+    "tenant": "boxyhq",
+    "product": "jackson",
+    "type": "google",
+    "google_domain": "boxyhq.com",
+    "google_access_token": "ya29.a0AWY7CknlXtELCHzdKuS...",
+    "google_refresh_token": "1//03MJpa-zseicbCgYIARAAGAMSNwF-..."
+  },
+  "error": null
+}
+```
+
+#### 4. Sync Directory
+
+Jackson can be configured to sync your Google Workspace directory.
+
+<Tabs>
+<TabItem value="01" label="Node.js" default>
+
+```javascript showLineNumbers
+const callback = (event: DirectorySyncEvent) => {
+  console.log(event);
+};
+
+await directorySyncController.sync(callback);
+```
+
+</TabItem>
+<TabItem value="02" label="Shell">
+
+```bash
+curl -X POST \
+  -H "Authorization: Api-Key YOUR_API_KEY" \
+  http://localhost:5225/api/v1/dsync/cron/sync-google
+```
+
+</TabItem>
+</Tabs>
+
+You'll ideally want to run the sync on a schedule (e.g. every 2 hours). You can use a cron job to invoke this URL on a schedule.
+
+See more information about the [Directory Sync Event](#handle-the-requests-from-identity-providers) below.
 
 ---
 
