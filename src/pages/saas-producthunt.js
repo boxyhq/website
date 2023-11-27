@@ -25,15 +25,14 @@ const ProductHuntSaas = () => {
         ></img>
 
         <div style={{ marginTop: '-220px', display: 'flow' }}>
-          {/* <video
-            loop
-            autoplay="true"
-            height={450}
-            width={800}
-            controls
-            src="/videos/seinfeld-skit.mp4"
-            type="video/mp4"
-          ></video> */}
+        <iframe 
+        width="810" 
+        height="515" 
+        src="https://www.youtube.com/embed/bmezoOhED4k?si=PyaPvJVjwAV7z-BW" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe>
         </div>
       </div>
       <HeroSection
