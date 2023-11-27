@@ -25,14 +25,15 @@ const ProductHuntSaas = () => {
         ></img>
 
         <div style={{ marginTop: '-320px', display: 'flow' }}>
-        <iframe 
-        width="810" 
-        height="515" 
-        src="https://www.youtube.com/embed/bmezoOhED4k?si=PyaPvJVjwAV7z-BW" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen></iframe>
+          <iframe
+            width="810"
+            height="515"
+            src="https://www.youtube.com/embed/bmezoOhED4k?si=PyaPvJVjwAV7z-BW"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
       <HeroSection
@@ -94,16 +95,20 @@ const ProductHuntSaas = () => {
                   </li>
                   <br />
                   <li>
-                    <b>🔨 Single Integration for Instant Connection:</b> Our
-                    APIs integrate security best practices into your development
-                    process
+                    <b>
+                      🔨 Single integration with an instant connection to most
+                      IdPs
+                    </b>
+                    Connect to Okta, Microsoft AD FS, Entra ID (formerly Azure
+                    AD), PingIdentity, OneLogin, JumpCloud and other SAML 2.0
+                    and SCIM 2.0 compliant Identity Providers.
                   </li>
                   <br />
                   <li>
                     <b>🖥️ Admin Portal for SAML and Directory Sync Support:</b>{' '}
                     Utilize an Admin Portal designed to address customer support
                     issues related to SAML setup and Directory Sync, enhancing
-                    user management efficiency.
+                    your customer onboarding.
                   </li>
                   <br />
                   <li>
@@ -114,9 +119,9 @@ const ProductHuntSaas = () => {
                   </li>
                   <br />
                   <li>
-                    <b>📝 Extensive Documentation for SAML Setup:</b> Access
-                    comprehensive documentation for SAML setup with major
-                    identity providers, empowering users with clear guidance and
+                    <b>📝 Extensive onboarding guides for SAML Setup:</b> Access
+                    comprehensive guides for SAML setup with major identity
+                    providers, empowering users with clear guidance and
                     troubleshooting resources.
                   </li>
                   <br />
@@ -127,13 +132,12 @@ const ProductHuntSaas = () => {
                     enterprise-grade solution for centralized management.
                   </li>
                   <br />
-                 
-                 
                   <li>
                     <b>🔨 SAML Tracer for Error Troubleshooting:</b> Empower
                     administrators with a SAML Tracer tool for efficient and
-                    effective troubleshooting of errors, reducing downtime and
-                    ensuring a reliable authentication process.
+                    effective troubleshooting of errors, reducing
+                    troubleshooting times and ensuring a reliable authentication
+                    process.
                   </li>
                 </ul>
               </div>
@@ -141,48 +145,14 @@ const ProductHuntSaas = () => {
           </div>
         </div>
         <div className="card__footer text--center">
-          <button className="button button--primary button--outline  button--lg">
-            <a href="https://app.eu.boxyhq.com/auth/join">Sign Up</a>
-          </button>
+          <Link
+            className="button button--primary button-outline button--lg"
+            href="https://app.eu.boxyhq.com/auth/join"
+          >
+            Sign Up
+          </Link>
         </div>
       </SectionLayout>
-
-      {/* <section className="page__section">
-        <div className="container">
-          <div className="row" style={{ gap: '10px', marginTop: '20px' }}>
-            <div className="col col--5 col--offset-1">
-              <div className="col-demo">
-                <div className="card-demo">
-                  <div className="card">
-                    <div className="card__header"></div>
-                    <div className="card__body">
-                      <img
-                        className="text--center"
-                        src="/img/feat-saas.svg"
-                      ></img>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col col--5">
-              <div className="col-demo">
-                <div className="card-demo">
-                  <div className="card">
-                    <div className="card__header"></div>
-                    <div className="card__body">
-                      <img
-                        className="text--center"
-                        src="/img/feat-saas.svg"
-                      ></img>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       <CustomersSection />
 
