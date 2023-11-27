@@ -42,7 +42,7 @@ const ProductHuntSaas = () => {
         buttons={[
           {
             title: 'Sign Up',
-            href: '/saas-registration',
+            href: 'https://app.eu.boxyhq.com/auth/join',
             className: 'button--primary',
           },
           {
@@ -147,7 +147,7 @@ const ProductHuntSaas = () => {
         </div>
         <div className="card__footer text--center">
           <button className="button button--primary button--outline  button--lg">
-            <a href="/saas-registration">Sign Up</a>
+            <a href="https://app.eu.boxyhq.com/auth/join">Sign Up</a>
           </button>
         </div>
       </SectionLayout>

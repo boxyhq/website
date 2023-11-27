@@ -171,6 +171,10 @@ module.exports = {
               label: 'Developer-First Security Week',
               href: 'https://boxyhq.com/developer-first-security-week',
             },
+            {
+              label: 'SaaS Product Hunt Launch',
+              href: '/saas-producthunt',
+            },
           ],
         },
         {
