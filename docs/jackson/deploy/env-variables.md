@@ -12,7 +12,7 @@ The env vars are only applicable to the Jackson service. If you are using the np
 
 ### **HOSTNAME**
 
-If you need to bind to a specific hostname, you can define `HOSTNAME` environment variable. 
+If you need to bind to a specific hostname, you can define `HOSTNAME` environment variable.
 For example, if you are planning to use a Docker health check like `wget -q --spider http://localhost:{PORT}/api/health || exit 1` set `HOSTNAME=0.0.0.0` to listen to localhost.
 
 ### **HOST_URL**
@@ -388,3 +388,11 @@ you need to set the admin root token for Retraced so that we can connect to Retr
 ### **BOXYHQ_NO_TELEMETRY** or **DO_NOT_TRACK**
 
 Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in any form.
+
+## Directory Sync
+
+The following env vars are used to configure the directory sync feature.
+
+### **DSYNC_WEBHOOK_BATCH_SIZE**
+
+Enable batch processing of directory sync events. The value represents the number of events to batch together instead of sending each event individually. This requires you to configure a cron job to [process the queued events](/docs/directory-sync/api-reference#batch-processing-events)
