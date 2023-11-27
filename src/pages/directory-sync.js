@@ -28,7 +28,12 @@ const DSync = () => {
         icon={ProductIcon}
         buttons={[
           {
-            title: 'Get started',
+            title: 'Sign up',
+            href: 'https://app.eu.boxyhq.com/auth/join',
+            className: 'button--primary',
+          },
+          {
+            title: 'Open Source',
             href: 'https://github.com/boxyhq/jackson#directory-sync',
             className: 'button--primary',
           },
@@ -36,11 +41,6 @@ const DSync = () => {
             title: 'View docs',
             href: '/docs/directory-sync/overview',
             className: 'button--primary button--outline',
-          },
-          {
-            title: 'Early SaaS access',
-            href: 'https://boxyhq.com/saas-registration',
-            className: 'button--primary',
           },
         ]}
       />

@@ -71,7 +71,10 @@ module.exports = {
               to: '/privacy-vault',
               label: 'Privacy Vault',
             },
-            { to: '/saas-registration', label: 'SaaS Early Access' },
+            {
+              href: 'https://app.eu.boxyhq.com/auth/join',
+              label: 'SaaS Sign up',
+            },
             {
               href: 'https://github.com/boxyhq/saas-starter-kit',
               label: 'Enterprise SaaS Starter Kit',
@@ -170,6 +173,10 @@ module.exports = {
             {
               label: 'Developer-First Security Week',
               href: 'https://boxyhq.com/developer-first-security-week',
+            },
+            {
+              label: 'SaaS Product Hunt Launch',
+              href: '/saas-producthunt',
             },
           ],
         },
