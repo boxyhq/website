@@ -27,7 +27,7 @@ const ProductHuntSaas = () => {
               marginTop: '-40px',
             }}
           >
-            Sucurity Building Blocks for Developers
+            Security Building Blocks for Developers
           </p>
         </div>
 
@@ -174,9 +174,7 @@ export default ProductHuntSaas;
 
 const Quote = ({ children, author, title, avatar }) => {
   const style = {
-    border: '2px solid var(--ifm-color-primary)',
-    color: 'var(--aa-input-border-color-rgb)',
-    borderRadius: '5px',
+    color: 'var(--color-neutral-90)',
     backgroundColor: 'white',
   };
 
@@ -207,6 +205,7 @@ const Quote = ({ children, author, title, avatar }) => {
           }}
           class="avatar__photo avatar__photo--xl"
           src={avatar}
+          alt="Steven Tey"
         />
         <div className="avatar__intro">
           <div
