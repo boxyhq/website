@@ -43,7 +43,7 @@ Copy the **Client ID** and **Client secret** and save them for later.
 
 See the [Environment Variables](/docs/directory-sync/api-reference#google-directory-sync) section to learn how to configure Jackson with these values.
 
-Once configuring Jackson, you can authenticate the tenants with Google OAuth and sync their Workspace directory.
+Once Jackson is configured, you can authenticate the tenants with Google OAuth and sync their Workspace directory.
 
 ### Schedule Sync
 
@@ -53,6 +53,10 @@ Jackson service exposes the below API URL that can be called to trigger a sync. 
 
 Depending on the number of Google directories you have, the sync can take a few minutes to complete.
 
-`https://<your-domain>/api/scim/cron/sync-google`
+```bash
+curl -X POST \
+  -H "Authorization: Api-Key YOUR_API_KEY" \
+  http://localhost:5225/api/v1/dsync/cron/sync-google
+```
 
 Learn more about [Google Directory Sync API](/docs/directory-sync/api-reference#4-sync-directory).
