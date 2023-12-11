@@ -101,8 +101,8 @@ const body = {...}
 
 const [t, s] = signatureHeader.split(',');
 
-const signature = t.split('=')[1];
-const timestamp = s.split('=')[1];
+const timestamp = t.split('=')[1];
+const signature = s.split('=')[1];
 
 const signedPayload = `${timestamp}.${JSON.stringify(body)}`;
 
