@@ -14,11 +14,7 @@ module.exports = {
           type: 'category',
           label: 'Deployment Guides',
           collapsed: false,
-          items: [
-            'jackson/deployments/heroku',
-            'jackson/deployments/vercel',
-            'jackson/deployments/mogenius',
-          ],
+          items: ['jackson/deployments/heroku', 'jackson/deployments/vercel'],
         },
         {
           type: 'category',
