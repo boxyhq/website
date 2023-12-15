@@ -10,10 +10,6 @@ const deployments = [
     name: 'Vercel',
     href: '/guides/jackson/deployments/vercel',
   },
-  {
-    name: 'mogenius',
-    href: '/guides/jackson/deployments/mogenius',
-  },
 ];
 
 export default function DeploymentsGuide() {
