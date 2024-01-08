@@ -17,7 +17,7 @@
     "@cmfcmf/docusaurus-search-local": "1.1.0",
     "@docusaurus/core": "3.0.1",
     "@docusaurus/plugin-client-redirects": "3.0.1",
-    "@docusaurus/preset-classic": "3.0.1",
+    "@docusaurus/preset-classic": "3.1.0",
     "@mdx-js/react": "3.0.0",
     "clsx": "2.1.0",
     "docusaurus-gtm-plugin": "0.0.2",
