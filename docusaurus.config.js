@@ -8,7 +8,7 @@ module.exports = {
     'BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes. Open source and free.',
   url: 'https://boxyhq.com',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
@@ -202,11 +202,11 @@ module.exports = {
           items: [
             {
               label: 'Privacy & Cookies Policy',
-              href: '/privacy.html',
+              href: 'https://boxyhq.com/privacy.html',
             },
             {
               label: 'Terms',
-              href: '/terms.html',
+              href: 'https://boxyhq.com/terms.html',
               target: '_blank',
             },
           ],
