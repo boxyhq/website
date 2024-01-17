@@ -72,3 +72,9 @@ Select **None Selected** under the **Users**.
 From the right side of the screen, select the users you want to assign to the app and click the **Select** button, then click **Assign** to those users to the app.
 
 ![img alt](/img/dsync/providers/azure/12.png)
+
+### FAQ
+
+#### How frequently does Microsoft Entra ID SCIM perform sync by default?
+
+Microsoft Entra ID automatically provisions and updates user accounts in an app based on things like user and group assignment. The sync happens at a regularly scheduled time interval, typically every 20-40 minutes.

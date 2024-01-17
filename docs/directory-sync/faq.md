@@ -14,7 +14,7 @@ It is a known issue with OneLogin SCIM. OneLogin does not dispatch a specific de
 
 ### Why don't I see a DELETE event for a user that was removed in Okta?
 
-Instead of executing a DELETE operation, Okta sends a request to the SCIM application to set the `active` attribute to `false`. Consequently, you will observe a `user.updated` event with the `active` attribute changed to `false` for users removed from the Okta application.
+Instead of executing a DELETE operation, Okta sends a request to the SCIM application to set the `active` attribute to `false`. Consequently, you will observe a `user.updated` event with the `active` attribute changed to `false` for users removed from the Okta application. [Read More](https://developer.okta.com/docs/reference/scim/scim-20/#delete-users)
 
 ### Why is there no event for a user that was deactivated in Okta?
 
@@ -27,3 +27,7 @@ No, Google Workspace sync is not real-time. Jackson syncs the Google Workspace d
 ### Can I sync specific groups from Google Workspace?
 
 Not possible at the moment. Jackson syncs all the groups from Google Workspace. You have to filter the groups from your application's side.
+
+### How frequently does Microsoft Entra ID SCIM perform sync by default?
+
+Microsoft Entra ID automatically provisions and updates user accounts in an app based on things like user and group assignment. The sync happens at a regularly scheduled time interval, typically every 20-40 minutes. [Read More](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user#how-long-will-it-take-to-provision-users)
