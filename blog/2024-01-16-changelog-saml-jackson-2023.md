@@ -5,7 +5,7 @@ author: Schalk Neethling
 author_title: Customer Success, Community, DevRel - @BoxyHQ
 author_url: https://github.com/schalkneethling
 author_image_url: /img/team/schalk.jpg
-tags_disabled: [enterprise-readiness]
+tags_disabled: [changelog]
 image: /img/blog/saml-jackson-2023-changelog.jpg
 ---
 
