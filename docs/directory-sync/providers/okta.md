@@ -89,7 +89,3 @@ Instead of executing a DELETE operation, Okta sends a request to the SCIM applic
 #### Why is there no event for a user that was deactivated in Okta?
 
 Okta does not dispatch a specific deprovisioning event for users that are suspended. This omission of a deactivation event is a known issue with Okta.
-
-#### What is the frequency of sync for Okta SCIM 2.0 directories?
-
-Okta SCIM 2.0 directories are designed to sync events in real-time, ensuring that updates and changes are reflected immediately.
