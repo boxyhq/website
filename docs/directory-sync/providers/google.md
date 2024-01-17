@@ -60,3 +60,13 @@ curl -X POST \
 ```
 
 Learn more about [Google Directory Sync API](/docs/directory-sync/api-reference#4-sync-directory).
+
+### FAQ
+
+#### Does Google Workspace sync in real time?
+
+No, Google Workspace sync is not real-time. Jackson syncs the Google Workspace directory on a schedule (e.g. every 2 hours). In a self-hosted deployment, you can configure a cron job to sync the directory on a schedule of your choice.
+
+#### Can I sync specific groups from Google Workspace?
+
+Not possible at the moment. Jackson syncs all the groups from Google Workspace. You have to filter the groups from your application's side.

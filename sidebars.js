@@ -69,6 +69,7 @@ module.exports = {
         'directory-sync/webhooks',
         'directory-sync/events',
         'directory-sync/observability',
+        'directory-sync/faq',
         {
           type: 'category',
           label: 'Providers',
