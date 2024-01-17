@@ -17,6 +17,8 @@ Instead of executing a DELETE operation, Okta sends a request to the SCIM applic
 
 Okta does not dispatch a specific deprovisioning event for users that are suspended. This omission of a deactivation event is a known issue with Okta.
 
-#### What is the frequency of sync for Okta SCIM 2.0 directories?
+### OneLogin
 
-Okta SCIM 2.0 directories are designed to sync events in real-time, ensuring that updates and changes are reflected immediately.
+#### Why don't I see any event when a group is removed in OneLogin?
+
+It is a known issue with OneLogin SCIM. OneLogin does not dispatch a specific deprovisioning event for groups that are deleted, so you won't see any event such as `group.deleted` or `group.user_removed` when a group is removed. It is recommended to remove the users from the group before deleting the group itself from the SCIM application.
