@@ -78,3 +78,7 @@ From the right side of the screen, select the users you want to assign to the ap
 #### How frequently does Microsoft Entra ID SCIM perform sync by default?
 
 Microsoft Entra ID automatically provisions and updates user accounts in an app based on things like user and group assignment. The sync happens at a regularly scheduled time interval, typically every 20-40 minutes.
+
+#### Why does the PATCH request fail in Microsoft Entra ID SCIM?
+
+This is a known issue with Entra ID SCIM implementation. You have to add the query param `?aadOptscim062020` to the SCIM endpoint URL to make PATCH requests work. This query param update PATCH behavior and ensure SCIM compliance. [Read More](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior)
