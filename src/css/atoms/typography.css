@@ -1,0 +1,55 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--typography-heading-family);
+  line-height: var(--typography-heading-line-height);
+}
+
+h1 {
+  font-size: var(--typography-size-xxl);
+  line-height: var(--typography-primary-heading-line-height);
+}
+
+h2 {
+  font-size: var(--typography-size-xl);
+}
+
+h3 {
+  font-size: var(--typography-size-large);
+}
+
+h4 {
+  font-size: var(--typography-size-medium);
+}
+
+h5 {
+  font-size: var(--typography-size-small-medium);
+}
+
+p {
+  margin-bottom: var(--spacing-medium);
+}
+
+.small-text {
+  font-size: var(--typography-size-small);
+}
+
+.tiny-text {
+  font-size: var(--typography-size-tiny);
+}
+
+.lead {
+  font-size: var(--typography-size-medium);
+}
+
+.lead-outro {
+  font-size: var(--typography-size-small-medium);
+}
+
+.linear-gradient-text {
+  background: var(--typography-linear-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

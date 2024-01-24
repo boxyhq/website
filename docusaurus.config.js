@@ -38,8 +38,8 @@ module.exports = {
     image: 'img/website-preview-image.png',
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'BoxyHQ',

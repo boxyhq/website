@@ -1,0 +1,197 @@
+.base-icon-pseudo::before {
+  background-size: cover;
+  content: '';
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* set the background color (icon color) in the respective component if need be */
+.icon-boxy::before {
+  mask-image: url(/static/images/icons/boxy.svg);
+  mask-size: cover;
+}
+
+.dark .icon-boxy::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-calendar::before {
+  mask-image: url(/static/images/icons/calendar.svg);
+  mask-size: cover;
+}
+
+.dark .icon-calendar::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-check::before {
+  mask-image: url(/static/images/icons/check.svg);
+  mask-size: cover;
+}
+
+.dark .icon-check::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-chevron::before {
+  mask-image: url(/static/images/icons/chevron.svg);
+  mask-size: cover;
+}
+
+.dark .icon-chevron::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-cross::before {
+  mask-image: url(/static/images/icons/cross.svg);
+  mask-size: cover;
+}
+
+.dark .icon-cross::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-docs::before {
+  mask-image: url(/static/images/icons/docs.svg);
+  mask-size: cover;
+}
+
+.dark .icon-docs::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-code-slash::before {
+  mask-image: url(/static/images/icons/code-slash.svg);
+  mask-size: cover;
+}
+
+.dark .icon-code-slash::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-discord::before {
+  mask-image: url(/static/images/icons/discord.svg);
+  mask-size: cover;
+}
+
+.dark .icon-discord::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-github::before {
+  mask-image: url(/static/images/icons/github.svg);
+  mask-size: cover;
+}
+
+.dark .icon-github::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-laptop::before {
+  mask-image: url(/static/images/icons/laptop.svg);
+  mask-size: cover;
+}
+
+.dark .icon-laptop::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-linkedin::before {
+  mask-image: url(/static/images/icons/linkedin.svg);
+  mask-size: cover;
+}
+
+.dark .icon-linkedin::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-logs::before {
+  mask-image: url(/static/images/icons/logs.svg);
+  mask-size: cover;
+}
+
+.dark .icon-logs::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-mastodon::before {
+  mask-image: url(/static/images/icons/mastodon.svg);
+  mask-size: cover;
+}
+
+.dark .icon-mastodon::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-person::before {
+  mask-image: url(/static/images/icons/person.svg);
+  mask-size: cover;
+}
+
+.dark .icon-person::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-send::before {
+  mask-image: url(/static/images/icons/send.svg);
+  mask-size: cover;
+}
+
+.dark .icon-send::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-secure::before {
+  mask-image: url(/static/images/icons/secure.svg);
+  mask-size: cover;
+}
+
+.dark .icon-secure::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-sync::before {
+  mask-image: url(/static/images/icons/sync.svg);
+  mask-size: cover;
+}
+
+.dark .icon-sync::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-vault::before {
+  mask-image: url(/static/images/icons/vault.svg);
+  mask-size: cover;
+}
+
+.dark .icon-vault::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-x::before {
+  mask-image: url(/static/images/icons/x.svg);
+  mask-size: cover;
+}
+
+.dark .icon-x::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-youtube::before {
+  mask-image: url(/static/images/icons/youtube.svg);
+  mask-size: cover;
+}
+
+.dark .icon-youtube::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+[rel='external']::after {
+  content: '';
+  display: inline-block;
+  mask-image: url('/static/images/icons/external.svg');
+  mask-size: cover;
+  height: 1rem;
+  width: 1rem;
+}

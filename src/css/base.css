@@ -1,0 +1,139 @@
+@import './reset.css';
+@import './atoms/buttons.css';
+@import './atoms/iconography.css';
+@import './atoms/typography.css';
+
+html,
+body {
+  font: 100% / var(--typography-body-line-height) var(--typography-body-family);
+}
+
+a:link,
+a:visited {
+  color: var(--color-teal-90);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.main-page-lead {
+  padding: var(--spacing-medium);
+}
+
+.main-page-lead.center {
+  margin: auto;
+  text-align: center;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .main-page-lead {
+    padding-bottom: var(--spacing-wide);
+  }
+}
+
+/* used for larger paragraph text such as those at the top of the product overview page */
+.main-page-lead-copy {
+  font-size: var(--typography-size-small-medium);
+  margin: 0;
+  margin-top: var(--spacing-default);
+  max-width: 70rem;
+  max-width: 80ch;
+}
+
+.main-page-lead.center .main-page-lead-copy {
+  margin: var(--spacing-default) auto 0;
+}
+
+.legal-page {
+  padding: var(--spacing-medium);
+}
+
+.legal-page h1 {
+  font-size: var(--typography-size-large);
+}
+
+.legal-page h2 {
+  font-size: var(--typography-size-medium);
+}
+
+.legal-page ul,
+.legal-page .legal-ordered-list {
+  margin-bottom: var(--spacing-medium);
+}
+
+/* Lists */
+.legal-ordered-list li {
+  list-style-type: lower-alpha;
+}
+
+/* links marked with rel=external includes an icon, we therefore display these using the flex model */
+[rel='external'] {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-narrow);
+}
+
+/* a girdle to enfore a maximum width for a section or component */
+.girdle,
+.girdle-medium,
+ul.girdle,
+ul.girdle-medium {
+  margin: 0 auto;
+  max-width: 83.6875rem;
+}
+
+.girdle-medium,
+ul.girdle-medium {
+  max-width: 74.6875rem;
+}
+
+/* Hidden for everyone but screen readers */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Hidden for everyone */
+.hidden {
+  display: none;
+}
+
+/* removes most of the default styling for a ul or ol */
+.reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* aligns a set of buttons in a column on mobile and in a row on tablet and larger */
+.button-container-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-default);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .button-container-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* hides the element on mobile devices (phones) */
+.hide-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .hide-mobile {
+    display: initial;
+  }
+}

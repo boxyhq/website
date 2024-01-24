@@ -1,0 +1,64 @@
+.button {
+  background: none;
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+  display: block;
+  padding: var(--spacing-narrow) var(--spacing-default);
+  text-decoration: none;
+}
+
+.button-primary,
+.button-secondary {
+  min-width: 7rem;
+  text-align: center;
+}
+
+a.button-primary:link,
+a.button-primary:visited,
+.button-primary {
+  background-color: var(--color-teal-90);
+  border: 1px solid var(--color-teal-90);
+  color: var(--color-teal-05);
+}
+
+.button-secondary {
+  border: 1px solid var(--color-teal-90);
+  color: var(--color-teal-90);
+}
+
+.button-secondary-filled {
+  background-color: var(--color-teal-50);
+  border: 1px solid var(--color-teal-50);
+  color: var(--color-teal-90);
+}
+
+.button-primary.with-icon,
+.button-secondary.with-icon,
+.button-secondary-filled.with-icon {
+  display: flex;
+  gap: var(--spacing-narrow);
+  text-align: inherit;
+}
+
+a.button-primary:hover,
+a.button-primary:focus,
+.button-primary:hover,
+.button-primary:focus,
+.button-secondary:hover,
+.button-secondary:focus {
+  background-color: var(--color-teal-50);
+  border-color: var(--color-teal-50);
+  color: var(--color-teal-90);
+}
+
+.button-secondary-filled:hover,
+.button-secondary-filled:focus {
+  background-color: var(--color-teal-30);
+  border-color: var(--color-teal-30);
+  color: var(--color-teal-90);
+}
+
+.ghost {
+  border: 0;
+  border-radius: 0;
+}
