@@ -14,7 +14,7 @@ const HeroHome = () => {
           <p>
             Reduce Time to Market without sacrificing your security posture!
             BoxyHQ’s suite of APIs for security and privacy helps engineering
-            teams build and ship compliant cloud applications faster. From NPM,
+            teams build and ship compliant cloud applications faster. From NPM
             to self-hosting or SaaS, BoxyHQ adjusts to fit your needs.
           </p>
           <ul class="reset-list button-container">

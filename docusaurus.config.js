@@ -56,6 +56,10 @@ module.exports = {
           type: 'dropdown',
           items: [
             {
+              to: '/products/overview',
+              label: 'Overview',
+            },
+            {
               to: '/enterprise-sso',
               label: 'Enterprise SSO',
             },
