@@ -37,7 +37,7 @@ const OurProducts = ({ centerHeader = false }) => {
       reversed: true,
       title: 'Privacy Vault',
       copy: 'Taking the best practices from companies like Google, Apple and Facebook, BoxyHQ offers an open-source solution to centralize, isolate and govern all the sensitive data you collect.',
-      icon: 'icon-lock',
+      icon: 'icon-vault',
       url: '/privacy-vault',
     },
   ];
