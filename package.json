@@ -41,5 +41,10 @@
   },
   "engines": {
     "node": ">=18.x"
+  },
+  "overrides": {
+    "@cmfcmf/docusaurus-search-local": {
+      "@docusaurus/core": "^3.1.0"
+    }
   }
 }
