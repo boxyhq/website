@@ -206,11 +206,11 @@ module.exports = {
           items: [
             {
               label: 'Privacy & Cookies Policy',
-              href: '/privacy.html',
+              href: 'https://boxyhq.com/privacy.html',
             },
             {
               label: 'Terms',
-              href: '/terms.html',
+              href: 'https://boxyhq.com/terms.html',
               target: '_blank',
             },
           ],
