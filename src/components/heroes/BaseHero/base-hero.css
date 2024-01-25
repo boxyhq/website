@@ -109,26 +109,15 @@
 }
 
 /* custom icon colors */
-.hero .icon-code-slash::before {
-  background-color: var(--color-teal-05);
-}
-
-.hero .icon-docs::before {
-  background-color: var(--color-teal-05);
-}
-
-.hero .icon-github::before {
-  background-color: var(--color-teal-90);
-}
-
-.hero .icon-laptop::before {
-  background-color: var(--color-teal-90);
-}
-
+.hero .icon-code-slash::before,
+.hero .icon-docs::before,
 .hero .icon-person::before {
   background-color: var(--color-teal-05);
 }
 
+.hero .icon-calendar::before,
+.hero .icon-github::before,
+.hero .icon-laptop::before,
 .hero .icon-youtube::before {
   background-color: var(--color-teal-90);
 }
