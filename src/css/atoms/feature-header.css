@@ -32,6 +32,7 @@
 
 .feature-header-subtitle {
   font-size: var(--typography-size-medium);
+  margin-bottom: 0;
   text-transform: uppercase;
 }
 

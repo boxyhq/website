@@ -1,13 +1,14 @@
-.hero-home-section {
+.hero-section {
   background-color: var(--color-teal-05);
 }
 
-.hero-home {
+.hero {
+  background-color: var(--color-teal-05);
   padding: var(--spacing-medium);
 }
 
 @media only screen and (min-width: 63.9375rem) {
-  .hero-home {
+  .hero {
     display: flex;
     gap: var(--spacing-default);
     min-height: 37rem;
@@ -28,6 +29,7 @@
   .hero-image-container picture {
     background: var(--linear-gradient-feature-image);
     border-radius: var(--border-radius-default);
+    height: max-content;
     padding: var(--spacing-default);
     position: absolute;
     right: -2rem;
@@ -35,7 +37,7 @@
 }
 
 @media only screen and (min-width: 83.6875rem) {
-  .hero-home {
+  .hero {
     min-height: 38rem;
     padding: var(--spacing-wide) var(--spacing-medium);
   }
@@ -93,7 +95,7 @@
   }
 }
 
-.button-container {
+.hero .button-container {
   display: flex;
   gap: var(--spacing-default);
   justify-content: space-between;
@@ -101,16 +103,32 @@
 }
 
 @media only screen and (min-width: 47.9375rem) {
-  .button-container {
+  .hero .button-container {
     justify-content: initial;
   }
 }
 
 /* custom icon colors */
-.icon-laptop::before {
+.hero .icon-code-slash::before {
+  background-color: var(--color-teal-05);
+}
+
+.hero .icon-docs::before {
+  background-color: var(--color-teal-05);
+}
+
+.hero .icon-github::before {
   background-color: var(--color-teal-90);
 }
 
-.icon-code-slash::before {
+.hero .icon-laptop::before {
+  background-color: var(--color-teal-90);
+}
+
+.hero .icon-person::before {
   background-color: var(--color-teal-05);
+}
+
+.hero .icon-youtube::before {
+  background-color: var(--color-teal-90);
 }

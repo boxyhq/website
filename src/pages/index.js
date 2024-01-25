@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import BaseProductFeatureSpotlight from '../components/BaseProductFeatureSpotlight';
 import CTAProductOverview from '../components/CTAProductOverview';
 import CustomersAndPartners from '../components/CustomersAndPartners';
-import HeroHome from '../components/HeroHome';
+import HeroHome from '../components/heroes/HeroHome';
 import Testimonials from '../components/Testimonials';
 
 import '../css/custom-properties.css';
