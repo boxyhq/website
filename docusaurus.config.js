@@ -100,10 +100,6 @@ module.exports = {
               href: 'https://awesome-oss-devsec.boxyhq.com',
               label: 'Developer Security Tools',
             },
-            {
-              href: 'https://github.com/boxyhq/saas-starter-kit',
-              label: 'Enterprise SaaS Starter Kit',
-            },
           ],
         },
         {
@@ -132,16 +128,16 @@ module.exports = {
           position: 'right',
           items: [
             {
-              to: '/careers',
-              label: 'Careers',
-            },
-            {
-              to: '/team',
-              label: 'Team',
+              to: '/about',
+              label: 'About',
             },
             {
               to: '/pledge',
               label: 'Pledge',
+            },
+            {
+              to: '/careers',
+              label: 'Careers',
             },
           ],
         },
@@ -341,6 +337,10 @@ module.exports = {
           {
             from: '/docs/jackson/deploy/pre-loaded-configuration',
             to: '/docs/jackson/deploy/pre-loaded-connections',
+          },
+          {
+            from: '/team',
+            to: '/about',
           },
         ],
       },
