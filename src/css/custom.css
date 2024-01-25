@@ -44,6 +44,11 @@ body[data-theme='dark'] {
   height: 3.5rem;
 }
 
+.navbar__item .dropdown__link {
+  align-items: center;
+  display: flex;
+}
+
 /* GitHub */
 .header-github-link:hover {
   opacity: 0.6;

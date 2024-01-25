@@ -137,3 +137,9 @@ ul.girdle-medium {
     display: initial;
   }
 }
+
+/* dacusaurus theme customisation */
+.navbar__item .dropdown__link {
+  align-items: center;
+  display: flex;
+}

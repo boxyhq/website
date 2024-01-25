@@ -76,7 +76,7 @@ module.exports = {
               label: 'Privacy Vault',
             },
             {
-              href: 'https://app.eu.boxyhq.com/auth/join',
+              href: 'https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=main-nav',
               label: 'SaaS Sign up',
             },
             {
