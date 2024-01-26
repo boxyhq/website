@@ -9,6 +9,7 @@ const Picture = ({ alt = '', pictureSrc, height, width }) => {
         width={width}
         height={height}
         src={`${pictureSrc}.png`}
+        loading="lazy"
       />
     </picture>
   );
