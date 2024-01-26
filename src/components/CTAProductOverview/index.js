@@ -3,7 +3,7 @@ import BaseCTAProductHighlight from '../BaseCTAProductHighlight';
 const CTAProductOverview = () => {
   return (
     <BaseCTAProductHighlight
-      ctaTargertURL="/enterprise-sso"
+      ctaTargertURL="/products/overview"
       ctaTargertCopy="Our Products"
       sectionId="product-overview"
       subtitle="Enterprise Ready"
