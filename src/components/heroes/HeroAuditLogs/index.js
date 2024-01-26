@@ -8,12 +8,12 @@ const HeroAuditLogs = () => {
       title="BoxyHQ <br />Audit Logs"
     >
       <p>
-        Discover the power of streamlined user and group provisioning with
-        BoxyHQ's Directory Sync. Our solution fully supports the SCIM 2.0
-        protocol, ensuring seamless compatibility with the majority of major
-        Identity Providers. Elevate your system's efficiency and compliance with
-        a robust directory synchronization tool designed for the modern
-        enterprise.
+        BoxyHQ's Audit Logs, built on the robust open-source Retraced project,
+        offer a seamless solution for integrating compliant, secure, and
+        reliable audit logs into your applications. Simplify your compliance
+        journey with our user-friendly API, designed to provide comprehensive
+        tracking and reporting capabilities essential for modern enterprise
+        needs.
       </p>
       <ul className="reset-list button-container">
         <li>
