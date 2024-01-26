@@ -64,7 +64,11 @@ const EnterpriseSSO = () => {
   ];
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroSSO />
       <main>
         <div className="enterprise-sso-advantages">

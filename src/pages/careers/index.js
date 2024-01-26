@@ -9,7 +9,11 @@ const Careers = () => {
   const metaPageTitle = 'Career Opportunities at BoxyHQ';
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroCareers />
       <main className="girdle careers-main">
         <div className="content-wrapper">

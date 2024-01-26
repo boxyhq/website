@@ -6,7 +6,11 @@ const Terms = () => {
   const metaPageTitle = 'BoxyHQ Terms and Conditions - User Agreement Policies';
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <main class="girdle legal-page">
         <h1>BoxyHQ Terms and Conditions</h1>
         <p class="effective-data">

@@ -26,7 +26,11 @@ const Pricing = () => {
   }
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <main className="girdle primary-content-wrapper">
         <h2 className="linear-gradient-text">
           From Startup to Enterprise, We've Got You Covered

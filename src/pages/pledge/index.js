@@ -9,7 +9,11 @@ const Pledge = () => {
   const metaPageTitle = 'BoxyHQ, Committed to Open Source';
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroPledge />
       <main className="girdle primary-content-wrapper pledge">
         <div className="primary-content">

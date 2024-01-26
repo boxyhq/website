@@ -6,7 +6,11 @@ const Privacy = () => {
   const metaPageTitle = 'BoxyHQ Privacy Policy - Safeguarding Your Data';
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <main class="girdle legal-page">
         <h1>BoxyHQ Privacy Policy</h1>
         <p class="effective-data">

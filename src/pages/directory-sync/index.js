@@ -45,7 +45,11 @@ const DirectorySync = () => {
   ];
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroDirectorySync />
 
       <main>

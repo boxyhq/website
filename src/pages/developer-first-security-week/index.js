@@ -11,7 +11,11 @@ const DeveloperFirstSecurityWeek = () => {
     'Developer-First Security Week by BoxyHQ - Empowering Developers in Cybersecurity';
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroDeveloperFirstSecurityWeek />
       <main>
         <PanelDiscussions />

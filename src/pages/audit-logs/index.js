@@ -44,7 +44,11 @@ const AuditLogs = () => {
   ];
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroAuditLogs />
 
       <ul class="reset-list">

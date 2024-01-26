@@ -1,54 +1,54 @@
-h1,
-h2,
-h3,
-h4,
-h5 {
+.marketing-site h1,
+.marketing-site h2,
+.marketing-site h3,
+.marketing-site h4,
+.marketing-site h5 {
   font-family: var(--typography-heading-family);
   line-height: var(--typography-heading-line-height);
 }
 
-h1 {
+.marketing-site h1 {
   font-size: var(--typography-size-xxl);
   line-height: var(--typography-primary-heading-line-height);
 }
 
-h2 {
+.marketing-site h2 {
   font-size: var(--typography-size-xl);
 }
 
-h3 {
+.marketing-site h3 {
   font-size: var(--typography-size-large);
 }
 
-h4 {
+.marketing-site h4 {
   font-size: var(--typography-size-medium);
 }
 
-h5 {
+.marketing-site h5 {
   font-size: var(--typography-size-small-medium);
 }
 
-p {
+.marketing-site p {
   margin-bottom: var(--spacing-medium);
 }
 
-.small-text {
+.marketing-site .small-text {
   font-size: var(--typography-size-small);
 }
 
-.tiny-text {
+.marketing-site .tiny-text {
   font-size: var(--typography-size-tiny);
 }
 
-.lead {
+.marketing-site .lead {
   font-size: var(--typography-size-medium);
 }
 
-.lead-outro {
+.marketing-site .lead-outro {
   font-size: var(--typography-size-small-medium);
 }
 
-.linear-gradient-text {
+.marketing-site .linear-gradient-text {
   background: var(--typography-linear-gradient);
   background-clip: text;
   -webkit-text-fill-color: transparent;

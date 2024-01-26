@@ -15,7 +15,11 @@ const IndexPage = () => {
   const metaPageTitle = 'Security Building Blocks for Developers';
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroHome />
       <main>
         <BaseProductFeatureSpotlight

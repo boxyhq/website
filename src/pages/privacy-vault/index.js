@@ -44,7 +44,11 @@ const PrivacyVault = () => {
   ];
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <HeroPrivacyVault />
 
       <main>

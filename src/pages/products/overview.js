@@ -12,7 +12,11 @@ const ProductsOverview = () => {
     'Enterprise SSO, Directory Sync, Audit Logs, Privacy Vault';
 
   return (
-    <Layout title={metaPageTitle} description={metaDescription}>
+    <Layout
+      title={metaPageTitle}
+      description={metaDescription}
+      wrapperClassName="marketing-site"
+    >
       <main>
         <OurProducts />
       </main>
