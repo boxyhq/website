@@ -1,15 +1,19 @@
 .pricing-table.self-host {
   background-color: var(--color-teal-10);
-  border: 1px solid var(--color-teal-30);
+  border: 0;
+}
+
+.pricing-table.self-host .pricing-heading {
+  margin-bottom: 0;
+}
+
+.pricing-table.self-host thead .button {
+  margin: var(--spacing-default) 0 0;
 }
 
 @media only screen and (min-width: 63.9375rem) {
   .pricing-table.self-host {
     margin-bottom: var(--spacing-wide);
-  }
-
-  .pricing-table.self-host caption {
-    border-top-left-radius: var(--border-radius-default);
   }
 }
 

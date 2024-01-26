@@ -106,20 +106,6 @@ const TableSelfHostPremium = ({ showHubSpotForm }) => {
             </button>
           </td>
         </tr>
-        <tr>
-          <th scope="row">
-            Premium Features
-            <ul>
-              <li>Custom branding</li>
-              <li>
-                <a href="/docs/jackson/saml-federation">SAML Federation</a>
-              </li>
-            </ul>
-          </th>
-          <td className="base-icon-pseudo icon-check">
-            <span className="visually-hidden">Supported</span>
-          </td>
-        </tr>
       </tbody>
     </table>
   );

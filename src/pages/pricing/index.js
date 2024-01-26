@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import Layout from '@theme/Layout';
 
-import HeroPricing from '../../components/heroes/HeroPricing';
-
 import { HubSpotPricingContactForm } from '../../components/HubSpotForm';
 import { Modal } from '../../components/Modal';
 
@@ -12,6 +10,7 @@ import TableSelfHostPremium from '../../components/tables/TableSelfHostPremium';
 import TableSaaS from '../../components/tables/TableSaaS';
 
 import './pricing.css';
+import TableAddons from '../../components/tables/TableAddons';
 
 const Pricing = () => {
   const metaDescription =
@@ -28,7 +27,6 @@ const Pricing = () => {
 
   return (
     <Layout title={metaPageTitle} description={metaDescription}>
-      <HeroPricing />
       <main className="girdle primary-content-wrapper">
         <h2 className="linear-gradient-text">
           From Startup to Enterprise, We've Got You Covered
@@ -42,42 +40,31 @@ const Pricing = () => {
           of self-hosting, or wish to leverage the convenience of our SaaS
           offering, we have the right solution for you.
         </p>
-        <p className="lead-outro">
-          Our comprehensive suite of products, ranging from Enterprise Single
-          Sign-On and Directory Sync to Audit Logs and Data Privacy, is
-          meticulously designed for flexibility. This ensures seamless
-          integration into your products, enhancing functionality and user
-          experience. By choosing BoxyHQ, you're not just adopting a security
-          solution; you're embracing a strategic partner dedicated to enhancing
-          your operational efficiency. Our solutions are crafted to save you
-          valuable time, reduce operational costs, and streamline complex
-          processes that often consume significant resources.
-        </p>
-        <p className="lead-outro">
-          Embrace the BoxyHQ advantage, and join a growing community of
-          businesses who trust us to simplify their security needs while they
-          forge ahead in their respective industries. Together, let's redefine
-          what it means to be secure, efficient, and customer-focused in today's
-          dynamic business landscape.
-        </p>
-        <div className="pricing-tables-wrapper">
+        <div className="girdle pricing-tables-wrapper">
+          <TableSaaS
+            showHubSpotForm={(shouldShow, currentFormId) =>
+              showHubSpotForm(shouldShow, currentFormId)
+            }
+          />
           <TableSelfHostBasic />
           <TableSelfHostPremium
             showHubSpotForm={(shouldShow, currentFormId) =>
               showHubSpotForm(shouldShow, currentFormId)
             }
           />
-          <TableSaaS
-            showHubSpotForm={(shouldShow, currentFormId) =>
-              showHubSpotForm(shouldShow, currentFormId)
-            }
-          />
+
           <TableEnterprise
             showHubSpotForm={(shouldShow, currentFormId) =>
               showHubSpotForm(shouldShow, currentFormId)
             }
           />
         </div>
+
+        <TableAddons
+          showHubSpotForm={(shouldShow, currentFormId) =>
+            showHubSpotForm(shouldShow, currentFormId)
+          }
+        />
       </main>
       {opened && (
         <Modal title="Contact Us" opened={opened} setOpened={setOpened}>

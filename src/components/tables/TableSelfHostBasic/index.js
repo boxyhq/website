@@ -82,20 +82,6 @@ const TableSelfHostBasic = () => {
           <th scope="row">Privacy Vault</th>
           <td>Free forever</td>
         </tr>
-        <tr>
-          <th scope="row">
-            Premium Features
-            <ul>
-              <li>Custom branding</li>
-              <li>
-                <a href="/docs/jackson/saml-federation">SAML Federation</a>
-              </li>
-            </ul>
-          </th>
-          <td className="base-icon-pseudo icon-cross">
-            <span className="visually-hidden">Not Supported</span>
-          </td>
-        </tr>
       </tbody>
     </table>
   );

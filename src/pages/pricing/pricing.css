@@ -21,8 +21,8 @@
 }
 
 @media only screen and (min-width: 83.6875rem) {
-  .pricing-tables-wrapper {
-    margin: var(--spacing-xwide) 0;
+  .pricing-tables-wrapper.girdle {
+    margin-top: var(--spacing-xwide);
   }
 
   .pricing-tables-wrapper .pricing-table {
@@ -36,6 +36,10 @@
 
 table {
   border-collapse: collapse;
+}
+
+.pricing-table {
+  height: 100%;
 }
 
 .pricing-table caption {
@@ -71,6 +75,11 @@ table {
 
 .pricing-table thead td {
   padding: var(--spacing-default);
+}
+
+.pricing-table th,
+.pricing-table td {
+  border: 0;
 }
 
 .pricing-table caption,

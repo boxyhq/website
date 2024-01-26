@@ -1,4 +1,5 @@
 @import './reset.css';
+@import './atoms/badge.css';
 @import './atoms/buttons.css';
 @import './atoms/iconography.css';
 @import './atoms/typography.css';
@@ -111,6 +112,11 @@ ul.girdle-medium {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.inline-list {
+  display: flex;
+  gap: var(--spacing-default);
 }
 
 /* aligns a set of buttons in a column on mobile and in a row on tablet and larger */

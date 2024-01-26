@@ -1,0 +1,25 @@
+.pricing-product-addons .addons-contact {
+  background: none;
+  border-bottom: 1px solid var(--color-neutral-50);
+  cursor: pointer;
+  padding: 0;
+}
+
+.pricing-table.addons {
+  border: 1px solid var(--color-neutral-50);
+  width: max-content;
+}
+
+.pricing-table.addons a:link,
+.pricing-table.addons a:visited {
+  text-decoration: underline;
+}
+
+.pricing-table.addons a:hover,
+.pricing-table.addons a:focus {
+  text-decoration: none;
+}
+
+.pricing-table.addons td {
+  width: initial;
+}
