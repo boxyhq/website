@@ -6,8 +6,9 @@ import GuestSpeakers from '../../components/GuestSpeakers';
 
 const DeveloperFirstSecurityWeek = () => {
   const metaDescription =
-    'BoxyHQ for Startups: Transform your SaaS with enterprise-grade features like SAML SSO, Directory Sync, Audit Logs, and Data Privacy Vault. Quick integration, open-source, secure by design - elevate your startup to enterprise readiness effortlessly.';
-  const metaPageTitle = 'B2B SaaS Enterprise Readiness For Startups';
+    'Join BoxyHQ for the Developer-First Security Week, Aug 7-11. A week-long event featuring industry experts discussing the future of security in technology. Explore panels on authentication, authorization, and data privacy, and connect with leaders from Google, Microsoft, and more.';
+  const metaPageTitle =
+    'Developer-First Security Week by BoxyHQ - Empowering Developers in Cybersecurity';
 
   return (
     <Layout title={metaPageTitle} description={metaDescription}>

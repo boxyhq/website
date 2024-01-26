@@ -3,7 +3,7 @@ import { themes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Security Building Blocks for Developers',
+  title: 'BoxyHQ',
   tagline:
     'BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes. Open source and free.',
   url: 'https://boxyhq.com',
