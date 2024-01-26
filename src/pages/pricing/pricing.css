@@ -1,0 +1,119 @@
+.primary-content-wrapper {
+  padding: var(--spacing-medium);
+}
+
+.pricing-tables-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-wide);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .pricing-tables-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .pricing-tables-wrapper .pricing-table {
+    flex: 1 1 45%;
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .pricing-tables-wrapper {
+    margin: var(--spacing-xwide) 0;
+  }
+
+  .pricing-tables-wrapper .pricing-table {
+    flex: 1 1 22%;
+  }
+
+  .pricing-tables-wrapper .pricing-table.saas {
+    flex: 1 1 25%;
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.pricing-table caption {
+  font-size: var(--typography-size-medium);
+  font-weight: bold;
+}
+
+.pricing-table .button.button-primary:hover,
+.pricing-table .button.button-primary:focus {
+  background-color: var(--color-teal-80);
+  color: var(--color-teal-05);
+}
+
+.pricing-table abbr {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .pricing-table .getting-started {
+    max-width: max-content;
+  }
+}
+
+.pricing-table .pricing-heading {
+  font-size: var(--typography-size-large);
+  font-weight: normal;
+}
+
+.pricing-table .starting-at {
+  display: block;
+  font-size: var(--typography-size-default);
+}
+
+.pricing-table thead td {
+  padding: var(--spacing-default);
+}
+
+.pricing-table caption,
+.pricing-table tbody th {
+  text-align: left;
+}
+
+.pricing-table tbody th,
+.pricing-table tbody td {
+  padding: var(--spacing-default);
+}
+
+.pricing-table tbody th {
+  width: 55%;
+}
+
+.pricing-table tbody td {
+  text-align: right;
+  width: 45%;
+}
+
+.pricing-table tbody ul {
+  margin-top: var(--spacing-narrow);
+  padding-left: var(--spacing-default);
+}
+
+.getting-started {
+  margin: var(--spacing-default) 0;
+}
+
+.pricing-table .icon-check::before,
+.pricing-table .icon-cross::before {
+  float: right;
+}
+
+.pricing-table .icon-check::before {
+  background-color: var(--color-teal-50);
+}
+
+.pricing-table .icon-cross::before {
+  background-color: var(--color-red-50);
+}
+
+.pricing-table .icon-github::before {
+  background-color: var(--color-teal-05);
+}

@@ -121,3 +121,11 @@
 .hero .icon-youtube::before {
   background-color: var(--color-teal-90);
 }
+
+.hero .lead {
+  font-size: var(--typography-size-medium);
+}
+
+.hero .lead-outro {
+  font-size: var(--typography-size-small-medium);
+}

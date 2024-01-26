@@ -1,0 +1,60 @@
+.pricing-table.enterprise {
+  background-color: var(--color-blue-20);
+  border: 1px solid var(--color-blue-40);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .pricing-table.enterprise {
+    border-left: 1px solid var(--color-blue-60);
+  }
+
+  .pricing-table.enterprise caption {
+    border-left: 1px solid var(--color-blue-60);
+    border-top-right-radius: var(--border-radius-default);
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .pricing-table.enterprise {
+    border-left: 0;
+    margin: var(--spacing-wide) 0;
+  }
+
+  .pricing-table.enterprise caption {
+    border-left: 0;
+    border-top-right-radius: var(--border-radius-default);
+  }
+}
+
+.pricing-table.enterprise caption,
+.pricing-table.enterprise .pricing-heading {
+  color: var(--color-blue-90);
+}
+
+.pricing-table.enterprise .button {
+  background-color: var(--color-blue-60);
+  border: 1px solid var(--color-blue-60);
+}
+
+.pricing-table.enterprise .button.button-primary:hover,
+.pricing-table.enterprise .button.button-primary:focus {
+  background-color: var(--color-blue-80);
+  color: var(--color-teal-05);
+}
+
+.pricing-table.enterprise caption {
+  background-color: var(--color-blue-40);
+  padding: var(--spacing-narrow) var(--spacing-default);
+}
+
+.pricing-table.enterprise tbody tr:nth-child(odd) {
+  background-color: var(--color-blue-10);
+}
+
+.pricing-table.enterprise .icon-check::before {
+  background-color: var(--color-blue-80);
+}
+
+.pricing-table.enterprise .icon-send::before {
+  background-color: var(--color-blue-10);
+}

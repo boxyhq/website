@@ -1,0 +1,52 @@
+.pricing-table.self-host-premium {
+  background-color: var(--color-teal-10);
+  border: 1px solid var(--color-teal-30);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .pricing-table.self-host-premium {
+    border-left: 1px solid var(--color-petrol-60);
+    margin-bottom: var(--spacing-wide);
+  }
+
+  .pricing-table.self-host-premium caption {
+    border-left: 1px solid var(--color-petrol-60);
+    border-top-right-radius: var(--border-radius-default);
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .pricing-table.self-host-premium {
+    border-left: 0;
+    border-right: 0;
+    margin: var(--spacing-wide) 0;
+  }
+
+  .pricing-table.self-host-premium caption {
+    border-left: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.pricing-table.self-host-premium caption,
+.pricing-table.self-host-premium .pricing-heading {
+  color: var(--color-teal-80);
+}
+
+.pricing-table.self-host-premium .button {
+  background-color: var(--color-teal-60);
+  border: 1px solid var(--color-teal-60);
+}
+
+.pricing-table.self-host-premium caption {
+  background-color: var(--color-teal-20);
+  padding: var(--spacing-narrow) var(--spacing-default);
+}
+
+.pricing-table.self-host-premium tbody tr:nth-child(odd) {
+  background-color: var(--color-teal-05);
+}
+
+.pricing-table.self-host-premium .icon-check::before {
+  background-color: var(--color-teal-70);
+}
