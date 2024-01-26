@@ -338,10 +338,6 @@ module.exports = {
             from: '/docs/jackson/deploy/pre-loaded-configuration',
             to: '/docs/jackson/deploy/pre-loaded-connections',
           },
-          {
-            from: '/team',
-            to: '/about',
-          },
         ],
       },
     ],
