@@ -42,7 +42,7 @@ const EnterpriseSSO = () => {
       ctaCopy: 'Read More',
       copy: "Enterprises typically have an Identity Provider (IdP) entrenched within their systems, favoring solution providers that offer Enterprise Single Sign-On (SSO) integration. They rely on established protocols like SAML or OpenID Connect to manage access and maintain robust security. Deviating from these established workflows can lead to inefficiencies and security concerns. BoxyHQ's solution effortlessly dovetails with SAML and OpenID Connect, ensuring a smooth continuation of your clients' preferred access management processes without any disruption.",
       icon: 'icon-secure',
-      url: '/blog/sso-building-blogs',
+      url: '/blog/sso-building-blocks',
     },
   ];
   const ssoAdvantages = [
