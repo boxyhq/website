@@ -8,31 +8,43 @@ const Testimonials = ({ light = false }) => {
   const testimonials = [
     {
       companyName: 'Cal.com',
+      reviewerName: 'Peer Richelsen',
+      reviewerPictureSrc: '/images/success-stories/peer-calcom',
+      reviewerRole: 'Co-Founder, Cal.com',
       testimonialURL:
         '/success-stories/accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution',
       testimonialContent:
-        "It let our team focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it's open-source and free?",
+        "Building enterprise features takes a lot of time and resources, thankfully BoxyHQ packages it up in a box. Their SSO offering is exactly what we needed. It allowed our team to focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it's open-source and free?",
     },
     {
       companyName: 'dub',
+      reviewerName: 'Steven Tey',
+      reviewerPictureSrc: '/images/success-stories/steven-tey-dub',
+      reviewerRole: 'Founder, Dub',
       testimonialURL:
         '/success-stories/safeguarding-trust-boxyhq-sso-enhances-dubs-security',
       testimonialContent:
-        'BoxyHQ helped us implement single sign-on for our government customers in record time, it was exactly what we were looking for.',
+        "Huge shoutout to BoxyHQ for demystifying esoteric concepts like Enterprise SSO and Directory Sync! I highly recommend checking out their docs – it's an absolute goldmine",
     },
     {
       companyName: 'unicis',
+      reviewerName: 'Predrag Tasevski',
+      reviewerPictureSrc: '/images/success-stories/predrag-tasevski-unicis',
+      reviewerRole: 'Founder & CEO Unicis.Tech',
       testimonialURL:
         '/success-stories/boxyhqs-sso-&-audit-logs-accelerate-unicis-towards-soc2-compliance',
       testimonialContent:
-        "BoxyHQ's SSO & Audit Logs Accelerate Unicis Towards SOC2 Compliance.",
+        "BoxyHQ's solution has helped our team save a lot of time. After implementing BoxyHQ, we no longer needed to develop or integrate an expensive solution to connect to Identity Providers (SSO) and build our own Audit Log service.",
     },
     {
-      companyName: 'unosecur',
+      companyName: 'spike.sh',
+      reviewerName: 'Kaushik Thirthappa',
+      reviewerPictureSrc: '/images/success-stories/kaushik-spike',
+      reviewerRole: 'Founder, Spike.sh',
       testimonialURL:
-        '/success-stories/unosecur-leverages-boxyhqs-security-building-blocks-for-enterprise-peace-of-mind',
+        '/success-stories/spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solution',
       testimonialContent:
-        'With BoxyHQ, we can focus on building our core product without worrying too much about the enterprise readiness features. The integration was seamless.',
+        "Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.",
     },
   ];
   return (
@@ -53,8 +65,7 @@ const Testimonials = ({ light = false }) => {
           {testimonials.map((testimonial) => (
             <TestimonialEntry
               key={testimonial.testimonialURL}
-              companyName={testimonial.companyName}
-              testimonialURL={testimonial.testimonialURL}
+              testimonial={testimonial}
             >
               <p>{testimonial.testimonialContent}</p>
             </TestimonialEntry>
