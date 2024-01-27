@@ -46,12 +46,12 @@ const CustomersAndPartners = () => {
       className="customers-and-partners-container"
     >
       <header className="feature-header">
-        <h2 className="feature-header-title" id="customers-and-partners-title">
+        <h2
+          className="feature-header-title linear-gradient-text"
+          id="customers-and-partners-title"
+        >
           Trusted By
         </h2>
-        <h3 className="feature-header-subtitle linear-gradient-text">
-          Partners &amp; Customers Alike
-        </h3>
       </header>
       <ul className="reset-list girdle customers-and-partners-list">
         {customersAndPartners.map((customerOrPartner) => (
