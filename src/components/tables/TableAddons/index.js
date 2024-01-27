@@ -53,15 +53,7 @@ const TableAddons = ({ showHubSpotForm }) => {
             </td>
           </tr>
           <tr>
-            <td>
-              <a
-                href="/docs/jackson/saml-federation"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                SAML Federation
-              </a>
-            </td>
+            <td>SAML Federation</td>
             <td>
               <ul class="reset-list inline-list">
                 <li>

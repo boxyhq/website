@@ -40,12 +40,11 @@ const OurInvestors = () => {
 
       <ul class="reset-list girdle investors-list">
         {investors.map((investor) => (
-          <li class="investors-list-entry">
+          <li class="investors-list-entry" key={investor.url}>
             <BaseCard
               cardImage={`/images/investors/${investor.cardImg}`}
               centered={true}
               height="100"
-              showCTA={true}
               width="250"
             >
               <p>{investor.bio}</p>
@@ -54,7 +53,6 @@ const OurInvestors = () => {
                 href={investor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                slot="base-card-cta"
               >{`Learn more about ${investor.investorName}`}</a>
             </BaseCard>
           </li>

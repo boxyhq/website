@@ -9,7 +9,6 @@ const BaseCard = ({
   cardImage,
   centered,
   height = '250',
-  showCTA = true,
   width = '250',
 }) => {
   return (
@@ -20,7 +19,6 @@ const BaseCard = ({
         )}
         {children}
       </div>
-      {showCTA && <slot name="base-card-cta" />}
     </div>
   );
 };

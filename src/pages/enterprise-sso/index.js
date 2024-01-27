@@ -86,11 +86,7 @@ const EnterpriseSSO = () => {
           <ul class="reset-list enterprise-sso-advantages-list">
             {ssoAdvantages.map((advantage) => (
               <li key={advantage.title}>
-                <BaseCard
-                  cardImage={advantage.cardImage}
-                  centered={true}
-                  showCTA={false}
-                >
+                <BaseCard cardImage={advantage.cardImage} centered={true}>
                   <h3 className="card-title">{advantage.title}</h3>
                   <p>{advantage.copy}</p>
                 </BaseCard>
@@ -124,6 +120,7 @@ const EnterpriseSSO = () => {
                     benefit.icon
                   )}
                   href={benefit.url}
+                  target={benefit.url.startsWith('http') ? '_blank' : '_self'}
                 >
                   {benefit.ctaCopy}
                 </a>

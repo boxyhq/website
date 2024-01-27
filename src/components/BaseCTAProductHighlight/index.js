@@ -7,6 +7,7 @@ const BaseCTAProductHighlight = ({
   icon = 'boxy',
   sectionId,
   subtitle,
+  targetNewWindow = false,
   title,
 }) => {
   return (
@@ -22,6 +23,7 @@ const BaseCTAProductHighlight = ({
         <a
           class={`button button-secondary-filled with-icon base-icon-pseudo icon-${icon}`}
           href={ctaTargertURL}
+          target={targetNewWindow ? '_blank' : '_self'}
         >
           {ctaTargertCopy}
         </a>

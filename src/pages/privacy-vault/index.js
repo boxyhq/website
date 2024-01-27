@@ -71,6 +71,7 @@ const PrivacyVault = () => {
                     benefit.icon
                   )}
                   href={benefit.url}
+                  target={benefit.url.startsWith('http') ? '_blank' : '_self'}
                 >
                   {benefit.ctaCopy}
                 </a>

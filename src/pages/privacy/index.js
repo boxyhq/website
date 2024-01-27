@@ -370,7 +370,7 @@ const Privacy = () => {
             Facebook Inc., 1 Hacker Way, Menlo Park, CA 94025, USA. The user can
             consult the privacy policy and other legal aspects of said company
             in the following link:{' '}
-            <a href="https://en-en.facebook.com/about/privacy/">
+            <a href="https://en-en.facebook.com/about/privacy/" target="_blank">
               https://en-en.facebook.com/about/privacy/
             </a>
             .
@@ -380,7 +380,10 @@ const Privacy = () => {
             Section 13 hereof, by using these links the user is leaving the Site
             and is redirected to Instagram. The user can consult the privacy
             policy and other legal aspects of Instagram at the following link:{' '}
-            <a href="https://help.instagram.com/155833707900388">
+            <a
+              href="https://help.instagram.com/155833707900388"
+              target="_blank"
+            >
               https://help.instagram.com/155833707900388
             </a>
             .
@@ -390,7 +393,10 @@ const Privacy = () => {
             Section 13 hereof, by using these links the user is leaving the Site
             and is redirected to Linkedin. The user can consult the privacy
             policy and other legal aspects of Linkedin at the following link:
-            <a href="https://www.linkedin.com/legal/privacy-policy">
+            <a
+              href="https://www.linkedin.com/legal/privacy-policy"
+              target="_blank"
+            >
               https://www.linkedin.com/legal/privacy-policy
             </a>
             .
@@ -400,7 +406,7 @@ const Privacy = () => {
             Section 13 hereof, by using these links the user is leaving the Site
             and is redirected to Twitter. The user can consult the privacy
             policy and other legal aspects of Twitter at the following link:{' '}
-            <a href="https://twitter.com/privacy">
+            <a href="https://twitter.com/privacy" target="_blank">
               https://twitter.com/privacy
             </a>
           </li>
@@ -773,7 +779,7 @@ const Privacy = () => {
           Privacy Control (GPC), but please note that this signal will be linked
           to your browser only. For more information on the GPC and how to use a
           browser or browser extension incorporating the GPC signal, see{' '}
-          <a href="https://globalprivacycontrol.org/">
+          <a href="https://globalprivacycontrol.org/" target="_blank">
             https://globalprivacycontrol.org/
           </a>
           .

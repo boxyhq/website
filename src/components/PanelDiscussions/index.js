@@ -92,7 +92,7 @@ const PanelDiscussions = () => {
             className="panel-dicsussions-list-entry"
             key={panelDiscussion.dateTime}
           >
-            <BaseCard showCTA={true}>
+            <BaseCard>
               <h2 className="base-card-title">{panelDiscussion.title}</h2>
               <p className="datetime">
                 <time datetime={panelDiscussion.dateTime}>

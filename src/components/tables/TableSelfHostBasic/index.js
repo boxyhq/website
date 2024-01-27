@@ -13,6 +13,7 @@ const TableSelfHostBasic = () => {
             <a
               className="button button-primary with-icon base-icon-pseudo icon-github getting-started"
               href="https://github.com/boxyhq/jackson"
+              target="_blank"
             >
               Get Started
             </a>

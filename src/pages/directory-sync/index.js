@@ -59,6 +59,7 @@ const DirectorySync = () => {
           sectionId="directory-sync-booking"
           subtitle="Lifecycle Control"
           title="Enterprise Ready"
+          targetNewWindow={true}
         >
           <p>
             Empower your enterprise clients with advanced user lifecycle
@@ -90,6 +91,7 @@ const DirectorySync = () => {
                     benefit.icon
                   )}
                   href={benefit.url}
+                  target={benefit.url.startsWith('http') ? '_blank' : '_self'}
                 >
                   {benefit.ctaCopy}
                 </a>

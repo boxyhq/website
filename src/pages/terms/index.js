@@ -307,9 +307,9 @@ const Terms = () => {
         <p>
           You acknowledge that you have read and understood the terms of BoxyHQ
           Inc.’s Privacy Policy, which can be found here:
-          https://boxyhq.com/privacy. You agree that we may use your information
-          (including disclosure to third parties) in accordance with the terms
-          of our Privacy Policy.
+          <a href="https://boxyhq.com/privacy">https://boxyhq.com/privacy</a>.
+          You agree that we may use your information (including disclosure to
+          third parties) in accordance with the terms of our Privacy Policy.
         </p>
 
         <h2>Non-Waiver</h2>
