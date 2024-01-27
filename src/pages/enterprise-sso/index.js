@@ -86,7 +86,11 @@ const EnterpriseSSO = () => {
           <ul class="reset-list enterprise-sso-advantages-list">
             {ssoAdvantages.map((advantage) => (
               <li key={advantage.title}>
-                <BaseCard cardImage={advantage.cardImage} centered={true}>
+                <BaseCard
+                  cardImage={advantage.cardImage}
+                  centered={true}
+                  showCTA={false}
+                >
                   <h3 className="card-title">{advantage.title}</h3>
                   <p>{advantage.copy}</p>
                 </BaseCard>

@@ -92,7 +92,10 @@ const PanelDiscussions = () => {
             className="panel-dicsussions-list-entry"
             key={panelDiscussion.dateTime}
           >
-            <BaseCard>
+            <BaseCard
+              ctaCopy="Watch On YouTube"
+              ctaURL={panelDiscussion.videoURL}
+            >
               <h2 className="base-card-title">{panelDiscussion.title}</h2>
               <p className="datetime">
                 <time datetime={panelDiscussion.dateTime}>
@@ -106,13 +109,6 @@ const PanelDiscussions = () => {
                   <li key={speaker}>{speaker}</li>
                 ))}
               </ul>
-              <a
-                className="button button-secondary with-icon base-icon-pseudo icon-youtube"
-                href={panelDiscussion.videoURL}
-                target="_blank"
-              >
-                Watch On YouTube
-              </a>
             </BaseCard>
           </li>
         ))}
