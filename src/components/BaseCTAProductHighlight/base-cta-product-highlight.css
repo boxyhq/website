@@ -2,6 +2,11 @@
   padding: var(--spacing-wide) var(--spacing-medium);
 }
 
+.product-highlight.dark {
+  background-color: var(--color-neutral-90);
+  color: var(--color-neutral-inverted);
+}
+
 .product-highlight-content {
   margin: 0 auto;
   max-width: 40rem;

@@ -1,9 +1,12 @@
+import clsx from 'clsx';
+
 import './base-cta-product-highlight.css';
 
 const BaseCTAProductHighlight = ({
   children,
   ctaTargertURL,
   ctaTargertCopy,
+  darkMode = false,
   icon = 'boxy',
   sectionId,
   subtitle,
@@ -11,17 +14,22 @@ const BaseCTAProductHighlight = ({
   title,
 }) => {
   return (
-    <section aria-labelledby={`${sectionId}-title`} class="product-highlight">
-      <header class="feature-header">
-        <h2 class="feature-header-title" id={`${sectionId}-title`}>
+    <section
+      aria-labelledby={`${sectionId}-title`}
+      className={clsx('product-highlight', darkMode && 'dark')}
+    >
+      <header className="feature-header">
+        <h2 className="feature-header-title" id={`${sectionId}-title`}>
           {title}
         </h2>
-        <h3 class="feature-header-subtitle linear-gradient-text">{subtitle}</h3>
+        <h3 className="feature-header-subtitle linear-gradient-text">
+          {subtitle}
+        </h3>
       </header>
-      <div class="product-highlight-content">
+      <div className="product-highlight-content">
         {children}
         <a
-          class={`button button-secondary-filled with-icon base-icon-pseudo icon-${icon}`}
+          className={`button button-secondary-filled with-icon base-icon-pseudo icon-${icon}`}
           href={ctaTargertURL}
           target={targetNewWindow ? '_blank' : '_self'}
         >

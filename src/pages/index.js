@@ -1,6 +1,7 @@
 import Layout from '@theme/Layout';
 
 import BaseProductFeatureSpotlight from '../components/BaseProductFeatureSpotlight';
+import BaseCTAEnterpriseHighlight from '../components/BaseCTAEnterpriseHighlight';
 import CTAProductOverview from '../components/CTAProductOverview';
 import CustomersAndPartners from '../components/CustomersAndPartners';
 import HeroHome from '../components/heroes/HeroHome';
@@ -48,6 +49,7 @@ const IndexPage = () => {
           </a>
         </BaseProductFeatureSpotlight>
         <CTAProductOverview />
+        <BaseCTAEnterpriseHighlight />
         <Testimonials />
         <CustomersAndPartners />
       </main>
