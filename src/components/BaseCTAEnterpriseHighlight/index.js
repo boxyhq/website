@@ -15,9 +15,9 @@ const BaseCTAEnterpriseHighlight = () => {
         streamline operational processes, BoxyHQ presents a powerful suite of
         solutions. Our Enterprise Single Sign-On (SSO), Directory Sync, and
         Audit Logs services are tailored to meet complex organizational demands.
-        These tools not only enhance security but also reinforce your
-        enterprise's compliance with industry standards, elevating trust and
-        reputation in a competitive market.
+        These tools enhance security and reinforce your enterprise's compliance
+        with industry standards, elevating trust and reputation in a competitive
+        market.
       </p>
     </BaseCTAProductHighlight>
   );
