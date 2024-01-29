@@ -29,6 +29,24 @@
   background-color: var(--color-teal-05);
 }
 
+.pricing-table.addons.premium-self-hosted tr {
+  border: 1px solid var(--color-blue-90);
+}
+
+.pricing-table.addons.premium-self-hosted thead th {
+  background-color: var(--color-blue-70);
+  border: 1px solid var(--color-blue-90);
+  color: var(--color-blue-05);
+}
+
+.pricing-table.addons.premium-self-hosted tbody td {
+  border: 1px solid var(--color-blue-90);
+}
+
+.pricing-table.addons.premium-self-hosted tbody tr:nth-child(odd) {
+  background-color: var(--color-blue-05);
+}
+
 .pricing-table.addons td {
   text-align: left;
   width: initial;

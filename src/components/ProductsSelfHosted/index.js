@@ -1,3 +1,4 @@
+import PricingCardsPremiumSelfHosted from '../PricingCardsPremiumSelfHosted';
 import SimpleOSSProductCard from '../cards/SimpleOSSProductCard';
 
 import './product-self-hosted.css';
@@ -6,7 +7,7 @@ const ProductsSelfHosted = () => {
   return (
     <div className="products-self-hosted">
       <h2 className="products-self-hosted-title linear-gradient-text">
-        Open Source. Your Choice.
+        Self Hosted
       </h2>
 
       <p className="lead-outro">
@@ -14,11 +15,14 @@ const ProductsSelfHosted = () => {
         solutions. While our SaaS offering provides convenience and ease of use,
         we also understand the unique needs of businesses that prefer greater
         control. Thanks to our open-source core, you have the option to
-        self-host our products. This allows for tailored security, compliance,
-        and integration with your existing systems, giving you the best of both
-        worlds – our advanced technology and your customized hosting
-        environment.
+        self-host our products.
       </p>
+
+      <h3 className="linear-gradient-text">Self Hosted Premium</h3>
+
+      <PricingCardsPremiumSelfHosted />
+
+      <h3 className="linear-gradient-text">Free Forever</h3>
 
       <ul className="reset-list oss-product-card-list">
         <li>

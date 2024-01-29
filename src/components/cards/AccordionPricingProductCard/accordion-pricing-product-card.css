@@ -9,6 +9,11 @@
   border-color: var(--color-teal-50);
 }
 
+.pricing-product-card.premium-self-hosted {
+  background-color: var(--color-blue-10);
+  border-color: var(--color-blue-50);
+}
+
 .pricing-product-card-summary-wrapper {
   display: flex;
   flex-direction: column;
@@ -64,13 +69,17 @@
   width: 2.2rem;
 }
 
+.pricing-product-card.premium-self-hosted .icon-product-addons::before,
+.pricing-product-card.premium-self-hosted .icon-product-audit-logs::before,
+.pricing-product-card.premium-self-hosted .icon-product-directory-sync::before,
+.pricing-product-card.premium-self-hosted .icon-product-privacy-vault::before,
+.pricing-product-card.premium-self-hosted .icon-product-sso::before,
 .pricing-product-card.saas .icon-product-addons::before,
 .pricing-product-card.saas .icon-product-audit-logs::before,
 .pricing-product-card.saas .icon-product-directory-sync::before,
 .pricing-product-card.saas .icon-product-privacy-vault::before,
 .pricing-product-card.saas .icon-product-sso::before {
   display: none;
-  background-color: var(--color-teal-90);
 }
 
 @media only screen and (min-width: 47.9375em) {
@@ -79,6 +88,17 @@
   .pricing-product-card.saas .icon-product-directory-sync::before,
   .pricing-product-card.saas .icon-product-privacy-vault::before,
   .pricing-product-card.saas .icon-product-sso::before {
+    background-color: var(--color-teal-90);
+    display: block;
+  }
+
+  .pricing-product-card.premium-self-hosted .icon-product-addons::before,
+  .pricing-product-card.premium-self-hosted .icon-product-audit-logs::before,
+  .pricing-product-card.premium-self-hosted
+    .icon-product-directory-sync::before,
+  .pricing-product-card.premium-self-hosted .icon-product-privacy-vault::before,
+  .pricing-product-card.premium-self-hosted .icon-product-sso::before {
+    background-color: var(--color-blue-90);
     display: block;
   }
 }

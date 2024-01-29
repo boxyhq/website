@@ -1,8 +1,10 @@
+import clsx from 'clsx';
+
 import { hubspotFormIds } from '../../Pricing/pricingPlans';
 
 import './table-addons.css';
 
-const TableAddons = ({ showHubSpotForm }) => {
+const TableAddons = ({ showHubSpotForm, type }) => {
   return (
     <div className="pricing-product-addons">
       <p>
@@ -23,58 +25,21 @@ const TableAddons = ({ showHubSpotForm }) => {
         </button>
         .
       </p>
-      <table className="pricing-table addons">
+      <table className={clsx('pricing-table', 'addons', type)}>
         <thead>
           <tr>
-            <th scope="col">Add-On</th>
-            <th scope="col">Available On</th>
+            <th scope="col">Available Add-Ons</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Custom Branding</td>
-            <td>
-              <ul class="reset-list inline-list">
-                <li>
-                  <span class="tier-badge tier-badge-sass">SaaS</span>
-                </li>
-                <li>
-                  <span class="tier-badge tier-badge-enterprise">
-                    Enterprise
-                  </span>
-                </li>
-              </ul>
-            </td>
           </tr>
           <tr>
             <td>SAML Federation</td>
-            <td>
-              <ul class="reset-list inline-list">
-                <li>
-                  <span class="tier-badge tier-badge-sass">SaaS</span>
-                </li>
-                <li>
-                  <span class="tier-badge tier-badge-enterprise">
-                    Enterprise
-                  </span>
-                </li>
-              </ul>
-            </td>
           </tr>
           <tr>
             <td>SIEM Integration</td>
-            <td>
-              <ul class="reset-list inline-list">
-                <li>
-                  <span class="tier-badge tier-badge-sass">SaaS</span>
-                </li>
-                <li>
-                  <span class="tier-badge tier-badge-enterprise">
-                    Enterprise
-                  </span>
-                </li>
-              </ul>
-            </td>
           </tr>
         </tbody>
       </table>
