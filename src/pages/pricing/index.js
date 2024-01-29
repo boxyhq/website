@@ -102,7 +102,22 @@ const Pricing = () => {
                     >
                       contact us today
                     </button>
-                    .
+                    . Do you need an on-premise solution? We also offer
+                    Enterprise Single Sign-On as a premium self-hosted solution.
+                    If you would like to know more, please{' '}
+                    <button
+                      type="button"
+                      className="ghost contact-us-inline"
+                      onClick={() =>
+                        showHubSpotForm(
+                          true,
+                          hubspotFormIds.entrpriseSSODirectorySync
+                        )
+                      }
+                    >
+                      contact us
+                    </button>{' '}
+                    and we will be happy to help.
                   </p>
                   <TableTieredPricing />
                   <p className="pricing-product-card-details-cta">
@@ -143,7 +158,22 @@ const Pricing = () => {
                     >
                       contact us today
                     </button>
-                    .
+                    . Do you need an on-premise solution? We also offer
+                    Directory Sync as a premium self-hosted solution. If you
+                    would like to know more, please{' '}
+                    <button
+                      type="button"
+                      className="ghost contact-us-inline"
+                      onClick={() =>
+                        showHubSpotForm(
+                          true,
+                          hubspotFormIds.entrpriseSSODirectorySync
+                        )
+                      }
+                    >
+                      contact us
+                    </button>{' '}
+                    and we will be happy to help.
                   </p>
                   <TableTieredPricing />
                   <p className="pricing-product-card-details-cta">
@@ -229,7 +259,7 @@ const Pricing = () => {
             <li>
               <AccordionPricingProductCard
                 name="product-addons"
-                subtitle="Custom branding, domains, SAML Federation, SIEM Integration."
+                subtitle="Custom Branding, SAML Federation, SIEM Integration."
                 title="Add-Ons"
                 type="saas"
               >
