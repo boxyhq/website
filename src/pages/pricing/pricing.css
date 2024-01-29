@@ -2,6 +2,12 @@
   padding: var(--spacing-medium);
 }
 
+@media only screen and (min-width: 63.9375em) {
+  .primary-content-wrapper.pricing {
+    padding: var(--spacing-xwide) var(--spacing-medium) 0;
+  }
+}
+
 .pricing-hero {
   text-align: center;
 }
