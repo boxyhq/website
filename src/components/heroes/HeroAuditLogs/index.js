@@ -8,12 +8,11 @@ const HeroAuditLogs = () => {
       title="BoxyHQ <br />Audit Logs"
     >
       <p>
-        BoxyHQ's Audit Logs, built on the robust open-source Retraced project,
-        offer a seamless solution for integrating compliant, secure, and
-        reliable audit logs into your applications. Simplify your compliance
-        journey with our user-friendly API, designed to provide comprehensive
-        tracking and reporting capabilities essential for modern enterprise
-        needs.
+        BoxyHQ's Audit Logs enable enterprise customers to efficiently record
+        and search events within your application, streamlining compliance and
+        reducing the need for complex, in-house development. Our solution's
+        simple integration process saves time, ensuring fast compliance and
+        focusing your team's efforts on core functionalities.
       </p>
       <ul className="reset-list button-container">
         <li>

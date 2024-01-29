@@ -27,7 +27,7 @@ const OurProducts = ({ centerHeader = false }) => {
       pictureSrc: '/images/products/audit-logs',
       reversed: false,
       title: 'Audit Logs',
-      copy: 'Our out-of-the-box solution is designed not only to make you compliant but give your customers all the functionality and safety they need — exportable, immutable, time-synced, and searchable audit logs.',
+      copy: "BoxyHQ's Audit Logs enable enterprise customers to efficiently record and search events within your application, streamlining compliance and reducing the need for complex, in-house development. Our solution's simple integration process saves time, ensuring fast compliance and focusing your team's efforts on core functionalities",
       icon: 'icon-logs',
       url: '/audit-logs',
     },

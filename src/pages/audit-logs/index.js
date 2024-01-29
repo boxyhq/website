@@ -6,9 +6,9 @@ import HeroAuditLogs from '../../components/heroes/HeroAuditLogs';
 
 const AuditLogs = () => {
   const metaDescription =
-    "Explore BoxyHQ's Audit Logs for streamlined compliance and enhanced data monitoring, with an easy-to-use API for secure, enterprise-level event tracking.";
+    'Audit Logs by BoxyHQ: Streamline compliance and enhance application security with easy integration, enabling event recording and search for enterprises.';
   const metaPageTitle =
-    'BoxyHQ Audit Logs: Streamlined Compliance and Data Monitoring';
+    'BoxyHQ Audit Logs: Streamlined Compliance and Event Data Monitoring';
 
   const auditLogBenefits = [
     {
@@ -27,7 +27,7 @@ const AuditLogs = () => {
       reversed: true,
       title: 'Why Are Audit Logs Important?',
       ctaCopy: 'Book A Demo',
-      copy: "Audit logs are a vital tool for companies, especially large enterprises, to monitor data flow and quickly detect any security breaches. For larger enterprises, having robust audit logs is often a non-negotiable requirement. BoxyHQ's Audit Logs provide a comprehensive solution to meet these needs, helping you cater to demanding enterprise customers who prioritize stringent security and compliance standards in their operations.",
+      copy: 'For all companies but in particular large companies, the ability to monitor the flow of data and be alerted to any breaches is essential. Audit logs help to pinpoint any misuse of information and ensure that data policies are followed. Many larger enterprise customers will demand this as a requirement if you plan to sell to them.',
       icon: 'icon-calendar',
       url: 'https://cal.com/deepak-boxyhq/demo',
     },
@@ -37,7 +37,7 @@ const AuditLogs = () => {
       reversed: false,
       title: 'Comprehensive Audit Logs Features',
       ctaCopy: 'Book A Demo',
-      copy: "BoxyHQ's turnkey Audit Logs solution goes beyond mere compliance. It's crafted to provide your customers with a full suite of features essential for robust security and operational efficiency. Enjoy the benefits of exportable, immutable, time-synchronised, and easily searchable audit logs. This all-encompassing approach ensures your customers have access to secure, reliable, and comprehensive data tracking, meeting the highest standards of functionality and safety in data management.",
+      copy: "BoxyHQ's Audit Logs product offers a ready-to-use solution that not only ensures compliance but also provides your customers with comprehensive functionality and security. This includes exportable, immutable, time-synced, and searchable audit logs. Designed for ease of use and efficiency, our audit logs are tailored to meet the rigorous demands of modern enterprises, giving your clients the assurance they need while safeguarding their data.",
       icon: 'icon-calendar',
       url: 'https://cal.com/deepak-boxyhq/demo',
     },
