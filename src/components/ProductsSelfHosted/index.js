@@ -5,7 +5,20 @@ import './product-self-hosted.css';
 const ProductsSelfHosted = () => {
   return (
     <div className="products-self-hosted">
-      <h2 className="products-self-hosted-title">Open Source. Your Choice.</h2>
+      <h2 className="products-self-hosted-title linear-gradient-text">
+        Open Source. Your Choice.
+      </h2>
+
+      <p className="lead-outro">
+        At BoxyHQ, we offer the flexibility to choose how you deploy our
+        solutions. While our SaaS offering provides convenience and ease of use,
+        we also understand the unique needs of businesses that prefer greater
+        control. Thanks to our open-source core, you have the option to
+        self-host our products. This allows for tailored security, compliance,
+        and integration with your existing systems, giving you the best of both
+        worlds – our advanced technology and your customized hosting
+        environment.
+      </p>
 
       <ul className="reset-list oss-product-card-list">
         <li>
