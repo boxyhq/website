@@ -195,18 +195,6 @@ const Pricing = () => {
             </li>
             <li>
               <AccordionPricingProductCard
-                name="product-addons"
-                subtitle="Custom branding, domains, SAML Federation, SIEM Integration."
-                title="Add-Ons"
-                type="saas"
-              >
-                <div className="pricing-product-card-details">
-                  <TableAddons />
-                </div>
-              </AccordionPricingProductCard>
-            </li>
-            <li>
-              <AccordionPricingProductCard
                 name="product-privacy-vault"
                 subtitle="Protect your customer's data and your customer's trust."
                 title="Privacy Vault"
@@ -235,6 +223,18 @@ const Pricing = () => {
                     </button>
                     .
                   </p>
+                </div>
+              </AccordionPricingProductCard>
+            </li>
+            <li>
+              <AccordionPricingProductCard
+                name="product-addons"
+                subtitle="Custom branding, domains, SAML Federation, SIEM Integration."
+                title="Add-Ons"
+                type="saas"
+              >
+                <div className="pricing-product-card-details">
+                  <TableAddons />
                 </div>
               </AccordionPricingProductCard>
             </li>
