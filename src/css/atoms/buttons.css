@@ -3,6 +3,8 @@
   border-radius: var(--border-radius-default);
   cursor: pointer;
   display: block;
+  font-size: var(--typography-size-default);
+  font-weight: normal;
   padding: var(--spacing-narrow) var(--spacing-default);
   text-decoration: none;
 }

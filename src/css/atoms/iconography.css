@@ -1,3 +1,4 @@
+.base-icon-pseudo-after::after,
 .base-icon-pseudo::before {
   background-size: cover;
   content: '';
@@ -40,6 +41,15 @@
 }
 
 .dark .icon-chevron::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-chevron-after::after {
+  mask-image: url(/static/images/icons/chevron.svg);
+  mask-size: cover;
+}
+
+.dark .icon-chevron-after::after {
   background-color: var(--color-neutral-inverted);
 }
 
@@ -130,6 +140,51 @@
 }
 
 .dark .icon-person::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-product-addons::before {
+  mask-image: url(/static/images/icons/product-addons.svg);
+  mask-size: cover;
+}
+
+.dark .icon-product-addons::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-product-audit-logs::before {
+  mask-image: url(/static/images/icons/product-audit-logs.svg);
+  mask-size: cover;
+}
+
+.dark .icon-product-audit-logs::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-product-directory-sync::before {
+  mask-image: url(/static/images/icons/product-directory-sync.svg);
+  mask-size: cover;
+}
+
+.dark .icon-product-directory-sync::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-product-privacy-vault::before {
+  mask-image: url(/static/images/icons/product-privacy-vault.svg);
+  mask-size: cover;
+}
+
+.dark .icon-product-privacy-vault::before {
+  background-color: var(--color-neutral-inverted);
+}
+
+.icon-product-sso::before {
+  mask-image: url(/static/images/icons/product-sso.svg);
+  mask-size: cover;
+}
+
+.dark .icon-product-sso::before {
   background-color: var(--color-neutral-inverted);
 }
 

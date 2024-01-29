@@ -1,0 +1,35 @@
+.table-tiered-pricing {
+  display: table;
+  margin-top: var(--spacing-default);
+  width: 100%;
+}
+
+.table-tiered-pricing tr {
+  border: 1px solid var(--color-teal-90);
+}
+
+.table-tiered-pricing thead th {
+  background-color: var(--color-teal-70);
+  border: 1px solid var(--color-teal-90);
+  color: var(--color-teal-05);
+}
+
+.table-tiered-pricing thead tr th:first-child,
+.table-tiered-pricing tbody tr td:first-child {
+  display: none;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .table-tiered-pricing thead tr th:first-child,
+  .table-tiered-pricing tbody tr td:first-child {
+    display: table-cell;
+  }
+}
+
+.table-tiered-pricing tbody td {
+  border: 1px solid var(--color-teal-90);
+}
+
+.table-tiered-pricing tbody tr:nth-child(odd) {
+  background-color: var(--color-teal-05);
+}

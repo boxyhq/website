@@ -5,7 +5,6 @@ import './table-addons.css';
 const TableAddons = ({ showHubSpotForm }) => {
   return (
     <div className="pricing-product-addons">
-      <h3 className="linear-gradient-text">Product Add-Ons</h3>
       <p>
         Enhance your experience with BoxyHQ by exploring our exclusive product
         add-ons designed to elevate your enterprise solution. Our add-ons
@@ -37,11 +36,6 @@ const TableAddons = ({ showHubSpotForm }) => {
             <td>
               <ul class="reset-list inline-list">
                 <li>
-                  <span class="tier-badge tier-badge-premium">
-                    self-hosted premium
-                  </span>
-                </li>
-                <li>
                   <span class="tier-badge tier-badge-sass">SaaS</span>
                 </li>
                 <li>
@@ -57,11 +51,6 @@ const TableAddons = ({ showHubSpotForm }) => {
             <td>
               <ul class="reset-list inline-list">
                 <li>
-                  <span class="tier-badge tier-badge-premium">
-                    self-hosted premium
-                  </span>
-                </li>
-                <li>
                   <span class="tier-badge tier-badge-sass">SaaS</span>
                 </li>
                 <li>
@@ -76,11 +65,6 @@ const TableAddons = ({ showHubSpotForm }) => {
             <td>SIEM Integration</td>
             <td>
               <ul class="reset-list inline-list">
-                <li>
-                  <span class="tier-badge tier-badge-premium">
-                    self-hosted premium
-                  </span>
-                </li>
                 <li>
                   <span class="tier-badge tier-badge-sass">SaaS</span>
                 </li>

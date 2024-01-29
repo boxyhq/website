@@ -128,6 +128,19 @@ ul.girdle-medium {
   }
 }
 
+.button-container {
+  display: flex;
+  gap: var(--spacing-default);
+  justify-content: space-between;
+  margin-bottom: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .button-container {
+    justify-content: initial;
+  }
+}
+
 /* hides the element on mobile devices (phones) */
 .hide-mobile {
   display: none;
