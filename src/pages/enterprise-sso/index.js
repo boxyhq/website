@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
 
 import BaseCard from '../../components/cards/BaseCard';
@@ -6,7 +7,6 @@ import BaseProductSpotlightSection from '../../components/BaseProductSpotlightSe
 import HeroSSO from '../../components/heroes/HeroSSO';
 
 import './enterprise-sso.css';
-import clsx from 'clsx';
 
 const EnterpriseSSO = () => {
   const metaDescription =

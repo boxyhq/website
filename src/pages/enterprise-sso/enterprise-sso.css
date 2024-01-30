@@ -4,14 +4,16 @@
   padding-bottom: var(--spacing-wide);
 }
 
-.enterprise-sso-advantages .feature-header {
+.enterprise-sso-advantages .feature-header,
+.enterprise-sso-advantages .feature-header.with-margin {
   color: var(--color-neutral-10);
   margin: var(--spacing-wide) auto var(--spacing-default);
   max-width: 50ch;
 }
 
 @media only screen and (min-width: 63.9375rem) {
-  .enterprise-sso-advantages .feature-header {
+  .enterprise-sso-advantages .feature-header,
+  .enterprise-sso-advantages .feature-header.with-margin {
     max-width: 90ch;
   }
 }
