@@ -3,12 +3,12 @@ export const hubspotFormIds = {
   entrpriseSSODirectorySync: '435f5b51-f9ea-4f96-aac3-0c6e6d8a07b4',
   auditLogs: {
     premium: '3c3888d4-3f37-470a-8c7d-d7641f32fd4c',
-    sass: '7852e20a-1f97-42fc-b7ee-a1d71b331811',
+    saas: '7852e20a-1f97-42fc-b7ee-a1d71b331811',
     enterprise: '57862df6-4456-4e0e-b9d0-aece2b23656f',
   },
   privacyVault: {
     premium: '577e36d6-a5d6-4326-a179-d69c9d9ad520',
-    sass: '58302448-78e7-4250-8b12-8d84b4113c72',
+    saas: '58302448-78e7-4250-8b12-8d84b4113c72',
     enterprise: '24968c9d-ba22-492a-9aab-6f4350174d27',
   },
 };
@@ -112,7 +112,7 @@ export const pricingPlans = [
     tiers: {
       'self-hosted': 'Free forever',
       'self-hosted-premium': `contactUs:${hubspotFormIds.auditLogs.premium}`,
-      saas: `contactUs:${hubspotFormIds.auditLogs.sass}`,
+      saas: `contactUs:${hubspotFormIds.auditLogs.saas}`,
       enterprise: `contactUs:${hubspotFormIds.auditLogs.enterprise}`,
     },
   },
@@ -121,7 +121,7 @@ export const pricingPlans = [
     tiers: {
       'self-hosted': 'Free forever',
       'self-hosted-premium': `contactUs:${hubspotFormIds.privacyVault.premium}`,
-      saas: `contactUs:${hubspotFormIds.privacyVault.sass}`,
+      saas: `contactUs:${hubspotFormIds.privacyVault.saas}`,
       enterprise: `contactUs:${hubspotFormIds.privacyVault.enterprise}`,
     },
   },
