@@ -11,7 +11,7 @@ tags_disabled:
     developerfirst,
     case-study,
   ]
-image: img/success-stories/calcom-image.png
+image: /img/success-stories/calcom-image.png
 author: Nathan Tarbert
 author_title: Community Success Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert

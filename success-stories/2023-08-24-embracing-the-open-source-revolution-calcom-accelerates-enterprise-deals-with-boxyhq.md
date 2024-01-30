@@ -2,7 +2,7 @@
 slug: accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution
 title: 'Embracing the Open Source Revolution: Cal.com Accelerates Enterprise Deals with BoxyHQ'
 tags_disabled: [security, cybersecurity, devsecops, open-source]
-image: img/success-stories/calcom-image.png
+image: /img/success-stories/calcom-image.png
 hide_table_of_contents: true
 ---
 

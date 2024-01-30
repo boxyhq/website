@@ -6,7 +6,7 @@ author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
 author_image_url: https://boxyhq.com/img/team/jay.jpg
 tags_disabled: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
-image: img/blog/sso/with-boxyhq.png
+image: /img/blog/sso/with-boxyhq.png
 ---
 
 This article follows my first article in which I explain the basics of SAML from the users' side. If you haven't read that one already I would recommend reading that one first [here](./2022-06-30-understanding-saml-sso-the-basics-from-the-user-side.md). In this article, we are going to take a look at what SAML authentication and setup look like from the solution providers' perspective.

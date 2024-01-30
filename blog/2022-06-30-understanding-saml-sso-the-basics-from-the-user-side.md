@@ -6,7 +6,7 @@ author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
 author_image_url: https://boxyhq.com/img/team/jay.jpg
 tags_disabled: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
-image: img/blog/sso/with-saml.png
+image: /img/blog/sso/with-saml.png
 ---
 
 I have always worked in tech, so have always needed to understand the technical nature of the products we are building. This process has always been over-complicated for me so I now always try to write a guide for non-technical people like me. It turns out that once you understand it you can explain it to other non-technical people much easier! So here we go as I try to explain SAML (Security Assertion Markup Language) SSO (single sign-on) and why BoxyHQ makes it so easy to implement. Firstly you have probably heard of not only SAML but OAuth 2.0 and OIDC, these are all protocols that achieve the same result of providing SSO. There are a few nuances but those are out of scope for this article to keep things simple.
