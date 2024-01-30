@@ -1,0 +1,125 @@
+.primary-content-wrapper {
+  padding: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 63.9375em) {
+  .primary-content-wrapper.pricing {
+    padding: var(--spacing-medium) var(--spacing-medium) 0;
+  }
+}
+
+.pricing-hero {
+  text-align: center;
+}
+
+.primary-content-wrapper .pricing-hero .lead {
+  font-size: var(--typography-size-small-medium);
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .primary-content-wrapper .pricing-hero .lead {
+    font-size: var(--typography-size-medium);
+  }
+}
+
+.pricing-hero .button-container {
+  margin: 0 auto;
+  max-width: max-content;
+}
+
+.pricing-hero .button-container .button {
+  margin-bottom: var(--spacing-default);
+  margin-top: 0;
+}
+
+.pricing-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.pricing-table {
+  height: 100%;
+}
+
+.pricing-table caption {
+  font-size: var(--typography-size-medium);
+  font-weight: bold;
+}
+
+.pricing-table .button.button-primary:hover,
+.pricing-table .button.button-primary:focus {
+  background-color: var(--color-teal-80);
+  color: var(--color-teal-05);
+}
+
+.pricing-table .pricing-heading {
+  font-size: var(--typography-size-large);
+  font-weight: normal;
+}
+
+.pricing-table thead td {
+  padding: var(--spacing-default);
+}
+
+.pricing-table th,
+.pricing-table td {
+  border: 0;
+}
+
+.pricing-table caption,
+.pricing-table tbody th {
+  text-align: left;
+}
+
+.pricing-table tbody th,
+.pricing-table tbody td {
+  padding: var(--spacing-default);
+}
+
+.pricing-table tbody th {
+  width: 55%;
+}
+
+.pricing-table tbody td {
+  text-align: right;
+  width: 45%;
+}
+
+.pricing-table tbody ul {
+  margin-top: var(--spacing-narrow);
+  padding-left: var(--spacing-default);
+}
+
+.getting-started {
+  margin: var(--spacing-default) 0;
+}
+
+.pricing-table .icon-check::before,
+.pricing-table .icon-cross::before {
+  float: right;
+}
+
+.pricing-table .icon-check::before {
+  background-color: var(--color-teal-50);
+}
+
+.pricing-table .icon-cross::before {
+  background-color: var(--color-red-50);
+}
+
+.pricing-table .icon-github::before {
+  background-color: var(--color-teal-05);
+}
+
+.primary-content-wrapper.pricing .icon-code-slash::before {
+  background-color: var(--color-teal-05);
+}
+
+.primary-content-wrapper.pricing .button-secondary.icon-code-slash::before {
+  background-color: var(--color-teal-90);
+}

@@ -1,0 +1,51 @@
+.customers-and-partners-container {
+  margin-top: var(--spacing-wide);
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .customers-and-partners-container {
+    margin-top: var(--spacing-xwide);
+    min-height: 30rem;
+  }
+}
+
+.customers-and-partners-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-wide);
+  justify-content: center;
+  padding: var(--spacing-medium);
+}
+
+.customer-partner-logo {
+  max-width: 35%;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .customer-partner-logo {
+    max-width: 25%;
+  }
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .customer-partner-logo {
+    max-width: 20%;
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .customer-partner-logo {
+    max-width: 250px;
+  }
+}
+
+.customer-partner-logo picture {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-partner-logo img {
+  height: auto;
+  max-width: 100%;
+}

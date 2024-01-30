@@ -1,0 +1,32 @@
+.speaker-bio-card {
+  background-color: var(--color-teal-10);
+  border: 1px solid var(--color-teal-90);
+  border-radius: var(--border-radius-default);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: var(--spacing-default);
+  text-align: center;
+}
+
+.speaker-bio-card img {
+  border: 0.5rem solid var(--color-teal-50);
+  border-radius: var(--border-radius-circle);
+  height: 140px;
+  margin: var(--spacing-narrow) auto;
+  width: 140px;
+}
+
+.speaker-bio-card .speaker-company {
+  display: block;
+}
+
+.speaker-bio-card .button {
+  margin: 0 auto;
+  max-width: max-content;
+}
+
+.speaker-bio-card .icon-linkedin::before {
+  background-color: var(--color-teal-90);
+}

@@ -1,0 +1,63 @@
+.panel-discussions-container {
+  padding: var(--spacing-medium);
+}
+
+.panel-discussions-title {
+  margin-bottom: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .panel-discussions-title {
+    margin: var(--spacing-medium) 0;
+    text-align: center;
+  }
+
+  .panel-discussions-lead {
+    margin: var(--spacing-medium) auto var(--spacing-wide);
+    max-width: 70rem;
+    max-width: 100ch;
+    text-align: center;
+  }
+}
+
+.panel-dicsussions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .panel-dicsussions-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .panel-dicsussions-list .panel-dicsussions-list-entry {
+    flex: 1 1 45%;
+    min-height: 35rem;
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .panel-dicsussions-list .panel-dicsussions-list-entry {
+    min-height: 30rem;
+  }
+}
+
+.speakers-list {
+  padding-inline-start: var(--spacing-default);
+}
+
+.button {
+  margin-top: var(--spacing-medium);
+}
+
+.icon-youtube::before {
+  background-color: var(--color-teal-90);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .button.icon-youtube {
+    max-width: max-content;
+  }
+}

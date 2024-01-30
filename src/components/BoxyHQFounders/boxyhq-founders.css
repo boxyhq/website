@@ -1,0 +1,43 @@
+.boxyhq-founders {
+  padding: var(--spacing-medium);
+}
+
+.boxyhq-founders .feature-header {
+  margin: var(--spacing-default) auto;
+  max-width: 50ch;
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .boxyhq-founders {
+    padding-bottom: var(--spacing-wide);
+  }
+}
+
+.founders-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  justify-content: center;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .boxyhq-founders .founders-list {
+    flex-direction: row;
+    margin-top: var(--spacing-medium);
+  }
+
+  .founders-list .founders-list-entry {
+    flex: 1 1 40%;
+  }
+}
+
+.founders-list .founders-list-name {
+  font-size: var(--typography-size-medium);
+  margin-bottom: 0;
+}
+
+.founders-list .founders-list-title {
+  font-size: var(--typography-size-small-medium);
+  margin-bottom: var(--spacing-medium);
+}

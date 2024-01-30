@@ -1,0 +1,21 @@
+.pledge.primary-content-wrapper {
+  padding: var(--spacing-wide) var(--spacing-medium);
+}
+
+.pledge .primary-content-secondary-heading {
+  font-size: var(--typography-size-large);
+}
+
+.pledge .primary-content a:link,
+.pledge .primary-content a:visited {
+  text-decoration: underline;
+}
+
+.pledge .primary-content a:hover,
+.pledge .primary-content a:focus {
+  text-decoration: none;
+}
+
+.pledge .primary-content p {
+  font-size: var(--typography-size-small-medium);
+}

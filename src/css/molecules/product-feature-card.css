@@ -1,0 +1,105 @@
+.product-feature-card-container {
+  background-color: var(--color-teal-05);
+}
+
+.product-feature-card-container.teal {
+  background-color: var(--color-teal-05);
+}
+
+.product-feature-card-container.light {
+  background-color: var(--color-neutral-inverted);
+}
+
+.product-feature-card {
+  padding: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .product-feature-card {
+    align-items: center;
+    display: flex;
+    gap: var(--spacing-medium);
+    justify-content: space-between;
+    padding: var(--spacing-wide);
+  }
+
+  .reversed {
+    flex-direction: row-reverse;
+  }
+
+  .reversed .product-feature-card-image-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.product-feature-card-heading {
+  font-size: var(--typography-size-medium);
+}
+
+.product-feature-card .button {
+  gap: var(--spacing-default);
+  justify-content: center;
+  margin-top: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .product-feature-card .button {
+    max-width: max-content;
+  }
+}
+
+.product-feature-card .button-primary.with-icon::before {
+  background-color: var(--color-teal-05);
+}
+
+.product-feature-card .button-secondary-filled.with-icon::before {
+  background-color: var(--color-teal-90);
+}
+
+.product-feature-card .button-primary.with-icon:hover::before,
+.product-feature-card .button-primary.with-icon:focus::before {
+  background-color: var(--color-teal-90);
+}
+
+.product-feature-card-image-container {
+  margin-bottom: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .product-feature-card-image-container {
+    flex: 0 1 40%;
+  }
+}
+
+.product-feature-card-image-container img {
+  border-radius: var(--border-radius-default);
+  height: auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .product-feature-card-content-container {
+    flex: 1 1 60%;
+    max-width: 60ch;
+  }
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .product-feature-card-content-container p,
+  .product-feature-card-content-container ul,
+  .product-feature-card-content-container ol {
+    font-size: var(--typography-size-small-medium);
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .product-feature-card-image-container img {
+    width: 25rem;
+  }
+}
+
+.product-feature-card-content-container ul {
+  padding-left: var(--spacing-default);
+  padding-inline-start: var(--spacing-default);
+}

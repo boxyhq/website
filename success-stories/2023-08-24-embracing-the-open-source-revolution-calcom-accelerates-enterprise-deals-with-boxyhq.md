@@ -13,7 +13,7 @@ Cal.com provides an innovative scheduling and time management platform for indiv
 Their mission is to connect one billion people through the use of their platform by 2031. To achieve this, BoxyHQ’s enterprise-ready SSO would provide the reliable authentication they needed to maintain their customer's security and trust.
 
 <div style={{ textAlign: "center" }}>
-  <a href="https://cal.com" target="_blank" class="button button--primary button--outline">Learn more about Cal.com</a>
+  <a href="https://cal.com" target="_blank" className="button button--primary button--outline">Learn more about Cal.com</a>
 </div>
 
 ## Introduction
@@ -59,5 +59,5 @@ Cal.com's implementation experience with BoxyHQ was marked by collaboration and 
 Cal.com's successful implementation of BoxyHQ's SSO solution not only satisfied the growing demand for streamlined authentication but also aligned with their principles of transparency and client-centricity. By partnering with BoxyHQ, Cal.com provided their clients with a seamless and secure authentication experience, while reaping tangible benefits in terms of time savings, enterprise client acquisition, and user satisfaction. The collaboration between Cal.com and BoxyHQ exemplifies the power of open-source solutions in driving innovation and value for businesses and their clients.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/blog/interview-with-calcom-enhancing-enterprise-experience-with-boxyhq" class="button button--primary button--outline">Read the full interview</a>
+  <a href="/blog/interview-with-calcom-enhancing-enterprise-experience-with-boxyhq" className="button button--primary button--outline">Read the full interview</a>
 </div>

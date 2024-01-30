@@ -3,7 +3,7 @@ import { themes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Security Building Blocks for Developers',
+  title: 'BoxyHQ',
   tagline:
     'BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes. Open source and free.',
   url: 'https://boxyhq.com',
@@ -32,14 +32,14 @@ module.exports = {
     announcementBar: {
       id: 'announcement-bar',
       content:
-        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star Enterprise SSO on GitHub</a>',
+        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star SAML Jackson on GitHub</a>',
       isCloseable: false,
     },
     image: 'img/website-preview-image.png',
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'BoxyHQ',
@@ -55,6 +55,10 @@ module.exports = {
           label: 'Products',
           type: 'dropdown',
           items: [
+            {
+              to: '/products/overview',
+              label: 'Overview',
+            },
             {
               to: '/enterprise-sso',
               label: 'Enterprise SSO',
@@ -72,12 +76,12 @@ module.exports = {
               label: 'Privacy Vault',
             },
             {
-              href: 'https://app.eu.boxyhq.com/auth/join',
+              href: 'https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=main-nav',
               label: 'SaaS Sign up',
             },
             {
               href: 'https://github.com/boxyhq/saas-starter-kit',
-              label: 'Enterprise SaaS Starter Kit',
+              label: 'SaaS Starter Kit',
             },
           ],
         },
@@ -94,11 +98,7 @@ module.exports = {
             },
             {
               href: 'https://awesome-oss-devsec.boxyhq.com',
-              label: 'Developer Security Tools',
-            },
-            {
-              href: 'https://github.com/boxyhq/saas-starter-kit',
-              label: 'Enterprise SaaS Starter Kit',
+              label: 'DevSec Tools',
             },
           ],
         },
@@ -128,18 +128,23 @@ module.exports = {
           position: 'right',
           items: [
             {
-              to: '/careers',
-              label: 'Careers',
-            },
-            {
-              to: '/team',
-              label: 'Team',
+              to: '/about',
+              label: 'About',
             },
             {
               to: '/pledge',
               label: 'Pledge',
             },
+            {
+              to: '/careers',
+              label: 'Careers',
+            },
           ],
+        },
+        {
+          to: 'https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=main-nav',
+          label: 'Sign Up',
+          position: 'right',
         },
         {
           href: 'https://github.com/boxyhq/jackson',
@@ -263,27 +268,6 @@ module.exports = {
       },
     ],
     [
-      '@docusaurus/plugin-content-blog',
-      {
-        /**
-         * Required for any multi-instance plugin
-         */
-        id: 'careers',
-        /**
-         * URL route for the blog section of your site.
-         * *DO NOT* include a trailing slash.
-         */
-        routeBasePath: 'careers',
-        /**
-         * Path to data on filesystem relative to site dir.
-         */
-        path: './careers',
-        blogTitle: 'Careers',
-        blogDescription:
-          'Join us on our mission to help startups simplify the development of compliance and data security-related features in their products. Check out our open roles.',
-      },
-    ],
-    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'guides',
@@ -337,6 +321,10 @@ module.exports = {
           {
             from: '/docs/jackson/deploy/pre-loaded-configuration',
             to: '/docs/jackson/deploy/pre-loaded-connections',
+          },
+          {
+            from: '/team',
+            to: '/about',
           },
         ],
       },

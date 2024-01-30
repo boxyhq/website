@@ -16,7 +16,7 @@ export default function GuideSection({ items }) {
                 width="30"
                 style={{ display: 'block', maxHeight: 30 }}
               />
-              <p>{item.name}</p>
+              <div>{item.name}</div>
             </div>
           </Link>
         </div>

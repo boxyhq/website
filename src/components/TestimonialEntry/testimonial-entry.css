@@ -1,0 +1,19 @@
+.testimonial-entry {
+  border: 2px solid var(--color-teal-90);
+  border-radius: var(--border-radius-pill);
+  box-shadow: 4px 4px 0 4px var(--color-teal-90);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 16.25rem;
+  padding: var(--spacing-default) var(--spacing-medium);
+}
+
+.testimonial-entry-company {
+  margin-bottom: var(--spacing-narrow);
+}
+
+.testimonial-entry a {
+  color: var(--color-petrol-90);
+  font-weight: bold;
+}

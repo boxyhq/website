@@ -164,9 +164,9 @@ const AuditLogs = () => {
         title="Open Source"
         description="BoxyHQ is developer obsessed, and our products are secure by design so you can focus on your core value proposition."
       >
-        <div class="container">
-          <div class="row">
-            <div class="col col--6 col--offset-3">
+        <div className="container">
+          <div className="row">
+            <div className="col col--6 col--offset-3">
               <div className="col-demo">
                 <div className="card-demo">
                   <div className="card">

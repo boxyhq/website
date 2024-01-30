@@ -1,0 +1,53 @@
+.pricing-product-addons .addons-contact {
+  background: none;
+  border-bottom: 1px solid var(--color-neutral-50);
+  cursor: pointer;
+  padding: 0;
+}
+
+.pricing-table.addons {
+  display: table;
+  margin-top: var(--spacing-default);
+  width: 100%;
+}
+
+.pricing-table.addons tr {
+  border: 1px solid var(--color-teal-90);
+}
+
+.pricing-table.addons thead th {
+  background-color: var(--color-teal-70);
+  border: 1px solid var(--color-teal-90);
+  color: var(--color-teal-05);
+}
+
+.pricing-table.addons tbody td {
+  border: 1px solid var(--color-teal-90);
+}
+
+.pricing-table.addons tbody tr:nth-child(odd) {
+  background-color: var(--color-teal-05);
+}
+
+.pricing-table.addons.premium-self-hosted tr {
+  border: 1px solid var(--color-blue-90);
+}
+
+.pricing-table.addons.premium-self-hosted thead th {
+  background-color: var(--color-blue-70);
+  border: 1px solid var(--color-blue-90);
+  color: var(--color-blue-05);
+}
+
+.pricing-table.addons.premium-self-hosted tbody td {
+  border: 1px solid var(--color-blue-90);
+}
+
+.pricing-table.addons.premium-self-hosted tbody tr:nth-child(odd) {
+  background-color: var(--color-blue-05);
+}
+
+.pricing-table.addons td {
+  text-align: left;
+  width: initial;
+}

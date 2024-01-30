@@ -1,0 +1,55 @@
+.marketing-site h1,
+.marketing-site h2,
+.marketing-site h3,
+.marketing-site h4,
+.marketing-site h5 {
+  font-family: var(--typography-heading-family);
+  line-height: var(--typography-heading-line-height);
+}
+
+.marketing-site h1 {
+  font-size: var(--typography-size-xxl);
+  line-height: var(--typography-primary-heading-line-height);
+}
+
+.marketing-site h2 {
+  font-size: var(--typography-size-xl);
+}
+
+.marketing-site h3 {
+  font-size: var(--typography-size-large);
+}
+
+.marketing-site h4 {
+  font-size: var(--typography-size-medium);
+}
+
+.marketing-site h5 {
+  font-size: var(--typography-size-small-medium);
+}
+
+.marketing-site p {
+  margin-bottom: var(--spacing-medium);
+}
+
+.marketing-site .small-text {
+  font-size: var(--typography-size-small);
+}
+
+.marketing-site .tiny-text {
+  font-size: var(--typography-size-tiny);
+}
+
+.marketing-site .lead {
+  font-size: var(--typography-size-medium);
+}
+
+.marketing-site .lead-outro {
+  font-size: var(--typography-size-small-medium);
+}
+
+.marketing-site .linear-gradient-text {
+  background: var(--typography-linear-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
