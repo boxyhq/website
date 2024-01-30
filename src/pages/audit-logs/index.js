@@ -53,7 +53,7 @@ const AuditLogs = () => {
 
       <ul className="reset-list">
         {auditLogBenefits.map((benefit) => (
-          <li>
+          <li key={benefit.title}>
             <BaseProductSpotlightSection
               light={benefit.light}
               pictureSrc={benefit.pictureSrc}

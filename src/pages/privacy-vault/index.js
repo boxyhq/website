@@ -54,7 +54,7 @@ const PrivacyVault = () => {
       <main>
         <ul className="reset-list">
           {privacyVaultBenefits.map((benefit) => (
-            <li>
+            <li key={benefit.title}>
               <BaseProductSpotlightSection
                 light={benefit.light}
                 pictureSrc={benefit.pictureSrc}
