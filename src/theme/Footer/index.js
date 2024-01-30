@@ -79,7 +79,11 @@ const Footer = () => {
             <nav>
               <ul className="reset-list">
                 <li>
-                  <a href="https://github.com/boxyhq/jackson" rel="external">
+                  <a
+                    href="https://github.com/boxyhq/jackson"
+                    rel="external"
+                    target="_blank"
+                  >
                     SAML Jackson
                   </a>
                 </li>
@@ -87,6 +91,7 @@ const Footer = () => {
                   <a
                     href="https://github.com/retracedhq/retraced"
                     rel="external"
+                    target="_blank"
                   >
                     Retraced
                   </a>
@@ -95,6 +100,7 @@ const Footer = () => {
                   <a
                     href="https://github.com/boxyhq/saas-starter-kit"
                     rel="external"
+                    target="_blank"
                   >
                     SaaS Starter Kit
                   </a>
@@ -103,6 +109,7 @@ const Footer = () => {
                   <a
                     href="https://github.com/boxyhq/awesome-oss-devsec"
                     rel="external"
+                    target="_blank"
                   >
                     Awesome DevSec Tools
                   </a>
@@ -117,7 +124,8 @@ const Footer = () => {
           <a
             className="base-icon-pseudo icon-github"
             href="https://github.com/boxyhq"
-            rel="external"
+            rel="external noopener noreferrer"
+            target="_blank"
           >
             <span className="visually-hidden">Contribute on GitHub</span>
           </a>
@@ -126,7 +134,8 @@ const Footer = () => {
           <a
             className="base-icon-pseudo icon-discord"
             href="https://discord.boxyhq.com/"
-            rel="external"
+            rel="external noopener noreferrer"
+            target="_blank"
           >
             <span className="visually-hidden">
               Help and find support on Discord
@@ -137,7 +146,8 @@ const Footer = () => {
           <a
             className="base-icon-pseudo icon-mastodon"
             href="https://hachyderm.io/@boxyhq"
-            rel="external me"
+            rel="external me noopener noreferrer"
+            target="_blank"
           >
             <span className="visually-hidden">Follow us on Mastodon</span>
           </a>
@@ -146,7 +156,8 @@ const Footer = () => {
           <a
             className="base-icon-pseudo icon-youtube"
             href="https://www.youtube.com/channel/UCRx3EWQL1l07MTgtDHx5IMA"
-            rel="external"
+            rel="external noopener noreferrer"
+            target="_blank"
           >
             <span className="visually-hidden">Watch and learn on YouTube</span>
           </a>
@@ -155,7 +166,8 @@ const Footer = () => {
           <a
             className="base-icon-pseudo icon-linkedin"
             href="https://www.linkedin.com/company/boxyhq/"
-            rel="external"
+            rel="external noopener noreferrer"
+            target="_blank"
           >
             <span className="visually-hidden">Connect with us on LinkedIn</span>
           </a>
@@ -164,7 +176,8 @@ const Footer = () => {
           <a
             className="base-icon-pseudo icon-x"
             href="https://twitter.com/boxyhq"
-            rel="external"
+            rel="external noopener noreferrer"
+            target="_blank"
           >
             <span className="visually-hidden">Follow us on X</span>
           </a>
