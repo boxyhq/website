@@ -28,7 +28,7 @@ const ProductsSelfHosted = () => {
         <li>
           <SimpleOSSProductCard
             name="product-sso"
-            subtitle="Enterprise SAML & OIDC authentication and Directory Sync."
+            subtitle="Enterprise SAML & OIDC authentication and Directory Sync via the SCIM 2.0 protocol."
             title="Single Sign-On (SSO) and Directory Sync"
             url="https://github.com/boxyhq/jackson"
           />

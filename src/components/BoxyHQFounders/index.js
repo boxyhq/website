@@ -7,7 +7,6 @@ const BoxyHQFounders = () => {
   const founders = [
     {
       bio: '<p>Deepak brings close to two decades of expertise in the design, architecture, and development of complex software products. Before BoxyHQ he was the CTO at Red Sift, a fast-growing cybersecurity startup. Before that, he was the founder of ContentSift and the first technical hire at Apsmart (acquired by Thomson Reuters).</p><p>He has led product and engineering teams at several startups and worked on Opera Mini and Mobile browsers, a product loved and used by millions of users across the globe.</p>',
-      github: 'deepakprabhakara',
       linkedin: 'deepakp',
       name: 'Deepak Prabhakara',
       pictureSrc: '/images/founders/deepak-prabhakara-boxyhq',

@@ -7,8 +7,8 @@ import OurInvestors from '../../components/OurInvestors';
 
 const About = () => {
   const metaDescription =
-    'Effortlessly integrate Enterprise SSO into your SaaS app with BoxyHQ. Our open-source solution supports SAML & OIDC, enhancing security and user experience while reducing development time and cost.';
-  const metaPageTitle = 'About BoxyHQ - A Universal SSO Translator';
+    "Automate your SaaS app's security with BoxyHQ. Get enterprise-compliant security through low-code APIs, streamlining integration and cutting costs.";
+  const metaPageTitle = 'BoxyHQ, Security Building Blocks For Developers';
 
   return (
     <Layout

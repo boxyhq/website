@@ -142,6 +142,11 @@ module.exports = {
           ],
         },
         {
+          to: 'https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=main-nav',
+          label: 'Sign Up',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/boxyhq/jackson',
           position: 'right',
           className: 'header-github-link',

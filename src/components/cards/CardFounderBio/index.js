@@ -20,18 +20,6 @@ const CardFounderBio = ({ founder }) => {
               Connect on LinkedIn
             </a>
           </li>
-          {founder.github && (
-            <li>
-              <a
-                className="button button-secondary with-icon base-icon-pseudo icon-github"
-                href={`https://www.github.com/${founder.github}/`}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Follow on GitHub
-              </a>
-            </li>
-          )}
         </ul>
         <div
           className="founder-bio"

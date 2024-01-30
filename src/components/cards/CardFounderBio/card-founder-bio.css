@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 35rem;
   min-height: 100%;
   padding: var(--spacing-default);
   text-align: center;

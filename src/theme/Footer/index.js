@@ -8,6 +8,7 @@ import './footer.css';
 
 const Footer = () => {
   const { footer } = useThemeConfig();
+  const currentYear = new Date().getFullYear();
 
   if (!footer) {
     return null;
@@ -171,7 +172,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <p className="copyright">2021-present © BoxyHQ Inc.</p>
+      <p className="copyright">{currentYear} © BoxyHQ Inc.</p>
     </footer>
   );
 };
