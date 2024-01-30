@@ -17,19 +17,6 @@ const Pledge = () => {
       <HeroPledge />
       <main className="girdle primary-content-wrapper pledge">
         <div className="primary-content">
-          <p>
-            Inspired by{' '}
-            <a
-              href="https://www.fermyon.com/open-source-promise"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Fermyon's Open Source promise
-            </a>
-            , what follows is our own promise to the community and the wider
-            open source ecosystem.
-          </p>
-
           <h2 className="primary-content-secondary-heading">
             Fostering a Culture of Transparency and Collaboration
           </h2>
@@ -66,6 +53,17 @@ const Pledge = () => {
             We invite you to join us on this journey &mdash; to utilize,
             contribute to, and benefit from a platform that is shaping the
             future of secure, compliant, and efficient software development.
+          </p>
+          <p>
+            Inspired by{' '}
+            <a
+              href="https://www.fermyon.com/open-source-promise"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Fermyon's Open Source promise
+            </a>
+            .
           </p>
         </div>
       </main>
