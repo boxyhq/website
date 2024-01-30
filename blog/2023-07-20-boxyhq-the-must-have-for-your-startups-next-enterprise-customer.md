@@ -318,8 +318,6 @@ Learn more here: [BoxyHQ pledges to keep our core open-source code open](https:/
 
 ![Features](/img/blog/scoutflo-blog-features.webp)
 
-You can [sign up for the waitlist](https://boxyhq.com/saas-registration) before August 1, and make the most of this limited-time offer.
-
 Check out BoxyHQ’s [GitHub page](https://github.com/boxyhq), official [documentation](https://boxyhq.com/docs), and [Twitter](https://twitter.com/boxyhq) profile. 🚀
 
 And don’t forget to follow [Scoutflo](https://atlas.scoutflo.com/?ref=blog.scoutflo.com) on [Twitter](https://twitter.com/scout_flo?ref=blog.scoutflo.com) if you haven’t already! ✨
