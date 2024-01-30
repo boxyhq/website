@@ -130,9 +130,21 @@
 }
 
 .hero .lead {
-  font-size: var(--typography-size-medium);
+  font-size: var(--typography-size-small-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .hero .lead {
+    font-size: var(--typography-size-medium);
+  }
 }
 
 .hero .lead-outro {
   font-size: var(--typography-size-small-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .hero .lead-outro {
+    font-size: var(--typography-size-default);
+  }
 }

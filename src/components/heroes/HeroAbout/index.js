@@ -4,9 +4,9 @@ const HeroAbout = () => {
   return (
     <BaseHero
       sectionId="about-boxyhq"
-      title="BoxyHQ, Security Building Blocks For Developers"
+      title="Security Building Blocks For Developers"
     >
-      <p class="lead">
+      <p class="lead-outro">
         Welcome to BoxyHQ, where we revolutionize the landscape of
         developer-first security, simplifying the integration of essential
         security features into your products. Envision a realm where security,
