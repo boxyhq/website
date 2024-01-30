@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 
-import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import SectionLayout from '../components/SectionLayout';
 import { IconNo, IconYes } from '../components/Pricing/Icons';
 
@@ -218,8 +217,6 @@ const AuditLogs = () => {
           </div>
         </div>
       </SectionLayout>
-
-      <DeveloperCommunitySection />
     </Layout>
   );
 };
