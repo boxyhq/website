@@ -22,7 +22,7 @@ const GuestSpeakers = () => {
     },
     {
       company: 'BoxyHQ',
-      companyURL: 'http://www.boxyhq.com/',
+      companyURL: 'https://www.boxyhq.com/',
       linkedin: 'deepakp',
       name: 'Deepak Prabhakara',
       pictureSrc: '/images/speakers/deepak-prabhakara-boxyhq',
