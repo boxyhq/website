@@ -74,9 +74,9 @@ const Pricing = () => {
           </p>
         </div>
 
-        <PricingCardsSaaS />
+        <PricingCardsSaaS showHubSpotForm={showHubSpotForm} />
 
-        <ProductsSelfHosted />
+        <ProductsSelfHosted showHubSpotForm={showHubSpotForm} />
 
         <CustomersAndPartners />
       </main>

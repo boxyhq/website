@@ -5,7 +5,7 @@ import TableAddons from '../tables/TableAddons';
 
 import './pricing-cards-premium-self-hosted.css';
 
-const PricingCardsPremiumSelfHosted = () => {
+const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
   return (
     <div className="girdle pricing-cards-wrapper pricing-cards-premium-self-hosted">
       <ul className="reset-list pricing-cards-list">
@@ -135,7 +135,10 @@ const PricingCardsPremiumSelfHosted = () => {
             type="premium-self-hosted"
           >
             <div className="pricing-product-card-details">
-              <TableAddons type="premium-self-hosted" />
+              <TableAddons
+                showHubSpotForm={showHubSpotForm}
+                type="premium-self-hosted"
+              />
             </div>
           </AccordionPricingProductCard>
         </li>
