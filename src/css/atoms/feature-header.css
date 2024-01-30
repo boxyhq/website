@@ -26,7 +26,7 @@
 
 @media only screen and (min-width: 47.9375rem) {
   .feature-header.with-margin {
-    margin: var(--spacing-xwide) 0 var(--spacing-wide);
+    margin: var(--spacing-xwide) auto var(--spacing-wide);
   }
 }
 
