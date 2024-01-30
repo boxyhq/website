@@ -28,7 +28,7 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
                   onClick={() =>
                     showHubSpotForm(
                       true,
-                      hubspotFormIds.entrpriseSSODirectorySync
+                      hubspotFormIds.enterpriseSSODirectorySync
                     )
                   }
                 >
@@ -71,7 +71,7 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
                   onClick={() =>
                     showHubSpotForm(
                       true,
-                      hubspotFormIds.entrpriseSSODirectorySync
+                      hubspotFormIds.enterpriseSSODirectorySync
                     )
                   }
                 >

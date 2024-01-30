@@ -26,7 +26,7 @@ const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
                   onClick={() =>
                     showHubSpotForm(
                       true,
-                      hubspotFormIds.entrpriseSSODirectorySync
+                      hubspotFormIds.enterpriseSSODirectorySync
                     )
                   }
                 >
@@ -54,7 +54,7 @@ const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
                   onClick={() =>
                     showHubSpotForm(
                       true,
-                      hubspotFormIds.entrpriseSSODirectorySync
+                      hubspotFormIds.enterpriseSSODirectorySync
                     )
                   }
                 >
