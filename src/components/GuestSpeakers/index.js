@@ -46,7 +46,7 @@ const GuestSpeakers = () => {
     },
     {
       company: 'Microsoft',
-      companyURL: 'https://microsoft.com',
+      companyURL: 'https://www.microsoft.com/en-gb/',
       linkedin: 'mohini-soodan-47604958',
       name: 'Mohini Soodan',
       pictureSrc: '/images/speakers/mohini-soodan-microsoft',
