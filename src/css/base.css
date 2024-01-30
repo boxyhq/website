@@ -157,3 +157,7 @@ ul.girdle-medium {
   align-items: center;
   display: flex;
 }
+
+.card__footer .button {
+  color: var(--color-teal-90);
+}

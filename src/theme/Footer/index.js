@@ -45,9 +45,7 @@ const Footer = () => {
             <nav>
               <ul className="reset-list">
                 <li>
-                  <a href="https://boxyhq.com/oss-friends" rel="external">
-                    OSS Friends
-                  </a>
+                  <a href="/oss-friends">OSS Friends</a>
                 </li>
                 <li>
                   <a href="/developer-first-security-week">
@@ -103,7 +101,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="/https://github.com/boxyhq/awesome-oss-devsec"
+                    href="https://github.com/boxyhq/awesome-oss-devsec"
                     rel="external"
                   >
                     Awesome DevSec Tools
