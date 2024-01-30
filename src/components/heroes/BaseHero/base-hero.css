@@ -2,7 +2,8 @@
   background-color: var(--color-teal-05);
 }
 
-.hero {
+.hero,
+.girdle.hero {
   background-color: var(--color-teal-05);
   display: flex;
   flex-direction: column;
@@ -11,7 +12,8 @@
 }
 
 @media only screen and (min-width: 63.9375rem) {
-  .hero {
+  .hero,
+  .girdle.hero {
     flex-direction: row;
     min-height: 37rem;
     padding: var(--spacing-wide) var(--spacing-medium);
@@ -40,7 +42,8 @@
 }
 
 @media only screen and (min-width: 83.6875rem) {
-  .hero {
+  .hero,
+  .girdle.hero {
     min-height: 38rem;
     padding: var(--spacing-wide) var(--spacing-medium);
   }
