@@ -4,7 +4,7 @@ import AccordionPricingProductCard from '../cards/AccordionPricingProductCard';
 import TableAddons from '../tables/TableAddons';
 import TableTieredPricing from '../tables/TableTieredPricing';
 
-const PricingCardsSaaS = () => {
+const PricingCardsSaaS = ({ showHubSpotForm }) => {
   return (
     <div className="girdle pricing-cards-wrapper">
       <ul className="reset-list pricing-cards-list">
@@ -197,7 +197,7 @@ const PricingCardsSaaS = () => {
             type="saas"
           >
             <div className="pricing-product-card-details">
-              <TableAddons />
+              <TableAddons showHubSpotForm={showHubSpotForm} />
             </div>
           </AccordionPricingProductCard>
         </li>

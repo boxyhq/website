@@ -3,7 +3,7 @@ import SimpleOSSProductCard from '../cards/SimpleOSSProductCard';
 
 import './product-self-hosted.css';
 
-const ProductsSelfHosted = () => {
+const ProductsSelfHosted = ({ showHubSpotForm }) => {
   return (
     <div className="products-self-hosted">
       <h2 className="products-self-hosted-title linear-gradient-text">
@@ -20,7 +20,7 @@ const ProductsSelfHosted = () => {
 
       <h3 className="linear-gradient-text">Self Hosted Premium</h3>
 
-      <PricingCardsPremiumSelfHosted />
+      <PricingCardsPremiumSelfHosted showHubSpotForm={showHubSpotForm} />
 
       <h3 className="linear-gradient-text">Free Forever</h3>
 
