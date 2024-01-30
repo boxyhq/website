@@ -81,7 +81,7 @@ module.exports = {
             },
             {
               href: 'https://github.com/boxyhq/saas-starter-kit',
-              label: 'Enterprise SaaS Starter Kit',
+              label: 'SaaS Starter Kit',
             },
           ],
         },
@@ -98,7 +98,7 @@ module.exports = {
             },
             {
               href: 'https://awesome-oss-devsec.boxyhq.com',
-              label: 'Developer Security Tools',
+              label: 'Dev Sec Tools',
             },
           ],
         },
