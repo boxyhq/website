@@ -51,6 +51,7 @@ const OurInvestors = () => {
               ctaCopy={investor.ctaCopy}
               ctaURL={investor.url}
               height="100"
+              targetNewWindow={true}
               width="250"
             >
               <p>{investor.bio}</p>
