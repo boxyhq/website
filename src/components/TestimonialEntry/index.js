@@ -9,7 +9,7 @@ const TestimonialEntry = ({ children, testimonial }) => {
         <h3 className="testimonial-entry-company">{testimonial.companyName}</h3>
         {children}
       </div>
-      <div class="testimonial-footer">
+      <div className="testimonial-footer">
         <QuoteFeaturedReviewer reviewer={testimonial} />
         <a className="testimonial-entry-link" href={testimonial.testimonialURL}>
           Read the success story

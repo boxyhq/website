@@ -45,7 +45,7 @@ const OurProducts = ({ centerHeader = false }) => {
   return (
     <>
       <OurProductsHeader centerHeader={centerHeader} />
-      <ul class="reset-list">
+      <ul className="reset-list">
         {products.map((product) => (
           <li key={product.url}>
             <BaseProductSpotlightSection

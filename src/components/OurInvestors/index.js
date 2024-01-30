@@ -35,16 +35,16 @@ const OurInvestors = () => {
     },
   ];
   return (
-    <div class="our-investors">
+    <div className="our-investors">
       <BaseFeatureSectionHeader
         reverse={false}
         title="Our Investors"
         withMargin={true}
       ></BaseFeatureSectionHeader>
 
-      <ul class="reset-list girdle investors-list">
+      <ul className="reset-list girdle investors-list">
         {investors.map((investor) => (
-          <li class="investors-list-entry" key={investor.url}>
+          <li className="investors-list-entry" key={investor.url}>
             <BaseCard
               cardImage={`/images/investors/${investor.cardImg}`}
               centered={true}

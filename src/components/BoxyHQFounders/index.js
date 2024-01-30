@@ -24,14 +24,14 @@ const BoxyHQFounders = () => {
     },
   ];
   return (
-    <div class="girdle boxyhq-founders">
+    <div className="girdle boxyhq-founders">
       <BaseFeatureSectionHeader
         linearTitle={true}
         reverse={false}
         title="BoxyHQ Founders"
         withMargin={true}
       />
-      <ul class="reset-list founders-list">
+      <ul className="reset-list founders-list">
         {founders.map((founder) => (
           <li key={founder.name}>
             <CardFounderBio founder={founder} />

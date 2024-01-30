@@ -64,15 +64,15 @@ const PanelDiscussions = () => {
   return (
     <section
       aria-labelledby="panel-discussions-title"
-      class="panel-discussions-container"
+      className="panel-discussions-container"
     >
       <h2
-        class="panel-discussions-title linear-gradient-text"
+        className="panel-discussions-title linear-gradient-text"
         id="panel-discussions-title"
       >
         Panel Discussions
       </h2>
-      <p class="panel-discussions-lead">
+      <p className="panel-discussions-lead">
         BoxyHQ's Developer-First Security Week brings together the brightest
         minds in cybersecurity to explore the industry's future through four
         engaging panel discussions. From August 7th to 10th, join leaders like
@@ -86,7 +86,7 @@ const PanelDiscussions = () => {
         crucial conversations that are redefining the future of digital security
         and privacy.
       </p>
-      <ul class="reset-list girdle panel-dicsussions-list">
+      <ul className="reset-list girdle panel-dicsussions-list">
         {panelDiscussions.map((panelDiscussion) => (
           <li
             className="panel-dicsussions-list-entry"
@@ -103,8 +103,8 @@ const PanelDiscussions = () => {
                 </time>
               </p>
               <p>{panelDiscussion.description}</p>
-              <h3 class="base-card-secondary-title">Speakers</h3>
-              <ul class="speakers-list">
+              <h3 className="base-card-secondary-title">Speakers</h3>
+              <ul className="speakers-list">
                 {panelDiscussion.speakers.map((speaker) => (
                   <li key={speaker}>{speaker}</li>
                 ))}

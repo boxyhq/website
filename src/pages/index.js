@@ -42,7 +42,7 @@ const IndexPage = () => {
             <li>Become enterprise ready</li>
           </ul>
           <a
-            class="button button-secondary-filled with-icon base-icon-pseudo icon-secure"
+            className="button button-secondary-filled with-icon base-icon-pseudo icon-secure"
             href="/enterprise-sso"
           >
             Learn more

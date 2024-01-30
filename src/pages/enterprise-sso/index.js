@@ -83,7 +83,7 @@ const EnterpriseSSO = () => {
             </p>
           </BaseFeatureSectionHeader>
 
-          <ul class="reset-list enterprise-sso-advantages-list">
+          <ul className="reset-list enterprise-sso-advantages-list">
             {ssoAdvantages.map((advantage) => (
               <li key={advantage.title}>
                 <BaseCard
@@ -105,15 +105,17 @@ const EnterpriseSSO = () => {
           withMargin={true}
         />
 
-        <ul class="reset-list">
+        <ul className="reset-list">
           {boxyHQBenefits.map((benefit) => (
-            <li>
+            <li key={benefit.title}>
               <BaseProductSpotlightSection
                 light={benefit.light}
                 pictureSrc={benefit.pictureSrc}
                 reversed={benefit.reversed}
               >
-                <h2 class="product-feature-card-heading">{benefit.title}</h2>
+                <h2 className="product-feature-card-heading">
+                  {benefit.title}
+                </h2>
                 <p>{benefit.copy}</p>
                 <a
                   className={clsx(

@@ -11,9 +11,9 @@ const Privacy = () => {
       description={metaDescription}
       wrapperClassName="marketing-site"
     >
-      <main class="girdle legal-page">
+      <main className="girdle legal-page">
         <h1>BoxyHQ Privacy Policy</h1>
-        <p class="effective-data">
+        <p className="effective-data">
           Eﬀective as of <time datetime="2021-08-09">August 9, 2021</time>.
         </p>
 

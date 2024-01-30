@@ -29,7 +29,9 @@ const BaseFeatureSectionHeader = ({
         </h2>
       )}
       {subtitle && (
-        <h3 class="feature-header-subtitle linear-gradient-text">{subtitle}</h3>
+        <h3 className="feature-header-subtitle linear-gradient-text">
+          {subtitle}
+        </h3>
       )}
       {children}
     </header>

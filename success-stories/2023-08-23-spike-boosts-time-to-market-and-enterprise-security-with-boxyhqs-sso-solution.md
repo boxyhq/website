@@ -11,7 +11,7 @@ import Quote from "../src/components/Quote";
 Spike is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
 
 <div style={{ textAlign: "center" }}>
-  <a href="https://spike.sh/" target="_blank" class="button button--primary button--outline">Learn more about Spike</a>
+  <a href="https://spike.sh/" target="_blank" className="button button--primary button--outline">Learn more about Spike</a>
 </div>
 
 ## Introduction
@@ -20,7 +20,7 @@ Spike, a fast-growing incident management platform, recognized the growing deman
 
 <Quote author="Kaushik Thirthappa" title="Founder Spike.sh" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
 
-  Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.
+Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.
 </Quote>
 
 ## Motivation Behind Implementing Enterprise SSO
@@ -66,5 +66,5 @@ The Spike-BoxyHQ relationship is grounded in reliability, flexibility, an open-s
 In essence, Spike collaboration with BoxyHQ showcases the pivotal role SSO solutions can play in enhancing security, streamlining processes, and driving customer growth within the enterprise domain. The partnership underlines the potential of innovative technology to transform the operational landscape while fostering long-lasting relationships based on trust and shared values.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/blog/transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team" class="button button--primary button--outline">Read the full interview</a>
+  <a href="/blog/transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team" className="button button--primary button--outline">Read the full interview</a>
 </div>

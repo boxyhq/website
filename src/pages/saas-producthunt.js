@@ -203,20 +203,20 @@ const Quote = ({ children, author, title, avatar }) => {
             verticalAlign: 'middle',
             borderRadius: '50%',
           }}
-          class="avatar__photo avatar__photo--xl"
+          className="avatar__photo avatar__photo--xl"
           src={avatar}
           alt="Steven Tey"
         />
         <div className="avatar__intro">
           <div
             style={{ fontSize: '19px', marginTop: '20px' }}
-            class="avatar__name"
+            className="avatar__name"
           >
             {author}
           </div>
           <p
             style={{ fontSize: '16px', marginBottom: '-10px' }}
-            class="avatar__subtitle"
+            className="avatar__subtitle"
           >
             {title}
           </p>

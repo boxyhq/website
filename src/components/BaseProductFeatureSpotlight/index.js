@@ -23,7 +23,7 @@ const BaseProductFeatureSpotlight = ({
         withMargin && 'top-margin',
       ])}
     >
-      <header class="feature-header">
+      <header className="feature-header">
         <h2 className="feature-header-title" id={`${sectionId}-title`}>
           {title}
         </h2>

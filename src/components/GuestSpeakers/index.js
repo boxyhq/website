@@ -112,7 +112,7 @@ const GuestSpeakers = () => {
       <div className="guest-speakers-list-wrapper">
         <ul className="reset-list girdle guest-speakers-list">
           {speakers.map((speaker) => (
-            <li class="guest-speaker-bio" key={speaker.company}>
+            <li className="guest-speaker-bio" key={speaker.company}>
               <CardSpeakerBio speaker={speaker} />
             </li>
           ))}

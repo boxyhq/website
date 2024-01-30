@@ -11,9 +11,9 @@ const Terms = () => {
       description={metaDescription}
       wrapperClassName="marketing-site"
     >
-      <main class="girdle legal-page">
+      <main className="girdle legal-page">
         <h1>BoxyHQ Terms and Conditions</h1>
-        <p class="effective-data">
+        <p className="effective-data">
           Eﬀective as of <time datetime="2021-08-09">August 9, 2021</time>.
         </p>
         <p>
@@ -31,7 +31,7 @@ const Terms = () => {
           Conditions.
         </p>
         <h2>Site</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             We may from time to time, at our sole and absolute discretion and
             without notice to you, update the Site (or any part of it). We will
@@ -54,7 +54,7 @@ const Terms = () => {
         </ol>
 
         <h2>Account</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             To access certain features on the Site, you may be required to
             create an account with us in the form provided by us.
@@ -93,7 +93,7 @@ const Terms = () => {
         </ol>
 
         <h2>Communitcations</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             By using the Site and providing your e-mail address, you agree to
             subscribe to newsletters, marketing or promotional materials and
@@ -103,7 +103,7 @@ const Terms = () => {
         </ol>
 
         <h2>User Submitted Content</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             The Site may allow you to publish, share, store and otherwise make
             available certain information, text, graphics, videos, or other
@@ -169,7 +169,7 @@ const Terms = () => {
         </ul>
 
         <h2>Fees and Payment</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             You may be required to purchase or pay a fee to access some features
             of the Site. You agree to pay all fees due and payable to us
@@ -197,7 +197,7 @@ const Terms = () => {
         </p>
 
         <h2>Specifications</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             We may, from time to time, set certain minimum speciﬁcations
             required to access our Site to ensure all users have the best
@@ -222,7 +222,7 @@ const Terms = () => {
         </ol>
 
         <h2>Copyright and Trademarks</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             Except as expressly stated otherwise, you acknowledge and agree that
             the original content on the Site, and the software, features and
@@ -237,7 +237,7 @@ const Terms = () => {
         </ol>
 
         <h2>Limitation of Liability, Indemnities and Warranties</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             Except as expressly provided by law, we shall not be liable to you
             or any third parties for any loss, damage, expenses or any other
@@ -260,7 +260,7 @@ const Terms = () => {
         </ol>
 
         <h2>Term and Termination</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             These Terms and Conditions will remain in full force and eﬀect while
             you use the Site.
@@ -283,7 +283,7 @@ const Terms = () => {
         </ol>
 
         <h2>Assignment</h2>
-        <ol class="legal-ordered-list">
+        <ol className="legal-ordered-list">
           <li>
             These Terms and Conditions will bind and inure for the beneﬁt of the
             parties, including their respective successors, permitted assigns

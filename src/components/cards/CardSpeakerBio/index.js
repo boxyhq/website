@@ -7,7 +7,7 @@ const CardSpeakerBio = ({ speaker }) => {
     <div className="speaker-bio-card">
       <header className="speaker-bio-header">
         <Picture height="280" pictureSrc={speaker.pictureSrc} width="280" />
-        <h3 class="speaker-name">{speaker.name}</h3>
+        <h3 className="speaker-name">{speaker.name}</h3>
 
         <p>
           <span>{speaker.role}</span>

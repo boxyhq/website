@@ -25,7 +25,7 @@ const BaseCard = ({
       </div>
       {showCTA && (
         <a
-          class="button button-secondary"
+          className="button button-secondary"
           href={ctaURL}
           target={targetNewWindow ? '_blank' : '_self'}
         >

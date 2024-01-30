@@ -6,7 +6,7 @@ const HeroAbout = () => {
       sectionId="about-boxyhq"
       title="Security Building Blocks For Developers"
     >
-      <p class="lead-outro">
+      <p className="lead-outro">
         Welcome to BoxyHQ, where we revolutionize the landscape of
         developer-first security, simplifying the integration of essential
         security features into your products. Envision a realm where security,
