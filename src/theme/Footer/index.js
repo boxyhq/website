@@ -14,8 +14,6 @@ const Footer = () => {
     return null;
   }
 
-  const { copyright, links, logo, style } = footer;
-
   return (
     <footer className="page-footer">
       <div className="girdle page-footer-main">

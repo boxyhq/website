@@ -1,10 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import SvgIcon from '../components/SvgIcon.js';
-import NewsSection from '../components/NewsSection';
-import InvestorsSection from '../components/InvestorsSection';
-import DeveloperCommunitySection from '../components/DeveloperCommunitySection';
 import SectionLayout from '../components/SectionLayout';
 import clsx from 'clsx';
 
@@ -37,9 +33,9 @@ const ProductHuntSaas = () => {
             height="515"
             src="https://www.youtube.com/embed/bmezoOhED4k?si=PyaPvJVjwAV7z-BW"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>
@@ -51,12 +47,12 @@ const ProductHuntSaas = () => {
           {
             title: 'Sign up',
             href: 'https://app.eu.boxyhq.com/auth/join',
-            className: 'button--primary',
+            className: 'button--secondary button--outline',
           },
           {
             title: 'Product Hunt',
             href: 'https://www.producthunt.com/products/boxyhq',
-            className: 'button--primary button--outline',
+            className: 'button--secondary button--outline',
           },
         ]}
       />
@@ -151,21 +147,7 @@ const ProductHuntSaas = () => {
             </div>
           </div>
         </div>
-        <div className="card__footer text--center">
-          <Link
-            className="button button--primary button-outline button--lg"
-            href="https://app.eu.boxyhq.com/auth/join"
-          >
-            Sign up
-          </Link>
-        </div>
       </SectionLayout>
-
-      <CustomersSection />
-
-      <NewsSection />
-      <InvestorsSection />
-      <DeveloperCommunitySection />
     </Layout>
   );
 };
@@ -223,67 +205,6 @@ const Quote = ({ children, author, title, avatar }) => {
         </div>
       </div>
     </div>
-  );
-};
-
-const customersList = [
-  {
-    url: 'https://www.dub.co',
-    logo: require('/img/product-hunt/dub.svg').default,
-  },
-  {
-    url: 'https://cal.com',
-    logo: require('/img/product-hunt/cal.svg').default,
-  },
-  {
-    url: 'https://supertokens.com',
-    logo: require('/img/product-hunt/supertokens.svg').default,
-  },
-  {
-    url: 'https://www.salita.no',
-    logo: require('/img/product-hunt/salita.svg').default,
-  },
-  {
-    url: 'https://www.unosecur.com',
-    logo: require('/img/product-hunt/unosecur.svg').default,
-  },
-];
-
-const CustomersSection = () => {
-  return (
-    <SectionLayout
-      title="Trusted by"
-      style={{ backgroundColor: 'white' }}
-      titleStyle={{ color: '#444950' }}
-    >
-      <div className="row">
-        {customersList.map(({ logo, url }, idx) => (
-          <div
-            className="col"
-            key={idx}
-            style={{ display: 'flex', alignItems: 'center' }}
-          >
-            <SvgIcon
-              icon={logo}
-              url={url}
-              size={{ height: '60px', width: '160px' }}
-            />
-          </div>
-        ))}
-      </div>
-      <div
-        className="section__header text--center"
-        style={{
-          color: '#444950',
-          paddingTop: '1rem',
-          textAlign: 'center',
-          fontSize: '1.25rem',
-          fontWeight: 'bold',
-        }}
-      >
-        and more
-      </div>
-    </SectionLayout>
   );
 };
 

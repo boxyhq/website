@@ -61,7 +61,7 @@ const Pricing = () => {
                 onClick={() =>
                   showHubSpotForm(
                     true,
-                    hubspotFormIds.entrpriseSSODirectorySync
+                    hubspotFormIds.enterpriseSSODirectorySync
                   )
                 }
               >
