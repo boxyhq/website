@@ -57,6 +57,8 @@ const PricingCardsSaaS = () => {
                 <a
                   className="button button-primary with-icon base-icon-pseudo icon-code-slash"
                   href="https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=pricing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Sign Up Today
                 </a>
@@ -113,6 +115,8 @@ const PricingCardsSaaS = () => {
                 <a
                   className="button button-primary with-icon base-icon-pseudo icon-code-slash"
                   href="https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=pricing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Sign Up Today
                 </a>
