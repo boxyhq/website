@@ -32,7 +32,7 @@ module.exports = {
     announcementBar: {
       id: 'announcement-bar',
       content:
-        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star Enterprise SSO on GitHub</a>',
+        '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star SAML Jackson on GitHub</a>',
       isCloseable: false,
     },
     image: 'img/website-preview-image.png',
