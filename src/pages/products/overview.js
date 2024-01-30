@@ -18,7 +18,7 @@ const ProductsOverview = () => {
       wrapperClassName="marketing-site"
     >
       <main>
-        <OurProducts />
+        <OurProducts centerHeader={true} />
       </main>
     </Layout>
   );
