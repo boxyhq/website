@@ -3,6 +3,8 @@ import BaseHero from '../BaseHero';
 const HeroAbout = () => {
   return (
     <BaseHero
+      centered={true}
+      reduced={true}
       sectionId="about-boxyhq"
       title="Security Building Blocks For Developers"
     >

@@ -1,12 +1,21 @@
+import clsx from 'clsx';
+
 import Picture from '../../Picture';
 
 import './base-hero.css';
 
-const BaseHero = ({ children, pictureSrc, sectionId, title }) => {
+const BaseHero = ({
+  centered,
+  children,
+  pictureSrc,
+  reduced,
+  sectionId,
+  title,
+}) => {
   return (
     <section aria-labelledby={`${sectionId}-title`} className="hero-section">
-      <div className="girdle hero">
-        <div className="content-container">
+      <div className={clsx('girdle', 'hero', reduced && 'reduced')}>
+        <div className={clsx('content-container', centered && 'centered')}>
           <h1
             className="linear-gradient-text hero-section-title"
             dangerouslySetInnerHTML={{ __html: title }}
