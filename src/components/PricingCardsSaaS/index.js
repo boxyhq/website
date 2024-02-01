@@ -15,7 +15,7 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
             price="49"
             pricePeriod="per month"
             subtitle="Enterprise SAML & OIDC authentication with any identity provider."
-            title="Sign Sign-On (SSO)"
+            title="Single Sign-On (SSO)"
             type="saas"
           >
             <div className="pricing-product-card-details">

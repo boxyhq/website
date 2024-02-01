@@ -13,7 +13,7 @@ const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
           <AccordionPricingProductCard
             name="product-sso"
             subtitle="Enterprise SAML & OIDC authentication with any identity provider."
-            title="Sign Sign-On (SSO)"
+            title="Single Sign-On (SSO)"
             type="premium-self-hosted"
           >
             <div className="pricing-product-card-details">

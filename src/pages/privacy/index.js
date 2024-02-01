@@ -370,8 +370,8 @@ const Privacy = () => {
             Facebook Inc., 1 Hacker Way, Menlo Park, CA 94025, USA. The user can
             consult the privacy policy and other legal aspects of said company
             in the following link:{' '}
-            <a href="https://facebook.com/about/privacy/" target="_blank">
-              https://facebook.com/about/privacy/
+            <a href="https://facebook.com/about/privacy" target="_blank">
+              https://facebook.com/about/privacy
             </a>
             .
           </li>

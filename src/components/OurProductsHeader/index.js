@@ -7,10 +7,10 @@ const OurProductsHeader = ({ centerHeader = false }) => {
       <p className="main-page-lead-copy">
         Explore BoxyHQ's suite of developer-focused security solutions.
         Streamline enterprise authentication with{' '}
-        <abbr title="Sign Sign-On">SSO</abbr>, manage user access with Directory
-        Sync, secure data with Privacy Vault, and track activities with Audit
-        Logs. Open-source, self-hosted, or SaaS, enhance your product's security
-        and compliance effortlessly.
+        <abbr title="Single Sign-On">SSO</abbr>, manage user access with
+        Directory Sync, secure data with Privacy Vault, and track activities
+        with Audit Logs. Open-source, self-hosted, or SaaS, enhance your
+        product's security and compliance effortlessly.
       </p>
     </div>
   );
