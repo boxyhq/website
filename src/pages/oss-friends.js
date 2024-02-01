@@ -37,9 +37,7 @@ const OSSFriends = () => {
                           <div className="card__body">{friend.description}</div>
                           <div className="card__footer">
                             <Link
-                              className={clsx(
-                                'button button--primary button--block'
-                              )}
+                              className={clsx('button button-primary')}
                               href={friend.href}
                             >
                               Learn More

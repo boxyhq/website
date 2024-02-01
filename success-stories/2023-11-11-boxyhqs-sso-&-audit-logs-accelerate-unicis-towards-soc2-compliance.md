@@ -11,7 +11,7 @@ import Quote from "../src/components/Quote";
 At Unicis, their vision is to create a world where compliance is effortless, efficient, and transparent for every business. We strive to achieve this by providing a single, comprehensive application that addresses all compliance, privacy, risk and security concerns.
 
 <div style={{ textAlign: "center" }}>
-  <a href="https://www.unicis.tech/" target="_blank" className="button button--primary button--outline">Learn more about Unicis.Tech</a>
+  <a href="https://www.unicis.tech/" target="_blank" className="button button-primary">Learn more about Unicis.Tech</a>
 </div>
 
 ## Introduction
@@ -87,5 +87,5 @@ Unicis.Tech has experienced substantial growth in acquiring enterprise clients d
 Unicis.Tech's adoption of BoxyHQ for Enterprise SSO and Audit Logs has yielded numerous benefits, ranging from improved security and compliance to enhanced productivity and customer trust. Their recommendation of BoxyHQ's solution underscores its efficacy in providing a comprehensive and cost-effective security solution for businesses seeking to meet their security and compliance needs.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/blog/unicis-tech-unlocks-security-with-boxyhq-a-conversation-with-the-founder" className="button button--primary button--outline">Read the full interview</a>
+  <a href="/blog/unicis-tech-unlocks-security-with-boxyhq-a-conversation-with-the-founder" className="button button-primary">Read the full interview</a>
 </div>
