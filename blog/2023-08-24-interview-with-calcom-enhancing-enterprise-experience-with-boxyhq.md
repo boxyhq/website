@@ -57,5 +57,5 @@ On the soft benefits front, we've witnessed a boost in team morale due to the si
 **Bailey (Cal.com):** Thank you, We really appreciate having the chance to explain how BoxyHQ stands out as a reliable partner in the realm of authentication solutions and we look forward to what the future holds for our ongoing partnership.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/success-stories/accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution" className="button button--primary button--outline">Read Cal.com's success story</a>
+  <a href="/success-stories/accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution" className="button button-primary">Read Cal.com's success story</a>
 </div>

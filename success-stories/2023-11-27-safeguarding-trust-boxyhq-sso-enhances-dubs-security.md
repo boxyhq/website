@@ -11,7 +11,7 @@ import Quote from "../src/components/Quote";
 Dub is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically.
 
 <div style={{ textAlign: "center" }}>
-  <a href="https://dub.co" target="_blank" className="button button--primary button--outline">Learn more about Dub</a>
+  <a href="https://dub.co" target="_blank" className="button button-primary">Learn more about Dub</a>
 </div>
 
 ## Introduction
@@ -51,7 +51,7 @@ The adoption of BoxyHQ's Jackson brought a multitude of benefits to Dub, both di
 <Quote author="Steven Tey" title="Founder Dub" avatar="/img/success-stories/steven-tey-dub.jpeg">
   HUGE shoutout to BoxyHQ for demystifying esoteric concepts like Enterprise SSO and Directory Sync!
 
-I highly recommend checking out their docs – it's an absolute goldmine: https://boxyhq.com/docs
+  I highly recommend checking out their docs – it's an absolute goldmine.
 </Quote>
 <br></br>
 
@@ -72,5 +72,5 @@ In closing, Dub's journey towards Enterprise SSO with BoxyHQ's Jackson serves as
 <br></br>
 
 <div style={{ textAlign: "center" }}>
-  <a href="/blog/unlocking-business-growth-a-conversations-with-dubs-founder" className="button button--primary button--outline">Read the full interview</a>
+  <a href="/blog/unlocking-business-growth-a-conversations-with-dubs-founder" className="button button-primary">Read the full interview</a>
 </div>
