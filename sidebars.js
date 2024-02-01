@@ -14,8 +14,8 @@ module.exports = {
         {
           type: 'category',
           label: 'Deploy',
+          link: { type: 'doc', id: 'jackson/deploy/index' },
           items: [
-            'jackson/deploy/index',
             'jackson/deploy/service',
             'jackson/deploy/npm-library',
             'jackson/deploy/env-variables',
@@ -64,12 +64,6 @@ module.exports = {
       link: { type: 'doc', id: 'directory-sync/overview' },
       items: [
         'directory-sync/getting-started',
-        'directory-sync/api-reference',
-        'directory-sync/examples',
-        'directory-sync/webhooks',
-        'directory-sync/events',
-        'directory-sync/observability',
-        'directory-sync/faq',
         {
           type: 'category',
           label: 'Providers',
@@ -83,6 +77,12 @@ module.exports = {
             'directory-sync/providers/google',
           ],
         },
+        'directory-sync/api-reference',
+        'directory-sync/examples',
+        'directory-sync/webhooks',
+        'directory-sync/events',
+        'directory-sync/observability',
+        'directory-sync/faq',
       ],
     },
     {
