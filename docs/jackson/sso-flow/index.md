@@ -11,7 +11,7 @@ Jackson takes a multi-tenanted approach to implementing SSO, abstracting away al
 
 ## 1. Setting up SSO Provider
 
-Please follow the instructions [here](../sso-providers) to guide your customers in setting up SAML/OIDC correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
+Please follow the instructions [here](./sso-providers) to guide your customers in setting up SAML/OIDC correctly for your product(s). You should create a copy of the doc and modify it with your custom settings, we have used the values that work for our demo apps.
 
 ## 2. SSO Connection API
 
