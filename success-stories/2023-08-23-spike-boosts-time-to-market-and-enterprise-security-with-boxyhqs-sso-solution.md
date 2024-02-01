@@ -11,7 +11,7 @@ import Quote from "../src/components/Quote";
 Spike is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
 
 <div style={{ textAlign: "center" }}>
-  <a href="https://spike.sh/" target="_blank" className="button button-secondary">Learn more about Spike</a>
+  <a href="https://spike.sh/" target="_blank" className="button button-primary">Learn more about Spike</a>
 </div>
 
 ## Introduction
@@ -66,5 +66,5 @@ The Spike-BoxyHQ relationship is grounded in reliability, flexibility, an open-s
 In essence, Spike collaboration with BoxyHQ showcases the pivotal role SSO solutions can play in enhancing security, streamlining processes, and driving customer growth within the enterprise domain. The partnership underlines the potential of innovative technology to transform the operational landscape while fostering long-lasting relationships based on trust and shared values.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/blog/transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team" className="button button-secondary">Read the full interview</a>
+  <a href="/blog/transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team" className="button button-primary">Read the full interview</a>
 </div>

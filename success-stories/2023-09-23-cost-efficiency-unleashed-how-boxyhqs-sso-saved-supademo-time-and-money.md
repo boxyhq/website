@@ -12,7 +12,7 @@ Supademo is on a mission to help teams communicate products more effectively sta
 This, in turn, leads to more deals closed, better onboarding, and reduced support tickets, among many other glorious things.
 
 <div style={{ textAlign: "center" }}>
-  <a href="https://supademo.com" target="_blank" className="button button-secondary">Learn more about Supademo</a>
+  <a href="https://supademo.com" target="_blank" className="button button-primary">Learn more about Supademo</a>
 </div>
 
 ## Introduction
@@ -62,5 +62,5 @@ Supademo's trust in BoxyHQ extends beyond the technology itself; it's rooted in 
 Supademo's journey to enhance its platform with enterprise SSO through BoxyHQ's Jackson serves as an inspiring story. It highlights the importance of listening to customer demands, choosing the right technology partner, and the immense impact that streamlined authentication can have on a business. As Supademo continues to thrive, its commitment to effective communication and customer satisfaction remains unwavering, with BoxyHQ by its side as a trusted ally.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/blog/boosting-trust-and-efficiency-a-conversation-with-supademos-ceo" className="button button-secondary">Read the full interview</a>
+  <a href="/blog/boosting-trust-and-efficiency-a-conversation-with-supademos-ceo" className="button button-primary">Read the full interview</a>
 </div>

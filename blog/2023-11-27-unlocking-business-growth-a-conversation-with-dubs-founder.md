@@ -60,5 +60,5 @@ author_image_url: https://boxyhq.com/img/team/nathan.jpg
 **Steven Tey:** Thank you. It's been a pleasure sharing our story, and we're excited about what lies ahead for Dub.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/success-stories/safeguarding-trust-boxyhq-sso-enhances-dubs-security" className="button button-secondary">Read Dub's success story</a>
+  <a href="/success-stories/safeguarding-trust-boxyhq-sso-enhances-dubs-security" className="button button-primary">Read Dub's success story</a>
 </div>
