@@ -47,12 +47,12 @@ const ProductHuntSaas = () => {
           {
             title: 'Sign up',
             href: 'https://app.eu.boxyhq.com/auth/join',
-            className: 'button--secondary button--outline',
+            className: 'button-secondary',
           },
           {
             title: 'Product Hunt',
             href: 'https://www.producthunt.com/products/boxyhq',
-            className: 'button--secondary button--outline',
+            className: 'button-secondary',
           },
         ]}
       />

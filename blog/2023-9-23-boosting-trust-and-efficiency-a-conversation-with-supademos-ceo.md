@@ -57,5 +57,5 @@ As for direct benefits, we were able to close several enterprise partnerships wi
 **Joseph Lee (Supademo):** You're very welcome. It's been a pleasure to be part of this discussion, and I hope our experiences can inspire others in their endeavors. Thank you for having me.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/success-stories/cost-efficiency-unleashed-how-boxyhqs-sso-saved-supademo-time-and-money" className="button button--primary button--outline">Read Spike's success story</a>
+  <a href="/success-stories/cost-efficiency-unleashed-how-boxyhqs-sso-saved-supademo-time-and-money" className="button button-secondary">Read Spike's success story</a>
 </div>

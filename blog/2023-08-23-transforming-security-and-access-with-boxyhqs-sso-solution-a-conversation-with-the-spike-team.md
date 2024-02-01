@@ -71,5 +71,5 @@ Besides, Boxy’s team was incredibly supportive throughout our transition and w
 **Kaushik:** Thank you, we appreciate the opportunity to share our story. Stay tuned for more updates on our evolving collaboration!
 
 <div style={{ textAlign: "center" }}>
-  <a href="/success-stories/spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solution" className="button button--primary button--outline">Read Spike's success story</a>
+  <a href="/success-stories/spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solution" className="button button-secondary">Read Spike's success story</a>
 </div>

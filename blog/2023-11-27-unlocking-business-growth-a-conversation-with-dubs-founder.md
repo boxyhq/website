@@ -19,7 +19,7 @@ author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
 
-#### [Dub](https://dub.co) is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically.
+#### [Dub](https://dub.co) is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically
 
 ---
 
@@ -60,5 +60,5 @@ author_image_url: https://boxyhq.com/img/team/nathan.jpg
 **Steven Tey:** Thank you. It's been a pleasure sharing our story, and we're excited about what lies ahead for Dub.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/success-stories/safeguarding-trust-boxyhq-sso-enhances-dubs-security" className="button button--primary button--outline">Read Dub's success story</a>
+  <a href="/success-stories/safeguarding-trust-boxyhq-sso-enhances-dubs-security" className="button button-secondary">Read Dub's success story</a>
 </div>

@@ -82,5 +82,5 @@ At [Unicis](https://www.unicis.tech/), their vision is to create a world where c
 **Predrag:** The pleasure is all mine, thank you for providing the opportunity to share our journey.
 
 <div style={{ textAlign: "center" }}>
-  <a href="/success-stories/boxyhqs-sso-&-audit-logs-accelerate-unicis-towards-soc2-compliance" className="button button--primary button--outline">Read Spike's success story</a>
+  <a href="/success-stories/boxyhqs-sso-&-audit-logs-accelerate-unicis-towards-soc2-compliance" className="button button-secondary">Read Spike's success story</a>
 </div>
