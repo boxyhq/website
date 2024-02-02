@@ -23,18 +23,6 @@ const CardFounderBio = ({ founder }) => {
                 </a>
               </li>
             )}
-            {founder.github && (
-              <li>
-                <a
-                  className="base-icon-pseudo icon-github"
-                  href={`https://www.github.com/${founder.github}/`}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span className="visually-hidden">View on GitHub</span>
-                </a>
-              </li>
-            )}
             {founder.x && (
               <li>
                 <a
@@ -44,6 +32,18 @@ const CardFounderBio = ({ founder }) => {
                   target="_blank"
                 >
                   <span className="visually-hidden">Follow on Twitter/X</span>
+                </a>
+              </li>
+            )}
+            {founder.github && (
+              <li>
+                <a
+                  className="base-icon-pseudo icon-github"
+                  href={`https://www.github.com/${founder.github}/`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span className="visually-hidden">View on GitHub</span>
                 </a>
               </li>
             )}
