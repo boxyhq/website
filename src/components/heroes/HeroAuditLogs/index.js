@@ -1,5 +1,5 @@
 import BaseHero from '../BaseHero';
-import DemoCTA from '../../DemoCTA';
+import DemoCTA from '../../ctas/DemoCTA';
 
 const HeroAuditLogs = () => {
   return (

@@ -1,6 +1,6 @@
 import BaseHero from '../BaseHero';
-import SignupCTA from '../../SignupCTA';
-import DemoCTA from '../../DemoCTA';
+import SignupCTA from '../../ctas/SignupCTA';
+import DemoCTA from '../../ctas/DemoCTA';
 
 const HeroHome = () => {
   return (

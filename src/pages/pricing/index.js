@@ -10,7 +10,7 @@ import { Modal } from '../../components/Modal';
 import CustomersAndPartners from '../../components/CustomersAndPartners';
 import PricingCardsSaaS from '../../components/PricingCardsSaaS';
 import ProductsSelfHosted from '../../components/ProductsSelfHosted';
-import SignupCTA from '../../components/SignupCTA';
+import SignupCTA from '../../components/ctas/SignupCTA';
 
 import './pricing.css';
 

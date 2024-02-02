@@ -3,7 +3,7 @@ import { hubspotFormIds } from '../Pricing/pricingPlans';
 import AccordionPricingProductCard from '../cards/AccordionPricingProductCard';
 import TableAddons from '../tables/TableAddons';
 import TableTieredPricing from '../tables/TableTieredPricing';
-import SignupCTA from '../SignupCTA';
+import SignupCTA from '../ctas/SignupCTA';
 
 const PricingCardsSaaS = ({ showHubSpotForm }) => {
   return (
