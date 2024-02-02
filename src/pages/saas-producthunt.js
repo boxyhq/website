@@ -46,7 +46,7 @@ const ProductHuntSaas = () => {
         buttons={[
           {
             title: 'Sign up',
-            href: 'https://app.eu.boxyhq.com/auth/join',
+            href: 'https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=saas-producthunt',
             className: 'button-primary',
           },
           {

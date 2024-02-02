@@ -3,6 +3,7 @@ import { hubspotFormIds } from '../Pricing/pricingPlans';
 import AccordionPricingProductCard from '../cards/AccordionPricingProductCard';
 import TableAddons from '../tables/TableAddons';
 import TableTieredPricing from '../tables/TableTieredPricing';
+import SignupCTA from '../SignupCTA';
 
 const PricingCardsSaaS = ({ showHubSpotForm }) => {
   return (
@@ -39,14 +40,7 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
               <TableTieredPricing />
               <p className="pricing-product-card-details-cta">
                 No credit card required for a fully-featured 30-day trial.{' '}
-                <a
-                  className="button button-primary with-icon base-icon-pseudo icon-code-slash"
-                  href="https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=pricing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Sign Up Today
-                </a>
+                <SignupCTA campaign="pricing" />
               </p>
             </div>
           </AccordionPricingProductCard>
@@ -82,14 +76,7 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
               <TableTieredPricing />
               <p className="pricing-product-card-details-cta">
                 No credit card required for a fully-featured 30-day trial.{' '}
-                <a
-                  className="button button-primary with-icon base-icon-pseudo icon-code-slash"
-                  href="https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=pricing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Sign Up Today
-                </a>
+                <SignupCTA campaign="pricing" />
               </p>
             </div>
           </AccordionPricingProductCard>

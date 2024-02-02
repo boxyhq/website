@@ -10,6 +10,7 @@ import { Modal } from '../../components/Modal';
 import CustomersAndPartners from '../../components/CustomersAndPartners';
 import PricingCardsSaaS from '../../components/PricingCardsSaaS';
 import ProductsSelfHosted from '../../components/ProductsSelfHosted';
+import SignupCTA from '../../components/SignupCTA';
 
 import './pricing.css';
 
@@ -45,14 +46,7 @@ const Pricing = () => {
           </p>
           <ul className="reset-list button-container">
             <li>
-              <a
-                className="button button-primary with-icon base-icon-pseudo icon-code-slash"
-                href="https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Sign Up Today
-              </a>
+              <SignupCTA campaign="pricing" />
             </li>
             <li>
               <button

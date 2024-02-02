@@ -1,4 +1,5 @@
 import BaseHero from '../BaseHero';
+import SignupCTA from '../../SignupCTA';
 
 const HeroDirectorySync = () => {
   return (
@@ -27,14 +28,7 @@ const HeroDirectorySync = () => {
           </a>
         </li>
         <li>
-          <a
-            className="button button-primary with-icon base-icon-pseudo icon-code-slash"
-            href="https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=directory-sync"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Sign Up Today
-          </a>
+          <SignupCTA campaign="directory-sync" />
         </li>
       </ul>
     </BaseHero>
