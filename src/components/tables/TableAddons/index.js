@@ -39,7 +39,7 @@ const TableAddons = ({ showHubSpotForm, type }) => {
             <td>SAML Federation</td>
           </tr>
           <tr>
-            <td>SIEM Integration</td>
+            <td>Security Logs and SIEM Integration</td>
           </tr>
         </tbody>
       </table>
