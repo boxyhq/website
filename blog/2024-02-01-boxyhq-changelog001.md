@@ -15,7 +15,6 @@ Welcome to the first edition of the BoxyHQ Changelog! We are excited to share so
 
 With SAML Jackson, our Single Sign-On (SSO) and Directory Sync solution, we are committed to delivering robust, user-friendly, and scalable solutions. In the last two weeks, we have made significant strides in this direction, here are some of the highlights of what landed between v1.16.1 and v1.18.2:
 
-- Improved backwards compatibility.
 - Added privacy respecting analytics for the number of connections.
 - Improvements to our custom branding support (add-on feature).
 - SAML Federation now supports bridging to OIDC.
