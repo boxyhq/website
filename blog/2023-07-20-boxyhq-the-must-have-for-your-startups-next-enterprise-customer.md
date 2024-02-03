@@ -4,7 +4,7 @@ title: "BoxyHQ - The must-have for your startup's next enterprise customer"
 author: Penaaz Valecha
 author_title: Content & Marketing Head @Scoutflo
 author_url: https://www.linkedin.com/in/penaazvalecha/
-author_image_url: /img/blog/Penaaz-headshot.png
+author_image_url: /img/blog/Penaaz-headshot.jpg
 tags_disabled: [developer, security, saas, devsecops, appsec]
 image: /img/blog/scoutflo-blog-dan-nelson-unsplash.jpg
 link:
@@ -64,7 +64,7 @@ According to <b>Sama — Carlos Samame (Co-Founder)</b>, there are 2 paths for s
 
 Enterprise customers are often apprehensive (concerned) about trusting startups vs. established businesses. Because the stakes are usually much higher.
 
-#### They’re mainly looking for 2 things:
+#### They’re mainly looking for 2 things
 
 1. Your other enterprise customers (helps credibility)
 
@@ -75,7 +75,7 @@ They look for quite a few standards to be met in a solution provider 👇🏻
 ![enterprise-ready1](/img/blog/scoutflo-blog-enterprise-ready1.webp)
 
 <div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>
-Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> 
+Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a>
 </div>
 
 ![enterprise-ready2](/img/blog/scoutflo-blog-enterprise-ready2.webp)
@@ -93,6 +93,7 @@ Before you feel overwhelmed, he further adds that you don’t need to start buil
    Invest in off-the-shelf enterprise readiness solutions that you can integrate into your SaaS app vs. spending months building in-house. Spend more time on your core product vs. non-core features.
 
 3. #### Reduced engineering costs
+
    Investing in external solutions saves developer time spent on coding, fixing bugs, and the overall learning curve.
 
 <i>“People’s time is more expensive than developer tools.”</i>
@@ -101,7 +102,7 @@ A great way is to rely on open easily available open source solutions.
 
 Source: [Be enterprise-ready: 3 reasons not to build enterprise features!](https://boxyhq.com/blog/three-reasons-not-to-build-enterprise-features)
 
-## The BoxyHQ suite — in the chronological order of release.
+## The BoxyHQ suite — in the chronological order of release
 
 ### 1. Open Source SAML Jackson
 
@@ -179,7 +180,7 @@ All the account information is maintained and managed by the IdP vs. multiple se
 - Increase productivity
 - Save time, reduce costs
 
-### On the solution provider’s side, it looks like:
+### On the solution provider’s side, it looks like
 
 ![SSO connection without BoxyHQ](/img/blog/scoutflo-blog-sso-connection3.webp)
 
@@ -209,7 +210,7 @@ BoxyHQ’s Directory Sync lets orgs activate and deactivate user accounts, creat
 
 💡 <i>In an enterprise customer context, a directory is a central repository that holds information about employees, customers, and other resources in a company.</i>
 
-#### In simple words, you enable your customers to:
+#### In simple words, you enable your customers to
 
 - Have higher security standards
 - Centrally manage their user’s access lifecycle
@@ -270,7 +271,7 @@ In the day and age of high cyber-crime, and increasingly sensitive data– you n
 
 Privacy vault is BoxyHQ’s open-source solution to centralize, isolate, and govern all the sensitive data you collect.
 
-#### With the Privacy Vault, you can:
+#### With the Privacy Vault, you can
 
 - Identify all the sensitive data from clients’ application database and move it to the vault.
 - Replace the sensitive data in their application database with (exchangeable) opaque tokens.
@@ -284,7 +285,7 @@ Privacy vault is BoxyHQ’s open-source solution to centralize, isolate, and gov
 
 <i>“It let our team focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it’s open-source and free?”</i>
 
-<div style={{ textAlign: "center", paddingTop: "2rem", paddingBottom: "2rem" }} > 
+<div style={{ textAlign: "center", paddingTop: "2rem", paddingBottom: "2rem" }} >
    <img src="/img/blog/scoutflo-blog-supertokens.webp"/>
 </div>
 
