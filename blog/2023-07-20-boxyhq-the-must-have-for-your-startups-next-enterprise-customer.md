@@ -4,9 +4,9 @@ title: "BoxyHQ - The must-have for your startup's next enterprise customer"
 author: Penaaz Valecha
 author_title: Content & Marketing Head @Scoutflo
 author_url: https://www.linkedin.com/in/penaazvalecha/
-author_image_url: /img/blog/scoutflo/Penaaz-headshot.jpg
+author_image_url: /img/blog/Penaaz-headshot.jpg
 tags_disabled: [developer, security, saas, devsecops, appsec]
-image: /img/blog/scoutflo/blog-dan-nelson-unsplash.jpg
+image: /img/blog/scoutflo-blog-dan-nelson-unsplash.jpg
 link:
   - rel: canonical
     href: https://blog.scoutflo.com/boxyhq-the-must-have-for-your-startups-next-enterprise-customer/
@@ -17,7 +17,7 @@ Add plug-and-play features to your SaaS product with BoxyHQ's product suite. Bec
 </div>
 
 <div style={{ marginBottom: "-90px", marginTop: "-4px" }}>
-<img src="/img/blog/scoutflo/blog-banner.png"></img>
+<img src="/img/blog/scoutflo-blog-banner.png"></img>
 </div>
 
 ## Introduction
@@ -30,7 +30,7 @@ It initially started with identifying the pain of developers having a TON of res
 
 And with the growing cybersecurity attacks, they need to start thinking about security as well.
 
-![locks](/img/blog/scoutflo/blog-locks.jpeg)
+![locks](/img/blog/scoutflo-blog-locks.jpeg)
 
 <div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Photo by <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FLY:D</a> on <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex">Unsplash</a></div>
 
@@ -48,7 +48,7 @@ That’s where BoxyHQ comes in.
 
 #### <i>But wait… What is enterprise-readiness?</i>
 
-![Question](/img/blog/scoutflo/blog-question.png)
+![Question](/img/blog/scoutflo-blog-question.png)
 
 In a nutshell, it’s being secure, scalable, stable, and easy to run in production.
 
@@ -72,13 +72,13 @@ Enterprise customers are often apprehensive (concerned) about trusting startups 
 
 They look for quite a few standards to be met in a solution provider 👇🏻
 
-![enterprise-ready1](/img/blog/scoutflo/blog-enterprise-ready1.webp)
+![enterprise-ready1](/img/blog/scoutflo-blog-enterprise-ready1.webp)
 
 <div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>
 Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a>
 </div>
 
-![enterprise-ready2](/img/blog/scoutflo/blog-enterprise-ready2.webp)
+![enterprise-ready2](/img/blog/scoutflo-blog-enterprise-ready2.webp)
 
 <div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> </div>
 
@@ -106,7 +106,7 @@ Source: [Be enterprise-ready: 3 reasons not to build enterprise features!](https
 
 ### 1. Open Source SAML Jackson
 
-![Admin Portal](/img/blog/scoutflo/blog-admin-portal.jpeg)
+![Admin Portal](/img/blog/scoutflo-blog-admin-portal.jpeg)
 
 Yep, that’s the product’s name. Pulp Fiction fans get the reference but for others–
 
@@ -129,7 +129,7 @@ BoxyHQ connects to almost every identity providers for you to go from the first 
 
 ### What are its benefits?
 
-![Admin Portal](/img/blog/scoutflo/blog-admin-portal2.jpeg)
+![Admin Portal](/img/blog/scoutflo-blog-admin-portal2.jpeg)
 
 #### Centralized management and increased security 🔒
 
@@ -160,7 +160,7 @@ All the account information is maintained and managed by the IdP vs. multiple se
 
 #### Without BoxyHQ’s SAML SSO, on the user side 😔
 
-![SSO connection without BoxyHQ](/img/blog/scoutflo/blog-sso-connection.webp)
+![SSO connection without BoxyHQ](/img/blog/scoutflo-blog-sso-connection.webp)
 
 <p style={{ textAlign: "center" }}>Without BoxyHQ</p>
 
@@ -170,7 +170,7 @@ All the account information is maintained and managed by the IdP vs. multiple se
 
 #### With BoxyHQ’S SAML SSO authentication 🤠
 
-![SSO connection with BoxyHQ](/img/blog/scoutflo/blog-sso-connection2.webp)
+![SSO connection with BoxyHQ](/img/blog/scoutflo-blog-sso-connection2.webp)
 
 <p style={{ textAlign: "center" }}>With BoxyHQ</p>
 
@@ -182,11 +182,11 @@ All the account information is maintained and managed by the IdP vs. multiple se
 
 ### On the solution provider’s side, it looks like
 
-![SSO connection without BoxyHQ](/img/blog/scoutflo/blog-sso-connection3.webp)
+![SSO connection without BoxyHQ](/img/blog/scoutflo-blog-sso-connection3.webp)
 
 <p style={{ textAlign: "center" }}>Without BoxyHQ</p>
 
-![SSO connection with BoxyHQ](/img/blog/scoutflo/blog-sso-connection4.webp)
+![SSO connection with BoxyHQ](/img/blog/scoutflo-blog-sso-connection4.webp)
 
 <p style={{ textAlign: "center" }}>With BoxyHQ</p>
 
@@ -202,7 +202,7 @@ Note: Team BoxyHQ recently re-launched the enhanced [SAML SSO on Product Hunt](h
 
 ### 2. Open Source Directory Sync
 
-![Directory Sync Connection](/img/blog/scoutflo/blog-ds-connection.webp)
+![Directory Sync Connection](/img/blog/scoutflo-blog-ds-connection.webp)
 
 Organizations use directories from different providers to manage user access to organization resources.
 
@@ -227,7 +227,7 @@ Learn more: [Examples & Resources (Directory Sync)](https://boxyhq.com/docs/dire
 
 ### 3. Open Source Audit Logs
 
-![Open Source Audit Logs](/img/blog/scoutflo/blog-audit-logs.webp)
+![Open Source Audit Logs](/img/blog/scoutflo-blog-audit-logs.webp)
 
 BoxyHQ’s Audit Logs ‘Retraced’ offer your enterprise customers the ability to record and search events that happen on your application.
 
@@ -239,7 +239,7 @@ They provide a detailed record of user actions, and can be used to monitor poten
 
 #### Why are Audit Logs important?
 
-![Open Source Audit Logs2](/img/blog/scoutflo/blog-audit-logs2.jpeg)
+![Open Source Audit Logs2](/img/blog/scoutflo-blog-audit-logs2.jpeg)
 
 For most companies, the ability to monitor the flow of data and be alerted to any breaches is super essential.
 
@@ -249,7 +249,7 @@ This one simple API helps you become compliant fast, and ensure your customers g
 
 ### 4. Admin Portal
 
-![Admin Portal3](/img/blog/scoutflo/blog-admin-portal3.jpeg)
+![Admin Portal3](/img/blog/scoutflo-blog-admin-portal3.jpeg)
 
 Manage Enterprise SSO, Directory Sync, and Audit Logs products via an easy-to-use web interface.
 
@@ -257,7 +257,7 @@ It can help you streamline your workflows and increase productivity.
 
 You can use the authentication method of your choice (Magic Link, Email and Passsword, SAML/OIDC Single-sign-on)
 
-![Admin Portal4](/img/blog/scoutflo/blog-admin-portal4.jpeg)
+![Admin Portal4](/img/blog/scoutflo-blog-admin-portal4.jpeg)
 
 BoxyHQ’s future products (where relevant) will also be available in the Admin Portal.
 
@@ -265,7 +265,7 @@ To enable the Admin Portal, you need to deploy [Jackson as a service](https://bo
 
 ### 5. Data Privacy Vault
 
-![Privacy Vault](/img/blog/scoutflo/blog-privacy-vault.webp)
+![Privacy Vault](/img/blog/scoutflo-blog-privacy-vault.webp)
 
 In the day and age of high cyber-crime, and increasingly sensitive data– you need to protect your customer’s data <i>and</i> trust.
 
@@ -281,31 +281,31 @@ Privacy vault is BoxyHQ’s open-source solution to centralize, isolate, and gov
 
 #### What users are saying 💬
 
-![Cal.com](/img/blog/scoutflo/blog-calcom.webp)
+![Cal.com](/img/blog/scoutflo-blog-calcom.webp)
 
 <i>“It let our team focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it’s open-source and free?”</i>
 
 <div style={{ textAlign: "center", paddingTop: "2rem", paddingBottom: "2rem" }} >
-   <img src="/img/blog/scoutflo/blog-supertokens.webp"/>
+   <img src="/img/blog/scoutflo-blog-supertokens.webp"/>
 </div>
 
 Super Tokens — An open-source authentication solution
 
 <i>“We at SuperTokens needed to provide SAML login to our users, and instead of building it from scratch, we found the perfect open source project — BoxyHQ!”</i>
 
-![News](/img/blog/scoutflo/blog-news.webp)
+![News](/img/blog/scoutflo-blog-news.webp)
 
 <p style={{ textAlign: "center" }}>Media Features</p>
 
 ### Meet the Founders ✨
 
-![Founders - Deepak](/img/blog/scoutflo/blog-founders-deepak.webp)
+![Founders - Deepak](/img/blog/scoutflo-blog-founders-deepak.webp)
 
 <p style={{ textAlign: "center" }}>Deepak Prabhakara, CEO & Co-founder</p>
 
 [Deepak](https://twitter.com/deepakprab) has over 2 decades of experience in design, architecture and development of complex software products across different SaaS and mobile platforms.
 
-![Founders - Sama](/img/blog/scoutflo/blog-founders-sama.webp)
+![Founders - Sama](/img/blog/scoutflo-blog-founders-sama.webp)
 
 [Sama](https://twitter.com/caloique) has 15+ years of experience working at tech companies across different business areas and continents.
 
@@ -317,7 +317,7 @@ Learn more here: [BoxyHQ pledges to keep our core open-source code open](https:/
 
 ### What’s Next for BoxyHQ 🚀
 
-![Features](/img/blog/scoutflo/blog-features.webp)
+![Features](/img/blog/scoutflo-blog-features.webp)
 
 Check out BoxyHQ’s [GitHub page](https://github.com/boxyhq), official [documentation](https://boxyhq.com/docs), and [Twitter](https://twitter.com/boxyhq) profile. 🚀
 
