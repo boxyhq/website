@@ -1,4 +1,6 @@
 import BaseHero from '../BaseHero';
+import SignupCTA from '../../ctas/SignupCTA';
+import DemoCTA from '../../ctas/DemoCTA';
 
 const HeroDirectorySync = () => {
   return (
@@ -17,24 +19,10 @@ const HeroDirectorySync = () => {
       </p>
       <ul className="reset-list button-container">
         <li>
-          <a
-            className="button button-secondary with-icon base-icon-pseudo icon-laptop"
-            href="https://cal.com/deepak-boxyhq/demo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book A Demo
-          </a>
+          <DemoCTA />
         </li>
         <li>
-          <a
-            className="button button-primary with-icon base-icon-pseudo icon-code-slash"
-            href="https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=directory-sync"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Sign Up Today
-          </a>
+          <SignupCTA campaign="directory-sync" />
         </li>
       </ul>
     </BaseHero>
