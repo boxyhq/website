@@ -35,9 +35,9 @@ const CustomersAndPartners = () => {
       url: 'https://www.unicis.tech/',
     },
     {
-      alt: 'Visit Cerbos.dev',
-      pictureSrc: '/images/customers-partners/cerbos',
-      url: 'https://cerbos.dev/',
+      alt: 'Visit SuperTokens.com',
+      pictureSrc: '/images/customers-partners/supertokens',
+      url: 'https://supertokens.com/',
     },
   ];
   return (
