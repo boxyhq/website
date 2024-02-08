@@ -9,7 +9,7 @@ import './boxyhq-vs-workos.css';
 
 const BoxyHQWorkOS = () => {
   const metaDescription =
-    "Join BoxyHQ's team and shape the future of enterprise software security. Explore exciting career opportunities in a dynamic environment committed to innovation and impact in the open-source world.";
+    'BoxyHQ is a flexible, secure, open-source alternative to WorkOS that brings enterprise readiness capabilities to your SaaS applications. It integrates with your tech stack no matter how bespoke.';
   const metaPageTitle = 'BoxyHQ vs WorkOS';
 
   return (
