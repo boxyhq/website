@@ -1,0 +1,8 @@
+.girdle.compare-features {
+  margin: var(--spacing-wide) auto;
+}
+
+.compare-features-heading {
+  margin-bottom: var(--spacing-medium);
+  text-align: center;
+}

@@ -9,6 +9,11 @@ body {
   font: 100% / var(--typography-body-line-height) var(--typography-body-family);
 }
 
+.marketing-site a:not(.button) {
+  color: var(--color-teal-70);
+  text-decoration: underline;
+}
+
 a:hover,
 a:focus {
   text-decoration: none;
