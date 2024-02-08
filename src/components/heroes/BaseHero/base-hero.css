@@ -11,6 +11,11 @@
   padding: var(--spacing-medium);
 }
 
+.hero.reduced p,
+.girdle.hero.reduced p {
+  margin-bottom: 0;
+}
+
 @media only screen and (min-width: 63.9375rem) {
   .hero,
   .girdle.hero {
