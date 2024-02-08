@@ -20,42 +20,6 @@ const BoxyHQWorkOS = () => {
     >
       <HeroBoxyHQWorkOS />
       <main>
-        <ul className="reset-list why-boxyhq">
-          <li>
-            <BaseProductSpotlightSection
-              light={true}
-              pictureSrc="/images/boxyhq-workos/your-product-your-rules"
-              reversed={false}
-            >
-              <h2 className="product-feature-card-heading">
-                Your Product, Your Rules
-              </h2>
-              <p>
-                Make your app enterprise-ready, with just a few lines of code.
-                Through its open-source approach, BoxyHQ’s users are free to
-                make any customizations and changes to their features, while
-                also avoiding vendor lock-in.
-              </p>
-            </BaseProductSpotlightSection>
-          </li>
-          <li>
-            <BaseProductSpotlightSection
-              light={false}
-              pictureSrc="/images/boxyhq-workos/resource-efficient"
-              reversed={true}
-            >
-              <h2 className="product-feature-card-heading">
-                Resource Efficient
-              </h2>
-              <p>
-                Instead of paying thousands of dollars for the large number of
-                connections that your app will have, use BoxyHQ's free
-                open-source solution. Allocate resources to your core value
-                proposition and maximize the benefits for your customers.
-              </p>
-            </BaseProductSpotlightSection>
-          </li>
-        </ul>
         <section
           aria-labelledby="compare-features-heading"
           className="girdle compare-features"
@@ -151,6 +115,43 @@ const BoxyHQWorkOS = () => {
             </tbody>
           </table>
         </section>
+
+        <ul className="reset-list why-boxyhq">
+          <li>
+            <BaseProductSpotlightSection
+              light={true}
+              pictureSrc="/images/boxyhq-workos/your-product-your-rules"
+              reversed={false}
+            >
+              <h2 className="product-feature-card-heading">
+                Your Product, Your Rules
+              </h2>
+              <p>
+                Make your app enterprise-ready, with just a few lines of code.
+                Through its open-source approach, BoxyHQ’s users are free to
+                make any customizations and changes to their features, while
+                also avoiding vendor lock-in.
+              </p>
+            </BaseProductSpotlightSection>
+          </li>
+          <li>
+            <BaseProductSpotlightSection
+              light={false}
+              pictureSrc="/images/boxyhq-workos/resource-efficient"
+              reversed={true}
+            >
+              <h2 className="product-feature-card-heading">
+                Resource Efficient
+              </h2>
+              <p>
+                Instead of paying thousands of dollars for the large number of
+                connections that your app will have, use BoxyHQ's free
+                open-source solution. Allocate resources to your core value
+                proposition and maximize the benefits for your customers.
+              </p>
+            </BaseProductSpotlightSection>
+          </li>
+        </ul>
 
         <BaseCTAProductHighlight
           sectionId="comparison-open-source"
