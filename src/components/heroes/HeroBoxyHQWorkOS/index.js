@@ -4,11 +4,7 @@ import SignupCTA from '../../ctas/SignupCTA';
 
 const HeroBoxyHQWorkOS = () => {
   return (
-    <BaseHero
-      pictureSrc="/images/heroes/boxyhq-compared"
-      sectionId="boxyhq-workos"
-      title="BoxyHQ vs WorkOS"
-    >
+    <BaseHero reduced={true} sectionId="boxyhq-workos" title="BoxyHQ vs WorkOS">
       <p>
         BoxyHQ is a flexible, secure, open-source alternative to WorkOS that
         brings enterprise readiness capabilities to your SaaS applications. It
