@@ -28,13 +28,15 @@ const BaseCTAProductHighlight = ({
       </header>
       <div className="product-highlight-content">
         {children}
-        <a
-          className={`button button-secondary-filled with-icon base-icon-pseudo icon-${icon}`}
-          href={ctaTargertURL}
-          target={targetNewWindow ? '_blank' : '_self'}
-        >
-          {ctaTargertCopy}
-        </a>
+        {ctaTargertURL && ctaTargertCopy && (
+          <a
+            className={`button button-secondary-filled with-icon base-icon-pseudo icon-${icon}`}
+            href={ctaTargertURL}
+            target={targetNewWindow ? '_blank' : '_self'}
+          >
+            {ctaTargertCopy}
+          </a>
+        )}
       </div>
     </section>
   );

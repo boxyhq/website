@@ -1,0 +1,17 @@
+.feature-comparison-table {
+  display: table;
+  width: 100%;
+}
+
+.feature-comparison-table th {
+  text-align: left;
+  width: calc(100% / 3);
+}
+
+.feature-comparison-table .icon-check::before {
+  background-color: var(--color-teal-50);
+}
+
+.feature-comparison-table .icon-cross::before {
+  background-color: var(--color-red-50);
+}
