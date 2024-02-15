@@ -80,6 +80,20 @@ html[data-theme='dark'] .header-github-link:before {
   --ifm-h1-font-size: 2.3rem;
 }
 
+.markdown .button.button-primary {
+  margin: var(--spacing-medium) auto var(--spacing-default);
+  max-width: max-content;
+}
+
+.markdown .button.button-primary.icon-code-slash::before {
+  background-color: var(--color-teal-05);
+}
+
+.markdown .button.button-primary.icon-code-slash:hover::before,
+.markdown .button.button-primary.icon-code-slash:focus::before {
+  background-color: var(--color-teal-90);
+}
+
 /* v2 CSS */
 
 .intro__buttons {
