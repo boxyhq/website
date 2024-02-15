@@ -1,4 +1,4 @@
-# Observability
+# Observability | Directory Sync
 
 Jackson provides first-class observability on the back of OpenTelemetry. Currently we support the following metrics. Traces and logs are coming soon.
 
