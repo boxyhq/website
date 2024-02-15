@@ -1,6 +1,7 @@
 ---
 slug: boosting-trust-and-efficiency-a-conversation-with-supademos-ceo
 title: "Boosting Trust and Efficiency: A Conversation with Supademo's CEO"
+description: "We interviewed Jospeh Lee from Supademo to find out how they leveraged BoxyHQ's Enterprise SSO solution."
 tags_disabled:
   [
     developer,
@@ -19,7 +20,7 @@ author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
 
-We interviewed Jospeh Lee from Supademo to find out how they leveraged BoxyHQ's Enterprise SSO solution.
+Supademo is on a mission to help teams communicate products more effectively starting with the fastest way to create intuitive click-through demos and guides.
 
 **Q:** Thank you for joining us today, Joseph Lee, CEO, and co-founder of Supademo.
 
