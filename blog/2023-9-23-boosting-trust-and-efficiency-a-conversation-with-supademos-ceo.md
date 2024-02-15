@@ -19,8 +19,7 @@ author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
 
-Supademo is on a mission to help teams communicate products more effectively starting with the fastest way to create intuitive click-through demos and guides.
-This, in turn, leads to more deals closed, better onboarding, and reduced support tickets, among many other glorious things.
+We interviewed Jospeh Lee from Supademo to find out how they leveraged BoxyHQ's Enterprise SSO solution.
 
 **Q:** Thank you for joining us today, Joseph Lee, CEO, and co-founder of Supademo.
 
