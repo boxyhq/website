@@ -50,3 +50,5 @@ These technical benefits led to significant second-order advantages. Our users e
 ## Have you seen any significant growth in acquiring enterprise clients as a direct result of utilizing SSO?
 
 **Santosh (Unosecur):** The implementation of SSO significantly enhanced our ability to attract and onboard enterprise clients. The upgraded security and streamlined user experience directly contributed to smoother client onboarding, fostering growth in the enterprise sector. This strategic move not only strengthened our position as a trusted security partner but also underscored the essential role of effective SSO solutions in expanding business opportunities within the competitive enterprise market.
+
+<LearnMoreCTA label="Read Unosecur's Success Story" newWindow={false} url="/success-stories/how-boxyhq-solutions-drive-business-efficiency-and-security-unosecur" />
