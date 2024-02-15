@@ -254,6 +254,7 @@ module.exports = {
           blogSidebarTitle: 'Recent posts',
           blogSidebarCount: 5,
           postsPerPage: 'ALL',
+          archiveBasePath: null,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -295,6 +296,7 @@ module.exports = {
         path: './success-stories',
         blogTitle: 'Success Stories',
         blogDescription: '',
+        archiveBasePath: null,
       },
     ],
     ['@cmfcmf/docusaurus-search-local', {}],
