@@ -1,13 +1,13 @@
 ---
-title: Add SSO to Remix App with BoxyHQ
-description: Add SSO to Remix App with BoxyHQ
+title: Add SAML SSO to Remix App with BoxyHQ
+description: Add SAML SSO to Remix App with BoxyHQ
 sidebar_label: Remix
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remix
+# Add SAML SSO to Remix App
 
 Let's look at how to authenticate users in a remix app using Enterprise Single-Sign-On (SSO).
 
@@ -111,7 +111,7 @@ export { auth };
 
 ## Set up Jackson SSO feature
 
-We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/v1/guides/resource-routes) in remix terminology).
+We'll be using SAML Jackson npm to setup some API routes ([resource routes](https://remix.run/docs/en/main/guides/resource-routes) in remix terminology).
 
 ### Install jackson
 

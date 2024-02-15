@@ -14,11 +14,7 @@ module.exports = {
           type: 'category',
           label: 'Deployment Guides',
           collapsed: false,
-          items: [
-            'jackson/deployments/heroku',
-            'jackson/deployments/vercel',
-            'jackson/deployments/mogenius',
-          ],
+          items: ['jackson/deployments/heroku', 'jackson/deployments/vercel'],
         },
         {
           type: 'category',
@@ -28,8 +24,10 @@ module.exports = {
             'jackson/frameworks/adonis',
             'jackson/frameworks/express',
             'jackson/frameworks/nextjs',
+            'jackson/frameworks/react',
             'jackson/frameworks/remix',
             'jackson/frameworks/laravel',
+            'jackson/frameworks/rails',
           ],
         },
         {
@@ -41,6 +39,7 @@ module.exports = {
             'jackson/integrations/firebase',
             'jackson/integrations/nextauth',
             'jackson/integrations/supertokens',
+            'jackson/integrations/bubble',
           ],
         },
       ],

@@ -1,4 +1,10 @@
-# Examples & Resources
+---
+title: Examples & Resources (Directory Sync)
+sidebar_label: Examples & Resources
+description: Examples & Resources for our Directory Sync product
+---
+
+# Examples & Resources (Directory Sync)
 
 ## Examples
 
@@ -7,4 +13,4 @@
 
 ## Resources
 
-- [SCIM 2.0 Protocol](https://www.simplecloud.info)
+- [SCIM 2.0 Protocol](https://datatracker.ietf.org/doc/html/rfc7644)

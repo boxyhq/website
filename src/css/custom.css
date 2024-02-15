@@ -17,6 +17,8 @@
   --ifm-code-font-size: 95%;
   --ifm-navbar-height: 5rem;
 
+  --color-neutral-90: #212121;
+
   --aa-input-border-color-rgb: 190, 195, 201 !important;
   --aa-selected-color-rgb: 141, 148, 158 !important;
   --aa-muted-color-rgb: 37, 194, 160 !important;
@@ -42,6 +44,11 @@ body[data-theme='dark'] {
   height: 3.5rem;
 }
 
+.navbar__item .dropdown__link {
+  align-items: center;
+  display: flex;
+}
+
 /* GitHub */
 .header-github-link:hover {
   opacity: 0.6;
@@ -62,7 +69,7 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 .card {
-  border: 1px solid #333;
+  border: 1px solid #e3dbdb;
   box-shadow: none;
   border-radius: 5px;
   text-decoration: none !important;
@@ -71,6 +78,20 @@ html[data-theme='dark'] .header-github-link:before {
 
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.3rem;
+}
+
+.markdown .button.button-primary {
+  margin: var(--spacing-medium) auto var(--spacing-default);
+  max-width: max-content;
+}
+
+.markdown .button.button-primary.icon-code-slash::before {
+  background-color: var(--color-teal-05);
+}
+
+.markdown .button.button-primary.icon-code-slash:hover::before,
+.markdown .button.button-primary.icon-code-slash:focus::before {
+  background-color: var(--color-teal-90);
 }
 
 /* v2 CSS */
@@ -100,10 +121,6 @@ html[data-theme='dark'] .header-github-link:before {
   font-size: 14px;
 }
 
-.card {
-  border: 1px solid #e3dbdb !important;
-}
-
 .hero__title {
   font-size: 2.25rem;
   margin: 0%;
@@ -130,6 +147,57 @@ html[data-theme='dark'] .header-github-link:before {
   flex-wrap: wrap;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
+/* Pricing page */
+
+.pricing__table {
+  width: 100%;
+  display: inline-table !important;
+  table-layout: fixed;
+  margin-top: 20px;
+  border: 1px solid #f1f3f5;
+}
+
+.pricing__table td,
+.pricing__table th {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #f1f3f5;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.pricing__table tr,
+.pricing__table tr:nth-child(2n) {
+  background: none;
+}
+
+.pricing__section__desktop {
+  display: none;
+}
+
+.pricing__table .highlight {
+  background: rgb(37 194 160 / 31%);
+}
+
+.modal__close__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Override "react-model" container width */
+.ReactModal__Content {
+  width: 80%;
+}
+
 /* Mobile view */
 
 @media screen and (min-width: 996px) {
@@ -141,4 +209,27 @@ html[data-theme='dark'] .header-github-link:before {
   .hero__image {
     display: flex;
   }
+
+  .pricing__section__desktop {
+    display: block;
+  }
+
+  .pricing__section__mobile {
+    display: none;
+  }
+
+  .ReactModal__Content {
+    width: 500px;
+    height: 550px;
+  }
+
+  html {
+    scroll-behavior: smooth !important;
+  }
+}
+
+/* Medium zoom, navbar z-index is 200 */
+.medium-zoom-overlay,
+.medium-zoom-image {
+  z-index: 9999;
 }

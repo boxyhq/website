@@ -12,7 +12,7 @@ Enterprise-ready SaaS Starter Kit is a **Next.js** based SaaS Starter Kit that c
 
 [Kickstart your enterprise app development with Next.js SaaS Starter Kit](https://github.com/boxyhq/saas-starter-kit)
 
-Let's look at some of the enterprise-ready features the SaaS kit offers.
+Check out the [video tutorial](https://youtu.be/oF8QIwQIhyo) that walks through setting up your local environment and running enterprise-ready features the SaaS kit offers.
 
 ## SAML SSO
 
@@ -30,6 +30,12 @@ As a result, it streamlines the user lifecycle management process by saving valu
 
 Directory Sync is integrated with the help of [SAML Jackson](https://github.com/boxyhq/jackson#directory-sync)
 
+## Audit Logs
+
+Provide enterprise customers with the ability to record and search events that happen within your application. With our simple integration, you can become compliant fast and save your team from building complex solutions from scratch. 
+
+Organizations gain the ability to monitor the flow of data and be alerted to any breaches. Audit logs help to pinpoint any misuse of information and ensure that data policies are followed.
+
 ## Webhooks & Events
 
 Webhooks are a way for systems to notify external applications that a specific event has occurred in your SaaS app without receiving a request.
@@ -46,16 +52,26 @@ Through Teams, SaaS app users invite others to collaboratively use the applicati
 
 ## Other Features
 
-Let's also look at other standard features the SaaS kit offers.
+Now, let's take a look at the other conventional features that the SaaS kit provides. 🥇
 
 - Create account
 - Sign in with Email and Password
 - Sign in with Magic Link
+- Sign in with SAML SSO
+- Sign in with Google [[Setting up Google OAuth](https://support.google.com/cloud/answer/6158849?hl=en)]
+- Sign in with GitHub [[Creating a Github OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)]
+- Directory Sync (SCIM)
 - Update account
-- Manage team
-- Manage team members
+- Create team
 - Invite users to the team
-- Accept invitation
+- Manage team members
+- Update team settings
+- Webhooks & Events
+- Internationalization
+- Audit logs
+- Roles and Permissions
+- Dark mode
+
 
 ## Getting Started
 
@@ -113,6 +129,8 @@ npx prisma studio
 
 ## Contributing guide
 
-Contributions make the open-source community a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions make the open-source community a fantastic place to learn, inspire, and create. Any contributions are greatly appreciated by the whole community.
 
-We also invite new supporters to contribute to the repository if you are interested.
+We encourage and invite users and community members to contribute to the [saas-starter-kit](https://github.com/boxyhq/saas-starter-kit) repository.
+
+For more help or if you have a question about getting started building a SaaS app please join our [Community Discord.](https://discord.boxyhq.com)

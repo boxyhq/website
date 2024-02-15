@@ -1,6 +1,6 @@
 ---
 title: Set up your own custom SAML application for a Generic IdP
-sidebar_label: Generic SAML
+sidebar_label: Generic SAML 2.0 Provider
 ---
 
 # Generic SAML
@@ -22,6 +22,10 @@ Create them exactly as shown below:
 - Signature Algorithm: `RSA-SHA256`
 
 - Assertion Encryption: `Unencrypted`
+
+:::info
+The deployed Jackson service has a Service Provider (SP) endpoint that exposes the above metadata and the same can be accessed at `<jackson_endpoint>/.well-known/saml-configuration`. 
+:::
 
 ## SAML profile/claims/attributes mapping
 

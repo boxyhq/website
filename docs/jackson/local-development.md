@@ -15,7 +15,7 @@ cd jackson
 Run the following command to install the Node dependencies.
 
 ```bash
-npm install
+npm run custom-install
 ```
 
 ## Setup environment variables

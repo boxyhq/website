@@ -3,11 +3,13 @@ title: Directory Sync Webhook Events
 sidebar_label: Events
 ---
 
-# Events and Types
+# Events
 
-SAML Jackson uses webhooks to notify your application any time changes are made to directory users and groups.
+SAML Jackson uses webhooks to notify your application any time changes are made to directory, users, groups, and memberships.
 
-We'll notify you of the following 8 events.
+## User Events
+
+We'll notify you of the following 3 events related to users. Each event will be sent to the webhook URL you've configured in the Directory Sync app.
 
 <details>
   <summary>user.created - New user has been assigned to the app.</summary>
@@ -106,7 +108,7 @@ We'll notify you of the following 8 events.
 </details>
 
 <details>
-  <summary>user.deleted - A user has been removed from the IdP.</summary>
+  <summary>user.deleted - A user has been removed from the Directory Provider.</summary>
   <p>
 
 ```json
@@ -154,6 +156,10 @@ We'll notify you of the following 8 events.
 
   </p>
 </details>
+
+## Group Events
+
+We'll notify you of the following 5 events related to groups and memberships. Each event will be sent to the webhook URL you've configured in the Directory Sync app.
 
 <details>
   <summary>group.created - New group has been added to the app.</summary>
@@ -354,3 +360,117 @@ We'll notify you of the following 8 events.
 
   </p>
 </details>
+
+## Directory Events
+
+We'll notify you of the following 4 events related to the directory connections.
+
+To configure the webhook, you have to set the following environment variables.
+
+- `WEBHOOK_URL` - The URL to which the webhook events will be sent.
+- `WEBHOOK_SECRET` - The secret key used to sign the webhook events.
+
+<details>
+<summary>
+  dsync.created - New connection has been created.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.created",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>
+  dsync.deactivated - A connection has been deactivated.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.deactivated",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>
+  dsync.activated - A connection has been activated.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.activated",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary>
+  dsync.deleted - A connection has been deleted.
+</summary>
+<p>
+
+```json
+{
+  "event": "dsync.deleted",
+  "tenant": "boxyhq",
+  "product": "demo",
+  "data": {
+    "id": "d8aa6c93-c960-4925-9b31-4a4d2ad3bb44",
+    "name": "Okta Directory",
+    "type": "okta-scim-v2"
+  }
+}
+```
+
+</p>
+</details>
+
+## Frequently Asked Questions
+
+### How to determine whether a user has been deleted if the Identity Provider does not send a webhook event for user deletion?
+
+To receive notifications when a user is deleted, it's important to note that not all Identity Providers send requests for this. However, you can listen for the `user.updated` event from SAML Jackson and examine the `active` property to determine whether a user has been deleted. In case the user is deleted, the `active` property will be assigned the value `false`.
+
+### Which Identity Providers do not send an event for user deletion?
+
+Following Identity Providers do not send `user.deleted` event:
+
+- Okta
+- Microsoft Entra ID (formerly Azure AD)
+
+### Which SCIM version does SAML Jackson support?
+
+At the moment, SAML Jackson supports SCIM version 2.0.

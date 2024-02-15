@@ -1,0 +1,40 @@
+.our-investors {
+  background-color: var(--color-neutral-90);
+  padding: var(--spacing-medium);
+  padding-bottom: var(--spacing-xwide);
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .our-investors {
+    padding-bottom: var(--spacing-xxwide);
+  }
+}
+
+.our-investors .feature-header {
+  color: var(--color-neutral-10);
+  margin: var(--spacing-wide) auto var(--spacing-default);
+  max-width: 50ch;
+}
+
+.investors-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .investors-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .investors-list-entry {
+    flex: 1 1 40%;
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .investors-list-entry {
+    flex: 1 1 22%;
+  }
+}

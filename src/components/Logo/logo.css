@@ -1,0 +1,45 @@
+.logo {
+  display: block;
+  height: 56px;
+  background: transparent url('/images/brand/boxyhq-icon-dark.svg') center
+    center no-repeat;
+  background-size: contain;
+  width: 56px;
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .logo {
+    background-image: url('/images/brand/boxyhq-logo.svg');
+    display: flex;
+    flex: 0 0 135px;
+    height: 50px;
+  }
+}
+
+.page-footer .logo {
+  background-color: var(--color-neutral-inverted);
+  background-image: none;
+  height: 60px;
+  margin: var(--spacing-medium) 0 var(--spacing-wide);
+  mask-image: url('/images/brand/boxyhq-logo.svg');
+  mask-size: cover;
+  width: 170px;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .page-footer .logo {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .page-footer .logo {
+    margin-bottom: var(--spacing-wide);
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .page-footer .logo {
+    flex: 0 0 185px;
+  }
+}

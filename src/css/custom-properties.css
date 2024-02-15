@@ -1,0 +1,138 @@
+:root {
+  --border-radius-narrow: 0.25rem; /* 4px */
+  --border-radius-default: 0.5rem; /* 8px */
+  --border-radius-pill: 1.5rem; /* 24px */
+  --border-radius-large: 2rem; /* 32px */
+  --border-radius-circle: 50%;
+
+  --popover-box-shadow: 0 0 4px 1px var(--color-teal-40);
+  --teal-box-shadow: 2px 2px 4px 1px var(--color-teal-20);
+
+  --color-neutral-90: #121212;
+  --color-neutral-80: #323232;
+  --color-neutral-70: #4f4f4f;
+  --color-neutral-60: #636363;
+  --color-neutral-50: #808080;
+  --color-neutral-40: #9f9f9f;
+  --color-neutral-30: #b7b7b7;
+  --color-neutral-20: #dbdbdb;
+  --color-neutral-10: #ededed;
+  --color-neutral-inverted: #fff;
+
+  --color-petrol-90: #161a2a;
+  --color-petrol-80: #1c233d;
+  --color-petrol-70: #384163;
+  --color-petrol-60: #495783;
+  --color-petrol-50: #5b72a1;
+  --color-petrol-40: #7695bd;
+  --color-petrol-30: #a6bdda;
+  --color-petrol-20: #d1dfef;
+  --color-petrol-10: #eaf1f8;
+  --color-petrol-05: #f8fafa;
+
+  --color-red-90: #530d0d;
+  --color-red-80: #671818;
+  --color-red-70: #7e2323;
+  --color-red-60: #953030;
+  --color-red-50: #b24747;
+  --color-red-40: #cf6262;
+  --color-red-30: #d98282;
+  --color-red-20: #e8adad;
+  --color-red-10: #f8dddd;
+  --color-red-05: #fff7f7;
+
+  --color-blue-90: #151954;
+  --color-blue-80: #262885;
+  --color-blue-70: #373bb3;
+  --color-blue-60: #4750d4;
+  --color-blue-50: #576ce2;
+  --color-blue-40: #6d91ea;
+  --color-blue-30: #95b8f3;
+  --color-blue-20: #c1dbfa;
+  --color-blue-10: #e1f1fd;
+  --color-blue-05: #f6f9fb;
+
+  --color-purple-90: #2a0d53;
+  --color-purple-80: #3d1867;
+  --color-purple-70: #57237e;
+  --color-purple-60: #693095;
+  --color-purple-50: #7d47b2;
+  --color-purple-40: #9862cf;
+  --color-purple-30: #b382d9;
+  --color-purple-20: #d2ade8;
+  --color-purple-10: #eeddf8;
+  --color-purple-05: #fcf7ff;
+
+  --color-teal-90: #08302b;
+  --color-teal-80: #0f5151;
+  --color-teal-70: #157670;
+  --color-teal-60: #1c928b;
+  --color-teal-50: #27b5ac;
+  --color-teal-40: #4dcec6;
+  --color-teal-30: #62e4d4;
+  --color-teal-20: #8ee9de;
+  --color-teal-10: #cffbf6;
+  --color-teal-05: #eefefc;
+
+  --linear-gradient-feature-image: linear-gradient(
+    131deg,
+    var(--color-teal-50) 0%,
+    var(--color-petrol-90) 73.26%
+  );
+
+  /* Assuming a base of 16px */
+  --spacing-narrow: 0.5rem; /* 8px */
+  --spacing-default: 1rem; /* 16px */
+  --spacing-medium: 2rem; /* 32px */
+  --spacing-wide: 4rem; /* 64px */
+  --spacing-xwide: 6rem; /* 96px */
+  --spacing-xxwide: 9rem; /* 144px - use sparingly */
+
+  --section-top-margin: var(--spacing-wide);
+
+  --typography-blog-body-family: Iowan Old Style, Apple Garamond, Baskerville,
+    Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --typography-heading-family: -apple-system, BlinkMacSystemFont, avenir next,
+    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+    arial, sans-serif;
+  --typography-body-family: var(--typography-heading-family);
+  --typography-code-family: Menlo, Consolas, Monaco, Liberation Mono,
+    Lucida Console, monospace;
+
+  --typography-body-line-height: 1.65;
+  --typography-heading-line-height: 1.25;
+  --typography-primary-heading-line-height: 1.1;
+
+  --typography-size-display: 3.815rem; /* 61px */
+  --typography-size-xxl: 3.052rem; /* 49px */
+  --typography-size-xl: 2.441rem; /* 39px */
+  --typography-size-large: 1.953rem; /* 31px */
+  --typography-size-medium: 1.563rem; /* 25px */
+  --typography-size-small-medium: 1.25rem; /* 20px */
+  --typography-size-default: 1rem; /* 16px */
+  --typography-size-small: 0.75rem; /* 12px */
+  --typography-size-tiny: 0.563rem; /* 9px */
+
+  --typography-linear-gradient: linear-gradient(
+    90deg,
+    var(--color-teal-50) 0.96%,
+    #373bb3 99.87%
+  );
+
+  --bring-to-front: 1000;
+  --bring-forward: 100;
+  --send-backward: 10;
+  --send-to-back: -1;
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  :root {
+    --typography-size-display: 5.61rem; /* 90px */
+    --typography-size-xxl: 4.209rem; /* 67px */
+    --typography-size-xl: 3.157rem; /* 50px */
+    --typography-size-large: 2.369rem; /* 38px */
+    --typography-size-medium: 1.777rem; /* 28px */
+    --typography-size-small-medium: 1.333rem; /* 21px */
+  }
+}

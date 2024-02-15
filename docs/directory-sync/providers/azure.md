@@ -1,11 +1,11 @@
 ---
-title: Azure AD SCIM v2.0
-sidebar_label: Azure SCIM v2.0
+title: Microsoft Entra ID SCIM v2.0
+sidebar_label: Microsoft Entra ID SCIM v2.0
 ---
 
-# Azure AD SCIM v2.0
+# Microsoft Entra ID SCIM v2.0
 
-The following guide will walk you through the process of configuring SAML Jackson to use the Azure AD SCIM v2.0 directory provider.
+The following guide will walk you through the process of configuring SAML Jackson to use the Microsoft Entra ID SCIM v2.0 directory provider.
 
 ---
 
@@ -52,12 +52,12 @@ Expand the **Mappings** section and ensure group and user attribute mappings are
 
 Expand the **Settings** section and make the following changes:
 
-- Select **Sycn only assigned users and groups** from the **Scope** dropdown.
+- Select **Sync only assigned users and groups** from the **Scope** dropdown.
 - Confirm the **Provisioning Status** is set to **On**.
 
 ![img alt](/img/dsync/providers/azure/8.png)
 
-At this stage, you've successfully configured the Azure AD SCIM API integration.
+At this stage, you've successfully configured the Microsoft Entra ID SCIM API integration.
 
 ---
 
@@ -72,3 +72,13 @@ Select **None Selected** under the **Users**.
 From the right side of the screen, select the users you want to assign to the app and click the **Select** button, then click **Assign** to those users to the app.
 
 ![img alt](/img/dsync/providers/azure/12.png)
+
+### FAQ
+
+#### How frequently does Microsoft Entra ID SCIM perform sync by default?
+
+Microsoft Entra ID automatically provisions and updates user accounts in an app based on things like user and group assignment. The sync happens at a regularly scheduled time interval, typically every 20-40 minutes.
+
+#### Why does the PATCH request fail in Microsoft Entra ID SCIM?
+
+This is a known issue with Entra ID SCIM implementation. You have to add the query param `?aadOptscim062020` to the SCIM endpoint URL to make PATCH requests work. This query param update PATCH behavior and ensure SCIM compliance. [Read More](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior)

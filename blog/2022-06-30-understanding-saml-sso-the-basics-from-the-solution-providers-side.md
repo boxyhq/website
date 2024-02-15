@@ -6,7 +6,7 @@ author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
 author_image_url: https://boxyhq.com/img/team/jay.jpg
 tags_disabled: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
-image: img/blog/sso/with-boxyhq.png
+image: /img/blog/sso/with-boxyhq.png
 ---
 
 This article follows my first article in which I explain the basics of SAML from the users' side. If you haven't read that one already I would recommend reading that one first [here](./2022-06-30-understanding-saml-sso-the-basics-from-the-user-side.md). In this article, we are going to take a look at what SAML authentication and setup look like from the solution providers' perspective.
@@ -25,4 +25,4 @@ In the diagram above we can see what it looks like when you build a custom SAML 
 
 As you can see from the image above with BoxyHQ you only have to connect your product with a straightforward integration to BoxyHQ and then we manage and connect you to all the IDPs! It is that simple and you can deploy SAML SSO for your clients in as little as 8 days. We are also open source and free so you don't need to worry about big maintenance bills, we will even offer you custom support during the integration.
 
-If you are interested in becoming enterprise-ready without the hassle then let's chat! You can [book](https://meetings.hubspot.com/deepakprab/demo) a free consultation call and chat with our CEO about how we can help. Let's start the journey together.
+If you are interested in becoming enterprise-ready without the hassle then let's chat! You can [book](https://cal.com/deepak-boxyhq/demo) a free consultation call and chat with our CEO about how we can help. Let's start the journey together.

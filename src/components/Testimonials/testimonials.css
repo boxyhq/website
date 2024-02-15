@@ -1,0 +1,42 @@
+.testimonials-container {
+  margin-top: var(--spacing-wide);
+}
+
+.testimonials-list-container {
+  background-color: var(--color-teal-05);
+}
+
+.testimonials-list-container.light {
+  background-color: var(--color-neutral-inverted);
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .testimonials-list-container {
+    padding: var(--spacing-wide) var(--spacing-medium);
+  }
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  padding: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .testimonials-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .testimonial-entry {
+    flex: 1 1 40%;
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .testimonials-list {
+    gap: var(--spacing-wide);
+  }
+}

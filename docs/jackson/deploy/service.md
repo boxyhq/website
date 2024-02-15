@@ -10,13 +10,19 @@ The `/api/health` GET endpoint returns a 200 when the service ready and healthy 
 
 The docker container can be found at [boxyhq/jackson](https://hub.docker.com/r/boxyhq/jackson/tags). It is preferable to use a specific version instead of the `latest` tag.
 
+Replace the values for `DB_URL`, `JACKSON_API_KEYS`, `NEXTAUTH_SECRET` and `NEXTAUTH_ADMIN_CREDENTIALS` with your own values before running docker run command.
+
 ```bash
 docker run \
   -p 5225:5225 \
-  -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="sql" \
   -e DB_TYPE="postgres" \
   -e DB_URL="postgres://postgres:postgres@postgres:5432/postgres" \
+  -e JACKSON_API_KEYS="secret" \
+  -e NEXTAUTH_URL="http://localhost:5225" \
+  -e EXTERNAL_URL="http://localhost:5225" \
+  -e NEXTAUTH_SECRET="super-secret" \
+  -e NEXTAUTH_ADMIN_CREDENTIALS="admin@company.com:secretpassword" \
   -d boxyhq/jackson
 ```
 
@@ -25,9 +31,13 @@ OR
 ```bash
 docker run \
   -p 5225:5225 \
-  -e JACKSON_API_KEYS="secret" \
   -e DB_ENGINE="mongo" \
   -e DB_URL="mongodb://localhost:27017/jackson" \
+  -e JACKSON_API_KEYS="secret" \
+  -e NEXTAUTH_URL="http://localhost:5225" \
+  -e EXTERNAL_URL="http://localhost:5225" \
+  -e NEXTAUTH_SECRET="super-secret" \
+  -e NEXTAUTH_ADMIN_CREDENTIALS="admin@company.com:secretpassword" \
   -d boxyhq/jackson
 ```
 
@@ -45,13 +55,16 @@ You can clone the source from the [Jackson GitHub repo](https://github.com/boxyh
 
 ```bash
 git clone https://github.com/boxyhq/jackson
+```
+
+```bash
 cd jackson
 ```
 
 ### Install dependencies
 
 ```bash
-npm install
+npm run custom-install
 ```
 
 ### Add environment variables
@@ -76,7 +89,7 @@ npm run start
 
 Open a browser and visit [http://localhost:5225](http://localhost:5225).
 
-If you see a page asking you to sign in, congrats 🎉 you are seeing the [Admin UI](../admin-ui.md)
+If you see a page asking you to sign in, congrats 🎉 you are seeing the [Admin Portal](../../admin-portal/overview).
 
 ## Database
 
@@ -84,10 +97,40 @@ Jackson currently supports the following databases.
 
 - Postgres
 - MySQL
+- Microsoft SQL Server
 - MariaDB
 - MongoDB
 - Redis
-- PlanetScale
+- [PlanetScale](https://planetscale.com/) (MySQL compatible)
+- [Neon](https://neon.tech) (Serverless Postgres)
+- Amazon DynamoDB
+
+### PlanetScale
+
+To connect PlanetScale database with Jackson, follow the below steps:
+
+1. Create a new database on PlanetScale
+2. Get your database [connection URL from the PlanetScale](https://planetscale.com/docs/tutorials/deploy-to-netlify#get-your-connection-string-from-planetscale)
+3. Set the following environment variables
+
+   - `DB_ENGINE=planetscale`
+   - `DB_TYPE=mysql`
+   - `DB_SSL=true`
+   - `DATABASE_URL=<PlanetScale connection URL>`
+
+4. Run the database migration to create the tables required by SAML Jackson
+
+```bash
+cd npm && PLANETSCALE_URL=<PlanetScale connection URL> npm run db:migration:run:planetscale
+```
+
+Make sure you have `?ssl={"rejectUnauthorized":true}` at the end of the PlanetScale connection URL.
+
+Now you are ready to start the service.
+
+## SAML Tracer
+
+Each error event in the SAML request/ response phase is captured to aid in troubleshooting the SAML setup. The record or trace contains context related to the flow, like tenant, product, etc. The Admin Portal will have a tab under Enterprise SSO -> SAML Tracer showing a paginated list of traces over time. Developers can inspect a trace and will be able to ascertain the real reason for the failure.
 
 ## Deployment Guides (Coming soon)
 

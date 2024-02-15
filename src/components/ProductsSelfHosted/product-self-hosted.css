@@ -1,0 +1,13 @@
+.products-self-hosted {
+  margin: var(--spacing-wide) 0 var(--spacing-xwide);
+}
+
+.products-self-hosted-title {
+  margin-bottom: var(--spacing-narrow);
+}
+
+.oss-product-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}

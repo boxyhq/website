@@ -1,68 +1,16 @@
 ---
-title: Enterprise SSO
+title: Enterprise SSO Guide
 hide_table_of_contents: true
 slug: /jackson
 ---
 
-# Enterprise SSO
+# Enterprise SSO Guide
 
 The documentation is divided into 3 sections.
 
-import GuideSection from '../../src/components/GuideSection.js';
-const frameworks = [
-  {
-    name: 'AdonisJS',
-    href: '/guides/jackson/frameworks/adonis',
-  },
-  {
-    name: 'Express.js',
-    href: '/guides/jackson/frameworks/express',
-  },
-  {
-    name: 'Next.js',
-    href: '/guides/jackson/frameworks/nextjs',
-  },
-  {
-    name: 'Remix',
-    href: '/guides/jackson/frameworks/remix',
-  },
-  {
-    name: 'Laravel',
-    href: '/guides/jackson/frameworks/laravel',
-  },
-];
-const integrations = [
-  {
-    name: 'Auth0',
-    href: '/guides/jackson/integrations/auth0',
-  },
-  {
-    name: 'Firebase',
-    href: '/guides/jackson/integrations/firebase',
-  },
-  {
-    name: 'NextAuth',
-    href: '/guides/jackson/integrations/nextauth',
-  },
-  {
-    name: 'SuperTokens',
-    href: '/guides/jackson/integrations/supertokens',
-  },
-];
-const deployments = [
-  {
-    name: 'Heroku',
-    href: '/guides/jackson/deployments/heroku',
-  },
-  {
-    name: 'Vercel',
-    href: '/guides/jackson/deployments/vercel',
-  },
-  {
-    name: 'mogenius',
-    href: '/guides/jackson/deployments/mogenius',
-  },
-];
+import DeploymentsGuide from '../../src/components/guides/jackson/DeploymentsGuide.js';
+import IntegrationsGuide from '../../src/components/guides/jackson/IntegrationsGuide.js';
+import FrameworksGuide from '../../src/components/guides/jackson/FrameworksGuide.js';
 
 ## Deployment Guides
 
@@ -70,7 +18,7 @@ If you want to self host SAML Jackson, the recommended approach is to use one of
 
 <div className="container" style={{ padding: 0 }}>
   <div className="row is-multiline">
-    <GuideSection items={deployments} />
+    <DeploymentsGuide />
   </div>
 </div>
 
@@ -80,7 +28,7 @@ Step-by-step guides to quickly integrate SAML SSO into your application.
 
 <div className="container" style={{ padding: 0 }}>
   <div className="row is-multiline">
-    <GuideSection items={frameworks} />
+    <FrameworksGuide />
   </div>
 </div>
 
@@ -90,6 +38,6 @@ SAML Jackson works with a large number of Open source tools.
 
 <div className="container" style={{ padding: 0 }}>
   <div className="row is-multiline">
-    <GuideSection items={integrations} />
+    <IntegrationsGuide />
   </div>
 </div>

@@ -14,9 +14,9 @@ SAML Jackson use webhooks to notify your application any time changes are made t
 
 ## Configure Webhooks
 
-SAML Jackson allows you to configure a webhook and secret while creating a directory sync connection either in the admin UI or the API. You can change the webhook and secret at any time.
+SAML Jackson allows you to configure a webhook and secret while creating a directory sync connection either in the Admin Portal or the API. You can change the webhook and secret at any time.
 
-- [Admin UI](admin-ui#create-directory-sync-connection)
+- [Admin Portal](../admin-portal/directory-sync)
 - [API Reference](api-reference#create-a-new-directory)
 
 ## Receive Events
@@ -56,7 +56,7 @@ BoxyHQ-Signature: t=xxx,s=xxxx
 ```
 
 :::caution
-If the webhook request fails, SAML Jackson will not retry the webhook request. A log will be created in the SAML Jackson admin UI if the you've enabled the webhook event logging.
+If the webhook request fails, SAML Jackson will not retry the webhook request. A log will be created in the SAML Jackson Admin Portal if you've enabled webhook event logging.
 :::
 
 ## Secure Webhooks
@@ -88,9 +88,6 @@ You can verify the webhook signature by using the following steps:
 
 Once the signature is verified, you can use the webhook payload to perform any action in your application.
 
-<Tabs>
-<TabItem value="01" label="Node.js" default>
-
 ```javascript showLineNumbers
 // Your webhook secret
 const secret = 'your-secret-here';
@@ -104,8 +101,8 @@ const body = {...}
 
 const [t, s] = signatureHeader.split(',');
 
-const signature = t.split('=')[1];
-const timestamp = s.split('=')[1];
+const timestamp = t.split('=')[1];
+const signature = s.split('=')[1];
 
 const signedPayload = `${timestamp}.${JSON.stringify(body)}`;
 
@@ -121,6 +118,3 @@ if(signature === expectedSignature) {
   // The webhook request is invalid
 }
 ```
-
-</TabItem>
-</Tabs>

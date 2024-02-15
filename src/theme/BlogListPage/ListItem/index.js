@@ -7,7 +7,8 @@ import Author from '../Author';
 const ListItem = ({ content }) => {
   const { frontMatter, metadata } = content;
 
-  const { author, author_title, author_url, author_image_url } = frontMatter;
+  const { authors, author, author_title, author_url, author_image_url } =
+    frontMatter;
 
   const imageUrl = frontMatter.image ?? '/img/default-blog-post-banner.png';
 
@@ -31,6 +32,7 @@ const ListItem = ({ content }) => {
                 <h3 className={styles.title}>{metadata.title}</h3>
               </Link>
               <Author
+                authors={authors}
                 name={author}
                 title={author_title}
                 url={author_url}

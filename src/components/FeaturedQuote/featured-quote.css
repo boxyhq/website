@@ -1,0 +1,66 @@
+.featured-quote {
+  border: 3px solid var(--color-teal-50);
+  border-radius: var(--border-radius-default);
+  margin: var(--spacing-default) auto var(--spacing-medium);
+  max-width: 60rem;
+  max-width: 80ch;
+  padding: var(--spacing-default);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .featured-quote {
+    margin: var(--spacing-medium) auto;
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .featured-quote {
+    margin: var(--spacing-wide) auto;
+  }
+}
+
+.featured-quote-reviewer {
+  display: flex;
+  gap: var(--spacing-default);
+}
+
+.featured-quote-reviewer img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.person-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: initial;
+}
+
+.quote-person-name {
+  font-size: var(--typography-size-medium);
+  font-weight: bold;
+  line-height: 1;
+}
+
+.custom-blockquote {
+  border: 0;
+  padding: 0 var(--spacing-default) 0 calc(var(--spacing-default) + 0.2rem);
+  position: relative;
+}
+
+.custom-blockquote::before {
+  background-color: var(--color-teal-50);
+  content: '';
+  display: block;
+  height: 2rem;
+  mask-size: cover;
+  position: absolute;
+  width: 2rem;
+}
+
+.custom-blockquote::before {
+  left: -0.8rem;
+  mask-image: url('/images/icons/quote.svg');
+  top: -0.2rem;
+}

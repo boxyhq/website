@@ -1,0 +1,24 @@
+.featured-quote-reviewer {
+  display: flex;
+  gap: var(--spacing-default);
+  margin-bottom: var(--spacing-medium);
+}
+
+.featured-quote-reviewer img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.featured-quote-reviewer .person-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: initial;
+}
+
+.featured-quote-reviewer .quote-person-name {
+  font-size: var(--typography-size-medium);
+  font-weight: bold;
+  line-height: 1;
+}

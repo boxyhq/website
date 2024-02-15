@@ -1,0 +1,52 @@
+.enterprise-sso-advantages {
+  background-color: var(--color-neutral-90);
+  padding: var(--spacing-medium);
+  padding-bottom: var(--spacing-wide);
+}
+
+.enterprise-sso-advantages .feature-header,
+.enterprise-sso-advantages .feature-header.with-margin {
+  color: var(--color-neutral-10);
+  margin: var(--spacing-wide) auto var(--spacing-default);
+  max-width: 50ch;
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .enterprise-sso-advantages .feature-header,
+  .enterprise-sso-advantages .feature-header.with-margin {
+    max-width: 90ch;
+  }
+}
+
+.enterprise-sso-advantages .card-title {
+  font-size: var(--typography-size-small-medium);
+  margin-bottom: var(--spacing-narrow);
+}
+
+.enterprise-sso-advantages-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .enterprise-sso-advantages-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .enterprise-sso-advantages-list li {
+    flex: 0 1 45%;
+  }
+
+  .enterprise-sso-advantages-list .base-card-container {
+    min-height: 100%;
+  }
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .enterprise-sso-advantages-list li {
+    flex: 0 1 30%;
+  }
+}

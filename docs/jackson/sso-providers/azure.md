@@ -1,11 +1,11 @@
 ---
-title: Set up your own custom SAML application for Azure AD SAML
-sidebar_label: Azure AD SAML
+title: Set up your own custom SAML application for Microsoft Entra ID SAML
+sidebar_label: Microsoft Entra ID SAML
 ---
 
-# Azure AD SAML SSO
+# Microsoft Entra ID (formerly Azure AD) SAML SSO
 
-In this section, we will show you how to set up your own custom SAML application for Azure AD SAML.
+In this section, we will show you how to set up your own custom SAML application for Microsoft Entra ID SAML.
 
 ## Create Application
 
@@ -54,7 +54,7 @@ You have to configure the following attributes under the **Attributes & Claims**
 
 | Name                                                                 | Value                  |
 | -------------------------------------------------------------------- | ---------------------- |
-| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | user.email             |
+| `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` | user.mail              |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`    | user.givenname         |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`         | user.userprincipalname |
 | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`      | user.surname           |
@@ -69,7 +69,7 @@ Go to the section **SAML Signing Certificate** section and download the **Federa
 
 ## Next steps
 
-You've successfully configured your custom SAML application for Azure AD SAML. At this stage, you can assign users to your application and start using it.
+You've successfully configured your custom SAML application for Microsoft Entra ID SAML. At this stage, you can assign users to your application and start using it.
 
 ## Resources
 

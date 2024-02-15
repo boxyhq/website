@@ -36,7 +36,7 @@ Enter the following information:
 - SCIM Base URL
 - SCIM Bearer Token
 
-You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin UI.
+You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin Portal.
 
 Click the button **Enable** to test the connection to see if the credentials are correct and click the button to **Save** to save the creditentials.
 
@@ -119,3 +119,9 @@ Click the **Users** tab on the left, you may see **Pending** provisions in the t
 Click **Approve** in the next modal to confirm the assignment.
 
 ![img alt](/img/dsync/providers/onelogin/18.png)
+
+### FAQ
+
+#### Why don't I see any event when a group is removed in OneLogin?
+
+It is a known issue with OneLogin SCIM. OneLogin does not dispatch a specific deprovisioning event for groups that are deleted, so you won't see any event such as `group.deleted` or `group.user_removed` when a group is removed. It is recommended to remove the users from the group before deleting the group itself from the SCIM application.

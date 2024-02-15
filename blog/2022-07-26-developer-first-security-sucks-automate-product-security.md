@@ -29,7 +29,7 @@ On the other hand:
 - Security has low priority. 67% of developers surveyed by Secure Code Warrior admitted that they routinely left known vulnerabilities and exploits in their code
 - Github expects the number of software developers using its platform (56 million in 2020), to grow to 100 million developers in 2025
 
-(Invicti Security, Gitlab, Github, VentureBeat)
+(Invicti Security, Gitlab, GitHub, VentureBeat)
 
 **Security vs Developers**
 

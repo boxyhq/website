@@ -8,20 +8,10 @@ slug: /directory-sync
 
 This guide describes how to add Directory Sync to different languages & frameworks.
 
-import GuideSection from '../../src/components/GuideSection.js';
-const frameworks = [
-  {
-    name: 'Next.js',
-    href: '/guides/directory-sync/frameworks/nextjs',
-  },
-  {
-    name: 'Express.js',
-    href: '/guides/directory-sync/frameworks/express',
-  }
-];
+import FrameworksGuide from '../../src/components/guides/dsync/FrameworksGuide.js';
 
 <div className="container" style={{ padding: 0 }}>
   <div className="row is-multiline">
-    <GuideSection items={frameworks} />
+    <FrameworksGuide />
   </div>
 </div>

@@ -1,0 +1,201 @@
+.pricing-product-card {
+  border: 0.3rem solid var(--color-neutral-10);
+  border-radius: var(--border-radius-default);
+  padding: var(--spacing-default);
+}
+
+.pricing-product-card.saas {
+  background-color: var(--color-teal-10);
+  border-color: var(--color-teal-50);
+}
+
+.pricing-product-card.premium-self-hosted {
+  background-color: var(--color-blue-10);
+  border-color: var(--color-blue-50);
+}
+
+.pricing-product-card-summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-default);
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-summary-wrapper {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.pricing-product-card-summary {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-default);
+  justify-content: space-between;
+  position: relative;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-summary {
+    flex-direction: row;
+  }
+}
+
+.pricing-product-card-summary::-webkit-details-marker {
+  display: none;
+}
+
+.pricing-product-card-summary .icon-chevron-after::after {
+  align-self: center;
+  background-color: var(--color-teal-90);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-summary .icon-chevron-after::after {
+    position: initial;
+  }
+}
+
+.pricing-product-card[open] .icon-chevron-after::after {
+  transform: rotate(180deg);
+}
+
+.pricing-product-card-summary-wrapper.base-icon-pseudo::before {
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+.pricing-product-card.premium-self-hosted .icon-product-addons::before,
+.pricing-product-card.premium-self-hosted .icon-product-audit-logs::before,
+.pricing-product-card.premium-self-hosted .icon-product-directory-sync::before,
+.pricing-product-card.premium-self-hosted .icon-product-privacy-vault::before,
+.pricing-product-card.premium-self-hosted .icon-product-sso::before,
+.pricing-product-card.saas .icon-product-addons::before,
+.pricing-product-card.saas .icon-product-audit-logs::before,
+.pricing-product-card.saas .icon-product-directory-sync::before,
+.pricing-product-card.saas .icon-product-privacy-vault::before,
+.pricing-product-card.saas .icon-product-sso::before {
+  display: none;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card.saas .icon-product-addons::before,
+  .pricing-product-card.saas .icon-product-audit-logs::before,
+  .pricing-product-card.saas .icon-product-directory-sync::before,
+  .pricing-product-card.saas .icon-product-privacy-vault::before,
+  .pricing-product-card.saas .icon-product-sso::before {
+    background-color: var(--color-teal-90);
+    display: block;
+  }
+
+  .pricing-product-card.premium-self-hosted .icon-product-addons::before,
+  .pricing-product-card.premium-self-hosted .icon-product-audit-logs::before,
+  .pricing-product-card.premium-self-hosted
+    .icon-product-directory-sync::before,
+  .pricing-product-card.premium-self-hosted .icon-product-privacy-vault::before,
+  .pricing-product-card.premium-self-hosted .icon-product-sso::before {
+    background-color: var(--color-blue-90);
+    display: block;
+  }
+}
+
+.pricing-product-card .pricing-product-card-summary-title {
+  font-size: var(--typography-size-small-medium);
+  margin-bottom: 0;
+}
+
+.pricing-product-card .pricing-product-card-summary-subtitle {
+  margin-bottom: 0;
+}
+
+.pricing-product-card-summary-pricing {
+  align-items: flex-start;
+  display: flex;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-summary-pricing {
+    flex: 0 0 9rem;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (min-width: 63.9375em) {
+  .pricing-product-card-summary-pricing {
+    flex: 0 0 11rem;
+  }
+}
+
+.pricing-product-card-summary-currency {
+  font-size: var(--typography-size-small-medium);
+  line-height: 1;
+}
+
+.pricing-product-card-summary-price {
+  font-size: var(--typography-size-large);
+  font-weight: bold;
+  line-height: 1;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-summary-price-period {
+    flex: 0 0 3rem;
+    margin-inline-start: var(--spacing-narrow);
+  }
+}
+
+@media only screen and (min-width: 63.9375em) {
+  .pricing-product-card-summary-price-period {
+    flex: 0 0 5rem;
+  }
+}
+
+.pricing-product-card-details {
+  margin-top: var(--spacing-default);
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-details {
+    padding: var(--spacing-default);
+    padding-bottom: 0;
+  }
+}
+
+.pricing-cards-wrapper .pricing-product-card-details p {
+  margin-bottom: var(--spacing-narrow);
+}
+
+.pricing-product-card-details .contact-us-inline {
+  background: none;
+  border-bottom: 1px solid var(--color-neutral-50);
+  cursor: pointer;
+  padding: 0;
+}
+
+.pricing-product-card-details-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-default);
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-details-cta {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.pricing-product-card-details-cta .button {
+  justify-content: center;
+  margin-top: 0;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .pricing-product-card-details-cta .button {
+    justify-content: initial;
+  }
+}

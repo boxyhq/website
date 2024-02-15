@@ -40,7 +40,7 @@ Check the **Enable API Integration** checkbox and enter the following informatio
 - SCIM 2.0 Base URL
 - OAuth Bearer Token
 
-You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin UI.
+You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin Portal.
 
 Click **Test API Creditentials** to test the connection to see if the credentials are correct then click the **Save** to save the credentials.
 
@@ -79,3 +79,13 @@ Navigate to the tab **Push Groups** and select **Find group by name** from the d
 Find the group you want to assign to the app and click the **Save** button.
 
 ![img alt](/img/dsync/providers/okta/12.png)
+
+### FAQ
+
+#### Why don't I see a DELETE event for a user that was removed in Okta?
+
+Instead of executing a DELETE operation, Okta sends a request to the SCIM application to set the `active` attribute to `false`. Consequently, you will observe a `user.updated` event with the `active` attribute changed to `false` for users removed from the Okta application.
+
+#### Why is there no event for a user that was deactivated in Okta?
+
+Okta does not dispatch a specific deprovisioning event for users that are suspended. This omission of a deactivation event is a known issue with Okta.

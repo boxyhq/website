@@ -1,6 +1,6 @@
 ---
 title: Implement Directory Sync (SCIM) to your Express.js App using Jackson
-sidebar_label: Express.js 
+sidebar_label: Express.js
 ---
 
 import Tabs from '@theme/Tabs';
@@ -27,7 +27,7 @@ npm i --save @boxyhq/saml-jackson
 Please note that the initialization of `@boxyhq/saml-jackson` is async, you cannot run it at the top level. Run this in a function where you initialize the express server.
 
 ```javascript
-let directorySync;
+let directorySyncController;
 
 const opts = {
   externalUrl: `http://localhost:3000/`,
@@ -36,14 +36,14 @@ const opts = {
   db: {
     engine: 'sql',
     type: 'postgres',
-    url: "postgres://username:password@localhost:5432/your-database-name",
+    url: 'postgres://username:password@localhost:5432/your-database-name',
   },
 };
 
 async function init() {
   const ret = await require('@boxyhq/saml-jackson').controllers(opts);
 
-  directorySync = ret.directorySync;
+  directorySyncController = ret.directorySyncController;
 }
 ```
 
@@ -54,7 +54,7 @@ The first step towards the integration is creating a directory for a tenant.
 Directory Sync providers (Identity Providers) require you to provide a **SCIM Base URL** and **SCIM Auth token**. Both are unique for each directory your app users create.
 
 ```javascript
-const { data, error } = await directorySync.directories.create({
+const { data, error } = await directorySyncController.directories.create({
   name: 'any-name',
   type: 'okta-scim-v2',
   tenant: "tenant-identifier"
@@ -95,7 +95,7 @@ For example, see the demo below.
 
 ![create-directory](/videos/create-directory.gif)
 
-You can retrieve the supported list of Directory Sync providers by calling the method `directorySync.providers()`.
+You can retrieve the supported list of Directory Sync providers by calling the method `directorySyncController.providers()`.
 
 ### Understand SCIM API Requests
 
@@ -105,12 +105,12 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 
 #### Users Provisioning
 
-| Route       | Methods    |
-| ----------- | ---------- |
-| /Users      | POST       |
-| /Users/:id  | GET        |
-| /Users/:id  | PUT, PATCH |
-| /Users/:id  | DELETE     |
+| Route      | Methods    |
+| ---------- | ---------- |
+| /Users     | POST       |
+| /Users/:id | GET        |
+| /Users/:id | PUT, PATCH |
+| /Users/:id | DELETE     |
 
 #### Push Groups and Group Memberships
 
@@ -126,42 +126,48 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 Now let's add the route to handle the incoming requests from the Directory Sync providers.
 
 ```javascript
-router.all('/api/scim/:directoryId/:resourceType/:resourceId?', async (req, res, next) => {
-  const { params, method, body, headers, query } = req;
-  const { directoryId, resourceType, resourceId } = params;
+router.all(
+  '/api/scim/:directoryId/:resourceType/:resourceId?',
+  async (req, res, next) => {
+    const { params, method, body, headers, query } = req;
+    const { directoryId, resourceType, resourceId } = params;
 
-  const authToken = headers.authorization.split(' ')[1];
+    const authToken = headers.authorization.split(' ')[1];
 
-  // Construct the event
-  const request = {
-    method: method,
-    body: body ? JSON.parse(body) : undefined,
-    directoryId: directoryId,
-    resourceId: resourceId,
-    resourceType: resourceType.toLowerCase(),
-    apiSecret: authToken,
-    query: {
-      count: query.count ? parseInt(query.count) : undefined,
-      startIndex: query.startIndex ? parseInt(query.startIndex) : undefined,
-      filter: query.filter,
-    },
-  };
-  
-  // Handle the requests
-  // highlight-start
-  const { status, data } = await directorySync.requests.handle(request, async (event) => {
-    console.log(event); // Do something with the event
-  });
-  // highlight-end
+    // Construct the event
+    const request = {
+      method: method,
+      body: body ? JSON.parse(body) : undefined,
+      directoryId: directoryId,
+      resourceId: resourceId,
+      resourceType: resourceType.toLowerCase(),
+      apiSecret: authToken,
+      query: {
+        count: query.count ? parseInt(query.count) : undefined,
+        startIndex: query.startIndex ? parseInt(query.startIndex) : undefined,
+        filter: query.filter,
+      },
+    };
 
-  // Send the response back
-  return res.status(status).json(data);
-});
+    // Handle the requests
+    // highlight-start
+    const { status, data } = await directorySyncController.requests.handle(
+      request,
+      async (event) => {
+        console.log(event); // Do something with the event
+      }
+    );
+    // highlight-end
+
+    // Send the response back
+    return res.status(status).json(data);
+  }
+);
 ```
 
 `router.all('/api/scim/:directoryId/:resourceType/:resourceId?', async (req, res, next) => {...})` is a catch all paths route. Matched parameters will be sent as a parameter to the route.
 
-Look at the highlighted lines, and you can pass an async callback method to the `directorySync.requests.handle` as a second argument. This method will be called with SCIM event as the first argument.
+Look at the highlighted lines, and you can pass an async callback method to the `directorySyncController.requests.handle` as a second argument. This method will be called with SCIM event as the first argument.
 
 Checkout the documentation for [SCIM events and Types](/docs/directory-sync/events) to understand more about the events.
 

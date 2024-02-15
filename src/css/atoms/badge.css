@@ -1,0 +1,20 @@
+.tier-badge {
+  border-radius: var(--border-radius-narrow);
+  display: inline-block;
+  padding: 0 var(--spacing-narrow);
+}
+
+.tier-badge-premium {
+  background-color: var(--color-teal-30);
+  color: var(--color-teal-90);
+}
+
+.tier-badge-sass {
+  background-color: var(--color-teal-60);
+  color: var(--color-teal-05);
+}
+
+.tier-badge-enterprise {
+  background-color: var(--color-blue-60);
+  color: var(--color-blue-05);
+}
