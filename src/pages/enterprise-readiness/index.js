@@ -18,7 +18,9 @@ const EnterpriseReadiness = () => {
       <HeroEnterpriseReadiness />
       <main>
         <Testimonials light={true} />
-        <OurProducts centerHeader={true} />
+        <OurProducts centerHeader={true}>
+          <h2 className="linear-gradient-text">Our Products</h2>
+        </OurProducts>
       </main>
     </Layout>
   );

@@ -1,8 +1,7 @@
 import clsx from 'clsx';
 import BaseProductSpotlightSection from '../BaseProductSpotlightSection';
-import OurProductsHeader from '../OurProductsHeader';
 
-const OurProducts = ({ centerHeader = false }) => {
+const OurProducts = ({ children, centerHeader = false }) => {
   const products = [
     {
       light: false,
@@ -44,7 +43,19 @@ const OurProducts = ({ centerHeader = false }) => {
 
   return (
     <>
-      <OurProductsHeader centerHeader={centerHeader} />
+      <div
+        className={clsx('girdle', 'main-page-lead', centerHeader && 'center')}
+      >
+        {children}
+        <p className="main-page-lead-copy">
+          Explore BoxyHQ's suite of developer-focused security solutions.
+          Streamline enterprise authentication with{' '}
+          <abbr title="Single Sign-On">SSO</abbr>, manage user access with
+          Directory Sync, secure data with Privacy Vault, and track activities
+          with Audit Logs. Open-source, self-hosted, or SaaS, enhance your
+          product's security and compliance effortlessly.
+        </p>
+      </div>
       <ul className="reset-list">
         {products.map((product) => (
           <li key={product.url}>

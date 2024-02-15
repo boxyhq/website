@@ -18,7 +18,9 @@ const ProductsOverview = () => {
       wrapperClassName="marketing-site"
     >
       <main>
-        <OurProducts centerHeader={true} />
+        <OurProducts centerHeader={true}>
+          <h1 className="linear-gradient-text">Our Products</h1>
+        </OurProducts>
       </main>
     </Layout>
   );
