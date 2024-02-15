@@ -1,6 +1,7 @@
 ---
 slug: unicis-tech-unlocks-security-with-boxyhq-a-conversation-with-the-founder
 title: 'Unicis.Tech Unlocks Security with BoxyHQ: A Conversation with the Founder'
+description: "We interviewed Predrag Tasevski from Unicis.Tech to find out how they leveraged BoxyHQ's Enterprise SSO and Audit Logs solutions."
 tags_disabled:
   [
     developer,
