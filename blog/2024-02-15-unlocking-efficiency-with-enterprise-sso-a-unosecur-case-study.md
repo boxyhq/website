@@ -1,4 +1,5 @@
 ---
+description: "Read how Unosecur improved operations with BoxyHQ's Enterprise SSO, enhancing security and streamlining access in our case study."
 slug: unlocking-efficiency-with-enterprise-sso-a-unosecur-case-study
 title: 'Unlocking Efficiency with Enterprise SSO: A Unosecur Case Study'
 tags_disabled:
