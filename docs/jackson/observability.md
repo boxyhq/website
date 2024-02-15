@@ -1,5 +1,5 @@
 ---
-title: Observability | Enterprise SSO
+title: Observability for Enterprise SSO
 description: Enterprise SSO provides first-class observability on the back of OpenTelemetry.
 sidebar_label: Observability
 ---

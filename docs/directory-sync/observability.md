@@ -1,5 +1,5 @@
 ---
-title: Observability | Directory Sync
+title: Observability for Directory Sync
 description: Directory Sync provides first-class observability on the back of OpenTelemetry.
 sidebar_label: Observability
 ---
