@@ -326,6 +326,10 @@ module.exports = {
             to: '/docs/jackson/deploy/pre-loaded-connections',
           },
           {
+            from: '/success-stories/unosecur-leverages-boxyhqs-security-building-blocks-for-enterprise-peace-of-mind',
+            to: '/success-stories/how-boxyhq-solutions-drive-business-efficiency-and-security-unosecur',
+          },
+          {
             from: '/team',
             to: '/about',
           },
