@@ -1,6 +1,6 @@
 ---
 slug: transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team
-title: "Transforming Security and Access with BoxyHQ's SSO Solution - A Conversation with the Spike Team"
+title: "Transforming Security and Access: A Conversation with the Spike Team"
 description: "We interviewed Kaushik Thirthappa from Spike to find out how they leveraged BoxyHQ's Enterprise SSO solution."
 tags_disabled:
   [
