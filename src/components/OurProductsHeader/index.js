@@ -3,7 +3,7 @@ import clsx from 'clsx';
 const OurProductsHeader = ({ centerHeader = false }) => {
   return (
     <div className={clsx('girdle', 'main-page-lead', centerHeader && 'center')}>
-      <h1 className="linear-gradient-text">Our Products</h1>
+      <h2 className="linear-gradient-text">Our Products</h2>
       <p className="main-page-lead-copy">
         Explore BoxyHQ's suite of developer-focused security solutions.
         Streamline enterprise authentication with{' '}
