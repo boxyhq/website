@@ -1,6 +1,7 @@
 ---
 slug: interview-with-calcom-enhancing-enterprise-experience-with-boxyhq
 title: 'Interview with Cal.com: Enhancing Enterprise Experience with BoxyHQ'
+description: "We interviewed Bailey Pumfleet from Cal to find out how they leveraged BoxyHQ's Enterprise SSO solution."
 tags_disabled:
   [
     developer,

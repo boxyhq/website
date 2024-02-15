@@ -1,6 +1,7 @@
 ---
 slug: unlocking-business-growth-a-conversations-with-dubs-founder
 title: "Unlocking Business Growth: A Conversation with Dub's Founder"
+description: "We interviewed Steven Tey from Dub to find out how they leveraged BoxyHQ's Enterprise SSO solution."
 tags_disabled:
   [
     developer,
@@ -19,9 +20,7 @@ author_url: https://github.com/NathanTarbert
 author_image_url: https://boxyhq.com/img/team/nathan.jpg
 ---
 
-#### [Dub](https://dub.co) is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically
-
----
+[Dub](https://dub.co) is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically
 
 **Q:** Good day, we have a special guest with us today, Steven Tey, the Founder of Dub. We're going to delve into the fascinating journey of Dub and the transformative power of Enterprise SSO. Welcome, Steven!
 
