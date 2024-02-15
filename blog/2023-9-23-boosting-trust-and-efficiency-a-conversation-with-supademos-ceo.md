@@ -1,6 +1,7 @@
 ---
 slug: boosting-trust-and-efficiency-a-conversation-with-supademos-ceo
 title: "Boosting Trust and Efficiency: A Conversation with Supademo's CEO"
+description: "We interviewed Jospeh Lee from Supademo to find out how they leveraged BoxyHQ's Enterprise SSO solution."
 tags_disabled:
   [
     developer,

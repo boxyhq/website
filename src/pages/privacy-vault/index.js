@@ -8,7 +8,7 @@ const PrivacyVault = () => {
   const metaDescription =
     "BoxyHQ's Data Privacy Vault offers an open-source solution for safeguarding sensitive data. Centralize, isolate, and govern data with our vault, ensuring GDPR, PCI, and HIPAA compliance. Ideal for creating PII, Fintech, and Healthcare vaults.";
   const metaPageTitle =
-    'BoxyHQ Data Privacy Vault: Secure Data Storage & Compliance Solution';
+    'Data Privacy Vault: Secure Data Storage & Compliance Solution';
 
   const privacyVaultBenefits = [
     {

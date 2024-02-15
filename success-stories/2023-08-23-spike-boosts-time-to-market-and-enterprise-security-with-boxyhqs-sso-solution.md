@@ -1,6 +1,6 @@
 ---
 slug: spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solution
-title: "Spike Boosts Time-to-Market and Enterprise Security with BoxyHQ's SSO Solution"
+title: "Spike Boosts Time-to-Market and Enterprise Security"
 tags_disabled: [security, cybersecurity, devsecops]
 image: /img/success-stories/spike-image.png
 hide_table_of_contents: true
