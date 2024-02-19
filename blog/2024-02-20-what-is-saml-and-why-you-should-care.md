@@ -85,4 +85,4 @@ With BoxyHQ sitting in between you and the identity providers as a proxy service
 
 Try our SaaS product offering today for free, and when you are ready to commit, you can stay as a SaaS customer and let us take care of the infrastructure in addition to SAML. Because of our open-source nature, you can also choose to self-host and later enable additional enterprise features and premium support for your self-hosted instance. Details on our products can be found on our pricing page, or get in touch today and open new doors for future growth.
 
-<SignupCTA />
+<SignupCTA campaign="what-is-saml" />
