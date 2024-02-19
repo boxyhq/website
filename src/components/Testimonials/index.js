@@ -7,6 +7,16 @@ import './testimonials.css';
 const Testimonials = ({ light = false }) => {
   const testimonials = [
     {
+      companyName: 'unosecur',
+      reviewerName: 'Santosh Jayaprakash',
+      reviewerPictureSrc: '/images/success-stories/santosh-unosecur',
+      reviewerRole: 'Co-Founder, Unosecur',
+      testimonialURL:
+        '/success-stories/how-boxyhq-solutions-drive-business-efficiency-and-security-unosecur',
+      testimonialContent:
+        'With BoxyHQ, we can focus on building our core product without worrying too much about the enterprise readiness features. We seamlessly integrated the SAML SSO offering to our platform, enabling us to onboard enterprise co-development customers.',
+    },
+    {
       companyName: 'Cal.com',
       reviewerName: 'Peer Richelsen',
       reviewerPictureSrc: '/images/success-stories/peer-calcom',
@@ -35,16 +45,6 @@ const Testimonials = ({ light = false }) => {
         '/success-stories/boxyhqs-sso-&-audit-logs-accelerate-unicis-towards-soc2-compliance',
       testimonialContent:
         "BoxyHQ's solution has helped our team save a lot of time. After implementing BoxyHQ, we no longer needed to develop or integrate an expensive solution to connect to Identity Providers (SSO) and build our own Audit Log service.",
-    },
-    {
-      companyName: 'spike.sh',
-      reviewerName: 'Kaushik Thirthappa',
-      reviewerPictureSrc: '/images/success-stories/kaushik-spike',
-      reviewerRole: 'Founder, Spike.sh',
-      testimonialURL:
-        '/success-stories/spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solution',
-      testimonialContent:
-        "Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.",
     },
   ];
   return (
