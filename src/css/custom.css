@@ -94,6 +94,12 @@ html[data-theme='dark'] .header-github-link:before {
   background-color: var(--color-teal-90);
 }
 
+.markdown img {
+  height: auto;
+  margin-bottom: var(--spacing-medium);
+  width: 100%;
+}
+
 /* v2 CSS */
 
 .intro__buttons {
