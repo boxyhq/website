@@ -1,5 +1,5 @@
 ---
-description: "Read how Unosecur improved operations with BoxyHQ's Enterprise SSO, enhancing security and streamlining access in our case study."
+description: 'What is SAML? What role does it play in enterprise single sign-on (SSO)? Learn what these technologies are and how BoxyHQ simplifies the implementation process for developers.'
 slug: what-is-saml-and-why-you-should-care
 title: 'What is SAML and why you should care'
 tags_disabled: [saml, boxyhq, single-sign-on, sso, open-source, developerfirst]
