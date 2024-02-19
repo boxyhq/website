@@ -22,7 +22,7 @@ const IdentityFederation = () => {
   const identityFederationBenefits = [
     {
       light: false,
-      pictureSrc: '/images/products/enterprise-sso',
+      pictureSrc: '/images/heroes/federated-authentication-hero',
       reversed: false,
       title: 'Federated Authentication',
       ctaCopy: 'Learn More',
@@ -32,7 +32,7 @@ const IdentityFederation = () => {
     },
     {
       light: true,
-      pictureSrc: '/images/products/enterprise-sso',
+      pictureSrc: '/images/heroes/sso-identity-federation-hero',
       reversed: true,
       title: 'Single Sign-On (SSO)',
       ctaCopy: 'Book A Demo',
@@ -42,7 +42,7 @@ const IdentityFederation = () => {
     },
     {
       light: false,
-      pictureSrc: '/images/products/enterprise-sso',
+      pictureSrc: '/images/heroes/identity-orchestration-hero',
       reversed: false,
       title: 'Identity Orchestration',
       ctaCopy: 'Book A Demo',
