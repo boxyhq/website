@@ -16,8 +16,7 @@ import CustomersAndPartners from '../../components/CustomersAndPartners';
 const IdentityFederation = () => {
   const metaDescription =
     'Streamline identity management across all customer-facing applications with BoxyHQ Identity Federation Broker irrespective of diverse configurations or protocols.';
-  const metaPageTitle =
-    "Customer Identity Management with BoxyHQ's Identity Federation";
+  const metaPageTitle = "Identity Management with BoxyHQ's Identity Federation";
 
   const identityFederationBenefits = [
     {
@@ -109,29 +108,28 @@ const IdentityFederation = () => {
             Simplify Your Identity Federation Strategy
           </h2>
           <p>
-            Say goodbye to customer identity silos and fragmentation. BoxyHQ's
-            Identity Federation capabilities empower businesses of all sizes to
-            take control of their customer identities with ease. Whether you're
-            a seasoned developer or new to app development, our platform offers
-            a range of options, from no code to custom code, to meet your needs
-            effectively.{' '}
+            Say goodbye to customer or employee identity silos and
+            fragmentation. BoxyHQ's Identity Federation capabilities empower
+            businesses of all sizes to take control of their identities with
+            ease. Whether you're a seasoned developer or new to app development,
+            our platform offers a range of options, from no code to custom code,
+            to meet your needs effectively.
           </p>
           <h3 className="linear-gradient-text">
             Plug and Play: No Code/Low Code
           </h3>
           <p>
-            BoxyHQ's identity federation simplifies the task for developers and
+            BoxyHQ's Identity Federation simplifies the task for developers and
             organizations to add authentication and identity management to their
-            apps using no / low code workflows. Particularly with SAML
-            Federation, minimal coding is required as the emphasis is placed on
-            configuration rather than writing code. This user-friendly approach
-            significantly reduces the development overhead for organizations,
-            enabling developers to implement robust authentication mechanisms
-            without extensive coding expertise.
+            apps using no / low code workflows. Minimal coding is required as
+            the emphasis is placed on configuration rather than writing code.
+            This user-friendly approach significantly reduces the development
+            overhead for organizations, enabling developers to implement robust
+            authentication mechanisms without extensive coding expertise.
           </p>
           <p>
-            Ready to simplify customer identity management? Let BoxyHQ be your
-            trusted partner.{' '}
+            Ready to simplify identity management? Let BoxyHQ be your trusted
+            partner.{' '}
             <button
               type="button"
               className="ghost link-button"
