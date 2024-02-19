@@ -10,6 +10,7 @@ const BaseHero = ({
   pictureSrc,
   reduced,
   sectionId,
+  subtitle,
   title,
 }) => {
   return (
@@ -21,6 +22,12 @@ const BaseHero = ({
             dangerouslySetInnerHTML={{ __html: title }}
             id={`${sectionId}-title`}
           />
+          {subtitle && (
+            <h2
+              className="hero-section-subtitle"
+              dangerouslySetInnerHTML={{ __html: subtitle }}
+            />
+          )}
           {children}
         </div>
         {pictureSrc && (

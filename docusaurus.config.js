@@ -87,12 +87,22 @@ module.exports = {
           ],
         },
         {
+          label: 'Solutions',
+          type: 'dropdown',
+          items: [
+            { to: '/enterprise-readiness', label: 'Enterprise Readiness' },
+            {
+              to: '/identity-federation',
+              label: 'Identity Federation',
+            },
+          ],
+        },
+        {
           label: 'Developers',
           type: 'dropdown',
           items: [
             { to: '/docs', label: 'Docs' },
             { to: '/guides', label: 'Guides' },
-            { to: '/enterprise-readiness', label: 'Enterprise Readiness' },
             {
               href: 'https://mocksaml.com',
               label: 'Mock SAML',
