@@ -15,7 +15,7 @@ import CustomersAndPartners from '../../components/CustomersAndPartners';
 
 const IdentityFederation = () => {
   const metaDescription =
-    'Streamline identify management across all customer-facing applications with BoxyHQ Identity Federation Broker irrespective of diverse configurations or protocols.';
+    'Streamline identity management across all customer-facing applications with BoxyHQ Identity Federation Broker irrespective of diverse configurations or protocols.';
   const metaPageTitle =
     "Customer Identity Management with BoxyHQ's Identity Federation";
 
