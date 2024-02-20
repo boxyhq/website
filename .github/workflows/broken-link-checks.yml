@@ -20,7 +20,7 @@ jobs:
         with:
           # Slack channel id, channel name, or user id to post message.
           # See also: https://api.slack.com/methods/chat.postMessage#channels
-          channel-id: 'C034RL2H2Q5'
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           # For posting a simple plain text message
           slack-message: 'Found some broken links in action run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
         env:
