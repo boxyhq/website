@@ -11,7 +11,7 @@ tags_disabled:
     open-source,
     developerfirst,
   ]
-image: /images/success-stories/sso-identity-federation.png
+image: /images/blog/sso-identity-federation.png
 hide_table_of_contents: true
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
