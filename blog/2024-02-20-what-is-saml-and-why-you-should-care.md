@@ -71,7 +71,7 @@ Well, because there is something I have not yet mentioned about SAML. SAML is an
 
 It is therefore common for modern tools, frameworks, and companies to use these newer standards over SAML. However, as with many evolutions in technology, switching takes time, costs money and resources, and carries risks. While there are no hard numbers, especially in industries such as healthcare, finance, and governmental institutions, SAML is still the predominant solution and will be for some time to come.
 
-While calling out those industries, they are by no means the only industries that still rely on SAML. Even in the tech space, companies such as Microsoft, Meta, and Google still have systems and processes that are SAML-based. It is therefore in your best interest to support SAML to not miss out on a potential contract opportunity.
+While calling out those industries, they are by no means the only industries that still rely on SAML. Even in the tech space, companies such as Microsoft still have systems and processes that are SAML-based. It is therefore in your best interest to support SAML to not miss out on a potential contract opportunity.
 
 So what can you do about it? One option is to implement support today or just in time as the need arises. Unless this is your core business, doing so can place significant strain on your available resources now and in the future as the SAML implementation, like all other areas of your product, will need to be maintained and edge cases handled as they arise. Even though SAML is an open standard that has been around for over 20 years, there are nuances between implementations.
 
