@@ -6,21 +6,21 @@ image: /img/success-stories/unicis-logo.png
 hide_table_of_contents: true
 ---
 
-import Quote from "../src/components/Quote";
+import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
+import FeaturedQuote from "../src/components/FeaturedQuote";
+import SignupCTA from "../src/components/ctas/SignupCTA";
 
-At Unicis, their vision is to create a world where compliance is effortless, efficient, and transparent for every business. We strive to achieve this by providing a single, comprehensive application that addresses all compliance, privacy, risk and security concerns.
-
-<div style={{ textAlign: "center" }}>
-  <a href="https://www.unicis.tech/" target="_blank" className="button button-primary">Learn more about Unicis.Tech</a>
-</div>
+At [Unicis](https://www.unicis.tech/), their vision is to create a world where compliance is effortless, efficient, and transparent for every business. We strive to achieve this by providing a single, comprehensive application that addresses all compliance, privacy, risk and security concerns.
 
 ## Introduction
 
 Unicis.Tech OÜ is a technology company specializing in building applications for security, privacy, and compliance teams. Committed to delivering the most secure and compliant platform, they recognized the need to implement Enterprise Single Sign-On (SSO) and Audit Logs as essential components of their security and compliance strategy.
 
-<Quote author="Predrag Tasevski" title="Founder & CEO Unicis.Tech" avatar="/img/success-stories/predrad-tasevski.jpeg">
+<SignupCTA campaign="success-story-unicis" />
+
+<FeaturedQuote personName="Predrag Tasevski" personRole="Founder & CEO Unicis.Tech" pictureSrc="/images/success-stories/predrag-tasevski-unicis">
 We looked at a lot of SSO solutions before choosing BoxyHQ. Some of the reasons we chose BoxyHQ are ease of use and scalability!
-</Quote>
+</FeaturedQuote>
 
 ## Motivation for Implementing Enterprise SSO and Audit Logs
 
@@ -42,9 +42,9 @@ Not to mention, Unicis.Tech is subject to various global regulations, including 
 
 **Security:** BoxyHQ's adherence to industry-standard security protocols provided Unicis.Tech with complete control over their data, ensuring the security and privacy of their platform.
 
-<Quote author="Predrag Tasevski" title="Founder & CEO Unicis.Tech" avatar="/img/success-stories/predrad-tasevski.jpeg">
-  BoxyHQ's solution has helped our team save a lot of time. Prior to implementing BoxyHQ, we no longer needed to develop or integrate an expensive solution to connect to Identity Providers (SSO) and build our own Audit Log service.
-</Quote>
+<FeaturedQuote personName="Predrag Tasevski" personRole="Founder & CEO Unicis.Tech" pictureSrc="/images/success-stories/predrag-tasevski-unicis">
+BoxyHQ's solution has helped our team save a lot of time. Prior to implementing BoxyHQ, we no longer needed to develop or integrate an expensive solution to connect to Identity Providers (SSO) and build our own Audit Log service.
+</FeaturedQuote>
 
 ## Direct and Soft Benefits of SSO and Audit Logs
 
@@ -70,9 +70,9 @@ Unicis.Tech has observed both direct and soft benefits following the adoption of
 
 BoxyHQ's solution has significantly saved Unicis.Tech's team time and resources. They estimate that it has allowed them to focus on more critical projects, reducing the workload by approximately a quarter of the time. It has enabled them to streamline various processes, including connecting to Identity Providers and building their audit log solution.
 
-<Quote author="Predrag Tasevski" title="Founder & CEO Unicis.Tech" avatar="/img/success-stories/predrad-tasevski.jpeg">
+<FeaturedQuote personName="Predrag Tasevski" personRole="Founder & CEO Unicis.Tech" pictureSrc="/images/success-stories/predrag-tasevski-unicis">
   The BoxyHQ SSO and Audit Logs solution meets all requirements for SOC 2 compliance. This has saved us a lot of time and effort in meeting our compliance goals.
-</Quote>
+</FeaturedQuote>
 
 ## Impact on Achieving SOC 2 Compliance
 
@@ -86,6 +86,4 @@ Unicis.Tech has experienced substantial growth in acquiring enterprise clients d
 
 Unicis.Tech's adoption of BoxyHQ for Enterprise SSO and Audit Logs has yielded numerous benefits, ranging from improved security and compliance to enhanced productivity and customer trust. Their recommendation of BoxyHQ's solution underscores its efficacy in providing a comprehensive and cost-effective security solution for businesses seeking to meet their security and compliance needs.
 
-<div style={{ textAlign: "center" }}>
-  <a href="/blog/unicis-tech-unlocks-security-with-boxyhq-a-conversation-with-the-founder" className="button button-primary">Read the full interview</a>
-</div>
+<LearnMoreCTA label="Read the full interview" newWindow={false} url="/blog/unicis-tech-unlocks-security-with-boxyhq-a-conversation-with-the-founder" />

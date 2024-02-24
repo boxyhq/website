@@ -6,21 +6,21 @@ image: /img/success-stories/dub.png
 hide_table_of_contents: true
 ---
 
-import Quote from "../src/components/Quote";
+import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
+import FeaturedQuote from "../src/components/FeaturedQuote";
+import SignupCTA from "../src/components/ctas/SignupCTA";
 
-Dub is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically.
-
-<div style={{ textAlign: "center" }}>
-  <a href="https://dub.co" target="_blank" className="button button-primary">Learn more about Dub</a>
-</div>
+[Dub](https://dub.co) is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically.
 
 ## Introduction
 
 In the fast-paced digital landscape of today, security and efficiency are paramount. Dub, a forward-thinking organization, recognized the need to streamline and strengthen their user authentication process. The motivation behind implementing [Enterprise Single Sign-On (SSO)](https://github.com/boxyhq/jackson) was to simplify user access while bolstering security measures. Dub aimed to provide a seamless experience for their clients and employees, eliminating the hassle of multiple logins and passwords.
 
-<Quote author="Steven Tey" title="Founder Dub" avatar="/img/success-stories/steven-tey-dub.jpeg">
-  🔥 Boxy is an absolute godsend!
-</Quote>
+<SignupCTA campaign="success-story-dub" />
+
+<FeaturedQuote personName="Steven Tey" personRole="Founder Dub" pictureSrc="/images/success-stories/steven-tey-dub">
+ 🔥 Boxy is an absolute godsend!
+</FeaturedQuote>
 
 ## Choosing BoxyHQ's Jackson: A Trusted Partner in Security
 
@@ -48,29 +48,25 @@ The adoption of BoxyHQ's Jackson brought a multitude of benefits to Dub, both di
 
 **Heightened Trust:** Clients and partners felt more confident in Dub's security measures, strengthening relationships and trust.
 
-<Quote author="Steven Tey" title="Founder Dub" avatar="/img/success-stories/steven-tey-dub.jpeg">
+<FeaturedQuote personName="Steven Tey" personRole="Founder Dub" pictureSrc="/images/success-stories/steven-tey-dub">
   HUGE shoutout to BoxyHQ for demystifying esoteric concepts like Enterprise SSO and Directory Sync!
 
   I highly recommend checking out their docs – it's an absolute goldmine.
-</Quote>
-<br></br>
+</FeaturedQuote>
 
 **Business Impact:** Saving Time and Attracting Enterprise Clients
 The implementation of BoxyHQ's Jackson resulted in significant time savings for Dub's team. With streamlined authentication processes and reduced password-related issues, employees and clients could access resources faster, leading to increased operational efficiency.
 
 With the help of BoxyHQ, Dub has witnessed substantial growth in acquiring enterprise clients as a direct result of utilizing SSO. In just two weeks, Dub secured five enterprise clients by leveraging BoxyHQ's SAML/SSO capabilities. The improved user experience and heightened security measures facilitated smoother onboarding processes for new clients, contributing to Dub's growth in the enterprise sector.
 
-<Quote author="Steven Tey" title="Founder Dub" avatar="/img/success-stories/steven-tey-dub.jpeg">
+<FeaturedQuote personName="Steven Tey" personRole="Founder Dub" pictureSrc="/images/success-stories/steven-tey-dub">
   SSO has been a highly requested feature since Dub's launch and we're excited to be launching BoxyHQ’s secure sign-on!
-</Quote>
+</FeaturedQuote>
 
 ## A Collaborative Success Story
 
 Dub's successful collaboration with BoxyHQ (Jackson) in implementing Enterprise SSO highlights the tangible benefits that have transformed Dub's user authentication and security landscape. This partnership signifies a shared commitment to streamlining security and simplifying access. BoxyHQ's Jackson is more than a tool; it's a security partner.
 
 In closing, Dub's journey towards Enterprise SSO with BoxyHQ's Jackson serves as a testament to the transformative power of technology. The adoption of SSO not only enhanced security and efficiency but also facilitated growth and strengthened relationships with clients and partners. It's a story of how a forward-thinking organization and a trusted technology partner can achieve remarkable results.
-<br></br>
 
-<div style={{ textAlign: "center" }}>
-  <a href="/blog/unlocking-business-growth-a-conversations-with-dubs-founder" className="button button-primary">Read the full interview</a>
-</div>
+<LearnMoreCTA label="Read the full interview" newWindow={false} url="/blog/unlocking-business-growth-a-conversations-with-dubs-founder" />

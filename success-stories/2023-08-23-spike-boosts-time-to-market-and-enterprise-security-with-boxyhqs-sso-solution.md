@@ -6,22 +6,21 @@ image: /img/success-stories/spike-image.png
 hide_table_of_contents: true
 ---
 
-import Quote from "../src/components/Quote";
+import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
+import FeaturedQuote from "../src/components/FeaturedQuote";
+import SignupCTA from "../src/components/ctas/SignupCTA";
 
-Spike is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
-
-<div style={{ textAlign: "center" }}>
-  <a href="https://spike.sh/" target="_blank" className="button button-primary">Learn more about Spike</a>
-</div>
+[Spike](https://spike.sh/) is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.
 
 ## Introduction
 
 Spike, a fast-growing incident management platform, recognized the growing demand for secure access and authentication, particularly within enterprise environments. In response, they embarked on a journey to implement enterprise Single Sign-On (SSO) capabilities. BoxyHQ's SSO solution proved to be a game-changing asset in fulfilling Spikes security and enterprise customer onboarding needs.
 
-<Quote author="Kaushik Thirthappa" title="Founder Spike.sh" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
+<SignupCTA campaign="success-story-spike" />
 
-Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.
-</Quote>
+<FeaturedQuote personName="Kaushik Thirthappa" personRole="Founder Spike.sh" pictureSrc="/images/success-stories/kaushik-spike">
+ Our job is to ensure we alert our customers every single time and there is no compromise there. BoxyHQ's SSO solution came in as a boon to us at the right time. We could knock out the implementation in record time and start onboarding enterprise customers.
+</FeaturedQuote>
 
 ## Motivation Behind Implementing Enterprise SSO
 
@@ -35,17 +34,17 @@ The pursuit of a suitable SSO solution wasn't without its challenges. Despite ex
 
 Spike choice was further bolstered by BoxyHQ's unwavering support throughout the transition, ensuring a smooth adoption process.
 
-<Quote author="Kaushik Thirthappa" title="Founder Spike.sh" avatar="/img/success-stories/kaushik-spike-headshot.jpeg">
+<FeaturedQuote personName="Kaushik Thirthappa" personRole="Founder Spike.sh" pictureSrc="/images/success-stories/kaushik-spike">
   Boxy's flexibility and easy solutions meant we could implement this fast, really really fast!
-</Quote>
+</FeaturedQuote>
 
 ## Direct and Secondary Benefits
 
 Spike realized both direct and secondary benefits from BoxyHQ's SSO solution. The seamless implementation significantly reduced the barriers to entry, making the process swift and efficient. Divyansh from Spike elaborates on the impact:
 
-<Quote author="Divyansh Khandelwal" title="Founding Engineer Spike.sh" avatar="/img/success-stories/divyansh-spike-headshot.jpeg">
+<FeaturedQuote personName="Divyansh Khandelwal" personRole="Founding Engineer Spike.sh" pictureSrc="/images/success-stories/divyansh-spike">
   We've saved considerable time and effort, enabling us to focus on our core mission - aiding engineering teams in incident management.
-</Quote>
+</FeaturedQuote>
 
 ## Business Impact
 
@@ -65,6 +64,4 @@ The Spike-BoxyHQ relationship is grounded in reliability, flexibility, an open-s
 
 In essence, Spike collaboration with BoxyHQ showcases the pivotal role SSO solutions can play in enhancing security, streamlining processes, and driving customer growth within the enterprise domain. The partnership underlines the potential of innovative technology to transform the operational landscape while fostering long-lasting relationships based on trust and shared values.
 
-<div style={{ textAlign: "center" }}>
-  <a href="/blog/transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team" className="button button-primary">Read the full interview</a>
-</div>
+<LearnMoreCTA label="Read the full interview" newWindow={false} url="/blog/transforming-security-and-access-with-boxyhqs-sso-solution-a-conversation-with-the-spike-team" />
