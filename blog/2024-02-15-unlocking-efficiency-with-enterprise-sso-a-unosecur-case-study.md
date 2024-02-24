@@ -41,7 +41,7 @@ Unosecur is a cybersecurity firm focused on protecting cloud infrastructures aga
 
 These technical benefits led to significant second-order advantages. Our users enjoy a better overall experience when accessing internal and external systems, which led to organization-wide increases in productivity. The trust of our clients and partners is elevated, underscoring the value of BoxyHQ's solutions in fostering a secure, efficient, and user-friendly environment.
 
-<SignupCTA />
+<SignupCTA campaign="blog-unosecur" />
 
 ## In terms of business impact, how much time did it save your team?
 

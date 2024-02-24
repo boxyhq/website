@@ -17,7 +17,7 @@ Unosecur is a cybersecurity firm focused on protecting cloud infrastructures aga
 
 [Enterprise Single Sign-On (SSO)](/enterprise-sso) is a cornerstone for cybersecurity companies like Unosecur, enhancing security, user experience, and operational efficiency while supporting compliance efforts and strengthening client relationships. With BoxyHq's suite of security building blocks for developers, Unosecur has been able to leverage these benefits to drive business efficiency and security.
 
-<SignupCTA />
+<SignupCTA campaign="success-story-unosecur" />
 
 ## Why Single Sign-On (SSO) Is Critical For Cybersecurity Companies
 
