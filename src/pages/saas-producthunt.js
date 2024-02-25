@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import SectionLayout from '../components/SectionLayout';
 import FeaturedQuote from '../components/FeaturedQuote';
 import clsx from 'clsx';
 
@@ -213,5 +212,26 @@ const HeroSection = ({
         </div>
       </div>
     </div>
+  );
+};
+
+const SectionLayout = ({ title, description, children, style, titleStyle }) => {
+  return (
+    <section className="page__section" style={style}>
+      <div className="container">
+        <h2
+          className="section__header text--center"
+          style={{ padding: '10px', ...titleStyle }}
+        >
+          {title}
+        </h2>
+        {description && (
+          <p className="text--center" style={{ whiteSpace: 'pre-wrap' }}>
+            {description}
+          </p>
+        )}
+        <div style={{ marginTop: '30px' }}>{children}</div>
+      </div>
+    </section>
   );
 };
