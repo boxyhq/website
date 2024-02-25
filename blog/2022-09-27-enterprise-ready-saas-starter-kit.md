@@ -4,7 +4,7 @@ title: Enterprise-ready SaaS Starter Kit
 author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
-author_image_url: https://boxyhq.com/img/team/kiran.jpg
+author_image_url: /images/authors/kiran.jpg
 tags_disabled: [enterprise-readiness, nextjs-template, saas-starter-kit]
 ---
 
@@ -32,7 +32,7 @@ Directory Sync is integrated with the help of [SAML Jackson](https://github.com/
 
 ## Audit Logs
 
-Provide enterprise customers with the ability to record and search events that happen within your application. With our simple integration, you can become compliant fast and save your team from building complex solutions from scratch. 
+Provide enterprise customers with the ability to record and search events that happen within your application. With our simple integration, you can become compliant fast and save your team from building complex solutions from scratch.
 
 Organizations gain the ability to monitor the flow of data and be alerted to any breaches. Audit logs help to pinpoint any misuse of information and ensure that data policies are followed.
 
@@ -71,7 +71,6 @@ Now, let's take a look at the other conventional features that the SaaS kit prov
 - Audit logs
 - Roles and Permissions
 - Dark mode
-
 
 ## Getting Started
 

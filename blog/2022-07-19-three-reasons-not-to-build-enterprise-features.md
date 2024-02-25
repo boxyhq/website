@@ -4,7 +4,7 @@ title: 'Be enterprise-ready: Three reasons not to build enterprise features!'
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame/
-author_image_url: https://boxyhq.com/img/team/sama.jpg
+author_image_url: /images/authors/sama.jpg
 tags_disabled:
   [enterprise-readiness, startups, enterprises, corporates, sales, founder]
 image: /img/blog/dontbuild/security-risks-meme.jpeg
@@ -42,4 +42,4 @@ Remember that not all enterprises are the same. But working with a few design pa
 
 Deals, deals, deals!
 
-If you know anyone that needs to build enterprise features we would love to hear from them and see how could we help, please feel free to share my email: sama@boxyhq.com - Thank you!
+If you know anyone that needs to build enterprise features we would love to hear from them and see how could we help, please feel free to share my [email](mailto:sama@boxyhq.com) - Thank you!

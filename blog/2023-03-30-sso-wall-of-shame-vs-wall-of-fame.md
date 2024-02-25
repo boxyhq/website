@@ -8,11 +8,11 @@ authors:
   - name: Sama - Carlos Samame
     title: Co-founder & COO @BoxyHQ
     url: https://www.linkedin.com/in/samame
-    image_url: https://boxyhq.com/img/team/sama.jpg
+    image_url: /images/authors/sama.jpg
   - name: Deepak Prabhakara
     title: Co-founder & CEO @BoxyHQ
     url: https://github.com/deepakprabhakara
-    image_url: https://boxyhq.com/img/team/deepak.jpg
+    image_url: /images/authors/deepak.jpg
 ---
 
 Unless you have been living under a rock, you have probably heard of the SSO Wall of Shame. This is a list of vendors that treat single sign-on as a luxury feature, not a core security requirement. There have been numerous complaints regarding the companies that have made it onto this list, and rightfully so. In a downturn economy and in times when security and privacy are critical, many organizations see an opportunity to generate even more revenue.

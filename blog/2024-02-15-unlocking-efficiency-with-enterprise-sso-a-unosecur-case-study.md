@@ -17,7 +17,7 @@ hide_table_of_contents: true
 author: Schalk Neethling
 author_title: Customer Success, Community, DevRel - @BoxyHQ
 author_url: https://github.com/schalkneethling
-author_image_url: /img/team/schalk.jpg
+author_image_url: /images/authors/schalk.jpg
 ---
 
 import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";

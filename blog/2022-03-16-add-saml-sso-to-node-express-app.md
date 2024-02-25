@@ -4,7 +4,7 @@ title: How to add SAML Single Sign On to an Express app
 author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
-author_image_url: https://boxyhq.com/img/team/kiran.jpg
+author_image_url: /images/authors/kiran.jpg
 tags_disabled:
   [enterprise-readiness, engineering, saml, saml-jackson, integrations, sso]
 ---

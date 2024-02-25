@@ -16,7 +16,7 @@ hide_table_of_contents: true
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame/
-author_image_url: /img/team/sama.jpg
+author_image_url: /images/authors/sama.jpg
 ---
 
 import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";

@@ -17,7 +17,7 @@ hide_table_of_contents: true
 author: Nathan Tarbert
 author_title: Community Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
-author_image_url: https://boxyhq.com/img/team/nathan.jpg
+author_image_url: /images/authors/nathan.jpg
 ---
 
 At [Unicis](https://www.unicis.tech/), their vision is to create a world where compliance is effortless, efficient, and transparent for every business. We strive to achieve this by providing a single, comprehensive application that addresses all compliance, privacy, risk and security concerns.

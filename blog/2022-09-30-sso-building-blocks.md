@@ -4,7 +4,7 @@ title: SSO Building blocks - SAML, OAuth 2.0 and OpenID Connect
 author: Aswin V
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/av__2021
-author_image_url: https://boxyhq.com/img/team/aswin.jpg
+author_image_url: /images/authors/aswin.jpg
 tags_disabled: [sso, engineering, saml-jackson, oauth-2.0]
 image: /images/docs/jackson/sso-flow.png
 ---

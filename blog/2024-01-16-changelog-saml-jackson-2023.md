@@ -4,7 +4,7 @@ title: 'BoxyHQ Changelog: Transforming Enterprise SSO and Directory Sync in 2023
 author: Schalk Neethling
 author_title: Customer Success, Community, DevRel - @BoxyHQ
 author_url: https://github.com/schalkneethling
-author_image_url: /img/team/schalk.jpg
+author_image_url: /images/authors/schalk.jpg
 tags_disabled: [changelog]
 image: /img/blog/saml-jackson-2023-changelog.jpg
 ---

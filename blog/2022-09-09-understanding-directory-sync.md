@@ -4,7 +4,7 @@ title: Understanding SCIM and Directory Sync
 author: Kiran K
 author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
-author_image_url: https://boxyhq.com/img/team/kiran.jpg
+author_image_url: /images/authors/kiran.jpg
 tags_disabled:
   [enterprise-readiness, engineering, saml-jackson, directory-sync, scim]
 image: /images/docs/jackson/directory-sync-flow.png

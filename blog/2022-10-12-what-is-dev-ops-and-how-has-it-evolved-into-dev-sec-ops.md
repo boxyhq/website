@@ -4,7 +4,7 @@ title: What is DevOps and how has it evolved into DevSecOps
 author: Jay Singh
 author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
-author_image_url: https://boxyhq.com/img/team/jay.jpg
+author_image_url: /images/authors/jay.jpg
 tags_disabled: [devops, devsecops, developer security]
 image: /img/blog/devsecops.png
 ---

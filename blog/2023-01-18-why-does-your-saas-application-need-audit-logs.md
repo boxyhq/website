@@ -4,7 +4,7 @@ title: Why does your SaaS application need audit logs?
 author: Deepak Prabhakara
 author_title: Co-founder & CEO @BoxyHQ
 author_url: https://github.com/deepakprabhakara
-author_image_url: https://boxyhq.com/img/team/deepak.jpg
+author_image_url: /images/authors/deepak.jpg
 tags_disabled: [audit-logs, enterprise-readiness]
 image: /images/blog/audit-logs-widget.png
 ---

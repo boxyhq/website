@@ -4,7 +4,7 @@ title: Benchmarking fluent-bit with Clickhouse
 author: Utkarsh Mehta
 author_title: Senior Software Engineer (Open Source Dev Tools) @BoxyHQ
 author_url: https://www.linkedin.com/in/utkarsh-mehta2612/
-author_image_url: https://boxyhq.com/img/team/utkarsh.jpg
+author_image_url: /images/authors/utkarsh.jpg
 tags_disabled:
   [
     enterprise-readiness,
