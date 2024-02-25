@@ -17,11 +17,11 @@ You will also need to map some attributes of the claims so we can fetch the prof
 
 1. In Server Manager, click Tools, and then select AD FS Management.
 2. Under Actions, click Add Relying Party Trust.
-   ![img alt](/images/docs/jackson/sso-providers/adfs/addtrust1.png)
+   ![Microsoft AD FS SAML Step 2](/images/docs/jackson/sso-providers/adfs/addtrust2.png)
 3. On the Welcome page, choose Claims aware and click Start.
-   ![img alt](/images/docs/jackson/sso-providers/adfs/addtrust2.png)
+   ![Microsoft AD FS SAML Step 3](/images/docs/jackson/sso-providers/adfs/addtrust3.png)
 4. On the Select Data Source page, click Import data about the relying party published online or on a local network. In Federation metadata address (host name or URL), type the federation metadata URL or host name for the partner, and then click Next.
-   ![img alt](/images/docs/jackson/sso-providers/adfs/addtrust12.png)
+   ![Microsoft AD FS SAML Step 4](/images/docs/jackson/sso-providers/adfs/addtrust4.png)
 5. On the Specify Display Name page type a name in Display name, under Notes type a description for this relying party trust, and then click Next.
 6. On the Choose Issuance Authorization Rules page, select either Permit all users to access this relying party or Deny all users access to this relying party, and then click Next.
 7. On the Ready to Add Trust page, review the settings, and then click Next to save your relying party trust information.
