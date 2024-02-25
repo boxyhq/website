@@ -13,29 +13,29 @@ From your Auth0 dashboard, click **Applications** from the left navigation menu.
 
 If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
-![img alt](/img/sso-providers/auth0/1.png)
+![img alt](/images/docs/jackson/sso-providers/auth0/1.png)
 
 If you haven't created a SAML application, click the **Create Application** button to create a new application.
 
 Give your application a **Name** and click **Create**.
 
-![img alt](/img/sso-providers/auth0/5.png)
+![img alt](/images/docs/jackson/sso-providers/auth0/5.png)
 
 ## Configure Application
 
 Click the tab **Addons** and enable **SAML2 WEB APP** addon.
 
-![img alt](/img/sso-providers/auth0/2.png)
+![img alt](/images/docs/jackson/sso-providers/auth0/2.png)
 
 Enter your **Application Callback URL** on the next screen and click **Enable**.
 
 Replace the values with the ones you have received from SAML Jackson.
 
-![img alt](/img/sso-providers/auth0/3.png)
+![img alt](/images/docs/jackson/sso-providers/auth0/3.png)
 
 Click the tab **Usage** and download the **Identity Provider Metadata**.
 
-![img alt](/img/sso-providers/auth0/4.png)
+![img alt](/images/docs/jackson/sso-providers/auth0/4.png)
 
 ## Attribute Mapping
 

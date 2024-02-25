@@ -15,7 +15,7 @@ JumpCloud only support configuring SCIM provisioning in an existing SAML applica
 
 Choose an existing SAML application or create a new one. Click **SSO** from the left navigation menu and select your custom SAML application.
 
-![img alt](/img/dsync/providers/jumpcloud/1.png)
+![img alt](/images/docs/jackson/dsync-providers/jumpcloud/1.png)
 
 Click the tab **Identity Management** within your SAML application.
 
@@ -29,7 +29,7 @@ Click **Test Connection** to test the connection to see if the credentials are c
 
 Next click **Save** to save the settings.
 
-![img alt](/img/dsync/providers/jumpcloud/2.png)
+![img alt](/images/docs/jackson/dsync-providers/jumpcloud/2.png)
 
 At this stage, you've successfully configured the JumpCloud SCIM app.
 
@@ -37,7 +37,7 @@ At this stage, you've successfully configured the JumpCloud SCIM app.
 
 ### Assign Users & Push Groups
 
-![img alt](/img/dsync/providers/jumpcloud/3.png)
+![img alt](/images/docs/jackson/dsync-providers/jumpcloud/3.png)
 
 Click the tab **User Groups** within your SAML application.
 
@@ -47,14 +47,14 @@ If no existing groups are available, click **User Groups** from the left navigat
 
 Give the group a name.
 
-![img alt](/img/dsync/providers/jumpcloud/4.png)
+![img alt](/images/docs/jackson/dsync-providers/jumpcloud/4.png)
 
 Select the **Users** tab and choose the users you want to assign to the group.
 
-![img alt](/img/dsync/providers/jumpcloud/5.png)
+![img alt](/images/docs/jackson/dsync-providers/jumpcloud/5.png)
 
 Next select the **Applications** tab and choose the app you want to assign the group to.
 
-![img alt](/img/dsync/providers/jumpcloud/6.png)
+![img alt](/images/docs/jackson/dsync-providers/jumpcloud/6.png)
 
 At this stage, you've successfully assigned users and pushed the groups.

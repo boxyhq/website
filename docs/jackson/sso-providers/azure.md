@@ -11,27 +11,27 @@ In this section, we will show you how to set up your own custom SAML application
 
 From your Azure Admin console, click **Enterprise applications** from the left navigation menu.
 
-![img alt](/img/sso-providers/azure/1.png)
+![img alt](/images/docs/jackson/sso-providers/azure/1.png)
 
 If your application is already created, choose it from the list and move to the section [Configure Application](#configure-application)
 
 If you haven't created a SAML application, click **New application** from the top to create a new application.
 
-![img alt](/img/sso-providers/azure/2.png)
+![img alt](/images/docs/jackson/sso-providers/azure/2.png)
 
 From the next screen, click **Create your own application**. Give your application a **Name** and click **Create**.
 
-![img alt](/img/sso-providers/azure/3.png)
+![img alt](/images/docs/jackson/sso-providers/azure/3.png)
 
 ## Configure Application
 
 Select **Single Sign On** from the **Manage** section of your app and then **SAML**.
 
-![img alt](/img/sso-providers/azure/4.png)
+![img alt](/images/docs/jackson/sso-providers/azure/4.png)
 
 Click **Edit** on the **Basic SAML Configuration** section.
 
-![img alt](/img/sso-providers/azure/5.png)
+![img alt](/images/docs/jackson/sso-providers/azure/5.png)
 
 Enter the following values in the **Basic SAML Configuration** section on the next screen:
 
@@ -42,13 +42,13 @@ Replace the values with the ones you have received from SAML Jackson.
 
 Click **Save** to save your changes.
 
-![img alt](/img/sso-providers/azure/6.png)
+![img alt](/images/docs/jackson/sso-providers/azure/6.png)
 
 ## Attribute Mapping
 
 Click **Edit** on the **Attributes & Claims** section.
 
-![img alt](/img/sso-providers/azure/7.png)
+![img alt](/images/docs/jackson/sso-providers/azure/7.png)
 
 You have to configure the following attributes under the **Attributes & Claims** section:
 
@@ -61,11 +61,11 @@ You have to configure the following attributes under the **Attributes & Claims**
 
 See the screenshot below.
 
-![img alt](/img/sso-providers/azure/8.png)
+![img alt](/images/docs/jackson/sso-providers/azure/8.png)
 
 Go to the section **SAML Signing Certificate** section and download the **Federation Metadata XML**.
 
-![img alt](/img/sso-providers/azure/9.png)
+![img alt](/images/docs/jackson/sso-providers/azure/9.png)
 
 ## Next steps
 

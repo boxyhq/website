@@ -13,19 +13,19 @@ The following guide will walk you through the process of configuring SAML Jackso
 
 Click **Applications** from the left navigation menu and click **Browse App Catalog** button.
 
-![img alt](/img/dsync/providers/okta/1.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/1.png)
 
 Search for **SCIM 2.0 Test App (Oauth Bearer Token)** from the search box and choose the app called **SCIM 2.0 Test App (Oauth Bearer Token)**.
 
-![img alt](/img/dsync/providers/okta/2.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/2.png)
 
 From the app page, click the **Add Integration** button.
 
-![img alt](/img/dsync/providers/okta/3.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/3.png)
 
 Give the app a name and click the **Next** button. Click **Done** to finish the creation of the app.
 
-![img alt](/img/dsync/providers/okta/4.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/4.png)
 
 ---
 
@@ -33,7 +33,7 @@ Give the app a name and click the **Next** button. Click **Done** to finish the 
 
 In your application, click the **Provisioning** tab and click **Configure API Integration**.
 
-![img alt](/img/dsync/providers/okta/5.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/5.png)
 
 Check the **Enable API Integration** checkbox and enter the following information:
 
@@ -44,11 +44,11 @@ You'll receive these information from Jackson when you create the directory sync
 
 Click **Test API Creditentials** to test the connection to see if the credentials are correct then click the **Save** to save the credentials.
 
-![img alt](/img/dsync/providers/okta/6.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/6.png)
 
 You'll see a new setting page, click **To App** and enable the following settings:
 
-![img alt](/img/dsync/providers/okta/7.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/7.png)
 
 At this stage, you've successfully configured the Okta SCIM API integration.
 
@@ -58,15 +58,15 @@ At this stage, you've successfully configured the Okta SCIM API integration.
 
 In your application, click the **Assignments** tab and select **Assign to People** from the dropdown **Assign**.
 
-![img alt](/img/dsync/providers/okta/8.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/8.png)
 
 Select users you want to assign to the app and click the **Assign** button.
 
-![img alt](/img/dsync/providers/okta/9.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/9.png)
 
 After you click the **Assign** button, you'll see a new popup window with various fields. Confirm the field values and click the **Save and Go Back** button.
 
-![img alt](/img/dsync/providers/okta/10.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/10.png)
 
 ---
 
@@ -74,11 +74,11 @@ After you click the **Assign** button, you'll see a new popup window with variou
 
 Navigate to the tab **Push Groups** and select **Find group by name** from the dropdown **Push Groups**.
 
-![img alt](/img/dsync/providers/okta/11.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/11.png)
 
 Find the group you want to assign to the app and click the **Save** button.
 
-![img alt](/img/dsync/providers/okta/12.png)
+![img alt](/images/docs/jackson/dsync-providers/okta/12.png)
 
 ### FAQ
 
