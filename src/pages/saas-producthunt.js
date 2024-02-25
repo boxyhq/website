@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import SectionLayout from '../components/SectionLayout';
+import FeaturedQuote from '../components/FeaturedQuote';
 import clsx from 'clsx';
 
 const ProductHuntSaas = () => {
@@ -57,13 +58,13 @@ const ProductHuntSaas = () => {
         ]}
       />
 
-      <Quote
-        author="Steven Tey"
-        title="Founder Dub"
-        avatar="/img/product-hunt/steven-tey.jpeg"
+      <FeaturedQuote
+        personName="Steven Tey"
+        personRole="Founder Dub"
+        pictureSrc="/images/success-stories/steven-tey-dub"
       >
-        Boxy is an absolute godsend 🔥
-      </Quote>
+        🔥 Boxy is an absolute godsend!
+      </FeaturedQuote>
 
       <SectionLayout title="Key Features and Benefits" description="">
         <div
@@ -154,60 +155,6 @@ const ProductHuntSaas = () => {
 
 export default ProductHuntSaas;
 
-const Quote = ({ children, author, title, avatar }) => {
-  const style = {
-    color: 'var(--color-neutral-90)',
-    backgroundColor: 'white',
-  };
-
-  const textStyle = {
-    fontSize: '1.8rem',
-    fontWeight: 'strong',
-    display: 'block',
-    paddingBottom: '1rem',
-    textAlign: 'center',
-  };
-
-  const authorStyle = {
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-  };
-
-  return (
-    <div style={style} className="padding-horiz--md padding-vert--md">
-      <span style={textStyle}>“{children}“</span>
-      <div className="avatar" style={authorStyle}>
-        <img
-          style={{
-            width: '140px',
-            height: '140px',
-            verticalAlign: 'middle',
-            borderRadius: '50%',
-          }}
-          className="avatar__photo avatar__photo--xl"
-          src={avatar}
-          alt="Steven Tey"
-        />
-        <div className="avatar__intro">
-          <div
-            style={{ fontSize: '19px', marginTop: '20px' }}
-            className="avatar__name"
-          >
-            {author}
-          </div>
-          <p
-            style={{ fontSize: '16px', marginBottom: '-10px' }}
-            className="avatar__subtitle"
-          >
-            {title}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const HeroSection = ({
   title,
   description,
@@ -219,7 +166,7 @@ const HeroSection = ({
   const Icon = icon;
 
   return (
-    <div className="container margin-vert--xl">
+    <div className="container margin-vert--l">
       <div className="row">
         <div className="col col--6">
           <div className="col-demo">
