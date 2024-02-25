@@ -2,7 +2,7 @@
 slug: spike-boosts-time-to-market-and-enterprise-security-with-boxyhqs-sso-solution
 title: "Spike Boosts Time-to-Market and Enterprise Security"
 tags_disabled: [security, cybersecurity, devsecops]
-image: /img/success-stories/spike-image.png
+image: /images/success-stories/spike-case-study.png
 hide_table_of_contents: true
 ---
 

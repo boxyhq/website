@@ -2,7 +2,7 @@
 slug: accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution
 title: 'Cal.com accelerates Enterprise deals and conversion rates'
 tags_disabled: [security, cybersecurity, devsecops, open-source]
-image: /img/success-stories/calcom-image.png
+image: /images/success-stories/calcom-case-study.png
 hide_table_of_contents: true
 ---
 

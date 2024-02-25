@@ -2,7 +2,7 @@
 slug: boxyhqs-sso-&-audit-logs-accelerate-unicis-towards-soc2-compliance
 title: "SSO & Audit Logs Accelerate Unicis Towards SOC2 Compliance"
 tags_disabled: [security, cybersecurity, devsecops, sso]
-image: /img/success-stories/unicis-logo.png
+image: /images/success-stories/unicis-case-study.png
 hide_table_of_contents: true
 ---
 

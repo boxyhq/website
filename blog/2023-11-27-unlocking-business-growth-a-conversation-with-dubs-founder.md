@@ -12,7 +12,7 @@ tags_disabled:
     developerfirst,
     case-study,
   ]
-image: /img/success-stories/dub.png
+image: /images/success-stories/dub-case-study.png
 hide_table_of_contents: true
 author: Nathan Tarbert
 author_title: Community Engineer @BoxyHQ

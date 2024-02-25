@@ -2,7 +2,7 @@
 slug: cost-efficiency-unleashed-how-boxyhqs-sso-saved-supademo-time-and-money
 title: "Cost-Efficiency Unleashed: How we saved Supademo Time and Money"
 tags_disabled: [security, cybersecurity, devsecops]
-image: /img/success-stories/supademo-logo.png
+image: /images/success-stories/supademo-case-study.png
 hide_table_of_contents: true
 ---
 

@@ -12,7 +12,7 @@ tags_disabled:
     developerfirst,
     case-study,
   ]
-image: /img/success-stories/supademo-logo.png
+image: /images/success-stories/supademo-case-study.png
 hide_table_of_contents: true
 author: Nathan Tarbert
 author_title: Community Engineer @BoxyHQ
