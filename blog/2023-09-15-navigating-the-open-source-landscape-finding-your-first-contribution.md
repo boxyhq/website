@@ -34,18 +34,18 @@ Numerous platforms and directories host a plethora of open-source projects, maki
 
 Now that we have a clearer direction on what sparks your interests, let's take a look at how to find open-source projects that you can start contributing to.
 
-![Github dashboard](/img/blog/navigating-open-source-blog/git-dashboard.png)
+![GitHub dashboard](/img/blog/navigating-open-source-blog/git-dashboard.png)
 _Click on the GitHub icon menu in the top left corner._
 
 If we search for open-source we get a long list back but we have the ability to explore trending repositories, search by programming language, and even filter by topics of interest.
 
-![Github explore](/img/blog/navigating-open-source-blog/git-explore.png)
+![GitHub explore](/img/blog/navigating-open-source-blog/git-explore.png)
 
 ## Utilize Keywords and Tags
 
 When searching on platforms like GitHub, utilize relevant keywords and tags. For instance, if you're interested in TypeScript web development, you might use tags like "typescript", “javascript”, "react" and, "nextjs" to narrow down your search.
 
-![Github languages](/img/blog/navigating-open-source-blog/git-languages.png)
+![GitHub languages](/img/blog/navigating-open-source-blog/git-languages.png)
 
 If you would like to narrow your search even further and combine keywords, just wrap them in []. For example, if I want to make the search extremely narrow and I am looking for a project to contribute to with both "nextjs" and "python"?
 Let's wrap [nextjs], [python] in the search and see what comes back.
@@ -84,13 +84,13 @@ Once you've found a project that piques your interest, assess its **health** and
 
 You can also make sure the project is still alive and well by clicking on the **activity** link.
 
-![Github activity](/img/blog/navigating-open-source-blog/github-activity-link.png)
+![GitHub activity](/img/blog/navigating-open-source-blog/github-activity-link.png)
 
-## Community engagement:
+## Community engagement
 
 A good place to start is to look for project “Discussions” or an external community such as Slack or Discord.
 
-![Github communities](/img/blog/navigating-open-source-blog/git-community.png)
+![GitHub communities](/img/blog/navigating-open-source-blog/git-community.png)
 
 Engage with the project's community by introducing yourself, asking questions, and expressing your interest in contributing. Being an active part of the community enhances your chances of finding a suitable project, not to mention it’s a great way to network and make friends.
 

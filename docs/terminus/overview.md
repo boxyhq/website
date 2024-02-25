@@ -6,7 +6,7 @@ Terminus provides a no code advanced encryption and privacy vault exposed via a 
 
 Terminus is as highly customizable and extendable as it is easy to configure. It abstracts away all the complexities of multiple encryption mechanisms, data masking, data modeling, data access policies and highly efficient storage.
 
-Check our our [Github repo](https://github.com/boxyhq/terminus/).
+Check our our [GitHub repo](https://github.com/boxyhq/terminus/).
 
 > :warning: **Terminus is in Beta release**: Things will be extended and will evolve. Mainly around encryption mechanisms, policy and access control and the configuration UI.
 

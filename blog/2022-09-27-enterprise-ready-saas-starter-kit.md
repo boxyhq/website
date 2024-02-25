@@ -32,7 +32,7 @@ Directory Sync is integrated with the help of [SAML Jackson](https://github.com/
 
 ## Audit Logs
 
-Provide enterprise customers with the ability to record and search events that happen within your application. With our simple integration, you can become compliant fast and save your team from building complex solutions from scratch. 
+Provide enterprise customers with the ability to record and search events that happen within your application. With our simple integration, you can become compliant fast and save your team from building complex solutions from scratch.
 
 Organizations gain the ability to monitor the flow of data and be alerted to any breaches. Audit logs help to pinpoint any misuse of information and ensure that data policies are followed.
 
@@ -59,7 +59,7 @@ Now, let's take a look at the other conventional features that the SaaS kit prov
 - Sign in with Magic Link
 - Sign in with SAML SSO
 - Sign in with Google [[Setting up Google OAuth](https://support.google.com/cloud/answer/6158849?hl=en)]
-- Sign in with GitHub [[Creating a Github OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)]
+- Sign in with GitHub [[Creating a GitHub OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)]
 - Directory Sync (SCIM)
 - Update account
 - Create team
@@ -71,7 +71,6 @@ Now, let's take a look at the other conventional features that the SaaS kit prov
 - Audit logs
 - Roles and Permissions
 - Dark mode
-
 
 ## Getting Started
 

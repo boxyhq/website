@@ -27,7 +27,7 @@ On the other hand:
 - Almost 60% of devs are releasing code 2x faster, thanks to DevOps.
 - In 2021, only 20% of organizations have fully integrated security into the development
 - Security has low priority. 67% of developers surveyed by Secure Code Warrior admitted that they routinely left known vulnerabilities and exploits in their code
-- Github expects the number of software developers using its platform (56 million in 2020), to grow to 100 million developers in 2025
+- GitHub expects the number of software developers using its platform (56 million in 2020), to grow to 100 million developers in 2025
 
 (Invicti Security, Gitlab, GitHub, VentureBeat)
 
@@ -50,6 +50,6 @@ But most of the new security solutions are focused on selling to the CISOs and t
 
 While some security tools for developers have started to appear, it is still early days. The ecosystem needs solutions to automate security for developers and most importantly, that is reliable. Our hypothesis is that the most important products will come from the open-source community; they have a genuine interest in supporting and empowering developers.
 
-We are consolidating a list of reliable open source developer-first security tools for security, if you know of a project we should consider, or if you would like to have access to this list, please send me an email: sama@boxyhq.com or/and help us spread the word! 🙌
+We are consolidating a list of reliable open source developer-first security tools for security, if you know of a project we should consider, or if you would like to have access to this list, please send me an [email](mailto:sama@boxyhq.com) or/and help us spread the word! 🙌
 
 ![Security risks everywhere](/img/blog/security-sucks-meme.jpeg)

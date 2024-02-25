@@ -30,7 +30,6 @@ The mapping of the DB volume on the host file system.
 
 Default: `./terminus-volumes/terminus-vault-data`
 
-
 ### **PROXY_DB_IMAGE**
 
 See [proxy persistence](#proxy-persistence-layer).
