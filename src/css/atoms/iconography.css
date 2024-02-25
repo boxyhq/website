@@ -116,6 +116,15 @@
   background-color: var(--color-neutral-inverted);
 }
 
+.icon-lock::before {
+  mask-image: url(/static/images/icons/lock.svg);
+  mask-size: cover;
+}
+
+.dark .icon-lock::before {
+  background-color: var(--color-neutral-inverted);
+}
+
 .icon-logs::before {
   mask-image: url(/static/images/icons/logs.svg);
   mask-size: cover;

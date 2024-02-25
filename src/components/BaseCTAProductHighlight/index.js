@@ -22,9 +22,11 @@ const BaseCTAProductHighlight = ({
         <h2 className="feature-header-title" id={`${sectionId}-title`}>
           {title}
         </h2>
-        <h3 className="feature-header-subtitle linear-gradient-text">
-          {subtitle}
-        </h3>
+        {subtitle && (
+          <h3 className="feature-header-subtitle linear-gradient-text">
+            {subtitle}
+          </h3>
+        )}
       </header>
       <div className="product-highlight-content">
         {children}

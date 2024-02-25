@@ -64,6 +64,25 @@ a:focus {
   margin-bottom: var(--spacing-medium);
 }
 
+.cta-general-content-container,
+.girdle.cta-general-content-container {
+  margin: var(--spacing-wide) auto 0;
+  padding: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 47.9375rem) {
+  .cta-general-content-container,
+  .girdle.cta-general-content-container {
+    margin: var(--spacing-wide) auto;
+    padding: var(--spacing-medium);
+  }
+}
+
+.cta-general-content-container p,
+.girdle.cta-general-content-container p {
+  max-width: 90ch;
+}
+
 /* Lists */
 .legal-ordered-list li {
   list-style-type: lower-alpha;

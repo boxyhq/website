@@ -7,7 +7,8 @@ const HeroEnterpriseReadiness = () => {
     <BaseHero
       pictureSrc="/images/heroes/enterprise-ready-hero"
       sectionId="enterprise-ready"
-      title="SaaS Enterprise Readiness For Startups"
+      subtitle="Empower Your App to Thrive in the Enterprise Environment"
+      title="Make your app, Enterprise-Ready"
     >
       <p>
         Ensure your startup's SaaS offering is enterprise-ready with BoxyHQ's

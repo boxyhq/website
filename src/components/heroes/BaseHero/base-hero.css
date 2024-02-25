@@ -90,6 +90,11 @@
   margin-bottom: var(--spacing-default);
 }
 
+.hero-section .hero-section-subtitle {
+  color: var(--color-teal-90);
+  font-size: var(--typography-size-medium);
+}
+
 .hero-image-container img {
   border-radius: var(--border-radius-default);
   height: auto;

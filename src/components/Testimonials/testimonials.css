@@ -4,6 +4,7 @@
 
 .testimonials-list-container {
   background-color: var(--color-teal-05);
+  padding: var(--spacing-medium);
 }
 
 .testimonials-list-container.light {
