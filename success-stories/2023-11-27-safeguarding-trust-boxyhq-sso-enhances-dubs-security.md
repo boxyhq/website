@@ -2,7 +2,7 @@
 slug: safeguarding-trust-boxyhq-sso-enhances-dubs-security
 title: "Safeguarding Trust: BoxyHQ SSO Enhances Dub's Security "
 tags_disabled: [security, cybersecurity, devsecops, single sign-on]
-image: /images/dub-case-study.png
+image: /images/success-stories/dub-case-study.png
 hide_table_of_contents: true
 ---
 
