@@ -13,7 +13,7 @@ The viewer exposes four core features:
 1. Export
 1. API Token Management.
 
-![Viewer](/images/product_images/viewer-top.png)
+![Viewer](/images/docs/retraced/viewer-top.png)
 
 ### Search
 

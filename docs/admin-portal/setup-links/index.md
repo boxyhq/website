@@ -1,4 +1,4 @@
-# Setup Link
+# Setup Links
 
 Admin portal can be used to create setup links for
 

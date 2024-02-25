@@ -7,7 +7,7 @@ author_url: https://twitter.com/tokirankrishnan
 author_image_url: https://boxyhq.com/img/team/kiran.jpg
 tags_disabled:
   [enterprise-readiness, engineering, saml-jackson, directory-sync, scim]
-image: /img/blog/directory-sync-flow.png
+image: /images/docs/jackson/directory-sync-flow.png
 ---
 
 This article will walk you through everything you should know about SCIM and Directory Sync.
@@ -67,7 +67,7 @@ BoxyHQ can help enterprises to add Directory Sync to any SaaS app with just a fe
 
 Enterprise SaaS apps can provide a Webhook endpoint to SAML Jackson, and Jackson will notify the Webhook every time a change occurs in the user identity data within the IDP.
 
-![Directory Sync Flow](/img/blog/directory-sync-flow.png)
+![Directory Sync Flow](/images/docs/jackson/directory-sync-flow.png)
 
 In short, Jackson hides all the complexities involved with Directory Sync implementation and makes your integration easier.
 

@@ -35,7 +35,7 @@ Next step is to configure the plugin. Make sure you add the following values in 
 
 - `Client Secret Verifier`: This is optional. If you have configured a client secret verifier in SAML Jackson, you can add it here. If you have not configured a client secret verifier, you can leave this field blank.
 
-![Configure the plugin](/img/bubble-io/step-1.png)
+![Configure the plugin](/images/guides/bubble/step-1.png)
 
 Now you are ready to setup Workflows in your application to use the plugin.
 
@@ -61,7 +61,7 @@ This workflow will be triggered when the user clicks on SAML SSO login button on
 
 Choose **BoxyHQ - Get Authorization URL** from the list of Actions.
 
-![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-2.png)
+![BoxyHQ - Get Authorization URL Action](/images/guides/bubble/step-2.png)
 
 Add the following values in the Action:
 
@@ -71,11 +71,11 @@ Add the following values in the Action:
 
 - `state`: A random string that will be used to verify the state of the request. This value will be passed back to your application in the `Callback URL`. You can use this value to verify the authenticity of the request.
 
-![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-3.png)
+![BoxyHQ - Get Authorization URL Action](/images/guides/bubble/step-3.png)
 
 This action will return `Authorization URL` which you can use to redirect the user to the IdP for authentication.
 
-![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-4.png)
+![BoxyHQ - Get Authorization URL Action](/images/guides/bubble/step-4.png)
 
 ### SSO Callback Workflow
 
@@ -116,7 +116,7 @@ The Action will return the following values:
 - `requested product` - The product identifier that was passed in the `Login Workflow`.
 - `profile raw attributes` - The raw attributes that was returned by the IdP. This value will be a JSON string.
 
-![BoxyHQ - Fetch User Profile Action](/img/bubble-io/step-5.png)
+![BoxyHQ - Fetch User Profile Action](/images/guides/bubble/step-5.png)
 
 #### Action: Create an user account for someone else
 
@@ -126,7 +126,7 @@ Make sure you checked the **Return the user if the account already exists** chec
 
 You can configure the values as per your requirements.
 
-![BoxyHQ - Get Authorization URL Action](/img/bubble-io/step-6.png)
+![BoxyHQ - Get Authorization URL Action](/images/guides/bubble/step-6.png)
 
 #### Action: Assign a temp password to a user
 

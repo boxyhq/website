@@ -36,7 +36,7 @@ module.exports = {
         '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star SAML Jackson on GitHub</a>',
       isCloseable: false,
     },
-    image: 'img/website-preview-image.png',
+    image: 'images/website-preview-image.png',
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,

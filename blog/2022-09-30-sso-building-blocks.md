@@ -6,7 +6,7 @@ author_title: Senior Developer @BoxyHQ
 author_url: https://twitter.com/av__2021
 author_image_url: https://boxyhq.com/img/team/aswin.jpg
 tags_disabled: [sso, engineering, saml-jackson, oauth-2.0]
-image: /img/sso-flow.png
+image: /images/docs/jackson/sso-flow.png
 ---
 
 We have already covered SAML at a high level from both [user](2022-06-30-understanding-saml-sso-the-basics-from-the-user-side.md) and [application provider](2022-06-30-understanding-saml-sso-the-basics-from-the-solution-providers-side.md) points of view.
@@ -56,7 +56,7 @@ OpenID Connect 1.0 is a simple identity layer on top of the OAuth 2.0 protocol. 
 
 Now that we have all the pieces of the SSO puzzle, bringing it together in Jackson would look something like the one below.
 
-![SSO Flow](/img/sso-flow.png)
+![SSO Flow](/images/docs/jackson/sso-flow.png)
 
 Allow me to explain.
 
