@@ -193,7 +193,7 @@ module.exports = {
         'admin-portal/audit-logs',
         {
           type: 'category',
-          label: 'Setup Link',
+          label: 'Setup Links',
           link: { type: 'doc', id: 'admin-portal/setup-links/index' },
           items: [
             'admin-portal/setup-links/jackson',

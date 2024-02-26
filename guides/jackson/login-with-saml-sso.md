@@ -23,9 +23,9 @@ With this approach, you would put a button on your login page for `Login with SA
 
 **Postman** takes this approach to enable SAML SSO for their enterprise users.
 
-<img src="/img/sso/postman-1.png" style={{ border: '1px solid black' }} />
+<img src="/images/guides/sso/postman-1.png" style={{ border: '1px solid black' }} />
 
-<img src="/img/sso/postman-2.png" style={{ border: '1px solid black' }} />
+<img src="/images/guides/sso/postman-2.png" style={{ border: '1px solid black' }} />
 
 The user flow would be something similar to the one below.
 
@@ -42,9 +42,9 @@ This approach hides the password field if SSO is enabled for a domain.
 
 You can see this approach on the **Dropbox** login form.
 
-<img src="/img/sso/dropbox-1.png" style={{ border: '1px solid black' }} />
+<img src="/images/guides/sso/dropbox-1.png" style={{ border: '1px solid black' }} />
 
-<img src="/img/sso/dropbox-2.png" style={{ border: '1px solid black' }} />
+<img src="/images/guides/sso/dropbox-2.png" style={{ border: '1px solid black' }} />
 
 The user flow would be something similar to the one below.
 
@@ -61,11 +61,11 @@ One approach you can take is to configure a subdomain for each tenant. First, di
 
 You can see this approach on the **Freshchat or Freshworks** login form.
 
-<img src="/img/sso/freshchat-1.png" style={{ border: '1px solid black' }} />
+<img src="/images/guides/sso/freshchat-1.png" style={{ border: '1px solid black' }} />
 
 <p align="center">
   <img
-    src="/img/sso/freshchat-2.png"
+    src="/images/guides/sso/freshchat-2.png"
     width="70%"
     style={{ border: '1px solid black' }}
   />
@@ -85,7 +85,7 @@ This approach splits the login process into multiple stages. First, the login fo
 
 **Box** uses this approach for its authentication flow.
 
-<img src="/img/sso/box-1.png" style={{ border: '1px solid black' }} />
+<img src="/images/guides/sso/box-1.png" style={{ border: '1px solid black' }} />
 
 The user flow would be something similar to the one below.
 

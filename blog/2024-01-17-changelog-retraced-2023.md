@@ -4,7 +4,7 @@ title: 'BoxyHQ 2023 Changelog: Enhancing Security with Retraced-Powered Audit Lo
 author: Schalk Neethling
 author_title: Customer Success, Community, DevRel - @BoxyHQ
 author_url: https://github.com/schalkneethling
-author_image_url: /img/team/schalk.jpg
+author_image_url: /images/authors/schalk.jpg
 tags_disabled: [changelog]
 image: /img/blog/retraced-2023-changelog.jpg
 ---

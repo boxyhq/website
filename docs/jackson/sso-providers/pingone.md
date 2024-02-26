@@ -15,13 +15,13 @@ If your application is already created, choose it from the list and move to the 
 
 If you haven't created a SAML application, click plus button to create a new application.
 
-![img alt](/img/sso-providers/pingone/1.png)
+![PingOne SAML Step 1](/images/docs/jackson/sso-providers/pingone/1.png)
 
 Give your application a **Application Name**, choose **SAML Application** from the **Application Type** and click **Configure**.
 
 ## Configure Application
 
-![img alt](/img/sso-providers/pingone/2.png)
+![PingOne SAML Step 2](/images/docs/jackson/sso-providers/pingone/2.png)
 
 From the next screen, you have to enter the following values in the **SAML Configuration** section:
 
@@ -32,11 +32,11 @@ Replace the values with the ones you have received from SAML Jackson.
 
 Click **Save** to save the configuration.
 
-![img alt](/img/sso-providers/pingone/3.png)
+![PingOne SAML Step 3](/images/docs/jackson/sso-providers/pingone/3.png)
 
 Click the **Configuration** tab from the top and click **Download Metadata** to download the metadata XML file.
 
-![img alt](/img/sso-providers/pingone/4.png)
+![PingOne SAML Step 4](/images/docs/jackson/sso-providers/pingone/4.png)
 
 ## Attribute Mapping
 
@@ -51,11 +51,11 @@ Click the **Attribute Mappings** tab from the top and you have to configure the 
 
 See the screenshot below.
 
-![img alt](/img/sso-providers/pingone/5.png)
+![PingOne SAML Step 5](/images/docs/jackson/sso-providers/pingone/5.png)
 
 Make sure you have enabled your app so that it can be used by the users. You can do this by clicking the **Toggle** button next to your app.
 
-![img alt](/img/sso-providers/pingone/6.png)
+![PingOne SAML Step 6](/images/docs/jackson/sso-providers/pingone/6.png)
 
 ## Next steps
 

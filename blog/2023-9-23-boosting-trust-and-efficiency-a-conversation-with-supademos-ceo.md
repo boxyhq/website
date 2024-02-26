@@ -12,12 +12,12 @@ tags_disabled:
     developerfirst,
     case-study,
   ]
-image: /img/success-stories/supademo-logo.png
+image: /images/success-stories/supademo-case-study.png
 hide_table_of_contents: true
 author: Nathan Tarbert
 author_title: Community Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
-author_image_url: https://boxyhq.com/img/team/nathan.jpg
+author_image_url: /images/authors/nathan.jpg
 ---
 
 Supademo is on a mission to help teams communicate products more effectively starting with the fastest way to create intuitive click-through demos and guides.

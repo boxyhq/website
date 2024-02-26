@@ -10,7 +10,8 @@ const ListItem = ({ content }) => {
   const { authors, author, author_title, author_url, author_image_url } =
     frontMatter;
 
-  const imageUrl = frontMatter.image ?? '/img/default-blog-post-banner.png';
+  const imageUrl =
+    frontMatter.image ?? '/images/blog/default-blog-post-banner.png';
 
   return (
     <div className="col col--4" style={{ marginBottom: '20px' }}>

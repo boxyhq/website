@@ -11,7 +11,7 @@ import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
 import FeaturedQuote from "../src/components/FeaturedQuote";
 import SignupCTA from "../src/components/ctas/SignupCTA";
 
-Unosecur is a cybersecurity firm focused on protecting cloud infrastructures against identity threats. Their platform offers real-time analysis to visualize and understand cloud permissions, aiming to eliminate access risks. Trusted by cloud-native companies, Unosecur ensures comprehensive identity security through continuous monitoring, malicious activity tracking, and automated remediation with a no-code approach. Their services are designed for effective breach prevention and simplified IAMOps, providing a secure, agentless scanning architecture for cloud environments.
+[Unosecur](https://www.unosecur.com/) is a cybersecurity firm focused on protecting cloud infrastructures against identity threats. Their platform offers real-time analysis to visualize and understand cloud permissions, aiming to eliminate access risks. Trusted by cloud-native companies, Unosecur ensures comprehensive identity security through continuous monitoring, malicious activity tracking, and automated remediation with a no-code approach. Their services are designed for effective breach prevention and simplified IAMOps, providing a secure, agentless scanning architecture for cloud environments.
 
 ## Introduction
 

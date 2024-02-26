@@ -3,7 +3,6 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import clsx from 'clsx';
-import TitleHeader from '../components/TitleHeader';
 import styles from '../css/oss-friends.module.css';
 
 const title = 'Our Open-source Friends';
@@ -15,7 +14,9 @@ const OSSFriends = () => {
   return (
     <Layout title={title} description={description}>
       <section className="page__section">
-        <TitleHeader title={title} />
+        <div className="text--center margin-bottom--lg">
+          <h1>{title}</h1>
+        </div>
         <div className="container">
           <div>
             {ossFriends?.length > 0 &&

@@ -12,12 +12,12 @@ tags_disabled:
     developerfirst,
     case-study,
   ]
-image: /img/success-stories/dub.png
+image: /images/success-stories/dub-case-study.png
 hide_table_of_contents: true
 author: Nathan Tarbert
 author_title: Community Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
-author_image_url: https://boxyhq.com/img/team/nathan.jpg
+author_image_url: /images/authors/nathan.jpg
 ---
 
 [Dub](https://dub.co) is a cutting-edge URL-shortening service that simplifies and enhances your online experience. With Dub, you can convert long, unwieldy URLs into concise and user-friendly short links with just a few clicks. This means you can share links on social media, in emails, or in your documents more efficiently and aesthetically

@@ -36,7 +36,7 @@ module.exports = {
         '<a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/boxyhq/jackson">⭐ Star SAML Jackson on GitHub</a>',
       isCloseable: false,
     },
-    image: 'img/website-preview-image.png',
+    image: 'images/website-preview-image.png',
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
@@ -98,25 +98,11 @@ module.exports = {
           ],
         },
         {
-          label: 'Developers',
+          label: 'Resources',
           type: 'dropdown',
           items: [
             { to: '/docs', label: 'Docs' },
             { to: '/guides', label: 'Guides' },
-            {
-              href: 'https://mocksaml.com',
-              label: 'Mock SAML',
-            },
-            {
-              href: 'https://awesome-oss-devsec.boxyhq.com',
-              label: 'DevSec Tools',
-            },
-          ],
-        },
-        {
-          label: 'Blog & Resources',
-          type: 'dropdown',
-          items: [
             {
               to: '/blog',
               label: 'Blog',
@@ -124,6 +110,14 @@ module.exports = {
             {
               to: '/success-stories',
               label: 'Success Stories',
+            },
+            {
+              href: 'https://mocksaml.com',
+              label: 'Mock SAML',
+            },
+            {
+              href: 'https://awesome-oss-devsec.boxyhq.com',
+              label: 'DevSec Tools',
             },
             {
               to: '/developer-first-security-week',

@@ -4,7 +4,7 @@ title: How early-stage startups should sell to enterprises
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame/
-author_image_url: https://boxyhq.com/img/team/sama.jpg
+author_image_url: /images/authors/sama.jpg
 tags_disabled:
   [enterprise-readiness, startups, enterprises, corporates, sales, founder]
 image: /img/blog/mulyadi-dDlvuSKUDZM-unsplash.jpg

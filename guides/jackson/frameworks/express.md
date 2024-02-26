@@ -2,7 +2,6 @@
 title: Add SAML SSO to Express.js App with BoxyHQ
 description: Add SAML SSO to Express.js App with BoxyHQ
 sidebar_label: Express.js
-image: https://1755-103-146-175-95.in.ngrok.io/img/sso/og-image.png
 ---
 
 import Tabs from '@theme/Tabs';

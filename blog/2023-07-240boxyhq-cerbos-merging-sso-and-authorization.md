@@ -4,7 +4,7 @@ title: 'BoxyHQ + Cerbos: Merging SSO and Authorization'
 author: Kiran K
 author_title: Senior Developer @ BoxyHQ
 author_url: https://twitter.com/tokirankrishnan
-author_image_url: https://boxyhq.com/img/team/kiran.jpg
+author_image_url: /images/authors/kiran.jpg
 tags_disabled: [enterprise-readiness, saml, saml-jackson, sso]
 image: /img/blog/merging-sso-and-authorization.png
 ---

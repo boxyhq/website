@@ -2,26 +2,26 @@
 slug: cost-efficiency-unleashed-how-boxyhqs-sso-saved-supademo-time-and-money
 title: "Cost-Efficiency Unleashed: How we saved Supademo Time and Money"
 tags_disabled: [security, cybersecurity, devsecops]
-image: /img/success-stories/supademo-logo.png
+image: /images/success-stories/supademo-case-study.png
 hide_table_of_contents: true
 ---
 
-import Quote from "../src/components/Quote";
+import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
+import FeaturedQuote from "../src/components/FeaturedQuote";
+import SignupCTA from "../src/components/ctas/SignupCTA";
 
-Supademo is on a mission to help teams communicate products more effectively starting with the fastest way to create intuitive click-through demos and guides.
+[Supademo](https://supademo.com) is on a mission to help teams communicate products more effectively starting with the fastest way to create intuitive click-through demos and guides.
 This, in turn, leads to more deals closed, better onboarding, and reduced support tickets, among many other glorious things.
-
-<div style={{ textAlign: "center" }}>
-  <a href="https://supademo.com" target="_blank" className="button button-primary">Learn more about Supademo</a>
-</div>
 
 ## Introduction
 
 In today's fast-paced business environment, effective communication and product demonstration are critical to success. With Supademo, you can create interactive demos and guides in seconds, edit them as needed, and share them anywhere on the web using a link or embed them on your website. However, as Supademo grew, so did the complexity of its operations and the demands of their diverse clientele.
 
-<Quote author="Joseph Lee" title="Co-founder Supademo" avatar="/img/success-stories/joseph-lee-supademo.jpeg">
+<SignupCTA campaign="success-story-supademo" />
+
+<FeaturedQuote personName="Joseph Lee" personRole="Co-founder Supademo" pictureSrc="/images/success-stories/joseph-lee-supademo">
 A big part of why Supademo chose BoxyHQ was due to its reputation.
-</Quote>
+</FeaturedQuote>
 
 ## The Driving Force Behind Enterprise Single Sign-On (SSO)
 
@@ -35,9 +35,9 @@ Choosing the right SSO solution was crucial, and Supademo found BoxyHQ's Jackson
 
 Supademo reaped both direct and soft benefits from integrating SSO with BoxyHQ. Some of the significant soft benefits included reduced maintenance efforts, seamless adoption, and time savings for the engineering team. This allowed Supademo's engineers to refocus on the company's core mission: enabling teams to communicate their products more effectively.
 
-<Quote author="Joseph Lee" title="Co-founder Supademo" avatar="/img/success-stories/joseph-lee-supademo.jpeg">
+<FeaturedQuote personName="Joseph Lee" personRole="Co-founder Supademo" pictureSrc="/images/success-stories/joseph-lee-supademo">
 Supademo’s BoxHQ integration has been an asset that we’ll continue to leverage to grow our team and add more value to customers.
-</Quote>
+</FeaturedQuote>
 
 In terms of direct benefits, Supademo was able to forge several enterprise partnerships with BoxyHQ's assistance. Providing a secure and streamlined authentication process within the Supademo platform enhanced their clients' trust in the product.
 
@@ -49,9 +49,9 @@ The implementation of BoxyHQ's SSO solution proved to be a time-saving endeavor 
 
 Utilizing SSO was a direct benefit for Supademo. It opened doors to numerous enterprise-level clients and sparked significant prospect interest. The integration with BoxyHQ's Jackson has become a valuable asset that will continue to fuel Supademo's growth and enhance the value it provides to customers.
 
-<Quote author="Joseph Lee" title="Co-founder Supademo" avatar="/img/success-stories/joseph-lee-supademo.jpeg">
-  We’ve seen considerable traction and interest from multiple enterprise-level customers after implementing SSO.
-</Quote>
+<FeaturedQuote personName="Joseph Lee" personRole="Co-founder Supademo" pictureSrc="/images/success-stories/joseph-lee-supademo">
+We’ve seen considerable traction and interest from multiple enterprise-level customers after implementing SSO.
+</FeaturedQuote>
 
 ## Exceptional Support from BoxyHQ
 
@@ -61,6 +61,4 @@ Supademo's trust in BoxyHQ extends beyond the technology itself; it's rooted in 
 
 Supademo's journey to enhance its platform with enterprise SSO through BoxyHQ's Jackson serves as an inspiring story. It highlights the importance of listening to customer demands, choosing the right technology partner, and the immense impact that streamlined authentication can have on a business. As Supademo continues to thrive, its commitment to effective communication and customer satisfaction remains unwavering, with BoxyHQ by its side as a trusted ally.
 
-<div style={{ textAlign: "center" }}>
-  <a href="/blog/boosting-trust-and-efficiency-a-conversation-with-supademos-ceo" className="button button-primary">Read the full interview</a>
-</div>
+<LearnMoreCTA label="Read the full interview" newWindow={false} url="/blog/boosting-trust-and-efficiency-a-conversation-with-supademos-ceo" />

@@ -4,7 +4,7 @@ title: 'Developer-first Security sucks! Why is it essential to automate product 
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame/
-author_image_url: https://boxyhq.com/img/team/sama.jpg
+author_image_url: /images/authors/sama.jpg
 tags_disabled: [developer, security, cybersecurity, devsecops, appsec]
 image: /img/blog/security-sucks-meme.jpeg
 ---

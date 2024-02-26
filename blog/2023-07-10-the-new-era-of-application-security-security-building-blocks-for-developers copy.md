@@ -8,11 +8,11 @@ authors:
   - name: Sama - Carlos Samame
     title: Co-founder & COO @BoxyHQ
     url: https://www.linkedin.com/in/samame
-    image_url: https://boxyhq.com/img/team/sama.jpg
+    image_url: /images/authors/sama.jpg
   - name: Deepak Prabhakara
     title: Co-founder & CEO @BoxyHQ
     url: https://github.com/deepakprabhakara
-    image_url: https://boxyhq.com/img/team/deepak.jpg
+    image_url: /images/authors/deepak.jpg
 ---
 
 ## The new era of Application Security: Security Building Blocks for Developers

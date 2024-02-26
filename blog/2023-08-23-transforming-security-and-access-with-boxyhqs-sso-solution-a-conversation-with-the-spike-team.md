@@ -12,12 +12,12 @@ tags_disabled:
     developerfirst,
     case-study,
   ]
-image: /img/success-stories/spike-image.png
+image: /images/success-stories/spike-case-study.png
 hide_table_of_contents: true
 author: Nathan Tarbert
 author_title: Community Success Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
-author_image_url: https://boxyhq.com/img/team/nathan.jpg
+author_image_url: /images/authors/nathan.jpg
 ---
 
 Spike is a powerful incident management platform with customers across 40+ countries. Their mission is to reduce the complexity of managing incidents and make it simple so teams of all sizes can use it.

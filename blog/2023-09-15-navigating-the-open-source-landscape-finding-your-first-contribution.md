@@ -4,7 +4,7 @@ title: '🧭 Navigating the Open Source Landscape: ⭐Finding Your First Contrib
 author: Nathan Tarbert
 author_title: Community Success Engineer @BoxyHQ
 author_url: https://github.com/NathanTarbert
-author_image_url: https://boxyhq.com/img/team/nathan.jpg
+author_image_url: /images/authors/nathan.jpg
 tags_disabled: [open-source, sso, enterprise-ready]
 image: /img/blog/navigating-open-source-blog/contributors-blog-cover.png
 link:

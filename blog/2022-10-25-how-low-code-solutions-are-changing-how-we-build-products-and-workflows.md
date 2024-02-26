@@ -4,7 +4,7 @@ title: How low-code solutions are changing how we build products and workflows
 author: Jay Singh
 author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
-author_image_url: https://boxyhq.com/img/team/jay.jpg
+author_image_url: /images/authors/jay.jpg
 tags_disabled: [low-code, no-code, speed of development]
 image: /img/blog/lowcode-graph.png
 ---
