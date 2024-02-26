@@ -4,7 +4,7 @@ The Retraced interface supports searching for events. While it's presented as a 
 
 ## Free Text Search
 
-By default, the search query you type in the search box will seach all fields for this value.
+By default, the search query you type in the search box will search all fields for this value.
 
 ## Structured (Advanced) Search
 
