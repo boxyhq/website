@@ -4,7 +4,7 @@ title: Understanding SAML SSO, the basics from the user side
 author: Jay Singh
 author_title: Marketing Consultant
 author_url: https://www.linkedin.com/in/jaydsingh/
-author_image_url: https://boxyhq.com/img/team/jay.jpg
+author_image_url: /images/authors/jay.jpg
 tags_disabled: [enterprise-readiness, saml, saml-jackson, sso, single-sign on]
 image: /img/blog/sso/with-saml.png
 ---
@@ -44,4 +44,4 @@ Without SAML you have to maintain account information across multiple services b
 
 BoxyHQ is open source and our SAML SSO product, SAML Jackson is just the first product we have built to help companies become enterprise-ready. If you are interested in discussing your authentication strategy or deploying SAML SSO you can book a call with our CEO [here](https://cal.com/deepak-boxyhq/demo) to discuss how we can support you.
 
-I hope you have found this high-level explanation of SAML and its use cases helpful. If you have any questions please don't hesitate to reach out to us on our live chat on our website https://boxyhq.com/
+I hope you have found this high-level explanation of SAML and its use cases helpful. If you have any questions please don't hesitate to reach out to us on our live chat on our [website](https://boxyhq.com/)

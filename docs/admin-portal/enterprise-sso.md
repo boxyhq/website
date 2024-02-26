@@ -63,7 +63,7 @@ From the **Admin Portal** go to **Enterprise SSO** > **SAML Federation**.
   - **ACS URL** (ACS URL of the SP)
   - **Entity ID** (Entity ID of the SP)
 
-![Create SAML Federation App](/img/saml-federation/admin/create-saml-federation-app.png)
+![Create SAML Federation App](/images/docs/admin-portal/saml-federation/create-saml-federation-app.png)
 
 ---
 
@@ -75,7 +75,7 @@ From the **Admin Portal** go to **Enterprise SSO** > **SAML Federation**.
   - **ACS URL** (ACS URL of the SP)
   - **Entity ID** (Entity ID of the SP)
 
-![Update SAML Federation App](/img/saml-federation/admin/update-saml-federation-app.png)
+![Update SAML Federation App](/images/docs/admin-portal/saml-federation/update-saml-federation-app.png)
 
 ---
 
@@ -87,4 +87,4 @@ Click **View IdP Configuration** button to view the IdP configuration for the SA
 - **Entity ID / Audience URI / Audience Restriction**
 - **X.509 Certificate**
 
-![View IdP Configuration](/img/saml-federation/admin/view-idp-configuration.png)
+![View IdP Configuration](/images/docs/admin-portal/saml-federation/view-idp-configuration.png)

@@ -15,11 +15,11 @@ If your application is already created, choose it from the list and move to the 
 
 If you haven't created a SAML application, click plus icon and then **Custom SAML App** to create a new application
 
-![img alt](/img/sso-providers/jumpcloud/1.png)
+![JumpCloud SAML Step 1](/images/docs/jackson/sso-providers/jumpcloud/1.png)
 
 Give your application a **Display Label**.
 
-![img alt](/img/sso-providers/jumpcloud/2.png)
+![JumpCloud SAML Step 2](/images/docs/jackson/sso-providers/jumpcloud/2.png)
 
 ## Configure Application
 
@@ -31,7 +31,7 @@ Next click on the **SSO** tab and enter the following values:
 
 Replace the values with the ones you have received from SAML Jackson.
 
-![img alt](/img/sso-providers/jumpcloud/3.png)
+![JumpCloud SAML Step 3](/images/docs/jackson/sso-providers/jumpcloud/3.png)
 
 ## Attribute Mapping
 
@@ -49,11 +49,11 @@ Make sure you have checked the **Declare Redirect Endpoint** checkbox.
 
 Finally, click **Activate** to save the application configuration.
 
-![img alt](/img/sso-providers/jumpcloud/4.png)
+![JumpCloud SAML Step 4](/images/docs/jackson/sso-providers/jumpcloud/4.png)
 
 Now go back to the SAML app you just created, click the tab **SSO**, and click the button **Export Metadata** to download the metadata XML file.
 
-![img alt](/img/sso-providers/jumpcloud/5.png)
+![JumpCloud SAML Step 5](/images/docs/jackson/sso-providers/jumpcloud/5.png)
 
 ## Next steps
 

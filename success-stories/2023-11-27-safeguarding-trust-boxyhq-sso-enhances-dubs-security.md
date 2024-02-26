@@ -19,7 +19,7 @@ In the fast-paced digital landscape of today, security and efficiency are paramo
 <SignupCTA campaign="success-story-dub" />
 
 <FeaturedQuote personName="Steven Tey" personRole="Founder Dub" pictureSrc="/images/success-stories/steven-tey-dub">
- 🔥 Boxy is an absolute godsend!
+ 🔥 BoxyHQ is an absolute godsend!
 </FeaturedQuote>
 
 ## Choosing BoxyHQ's Jackson: A Trusted Partner in Security

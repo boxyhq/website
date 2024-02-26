@@ -4,9 +4,9 @@ title: Why does your SaaS application need audit logs?
 author: Deepak Prabhakara
 author_title: Co-founder & CEO @BoxyHQ
 author_url: https://github.com/deepakprabhakara
-author_image_url: https://boxyhq.com/img/team/deepak.jpg
+author_image_url: /images/authors/deepak.jpg
 tags_disabled: [audit-logs, enterprise-readiness]
-image: /img/audit-logs/audit-logs-widget.png
+image: /images/blog/audit-logs-widget.png
 ---
 
 Audit logs are an important tool for keeping track of activity within your SaaS application. These logs provide a detailed record of the actions taken by users and can be used to monitor for potential security breaches, compliance violations, and other issues. Let’s explore some of the key reasons why you need audit logs for your SaaS app.
@@ -29,7 +29,7 @@ Audit logs are an important tool for keeping track of activity within your SaaS 
 5. **Troubleshooting:** Audit logs can be used to identify and diagnose issues that occur within your SaaS application. By reviewing the logs, you can see exactly what happened when a problem occurred, which can help you quickly identify the root cause and develop a solution.
 6. **Auditing:** Audit logs provide a record of the activities that occur within your SaaS application, which can be useful for internal audits. This information can be used to assess the effectiveness of your security controls and identify areas for improvement.
 
-![Audit Logs](/img/audit-logs/audit-logs-widget.png)
+![Audit Logs](/images/blog/audit-logs-widget.png)
 
 Audit logs are a powerful tool that can be used to improve the security, compliance, and overall performance of your SaaS application. By keeping detailed records of user activity, you can monitor for potential issues and quickly respond to problems as they arise. If your SaaS app doesn't have audit logs, you should consider implementing them as soon as possible to ensure the safety and security of your data and users. It is also becoming an important part of enterprise readiness.
 

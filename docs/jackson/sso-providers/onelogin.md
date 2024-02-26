@@ -15,15 +15,15 @@ If your application is already created, choose it from the list and move to the 
 
 If you haven't created a SAML application, click the **Add App** button to create a new application.
 
-![img alt](/img/sso-providers/onelogin/1.png)
+![OneLogin SAML Step 1](/images/docs/jackson/sso-providers/onelogin/1.png)
 
 Search for **SAML Test Connector** in the **Find Applications** section. Select **SAML Custom Connector (Advanced)** from the search results.
 
-![img alt](/img/sso-providers/onelogin/2.png)
+![OneLogin SAML Step 2](/images/docs/jackson/sso-providers/onelogin/2.png)
 
 Give your application a **Display Name** and click **Save**.
 
-![img alt](/img/sso-providers/onelogin/3.png)
+![OneLogin SAML Step 3](/images/docs/jackson/sso-providers/onelogin/3.png)
 
 ## Configure Application
 
@@ -40,13 +40,13 @@ Replace the values with the ones you have received from SAML Jackson.
 
 Click **Save** to save the configuration.
 
-![img alt](/img/sso-providers/onelogin/4.png)
+![OneLogin SAML Step 4](/images/docs/jackson/sso-providers/onelogin/4.png)
 
-![img alt](/img/sso-providers/onelogin/7.png)
+![OneLogin SAML Step 4.1](/images/docs/jackson/sso-providers/onelogin/4_1.png)
 
 Click the dropdown menu **More Actions** from the top right corner and click **SAML Metadata** to download the metadata XML file.
 
-![img alt](/img/sso-providers/onelogin/5.png)
+![OneLogin SAML Step 5](/images/docs/jackson/sso-providers/onelogin/5.png)
 
 ## Attribute Mapping
 
@@ -63,17 +63,17 @@ You have to configure the following attributes:
 
 See the screenshot below.
 
-![img alt](/img/sso-providers/onelogin/6.png)
+![OneLogin SAML Step 6](/images/docs/jackson/sso-providers/onelogin/6.png)
 
 See the below screenshot to see how to map the **id** attribute to **UUID**.
 
 Enter **id** in the **Field name** input and check the **Include in SAML assertion** checkbox. Click **Save** to continue.
 
-![img alt](/img/sso-providers/onelogin/8.png)
+![OneLogin SAML Step 7](/images/docs/jackson/sso-providers/onelogin/7.png)
 
 On the next screen, select **UUID** from the **Value** dropdown and click **Save**.
 
-![img alt](/img/sso-providers/onelogin/9.png)
+![OneLogin SAML Step 8](/images/docs/jackson/sso-providers/onelogin/8.png)
 
 Do the same for the other attributes (email, firstName, lastName).
 

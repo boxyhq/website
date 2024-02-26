@@ -44,7 +44,7 @@ Here is how Sentry does the SAML SSO configuration for their customers.
 
 <p>
   <img
-    src="/img/sso/sentry-metadata.png"
+    src="/images/guides/sso/sentry-metadata.png"
     style={{ border: '1px solid black' }}
     title="The SAML SSO settings"
   />

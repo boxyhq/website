@@ -15,31 +15,31 @@ Jackson requires a Google OAuth App to be configured to access the Google Worksp
 
 Navigate to the [Google Cloud Console](https://console.cloud.google.com/) and select your project from the list.
 
-![img alt](/img/dsync/providers/google/oauth/1.png)
+![Google Workspace DSync Step 1](/images/docs/jackson/dsync-providers/google/oauth/1.png)
 
 Select **APIs & Services** from the left menu and then select **Credentials**.
 
 Select **OAuth client ID** from the **CREATE CREDENTIALS** dropdown.
 
-![img alt](/img/dsync/providers/google/oauth/2.png)
+![Google Workspace DSync Step 2](/images/docs/jackson/dsync-providers/google/oauth/2.png)
 
 Give your credentials a name and select **Web application** as the **Application type**.
 
-Add the following **Authorised redirect URIs** and then click **Create**.
+Add the following **Authorized redirect URIs** and then click **Create**.
 
 `https://<your-domain>/api/scim/oauth/callback`
 
-![img alt](/img/dsync/providers/google/oauth/3.png)
+![Google Workspace DSync Step 3](/images/docs/jackson/dsync-providers/google/oauth/3.png)
 
 :::info
 Note that the above callback URL works if you're using Jackson as a service.
 
-If using Jackson as an NPM package, the Authorised redirect URIs will be a URL on your application that you'll need to configure. See [Google Directory Sync API](/docs/directory-sync/api-reference#google-directory-sync) for more information.
+If using Jackson as an NPM package, the Authorized redirect URIs will be a URL on your application that you'll need to configure. See [Google Directory Sync API](/docs/directory-sync/api-reference#google-directory-sync) for more information.
 :::
 
 Copy the **Client ID** and **Client secret** and save them for later.
 
-![img alt](/img/dsync/providers/google/oauth/4.png)
+![Google Workspace DSync Step 4](/images/docs/jackson/dsync-providers/google/oauth/4.png)
 
 See the [Environment Variables](/docs/directory-sync/api-reference#google-directory-sync) section to learn how to configure Jackson with these values.
 

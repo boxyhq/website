@@ -12,7 +12,7 @@ Directory Sync is part of our SAML Jackson service (and npm library) from v1.2.1
 
 We currently only support SCIM 2.0 protocol because SCIM 1.1 is deprecated and support will be discontinued on December 2nd, 2022. If you still need support for SCIM 1.1 and are unable to move away from it then please contact us.
 
-![Directory Sync Flow](/img/dsync/directory-sync-flow.png)
+![Directory Sync Flow](/images/docs/jackson/directory-sync-flow.png)
 
 ## Overview
 

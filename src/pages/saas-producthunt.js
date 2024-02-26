@@ -62,7 +62,7 @@ const ProductHuntSaas = () => {
         personRole="Founder Dub"
         pictureSrc="/images/success-stories/steven-tey-dub"
       >
-        🔥 Boxy is an absolute godsend!
+        🔥 BoxyHQ is an absolute godsend!
       </FeaturedQuote>
 
       <SectionLayout title="Key Features and Benefits" description="">

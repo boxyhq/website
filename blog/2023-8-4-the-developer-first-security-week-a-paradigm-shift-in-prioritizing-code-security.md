@@ -17,11 +17,11 @@ authors:
   - name: Sama - Carlos Samame
     title: Co-founder & COO @BoxyHQ
     url: https://www.linkedin.com/in/samame
-    image_url: https://boxyhq.com/img/team/sama.jpg
+    image_url: /images/authors/sama.jpg
   - name: Deepak Prabhakara
     title: Co-founder & CEO @BoxyHQ
     url: https://github.com/deepakprabhakara
-    image_url: https://boxyhq.com/img/team/deepak.jpg
+    image_url: /images/authors/deepak.jpg
 ---
 
 👩🏼‍💻 In the fast-evolving realm of software development, security isn't just an option; it's the foundation on which trust and innovation thrive. At BoxyHQ, we believe that a proactive approach to security should be at the heart of every developer's journey. That's precisely why we decided to build Security Building Blocks for Developers and why we've also embarked on organizing the inaugural 🌟**Developer-First Security Week**🌟 – a transformative event designed to ignite a new era of secure and resilient coding practices.
@@ -105,15 +105,25 @@ Date: 8/10/2023 - 1:00 PM EST
 🌟 Distinguished guest speakers from leading organizations:
 
 - #### [Deepak Prabhakara](https://www.linkedin.com/in/deepakp/m) - Co-Founder & CEO @ BoxyHQ
+
 - #### [Chris John Riley](https://www.linkedin.com/in/chrisjohnriley/) - Staff Security Engineer @ Google
+
 - #### [Mohini Soodan](https://www.linkedin.com/in/mohini-soodan-47604958/) - Sr Security Architect @ Microsoft
+
 - #### [Randall Degges](https://www.linkedin.com/in/rdegges/) - Head of Developer Relations @ Snyk
+
 - #### [Sameer Kamani](https://about.gitlab.com/) -Federal Staff Solutions Architect @ Gitlab
+
 - #### [Alex Olivier](https://www.linkedin.com/in/alexolivier/) - Head of Product @ Cerbos
+
 - #### [Guillaume Montard](https://www.linkedin.com/in/guillaumemontard/) - >Founder & CEO @ Bearer
+
 - #### [Advait Ruia](https://www.linkedin.com/in/advait-ruia-2aa52a85/) - Co-Founder @ SuperTokens
+
 - #### [Brian Levine](https://www.linkedin.com/in/brian-levine-cyberlaw/) - >Director, Cybersecurity & Data Privacy @ EY-Parthenon
+
 - #### [Joe Toscano](https://www.linkedin.com/in/realjoet/) - Author/Keynote/ @ Data Grade
+
 - #### [Sonya Moisset](https://www.linkedin.com/in/sonyamoisset/) - Senior Developer Advocate @ Snyk
 
 Join us as we delve into the intricacies of securing modern software, glean insights from industry experts, and engage in thought-provoking discussions that will shape the future of developer-first security.

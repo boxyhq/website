@@ -26,4 +26,4 @@ Jackson uses the Authorization Code flow as outlined by the numbered steps below
 4. The authorization code generated in the previous step is sent to the client app.
 5. The client [`exchanges`](./index.md#32-code-exchange) the code for token and uses it to query the [`userInfo`](./index.md#33-profile-request) endpoint of Jackson to get the complete user profile.
 
-![img alt](/img/sso-flow.png)
+![SSO Flow](/images/docs/jackson/sso-flow.png)
