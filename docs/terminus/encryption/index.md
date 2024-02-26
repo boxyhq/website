@@ -64,7 +64,7 @@ These are the currently supported and future masking types:
 
 ## Business Objects UI definition for encryption/decryption/masking types
 
-See [Data Modelling, Encryption and Masking UI](../architecture/proxy.md#data-modelling-encryption-and-masking-ui)
+See [Data Modeling, Encryption and Masking UI](../architecture/proxy.md#data-modeling-encryption-and-masking-ui)
 
 ## [model.cue](https://github.com/boxyhq/terminus/blob/release/cmd/proxyservice/conf/default/model.cue)
 

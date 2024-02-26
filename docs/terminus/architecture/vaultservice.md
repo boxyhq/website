@@ -28,7 +28,7 @@ Implements AES encryption against the data store.
 
 ### Running via Docker Compose
 
-When running on docker, all the environent variables are specified either as environment variables or in the `.env` file.
+When running on docker, all the environment variables are specified either as environment variables or in the `.env` file.
 
 **When running via `docker compose` the below does not apply.**
 

@@ -16,9 +16,9 @@ It is written in [Go](https://go.dev/) and can be accessed by default here [http
 
 ---
 
-## Data Modelling, Encryption and Masking UI
+## Data Modeling, Encryption and Masking UI
 
-Data modelling is done via a visual interface that allows the composition via puzzle pieces.
+Data modeling is done via a visual interface that allows the composition via puzzle pieces.
 
 > :warning: **IMPORTANT**: changes on encryption policies on fields of stored datasets will most likely render the existing data useless due to the impossibility of interpret and/or decrypt the data. Thread carefully. Adding and removing fields is allowed.
 
@@ -29,7 +29,7 @@ Data modelling is done via a visual interface that allows the composition via pu
 ![Sample Model: Passport](./proxy_assets/ProductModel.png)
 
 - In case the product doesn't exist, a sample model will be loaded as a starting point and once published, the relevant product will have the model associated.
-- When publishing the model, a serverside validation will ocurr.
+- When publishing the model, it will be validated on the server-side.
 
 > :warning: **IMPORTANT**: The server will reject the publishing of an invalid model with a 400 Error code. TODO - needs to be handled in the UI
 
@@ -81,7 +81,7 @@ Data modelling is done via a visual interface that allows the composition via pu
 
 ### Running via Docker Compose
 
-When running on docker, all the environent variables are specified either as environment variables or in the `.env` file.
+When running on docker, all the environment variables are specified either as environment variables or in the `.env` file.
 
 **When running via `docker compose` the below does not apply.**
 

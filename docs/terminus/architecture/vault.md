@@ -4,9 +4,9 @@ The persistence vault is the persistent layer where data is stored. Amongst it's
 
 - The persistent store implementation is one of the ones supported by [GORM](https://gorm.io/)
   - Terminus ships by default with a PostgreSQL data store
-- Supports multi-tenancy and multi-product logical segregation via columnn keys
+- Supports multi-tenancy and multi-product logical segregation via column keys
 - All data is encrypted and there is no indication of what the data stored is
-- It exposes the low-level API for the Proxy to interface with the persistenc
+- It exposes the low-level API for the Proxy to interface with the persistence
 - Can implement additional encryption at rest if supported by the store implementation
 - It is not business model aware
 - It's scalability, partitioning and indexing capabilities is directly depending on the choice of store
