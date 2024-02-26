@@ -23,7 +23,7 @@ The search box allows for free-text search of all audit events, but also support
 - `action:users.list` -- search by action
 - `action:document.* location:Germany` -- search by action and location
 - `actor.id:john.doe@mycompany.com` -- search by actor id
-- `action:user.login,user.logout` -- seach by multiple actions
+- `action:user.login,user.logout` -- search by multiple actions
 
 ### Filters
 

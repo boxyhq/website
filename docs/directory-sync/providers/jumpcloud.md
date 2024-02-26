@@ -19,7 +19,7 @@ Choose an existing SAML application or create a new one. Click **SSO** from the 
 
 Click the tab **Identity Management** within your SAML application.
 
-Unde the **SCIM Version**, choose **SCIM 2.0** and enter the following information:
+Under the **SCIM Version**, choose **SCIM 2.0** and enter the following information:
 
 - Base URL
 - Token Key

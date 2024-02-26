@@ -25,7 +25,7 @@ Select **OAuth client ID** from the **CREATE CREDENTIALS** dropdown.
 
 Give your credentials a name and select **Web application** as the **Application type**.
 
-Add the following **Authorised redirect URIs** and then click **Create**.
+Add the following **Authorized redirect URIs** and then click **Create**.
 
 `https://<your-domain>/api/scim/oauth/callback`
 
@@ -34,7 +34,7 @@ Add the following **Authorised redirect URIs** and then click **Create**.
 :::info
 Note that the above callback URL works if you're using Jackson as a service.
 
-If using Jackson as an NPM package, the Authorised redirect URIs will be a URL on your application that you'll need to configure. See [Google Directory Sync API](/docs/directory-sync/api-reference#google-directory-sync) for more information.
+If using Jackson as an NPM package, the Authorized redirect URIs will be a URL on your application that you'll need to configure. See [Google Directory Sync API](/docs/directory-sync/api-reference#google-directory-sync) for more information.
 :::
 
 Copy the **Client ID** and **Client secret** and save them for later.

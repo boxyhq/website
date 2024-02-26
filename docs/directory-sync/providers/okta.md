@@ -42,7 +42,7 @@ Check the **Enable API Integration** checkbox and enter the following informatio
 
 You'll receive these information from Jackson when you create the directory sync connection either via the API or the Admin Portal.
 
-Click **Test API Creditentials** to test the connection to see if the credentials are correct then click the **Save** to save the credentials.
+Click **Test API Credentials** to test the connection to see if the credentials are correct then click the **Save** to save the credentials.
 
 ![Okta SCIM Step 6](/images/docs/jackson/dsync-providers/okta/6.png)
 

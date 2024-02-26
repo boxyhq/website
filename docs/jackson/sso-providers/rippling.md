@@ -28,7 +28,7 @@ From the next screen, fill in the following fields:
 
 ## Configure Application
 
-Copy the **Idp Metadata URL** or **Idp Metadata XML** from the next screen. You'll need this value to configure your SAML connection in SAML Jackson.
+Copy the **IdP Metadata URL** or **IdP Metadata XML** from the next screen. You'll need this value to configure your SAML connection in SAML Jackson.
 
 ![Rippling SAML Step 3](/images/docs/jackson/sso-providers/rippling/3.png)
 
