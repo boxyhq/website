@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SignupCTA({ campaign }) {
+export default function SignupCTA({ campaign, label = 'Sign Up Today' }) {
   return (
     <a
       className="button button-primary with-icon base-icon-pseudo icon-code-slash"
@@ -8,7 +8,7 @@ export default function SignupCTA({ campaign }) {
       target="_blank"
       rel="noopener noreferrer"
     >
-      Sign Up Today
+      {label}
     </a>
   );
 }
