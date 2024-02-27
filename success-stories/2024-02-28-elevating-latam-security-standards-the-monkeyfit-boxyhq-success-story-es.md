@@ -11,7 +11,7 @@ import FeaturedQuote from "../src/components/FeaturedQuote";
 import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
 import SignupCTA from "../src/components/ctas/SignupCTA";
 
-En el siempre cambiante panorama tecnológico, las empresas enfrentan una multitud de desafíos en cuanto a escalabilidad, seguridad y cumplimiento normativo. El viaje de MonkeyFit, detallado en un caso de estudio, demuestra el poder de soluciones estratégicas para superar tales obstáculos. Su pasión por ofrecer software de nivel mundial y productos seguros en Perú y América Latina los llevó a adoptar la solución de Inicio Unico de Sesión - [Single Sign-On](<(/enterprise-sso)>) (SSO) de BoxyHQ, una elección que catalizó avances significativos en sus operaciones comerciales y posición en el mercado dentro de la región.
+En el siempre cambiante panorama tecnológico, las empresas enfrentan una multitud de desafíos en cuanto a escalabilidad, seguridad y cumplimiento normativo. El viaje de MonkeyFit, detallado en un caso de estudio, demuestra el poder de soluciones estratégicas para superar tales obstáculos. Su pasión por ofrecer software de nivel mundial y productos seguros en Perú y América Latina los llevó a adoptar la solución de Inicio Unico de Sesión - [Single Sign-On](/enterprise-sso) (SSO) de BoxyHQ, una elección que catalizó avances significativos en sus operaciones comerciales y posición en el mercado dentro de la región.
 
 <LearnMoreCTA label="Read the MonkeyFit case study in English" newWindow={false} url="/success-stories/elevating-latam-security-standards-the-monkeyfit-boxyhq-success-story" />
 
@@ -26,6 +26,7 @@ En el siempre cambiante panorama tecnológico, las empresas enfrentan una multit
 ## Soluciones y Beneficios: Un Enfoque de Doble Beneficio
 
 La adopción de la solución SSO de BoxyHQ generó tanto beneficios directos como indirectos. Directamente, simplificó el proceso de integración con proveedores de identidad, reduciendo significativamente el tiempo de desarrollo, estimado en aproximadamente cinco sprints (iteraciones). Esta ganancia de eficiencia no solo fue una medida de tiempo ahorrado, sino también un testimonio de la base de conocimientos enriquecida y del marco de desarrollo acelerado que MonkeyFit ahora disfrutaba.
+
 Los beneficios indirectos, a menudo pasados por alto, fueron igualmente transformadores. La naturaleza Dockerizada de la solución aseguró cero tiempo de inactividad para funcionalidades críticas como los procesos de inicio de sesión y registro. Además, al servir como intermediario entre proveedores de identidad, amplió el soporte tanto para los protocolos SAML como OIDC, ampliando el atractivo de MonkeyFit a una amplia gama de clientes futuros.
 
 ## Un Testimonio de Innovación

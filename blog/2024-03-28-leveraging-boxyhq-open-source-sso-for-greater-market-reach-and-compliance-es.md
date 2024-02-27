@@ -14,7 +14,7 @@ author_image_url: /images/authors/sama.jpg
 import FeaturedQuote from "../src/components/FeaturedQuote";
 import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
 
-En el siempre cambiante panorama tecnológico, las empresas enfrentan una multitud de desafíos en cuanto a escalabilidad, seguridad y cumplimiento normativo. El viaje de MonkeyFit, detallado en un caso de estudio, demuestra el poder de soluciones estratégicas para superar tales obstáculos. Su pasión por ofrecer software de nivel mundial y productos seguros en Perú y América Latina los llevó a adoptar la solución de Inicio Unico de Sesión - [Single Sign-On](<(/enterprise-sso)>) (SSO) de BoxyHQ, una elección que catalizó avances significativos en sus operaciones comerciales y posición en el mercado dentro de la región.
+En el siempre cambiante panorama tecnológico, las empresas enfrentan una multitud de desafíos en cuanto a escalabilidad, seguridad y cumplimiento normativo. El viaje de MonkeyFit, detallado en un caso de estudio, demuestra el poder de soluciones estratégicas para superar tales obstáculos. Su pasión por ofrecer software de nivel mundial y productos seguros en Perú y América Latina los llevó a adoptar la solución de Inicio Unico de Sesión - [Single Sign-On](/enterprise-sso) (SSO) de BoxyHQ, una elección que catalizó avances significativos en sus operaciones comerciales y posición en el mercado dentro de la región.
 
 <LearnMoreCTA label="Read the interview in English" newWindow={false} url="/blog/leveraging-boxyhqs-open-source-sso-for-greater-market-reach-and-compliance-monkeyfit" />
 
