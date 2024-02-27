@@ -1,6 +1,6 @@
 ---
 description: 'La documentación clara y la naturaleza de código abierto hicieron de BoxyHQ (SAML Jackson) la opción SSO perfecta para MonkeyFit. Lea el estudio de caso.'
-slug: leveraging-boxyhqs-open-source-sso-for-greater-market-reach-and-compliance-monkeyfit-es
+slug: aprovechando-boxyhq-sso-para-un-mayor-alcance-de-mercado-y-cumplimiento-monkeyfit
 title: 'Aprovechando el SSO de código abierto de BoxyHQ para un mayor alcance y cumplimiento del mercado: MonkeyFit'
 tags_disabled: [developer, security, open-source, developerfirst, case-study]
 image: /images/success-stories/monkeyfit-case-study.png
@@ -46,4 +46,4 @@ En el siempre cambiante panorama tecnológico, las empresas enfrentan una multit
 
 **José (Pepo) (MonkeyFit):** Si! Principalmente en industrias más conscientes en prácticas de seguridad de información. Es bastante bien recibido.
 
-<LearnMoreCTA label="Lea la historia de éxito de MonkeyFit" newWindow={false} url="/success-stories/elevating-latam-security-standards-the-monkeyfit-boxyhq-success-story-es" />
+<LearnMoreCTA label="Lea la historia de éxito de MonkeyFit" newWindow={false} url="/success-stories/elevando-los-estandares-de-seguridad-latam-la-historia-de-exito-de-monkeyfit-boxyhq" />

@@ -1,6 +1,6 @@
 ---
 description: 'MonkeyFit, una empresa de software de LATAM, adoptó el SSO de BoxyHQ para mejorar la seguridad, el cumplimiento y el alcance en el mercado. Aprende cómo su éxito puede ser tu modelo a seguir.'
-slug: elevating-latam-security-standards-the-monkeyfit-boxyhq-success-story-es
+slug: elevando-los-estandares-de-seguridad-latam-la-historia-de-exito-de-monkeyfit-boxyhq
 title: 'Mejorando los Estándares de Seguridad en LatAm: La Historia de Éxito de MonkeyFit - BoxyHQ'
 tags_disabled: [security, sso, enterpriseready]
 image: /images/success-stories/monkeyfit-case-study.png
@@ -43,4 +43,4 @@ La decisión estratégica de incorporar BoxyHQ no solo facilitó eficiencias ope
 
 El viaje de MonkeyFit es un estudio de caso convincente para empresas tecnológicas que navegan por las complejidades del crecimiento, la seguridad y el cumplimiento normativo. Al elegir una solución que ofrecía beneficios tanto inmediatos como a largo plazo, MonkeyFit no solo satisfizo sus necesidades de seguridad inmediatas, sino que también estableció un plan para una expansión sostenible y una mayor competitividad en el mercado. Este estudio de caso sirve como un modelo para otras empresas que buscan aprovechar la tecnología no solo como una herramienta para resolver desafíos presentes, sino como un activo estratégico para el crecimiento futuro.
 
-<LearnMoreCTA label="Lea la entrevista con MonkeyFit" newWindow={false} url="/blog/leveraging-boxyhqs-open-source-sso-for-greater-market-reach-and-compliance-monkeyfit-es" />
+<LearnMoreCTA label="Lea la entrevista con MonkeyFit" newWindow={false} url="/blog/aprovechando-boxyhq-sso-para-un-mayor-alcance-de-mercado-y-cumplimiento-monkeyfit" />
