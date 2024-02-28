@@ -16,7 +16,7 @@ import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
 
 In the ever-evolving tech landscape, companies face myriad challenges in scaling, security, and compliance. [MonkeyFit](https://www.monkeyfitpass.com/)'s journey, as detailed in a comprehensive case study, demonstrates the power of strategic solutions in overcoming such hurdles. Their passion to deliver best-in-class software and offer secure products in LATAM (Latin America) led them to adopt [BoxyHQ’s enterprise Single Sign-On](/enterprise-sso) (SSO) solution, a choice that catalyzed significant advancements in their business operations and market positioning within the region.
 
-<LearnMoreCTA label="Lea la entrevista en español" newWindow={false} url="/blog/aprovechando-boxyhq-sso-para-un-mayor-alcance-de-mercado-y-cumplimiento-monkeyfit" />
+<LearnMoreCTA label="Lee la entrevista en español" newWindow={false} url="/blog/aprovechando-boxyhq-sso-para-un-mayor-alcance-de-mercado-y-cumplimiento-monkeyfit" />
 
 ## What was the motivation to implement enterprise SSO?
 

@@ -13,7 +13,7 @@ import SignupCTA from "../src/components/ctas/SignupCTA";
 
 In the ever-evolving tech landscape, companies face myriad challenges in scaling, security, and compliance. [MonkeyFit](https://www.monkeyfitpass.com/)'s journey, as detailed in a comprehensive case study, demonstrates the power of strategic solutions in overcoming such hurdles. Their passion to deliver best-in-class software and offer secure products in LATAM (Latin America) led them to adopt [BoxyHQ’s enterprise Single Sign-On](/enterprise-sso) (SSO) solution, a choice that catalyzed significant advancements in their business operations and market positioning within the region.
 
-<LearnMoreCTA label="Lea el estudio de caso de MonkeyFit en español" newWindow={false} url="/success-stories/elevando-los-estandares-de-seguridad-latam-la-historia-de-exito-de-monkeyfit-boxyhq" />
+<LearnMoreCTA label="Lee el caso de éxito de MonkeyFit en español" newWindow={false} url="/success-stories/elevando-los-estandares-de-seguridad-latam-la-historia-de-exito-de-monkeyfit-boxyhq" />
 
 ## The Catalyst for Change
 
