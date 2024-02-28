@@ -7,6 +7,17 @@ import './testimonials.css';
 const Testimonials = ({ light = false }) => {
   const testimonials = [
     {
+      companyName: 'MonkeyFit',
+      reviewerName: 'José (Pepo) Arellano',
+      reviewerPictureSrc:
+        '/images/success-stories/jose-pepo-arellano-monkeyfit',
+      reviewerRole: 'CEO & Co-Founder - MonkeyFit',
+      testimonialURL:
+        '/success-stories/elevating-latam-security-standards-the-monkeyfit-boxyhq-success-story',
+      testimonialContent:
+        'During development, SAML Jackson provided a well-documented and clear flow for making calls to the tool, reducing time in spikes and R&D compared to a direct integration with identity providers.',
+    },
+    {
       companyName: 'unosecur',
       reviewerName: 'Santosh Jayaprakash',
       reviewerPictureSrc: '/images/success-stories/santosh-unosecur',
@@ -25,16 +36,6 @@ const Testimonials = ({ light = false }) => {
         '/success-stories/accelerating-enterprise-deals-and-conversion-rates-at-calcom-boxyhqs-sso-solution',
       testimonialContent:
         "Building enterprise features takes a lot of time and resources, thankfully BoxyHQ packages it up in a box. Their SSO offering is exactly what we needed. It allowed our team to focus on what we do best (democratizing scheduling for everyone) without getting distracted by the needs of our enterprise customers. Did I mention it's open-source and free?",
-    },
-    {
-      companyName: 'dub',
-      reviewerName: 'Steven Tey',
-      reviewerPictureSrc: '/images/success-stories/steven-tey-dub',
-      reviewerRole: 'Founder, Dub',
-      testimonialURL:
-        '/success-stories/safeguarding-trust-boxyhq-sso-enhances-dubs-security',
-      testimonialContent:
-        "Huge shoutout to BoxyHQ for demystifying esoteric concepts like Enterprise SSO and Directory Sync! I highly recommend checking out their docs – it's an absolute goldmine",
     },
     {
       companyName: 'unicis',

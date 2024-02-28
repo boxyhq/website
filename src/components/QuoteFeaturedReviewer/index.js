@@ -4,7 +4,7 @@ import './quote-featured-reviewer.css';
 
 const QuoteFeaturedReviewer = ({ height = '70', reviewer, width = '70' }) => {
   return (
-    <div className="featured-quote-reviewer">
+    <div className="featured-quote-reviewer quote-featured">
       <Picture
         height={height}
         pictureSrc={reviewer.reviewerPictureSrc}
