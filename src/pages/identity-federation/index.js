@@ -35,7 +35,7 @@ const IdentityFederation = () => {
       reversed: true,
       title: 'Single Sign-On (SSO)',
       ctaCopy: 'Book A Demo',
-      copy: 'Implement SSO, both idetity provider (IdP) and service provider (SP) initiated, for simplified authentication.',
+      copy: 'Implement SSO, both identity provider (IdP) and service provider (SP) initiated, for simplified authentication.',
       icon: 'icon-calendar',
       url: 'https://cal.com/deepak-boxyhq/demo',
     },
