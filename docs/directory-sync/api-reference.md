@@ -558,6 +558,55 @@ curl --request GET \
 
 ---
 
+### List group members
+
+Get the members of a directory group. Only user IDs are returned.
+
+#### Request
+
+<Tabs>
+<TabItem value="01" label="Node.js" default>
+
+```javascript showLineNumbers
+await directorySyncController.groups
+  .setTenantAndProduct('boxyhq', 'jackson')
+  .getGroupMembers({
+    groupId: '44d08c0e-d185-4a5e-80a6-b47a717ffaa5',
+    pageOffset: 0,
+    pageLimit: 10,
+  });
+```
+
+</TabItem>
+<TabItem value="02" label="Shell">
+
+```bash
+curl --request GET \
+  --url 'http://localhost:5225/api/v1/directory-sync/groups/44d08c0e-d185-4a5e-80a6-b47a717ffaa5/members?tenant=boxyhq&product=jackson&pageOffset=0&pageLimit=10' \
+  --header 'Authorization: Api-Key secret' \
+  --header 'Content-Type: application/json'
+```
+
+</TabItem>
+</Tabs>
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "user_id": "107130779649255553459"
+    },
+    {
+      "user_id": "107471187046551199726"
+    }
+  ]
+}
+```
+
+---
+
 ### Google Directory Sync
 
 Google Directory Sync specific properties:
