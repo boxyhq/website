@@ -19,9 +19,9 @@ In a world where data privacy has become a paramount concern, BlockSurvey stands
 
 <LearnMoreCTA label="Learn more about BlockSurvey" url="https://blocksurvey.io/" />
 
-## What was the motivation to implement enterprise SSO?
+## What was the motivation to implement Enterprise SSO?
 
-**Raja Ilayaperumal (BlockSurvey):** We were motivated to implement enterprise SSO to enhance our platform's security and privacy. We aim to provide users with a seamless and secure login experience, protecting sensitive data collected through surveys. This step was crucial for fostering trust with their clients, particularly in sectors where data privacy is paramount.
+**Raja Ilayaperumal (BlockSurvey):** We were motivated to implement Enterprise SSO to enhance our platform's security and privacy. We aim to provide users with a seamless and secure login experience, protecting sensitive data collected through surveys. This step was crucial for fostering trust with their clients, particularly in sectors where data privacy is paramount.
 
 ## What factors led you to select BoxyHQ (SAML Jackson) for this implementation?
 

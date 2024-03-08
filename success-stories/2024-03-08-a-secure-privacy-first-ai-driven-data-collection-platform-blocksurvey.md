@@ -30,7 +30,7 @@ At the heart of BlockSurvey's mission is the promise of unparalleled data privac
 BoxyHQ emerged as the perfect partner in this journey. With its open-source SSO solution, BoxyHQ offered the flexibility, ease of integration, and, most importantly, the security assurance BlockSurvey was seeking. The decision to collaborate with BoxyHQ was driven by a shared vision for privacy and security, making BoxyHQ's SAML Jackson the cornerstone of BlockSurvey's enterprise security framework.
 
 <FeaturedQuote personName="Raja Ilayaperumal" personRole="Co-Founder & CTO - BlockSurvey" pictureSrc="/images/success-stories/raja-blocksurvey">
- BlockSurvey is committed to empowering individuals and organizations with control over their data. BoxyHQ, as our chosen platform for enterprise SSO integration, is pivotal in this journey.
+ BlockSurvey is committed to empowering individuals and organizations with control over their data. BoxyHQ, as our chosen platform for Enterprise SSO integration, is pivotal in this journey.
 </FeaturedQuote>
 
 ## The Impact
@@ -43,6 +43,6 @@ But the ripple effects went deeper. As noted by Raja Ilayaperumal, Co-Founder an
 
 The collaboration between BlockSurvey and BoxyHQ is more than just a technical integration; it's a partnership that enhances the very essence of privacy and security in digital data collection platforms. By leveraging BoxyHQ's expertise in enterprise single sign-on (SSO), BlockSurvey is not only able to offer a superior product but also reinforce its commitment to data privacy and security, ensuring a safer digital space for all users.
 
-Discover how BoxyHQ can empower your business with secure, scalable, and user-friendly SSO solutions. Read more about our [enterprise SSO](/enterprise-sso) offerings and how we can help elevate your security standards.
+Discover how BoxyHQ can empower your business with secure, scalable, and user-friendly SSO solutions. Read more about our [Enterprise SSO](/enterprise-sso) offerings and how we can help elevate your security standards.
 
 <LearnMoreCTA label="Read the interview with BlockSurvey" newWindow={false} url="/blog/achieving-seamless-sso-integration-why-blocksurvey-selected-boxyhq" />
