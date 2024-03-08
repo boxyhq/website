@@ -79,12 +79,12 @@ curl --request POST \
   --header 'Authorization: Api-Key secret' \
   --header 'Content-Type: application/json' \
   --data '{
-	"name": "App",
-	"tenant": "boxyhq",
-	"product": "jackson",
-	"type": "onelogin-scim-v2",
-	"webhook_url": "https://my-cool-app.com/webhook",
-	"webhook_secret": "my-secret"
+ "name": "App",
+ "tenant": "boxyhq",
+ "product": "jackson",
+ "type": "onelogin-scim-v2",
+ "webhook_url": "https://my-cool-app.com/webhook",
+ "webhook_secret": "my-secret"
 }'
 ```
 
@@ -561,6 +561,8 @@ curl --request GET \
 ### List group members
 
 Get the members of a directory group. Only user IDs are returned.
+
+ (Introduced in v1.20.6)
 
 #### Request
 
