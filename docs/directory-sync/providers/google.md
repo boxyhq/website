@@ -5,11 +5,17 @@ sidebar_label: Google Workspace
 
 # Google Workspace
 
-The following guide will walk you through the process of configuring SAML Jackson to use Google Workspace as a directory sync provider.
+Google Workspace SCIM support is pretty minimal, so we directly tap into their APIs to give you the full benefit of SCIM-like functionality.
+
+To enable this you have to authenticate against Google so that we get access to the Admin SDK API. When you create a new Directory Sync connection the Google authentication URL is displayed, this can be sent to your customer so they can authenticate against their Google tenant. It doesn't require any of the traditional SCIM setup.
+
+## Self-hosting instructions
+
+If you are self-hosting the following guide will walk you through the process of configuring SAML Jackson to use Google Workspace as a directory sync provider.
 
 ---
 
-Jackson requires a Google OAuth App to be configured to access the Google Workspace API. You can use your existing OAuth App or create a new one.
+Jackson requires a Google OAuth App to be configured to access the Admin SDK API. You can use your existing OAuth App or create a new one.
 
 ### Create OAuth App
 
@@ -44,6 +50,22 @@ Copy the **Client ID** and **Client secret** and save them for later.
 See the [Environment Variables](/docs/directory-sync/api-reference#google-directory-sync) section to learn how to configure Jackson with these values.
 
 Once Jackson is configured, you can authenticate the tenants with Google OAuth and sync their Workspace directory.
+
+### Enable Admin SDK API
+
+We need access to the Admin SDK API. To enable this follow these instructions:-
+
+Head over to the `Enabled APIs and services` section in the console.
+
+![Google Workspace DSync Enable API Step 1](/images/docs/jackson/dsync-providers/google/oauth/enable-api-1.png)
+
+Search for `admin sdk api`.
+
+![Google Workspace DSync Enable API Step 2](/images/docs/jackson/dsync-providers/google/oauth/enable-api-2.png)
+
+Select the `Admin SDK API` and click on the `ENABLE` button.
+
+![Google Workspace DSync Enable API Step 3](/images/docs/jackson/dsync-providers/google/oauth/enable-api-3.png)
 
 ### Schedule Sync
 
