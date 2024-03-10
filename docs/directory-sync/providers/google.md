@@ -47,6 +47,10 @@ Copy the **Client ID** and **Client secret** and save them for later.
 
 ![Google Workspace DSync Step 4](/images/docs/jackson/dsync-providers/google/oauth/4.png)
 
+:::info
+Please don't forget to configure the `OAuth consent screen` and publish it so your customers can access it.
+:::
+
 See the [Environment Variables](/docs/directory-sync/api-reference#google-directory-sync) section to learn how to configure Jackson with these values.
 
 Once Jackson is configured, you can authenticate the tenants with Google OAuth and sync their Workspace directory.
