@@ -1,5 +1,13 @@
 # Upgrade Guide
 
+## Upgrading to v1.21.0
+
+Google DSync Connections will be supported on the back of following changes. These will ease the process of surfacing up the OAuth endpoints for Google SCIM.
+
+1. Removed `DSYNC_GOOGLE_REDIRECT_URI`, `GOOGLE_REDIRECT_URI` env vars for Jackson service.
+2. Removed `dsync.providers.google.callbackUrl` from npm.
+3. Our npm will take in `dsync.providers.google.authorizePath` and `dsync.providers.google.callbackPath` options.
+
 ## Upgrading to v1.14.0
 
 We have changed the schema bit to introduce a new column called `namespace` to speed up scans. You will have to run the migration scripts if you are manually managing migrations. For example PlanetScale where auto migrations are not supported due to a difference between MySQL and PlanetScale.
