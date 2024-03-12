@@ -411,8 +411,18 @@ The Google authentication client secret.
 
 NPM library option: `dsync.providers.google.clientSecret`
 
-### **DSYNC_GOOGLE_REDIRECT_URI**
+### **dsync.providers.google.authorizePath**
 
-The URI to redirect to after completing the authentication request.
+The authorization endpoint for Google SCIM.
 
-NPM library option: `dsync.providers.google.callbackUrl`
+NPM library option: `dsync.providers.google.authorizePath`
+
+For example: `/api/scim/oauth/authorize`
+
+### **dsync.providers.google.callbackPath**
+
+The path to redirect to after completing the authorization request for Google SCIM.
+
+NPM library option: `dsync.providers.google.callbackPath`
+
+For example: `/api/scim/oauth/callback`
