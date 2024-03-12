@@ -2,11 +2,11 @@
 
 ## Upgrading to v1.21.0
 
-Google DSync Connections will be supported on the back of following changes. These will ease the process of surfacing up the OAuth endpoints for Google SCIM.
+Google DSync Connections will be supported on the back of following changes related to Authorization. These will ease the process of surfacing up the OAuth endpoints for Google SCIM.
 
 1. Removed `DSYNC_GOOGLE_REDIRECT_URI`, `GOOGLE_REDIRECT_URI` env vars for Jackson service.
 2. Removed `dsync.providers.google.callbackUrl` from npm.
-3. Our npm will take in `dsync.providers.google.authorizePath` and `dsync.providers.google.callbackPath` options.
+3. Our npm will take in new options - `dsync.providers.google.authorizePath` and `dsync.providers.google.callbackPath`. These will be used alongside `externalUrl` to construct the full path
 
 ## Upgrading to v1.14.0
 
