@@ -399,6 +399,18 @@ The following env vars are used to configure the directory sync feature.
 
 Enable batch processing of directory sync events. The value represents the number of events to batch together instead of sending each event individually. This requires you to configure a cron job to [process the queued events](/docs/directory-sync/api-reference#batch-processing-events)
 
+### **DSYNC_WEBHOOK_BATCH_CRON_INTERVAL**
+
+The cron interval at which to process the queued events. Provide a number in seconds. By default, the cron job is disabled.
+
+NPM library option: `dsync.webhookBatchCronInterval`
+
+### **DSYNC_GOOGLE_CRON_INTERVAL**
+
+The cron interval at which to sync the Google Workspace. Provide a number in seconds. By default, the cron job is disabled.
+
+NPM library option: `dsync.providers.google.cronInterval`
+
 ### **DSYNC_GOOGLE_CLIENT_ID**
 
 The Google authentication client ID.
