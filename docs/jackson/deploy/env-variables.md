@@ -77,7 +77,7 @@ Set this when using the npm package.
 
 NPM library option: `idpDiscoveryPath`
 
-For example: `/idp/select` - You can find an implementation of IdP/App Selection at <https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx>.
+For example: `/idp/select` - You can find an implementation of IdP/App Selection [here](https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx).
 
 ### **CLIENT_SECRET_VERIFIER**
 
@@ -125,7 +125,7 @@ For supporting OpenID flow, we need to set the algorithm and keys used to sign t
 
 ### **OPENID_JWS_ALG**
 
-The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at <https://github.com/panva/jose/issues/114#digital-signatures>.
+The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found [here](https://github.com/panva/jose/issues/114#digital-signatures).
 
 Default: `RS256`
 
