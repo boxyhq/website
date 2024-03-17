@@ -64,7 +64,7 @@ cd jackson
 ### Install dependencies
 
 ```bash
-npm run custom-install
+npm install
 ```
 
 ### Add environment variables
