@@ -19,17 +19,32 @@ const Careers = () => {
         <div className="content-wrapper">
           <h2>Career Opportunities</h2>
           <p>
-            Thank you for your interest in a career at BoxyHQ! While we
-            currently don't have any open positions, we're always on the lookout
-            for talented individuals to join our team. Our needs are constantly
-            evolving, and new opportunities can arise at any time.
+            Thank you for considering a career with BoxyHQ! We're excited about
+            your interest in joining our dynamic team. Below, you'll find a list
+            of all the current open positions within our company. At BoxyHQ,
+            we're dedicated to fostering an inclusive, innovative, and
+            supportive work environment that encourages growth and development.
+            Whether you're passionate about software development, marketing,
+            sales, or customer support, we believe there's a place for you here.
           </p>
-          <p>
-            We encourage you to check our careers page regularly for updates and
-            new job postings. If you're passionate about shaping the future of
-            enterprise software and thrive in innovative environments, we would
-            love to hear from you in the future.
-          </p>
+
+          <ul className="reset-list open-roles">
+            <li className="role">
+              <h3>
+                Senior Software Engineer - Open Source, Security, Dev Tools
+              </h3>
+              <p>
+                Join BoxyHQ as a Senior Software Engineer and lead the charge in
+                building developer-first security tools to streamline compliance
+                and enhance data security. With a focus on innovation and
+                collaboration, you'll play a pivotal role in shaping our
+                products and driving our mission forward. If you're passionate
+                about open-source projects, security, and developer tools, we
+                want to hear from you!
+              </p>
+              <a href="/careers/senior-software-engineer">Apply Today</a>
+            </li>
+          </ul>
         </div>
       </main>
     </Layout>

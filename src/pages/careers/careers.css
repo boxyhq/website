@@ -5,3 +5,39 @@
 .content-wrapper {
   margin-top: var(--spacing-default);
 }
+
+.content-wrapper > p {
+  max-width: 100ch;
+}
+
+.reset-list.open-roles {
+  margin-bottom: var(--spacing-wide);
+}
+
+.open-roles .role {
+  background-color: var(--color-teal-05);
+  border: 0.1rem solid var(--color-teal-80);
+  border-radius: var(--border-radius-default);
+  padding: var(--spacing-default);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .open-roles .role {
+    max-width: 65%;
+  }
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .open-roles .role {
+    max-width: 45%;
+  }
+}
+
+.open-roles .role a {
+  font-size: var(--typography-size-small-medium);
+}
+
+.open-roles .role a:hover,
+.open-roles .role a:focus {
+  text-decoration: none;
+}
