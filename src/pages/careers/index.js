@@ -42,7 +42,16 @@ const Careers = () => {
                 about open-source projects, security, and developer tools, we
                 want to hear from you!
               </p>
-              <a href="/careers/senior-software-engineer">Apply Today</a>
+              <ul className="reset-list role-footer-links">
+                <li>
+                  <a href="/careers/senior-software-engineer">
+                    Learn more &raquo;
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:careers@boxyhq.com">Apply today &raquo;</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

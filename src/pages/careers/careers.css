@@ -33,11 +33,19 @@
   }
 }
 
-.open-roles .role a {
+.role-footer-links {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-default);
+}
+
+.open-roles .role a:link,
+.open-roles .role a:visited {
   font-size: var(--typography-size-small-medium);
+  text-decoration: none;
 }
 
 .open-roles .role a:hover,
 .open-roles .role a:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
