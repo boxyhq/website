@@ -48,7 +48,7 @@
   font-size: var(--typography-size-small-medium);
 }
 
-.marketing-site .linear-gradient-text {
+.linear-gradient-text {
   background: var(--typography-linear-gradient);
   background-clip: text;
   -webkit-text-fill-color: transparent;
