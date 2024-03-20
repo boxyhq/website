@@ -40,7 +40,7 @@ const SeniorSoftwareEngineer = () => {
         <p>
           As a Senior Software Engineer at BoxyHQ, you'll be at the forefront of
           developing open-source API-driven developer tools that empower
-          startups to streamline compliance and enhance data security in their
+          companies to streamline compliance and enhance data security in their
           products. Here's an overview of your responsibilities:
         </p>
 
