@@ -363,12 +363,12 @@ We'll notify you of the following 5 events related to groups and memberships. Ea
 
 ## Directory Events
 
-We'll notify you of the following 4 events related to the directory connections.
-
 To configure the webhook, you have to set the following environment variables.
 
 - `WEBHOOK_URL` - The URL to which the webhook events will be sent.
 - `WEBHOOK_SECRET` - The secret key used to sign the webhook events.
+
+We'll notify you of the following 4 events related to the directory connections.
 
 <details>
 <summary>
@@ -460,16 +460,16 @@ To configure the webhook, you have to set the following environment variables.
 
 ## Frequently Asked Questions
 
-### How to determine whether a user has been deleted if the Identity Provider does not send a webhook event for user deletion?
-
-To receive notifications when a user is deleted, it's important to note that not all Identity Providers send requests for this. However, you can listen for the `user.updated` event from SAML Jackson and examine the `active` property to determine whether a user has been deleted. In case the user is deleted, the `active` property will be assigned the value `false`.
-
 ### Which Identity Providers do not send an event for user deletion?
 
 Following Identity Providers do not send `user.deleted` event:
 
 - Okta
 - Microsoft Entra ID (formerly Azure AD)
+
+### How to determine whether a user has been deleted if the Identity Provider does not send a webhook event for user deletion?
+
+To receive notifications when a user is deleted, it's important to note that not all Identity Providers send requests for this. However, you can listen for the `user.updated` event from SAML Jackson and examine the `active` property to determine whether a user has been deleted. In case the user is deleted, the `active` property will be assigned the value `false`.
 
 ### Which SCIM version does SAML Jackson support?
 
