@@ -47,7 +47,7 @@ Alternatively, organizations can choose to buy a third-party IAM solution like B
 For companies and development teams of all sizes looking to implement a comprehensive IAM solution, BoxyHQ offers a compelling value proposition:
 
 1. **Open Source Flexibility**: BoxyHQ is built on open-source technology, allowing organizations to benefit from the flexibility and customization options of open-source while offloading the complexities of development and maintenance.
-2. **Comprehensive Features**: BoxyHQ provides a range of features beyond just SSO, including Directory Sync which includes an Identity Federation solution ensuring a comprehensive IAM solution.
+2. **Comprehensive Features**: BoxyHQ provides a range of features beyond SSO, including Directory Sync and Identity Federation ensuring a comprehensive IAM solution.
 3. **Admin Portal**: Whether using the SaaS offering or self-hosting, BoxyHQ provides an admin portal for easy setup and maintenance, reducing the operational burden on development teams.
 4. **Community and Support**: By choosing BoxyHQ, organizations can tap into the expertise and support of an active open-source community, ensuring access to ongoing updates and assistance.
 
