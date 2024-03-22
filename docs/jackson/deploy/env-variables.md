@@ -405,7 +405,7 @@ The following env vars are used to configure the directory sync feature.
 
 ### **DSYNC_WEBHOOK_BATCH_SIZE**
 
-Enable batch processing of directory sync events. The value represents the number of events to batch together instead of sending each event individually. This requires you to configure a cron job to [process the queued events](/docs/directory-sync/api-reference#batch-processing-events)
+Enable batch processing of directory sync events. The value represents the number of events to batch together instead of sending each event individually. This requires you to configure a cron job to [process the queued events](/docs/directory-sync/api-reference#batch-processing-events). Alternatively you can set `DSYNC_WEBHOOK_BATCH_CRON_INTERVAL` below if you are not deploying the service in an Edge environment.
 
 ### **DSYNC_WEBHOOK_BATCH_CRON_INTERVAL**
 
