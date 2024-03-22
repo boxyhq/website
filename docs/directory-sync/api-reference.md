@@ -856,3 +856,5 @@ curl -X POST \
 
 </TabItem>
 </Tabs>
+
+Alternatively you can set the `DSYNC_WEBHOOK_BATCH_CRON_INTERVAL` env var.

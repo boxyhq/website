@@ -85,6 +85,8 @@ curl -X POST \
   http://localhost:5225/api/v1/dsync/cron/sync-google
 ```
 
+Alternatively you can set the `DSYNC_GOOGLE_CRON_INTERVAL` env var to enable the cron in the Jackson service.
+
 Learn more about [Google Directory Sync API](/docs/directory-sync/api-reference#4-sync-directory).
 
 ### FAQ
