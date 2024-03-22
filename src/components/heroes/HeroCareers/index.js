@@ -5,7 +5,7 @@ const HeroCareers = () => {
     <BaseHero sectionId="about-boxyhq" title="Build Your Future with BoxyHQ">
       <p className="lead">
         Embark on an exciting career journey with BoxyHQ, where innovation meets
-        impact. We're on a mission to empower startups with simplified
+        impact. We're on a mission to empower companies with simplified
         development of compliance and data security features for their products.
         At BoxyHQ, you'll collaborate with a team of passionate professionals
         dedicated to shaping the future of enterprise software.

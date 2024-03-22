@@ -1,0 +1,45 @@
+.girdle.role-details {
+  margin: var(--spacing-medium) auto;
+  padding: var(--spacing-medium);
+}
+
+@media only screen and (min-width: 63.9375rem) {
+  .girdle.role-details {
+    margin: var(--spacing-wide) auto;
+  }
+}
+
+.role-details h1 {
+  font-size: var(--typography-size-xl);
+}
+
+@media only screen and (min-width: 83.6875rem) {
+  .role-details h1 {
+    font-size: var(--typography-size-xxl);
+  }
+}
+
+.role-details h2 {
+  font-size: var(--typography-size-large);
+}
+
+.role-details h3 {
+  font-size: var(--typography-size-medium);
+}
+
+.role-details p {
+  max-width: 100ch;
+}
+
+.role-lead p {
+  font-size: var(--typography-size-small-medium);
+}
+
+.role-details li {
+  margin-bottom: var(--spacing-narrow);
+  max-width: 80ch;
+}
+
+.role-details-backlink {
+  font-size: var(--typography-size-small-medium);
+}
