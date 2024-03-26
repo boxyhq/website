@@ -1,5 +1,5 @@
 ---
-description: "Discover how BlockSurvey's partnership with BoxyHQ's SSO elevates data privacy and boosts enterprise client trust. A story of innovation and security."
+description: 'Discover how Effortless Solutions leveraged BoxyHQ for SSO, achieving seamless integration and enhancing security in this compelling success story.'
 slug: how-boxyhq-empowered-effortless-solutions-a-seamless-integration-success-story
 title: 'How BoxyHQ Empowered Effortless Solutions: A Seamless Integration Success Story'
 tags_disabled: [security, sso, enterpriseready, bubble, integration]
