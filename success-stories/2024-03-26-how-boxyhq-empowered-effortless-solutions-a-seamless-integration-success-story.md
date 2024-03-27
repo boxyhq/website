@@ -24,7 +24,7 @@ Effortless Solutions faced a pivotal challenge when one of their clients, operat
 The decision to implement BoxyHQ's SSO solution was not taken lightly. Ahmed Elkaffas and his team conducted thorough research, focusing on customer feedback and product capabilities. BoxyHQ emerged as the preferred solution for several reasons:
 
 - **Positive Customer Feedback**: Endorsements from BoxyHQ customers underscored its reliability and effectiveness.
-  Open Source Flexibility: BoxyHQ's open-source nature promised freedom from vendor lock-in, offering the agility needed in dynamic project environments.
+- **Open Source Flexibility**: BoxyHQ's open-source nature promised freedom from vendor lock-in, offering the agility needed in dynamic project environments.
 - **Seamless Bubble Integration**: Critical for Effortless Solutions was BoxyHQ's flawless integration with the Bubble platform, ensuring project continuity without the need for cumbersome plugin development.
 - **Rapid Deployment**: The capacity for quick implementation, in line with security compliance, was a game-changer, signaling BoxyHQ's ability to meet urgent enterprise needs.
 
