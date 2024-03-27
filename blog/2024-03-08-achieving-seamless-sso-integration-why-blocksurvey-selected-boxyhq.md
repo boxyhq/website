@@ -15,7 +15,7 @@ import FeaturedQuote from "../src/components/FeaturedQuote";
 import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
 import SignupCTA from "../src/components/ctas/SignupCTA";
 
-In a world where data privacy has become a paramount concern, BlockSurvey stands out as a beacon of trust and security. Committed to empowering users with complete ownership over their data, BlockSurvey faced the challenge of ensuring enterprise-level security and privacy for its customers. The solution? BoxyHQ’s Single Sign-On powered by the [open-source SAML Jackson](https://github.com/boxyhq/jackson).
+Data privacy has become a paramount concern, BlockSurvey stands out as a beacon of trust and security. Committed to empowering users with complete ownership over their data, BlockSurvey faced the challenge of ensuring enterprise-level security and privacy for its customers. The solution? BoxyHQ’s Single Sign-On powered by the [open-source SAML Jackson](https://github.com/boxyhq/jackson).
 
 <LearnMoreCTA label="Learn more about BlockSurvey" url="https://blocksurvey.io/" />
 
