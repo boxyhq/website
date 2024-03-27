@@ -23,7 +23,7 @@ The search for a suitable SSO solution led Effortless Solutions to select BoxyHQ
 
 ## What was the motivation to implement Enterprise SSO?
 
-**Ahmed Elkaffas (Effortless Solutions):** The motivation to implement [enterprise Single Sign-On (SSO)](/enterprise-sso) for Effortless Solutions came from a specific requirement of one of our customer's clients in the Netherlands. This client, using the software as a service (SaaS) application developed on the Bubble platform, wanted their application to seamlessly integrate with their existing Microsoft EntraID infrastructure.
+**Ahmed Elkaffas (Effortless Solutions):** The motivation to implement [enterprise Single Sign-On (SSO)](/enterprise-sso) came from a specific requirement of one of our customer's clients in the Netherlands. This client, using the software as a service (SaaS) application developed on the Bubble platform, wanted their application to seamlessly integrate with their existing Microsoft EntraID infrastructure.
 
 They aimed to create a seamless, efficient login process for employees, eliminating the need for multiple logins and thereby increasing productivity and ensuring a higher level of security compliance. This need for a streamlined authentication process that could integrate well with the customer's existing systems and protocols was the main driving force behind seeking an enterprise SSO solution, leading to the selection and implementation of BoxyHQ.
 
