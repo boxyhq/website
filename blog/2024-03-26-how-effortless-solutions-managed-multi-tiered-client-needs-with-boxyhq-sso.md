@@ -15,9 +15,7 @@ import FeaturedQuote from "../src/components/FeaturedQuote";
 import LearnMoreCTA from "../src/components/ctas/LearnMoreCTA";
 import SignupCTA from "../src/components/ctas/SignupCTA";
 
-Efficiency and security are critical when implementing high-impact solutions leaving Effortless Solutions with a unique challenge: implementing an Enterprise Single Sign-On (SSO) solution to meet the needs of a client's client in the Netherlands. The requirement was for a SaaS application developed on the Bubble platform to integrate seamlessly with Microsoft EntraID, all while ensuring little to no disruption and downtime. This emphasized the need for a streamlined implementation process that would enhance productivity while maintaining high-security standards.
-
-The search for a suitable SSO solution led Effortless Solutions to select BoxyHQ. This decision was driven by several factors: positive customer feedback, the open-source nature of BoxyHQ which mitigated vendor lock-in concerns, and seamless integration with Bubble.
+Effortless Solutions faced a unique challenge: implementing an Enterprise Single Sign-On (SSO) solution for a customer's client in the Netherlands, requiring a SaaS application developed on the Bubble platform to seamlessly integrate with Microsoft EntraID, ensuring minimal disruption and downtime while enhancing productivity and maintaining high-security standards. After careful consideration, Effortless Solutions selected BoxyHQ due to positive customer feedback, its open-source nature mitigating vendor lock-in concerns, and seamless integration with Bubble.
 
 <LearnMoreCTA label="Learn more about Effortless Solutions" url="https://effortlesssolutions.fr/" />
 
