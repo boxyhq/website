@@ -53,7 +53,7 @@ By addressing the specific needs of our client, we not only met the immediate te
 
 ## In terms of business impact, how much time did it save Effortless Solutions?
 
-**Ahmed (Effortless Solutions):** Effortless Solutions experienced significant time savings by choosing BoxyHQ for their enterprise SSO implementation. While the document doesn't specify the exact number of hours or days saved, Ahmed Elkaffas, the founder, emphasized the rapid deployment capability of BoxyHQ as a critical factor in their decision-making process. He noted the expectation that the solution could be deployed within a matter of days, which was a key advantage over other potential solutions that might have taken months to implement.
+**Ahmed (Effortless Solutions):** Effortless Solutions experienced significant time savings by choosing BoxyHQ for their enterprise SSO implementation. The expectation that the solution could be deployed within a matter of days was a key advantage over other potential solutions that might have taken months to implement.
 
 <FeaturedQuote personName="Ahmed Elkaffas" personRole="Founder - Effortless Solutions" pictureSrc="/images/success-stories/ahmed-effortless-solutions">
  We encountered a problem during testing on the development environment which we reported to BoxyHQ on Friday afternoon. On Monday, BoxyHQ had fixed and deployed a new version ready for us to test. We tested it, and it worked fantastically.
