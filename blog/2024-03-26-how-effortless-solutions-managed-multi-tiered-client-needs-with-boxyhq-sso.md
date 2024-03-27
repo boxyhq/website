@@ -23,9 +23,9 @@ The search for a suitable SSO solution led Effortless Solutions to select BoxyHQ
 
 ## What was the motivation to implement Enterprise SSO?
 
-**Ahmed Elkaffas (Effortless Solutions):** The motivation to implement [enterprise Single Sign-On (SSO)](/enterprise-sso) came from a specific requirement of one of our customer's clients in the Netherlands. This client, using the software as a service (SaaS) application developed on the Bubble platform, wanted their application to seamlessly integrate with their existing Microsoft EntraID infrastructure.
+**Ahmed Elkaffas (Effortless Solutions):** The motivation to implement [enterprise Single Sign-On (SSO)](/enterprise-sso) came from a specific requirement of one of our customer's clients in the Netherlands. This client, using a software as a service (SaaS) application developed on the Bubble platform, wanted their application to seamlessly integrate with their existing Microsoft EntraID infrastructure.
 
-They aimed to create a seamless, efficient login process for employees, eliminating the need for multiple logins and thereby increasing productivity and ensuring a higher level of security compliance. This need for a streamlined authentication process that could integrate well with the customer's existing systems and protocols was the main driving force behind seeking an enterprise SSO solution, leading to the selection and implementation of BoxyHQ.
+They aimed to create a seamless, efficient login process for employees, eliminating the need for multiple logins and thereby increasing productivity and ensuring a higher level of security compliance. This need for a streamlined authentication process that could integrate well with the customer's existing systems and protocols was the main driving force behind seeking an enterprise SSO solution, leading to the selection and implementation of BoxyHQ SaaS.
 
 ## What factors led you to select BoxyHQ (SAML Jackson) for this implementation?
 
@@ -63,6 +63,6 @@ By addressing the specific needs of our client, we not only met the immediate te
 
 **Ahmed (Effortless Solutions):** Now that we have successfully deployed BoxyHQ for one of our clients, we can approach future clients with confidence knowing that we can rely on the support of BoxyHQ and that we can guarantee an implementation timeline of days instead of weeks or months. This changes everything for us and opens new doors for Effortless Solutions.
 
-Because of other BoxyHQ SaaS features such as Directory Sync, we can offer services to ever larger clients laying the foundation for the future growth and continued success of our company. We wish to thank everyone at BoxyHQ for their dedication to the success of our implementation and for being a partner in our success.
+Because of other BoxyHQ SaaS features such as [Directory Sync](/directory-sync), we can offer services to ever larger clients laying the foundation for the future growth and continued success of our company. We wish to thank everyone at BoxyHQ for their dedication to the success of our implementation and for being a partner in our success.
 
 <LearnMoreCTA label="Read Effortless Solutions's Success Story" newWindow={false} url="/success-stories/how-boxyhq-empowered-effortless-solutions-a-seamless-integration-success-story" />
