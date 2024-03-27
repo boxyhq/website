@@ -51,7 +51,7 @@ These factors collectively contributed to the decision to implement BoxyHQ as ou
 
 By addressing the specific needs of our client, we not only met the immediate technical and security requirements but also realized broader benefits that strengthened our market position, enhanced operational capabilities, and allowed us to build even stronger relationships with our clients.
 
-## In terms of business impact, how much time did it save BlockSurvey?
+## In terms of business impact, how much time did it save Effortless Solutions?
 
 **Ahmed (Effortless Solutions):** Effortless Solutions experienced significant time savings by choosing BoxyHQ for their enterprise SSO implementation. While the document doesn't specify the exact number of hours or days saved, Ahmed Elkaffas, the founder, emphasized the rapid deployment capability of BoxyHQ as a critical factor in their decision-making process. He noted the expectation that the solution could be deployed within a matter of days, which was a key advantage over other potential solutions that might have taken months to implement.
 

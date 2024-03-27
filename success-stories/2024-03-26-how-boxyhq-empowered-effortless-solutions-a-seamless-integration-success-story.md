@@ -51,4 +51,4 @@ The successful deployment of BoxyHQ did more than just resolve a technical chall
 
 The collaboration between Effortless Solutions and BoxyHQ serves as a compelling case study for startups, CTOs, and decision-makers. It demonstrates the significant value of selecting the right tools and partners in achieving project success, ensuring security compliance, and enhancing user experience. As businesses navigate the complexities of software development and integration, the insights from Ahmed Elkaffas's experience with BoxyHQ offer a blueprint for success, emphasizing the importance of flexibility, rapid deployment, and a customer-centric approach.
 
-<LearnMoreCTA label="Read the interview with BlockSurvey" newWindow={false} url="/blog/how-effortless-solutions-managed-multi-tiered-client-needs-with-boxyhq-sso" />
+<LearnMoreCTA label="Read the interview with Effortless Solutions" newWindow={false} url="/blog/how-effortless-solutions-managed-multi-tiered-client-needs-with-boxyhq-sso" />
