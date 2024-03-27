@@ -17,7 +17,7 @@ The search for a suitable SSO solution led Effortless Solutions to select BoxyHQ
 
 ## The Challenge: Seamless Integration and Security Compliance
 
-Effortless Solutions faced a pivotal challenge when one of their clients, operating a SaaS application built on the Bubble platform, required integration with Microsoft IntraID for enterprise Single Sign-On (SSO). This integration was not just about technical compatibility; it was about meeting rigorous European security standards, ensuring a seamless user experience, and integrating within a complex existing infrastructure with minimal effort and maximum efficiency.
+Effortless Solutions faced a pivotal challenge when one of their clients, operating a SaaS application built on the Bubble platform, required integration with Microsoft EntraID for enterprise Single Sign-On (SSO). This integration was not just about technical compatibility; it was about meeting rigorous European security standards, ensuring a seamless user experience, and integrating within a complex existing infrastructure with minimal effort and maximum efficiency.
 
 ## Why BoxyHQ? A Decision Driven by Excellence
 
