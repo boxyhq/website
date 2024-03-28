@@ -446,3 +446,19 @@ The path to redirect to after completing the authorization request for Google SC
 NPM library option: `dsync.providers.google.callbackPath`
 
 For example: `/api/scim/oauth/callback`
+
+## Enterprise Features
+
+### **BOXYHQ_LICENSE_KEY**
+
+Contact us to obtain a license for our Enterprise Features - Portal Branding, Identity Federation and Ory Integration.
+
+## Enterprise Features - Ory Integration
+
+### **ENTERPRISE_ORY_SDK_TOKEN**
+
+Your Ory Network Session Token. To obtain this use the Ory CLI and copy out your session token.
+
+### **ENTERPRISE_ORY_PROJECT_ID**
+
+Your Ory Network Project ID.
