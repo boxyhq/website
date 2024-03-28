@@ -33,6 +33,8 @@ Navigate to `Settings` in the sidebar and then the `Ory Integration` tab. Paste 
 
 ![Ory and BoxyHQ Integration](./ory/ory-integration-ui.png)
 
+If you are self-hosting, you have to set these [environment variables](https://boxyhq.com/docs/jackson/deploy/env-variables#enterprise-features---ory-integration)
+
 ## Integration explained
 
 Now whenever you create a new SSO connection on BoxyHQ it automatically calls Ory APIs to setup a new Organization and a Generic OIDC connection. All the user management still flows through Ory Network. Please remember to use the domain as the `tenant` in BoxyHQ.
