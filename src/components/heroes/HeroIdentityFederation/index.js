@@ -14,9 +14,9 @@ const HeroIdentityFederation = () => {
         As businesses scale, the complexity of managing customer or employee
         identities across multiple applications intensifies. BoxyHQ's Identity
         Federation Broker addresses this challenge by streamlining user identity
-        management across all customer-facing applications, irrespective of
-        their diverse configurations or Identity Provider (IdP) protocols, such
-        as SAML, OIDC, or various IdPs.
+        management across all applications, irrespective of their diverse
+        configurations or Identity Provider (IdP) protocols, such as SAML, OIDC,
+        or various IdPs.
       </p>
       <ul className="reset-list button-container">
         <li>
