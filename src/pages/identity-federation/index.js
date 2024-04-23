@@ -1,11 +1,6 @@
 import { useState } from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 
-import { hubspotFormIds } from '../../components/Pricing/pricingPlans';
-
-import BaseFeatureSectionHeader from '../../components/BaseFeatureSectionHeader';
-import BaseProductSpotlightSection from '../../components/BaseProductSpotlightSection';
 import CTAIdentityFederation from '../../components/CTAIdentityFederation';
 import HeroIdentityFederation from '../../components/heroes/HeroIdentityFederation';
 
@@ -68,80 +63,6 @@ const IdentityFederation = () => {
       <HeroIdentityFederation />
       <main>
         <CTAIdentityFederation />
-        <BaseFeatureSectionHeader
-          title="Best-in-Class Identity Federation"
-          subtitle="Unified Identity Management"
-          withMargin={true}
-        />
-        <ul className="reset-list">
-          {identityFederationBenefits.map((benefit) => (
-            <li key={benefit.title}>
-              <BaseProductSpotlightSection
-                light={benefit.light}
-                pictureSrc={benefit.pictureSrc}
-                reversed={benefit.reversed}
-              >
-                <h2 className="product-feature-card-heading">
-                  {benefit.title}
-                </h2>
-                <p>{benefit.copy}</p>
-                <a
-                  className={clsx(
-                    'button',
-                    'button-primary',
-                    'with-icon',
-                    'base-icon-pseudo',
-                    benefit.icon
-                  )}
-                  href={benefit.url}
-                  target={benefit.url.startsWith('http') ? '_blank' : '_self'}
-                >
-                  {benefit.ctaCopy}
-                </a>
-              </BaseProductSpotlightSection>
-            </li>
-          ))}
-        </ul>
-
-        <div className="girdle cta-general-content-container">
-          <h2 className="linear-gradient-text">
-            Simplify Your Identity Federation Strategy
-          </h2>
-          <p>
-            Say goodbye to customer or employee identity silos and
-            fragmentation. BoxyHQ's Identity Federation capabilities empower
-            businesses of all sizes to take control of their identities with
-            ease. Whether you're a seasoned developer or new to app development,
-            our platform offers a range of options, from no code to custom code,
-            to meet your needs effectively.
-          </p>
-          <h3 className="linear-gradient-text">
-            Plug and Play: No Code/Low Code
-          </h3>
-          <p>
-            BoxyHQ's Identity Federation simplifies the task for developers and
-            organizations to add authentication and identity management to their
-            apps using no / low code workflows. Minimal coding is required as
-            the emphasis is placed on configuration rather than writing code.
-            This user-friendly approach significantly reduces the development
-            overhead for organizations, enabling developers to implement robust
-            authentication mechanisms without extensive coding expertise.
-          </p>
-          <p>
-            Ready to simplify identity management? Let BoxyHQ be your trusted
-            partner.{' '}
-            <button
-              type="button"
-              className="ghost link-button"
-              onClick={() =>
-                showHubSpotForm(true, hubspotFormIds.enterpriseSSODirectorySync)
-              }
-            >
-              Contact Us
-            </button>{' '}
-            today to learn more!
-          </p>
-        </div>
         <CustomersAndPartners />
       </main>
       {opened && (
