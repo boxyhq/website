@@ -19,9 +19,12 @@ const BaseCTAProductHighlight = ({
       className={clsx('product-highlight', darkMode && 'dark')}
     >
       <header className="feature-header">
-        <h2 className="feature-header-title" id={`${sectionId}-title`}>
-          {title}
-        </h2>
+        <h2
+          className="feature-header-title"
+          dangerouslySetInnerHTML={{ __html: title }}
+          id={`${sectionId}-title`}
+        />
+
         {subtitle && (
           <h3 className="feature-header-subtitle linear-gradient-text">
             {subtitle}

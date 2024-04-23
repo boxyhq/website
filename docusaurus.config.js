@@ -65,6 +65,10 @@ module.exports = {
               label: 'Enterprise SSO',
             },
             {
+              to: '/products/identity-federation',
+              label: 'Identity Federation',
+            },
+            {
               to: '/directory-sync',
               label: 'Directory Sync',
             },

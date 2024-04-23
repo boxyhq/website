@@ -7,6 +7,11 @@
   color: var(--color-neutral-inverted);
 }
 
+.product-highlight img {
+  border: 0.7rem solid var(--color-teal-50);
+  height: auto;
+}
+
 .product-highlight-content {
   margin: 0 auto;
   max-width: 40rem;
