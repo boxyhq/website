@@ -88,7 +88,10 @@ const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
                   type="button"
                   className="ghost contact-us-inline"
                   onClick={() =>
-                    showHubSpotForm(true, hubspotFormIds.identityFederation)
+                    showHubSpotForm(
+                      true,
+                      hubspotFormIds.identityFederation.premium
+                    )
                   }
                 >
                   Identity Federation solution contact us today
