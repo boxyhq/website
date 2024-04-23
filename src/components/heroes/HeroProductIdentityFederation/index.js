@@ -14,9 +14,9 @@ const HeroProductIdentityFederation = () => {
         and security. The Identity Federation Proxy bridges the gap between
         diverse Identity Providers (IdPs) and protocols like SAML and OpenID
         Connect (OIDC). By seamlessly integrating these systems, we empower
-        engineering teams to manage user identities across all applications
-        efficiently, ultimately fostering streamlined operations and enhanced
-        security measures.
+        teams to manage user identities across all applications efficiently,
+        ultimately fostering streamlined operations and enhanced security
+        measures.
       </p>
       <ul className="reset-list button-container">
         <li>
