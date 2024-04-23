@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 
 import BaseCTAProductHighlight from '../../../components/BaseCTAProductHighlight';
 import BaseProductSpotlightSection from '../../../components/BaseProductSpotlightSection';
-import HeroDirectorySync from '../../../components/heroes/HeroProductIdentityFederation';
+import HeroProductIdentityFederation from '../../../components/heroes/HeroProductIdentityFederation';
 import Picture from '../../../components/Picture';
 
 const ProductIdentityFederation = () => {
@@ -61,7 +61,7 @@ const ProductIdentityFederation = () => {
       description={metaDescription}
       wrapperClassName="marketing-site"
     >
-      <HeroDirectorySync />
+      <HeroProductIdentityFederation />
 
       <main>
         <BaseCTAProductHighlight

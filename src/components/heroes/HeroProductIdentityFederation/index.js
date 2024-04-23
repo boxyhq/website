@@ -1,5 +1,6 @@
 import BaseHero from '../BaseHero';
 import DemoCTA from '../../ctas/DemoCTA';
+import SignupCTA from '../../ctas/SignupCTA';
 
 const HeroProductIdentityFederation = () => {
   return (
@@ -21,6 +22,9 @@ const HeroProductIdentityFederation = () => {
       <ul className="reset-list button-container">
         <li>
           <DemoCTA />
+        </li>
+        <li>
+          <SignupCTA campaign="directory-sync" />
         </li>
       </ul>
     </BaseHero>
