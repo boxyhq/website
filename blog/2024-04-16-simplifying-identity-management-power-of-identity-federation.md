@@ -34,4 +34,4 @@ BoxyHQ's Identity Federation solution offers several advantages, including plug-
 
 In conclusion, BoxyHQ's Identity Federation capabilities revolutionize identity management by offering simplicity, security, and enhanced user experiences. Organizations can navigate the complexities of identity management with ease, positioning themselves for success in today's dynamic business environment.
 
-Ready to simplify identity management? Let BoxyHQ be your trusted partner. [Contact us today](/identity-federation) to learn more!
+Ready to simplify identity management? Let BoxyHQ be your trusted partner. [Contact us today](/identity-federation-proxy) to learn more!

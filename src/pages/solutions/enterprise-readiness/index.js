@@ -1,8 +1,8 @@
 import Layout from '@theme/Layout';
 
-import HeroEnterpriseReadiness from '../../components/heroes/HeroEnterpriseReadiness';
-import Testimonials from '../../components/Testimonials';
-import OurProducts from '../../components/OurProducts';
+import HeroEnterpriseReadiness from '../../../components/heroes/HeroEnterpriseReadiness';
+import Testimonials from '../../../components/Testimonials';
+import OurProducts from '../../../components/OurProducts';
 
 const EnterpriseReadiness = () => {
   const metaDescription =

@@ -72,10 +72,13 @@
 .pricing-product-card.premium-self-hosted .icon-product-addons::before,
 .pricing-product-card.premium-self-hosted .icon-product-audit-logs::before,
 .pricing-product-card.premium-self-hosted .icon-product-directory-sync::before,
+.pricing-product-card.premium-self-hosted
+  .icon-product-identity-federation::before,
 .pricing-product-card.premium-self-hosted .icon-product-privacy-vault::before,
 .pricing-product-card.premium-self-hosted .icon-product-sso::before,
 .pricing-product-card.saas .icon-product-addons::before,
 .pricing-product-card.saas .icon-product-audit-logs::before,
+.pricing-product-card.saas .icon-product-identity-federation::before,
 .pricing-product-card.saas .icon-product-directory-sync::before,
 .pricing-product-card.saas .icon-product-privacy-vault::before,
 .pricing-product-card.saas .icon-product-sso::before {
@@ -85,6 +88,7 @@
 @media only screen and (min-width: 47.9375em) {
   .pricing-product-card.saas .icon-product-addons::before,
   .pricing-product-card.saas .icon-product-audit-logs::before,
+  .pricing-product-card.saas .icon-product-identity-federation::before,
   .pricing-product-card.saas .icon-product-directory-sync::before,
   .pricing-product-card.saas .icon-product-privacy-vault::before,
   .pricing-product-card.saas .icon-product-sso::before {
@@ -94,6 +98,8 @@
 
   .pricing-product-card.premium-self-hosted .icon-product-addons::before,
   .pricing-product-card.premium-self-hosted .icon-product-audit-logs::before,
+  .pricing-product-card.premium-self-hosted
+    .icon-product-identity-federation::before,
   .pricing-product-card.premium-self-hosted
     .icon-product-directory-sync::before,
   .pricing-product-card.premium-self-hosted .icon-product-privacy-vault::before,

@@ -65,6 +65,10 @@ module.exports = {
               label: 'Enterprise SSO',
             },
             {
+              to: '/identity-federation-proxy',
+              label: 'Identity Federation',
+            },
+            {
               to: '/directory-sync',
               label: 'Directory Sync',
             },
@@ -90,9 +94,12 @@ module.exports = {
           label: 'Solutions',
           type: 'dropdown',
           items: [
-            { to: '/enterprise-readiness', label: 'Enterprise Readiness' },
             {
-              to: '/identity-federation',
+              to: '/solutions/enterprise-readiness',
+              label: 'Enterprise Readiness',
+            },
+            {
+              to: '/solutions/identity-federation',
               label: 'Identity Federation',
             },
           ],
@@ -336,6 +343,14 @@ module.exports = {
           {
             from: '/success-stories/unosecur-leverages-boxyhqs-security-building-blocks-for-enterprise-peace-of-mind',
             to: '/success-stories/how-boxyhq-solutions-drive-business-efficiency-and-security-unosecur',
+          },
+          {
+            from: '/enterprise-readiness',
+            to: '/solutions/enterprise-readiness',
+          },
+          {
+            from: '/identity-federation',
+            to: '/solutions/identity-federation',
           },
           {
             from: '/team',

@@ -2,6 +2,10 @@ export const hubspotFormIds = {
   addons: '21541a2b-e17d-452c-b945-4991291327d9',
   contactUs: 'dc91a00c-6821-4578-91b3-665535f52434',
   enterpriseSSODirectorySync: '435f5b51-f9ea-4f96-aac3-0c6e6d8a07b4',
+  identityFederation: {
+    premium: '3cc17df2-1ffb-493d-ab24-d287118a44aa',
+    saas: '27ce934a-258c-48d5-a033-fe60ca6f4ea7',
+  },
   auditLogs: {
     premium: '3c3888d4-3f37-470a-8c7d-d7641f32fd4c',
     saas: '7852e20a-1f97-42fc-b7ee-a1d71b331811',
