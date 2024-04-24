@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Layout from '@theme/Layout';
 
-import CTAIdentityFederation from '../../components/CTAIdentityFederation';
-import HeroIdentityFederation from '../../components/heroes/HeroIdentityFederation';
+import CTAIdentityFederation from '../../../components/CTAIdentityFederation';
+import HeroIdentityFederation from '../../../components/heroes/HeroIdentityFederation';
 
-import { HubSpotPricingContactForm } from '../../components/HubSpotForm';
-import { Modal } from '../../components/Modal';
-import CustomersAndPartners from '../../components/CustomersAndPartners';
+import { HubSpotPricingContactForm } from '../../../components/HubSpotForm';
+import { Modal } from '../../../components/Modal';
+import CustomersAndPartners from '../../../components/CustomersAndPartners';
 
 const IdentityFederation = () => {
   const metaDescription =

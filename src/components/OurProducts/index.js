@@ -19,7 +19,7 @@ const OurProducts = ({ children, centerHeader = false }) => {
       title: 'Identity Federation',
       copy: 'Integrate SAML using your favorite OAuth 2.0 or OpenID Connect libraries. Our SSO solution allows you to go from the first line of code to deployment in just a few days, saving you time and effort.',
       icon: 'icon-secure',
-      url: '/products/identity-federation',
+      url: '/identity-federation-proxy',
     },
     {
       light: false,

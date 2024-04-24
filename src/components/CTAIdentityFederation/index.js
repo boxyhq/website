@@ -3,7 +3,7 @@ import BaseCTAProductHighlight from '../BaseCTAProductHighlight';
 const CTAIdentityFederation = () => {
   return (
     <BaseCTAProductHighlight
-      ctaTargertURL="/products/identity-federation"
+      ctaTargertURL="/identity-federation-proxy"
       ctaTargertCopy="Identity Federation"
       sectionId="cta-identity-federation"
       title="Identity Federation for the Modern Enterprise"

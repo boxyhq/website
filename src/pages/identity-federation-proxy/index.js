@@ -2,10 +2,10 @@ import clsx from 'clsx';
 
 import Layout from '@theme/Layout';
 
-import BaseCTAProductHighlight from '../../../components/BaseCTAProductHighlight';
-import BaseProductSpotlightSection from '../../../components/BaseProductSpotlightSection';
-import HeroProductIdentityFederation from '../../../components/heroes/HeroProductIdentityFederation';
-import Picture from '../../../components/Picture';
+import BaseCTAProductHighlight from '../../components/BaseCTAProductHighlight';
+import BaseProductSpotlightSection from '../../components/BaseProductSpotlightSection';
+import HeroProductIdentityFederation from '../../components/heroes/HeroProductIdentityFederation';
+import Picture from '../../components/Picture';
 
 const ProductIdentityFederation = () => {
   const metaDescription =
