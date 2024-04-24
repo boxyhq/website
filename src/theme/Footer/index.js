@@ -27,6 +27,9 @@ const Footer = () => {
                   <a href="/enterprise-sso">Enterprise SSO</a>
                 </li>
                 <li>
+                  <a href="/identity-federation-proxy">Identity Federation</a>
+                </li>
+                <li>
                   <a href="/directory-sync">Directory Sync</a>
                 </li>
                 <li>
@@ -57,6 +60,9 @@ const Footer = () => {
             <h4 className="page-footer-link-group-title">Company & Legal</h4>
             <nav>
               <ul className="reset-list">
+                <li>
+                  <a href="/contact">Contact</a>
+                </li>
                 <li>
                   <a href="/about">About</a>
                 </li>
