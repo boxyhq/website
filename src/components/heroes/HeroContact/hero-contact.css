@@ -1,0 +1,8 @@
+.contact-us-copy {
+  color: var(--color-teal-90);
+  font-size: var(--typography-size-small-medium);
+}
+
+.contact-us-copy button {
+  padding: 0;
+}

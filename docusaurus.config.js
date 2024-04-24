@@ -133,6 +133,10 @@ module.exports = {
           position: 'right',
           items: [
             {
+              to: '/contact',
+              label: 'Contact us',
+            },
+            {
               to: '/about',
               label: 'About',
             },
