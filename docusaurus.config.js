@@ -140,6 +140,10 @@ module.exports = {
           position: 'right',
           items: [
             {
+              to: '/contact',
+              label: 'Contact Us',
+            },
+            {
               to: '/about',
               label: 'About',
             },
