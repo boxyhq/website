@@ -179,6 +179,15 @@
   background-color: var(--color-neutral-inverted);
 }
 
+.icon-product-identity-federation::before {
+  mask-image: url(/static/images/icons/product-identity-federation.svg);
+  mask-size: cover;
+}
+
+.dark .icon-product-identity-federation::before {
+  background-color: var(--color-neutral-inverted);
+}
+
 .icon-product-privacy-vault::before {
   mask-image: url(/static/images/icons/product-privacy-vault.svg);
   mask-size: cover;
