@@ -61,7 +61,7 @@ const Footer = () => {
             <nav>
               <ul className="reset-list">
                 <li>
-                  <a href="/contact">Contact</a>
+                  <a href="/contact">Contact Us</a>
                 </li>
                 <li>
                   <a href="/about">About</a>

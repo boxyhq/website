@@ -141,7 +141,7 @@ module.exports = {
           items: [
             {
               to: '/contact',
-              label: 'Contact us',
+              label: 'Contact Us',
             },
             {
               to: '/about',
