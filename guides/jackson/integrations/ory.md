@@ -37,7 +37,7 @@ If you are self-hosting, you have to set these [environment variables](https://b
 
 ## Integration explained
 
-Now whenever you create a new SSO connection on BoxyHQ it automatically calls Ory APIs to setup a new Organization and a Generic OIDC connection. All the user management still flows through Ory Network. Please remember to use the domain as the `tenant` in BoxyHQ.
+Now whenever you [create a new SSO connection on BoxyHQ](https://boxyhq.com/guides/jackson/configuring-saml-sso) it automatically calls Ory APIs to setup a new Organization and a Generic OIDC connection. All the user management still flows through Ory Network. Please remember to use the domain as the `tenant` in BoxyHQ.
 
 ![Ory Organization](./ory/ory-organization.png)
 
