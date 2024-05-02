@@ -7,7 +7,7 @@ const HeroProductIdentityFederation = () => {
     <BaseHero
       pictureSrc="/images/heroes/directory-sync-hero"
       sectionId="directory-sync"
-      title="BoxyHQ Identify Federation Proxy"
+      title="BoxyHQ Identity Federation Proxy"
     >
       <p>
         Engineering and security teams face the fragmentation of identity and

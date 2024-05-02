@@ -10,7 +10,7 @@ import Picture from '../../components/Picture';
 const ProductIdentityFederation = () => {
   const metaDescription =
     'Streamline identity management across all customer-facing applications with BoxyHQ Identity Federation Proxy irrespective of diverse configurations or protocols.';
-  const metaPageTitle = 'BoxyHQ Identify Federation Proxy';
+  const metaPageTitle = 'BoxyHQ Identity Federation Proxy';
 
   const directorySyncBenefits = [
     {
