@@ -123,6 +123,11 @@ Here are the calls your API should be able to receive from IdP SCIM provisioning
 
 ### Handle SCIM API Requests
 
+Make sure to initialise the express body parser middleware to handle SCIM Content-Type headers such as `application/scim+json`.
+```javascript
+app.use(express.json({ type: ["application/*+json", "application/json"] }));
+```
+
 Now let's add the route to handle the incoming requests from the Directory Sync providers.
 
 ```javascript
@@ -137,7 +142,7 @@ router.all(
     // Construct the event
     const request = {
       method: method,
-      body: body ? JSON.parse(body) : undefined,
+      body,
       directoryId: directoryId,
       resourceId: resourceId,
       resourceType: resourceType.toLowerCase(),
