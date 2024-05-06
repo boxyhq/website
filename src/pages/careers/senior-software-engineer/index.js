@@ -21,11 +21,11 @@ const SeniorSoftwareEngineer = () => {
         </h1>
         <div className="role-lead">
           <p>
-            BoxyHQ [Security Building Blocks for Developers] is a commercial
-            open-source company providing APIs for security, privacy, and
-            enterprise compliance. We empower developers to automate product
-            security and enhance their SaaS applications with enterprise-ready
-            features like Single Sign-On (SSO).
+            BoxyHQ [Security Building Blocks] is a commercial open-source
+            company providing APIs for security, privacy, and enterprise
+            compliance. We empower developers and security professionals to
+            automate product security and enhance their SaaS applications with
+            enterprise-ready features like Single Sign-On (SSO).
           </p>
           <p>
             We're seeking a highly skilled and experienced Senior Software

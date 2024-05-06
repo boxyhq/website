@@ -13,7 +13,7 @@ import '../css/base.css';
 const IndexPage = () => {
   const metaDescription =
     'Open Source APIs for security and privacy helping engineering teams build and ship compliant cloud applications faster.';
-  const metaPageTitle = 'Security Building Blocks for Developers';
+  const metaPageTitle = 'Security Building Blocks';
 
   return (
     <Layout
