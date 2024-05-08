@@ -95,6 +95,10 @@ module.exports = {
           type: 'dropdown',
           items: [
             {
+              to: '/solutions/ai-security',
+              label: 'AI Security',
+            },
+            {
               to: '/solutions/enterprise-readiness',
               label: 'Enterprise Readiness',
             },
