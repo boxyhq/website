@@ -251,14 +251,14 @@ curl --request POST \
   --header 'content-type: application/x-www-form-urlencoded' \
   --data 'grant_type=authorization_code' \
   --data 'client_id=<clientID or tenant and product query params as described in the SAML connection API section above>' \
-  --data 'client_secret=<clientSecret or any arbitrary value if using the tenant and product in the clientID>' \
+  --data 'client_secret=<clientSecret or clientSecretVerifier if set (which otherwise defaults to "dummy")' \
   --data 'redirect_uri=<redirect URL>' \
   --data 'code=<code from the query parameter above>'
 ```
 
 - `grant_type`: `authorization_code` is the only supported flow, for now. We might extend this in the future
-- `client_id`: Use the client_id returned by the SSO connection API or use `tenant=<tenantID>&product=<productID>` to use the tenant and product IDs instead. **Note:** Please don't forget to URL encode the query parameters including `client_id`.
-- `client_secret`: Use the client_secret returned by the SAML connection API or any arbitrary value if using the tenant and product in the clientID
+- `client_id`: Use the clientID returned by the SSO connection API or use `tenant=<tenantID>&product=<productID>` to use the tenant and product IDs instead. **Note:** Please don't forget to URL encode the query parameters including `client_id`.
+- `client_secret`: Use the clientSecret returned by the SAML connection API or clientSecretVerifier (which defaults to "dummy") if using the tenant and product in the clientID
 - `redirect_uri`: This is where the user will be taken back once the authorization flow is complete. Use the same redirect_uri as the previous request
 
 If everything goes well you should receive a JSON response that includes the access token. This token is needed for the next step where we fetch the user profile.
