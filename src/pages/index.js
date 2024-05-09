@@ -12,7 +12,7 @@ import '../css/base.css';
 
 const IndexPage = () => {
   const metaDescription =
-    'Open Source APIs for security and privacy helping engineering teams build and ship compliant cloud applications faster.';
+    'Security building blocks to keep your company ahead in the AI era, safeguarding confidential information from LLMs and building secure cloud applications.';
   const metaPageTitle = 'Security Building Blocks for the AI era';
 
   return (
