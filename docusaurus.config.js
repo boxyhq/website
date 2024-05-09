@@ -61,6 +61,10 @@ module.exports = {
               label: 'Overview',
             },
             {
+              to: '/llm-vault',
+              label: 'LLM Vault',
+            },
+            {
               to: '/enterprise-sso',
               label: 'Enterprise SSO',
             },
