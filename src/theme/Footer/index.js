@@ -24,6 +24,9 @@ const Footer = () => {
             <nav>
               <ul className="reset-list">
                 <li>
+                  <a href="/llm-vault">LLM Vault</a>
+                </li>
+                <li>
                   <a href="/enterprise-sso">Enterprise SSO</a>
                 </li>
                 <li>
