@@ -7,15 +7,15 @@ const HeroHome = () => {
     <BaseHero
       pictureSrc="/images/heroes/home-cubes-hero"
       sectionId="home-hero"
-      title="Security Building Blocks"
+      title="Security Building Blocks for the AI era"
     >
       <p>
-        Accelerate your Time to Market while enhancing your company's security!
-        BoxyHQ’s suite of security, privacy and enterprise compliance solutions
-        empowers organizations to rapidly develop and deploy compliant cloud
-        applications while fortifying themselves in the era of AI. From
-        enterprise-grade Single Sign-On, Directory Sync, and Audit Logs to
-        Privacy Vault and AI Security.
+        Accelerate your Time to Market while prioritizing AI security! BoxyHQ’s
+        comprehensive suite of security building blocks enables organizations to
+        swiftly build and deploy compliant cloud applications while
+        strengthening their defenses in the age of LLMs. From enterprise-grade
+        Single Sign-On, Directory Sync, and Audit Logs to Privacy Vault and LLM
+        Vault.
       </p>
       <ul className="reset-list button-container">
         <li>

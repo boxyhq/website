@@ -44,7 +44,7 @@ const OurProducts = ({ children, centerHeader = false }) => {
       pictureSrc: '/images/products/privacy-vault',
       reversed: false,
       title: 'Privacy Vault',
-      copy: 'Taking the best practices from companies like Google, Apple, and Facebook, BoxyHQ offers an open-source solution to centralize, isolate, and govern all the sensitive data you collect.',
+      copy: 'Taking the best practices from companies like Google, Apple, and Facebook, BoxyHQ offers a best-in-class solution to centralize, isolate, and govern all the sensitive data you collect.',
       icon: 'icon-vault',
       url: '/privacy-vault',
     },
@@ -57,10 +57,10 @@ const OurProducts = ({ children, centerHeader = false }) => {
       >
         {children}
         <p className="main-page-lead-copy">
-          Explore BoxyHQ's suite of developer-focused security solutions.
-          Streamline enterprise authentication with{' '}
-          <abbr title="Single Sign-On">SSO</abbr>, manage user access with
-          Directory Sync, secure data with Privacy Vault, and track activities
+          Explore BoxyHQ's suite of AI-focused security solutions. Streamline
+          enterprise authentication with <abbr title="Single Sign-On">SSO</abbr>
+          , manage user provisioning with Directory Sync, protect your AI apps
+          with LLM Vault, secure data with Privacy Vault, and track activities
           with Audit Logs. Open-source, self-hosted, or SaaS, enhance your
           product's security and compliance effortlessly.
         </p>

@@ -13,7 +13,7 @@ import '../css/base.css';
 const IndexPage = () => {
   const metaDescription =
     'Open Source APIs for security and privacy helping engineering teams build and ship compliant cloud applications faster.';
-  const metaPageTitle = 'Security Building Blocks';
+  const metaPageTitle = 'Security Building Blocks for the AI era';
 
   return (
     <Layout
@@ -31,10 +31,11 @@ const IndexPage = () => {
           withMargin={true}
         >
           <p>
-            <b>BoxyHQ’s SSO</b> solution allows you to go from the first line of
-            code to deployment in just a few days, saving you time and getting
-            you to market faster. Plus, we offer custom integration support to
-            help you every step of the way.
+            In the era of LLMs, secure authentication is paramount. BoxyHQ’s SSO
+            solution allows you to go from the first line of code to deployment
+            in just a few days, saving you time and getting you to market
+            faster. Plus, we offer custom integration support to help you every
+            step of the way.
           </p>
           <ul>
             <li>Effortless integration</li>
