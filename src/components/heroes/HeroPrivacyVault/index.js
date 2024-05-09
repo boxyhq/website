@@ -10,7 +10,7 @@ const HeroPrivacyVault = () => {
     >
       <p>
         In today’s digital world, safeguarding sensitive data is more crucial
-        than ever. BoxyHQ's Privacy Vault provides a robust, open-source
+        than ever. BoxyHQ's Privacy Vault provides a robust, best-in-class
         solution for securing personal and sensitive information. Designed to
         meet the stringent standards of GDPR, PCI, and HIPAA, our Privacy Vault
         allows you to centralize, isolate, and govern critical data effectively.

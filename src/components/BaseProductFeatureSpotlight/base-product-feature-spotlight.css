@@ -1,3 +1,7 @@
 .product-feature-spotlight.top-margin {
   margin-top: var(--section-top-margin);
 }
+
+.icon-calendar::before {
+  background-color: var(--color-teal-90);
+}

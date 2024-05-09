@@ -6,6 +6,7 @@ import CTAProductOverview from '../components/CTAProductOverview';
 import CustomersAndPartners from '../components/CustomersAndPartners';
 import HeroHome from '../components/heroes/HeroHome';
 import Testimonials from '../components/Testimonials';
+import DemoCTA from '../components/ctas/DemoCTA';
 
 import '../css/custom-properties.css';
 import '../css/base.css';
@@ -23,6 +24,35 @@ const IndexPage = () => {
     >
       <HeroHome />
       <main>
+        <BaseProductFeatureSpotlight
+          pictureSrc="/images/products/privacy-vault"
+          sectionId="enterprise-sso-spotlight"
+          subtitle="The secrets layer for AI"
+          title="LLM Vault"
+          withMargin={true}
+        >
+          <p>
+            LLM Vault offers a cutting-edge solution to safeguarding sensitive
+            data and strategic information. It ensures the confidentiality and
+            integrity of your organization's data processed by AI models like
+            ChatGPT. With robust encryption and granular access controls, LLM
+            Vault secures your data against unauthorized access and breaches.
+          </p>
+          <ul className="reset-list button-container">
+            <li>
+              <DemoCTA />
+            </li>
+            <li>
+              <a
+                className="button button-secondary-filled with-icon base-icon-pseudo icon-secure"
+                href="/llm-vault"
+              >
+                Learn more
+              </a>
+            </li>
+          </ul>
+        </BaseProductFeatureSpotlight>
+
         <BaseProductFeatureSpotlight
           pictureSrc="/images/products/enterprise-sso"
           sectionId="enterprise-sso-spotlight"
