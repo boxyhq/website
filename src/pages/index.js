@@ -49,8 +49,8 @@ const IndexPage = () => {
             Learn more
           </a>
         </BaseProductFeatureSpotlight>
-        <CTAProductOverview />
         <BaseCTAEnterpriseHighlight />
+        <CTAProductOverview />
         <Testimonials />
         <CustomersAndPartners />
       </main>

@@ -5,7 +5,7 @@ const BaseCTAEnterpriseHighlight = () => {
     <BaseCTAProductHighlight
       ctaTargertURL="/products/overview"
       ctaTargertCopy="Explore Enterprise Solutions"
-      darkMode={true}
+      darkMode={false}
       sectionId="product-overview-enterprise"
       subtitle="Advanced Security and Efficiency"
       title="Empowering Enterprises"
