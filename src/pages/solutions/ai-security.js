@@ -6,9 +6,34 @@ import CTAAISecurity from '../../components/CTAAISecurity';
 import HeroAISecurity from '../../components/heroes/HeroAISecurity';
 import CustomersAndPartners from '../../components/CustomersAndPartners';
 
+import '../../css/list-advantages.css';
+
 const metaDescription =
   'LLM Vault: Unlock the power of ChatGPT safely. Your secrets layer for AI, ensuring maximum security and privacy.';
 const metaPageTitle = "AI Security with BoxyHQ's LLM Vault";
+
+const llmVaultFeatures = [
+  {
+    copy: "The LLM Vault is meticulously designed to prioritize data integrity and privacy from the ground up, leveraging BoxyHQ's legacy of security innovation. It ensures that your organization's secrets remain protected against evolving threats.",
+    title: 'Secured by Design',
+  },
+  {
+    copy: 'At the core of the LLM Vault lies robust data encryption capabilities, providing unparalleled security for your sensitive information. State-of-the-art encryption protocols shield your data from unauthorized access, safeguarding it against breaches and intrusions.',
+    title: 'Data Encryption Excellence',
+  },
+  {
+    copy: 'The LLM Vault offers granular access controls to limit the exposure of sensitive data within AI models. Administrators can define and enforce access policies, reducing the risk of data exposure and ensuring compliance with regulatory requirements.',
+    title: 'Granular Access Controls',
+  },
+  {
+    copy: "BoxyHQ's AI Security Solutions integrate cutting-edge Audit Logs, offering enhanced compliance visibility and control. Real-time insights and comprehensive audit trails enable organizations to maintain regulatory compliance seamlessly, mitigating risks effectively.",
+    title: 'Enhanced Compliance Visibility',
+  },
+  {
+    copy: 'The LLM Vault offers frictionless, automated PII redaction and AI policy enforcement. It masks sensitive information from LLMs and automatically enforces organizational policies, ensuring adherence to guidelines and regulations.',
+    title: 'Automated PII Redaction and Policy Enforcement',
+  },
+];
 
 const llmVaultAdvantages = [
   {
@@ -36,14 +61,45 @@ const AISecurity = () => {
     >
       <HeroAISecurity />
       <main>
-        <div className="enterprise-sso-advantages">
+        <div className="list-advantages">
+          <BaseFeatureSectionHeader
+            reverse={false}
+            title="LLM Vault: Your secrets security layer for AI"
+            withMargin={true}
+          >
+            <p>
+              BoxyHQ's LLM Vault stands as the cornerstone of our AI Security
+              Solutions, providing robust protection against evolving threats to
+              your organization's data integrity and privacy. Here's how the LLM
+              Vault empowers you to fortify your defenses and embrace the
+              potential of ChatGPT and other AI models securely:
+            </p>
+          </BaseFeatureSectionHeader>
+
+          <ul className="reset-list list-advantages-list">
+            {llmVaultFeatures.map((advantage) => (
+              <li key={advantage.title}>
+                <BaseCard
+                  cardImage={advantage.cardImage}
+                  centered={true}
+                  showCTA={false}
+                >
+                  <h3 className="card-title">{advantage.title}</h3>
+                  <p>{advantage.copy}</p>
+                </BaseCard>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="list-advantages list-advantages-dark">
           <BaseFeatureSectionHeader
             reverse={false}
             title="Why Choose BoxyHQ for AI Security?"
             withMargin={true}
           ></BaseFeatureSectionHeader>
 
-          <ul className="reset-list enterprise-sso-advantages-list">
+          <ul className="reset-list list-advantages-list">
             {llmVaultAdvantages.map((advantage) => (
               <li key={advantage.title}>
                 <BaseCard
