@@ -8,6 +8,7 @@ const CTAProductOverview = () => {
       sectionId="product-overview"
       subtitle="Enterprise Ready"
       title="Empowering Startups"
+      darkMode={true}
     >
       <p>
         Achieving enterprise readiness unlocks major benefits for SaaS companies

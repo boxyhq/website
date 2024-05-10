@@ -19,7 +19,7 @@ const PrivacyVault = () => {
       ctaCopy: 'Contact Us',
       copy: 'In the digital age, safeguarding sensitive customer data has become a paramount challenge for businesses. With cyber threats escalating and data breaches becoming more frequent, companies face the dual pressure of protecting client information and complying with stringent data privacy regulations. This challenge is compounded by the complexity of managing and securing vast amounts of personal and sensitive data across various platforms, making traditional data protection methods insufficient and exposing businesses to significant risks.',
       icon: 'icon-send',
-      url: 'mailto:hello@boxyhq.com?subject=Privacy Vault Beta',
+      url: 'mailto:hello@boxyhq.com?subject=Privacy Vault',
     },
     {
       light: true,

@@ -6,7 +6,7 @@ import BaseFeatureSectionHeader from '../../components/BaseFeatureSectionHeader'
 import BaseProductSpotlightSection from '../../components/BaseProductSpotlightSection';
 import HeroSSO from '../../components/heroes/HeroSSO';
 
-import './enterprise-sso.css';
+import '../../css/list-advantages.css';
 
 const EnterpriseSSO = () => {
   const metaDescription =
@@ -71,7 +71,7 @@ const EnterpriseSSO = () => {
     >
       <HeroSSO />
       <main>
-        <div className="enterprise-sso-advantages">
+        <div className="list-advantages list-advantages-dark">
           <BaseFeatureSectionHeader
             reverse={false}
             title="The advantages of Enterprise SSO"
@@ -83,7 +83,7 @@ const EnterpriseSSO = () => {
             </p>
           </BaseFeatureSectionHeader>
 
-          <ul className="reset-list enterprise-sso-advantages-list">
+          <ul className="reset-list list-advantages-list">
             {ssoAdvantages.map((advantage) => (
               <li key={advantage.title}>
                 <BaseCard

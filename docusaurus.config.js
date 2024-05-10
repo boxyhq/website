@@ -61,6 +61,10 @@ module.exports = {
               label: 'Overview',
             },
             {
+              to: '/llm-vault',
+              label: 'LLM Vault',
+            },
+            {
               to: '/enterprise-sso',
               label: 'Enterprise SSO',
             },
@@ -94,6 +98,10 @@ module.exports = {
           label: 'Solutions',
           type: 'dropdown',
           items: [
+            {
+              to: '/solutions/ai-security',
+              label: 'AI Security',
+            },
             {
               to: '/solutions/enterprise-readiness',
               label: 'Enterprise Readiness',

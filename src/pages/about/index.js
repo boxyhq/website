@@ -8,7 +8,7 @@ import OurInvestors from '../../components/OurInvestors';
 const About = () => {
   const metaDescription =
     "Automate your SaaS app's security with BoxyHQ. Get enterprise-compliant security through low-code APIs, streamlining integration and cutting costs.";
-  const metaPageTitle = 'BoxyHQ, Security Building Blocks For Developers';
+  const metaPageTitle = 'About BoxyHQ - Security Building Blocks';
 
   return (
     <Layout

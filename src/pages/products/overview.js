@@ -9,7 +9,7 @@ const ProductsOverview = () => {
   const metaDescription =
     'Discover BoxyHQ: Open-source developer tools for SSO, Directory Sync, Audit Logs, and Privacy Vault. Enhance product security easily.';
   const metaPageTitle =
-    'Enterprise SSO, Directory Sync, Audit Logs, Privacy Vault';
+    'LLM Vault, Privacy Vault, Enterprise SSO, Directory Sync, Audit Logs';
 
   return (
     <Layout

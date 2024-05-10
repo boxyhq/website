@@ -23,7 +23,7 @@ const ProductHuntSaas = () => {
               marginTop: '-40px',
             }}
           >
-            Security Building Blocks for Developers
+            Security Building Blocks
           </p>
         </div>
 
