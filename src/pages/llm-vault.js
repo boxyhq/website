@@ -26,7 +26,7 @@ const LLMVault = () => {
       reversed: true,
       title: "The Answer: BoxyHQ's LLM Vault",
       ctaCopy: 'Book A Demo',
-      copy: "Addressing the pressing need for safeguarding confidential information and sensitive data handled by AI models, BoxyHQ introduces the LLM Vault. Our solution offers a paradigm shift in data protection by providing an AI security environment to centralize and isolate your company’s secrets. Utilizing advanced encryption techniques, the LLM Vault ensures the confidentiality and integrity of your organization's data. Through granular access controls, it allows precise management of data access, enhancing security while streamlining data handling processes. Your company can now interact with ChatGPT and leverage AI models with peace of mind.",
+      copy: "Addressing the pressing need for safeguarding confidential information and sensitive data handled by AI models, BoxyHQ introduces the LLM Vault. Our solution offers a paradigm shift in data protection by providing an AI security environment to centralize and isolate your company’s secrets. Utilizing advanced encryption techniques, the LLM Vault ensures the confidentiality and integrity of your organization's data. Through granular access controls, it allows precise management of data access, enhancing security while streamlining data handling processes. Your company can now interact with ChatGPT (and other LLMs) and leverage AI models with peace of mind.",
       icon: 'icon-calendar',
       url: 'https://cal.com/deepak-boxyhq/demo',
     },

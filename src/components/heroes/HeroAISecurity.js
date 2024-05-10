@@ -18,7 +18,7 @@ const HeroAISecurity = () => {
         strategic plans and ideas, and ensuring privacy. BoxyHQ is proud to
         introduce the LLM Vault - a cutting-edge solution designed to address
         the unique security challenges posed by AI applications enabling your
-        company to leverage ChatGPT safely and securely.
+        company to leverage ChatGPT (and other LLMs) safely and securely.
       </p>
       <ul className="reset-list button-container">
         <li>

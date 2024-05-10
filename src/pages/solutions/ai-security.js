@@ -10,7 +10,7 @@ import TableAISecurity from '../../components/tables/TableAISecurity';
 import '../../css/list-advantages.css';
 
 const metaDescription =
-  'LLM Vault: Unlock the power of ChatGPT safely. Your secrets layer for AI, ensuring maximum security and privacy.';
+  'LLM Vault: Unlock the power of ChatGPT (and other LLMs) safely. Your secrets layer for AI, ensuring maximum security and privacy.';
 const metaPageTitle = "AI Security with BoxyHQ's LLM Vault";
 
 const llmVaultFeatures = [
