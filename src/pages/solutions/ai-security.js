@@ -5,6 +5,7 @@ import BaseFeatureSectionHeader from '../../components/BaseFeatureSectionHeader'
 import CTAAISecurity from '../../components/CTAAISecurity';
 import HeroAISecurity from '../../components/heroes/HeroAISecurity';
 import CustomersAndPartners from '../../components/CustomersAndPartners';
+import TableAISecurity from '../../components/tables/TableAISecurity';
 
 import '../../css/list-advantages.css';
 
@@ -61,6 +62,20 @@ const AISecurity = () => {
     >
       <HeroAISecurity />
       <main>
+        <div className="list-advantages">
+          <BaseFeatureSectionHeader
+            reverse={false}
+            title="Real-world Applications: Illustrating the Power of our LLM Vault in Action
+            "
+            withMargin={true}
+          ></BaseFeatureSectionHeader>
+          <TableAISecurity />
+          <p>
+            And much more... LLM Vault offers customizable solutions tailored to
+            your unique needs, ensuring comprehensive protection and peace of
+            mind in the era of AI.
+          </p>
+        </div>
         <div className="list-advantages">
           <BaseFeatureSectionHeader
             reverse={false}

@@ -1,0 +1,35 @@
+.table-ai-security {
+  display: table;
+  margin-top: var(--spacing-default);
+  width: 100%;
+}
+
+.table-ai-security tr {
+  border: 1px solid var(--color-teal-90);
+}
+
+.table-ai-security thead th {
+  background-color: var(--color-teal-70);
+  border: 1px solid var(--color-teal-90);
+  color: var(--color-teal-05);
+}
+
+.table-ai-security thead tr th:first-child,
+.table-ai-security tbody tr td:first-child {
+  display: none;
+}
+
+@media only screen and (min-width: 47.9375em) {
+  .table-ai-security thead tr th:first-child,
+  .table-ai-security tbody tr td:first-child {
+    display: table-cell;
+  }
+}
+
+.table-ai-security tbody td {
+  border: 1px solid var(--color-teal-90);
+}
+
+.table-ai-security tbody tr:nth-child(odd) {
+  background-color: var(--color-teal-05);
+}
