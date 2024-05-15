@@ -117,6 +117,7 @@ module.exports = {
           type: 'dropdown',
           items: [
             { to: '/docs', label: 'Docs' },
+            { to: '/api', label: 'API Reference' },
             { to: '/guides', label: 'Guides' },
             {
               to: '/blog',
@@ -368,5 +369,17 @@ module.exports = {
       },
     ],
     './plugins/fetch-oss-friends',
+    [
+      './plugins/custom-scalar.js',
+      {
+        label: 'API Reference',
+        route: '/api',
+        configuration: {
+          spec: {
+            url: 'https://raw.githubusercontent.com/boxyhq/jackson/main/swagger/swagger.json',
+          },
+        },
+      },
+    ],
   ],
 };
