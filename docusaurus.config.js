@@ -378,7 +378,7 @@ module.exports = {
         route: '/sso-dsync-api',
         configuration: {
           spec: {
-            url: 'https://raw.githubusercontent.com/boxyhq/jackson/main/swagger/swagger.json',
+            url: 'https://raw.githubusercontent.com/boxyhq/jackson/release/swagger/swagger.json',
           },
         },
       },
@@ -391,7 +391,7 @@ module.exports = {
         route: '/audit-logs-api',
         configuration: {
           spec: {
-            url: 'https://retraced.demo.boxyhq.com/auditlog/publisher/v1/swagger.json',
+            url: 'https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json',
           },
         },
       },
