@@ -118,6 +118,7 @@ module.exports = {
           items: [
             { to: '/docs', label: 'Docs' },
             { to: '/sso-dsync-api', label: 'SSO & DSync API' },
+            { to: '/audit-logs-api', label: 'Audit Logs API' },
             { to: '/guides', label: 'Guides' },
             {
               to: '/blog',
@@ -378,6 +379,19 @@ module.exports = {
         configuration: {
           spec: {
             url: 'https://raw.githubusercontent.com/boxyhq/jackson/main/swagger/swagger.json',
+          },
+        },
+      },
+    ],
+    [
+      './plugins/custom-scalar.js',
+      {
+        id: 'audit-logs-api',
+        label: 'Audit Logs API',
+        route: '/audit-logs-api',
+        configuration: {
+          spec: {
+            url: 'https://retraced.demo.boxyhq.com/auditlog/publisher/v1/swagger.json',
           },
         },
       },
