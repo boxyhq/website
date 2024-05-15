@@ -117,7 +117,7 @@ module.exports = {
           type: 'dropdown',
           items: [
             { to: '/docs', label: 'Docs' },
-            { to: '/api', label: 'API Reference' },
+            { to: '/sso-dsync-api', label: 'SSO & DSync API' },
             { to: '/guides', label: 'Guides' },
             {
               to: '/blog',
@@ -372,8 +372,9 @@ module.exports = {
     [
       './plugins/custom-scalar.js',
       {
-        label: 'API Reference',
-        route: '/api',
+        id: 'sso-dsync-api',
+        label: 'SSO & DSync API',
+        route: '/sso-dsync-api',
         configuration: {
           spec: {
             url: 'https://raw.githubusercontent.com/boxyhq/jackson/main/swagger/swagger.json',
