@@ -1,5 +1,11 @@
 # Upgrade Guide
 
+## Upgrading to v1.25.0
+
+The `namespace` column length has been increased to 256 characters to support larger values.
+
+This change affects all the instances with `sql` as the db engine. If you are not running manual migration then the namespace column will be dropped and populated again. It is highly advisable to back up your data before upgrading.
+
 ## Upgrading to v1.21.0
 
 Google DSync Connections will be supported on the back of following changes related to Authorization. These will ease the process of surfacing up the OAuth endpoints for Google SCIM.
