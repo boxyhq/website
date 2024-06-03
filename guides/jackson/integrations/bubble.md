@@ -9,11 +9,9 @@ This guide will help you setup the BoxyHQ SAML SSO Bubble Plugin to add SAML SSO
 
 There is no easy way to add SAML SSO authentication to a Bubble application. This plugin provides a way to add SAML SSO authentication to your Bubble application with minimal effort.
 
-This plugin contains API calls and Actions for connecting a Bubble.io application with the BoxyHQ SAML Jackson instance for SSO authentication.
+This plugin contains API calls and Actions for connecting a Bubble.io application with the BoxyHQ SAML Jackson instance (Our SaaS or self-hosted) for SSO authentication.
 
-Please note that you need a self-hosted instance of SAML Jackson to use this plugin. BoxyHQ does not provide a hosted instance of SAML Jackson at this time.
-
-Please follow the instructions in the [SAML Jackson Deployment Guides](https://boxyhq.com/guides/jackson#deployment-guides) to setup your SAML Jackson instance.
+Please head to [BoxyHQ SaaS](https://app.eu.boxyhq.com/auth/join) to create an SSO connection that you can then use in this Bubble plugin. You can also self-host SAML Jackson to use this plugin. Please follow the instructions in the [SAML Jackson Deployment Guides](https://boxyhq.com/guides/jackson#deployment-guides) to setup your SAML Jackson instance.
 
 Try the [Example Bubble App](https://boxyhq-saml-sso.bubbleapps.io/version-test) to see the plugin in action.
 
@@ -29,7 +27,7 @@ Here are the quick steps to install the plugin from the Bubble editor:
 
 Next step is to configure the plugin. Make sure you add the following values in the plugin settings:
 
-- `BoxyHQ Instance URL`: The URL of your SAML Jackson instance.
+- `BoxyHQ Instance URL`: The URL of your SAML Jackson instance (if self-hosting). Otherwise leave it blank and it will default to our hosted solution.
 
 - `Callback URL`: The URL where the user will be redirected after successful authentication with the IdP. This URL should be the same as the URL you have configured while adding the SAML connection in SAML Jackson.
 
@@ -67,7 +65,7 @@ Add the following values in the Action:
 
 - `tenant`: A multi-tenant enterprise app must attach SSO connections to a tenant identifier. For example, an app can use any of the following as its tenant identifier: `domain`, `organization id`, `team id` or other unique identifier. This value will be used to fetch the SAML connection from SAML Jackson. For example: `boxyhq`.
 
-- `product`: The unique identifier of the your application. This value can be static if you are using a single product with SAML Jackson. For example: `my-bubble-app`.
+- `product`: The unique identifier of the your application. This value can be obtained from the SaaS `Instructions` section after you have created a `Product`. If you are self-hosting then this is defined by you when creating the SSO connection. It can be static if you are using a single product with SAML Jackson. For example: `my-bubble-app`.
 
 - `state`: A random string that will be used to verify the state of the request. This value will be passed back to your application in the `Callback URL`. You can use this value to verify the authenticity of the request.
 
