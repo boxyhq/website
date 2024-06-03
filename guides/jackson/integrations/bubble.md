@@ -65,7 +65,7 @@ Add the following values in the Action:
 
 - `tenant`: A multi-tenant enterprise app must attach SSO connections to a tenant identifier. For example, an app can use any of the following as its tenant identifier: `domain`, `organization id`, `team id` or other unique identifier. This value will be used to fetch the SAML connection from SAML Jackson. For example: `boxyhq`.
 
-- `product`: The unique identifier of the your application. This value can be static if you are using a single product with SAML Jackson. For example: `my-bubble-app`.
+- `product`: The unique identifier of the your application. This value can be obtained from the SaaS `Instructions` section after you have created a `Product`. If you are self-hosting then this is defined by you when creating the SSO connection. It can be static if you are using a single product with SAML Jackson. For example: `my-bubble-app`.
 
 - `state`: A random string that will be used to verify the state of the request. This value will be passed back to your application in the `Callback URL`. You can use this value to verify the authenticity of the request.
 
