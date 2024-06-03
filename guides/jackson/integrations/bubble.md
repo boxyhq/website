@@ -9,11 +9,9 @@ This guide will help you setup the BoxyHQ SAML SSO Bubble Plugin to add SAML SSO
 
 There is no easy way to add SAML SSO authentication to a Bubble application. This plugin provides a way to add SAML SSO authentication to your Bubble application with minimal effort.
 
-This plugin contains API calls and Actions for connecting a Bubble.io application with the BoxyHQ SAML Jackson instance for SSO authentication.
+This plugin contains API calls and Actions for connecting a Bubble.io application with the BoxyHQ SAML Jackson instance (Our SaaS or self-hosted) for SSO authentication.
 
-Please note that you need a self-hosted instance of SAML Jackson to use this plugin. BoxyHQ does not provide a hosted instance of SAML Jackson at this time.
-
-Please follow the instructions in the [SAML Jackson Deployment Guides](https://boxyhq.com/guides/jackson#deployment-guides) to setup your SAML Jackson instance.
+Please head to [BoxyHQ SaaS](https://app.eu.boxyhq.com/auth/join) to create an SSO connection that you can then use in this Bubble plugin. You can also self-host SAML Jackson to use this plugin. Please follow the instructions in the [SAML Jackson Deployment Guides](https://boxyhq.com/guides/jackson#deployment-guides) to setup your SAML Jackson instance.
 
 Try the [Example Bubble App](https://boxyhq-saml-sso.bubbleapps.io/version-test) to see the plugin in action.
 
@@ -29,7 +27,7 @@ Here are the quick steps to install the plugin from the Bubble editor:
 
 Next step is to configure the plugin. Make sure you add the following values in the plugin settings:
 
-- `BoxyHQ Instance URL`: The URL of your SAML Jackson instance.
+- `BoxyHQ Instance URL`: The URL of your SAML Jackson instance (if self-hosting). Otherwise leave it blank and it will default to our hosted solution.
 
 - `Callback URL`: The URL where the user will be redirected after successful authentication with the IdP. This URL should be the same as the URL you have configured while adding the SAML connection in SAML Jackson.
 
