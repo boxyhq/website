@@ -3,7 +3,7 @@ slug: protect-your-data-from-llms-mitigating-ai-risks-effectively
 title: "Protect Your Data from LLMs: Mitigating AI Risks Effectively"
 tags_disabled:
   [developer, security, ai-security, cybersecurity]
-image: /images/blog/ai.jpg
+image: /images/blog/ai-security-blocks.jpg
 authors:
   - name: Sama - Carlos Samame
     title: Co-founder & COO @BoxyHQ
@@ -38,7 +38,7 @@ With data securely in place, the next step is developing and training the AI mod
 - AI Hallucination: AI systems can produce results that appear credible but are incorrect or nonsensical.
   - Mitigation Strategies: Use high-quality, verified training data. Implement validation mechanisms and incorporate human oversight to catch and correct hallucinations.
   - Real-World Example: In credit scoring, an AI system trained on diverse financial profiles can help ensure fairer credit decisions by minimizing biases. Regular audits can further ensure the system's decisions remain equitable.
-
+  
 ### The Foundry: Securing the Model
 
 As the AI model is developed, ensuring its security is paramount:
@@ -48,6 +48,10 @@ As the AI model is developed, ensuring its security is paramount:
   - Real-World Example: An AI-based financial fraud detection system must be robust against sophisticated attacks. By continuously training the model with adversarial examples, it can better detect and mitigate fraudulent activities.
 - Users Bypassing Access Controls: Users may bypass access controls and gain unauthorized access to information they should not be allowed to see.
   - Mitigation Strategies: Implement stringent access control mechanisms and regularly review access permissions. Use multi-factor authentication and monitor for unusual access patterns.
+
+![AI Security Blocks](/images/blog/ai-security-blocks.jpg)
+
+<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@fabioha?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">fabio</a> on <a href="https://unsplash.com/photos/geometric-shape-digital-wallpaper-oyXis2kALVg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
 
 ### The Deployment: Model Inference and Live Use
 
