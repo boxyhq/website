@@ -324,7 +324,7 @@ module.exports = {
         archiveBasePath: null,
       },
     ],
-    ['@cmfcmf/docusaurus-search-local', {}],
+    ['@easyops-cn/docusaurus-search-local', {}],
     require.resolve('docusaurus-plugin-image-zoom'),
     [
       '@docusaurus/plugin-client-redirects',
