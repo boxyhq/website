@@ -202,5 +202,57 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Terminus (Beta)',
+      collapsible: true,
+      //collapsed: false,
+      link: { type: 'doc', id: 'terminus/overview' },
+      items: [
+        {
+          type: 'category',
+          label: 'Components and Architecture',
+          link: { type: 'doc', id: 'terminus/architecture/index' },
+          items: [
+            {
+              type: 'category',
+              label: 'Proxy Service',
+              link: { type: 'doc', id: 'terminus/architecture/proxy' },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Vault Service',
+              link: { type: 'doc', id: 'terminus/architecture/vaultservice' },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Persistent Vault',
+              link: { type: 'doc', id: 'terminus/architecture/vault' },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Encryption SDK',
+              link: { type: 'doc', id: 'terminus/encryption/index' },
+              items: [],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Deployment',
+          link: { type: 'doc', id: 'terminus/deploy/index' },
+          items: ['terminus/deploy/env-variables'],
+        },
+        {
+          type: 'category',
+          label: 'Setup',
+          link: { type: 'doc', id: 'terminus/setup/overview' },
+          items: [],
+        },
+      ],
+    },
   ],
 };
