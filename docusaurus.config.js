@@ -18,7 +18,7 @@ module.exports = {
   // stylesheets: ['styles/dark-mode.css'],
   themeConfig: {
     prism: {
-      theme: themes.dracula,
+      theme: themes.github,
       additionalLanguages: ['php'],
     },
     zoom: {
