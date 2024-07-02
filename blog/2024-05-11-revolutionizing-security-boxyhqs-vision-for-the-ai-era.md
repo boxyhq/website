@@ -15,8 +15,6 @@ authors:
     image_url: /images/authors/deepak.jpg
 ---
 
-## Revolutionizing Security: BoxyHQ's Vision for the AI Era
-
 In today's fast-paced world dominated by AI, BoxyHQ stands at the forefront of innovation. Originally focused on developing security building blocks for developers, our journey has led us to confront the challenges of responsible AI interaction and data protection in the face of AI proliferation.
 
 Imagine a world where AI isn't just a tool but an integral part of daily life. Every decision and every interaction is shaped by algorithms and machine learning models. This future holds immense potential, but it also introduces unprecedented security concerns.
@@ -35,7 +33,7 @@ Ultimately, our vision is rooted in responsibility. We invite companies to join 
 
 ![AI Security](/images/blog/ai.jpg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@omilaev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Igor Omilaev</a> on <a href="https://unsplash.com/photos/a-neon-neon-sign-that-is-on-the-side-of-a-wall-9XtKSci9crg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@omilaev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Igor Omilaev</a> on <a href="https://unsplash.com/photos/a-neon-neon-sign-that-is-on-the-side-of-a-wall-9XtKSci9crg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
 
 ## Empowering the Future: AI Security with BoxyHQ's Solutions
 

@@ -32,7 +32,7 @@ And with the growing cybersecurity attacks, they need to start thinking about se
 
 ![locks](/img/blog/scoutflo/blog-locks.jpeg)
 
-<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Photo by <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FLY:D</a> on <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex">Unsplash</a></div>
+<div style={{ fontSize: "10px", marginTop: "-10px", paddingBottom: "20px" }}>Photo by <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FLY:D</a> on <a href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyTex">Unsplash</a></div>
 
 [Cyber-crimes are predicted to cost $10.5 trillion annually by 2025]
 
@@ -74,13 +74,13 @@ They look for quite a few standards to be met in a solution provider 👇🏻
 
 ![enterprise-ready1](/img/blog/scoutflo/blog-enterprise-ready1.webp)
 
-<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>
+<div style={{ fontSize: "10px", marginTop: "-10px", paddingBottom: "20px" }}>
 Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a>
 </div>
 
 ![enterprise-ready2](/img/blog/scoutflo/blog-enterprise-ready2.webp)
 
-<div style={{ fontSize: "10px", marginTop: "-20px", paddingBottom: "20px" }}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> </div>
+<div style={{ fontSize: "10px", marginTop: "-10px", paddingBottom: "20px" }}>Source <a href="https://www.enterpriseready.io/">EnterpriseReady.io</a> </div>
 
 Before you feel overwhelmed, he further adds that you don’t need to start building all of this, and focus on 3 key areas:
 
@@ -325,4 +325,4 @@ And don’t forget to follow [Scoutflo](https://atlas.scoutflo.com/?ref=blog.sco
 
 We’re also active on LinkedIn 💙
 
-<div style={{ fontSize: "10px", marginTop: "-20px", paddingTop: "2rem", marginBottom: "2rem" }}>Cover photo by <a href="https://unsplash.com/@danny144?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Nelson</a> on <a href="https://unsplash.com/photos/ah-HeguOe9k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+<div style={{ fontSize: "10px", marginTop: "-10px", paddingTop: "2rem", marginBottom: "2rem" }}>Cover photo by <a href="https://unsplash.com/@danny144?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Nelson</a> on <a href="https://unsplash.com/photos/ah-HeguOe9k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>

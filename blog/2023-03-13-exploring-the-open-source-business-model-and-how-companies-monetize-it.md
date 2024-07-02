@@ -33,7 +33,7 @@ The benefits of this model are, as Red Hat has demonstrated, you can build a rev
 
 ![OSS Monetization](/img/blog/christine-roy-ir5MHI6rPg0-unsplash.jpg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/fr/@agent_illustrateur?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christine Roy</a> on <a href="https://unsplash.com/images/things/money?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/fr/@agent_illustrateur?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christine Roy</a> on <a href="https://unsplash.com/images/things/money?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
 ### Licensing
 
