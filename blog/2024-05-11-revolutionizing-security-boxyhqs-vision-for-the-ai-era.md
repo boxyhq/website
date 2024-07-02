@@ -15,8 +15,6 @@ authors:
     image_url: /images/authors/deepak.jpg
 ---
 
-## Revolutionizing Security: BoxyHQ's Vision for the AI Era
-
 In today's fast-paced world dominated by AI, BoxyHQ stands at the forefront of innovation. Originally focused on developing security building blocks for developers, our journey has led us to confront the challenges of responsible AI interaction and data protection in the face of AI proliferation.
 
 Imagine a world where AI isn't just a tool but an integral part of daily life. Every decision and every interaction is shaped by algorithms and machine learning models. This future holds immense potential, but it also introduces unprecedented security concerns.
