@@ -37,7 +37,7 @@ The developer community has long embraced the open-source movement. Open-source 
 
 ![Security Building Blocks](/img/blog/purple-building-blocks.jpg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shubham Dhage</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@theshubhamdhage?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shubham Dhage</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
 Minimum Viable Security (MVS) is a concept focused on identifying and implementing the essential security measures necessary to protect an application from common threats. BoxyHQ embraces the principles of MVS and provides developers with Security Building Blocks that address these foundational security needs. By adopting an MVS approach, developers can prioritize the integration of critical security features, ensuring a solid foundation for their applications while minimizing unnecessary complexity and overhead.
 

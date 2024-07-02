@@ -33,7 +33,7 @@ Ultimately, our vision is rooted in responsibility. We invite companies to join 
 
 ![AI Security](/images/blog/ai.jpg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@omilaev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Igor Omilaev</a> on <a href="https://unsplash.com/photos/a-neon-neon-sign-that-is-on-the-side-of-a-wall-9XtKSci9crg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@omilaev?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Igor Omilaev</a> on <a href="https://unsplash.com/photos/a-neon-neon-sign-that-is-on-the-side-of-a-wall-9XtKSci9crg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
 
 ## Empowering the Future: AI Security with BoxyHQ's Solutions
 

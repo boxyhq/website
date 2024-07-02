@@ -13,7 +13,7 @@ I recently had to revamp my home office setup and decided to make a trip to my c
 
 ![IKEA Assembly](/img/blog/jay-wennington-BdeMttZx6Fs-unsplash.jpg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@jaywennington?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jay Wennington</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@jaywennington?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jay Wennington</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
   
 This is the IKEA effect, a cognitive bias where we place a disproportionately high value on products that we have partially created. This makes people value things they had a part in building than the ones they didn’t. We face this challenge as developers every day, the classic build vs buy decisions when we build software. We’d love to build everything ourselves and in an ideal world this would be possible but we need to juggle business requirements, limited resources, and deadlines. The challenge is always in striking the right balance between building what is core to the business and finding ways to offload non-core tasks.
 

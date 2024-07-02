@@ -14,7 +14,7 @@ You have decided to quit your job and start something on your own, congratulatio
 
 ![Star Wars Lego](/img/blog/mulyadi-dDlvuSKUDZM-unsplash.jpg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@mullyadii?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mulyadi</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@mullyadii?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mulyadi</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></div>
 
 Having worked for companies like Amazon Web Services & O2-Telefónica connecting enterprises with startups around the world, there are some best practices that I would like to share. We just have to remember that enterprises are conformed by groups of people, and every person is different. So please, don’t expect the secret sauce or the “right way” to do it. Even though each case will be unique, always look for the patterns of what works best for your company. I like to use the process DIA (Discover – Imagine – Act) to overcome challenges, so let me take you through it.
 

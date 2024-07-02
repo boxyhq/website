@@ -3,7 +3,7 @@ slug: ai-audit-logs-the-secret-weapon-to-enhance-enterprise-security
 title: "AI Audit Logs: The Secret Weapon to Enhance Enterprise Security"
 tags_disabled:
   [developer, security, ai-security, cybersecurity]
-image: /images/blog/ai-security-blocks.jpg
+image: /images/blog/logs.jpg
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame
@@ -43,6 +43,11 @@ Consider a financial institution using AI to detect fraudulent transactions. By 
 Audit logs are not just security tools; they are rich sources of information that can refine AI strategy and empower employees with valuable insights. By analyzing log data, businesses can uncover trends, use cases, and industry benchmarks, enabling data-driven decisions about AI adoption.
 
 Moreover, leveraging audit logs can facilitate the sharing of best practices within the organization. Employees' experimentation with AI tools often generates the most relevant insights. By documenting these insights, companies can establish a repository of knowledge that guides future AI applications.
+
+![Logs](/images/blog/logs.jpg)
+
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by Sculpture Qode on <a href="https://icons8.com/photos/photo/nature--621d1d1d92a9c1000164eeeb
+">icons8</a></div>
 
 ## Conclusion
 

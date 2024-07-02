@@ -49,7 +49,7 @@ As the AI model is developed, ensuring its security is paramount:
 
 ![AI Security Blocks](/images/blog/ai-security-blocks.jpg)
 
-<div style={{fontSize: "10px", marginTop: "-20px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@fabioha?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">fabio</a> on <a href="https://unsplash.com/photos/geometric-shape-digital-wallpaper-oyXis2kALVg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@fabioha?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">fabio</a> on <a href="https://unsplash.com/photos/geometric-shape-digital-wallpaper-oyXis2kALVg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
 
 ## The Deployment: Model Inference and Live Use
 
