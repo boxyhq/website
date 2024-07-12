@@ -185,7 +185,3 @@ ul.girdle-medium {
 .card__footer .button {
   color: var(--color-teal-90);
 }
-
-.markdown img {
-  max-height: none;
-}
