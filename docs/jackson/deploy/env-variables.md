@@ -53,7 +53,7 @@ NPM library option: `samlAudience`
 
 > **_NOTE:_** This is only applicable to our npm library.
 
-The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the SAML IdP. Set this when using the npm package.
+The ACS path at which the [saml response](./npm-library#saml-response) is sent back from the SAML IdP. Set this when using the npm package.
 
 NPM library option: `samlPath`
 

@@ -91,10 +91,10 @@ const res = fetch(
 <details>
   <summary><strong>Table of Contents</strong></summary>
 
-- [GraphQL Endpoint](#graphql-endpoint)
+- [GraphQL Endpoint](./graphql)
   - [Search](#search)
     - [Variables](#variables)
-- [Schema Types](#schema-types)
+- Schema Types
   - [Query](#query)
   - [Objects](#objects)
     - [Action](#action)
