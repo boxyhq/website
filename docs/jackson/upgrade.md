@@ -46,7 +46,7 @@ We discovered and fixed a database connection leak introduced in v1.9.1, if you 
    **Note:** The previous API for SAML configuration `/api/v1/saml/config` has been deprecated, and would be completely removed in a future release.
 
 3. Renamed env variable `PRE_LOADED_CONFIG` to [`PRE_LOADED_CONNECTION`](deploy/env-variables.md#pre_loaded_connection) for Jackson service. In the case of npm `preLoadedConfig` becomes`preLoadedConnection`.
-4. Make sure to set the value for [`oidcPath`](deploy/env-variables.md#oidc_path) in case you are using the npm.
+4. Make sure to set the value for [`oidcPath`](deploy/env-variables.md#oidcpath) in case you are using the npm.
 
 ## Backups
 
