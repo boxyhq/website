@@ -91,9 +91,6 @@ const res = fetch(
 <details>
   <summary><strong>Table of Contents</strong></summary>
 
-- [GraphQL Endpoint](./graphql)
-  - [Search](#search)
-    - [Variables](#variables)
 - Schema Types
   - [Query](#query)
   - [Objects](#objects)
@@ -114,7 +111,6 @@ const res = fetch(
     - [ID](#id)
     - [Int](#int)
     - [String](#string)
-  - [Interfaces](#interfaces)
 
 </details>
 
@@ -802,5 +798,3 @@ The `Int` scalar type represents non-fractional signed whole numeric values. Int
 ### String
 
 The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
-
-## Interfaces
