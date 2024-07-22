@@ -56,6 +56,11 @@ In case of `/project/{project_id}/event/bulk` API we will send an array of event
 }
 ```
 
+## Publisher API Tokens
+
+You can find the Publisher API token in the [Admin Portal](/docs/admin-portal/audit-logs). These tokens are used to authenticate the Publisher API requests.
+You can open the [projects](/docs/admin-portal/audit-logs#fresh-start) section and under [project information](/docs/admin-portal/audit-logs#project-information), you can find the Production token this token is used to authenticate the Publisher API requests.
+
 ## Authentication
 
 The Publisher API endpoints expect the token to be provided in a header of the form
