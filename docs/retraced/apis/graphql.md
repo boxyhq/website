@@ -91,9 +91,6 @@ const res = fetch(
 <details>
   <summary><strong>Table of Contents</strong></summary>
 
-- [GraphQL Endpoint](./graphql)
-  - [Search](#search)
-    - [Variables](#variables)
 - Schema Types
   - [Query](#query)
   - [Objects](#objects)
