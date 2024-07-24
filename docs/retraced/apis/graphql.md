@@ -2,15 +2,17 @@
 
 The recommended way to search events using an API is to POST your query and variables to the appropriate Retraced GraphQL endpoint.
 
-| API        | Endpoint                                                                                            |
-| ---------- | --------------------------------------------------------------------------------------------------- |
-| Publisher  | `http://localhost:3000/auditlog/publisher/v1/project/{project_id}/graphql`                          |
-| Admin      | `http://localhost:3000/auditlog/admin/v1/project/{project_id}/environment/{environment_id}/graphql` |
-| Enterprise | `http://localhost:3000/auditlog/enterprise/v1/graphql`                                              |
-| Viewer     | `http://localhost:3000/auditlog/viewer/v1/graphql`                                                  |
+| API              | Endpoint                                                                                            |
+| ---------------- | --------------------------------------------------------------------------------------------------- |
+| Publisher        | `http://localhost:3000/auditlog/publisher/v1/project/{project_id}/graphql`                          |
+| Admin            | `http://localhost:3000/auditlog/admin/v1/project/{project_id}/environment/{environment_id}/graphql` |
+| Enterprise       | `http://localhost:3000/auditlog/enterprise/v1/graphql`                                              |
+| Viewer           | `http://localhost:3000/auditlog/viewer/v1/graphql`                                                  |
+| Viewer Paginated | `http://localhost:3000/auditlog/viewer/v1/graphql/paginated`                                        |
 
 ## Search
 
+This query is used for the non paginated graphql api.
 The query root provides a search method. A fully-formed query for a subset of event fields would look like this:
 
 ```js
@@ -86,6 +88,79 @@ const res = fetch(
 );
 ```
 
+## Search Paginated
+
+For paginated graphql api you can use the following query.
+
+```js
+{
+  searchPaginated(query:"action:user.login location:Germany", pageOffset: 0, pageLimit: 20, startCursor: "", sortOrder: "desc") {
+    totalCount
+    edges {
+      cursor
+      node {
+        action
+        actor {
+          name
+        }
+        created
+        country
+      }
+    }
+  }
+}
+```
+
+### Variables
+
+Use `query`, `pageOffset`, `pageLimit`, `sortOrder` and `startCursor` variables to enable reuse of your query templates. If you define a parameterized query like this...
+
+```js
+const searchQuery = `query SearchPaginated($query: String!, $pageOffset: Int!, $pageLimit: Int!, $startCursor: String, $sortOrder: sortOrder) {
+  searchPaginated(query: $query, pageOffset: $pageOffset, pageLimit: $pageLimit, startCursor: $startCursor, sortOrder: $sortOrder) {
+    totalCount
+    edges {
+      cursor
+      node {
+        action
+        actor {
+          name
+        }
+        created
+        country
+      }
+    }
+  }
+}`;
+```
+
+... then you can execute searches like this:
+
+```js
+const vars = {
+  query: 'action:user.login location:Germany',
+  pageOffset: 0,
+  pageLimit: 20,
+  startCursor: 'opaquecursor',
+  sortOrder: 'desc',
+};
+const res = fetch(
+  'http://localhost:3000/auditlog/viewer/v1/graphql/paginated',
+  {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: 'Token token=2ba3059ad7f14071b9befb2a7a2e195e',
+    },
+    body: JSON.stringify({
+      query: searchQuery,
+      variables: vars,
+    }),
+  }
+);
+```
+
 # Schema Types
 
 <details>
@@ -94,18 +169,20 @@ const res = fetch(
 - Schema Types
   - [Query](#query)
   - [Objects](#objects)
+    - [SearchEventEdge](#searcheventedge)
+    - [SearchQueryResult](#searchqueryresult)
+    - [PaginatedSearchQueryResult](#paginatedsearchqueryresult)
     - [Action](#action)
     - [Actor](#actor)
     - [Display](#display)
     - [Event](#event)
-    - [EventEdge](#eventedge)
-    - [EventsConnection](#eventsconnection)
     - [Field](#field)
     - [Group](#group)
     - [PageInfo](#pageinfo)
     - [Target](#target)
   - [Enums](#enums)
     - [CRUD](#crud)
+    - [SortOrder](#sortorder)
   - [Scalars](#scalars)
     - [Boolean](#boolean)
     - [ID](#id)
@@ -130,7 +207,7 @@ The root query object of the Retraced GraphQL interface.
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong>search</strong></td>
-<td valign="top"><a href="#eventsconnection">EventsConnection</a></td>
+<td valign="top"><a href="#searchqueryresult">SearchQueryResult</a></td>
 <td>
 
 Run an advanced search for events.
@@ -179,6 +256,54 @@ The limit of events to return, sorted from newest to oldest. It can optionally b
 <td>
 
 A cursor returned from a previous query.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>searchPaginated</strong></td>
+<td valign="top"><a href="#paginatedsearchqueryresult">PaginatedSearchQueryResult</a></td>
+<td>
+Run a paginated advanced search for events.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">query</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+The <a href="/docs/retraced/getting-started/searching-for-events/#structured-advanced-search">structured search operators</a> used to filter events.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">pageOffset</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+The number of events to offset from the start of the results.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">pageLimit</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+The maximum number of results per page.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">startCursor</td>
+<td valign="top"><a href="#string">String</a></td>
+<td>
+A cursor returned from the first event of the first page to make sure the window of events in maintained.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">sortOrder</td>
+<td valign="top"><a href="#sortorder">SortOrder</a></td>
+<td>
+The order to sort the results in.
 
 </td>
 </tr>
@@ -492,7 +617,7 @@ The raw event sent to the Retraced API.
 </tbody>
 </table>
 
-### EventEdge
+### SearchEventEdge
 
 The event and cursor for a single result.
 
@@ -527,7 +652,7 @@ An opaque cursor for paginating from this point in the search results. Use it as
 </tbody>
 </table>
 
-### EventsConnection
+### SearchQueryResult
 
 The results of a search query.
 
@@ -543,7 +668,7 @@ The results of a search query.
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong>edges</strong></td>
-<td valign="top">[<a href="#eventedge">EventEdge</a>]</td>
+<td valign="top">[<a href="#searcheventedge">SearchEventEdge</a>]</td>
 <td>
 
 The events and cursors matching the query.
@@ -556,6 +681,41 @@ The events and cursors matching the query.
 <td>
 
 Indications that more search results are available.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td>
+
+The total number of search results matched by the query.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### PaginatedSearchQueryResult
+
+The results of hte paginated search query.
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>edges</strong></td>
+<td valign="top">[<a href="#searcheventedge">SearchEventEdge</a>]</td>
+<td>
+
+The events and cursors matching the query.
 
 </td>
 </tr>
@@ -775,6 +935,35 @@ update
 <td>
 
 delete
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### SortOrder
+
+Ascending | Descending
+
+<table>
+<thead>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>asc</strong></td>
+<td>
+
+Ascending
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>desc</strong></td>
+<td>
+
+Descending
 
 </td>
 </tr>
