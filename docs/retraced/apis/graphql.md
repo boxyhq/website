@@ -88,7 +88,7 @@ const res = fetch(
 );
 ```
 
-## Search Paginated
+## Search by page size and offset
 
 For GraphQL API with page size & page limit based pagination, you can use the following query.
 
