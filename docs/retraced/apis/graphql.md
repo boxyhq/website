@@ -12,7 +12,7 @@ The recommended way to search events using an API is to POST your query and vari
 
 ## Search
 
-This query is used for the non paginated graphql api.
+This query is used for the graphql API with cursor pagination.
 The query root provides a search method. A fully-formed query for a subset of event fields would look like this:
 
 ```js
@@ -90,7 +90,7 @@ const res = fetch(
 
 ## Search Paginated
 
-For paginated graphql api you can use the following query.
+For graphql API with page size & page limit based pagination, you can use the following query.
 
 ```js
 {
