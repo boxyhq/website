@@ -16,4 +16,4 @@ The [Admin API](/docs/retraced/apis/admin-api) is an optional API that can be us
 
 ## Swagger Documentation
 
-### [Retraced API Console](https://retraced.readme.io) | [Publisher API Swagger JSON](http://localhost:3000/auditlog/publisher/v1/swagger.json) | [Enterprise API Swagger JSON](http://localhost:3000/auditlog/enterprise/v1/swagger.json) | [Admin API Swagger JSON](http://localhost:3000/auditlog/admin/v1/swagger.json)
+### [Retraced API Console](https://boxyhq.com/audit-logs-api) | [Swagger JSON](https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json)
