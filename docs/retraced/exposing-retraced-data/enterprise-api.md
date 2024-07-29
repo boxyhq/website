@@ -160,4 +160,4 @@ The general workflow is:
 
 **Note**: Saved Search functionality may not be available in all Retraced environments.
 
-The endpoints for managing Saved Searches are described in the [Enterprise API Guide](/docs/retraced/apis/enterprise-api/). There's also an [OpenAPI/Swagger specification](http://localhost:3000/auditlog/enterprise/v1/swagger.json) and [interactive API console](https://retraced.readme.io/reference#searchactive).
+The endpoints for managing Saved Searches are described in the [Enterprise API Guide](/docs/retraced/apis/enterprise-api/). There's also an [OpenAPI/Swagger specification](https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json) and [interactive API console](https://boxyhq.com/audit-logs-api#/tag/admin-api/POST/admin/v1/project/{projectId}/invite).

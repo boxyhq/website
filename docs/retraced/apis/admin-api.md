@@ -6,7 +6,7 @@ description: Admin API
 
 # Admin API
 
-### [Swagger JSON](http://localhost:3000/auditlog/admin/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)
+### [Swagger JSON](https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json) | [API Console](https://boxyhq.com/audit-logs-api#/tag/admin-api)
 
 ## Login API
 
