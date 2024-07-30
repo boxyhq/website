@@ -19,11 +19,6 @@ A SaaS Starter Kit is a pre-configured bundle of essential components, framework
 
 A SaaS Starter Kit works by offering a ready-made architecture that includes critical features such as user authentication, subscription management, billing integration, and analytics. By providing these core components out of the box, a Starter Kit reduces the initial development time and complexity, enabling developers to build robust applications more quickly and efficiently.
 
-![Starter kit](/images/blog/starter-kit.jpg)
-
-<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by 
-<a href="https://unsplash.com/@mjessier?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Myriam Jessier</a> on <a href="https://unsplash.com/photos/person-using-macbook-pro-on-black-table-eveI7MOcSmw">Unsplash</a></div>
-
 ## Why Do You Need a SaaS Starter Kit?
 
 ### The Problem
@@ -39,6 +34,11 @@ A SaaS Starter Kit addresses these challenges by providing:
 3. **Focus on Innovation**: Concentrate on building unique features and differentiators for your application.
 4. **Reliability**: Use proven, tested components to ensure a stable foundation.
 5. **Scalability**: Start with a solid architecture that can grow with your business.
+
+![Starter Kit](/images/blog/starter-kit.jpg)
+
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by
+<a href="https://unsplash.com/@mjessier?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Myriam Jessier</a> on <a href="https://unsplash.com/photos/person-using-macbook-pro-on-black-table-eveI7MOcSmw">Unsplash</a></div>
 
 ## 5 Things to Consider Before Choosing a SaaS Starter Kit
 
@@ -62,5 +62,4 @@ A SaaS Starter Kit addresses these challenges by providing:
 Selecting the right SaaS Starter Kit involves careful consideration of your project's specific needs and goals. By focusing on core features, scalability, ease of integration, security, and enterprise features, you can make a well-informed decision that will set your project on the path to success.
 You have the option to buy a SaaS Starter Kit or use free versions, but if you’re looking for a powerful, open-source solution with enterprise-grade features, BoxyHQ's Enterprise SaaS Starter Kit is an excellent choice. Check it out on GitHub to see how it can elevate your development journey.
 
-Discover Our SaaS Starter Kit on GitHub:
-https://github.com/boxyhq/saas-starter-kit
+Discover Our SaaS Starter Kit on [GitHub](https://github.com/boxyhq/saas-starter-kit)

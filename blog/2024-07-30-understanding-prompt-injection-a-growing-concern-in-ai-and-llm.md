@@ -9,18 +9,11 @@ author_url: https://www.linkedin.com/in/samame
 author_image_url: /images/authors/sama.jpg
 ---
 
-# Understanding Prompt Injection: A Growing Concern in AI and LLM
-
 Artificial Intelligence (AI) and Large Language Models (LLM) have revolutionized numerous industries, from healthcare to finance. However, with this rapid adoption comes new risks, one of which is prompt injection. This emerging threat has significant implications for the security, ethics, and reliability of AI systems.
 
 ## What is a Prompt?
 
 In the context of AI, particularly Large Language Models (LLMs) like GPT-4, a prompt is an input or instruction given to the AI model to generate a response or perform a task. Think of it as asking a question or giving a command to the AI, which then processes this input to provide an answer or execute an action. For example, if you ask an AI to "write a song about the beach," the phrase you used is the prompt.
-
-![LLM](/images/blog/llm.jpg)
-
-<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by 
-<a href="https://unsplash.com/@dengxiangs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Choong Deng Xiang</a> on <a href="https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-table-ILyeoImR8Uk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
 
 ## What is Prompt Injection?
 
@@ -54,6 +47,11 @@ Original Prompt: "Write a story about a day in the park."
 Injected Prompt: "Write a story about a day in the park that ends in chaos."
 
 Such manipulations can result in content that is disturbing or inappropriate, posing risks to users, especially in environments like education or entertainment.
+
+![LLM](/images/blog/llm.jpg)
+
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by
+<a href="https://unsplash.com/@dengxiangs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Choong Deng Xiang</a> on <a href="https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-table-ILyeoImR8Uk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
 
 ## Mitigating Prompt Injection
 
