@@ -29,4 +29,4 @@ There are currently two ways to manage Enterprise API tokens.
   allow a vendor to create, edit, and delete Enterprise API tokens
 
 Note that to allow end customers to manage Enterprise API tokens in the embedded viewer,
-the `is_admin` query parameter must be set to `true` when [requesting a token to initialize the embedded viewer](https://boxyhq.com/audit-logs-api#tag/publisher-api/GET/publisher/v1/project/{projectId}/viewertoken)
+the `is_admin` query parameter must be set to `true` when [requesting a token to initialize the embedded viewer](https://boxyhq.com/audit-logs-api#/tag/publisher-api/POST/publisher/v1/project/{projectId}/group/{groupId}/enterprisetoken)
