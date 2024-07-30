@@ -1,5 +1,5 @@
 ---
-slug: what-is-saas-starter-kit
+slug: what-is-saas-starter-kit-5-things-to-consider-before-choosing-one
 title: 'What is a SaaS Starter Kit? 5 Things to Consider Before Choosing One'
 tags_disabled: [developer, security, ai-security, cybersecurity]
 author: Sama - Carlos Samame
