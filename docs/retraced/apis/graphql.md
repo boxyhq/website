@@ -8,7 +8,7 @@ The recommended way to search events using an API is to POST your query and vari
 | Admin            | `http://localhost:3000/auditlog/admin/v1/project/{project_id}/environment/{environment_id}/graphql` |
 | Enterprise       | `http://localhost:3000/auditlog/enterprise/v1/graphql`                                              |
 | Viewer           | `http://localhost:3000/auditlog/viewer/v1/graphql`                                                  |
-| Viewer Paginated | `http://localhost:3000/auditlog/viewer/v1/graphql/paginated`                                        |
+| Viewer Paginated by page size and offset | `http://localhost:3000/auditlog/viewer/v1/graphql/paginated`                                        |
 
 ## Search
 
