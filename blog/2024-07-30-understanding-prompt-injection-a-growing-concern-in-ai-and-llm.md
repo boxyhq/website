@@ -15,12 +15,12 @@ Artificial Intelligence (AI) and Large Language Models (LLM) have revolutionized
 
 ## What is a Prompt?
 
+In the context of AI, particularly Large Language Models (LLMs) like GPT-4, a prompt is an input or instruction given to the AI model to generate a response or perform a task. Think of it as asking a question or giving a command to the AI, which then processes this input to provide an answer or execute an action. For example, if you ask an AI to "write a song about the beach," the phrase you used is the prompt.
+
 ![LLM](/images/blog/llm.jpg)
 
 <div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by 
 <a href="https://unsplash.com/@dengxiangs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Choong Deng Xiang</a> on <a href="https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-table-ILyeoImR8Uk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
-
-In the context of AI, particularly Large Language Models (LLMs) like GPT-4, a prompt is an input or instruction given to the AI model to generate a response or perform a task. Think of it as asking a question or giving a command to the AI, which then processes this input to provide an answer or execute an action. For example, if you ask an AI to "write a song about the beach," the phrase you used is the prompt.
 
 ## What is Prompt Injection?
 

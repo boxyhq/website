@@ -19,12 +19,12 @@ A SaaS Starter Kit is a pre-configured bundle of essential components, framework
 
 A SaaS Starter Kit works by offering a ready-made architecture that includes critical features such as user authentication, subscription management, billing integration, and analytics. By providing these core components out of the box, a Starter Kit reduces the initial development time and complexity, enabling developers to build robust applications more quickly and efficiently.
 
-## Why Do You Need a SaaS Starter Kit?
-
 ![Starter kit](/images/blog/starter-kit.jpg)
 
 <div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by 
 <a href="https://unsplash.com/@mjessier?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Myriam Jessier</a> on <a href="https://unsplash.com/photos/person-using-macbook-pro-on-black-table-eveI7MOcSmw">Unsplash</a></div>
+
+## Why Do You Need a SaaS Starter Kit?
 
 ### The Problem
 
