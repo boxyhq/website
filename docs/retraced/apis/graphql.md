@@ -2,12 +2,12 @@
 
 The recommended way to search events using an API is to POST your query and variables to the appropriate Retraced GraphQL endpoint.
 
-| API              | Endpoint                                                                                            |
-| ---------------- | --------------------------------------------------------------------------------------------------- |
-| Publisher        | `http://localhost:3000/auditlog/publisher/v1/project/{project_id}/graphql`                          |
-| Admin            | `http://localhost:3000/auditlog/admin/v1/project/{project_id}/environment/{environment_id}/graphql` |
-| Enterprise       | `http://localhost:3000/auditlog/enterprise/v1/graphql`                                              |
-| Viewer           | `http://localhost:3000/auditlog/viewer/v1/graphql`                                                  |
+| API                                      | Endpoint                                                                                            |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Publisher                                | `http://localhost:3000/auditlog/publisher/v1/project/{project_id}/graphql`                          |
+| Admin                                    | `http://localhost:3000/auditlog/admin/v1/project/{project_id}/environment/{environment_id}/graphql` |
+| Enterprise                               | `http://localhost:3000/auditlog/enterprise/v1/graphql`                                              |
+| Viewer                                   | `http://localhost:3000/auditlog/viewer/v1/graphql`                                                  |
 | Viewer Paginated by page size and offset | `http://localhost:3000/auditlog/viewer/v1/graphql/paginated`                                        |
 
 ## Search
@@ -151,7 +151,8 @@ const res = fetch(
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: 'Token token=2ba3059ad7f14071b9befb2a7a2e195e',
+      Authorization:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJhZjFmYzY5NzhhNzRmZGZhMWJmMzI3MjlmZjRhZTYyIiwicHJvamVjdElkIjoiZGV2IiwiZW52aXJvbmiu7nRJZCI6ImRldiIsImdyb3VwSWQiOiIyMmQ4NzVhMS01YTI3LTQ2NjMtOTBlYi1iNGU3Yjk3ZGFhODAiLCJ2aWV3T896QWN0aW9uIjoiYXVkaXQubG9nLnZpZXciLCJhY3RvcklkIjoiYWRtaW4iLCJjcmVhdGVkIjoxNzIyOTIyMzc3MDAwLCJzY29wZSI6IiIsImlwIjoiMTkyLjE2OC42NS4xIiwiaWF0IjoxNzIyOTIyMzgwfQ.MIzMboQLvQxI5Xh7g3L-qjTl8qR9sXu5po2psVmz-Y4',
     },
     body: JSON.stringify({
       query: searchQuery,
