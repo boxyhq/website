@@ -19,7 +19,7 @@
     "@docusaurus/plugin-client-redirects": "3.5.1",
     "@docusaurus/preset-classic": "3.5.1",
     "@mdx-js/react": "3.0.1",
-    "@scalar/docusaurus": "0.4.74",
+    "@scalar/docusaurus": "0.4.80",
     "clsx": "2.1.1",
     "docusaurus-gtm-plugin": "0.0.2",
     "docusaurus-plugin-image-zoom": "2.0.0",
