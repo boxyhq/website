@@ -33,7 +33,6 @@ These are the currently supported and future encryption types:
 The [environment variables](../deploy/env-variables.md):
 
 - [VAULT_SERVICE_KEY_AES](../deploy/env-variables.md#vault_service_key_aes)
-- [PROXY_SERVICE_CONF_DEFAULT_AES_KEK](../deploy/env-variables.md#PROXY_SERVICE_CONF_DEFAULT_AES_KEK)
 
 Define the keys for AES-256 encryption for the vault and the proxy service.
 

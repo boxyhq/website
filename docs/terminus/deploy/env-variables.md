@@ -162,8 +162,6 @@ Default: `true`
 
 The 32 byte key to perform the vault service encryption.
 
-Default: `passphrasewhichneedstobe32byzes!`
-
 ### **VAULT_SERVICE_SERVICE_NAME**
 
 The vault service name for Open Telemetry (OTEL).
