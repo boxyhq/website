@@ -13,7 +13,7 @@ You can open the Admin Portal on port `5225`.
 
 We use [Magic Links](https://next-auth.js.org/providers/email) to authenticate users to the UI.
 
-You'll need to set the following configuration in the [environment](../jackson/deploy/env-variables.md#admin-ui-configuration):
+You'll need to set the following configuration in the [environment](../jackson/deploy/env-variables.md#admin-portal-configuration):
 
 1. SMTP Server details, so we can send you the email with the magic link.
 2. Access Control List which is an array of emails or glob patterns. Only these users will be allowed access to the Admin Portal. Example: `tonystark@gmail.com,*@marvel.com`.

@@ -11,6 +11,7 @@ module.exports = {
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'boxyhq', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
@@ -61,8 +62,16 @@ module.exports = {
               label: 'Overview',
             },
             {
+              to: '/llm-vault',
+              label: 'LLM Vault',
+            },
+            {
               to: '/enterprise-sso',
               label: 'Enterprise SSO',
+            },
+            {
+              to: '/identity-federation-proxy',
+              label: 'Identity Federation',
             },
             {
               to: '/directory-sync',
@@ -90,9 +99,16 @@ module.exports = {
           label: 'Solutions',
           type: 'dropdown',
           items: [
-            { to: '/enterprise-readiness', label: 'Enterprise Readiness' },
             {
-              to: '/identity-federation',
+              to: '/solutions/ai-security',
+              label: 'AI Security',
+            },
+            {
+              to: '/solutions/enterprise-readiness',
+              label: 'Enterprise Readiness',
+            },
+            {
+              to: '/solutions/identity-federation',
               label: 'Identity Federation',
             },
           ],
@@ -102,6 +118,8 @@ module.exports = {
           type: 'dropdown',
           items: [
             { to: '/docs', label: 'Docs' },
+            { to: '/sso-dsync-api', label: 'SSO & DSync API' },
+            { to: '/audit-logs-api', label: 'Audit Logs API' },
             { to: '/guides', label: 'Guides' },
             {
               to: '/blog',
@@ -132,6 +150,10 @@ module.exports = {
           type: 'dropdown',
           position: 'right',
           items: [
+            {
+              to: '/contact',
+              label: 'Contact Us',
+            },
             {
               to: '/about',
               label: 'About',
@@ -303,7 +325,7 @@ module.exports = {
         archiveBasePath: null,
       },
     ],
-    ['@cmfcmf/docusaurus-search-local', {}],
+    ['@easyops-cn/docusaurus-search-local', {}],
     require.resolve('docusaurus-plugin-image-zoom'),
     [
       '@docusaurus/plugin-client-redirects',
@@ -334,6 +356,14 @@ module.exports = {
             to: '/success-stories/how-boxyhq-solutions-drive-business-efficiency-and-security-unosecur',
           },
           {
+            from: '/enterprise-readiness',
+            to: '/solutions/enterprise-readiness',
+          },
+          {
+            from: '/identity-federation',
+            to: '/solutions/identity-federation',
+          },
+          {
             from: '/team',
             to: '/about',
           },
@@ -341,5 +371,31 @@ module.exports = {
       },
     ],
     './plugins/fetch-oss-friends',
+    [
+      './plugins/custom-scalar.js',
+      {
+        id: 'sso-dsync-api',
+        label: 'SSO & DSync API',
+        route: '/sso-dsync-api',
+        configuration: {
+          spec: {
+            url: 'https://raw.githubusercontent.com/boxyhq/jackson/release/swagger/swagger.json',
+          },
+        },
+      },
+    ],
+    [
+      './plugins/custom-scalar.js',
+      {
+        id: 'audit-logs-api',
+        label: 'Audit Logs API',
+        route: '/audit-logs-api',
+        configuration: {
+          spec: {
+            url: 'https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json',
+          },
+        },
+      },
+    ],
   ],
 };

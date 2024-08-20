@@ -20,6 +20,7 @@
 }
 
 .featured-quote-reviewer {
+  align-items: center;
   display: flex;
   gap: var(--spacing-default);
 }
@@ -27,6 +28,7 @@
 .featured-quote-reviewer img {
   border-radius: 50%;
   height: 70px;
+  margin-bottom: 0;
   width: 70px;
 }
 

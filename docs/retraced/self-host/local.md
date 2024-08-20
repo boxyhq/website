@@ -27,9 +27,9 @@ Make sure the tools configured in `.env` file are up & running.
 
 ### [Elasticsearch](./env-variables#elasticsearch-configuration)
 
-### [Supercronic](./env-variables#supercronic-configuration)
+### Supercronic
 
-### [Redis](./env-variables#redis-configuration)
+### Redis
 
 ## Postgres Migration
 

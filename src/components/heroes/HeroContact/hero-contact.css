@@ -1,0 +1,14 @@
+.contact-us-copy {
+  color: var(--color-teal-90);
+  font-size: var(--typography-size-small-medium);
+}
+
+.contact-us-copy button {
+  border-bottom: 1px solid var(--color-teal-90);
+  padding: 0;
+}
+
+.contact-us-copy button:focus,
+.contact-us-copy button:hover {
+  border-bottom-color: transparent;
+}

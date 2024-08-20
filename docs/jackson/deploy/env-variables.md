@@ -53,7 +53,7 @@ NPM library option: `samlAudience`
 
 > **_NOTE:_** This is only applicable to our npm library.
 
-The ACS path at which the [saml response](./npm-library#handle-saml-response) is sent back from the SAML IdP. Set this when using the npm package.
+The ACS path at which the [saml response](./npm-library#saml-response) is sent back from the SAML IdP. Set this when using the npm package.
 
 NPM library option: `samlPath`
 
@@ -77,7 +77,7 @@ Set this when using the npm package.
 
 NPM library option: `idpDiscoveryPath`
 
-For example: `/idp/select` - You can find an implementation of IdP/App Selection at https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx.
+For example: `/idp/select` - You can find an implementation of IdP/App Selection [here](https://github.com/boxyhq/jackson/blob/main/pages/idp/select.tsx).
 
 ### **CLIENT_SECRET_VERIFIER**
 
@@ -125,7 +125,7 @@ For supporting OpenID flow, we need to set the algorithm and keys used to sign t
 
 ### **OPENID_JWS_ALG**
 
-The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found at https://github.com/panva/jose/issues/114#digital-signatures.
+The algorithm used to sign the id_token. Jackson uses [jose](https://github.com/panva/jose) to create the ID token. Supported algorithms can be found [here](https://github.com/panva/jose/issues/114#digital-signatures).
 
 Default: `RS256`
 
@@ -155,6 +155,14 @@ cat public_key.pem | base64
 ```
 
 NPM library option: `openid.jwtSigningKeys.public`
+
+### **OPENID_REQUEST_PROFILE_SCOPE**
+
+By setting this to `false`, the profile scope will no longer be automatically included in the Authorization request to the OIDC provider. This will enable apps to request the minimum required authorization permissions from the signed in user. Apps can explicitly send the profile scope in the request to Jackson which will then be forwarded to the OIDC provider.
+
+Default: `true`
+
+NPM library option: `openid.requestProfileScope`
 
 ## Database configuration
 
@@ -397,7 +405,19 @@ The following env vars are used to configure the directory sync feature.
 
 ### **DSYNC_WEBHOOK_BATCH_SIZE**
 
-Enable batch processing of directory sync events. The value represents the number of events to batch together instead of sending each event individually. This requires you to configure a cron job to [process the queued events](/docs/directory-sync/api-reference#batch-processing-events)
+Enable batch processing of directory sync events. The value represents the number of events to batch together instead of sending each event individually. This requires you to configure a cron job to [process the queued events](/docs/directory-sync/api-reference#batch-processing-events). Alternatively you can set `DSYNC_WEBHOOK_BATCH_CRON_INTERVAL` below if you are not deploying the service in an Edge environment.
+
+### **DSYNC_WEBHOOK_BATCH_CRON_INTERVAL**
+
+The cron interval at which to process the queued events. Provide a number in seconds. By default, the cron job is disabled.
+
+NPM library option: `dsync.webhookBatchCronInterval`
+
+### **DSYNC_GOOGLE_CRON_INTERVAL**
+
+The cron interval at which to sync the Google Workspace. Provide a number in seconds. By default, the cron job is disabled.
+
+NPM library option: `dsync.providers.google.cronInterval`
 
 ### **DSYNC_GOOGLE_CLIENT_ID**
 
@@ -411,8 +431,34 @@ The Google authentication client secret.
 
 NPM library option: `dsync.providers.google.clientSecret`
 
-### **DSYNC_GOOGLE_REDIRECT_URI**
+### **dsync.providers.google.authorizePath**
 
-The URI to redirect to after completing the authentication request.
+The authorization endpoint for Google SCIM.
 
-NPM library option: `dsync.providers.google.callbackUrl`
+NPM library option: `dsync.providers.google.authorizePath`
+
+For example: `/api/scim/oauth/authorize`
+
+### **dsync.providers.google.callbackPath**
+
+The path to redirect to after completing the authorization request for Google SCIM.
+
+NPM library option: `dsync.providers.google.callbackPath`
+
+For example: `/api/scim/oauth/callback`
+
+## Enterprise Features
+
+### **BOXYHQ_LICENSE_KEY**
+
+Contact us to obtain a license for our Enterprise Features - Portal Branding, Identity Federation and Ory Integration.
+
+## Enterprise Features - Ory Integration
+
+### **ENTERPRISE_ORY_SDK_TOKEN**
+
+Your Ory Network Session Token. To obtain this use the Ory CLI and copy out your session token.
+
+### **ENTERPRISE_ORY_PROJECT_ID**
+
+Your Ory Network Project ID.

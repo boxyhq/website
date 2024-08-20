@@ -6,14 +6,15 @@ import CTAProductOverview from '../components/CTAProductOverview';
 import CustomersAndPartners from '../components/CustomersAndPartners';
 import HeroHome from '../components/heroes/HeroHome';
 import Testimonials from '../components/Testimonials';
+import DemoCTA from '../components/ctas/DemoCTA';
 
 import '../css/custom-properties.css';
 import '../css/base.css';
 
 const IndexPage = () => {
   const metaDescription =
-    'Open Source APIs for security and privacy helping engineering teams build and ship compliant cloud applications faster.';
-  const metaPageTitle = 'Security Building Blocks for Developers';
+    'Security building blocks to keep your company ahead in the AI era, safeguarding confidential information from LLMs and building secure cloud applications.';
+  const metaPageTitle = 'Security Building Blocks for the AI era';
 
   return (
     <Layout
@@ -24,6 +25,35 @@ const IndexPage = () => {
       <HeroHome />
       <main>
         <BaseProductFeatureSpotlight
+          pictureSrc="/images/products/privacy-vault"
+          sectionId="enterprise-sso-spotlight"
+          subtitle="The secrets layer for AI"
+          title="LLM Vault"
+          withMargin={true}
+        >
+          <p>
+            LLM Vault offers a cutting-edge solution to safeguarding sensitive
+            data and strategic information. It ensures the confidentiality and
+            integrity of your organization's data processed by AI models like
+            ChatGPT. With robust encryption and granular access controls, LLM
+            Vault secures your data against unauthorized access and breaches.
+          </p>
+          <ul className="reset-list button-container">
+            <li>
+              <DemoCTA />
+            </li>
+            <li>
+              <a
+                className="button button-secondary-filled with-icon base-icon-pseudo icon-secure"
+                href="/llm-vault"
+              >
+                Learn more
+              </a>
+            </li>
+          </ul>
+        </BaseProductFeatureSpotlight>
+
+        <BaseProductFeatureSpotlight
           pictureSrc="/images/products/enterprise-sso"
           sectionId="enterprise-sso-spotlight"
           subtitle="SAML + OpenID Connect"
@@ -31,10 +61,11 @@ const IndexPage = () => {
           withMargin={true}
         >
           <p>
-            <b>BoxyHQ’s SSO</b> solution allows you to go from the first line of
-            code to deployment in just a few days, saving you time and getting
-            you to market faster. Plus, we offer custom integration support to
-            help you every step of the way.
+            In the era of LLMs, secure authentication is paramount. BoxyHQ’s SSO
+            solution allows you to go from the first line of code to deployment
+            in just a few days, saving you time and getting you to market
+            faster. Plus, we offer custom integration support to help you every
+            step of the way.
           </p>
           <ul>
             <li>Effortless integration</li>
@@ -48,8 +79,8 @@ const IndexPage = () => {
             Learn more
           </a>
         </BaseProductFeatureSpotlight>
-        <CTAProductOverview />
         <BaseCTAEnterpriseHighlight />
+        <CTAProductOverview />
         <Testimonials />
         <CustomersAndPartners />
       </main>

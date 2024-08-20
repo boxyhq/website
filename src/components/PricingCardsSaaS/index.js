@@ -83,6 +83,42 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
         </li>
         <li>
           <AccordionPricingProductCard
+            name="product-identity-federation"
+            subtitle="Strengthen security measures across applications with federated authentication and single sign-on (SSO)."
+            title="Identity Federation"
+            type="saas"
+          >
+            <div className="pricing-product-card-details">
+              <p>
+                Unlock a seamless user experience while significantly reducing
+                development time and costs with BoxyHQ's Identity Federation
+                Proxy. Our Proxy approach acts as both a virtual IdP and an SP,
+                simplifying processes and eliminating the need for
+                re-authentications. This allows enterprises to swiftly roll out
+                new software products with confidence, enabling bespoke user
+                journeys and accelerating user onboarding.
+              </p>
+              <p>
+                Should you have questions about our{' '}
+                <button
+                  type="button"
+                  className="ghost contact-us-inline"
+                  onClick={() =>
+                    showHubSpotForm(
+                      true,
+                      hubspotFormIds.identityFederation.saas
+                    )
+                  }
+                >
+                  Identity Federation solution contact us today
+                </button>
+                .
+              </p>
+            </div>
+          </AccordionPricingProductCard>
+        </li>
+        <li>
+          <AccordionPricingProductCard
             name="product-audit-logs"
             subtitle="A searchable and exportable record of read/write events."
             title="Audit Logs"

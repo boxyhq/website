@@ -13,7 +13,7 @@ the Retraced admin site.
 
 ### Sending Events
 
-Next, in your Login API handler, you'll want to add a call to the Publisher API's after each login attempt. The Create Event call can be made using one of the [Retraced SDKs](/docs/retraced/sdks/available-sdks), or by making a request to `POST /publisher/v1/project/{project_id}/event` as described in the [Publisher API Documentation](/docs/retraced/apis/publisher-api) and the [Publisher Swagger Specification](http://localhost:3000/auditlog/publisher/v1/swagger.json).
+Next, in your Login API handler, you'll want to add a call to the Publisher API's after each login attempt. The Create Event call can be made using one of the [Retraced SDKs](/docs/retraced/sdks/available-sdks), or by making a request to `POST /publisher/v1/project/{project_id}/event` as described in the [Publisher API Documentation](/docs/retraced/apis/publisher-api) and the [Publisher Swagger Specification](https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json).
 
 ### Verifying Event Hashes
 

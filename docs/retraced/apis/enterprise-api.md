@@ -6,7 +6,7 @@ description: Enterprise API
 
 # Enterprise API
 
-### [Swagger JSON](http://localhost:3000/auditlog/enterprise/v1/swagger.json) | [API Console](https://retraced.readme.io/v1.0/reference)
+### [Swagger JSON](https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json) | [API Console](https://boxyhq.com/audit-logs-api#tag/enterprise-api)
 
 ## Overview
 
@@ -29,4 +29,4 @@ There are currently two ways to manage Enterprise API tokens.
   allow a vendor to create, edit, and delete Enterprise API tokens
 
 Note that to allow end customers to manage Enterprise API tokens in the embedded viewer,
-the `is_admin` query parameter must be set to `true` when [requesting a token to initialize the embedded viewer](https://retraced.readme.io/reference#publisherv1projectprojectidviewertoken)
+the `is_admin` query parameter must be set to `true` when [requesting a token to initialize the embedded viewer](https://boxyhq.com/audit-logs-api#/tag/publisher-api/POST/publisher/v1/project/{projectId}/group/{groupId}/enterprisetoken)
