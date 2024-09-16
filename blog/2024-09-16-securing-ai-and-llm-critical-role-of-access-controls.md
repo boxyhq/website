@@ -2,7 +2,7 @@
 slug: securing-ai-and-llm-critical-role-of-access-controls
 title: 'Securing AI and LLM: The Critical Role of Access Controls'
 tags_disabled: [developer, security, ai-security, cybersecurity]
-image: /images/blog/llm.jpg
+image: /images/blog/llm-access-control.jpg
 author: Sama - Carlos Samame
 author_title: Co-founder & COO @BoxyHQ
 author_url: https://www.linkedin.com/in/samame
@@ -30,6 +30,10 @@ To ensure that access controls are both effective and sustainable, organizations
 3. **Multi-Factor Authentication (MFA)**: MFA adds an extra layer of security by requiring users to provide two or more verification factors to gain access to AI systems. This could include something the user knows (like a password), something the user has (like a security token), or something the user is (like a fingerprint). According to Microsoft, implementing MFA can block over 99.9% of account compromise attacks.
 4. **Regular Access Reviews and Audits**: Periodically reviewing and auditing access controls is essential to ensure that they remain effective. This process helps identify any outdated or unnecessary permissions that could pose a security risk. A study by Deloitte found that regular access reviews can reduce the risk of security incidents by up to 40%.
 5. **Least Privilege Principle**: The principle of least privilege involves giving users the minimum level of access necessary to perform their job functions. This minimizes the potential damage that could be caused by a compromised account. For example, a marketing analyst might only need access to customer data, not to financial records or AI model configurations.
+
+![llm-access-control](/images/blog/llm-access-control.jpg)
+
+<div style={{fontSize: "10px", marginTop: "-10px", paddingBottom: "20px"}}>Photo by <a href="https://unsplash.com/@teapowered?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Patrick Robert Doyle</a> on <a href="https://unsplash.com/photos/a-red-and-white-sign-sitting-on-the-side-of-a-road--XiKxvvFGgU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
 
 ## The Future of Access Controls: AI Agents and the Importance of Permissions
 
