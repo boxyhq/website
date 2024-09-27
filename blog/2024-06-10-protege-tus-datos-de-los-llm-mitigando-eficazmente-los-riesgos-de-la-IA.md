@@ -55,7 +55,7 @@ A medida que se desarrolla el modelo de IA, asegurar su integridad es primordial
 
 Una vez entrenado, el modelo de IA se despliega, pero esta fase también tiene sus propios riesgos:
 
-- **Riesgo Operacional:** ALos sistemas de IA pueden fallar o comportarse de manera impredecible en condiciones del mundo real.
+- **Riesgo Operacional:** Los sistemas de IA pueden fallar o comportarse de manera impredecible en condiciones del mundo real.
 
   - <ins>Estrategias de Mitigación:</ins> Monitorea y valida continuamente los sistemas de IA. Implementa monitoreo en tiempo real para detectar y responder a anomalías.
 
@@ -70,7 +70,7 @@ Una vez entrenado, el modelo de IA se despliega, pero esta fase también tiene s
 
   - <ins>Ejemplo del Mundo Real:</ins> Una empresa que utiliza un LLM de terceros debe tener un registro de auditoría para monitorear y rastrear si alguien está utilizando la IA de manera maliciosa, garantizando la responsabilidad y una acción rápida frente a un mal uso.
 
-## La Fundación: Asegurando la Infraestructura
+## Los Cimientos: Asegurando la Infraestructura
 
 El soporte de toda la tubería de IA depende de una infraestructura segura:
 
