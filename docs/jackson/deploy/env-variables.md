@@ -239,12 +239,12 @@ NPM library option: `db.cleanupLimit`
 
 ### **DB_ENCRYPTION_KEY**
 
-To encrypt data at rest specify a 32 character key
+To encrypt data at rest specify a 32 byte key (encoded in base64)
 
-You can use openssl to generate a random 32 character key:
+You can use openssl to generate a random 32 byte key:
 
 ```bash
-openssl rand -base64 24
+openssl rand -base64 32
 ```
 
 NPM library option: `db.encryptionKey`
