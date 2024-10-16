@@ -59,7 +59,7 @@ Now, let's take a look at the other conventional features that the SaaS kit prov
 - Sign in with Magic Link
 - Sign in with SAML SSO
 - Sign in with Google [[Setting up Google OAuth](https://support.google.com/cloud/answer/6158849?hl=en)]
-- Sign in with GitHub [[Creating a Github OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)]
+- Sign in with GitHub [[Creating a GitHub OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)]
 - Directory Sync (SCIM)
 - Update account
 - Create team

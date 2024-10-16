@@ -23,7 +23,7 @@ There are many different ways that open-source companies can monetize - ultimate
 
 ### Donations
 
-One of the most popular models is to offer the source code and documentation completely free and let its users donate at their discretion. This is normally done for smaller projects and donations can be solicited in various ways, such as a button on the website, a link in a newsletter, a Github donation, or one that I like - buymeacoffee.com. The latter allows you to embed an option into your website or interface and donate at the value of a coffee. Although donations are a great way to monetize some projects, this method is not feasible for bigger companies that have complex solutions and large overheads.
+One of the most popular models is to offer the source code and documentation completely free and let its users donate at their discretion. This is normally done for smaller projects and donations can be solicited in various ways, such as a button on the website, a link in a newsletter, a GitHub donation, or one that I like - buymeacoffee.com. The latter allows you to embed an option into your website or interface and donate at the value of a coffee. Although donations are a great way to monetize some projects, this method is not feasible for bigger companies that have complex solutions and large overheads.
 
 ### Support
 
