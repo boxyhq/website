@@ -300,6 +300,7 @@ module.exports = {
         includeRoutes: ['**/*'],
         excludeRoutes: ['/{sso-dsync-api,audit-logs-api}/**'],
         tabs: [
+          { name: 'All', pattern: '**/*' },
           { name: 'Docs', pattern: '**/{docs,guides}/**' },
           {
             name: 'Pages',
