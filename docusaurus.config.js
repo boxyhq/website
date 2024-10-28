@@ -288,6 +288,29 @@ module.exports = {
       },
     ],
   ],
+  themes: [
+    [
+      // https://getcanary.dev/docs/local/integrations/docusaurus#configuration
+      require.resolve('@getcanary/docusaurus-theme-search-pagefind'),
+      {
+        styles: {
+          '--canary-color-primary-c': 0.015,
+          '--canary-color-primary-h': 200,
+        },
+        includeRoutes: ['**/*'],
+        excludeRoutes: ['/{sso-dsync-api,audit-logs-api}/**'],
+        tabs: [
+          { name: 'All', pattern: '**/*' },
+          { name: 'Docs', pattern: '**/{docs,guides}/**' },
+          {
+            name: 'Pages',
+            pattern: '!**/{docs,guides,blog,success-stories}/**',
+          },
+          { name: 'Blog', pattern: '**/{blog,success-stories}/**' },
+        ],
+      },
+    ],
+  ],
   plugins: [
     [
       require.resolve('docusaurus-gtm-plugin'),
@@ -325,7 +348,6 @@ module.exports = {
         archiveBasePath: null,
       },
     ],
-    ['@easyops-cn/docusaurus-search-local', {}],
     require.resolve('docusaurus-plugin-image-zoom'),
     [
       '@docusaurus/plugin-client-redirects',
