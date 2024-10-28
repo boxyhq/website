@@ -297,15 +297,15 @@ module.exports = {
           '--canary-color-primary-c': 0.015,
           '--canary-color-primary-h': 200,
         },
-        includeRoutes: [
-          '**/docs/**',
-          '**/blog/**',
-          '**/guides/**',
-          '**/success-stories/**',
-        ],
+        includeRoutes: ['**/*'],
+        excludeRoutes: ['/{sso-dsync-api,audit-logs-api}/**'],
         tabs: [
           { name: 'Docs', pattern: '**/{docs,guides}/**' },
-          { name: 'Articles', pattern: '**/{blog,success-stories}/**' },
+          {
+            name: 'Pages',
+            pattern: '!**/{docs,guides,blog,success-stories}/**',
+          },
+          { name: 'Blog', pattern: '**/{blog,success-stories}/**' },
         ],
       },
     ],
