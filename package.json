@@ -14,9 +14,9 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "3.5.2",
-    "@docusaurus/plugin-client-redirects": "3.5.2",
-    "@docusaurus/preset-classic": "3.5.2",
+    "@docusaurus/core": "3.6.0",
+    "@docusaurus/plugin-client-redirects": "3.6.0",
+    "@docusaurus/preset-classic": "3.6.0",
     "@getcanary/docusaurus-theme-search-pagefind": "1.0.2",
     "@getcanary/web": "1.0.12",
     "@mdx-js/react": "3.1.0",
