@@ -6,7 +6,7 @@ const GuestSpeakers = () => {
   const speakers = [
     {
       company: 'EY Parthenon',
-      companyURL: 'http://www.ey.com/parthenon',
+      companyURL: 'https://www.ey.com/en_gl/services/strategy/parthenon',
       linkedin: 'brian-levine-cyberlaw',
       name: 'Brian Levine',
       pictureSrc: '/images/speakers/brian-levine-ey-parthenon',
