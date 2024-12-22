@@ -413,9 +413,8 @@ NPM library option: `ssoTraces.redact`
 
 ### **SSO_TRACES_TTL**
 
-Set this to a value in hours to control how long SSO Traces are stored.
+Set this to a value in hours to control how long SSO Traces are stored. Default: `7 days`
 
-Default: 7 days
 NPM library option: `ssoTraces.ttl`
 
 ## Directory Sync
