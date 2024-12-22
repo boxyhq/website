@@ -35,7 +35,6 @@ module.exports = {
           label: 'Integrations Guides',
           collapsed: false,
           items: [
-            'jackson/integrations/ory',
             'jackson/integrations/auth0',
             'jackson/integrations/firebase',
             'jackson/integrations/nextauth',
