@@ -397,6 +397,26 @@ you need to set the admin root token for Retraced so that we can connect to Retr
 
 Set one of these to `1` or `true` to turn off our anonymous analytics. We only track usage events once per day and it does not contain any information that can identify you in any form.
 
+## SSO Traces
+
+### **SSO_TRACES_DISABLE**
+
+Set this to `true` to disable SSO Traces collection.
+
+NPM library option: `ssoTraces.disable`
+
+### **SSO_TRACES_REDACT**
+
+Set this to `true` to redact profile information in SSO Traces.
+
+NPM library option: `ssoTraces.redact`
+
+### **SSO_TRACES_TTL**
+
+Set this to a value in hours to control how long SSO Traces are stored. Default: `7 days`
+
+NPM library option: `ssoTraces.ttl`
+
 ## Directory Sync
 
 The following env vars are used to configure the directory sync feature.
