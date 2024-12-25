@@ -471,14 +471,4 @@ For example: `/api/scim/oauth/callback`
 
 ### **BOXYHQ_LICENSE_KEY**
 
-Contact us to obtain a license for our Enterprise Features - Portal Branding, Identity Federation and Ory Integration.
-
-## Enterprise Features - Ory Integration
-
-### **ENTERPRISE_ORY_SDK_TOKEN**
-
-Your Ory Network Session Token. To obtain this use the Ory CLI and copy out your session token.
-
-### **ENTERPRISE_ORY_PROJECT_ID**
-
-Your Ory Network Project ID.
+Contact us to obtain a license for our Enterprise Features - Portal Branding and Identity Federation.
