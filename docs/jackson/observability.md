@@ -20,6 +20,11 @@ Please check the [Environment Variables](./deploy/env-variables.md#opentelemetry
 | `jackson.oauth.authorize`   | Number of oauth authorize requests       | Count | ---- |
 | `jackson.oauth.token`       | Number of oauth token requests           | Count | ---- |
 | `jackson.oauth.userinfo`    | Number of oauth user info requests       | Count | ---- |
+
+From `v1.35.1` the following additional metrics are available:
+
+| Name                        | Description                              | Type  | Tags |
+| --------------------------- | ---------------------------------------- | ----- | ---- |
 | `jackson.oauth.authorize.error`   | Number of oauth authorize errors         | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
 | `jackson.oauth.token.error`       | Number of oauth token errors             | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
 | `jackson.oauth.userinfo.error`    | Number of oauth user info errors         | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
