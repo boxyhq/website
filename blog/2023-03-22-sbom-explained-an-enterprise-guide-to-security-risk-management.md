@@ -37,7 +37,7 @@ Therefore, development teams can quickly improve transparency, communication, an
 
 ## Compliance
 
-In 2021 the US Government issued an [executive order](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/) mandating all software companies that do business with the US government must provide a detailed inventory list (software bill of materials or SBOM) of all components related to the software they have produced and sold to any federal agency. The legislation is geared towards transparency with a view to the enhancement of security for our supply chain infrastructure. This has quickly prompted other countries to consider similar legislation.
+In 2021 the US Government issued an [executive order](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028) mandating all software companies that do business with the US government must provide a detailed inventory list (software bill of materials or SBOM) of all components related to the software they have produced and sold to any federal agency. The legislation is geared towards transparency with a view to the enhancement of security for our supply chain infrastructure. This has quickly prompted other countries to consider similar legislation.
 
 ## Supply Chain & Risk Management
 
