@@ -25,8 +25,8 @@
     "docusaurus-gtm-plugin": "0.0.2",
     "docusaurus-plugin-image-zoom": "2.0.0",
     "prism-react-renderer": "2.4.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-modal": "3.16.3"
   },
   "browserslist": {
@@ -44,5 +44,14 @@
   "engines": {
     "node": ">=18.x"
   },
-  "overrides": {}
+  "overrides": {
+    "@getcanary/docusaurus-theme-search-pagefind": {
+      "react": ">=18.0.0",
+      "react-dom": ">=18.0.0"
+    },
+    "@scalar/docusaurus": {
+      "react": ">=18.0.0",
+      "react-dom": ">=18.0.0"
+    }
+  }
 }
