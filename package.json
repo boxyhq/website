@@ -44,5 +44,14 @@
   "engines": {
     "node": ">=18.x"
   },
-  "overrides": {}
+  "overrides": {
+    "@getcanary/docusaurus-theme-search-pagefind": {
+      "react": ">=18.0.0",
+      "react-dom": ">=18.0.0"
+    },
+    "@scalar/docusaurus": {
+      "react": ">=18.0.0",
+      "react-dom": ">=18.0.0"
+    }
+  }
 }
