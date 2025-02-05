@@ -401,7 +401,7 @@ module.exports = {
         route: '/sso-dsync-api',
         configuration: {
           spec: {
-            url: 'https://raw.githubusercontent.com/boxyhq/jackson/release/swagger/swagger.json',
+            url: 'https://raw.githubusercontent.com/boxyhq/jackson/refs/heads/fix/openapi2gosdk/swagger/swagger.json',
           },
         },
       },
