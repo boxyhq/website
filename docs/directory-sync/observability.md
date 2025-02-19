@@ -12,8 +12,9 @@ Please check the [Environment Variables](../jackson/deploy/env-variables#opentel
 
 ## Metrics
 
-| Name                              | Description                                         | Type  |
-| --------------------------------- | --------------------------------------------------- | ----- |
-| `jackson.dsync.connection.create` | Number of directory sync connection create requests | Count |
-| `jackson.dsync.connection.get`    | Number of directory sync connection get requests    | Count |
-| `jackson.dsync.connection.delete` | Number of directory sync connection delete requests | Count |
+| Name                                | Description                                                  | Type  |
+| ----------------------------------- | ------------------------------------------------------------ | ----- |
+| `jackson.dsync.connection.create`   | Number of directory sync connection create requests          | Count |
+| `jackson.dsync.connection.get`      | Number of directory sync connection get requests             | Count |
+| `jackson.dsync.connection.delete`   | Number of directory sync connection delete requests          | Count |
+| `jackson.dsync.events_batch.failed` | Indicates that a batch of directory sync events failed       | Count |

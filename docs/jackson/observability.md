@@ -29,3 +29,12 @@ From `v1.35.1` the following additional metrics are available:
 | `jackson.oauth.token.error`       | Number of oauth token errors             | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
 | `jackson.oauth.userinfo.error`    | Number of oauth user info errors         | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
 | `jackson.oauth.response.error`    | Number of oauth response errors          | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
+
+From `v1.39.0` the following additional metrics are available:
+
+| Name                        | Description                              | Type  | Tags |
+| --------------------------- | ---------------------------------------- | ----- | ---- |
+| `jackson.idfed.authorize`   | Number of identity federation authorize requests         | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
+| `jackson.idfed.authorize.error`       | Number of errors in identity federation authorize requests             | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
+| `jackson.idfed.response`    | Number of identity federation response requests         | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
+| `jackson.idfed.response.error`    | Number of errors in identity federation response requests          | Count | **protocol**: `saml`,`oidc`,`saml-federated`,`oidc-federated` ; **login_type**: `sp-initiated`,`idp-initiated` |
