@@ -482,3 +482,13 @@ Your Ory Network Session Token. To obtain this use the Ory CLI and copy out your
 ### **ENTERPRISE_ORY_PROJECT_ID**
 
 Your Ory Network Project ID.
+
+## Logger options
+
+### **LOG_FILE**
+
+Log file to write to
+
+### **LOG_LEVEL**
+
+Log levels - "fatal" | "error" | "warn" | "info" (default) | "debug" | "trace"
