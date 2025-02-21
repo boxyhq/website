@@ -3,15 +3,15 @@ import BaseProductSpotlightSection from '../BaseProductSpotlightSection';
 
 const OurProducts = ({ children, centerHeader = false }) => {
   const products = [
-    {
-      light: false,
-      pictureSrc: '/images/products/privacy-vault',
-      reversed: false,
-      title: 'LLM Vault',
-      copy: 'Protects strategic confidential information and sensitive data processed by AI models like ChatGPT with cutting-edge security features, including robust encryption and granular access controls.',
-      icon: 'icon-secure',
-      url: '/llm-vault',
-    },
+    // {
+    //   light: false,
+    //   pictureSrc: '/images/products/privacy-vault',
+    //   reversed: false,
+    //   title: 'LLM Vault',
+    //   copy: 'Protects strategic confidential information and sensitive data processed by AI models like ChatGPT with cutting-edge security features, including robust encryption and granular access controls.',
+    //   icon: 'icon-secure',
+    //   url: '/llm-vault',
+    // },
     {
       light: true,
       pictureSrc: '/images/products/enterprise-sso',
@@ -39,24 +39,24 @@ const OurProducts = ({ children, centerHeader = false }) => {
       icon: 'icon-sync',
       url: '/directory-sync',
     },
-    {
-      light: false,
-      pictureSrc: '/images/products/audit-logs',
-      reversed: false,
-      title: 'Audit Logs',
-      copy: "BoxyHQ's Audit Logs enable enterprise customers to efficiently record and search events within your application, streamlining compliance and reducing the need for complex, in-house development. Our solution's simple integration process saves time, ensuring fast compliance and focusing your team's efforts on core functionalities",
-      icon: 'icon-logs',
-      url: '/audit-logs',
-    },
-    {
-      light: true,
-      pictureSrc: '/images/products/privacy-vault',
-      reversed: true,
-      title: 'Privacy Vault',
-      copy: 'Taking the best practices from companies like Google, Apple, and Facebook, BoxyHQ offers a best-in-class solution to centralize, isolate, and govern all the sensitive data you collect.',
-      icon: 'icon-vault',
-      url: '/privacy-vault',
-    },
+    // {
+    //   light: false,
+    //   pictureSrc: '/images/products/audit-logs',
+    //   reversed: false,
+    //   title: 'Audit Logs',
+    //   copy: "BoxyHQ's Audit Logs enable enterprise customers to efficiently record and search events within your application, streamlining compliance and reducing the need for complex, in-house development. Our solution's simple integration process saves time, ensuring fast compliance and focusing your team's efforts on core functionalities",
+    //   icon: 'icon-logs',
+    //   url: '/audit-logs',
+    // },
+    // {
+    //   light: true,
+    //   pictureSrc: '/images/products/privacy-vault',
+    //   reversed: true,
+    //   title: 'Privacy Vault',
+    //   copy: 'Taking the best practices from companies like Google, Apple, and Facebook, BoxyHQ offers a best-in-class solution to centralize, isolate, and govern all the sensitive data you collect.',
+    //   icon: 'icon-vault',
+    //   url: '/privacy-vault',
+    // },
   ];
 
   return (
@@ -66,12 +66,10 @@ const OurProducts = ({ children, centerHeader = false }) => {
       >
         {children}
         <p className="main-page-lead-copy">
-          Explore BoxyHQ's suite of AI-focused security solutions. Streamline
-          enterprise authentication with <abbr title="Single Sign-On">SSO</abbr>
-          , manage user provisioning with Directory Sync, protect your AI apps
-          with LLM Vault, secure data with Privacy Vault, and track activities
-          with Audit Logs. Open-source, self-hosted, or SaaS, enhance your
-          product's security and compliance effortlessly.
+          Explore BoxyHQ's suite of developer focused security solutions.
+          Streamline enterprise authentication with SSO and manage user
+          provisioning with Directory Sync. Open-source, self-hosted, or SaaS,
+          enhance your product's security and compliance effortlessly.
         </p>
       </div>
       <ul className="reset-list">

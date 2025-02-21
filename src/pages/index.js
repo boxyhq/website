@@ -24,7 +24,7 @@ const IndexPage = () => {
     >
       <HeroHome />
       <main>
-        <BaseProductFeatureSpotlight
+        {/* <BaseProductFeatureSpotlight
           pictureSrc="/images/products/privacy-vault"
           sectionId="enterprise-sso-spotlight"
           subtitle="The secrets layer for AI"
@@ -51,7 +51,7 @@ const IndexPage = () => {
               </a>
             </li>
           </ul>
-        </BaseProductFeatureSpotlight>
+        </BaseProductFeatureSpotlight> */}
 
         <BaseProductFeatureSpotlight
           pictureSrc="/images/products/enterprise-sso"

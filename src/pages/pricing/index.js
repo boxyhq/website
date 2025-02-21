@@ -16,7 +16,7 @@ import './pricing.css';
 
 const Pricing = () => {
   const metaDescription =
-    "Discover BoxyHQ's affordable pricing plans for teams and companies of all sizes. Choose from self-hosted, premium, or SaaS options for our Enterprise SSO, Directory Sync, Audit Logs, and Privacy Vault solutions. Start optimizing your security infrastructure today.";
+    "Discover BoxyHQ's affordable pricing plans for teams and companies of all sizes. Choose from self-hosted, premium, or SaaS options for our Enterprise SSO and Directory Sync solutions. Start optimizing your security infrastructure today.";
   const metaPageTitle = 'BoxyHQ Pricing: Flexible Plans for Every Team Size';
 
   const [opened, setOpened] = useState(false);

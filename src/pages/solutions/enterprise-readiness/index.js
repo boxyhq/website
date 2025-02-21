@@ -6,7 +6,7 @@ import OurProducts from '../../../components/OurProducts';
 
 const EnterpriseReadiness = () => {
   const metaDescription =
-    'BoxyHQ for Startups: Transform your SaaS with enterprise-grade features like SAML SSO, Directory Sync, Audit Logs, and Data Privacy Vault. Quick integration, open-source, secure by design - elevate your startup to enterprise readiness effortlessly.';
+    'BoxyHQ for Startups: Transform your SaaS with enterprise-grade features like SAML SSO and Directory Sync. Quick integration, open-source, secure by design - elevate your startup to enterprise readiness effortlessly.';
   const metaPageTitle = 'B2B SaaS Enterprise Readiness For Startups';
 
   return (

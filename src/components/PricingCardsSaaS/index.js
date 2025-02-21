@@ -117,7 +117,7 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
             </div>
           </AccordionPricingProductCard>
         </li>
-        <li>
+        {/* <li>
           <AccordionPricingProductCard
             name="product-audit-logs"
             subtitle="A searchable and exportable record of read/write events."
@@ -178,7 +178,7 @@ const PricingCardsSaaS = ({ showHubSpotForm }) => {
               </p>
             </div>
           </AccordionPricingProductCard>
-        </li>
+        </li> */}
         <li>
           <AccordionPricingProductCard
             name="product-addons"

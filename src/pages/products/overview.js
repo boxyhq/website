@@ -7,9 +7,8 @@ import '../../css/base.css';
 
 const ProductsOverview = () => {
   const metaDescription =
-    'Discover BoxyHQ: Open-source developer tools for SSO, Directory Sync, Audit Logs, and Privacy Vault. Enhance product security easily.';
-  const metaPageTitle =
-    'LLM Vault, Privacy Vault, Enterprise SSO, Directory Sync, Audit Logs';
+    'Discover BoxyHQ: Open-source developer tools for SSO and Directory Sync. Enhance product security easily.';
+  const metaPageTitle = 'Enterprise SSO, Directory Sync';
 
   return (
     <Layout
