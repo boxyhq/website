@@ -164,6 +164,14 @@ Default: `true`
 
 NPM library option: `openid.requestProfileScope`
 
+### **OPENID_SUBJECT_PREFIX**
+
+By setting this to `true`, the `id` and `subject` in OIDC claims will be prefixed with `${tenant}:${product}:` to prevent any potential collisions or malicious IdPs.
+
+Default: `true`
+
+NPM library option: `openid.subjectPrefix`
+
 ## Database configuration
 
 ### **DB_ENGINE**
