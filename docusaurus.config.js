@@ -5,7 +5,7 @@ import { themes } from 'prism-react-renderer';
 module.exports = {
   title: 'BoxyHQ',
   tagline:
-    'BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML, Audit Logs, Privacy Vault and Role Based Access in minutes. Open source and free.',
+    'BoxyHQ helps startups enable enterprise features in any SaaS app with just a few lines of code. Integrate SAML and Directory Sync in minutes. Open source and free.',
   url: 'https://boxyhq.com',
   baseUrl: '/',
   trailingSlash: false,
@@ -62,10 +62,6 @@ module.exports = {
               label: 'Overview',
             },
             {
-              to: '/llm-vault',
-              label: 'LLM Vault',
-            },
-            {
               to: '/enterprise-sso',
               label: 'Enterprise SSO',
             },
@@ -76,14 +72,6 @@ module.exports = {
             {
               to: '/directory-sync',
               label: 'Directory Sync',
-            },
-            {
-              to: '/audit-logs',
-              label: 'Audit Logs',
-            },
-            {
-              to: '/privacy-vault',
-              label: 'Privacy Vault',
             },
             {
               href: 'https://app.eu.boxyhq.com/auth/join?utm_source=website&utm_campaign=main-nav',
@@ -99,10 +87,10 @@ module.exports = {
           label: 'Solutions',
           type: 'dropdown',
           items: [
-            {
-              to: '/solutions/ai-security',
-              label: 'AI Security',
-            },
+            // {
+            //   to: '/solutions/ai-security',
+            //   label: 'AI Security',
+            // },
             {
               to: '/solutions/enterprise-readiness',
               label: 'Enterprise Readiness',
@@ -119,7 +107,6 @@ module.exports = {
           items: [
             { to: '/docs', label: 'Docs' },
             { to: '/sso-dsync-api', label: 'SSO & DSync API' },
-            { to: '/audit-logs-api', label: 'Audit Logs API' },
             { to: '/guides', label: 'Guides' },
             {
               to: '/blog',
@@ -133,10 +120,10 @@ module.exports = {
               href: 'https://mocksaml.com',
               label: 'Mock SAML',
             },
-            {
-              href: 'https://awesome-oss-devsec.boxyhq.com',
-              label: 'DevSec Tools',
-            },
+            // {
+            //   href: 'https://awesome-oss-devsec.boxyhq.com',
+            //   label: 'DevSec Tools',
+            // },
             {
               to: '/developer-first-security-week',
               label: 'Events',
@@ -402,19 +389,6 @@ module.exports = {
         configuration: {
           spec: {
             url: 'https://raw.githubusercontent.com/boxyhq/jackson/release/swagger/swagger.json',
-          },
-        },
-      },
-    ],
-    [
-      './plugins/custom-scalar.js',
-      {
-        id: 'audit-logs-api',
-        label: 'Audit Logs API',
-        route: '/audit-logs-api',
-        configuration: {
-          spec: {
-            url: 'https://raw.githubusercontent.com/retracedhq/retraced/release/swagger.json',
           },
         },
       },

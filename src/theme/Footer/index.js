@@ -23,9 +23,9 @@ const Footer = () => {
             <h4 className="page-footer-link-group-title">Products</h4>
             <nav>
               <ul className="reset-list">
-                <li>
+                {/* <li>
                   <a href="/llm-vault">LLM Vault</a>
-                </li>
+                </li> */}
                 <li>
                   <a href="/enterprise-sso">Enterprise SSO</a>
                 </li>
@@ -35,12 +35,12 @@ const Footer = () => {
                 <li>
                   <a href="/directory-sync">Directory Sync</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/audit-logs">Audit Logs</a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="/privacy-vault">Data Privacy Vault</a>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>
@@ -112,7 +112,7 @@ const Footer = () => {
                     SaaS Starter Kit
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="https://github.com/boxyhq/awesome-oss-devsec"
                     rel="external"
@@ -120,7 +120,7 @@ const Footer = () => {
                   >
                     Awesome DevSec Tools
                   </a>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

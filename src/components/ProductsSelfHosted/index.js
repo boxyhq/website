@@ -33,14 +33,14 @@ const ProductsSelfHosted = ({ showHubSpotForm }) => {
             url="https://github.com/boxyhq/jackson"
           />
         </li>
-        <li>
+        {/* <li>
           <SimpleOSSProductCard
             name="product-audit-logs"
             subtitle="Open source audit logs service and embeddable UI easily deployed to your own cluster."
             title="Audit Logs"
             url="https://github.com/retracedhq/retraced"
           />
-        </li>
+        </li> */}
       </ul>
     </div>
   );
