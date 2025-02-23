@@ -35,7 +35,7 @@ For clients, SSO means a smoother, more seamless interaction with Unosecur's ser
 
 ### Compliance and Audit Trails
 
-In the cybersecurity industry, adhering to compliance standards is non-negotiable. SSO solutions often come with features that support compliance through better management of user access and activity logging, making it easier for companies like Unosecur to meet industry regulations and standards. With BoxyHQ's suite of solutions, you can enable both [Directory Sync](/directory-sync) and [Audit Logs](/audit-logs) to provide the necessary tools to meet these requirements.
+In the cybersecurity industry, adhering to compliance standards is non-negotiable. SSO solutions often come with features that support compliance through better management of user access and activity logging, making it easier for companies like Unosecur to meet industry regulations and standards. With BoxyHQ's suite of solutions, you can enable both [Directory Sync](/directory-sync) and Audit Logs to provide the necessary tools to meet these requirements.
 
 ### Operational Efficiency
 
