@@ -285,7 +285,7 @@ module.exports = {
           '--canary-color-primary-h': 200,
         },
         includeRoutes: ['**/*'],
-        excludeRoutes: ['/{sso-dsync-api,audit-logs-api}/**'],
+        excludeRoutes: ['/{sso-dsync-api}/**'],
         tabs: [
           { name: 'All', pattern: '**/*' },
           { name: 'Docs', pattern: '**/{docs,guides}/**' },
