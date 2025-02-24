@@ -22,7 +22,7 @@ Instead of doing a list by quarter, for this one we will just do a list of notab
 - Statsd support has been switched with [OpenTelemetry](https://opentelemetry.io/).
 - Added env var `RETRACED_DISABLE_GEOSYNC` to explicitly turn off geo sync
 - Optimized storage of logs to save up to 40% storage over previous versions.
-- MaxMind GeoIP update can now [alternatively be done via their MMDB format](https://boxyhq.com/docs/retraced/self-host/env-variables#geoipupdate_use_mmdb), skipping our current method of storing Geo data in a Postgres table.
+- MaxMind GeoIP update can now [alternatively be done via their MMDB format](https://github.com/retracedhq/docs/blob/main/self-host/env-variables.md#geoipupdate_use_mmdb), skipping our current method of storing Geo data in a Postgres table.
 - API to remove viewer session
 - Postgres SSL support
 - We take the security of our users seriously and addressed a potential DoS vulnerability.
