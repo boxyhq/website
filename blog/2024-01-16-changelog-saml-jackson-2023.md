@@ -41,7 +41,7 @@ Join us as we delve into these highlights from 2023 and the first sparks of 2024
 ### SAML Jackson 1.9.0
 
 - Added fallback for OIDC discovery URL when configuring OIDC connection.
-- Added UI for our [Data Privacy Vault](https://boxyhq.com/privacy-vault) product (private beta)
+- Added UI for our Data Privacy Vault product (private beta)
 
 ## Notable releases during the second quarter of 2023
 

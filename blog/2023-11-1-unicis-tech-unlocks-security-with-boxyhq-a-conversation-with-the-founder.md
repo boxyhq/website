@@ -22,7 +22,7 @@ author_image_url: /images/authors/nathan.jpg
 
 At [Unicis](https://www.unicis.tech/), their vision is to create a world where compliance is effortless, efficient, and transparent for every business. We strive to achieve this by providing a single, comprehensive application that addresses all compliance, privacy, risk and security concerns.
 
-**Q:** Thank you, Predrag, for joining us today to discuss your experience with implementing **[Enterprise Single Sign-On (SSO)](https://boxyhq.com/enterprise-sso)** and **[Audit Logs](https://boxyhq.com/audit-logs)** at Unicis.Tech. Let's start with your motivation behind implementing these solutions.
+**Q:** Thank you, Predrag, for joining us today to discuss your experience with implementing **[Enterprise Single Sign-On (SSO)](https://boxyhq.com/enterprise-sso)** and **[Audit Logs](https://github.com/retracedhq/retraced)** at Unicis.Tech. Let's start with your motivation behind implementing these solutions.
 
 **Predrag:** Thank you, I’m excited to share our story with you today. Sure, lets dive into it.
 

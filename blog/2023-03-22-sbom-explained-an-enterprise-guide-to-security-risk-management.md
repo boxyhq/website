@@ -26,7 +26,7 @@ More organizations now have security top-of-mind due to cyber attacks on busines
 
 An SBOM would provide better visibility to companies in identifying and tracking security vulnerabilities that could enable timely patches. Updates in code should prompt a newly generated report (SBOM).
 
-We could go a lot deeper around all the various ways precautions could be taken like scanning your application for vulnerabilities or penetration testing. A [minimum viable secure product](https://mvsp.dev/) is of course recommended for all enterprise-ready organizations. It could be as simple as having [audit logs](https://boxyhq.com/audit-logs) in place to record and search events internally on your application.
+We could go a lot deeper around all the various ways precautions could be taken like scanning your application for vulnerabilities or penetration testing. A [minimum viable secure product](https://mvsp.dev/) is of course recommended for all enterprise-ready organizations. It could be as simple as having [audit logs](https://github.com/retracedhq/retraced) in place to record and search events internally on your application.
 
 ## Product Development
 
