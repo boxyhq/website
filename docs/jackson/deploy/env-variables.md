@@ -33,6 +33,14 @@ Default: `http://{HOST_URL}:{PORT}`
 
 NPM library option: `externalUrl`
 
+### **ACS_URL**
+
+The custom ACS URL (if used) to let Jackson know which ACS URL to send to in the SAML Request to the IdP. Custom ACS URL can also be defined per SAML connection.
+
+Available from version `1.40.1`.
+
+NPM library option: `acsUrl`
+
 ### **JACKSON_API_KEYS**
 
 A comma separated list of API keys that will be validated when serving the API requests for SSO connection (`/api/v1/connections`) and Directory Sync (`/api/v1/directory-sync`).
