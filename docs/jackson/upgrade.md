@@ -1,5 +1,9 @@
 # Upgrade Guide
 
+## Upgrading to v1.44.0
+
+Please check the note on ESM libraries and dynamic imports issue [here](./deploy/npm-library.md#)
+
 ## Upgrading to v1.25.0
 
 The `namespace` column length has been increased to 256 characters to support larger values.
@@ -43,7 +47,7 @@ We discovered and fixed a database connection leak introduced in v1.9.1, if you 
 1. Landed support for OpenID Identity Providers.
 2. Landed new API (`/api/v1/connections`) to support setting up both SAML/OIDC SSO Connections.
 
-   **Note:** The previous API for SAML configuration `/api/v1/saml/config` has been deprecated, and would be completely removed in a future release.
+> **Note:** The previous API for SAML configuration `/api/v1/saml/config` has been deprecated, and would be completely removed in a future release.
 
 3. Renamed env variable `PRE_LOADED_CONFIG` to [`PRE_LOADED_CONNECTION`](deploy/env-variables.md#pre_loaded_connection) for Jackson service. In the case of npm `preLoadedConfig` becomes`preLoadedConnection`.
 4. Make sure to set the value for [`oidcPath`](deploy/env-variables.md#oidcpath) in case you are using the npm.
