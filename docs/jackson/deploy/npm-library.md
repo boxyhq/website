@@ -11,7 +11,9 @@ Install the SDK using the command below.
 npm install @boxyhq/saml-jackson
 ```
 
-> **_Note_**: ESM libraries and dynamic imports
+:::info
+
+ESM libraries and dynamic imports
 
 Handling `jose` and `openid-client` in Bundled Server-Side Code:
 
@@ -24,6 +26,8 @@ If you are bundling your server-side code (e.g., in Next.js), these dependencies
 - Configure `outputFileTracingIncludes` in your Next.js settings to explicitly include these dependencies.
 
 Similar adjustments may be required for other frameworks that bundle server-side code.
+
+:::
 
 ---
 
