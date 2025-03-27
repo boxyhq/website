@@ -127,6 +127,14 @@ cat public.crt | base64
 cat key.pem | base64
 ```
 
+### **FLATTEN_RAW_CLAIMS**
+
+Set this config if you want to flatten all the raw claims into the profile instead of grouping them into profile.raw, this is needed for some OIDC providers that do no support nested objects
+
+Default: `false`
+
+NPM library option: `flattenRawClaims`
+
 ## OpenID configuration
 
 For supporting OpenID flow, we need to set the algorithm and keys used to sign the ID token JWT.
