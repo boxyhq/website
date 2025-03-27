@@ -137,7 +137,7 @@ app/auth.jackson.server.ts: https://github.com/boxyhq/jackson-remix-auth/blob/ma
     url: "postgresql://postgres:postgres@localhost:5432/postgres",
     type: "postgres",
   },
-  clientSecretVerifier: process.env.CLIENT_SECRET_VERIFIER
+  clientSecretVerifier: process.env.CLIENT_SECRET_VERIFIER,
   ...
  }
 

@@ -5,9 +5,9 @@ import TabItem from '@theme/TabItem';
 
 Jackson takes a multi-tenanted approach to implementing SSO, abstracting away all the complexities of the underlying SAML/OIDC protocol. What this means is you can enable SSO for all (your) customers across products from a single instance of jackson, and works with both SAML and OIDC Identity Provider(IdP)s.
 
-**Note:** All the APIs below support both `application/x-www-form-urlencoded` and `application/json` content types. Examples below use `application/x-www-form-urlencoded`.
+> **Note:** All the APIs below support both `application/x-www-form-urlencoded` and `application/json` content types. Examples below use `application/x-www-form-urlencoded`.
 
-**Note:** OAuth 2.0 protocol uses underscore casing for the parameters, we use camel casing for all our APIs. For example it's `client_id` in the OAuth 2.0 flow and `clientID` in our APIs.
+> **Note:** OAuth 2.0 protocol uses underscore casing for the parameters, we use camel casing for all our APIs. For example it's `client_id` in the OAuth 2.0 flow and `clientID` in our APIs.
 
 ## 1. Setting up SSO Provider
 
@@ -234,7 +234,7 @@ https://localhost:5225/api/oauth/authorize
 - `forceAuthn` (for SAML SSO Connections): If passed in with the value `true`, the outgoing SAML request to IdP will have the param `ForceAuthn` set as true forcing the user to re-authenticate even if they have an active session.
 - `login_hint` (Relevant for OIDC IdPs like Google): If passed in, the parameter will be forwarded in the OIDC IdP authorize request. The IdP can use this value (normally an account identifier such as an email address) as a hint to skip the account selection page.
 
-**NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` or `resource` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically.
+> **NOTE**: You can also pass the encoded tenant/product in either `scope` or `access_type` or `resource` (Set `client_id` as `dummy`). This will come in handy for some setups where the client_id can't be set dynamically.
 
 The user will be taken to the IdP based on the configured SAML/OIDC metadata.
 In case of any errors, we return the `error`, `error_description` and `state` (from original request) (see [Error Response](https://www.oauth.com/oauth2-servers/authorization/the-authorization-response/)) back to the `redirect_uri` (`redirect_uri` is validated against the saml connection to prevent open redirects).

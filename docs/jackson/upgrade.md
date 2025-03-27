@@ -2,17 +2,7 @@
 
 ## Upgrading to v1.44.0
 
-Handling `jose` and `openid-client` in Bundled Server-Side Code:
-
-Our npm library dynamically imports the `jose` and `openid-client` packages because they have transitioned to ESM (ECMAScript Modules).
-
-If you are bundling your server-side code (e.g., in Next.js), these dependencies may be excluded during the build process. To ensure they are included, follow these steps:
-
-- Add dummy imports for jose and openid-client in your code.
-
-- Configure `outputFileTracingIncludes` in your Next.js settings to explicitly include these dependencies.
-
-Similar adjustments may be required for other frameworks that bundle server-side code.
+Please check the note on ESM libraries and dynamic imports issue [here](./deploy/npm-library.md#)
 
 ## Upgrading to v1.25.0
 
@@ -57,7 +47,7 @@ We discovered and fixed a database connection leak introduced in v1.9.1, if you 
 1. Landed support for OpenID Identity Providers.
 2. Landed new API (`/api/v1/connections`) to support setting up both SAML/OIDC SSO Connections.
 
-   **Note:** The previous API for SAML configuration `/api/v1/saml/config` has been deprecated, and would be completely removed in a future release.
+> **Note:** The previous API for SAML configuration `/api/v1/saml/config` has been deprecated, and would be completely removed in a future release.
 
 3. Renamed env variable `PRE_LOADED_CONFIG` to [`PRE_LOADED_CONNECTION`](deploy/env-variables.md#pre_loaded_connection) for Jackson service. In the case of npm `preLoadedConfig` becomes`preLoadedConnection`.
 4. Make sure to set the value for [`oidcPath`](deploy/env-variables.md#oidcpath) in case you are using the npm.
