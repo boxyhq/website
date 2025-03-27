@@ -43,7 +43,7 @@ NPM library option: `acsUrl`
 
 ### **JACKSON_API_KEYS**
 
-A comma separated list of API keys that will be validated when serving the API requests for SSO connection (`/api/v1/connections`) and Directory Sync (`/api/v1/directory-sync`).
+A comma separated list of API keys that will be validated when serving the API requests (`/api/v1/**`).
 
 For example `JACKSON_API_KEYS=key1,key2,key3`
 
