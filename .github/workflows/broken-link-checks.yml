@@ -13,7 +13,7 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2.7.0
         with:
           url: https://boxyhq.com
-          cmd_params: '--max-connections=10 --timeout=60 --buffer-size=32768 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org|instagram.com|admin.google.com|https://segment.com|support.cloudflare.com|https://boxyhq.com/cdn-cgi/l/email-protection|microsoft.com|https://www.sonatype.com/state-of-the-software-supply-chain/open-source-supply-demand-security|http://datagrade.com|https://www.signalsciences.com|https://webstudio.is|https://blog.opensource.org|https://effortlesssolutions.fr|https://www.maxmind.com|https://www.wayra.com)" --follow-sitemap-xml --skip-tls-verification --ignore-fragments --header="User-Agent:Chrome/108.0.0.0"'
+          cmd_params: '--max-connections=10 --timeout=60 --buffer-size=32768 --color=always --exclude="(localhost|127.0.0.1|twitter.com|linkedin.com|manage.auth0.com|schemas.xmlsoap.org|instagram.com|admin.google.com|https://segment.com|support.cloudflare.com|https://boxyhq.com/cdn-cgi/l/email-protection|microsoft.com|https://www.sonatype.com/state-of-the-software-supply-chain/open-source-supply-demand-security|http://datagrade.com|https://www.signalsciences.com|https://webstudio.is|https://blog.opensource.org|https://effortlesssolutions.fr|https://www.maxmind.com|https://www.wayra.com|https://unsplash.com)" --follow-sitemap-xml --skip-tls-verification --ignore-fragments --header="User-Agent:Chrome/108.0.0.0"'
       - name: Post to Slack
         if: ${{ failure() }}
         uses: slackapi/slack-github-action@v1.26.0
