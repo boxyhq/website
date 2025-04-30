@@ -389,6 +389,18 @@ Set this to a comma separated string of email addresses or glob patterns like: `
 
 Set this to a comma separated string of the pattern `email:password` to enable login to the Admin Portal, for example `NEXTAUTH_ADMIN_CREDENTIALS=deepak@boxyhq.com:Password123`. If you don't specify any value access is denied to all.
 
+### **ADMIN_PORTAL_HIDE_AUDIT_LOGS**
+
+Set this to `true` if you want to hide the Audit Logs product in the sidebar.
+
+Default: `false`
+
+### **ADMIN_PORTAL_HIDE_IDENTITY_FEDERATION**
+
+Set this to `true` if you want to hide the Identity Federation product in the sidebar.
+
+Default: `false`
+
 ### **ADMIN_PORTAL_SSO_TENANT**
 
 This will be used as the tenant for the SSO connections (added from Settings tab) used to login into the Admin portal itself. Set this to a value that is less likely to conflict with the main Enterprise SSO connections.
