@@ -27,7 +27,7 @@ On the other hand:
 - Almost 60% of devs are releasing code 2x faster, thanks to DevOps.
 - In 2021, only 20% of organizations have fully integrated security into the development
 - Security has low priority. 67% of developers surveyed by Secure Code Warrior admitted that they routinely left known vulnerabilities and exploits in their code
-- Github expects the number of software developers using its platform (56 million in 2020), to grow to 100 million developers in 2025
+- GitHub expects the number of software developers using its platform (56 million in 2020), to grow to 100 million developers in 2025
 
 (Invicti Security, Gitlab, GitHub, VentureBeat)
 
