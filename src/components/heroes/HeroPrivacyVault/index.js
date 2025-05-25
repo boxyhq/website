@@ -20,7 +20,7 @@ const HeroPrivacyVault = () => {
       </p>
       <ul className="reset-list button-container">
         <li>
-          <DemoCTA />
+          {/*<DemoCTA />*/}
         </li>
       </ul>
     </BaseHero>

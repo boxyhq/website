@@ -16,25 +16,25 @@ const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
             title="Single Sign-On (SSO)"
             type="premium-self-hosted"
           >
-            <div className="pricing-product-card-details">
-              <p>
-                For pricing or general questions concerning our premium
-                self-hosted Enterprise Single Sign-On solution{' '}
-                <button
-                  type="button"
-                  className="ghost contact-us-inline"
-                  onClick={() =>
-                    showHubSpotForm(
-                      true,
-                      hubspotFormIds.enterpriseSSODirectorySync
-                    )
-                  }
-                >
-                  contact us today
-                </button>
-                .
-              </p>
-            </div>
+            {/*<div className="pricing-product-card-details">*/}
+            {/*  <p>*/}
+            {/*    For pricing or general questions concerning our premium*/}
+            {/*    self-hosted Enterprise Single Sign-On solution{' '}*/}
+            {/*    <button*/}
+            {/*      type="button"*/}
+            {/*      className="ghost contact-us-inline"*/}
+            {/*      onClick={() =>*/}
+            {/*        showHubSpotForm(*/}
+            {/*          true,*/}
+            {/*          hubspotFormIds.enterpriseSSODirectorySync*/}
+            {/*        )*/}
+            {/*      }*/}
+            {/*    >*/}
+            {/*      contact us today*/}
+            {/*    </button>*/}
+            {/*    .*/}
+            {/*  </p>*/}
+            {/*</div>*/}
           </AccordionPricingProductCard>
         </li>
         <li>
@@ -44,25 +44,25 @@ const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
             title="Directory Sync"
             type="premium-self-hosted"
           >
-            <div className="pricing-product-card-details">
-              <p>
-                For pricing or general questions concerning our premium
-                self-hosted Directory Sync solution{' '}
-                <button
-                  type="button"
-                  className="ghost contact-us-inline"
-                  onClick={() =>
-                    showHubSpotForm(
-                      true,
-                      hubspotFormIds.enterpriseSSODirectorySync
-                    )
-                  }
-                >
-                  contact us today
-                </button>
-                .
-              </p>
-            </div>
+            {/*<div className="pricing-product-card-details">*/}
+            {/*  <p>*/}
+            {/*    For pricing or general questions concerning our premium*/}
+            {/*    self-hosted Directory Sync solution{' '}*/}
+            {/*    <button*/}
+            {/*      type="button"*/}
+            {/*      className="ghost contact-us-inline"*/}
+            {/*      onClick={() =>*/}
+            {/*        showHubSpotForm(*/}
+            {/*          true,*/}
+            {/*          hubspotFormIds.enterpriseSSODirectorySync*/}
+            {/*        )*/}
+            {/*      }*/}
+            {/*    >*/}
+            {/*      contact us today*/}
+            {/*    </button>*/}
+            {/*    .*/}
+            {/*  </p>*/}
+            {/*</div>*/}
           </AccordionPricingProductCard>
         </li>
         <li>
@@ -72,33 +72,33 @@ const PricingCardsPremiumSelfHosted = ({ showHubSpotForm }) => {
             title="Identity Federation"
             type="premium-self-hosted"
           >
-            <div className="pricing-product-card-details">
-              <p>
-                Unlock a seamless user experience while significantly reducing
-                development time and costs with BoxyHQ's Identity Federation
-                Proxy. Our Proxy approach acts as both a virtual IdP and an SP,
-                simplifying processes and eliminating the need for
-                re-authentications. This allows enterprises to swiftly roll out
-                new software products with confidence, enabling bespoke user
-                journeys and accelerating user onboarding.
-              </p>
-              <p>
-                Should you have questions about our{' '}
-                <button
-                  type="button"
-                  className="ghost contact-us-inline"
-                  onClick={() =>
-                    showHubSpotForm(
-                      true,
-                      hubspotFormIds.identityFederation.premium
-                    )
-                  }
-                >
-                  Identity Federation solution contact us today
-                </button>
-                .
-              </p>
-            </div>
+            {/*<div className="pricing-product-card-details">*/}
+            {/*  <p>*/}
+            {/*    Unlock a seamless user experience while significantly reducing*/}
+            {/*    development time and costs with BoxyHQ's Identity Federation*/}
+            {/*    Proxy. Our Proxy approach acts as both a virtual IdP and an SP,*/}
+            {/*    simplifying processes and eliminating the need for*/}
+            {/*    re-authentications. This allows enterprises to swiftly roll out*/}
+            {/*    new software products with confidence, enabling bespoke user*/}
+            {/*    journeys and accelerating user onboarding.*/}
+            {/*  </p>*/}
+            {/*  <p>*/}
+            {/*    Should you have questions about our{' '}*/}
+            {/*    <button*/}
+            {/*      type="button"*/}
+            {/*      className="ghost contact-us-inline"*/}
+            {/*      onClick={() =>*/}
+            {/*        showHubSpotForm(*/}
+            {/*          true,*/}
+            {/*          hubspotFormIds.identityFederation.premium*/}
+            {/*        )*/}
+            {/*      }*/}
+            {/*    >*/}
+            {/*      Identity Federation solution contact us today*/}
+            {/*    </button>*/}
+            {/*    .*/}
+            {/*  </p>*/}
+            {/*</div>*/}
           </AccordionPricingProductCard>
         </li>
         {/* <li>

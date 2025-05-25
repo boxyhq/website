@@ -16,7 +16,7 @@ const HeroSSO = () => {
       </p>
       <ul className="reset-list button-container">
         <li>
-          <DemoCTA />
+          {/*<DemoCTA />*/}
         </li>
         <li>
           <SignupCTA campaign="enterprise-sso" />

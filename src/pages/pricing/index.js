@@ -49,18 +49,18 @@ const Pricing = () => {
               <SignupCTA campaign="pricing" />
             </li>
             <li>
-              <button
-                type="button"
-                className="button button-secondary with-icon base-icon-pseudo icon-send icon-code-slash"
-                onClick={() =>
-                  showHubSpotForm(
-                    true,
-                    hubspotFormIds.enterpriseSSODirectorySync
-                  )
-                }
-              >
-                Contact Us
-              </button>
+              {/*<button*/}
+              {/*  type="button"*/}
+              {/*  className="button button-secondary with-icon base-icon-pseudo icon-send icon-code-slash"*/}
+              {/*  onClick={() =>*/}
+              {/*    showHubSpotForm(*/}
+              {/*      true,*/}
+              {/*      hubspotFormIds.enterpriseSSODirectorySync*/}
+              {/*    )*/}
+              {/*  }*/}
+              {/*>*/}
+              {/*  Contact Us*/}
+              {/*</button>*/}
             </li>
           </ul>
           <p className="small-text">
