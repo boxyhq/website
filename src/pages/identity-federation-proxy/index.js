@@ -97,19 +97,19 @@ const ProductIdentityFederation = () => {
                   {benefit.title}
                 </h2>
                 <p>{benefit.copy}</p>
-                <a
-                  className={clsx(
-                    'button',
-                    'button-primary',
-                    'with-icon',
-                    'base-icon-pseudo',
-                    benefit.icon
-                  )}
-                  href={benefit.url}
-                  target={benefit.url.startsWith('http') ? '_blank' : '_self'}
-                >
-                  {benefit.ctaCopy}
-                </a>
+                {/*<a*/}
+                {/*  className={clsx(*/}
+                {/*    'button',*/}
+                {/*    'button-primary',*/}
+                {/*    'with-icon',*/}
+                {/*    'base-icon-pseudo',*/}
+                {/*    benefit.icon*/}
+                {/*  )}*/}
+                {/*  href={benefit.url}*/}
+                {/*  target={benefit.url.startsWith('http') ? '_blank' : '_self'}*/}
+                {/*>*/}
+                {/*  {benefit.ctaCopy}*/}
+                {/*</a>*/}
               </BaseProductSpotlightSection>
             </li>
           ))}

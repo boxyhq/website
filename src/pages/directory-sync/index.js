@@ -54,8 +54,8 @@ const DirectorySync = () => {
 
       <main>
         <BaseCTAProductHighlight
-          ctaTargertURL="https://cal.com/deepak-boxyhq/demo"
-          ctaTargertCopy="Book A Demo"
+          // ctaTargertURL="https://cal.com/deepak-boxyhq/demo"
+          // ctaTargertCopy="Book A Demo"
           sectionId="directory-sync-booking"
           subtitle="Lifecycle Control"
           title="Enterprise Ready"
@@ -84,19 +84,19 @@ const DirectorySync = () => {
                   {benefit.title}
                 </h2>
                 <p>{benefit.copy}</p>
-                <a
-                  className={clsx(
-                    'button',
-                    'button-primary',
-                    'with-icon',
-                    'base-icon-pseudo',
-                    benefit.icon
-                  )}
-                  href={benefit.url}
-                  target={benefit.url.startsWith('http') ? '_blank' : '_self'}
-                >
-                  {benefit.ctaCopy}
-                </a>
+                {/*<a*/}
+                {/*  className={clsx(*/}
+                {/*    'button',*/}
+                {/*    'button-primary',*/}
+                {/*    'with-icon',*/}
+                {/*    'base-icon-pseudo',*/}
+                {/*    benefit.icon*/}
+                {/*  )}*/}
+                {/*  href={benefit.url}*/}
+                {/*  target={benefit.url.startsWith('http') ? '_blank' : '_self'}*/}
+                {/*>*/}
+                {/*  {benefit.ctaCopy}*/}
+                {/*</a>*/}
               </BaseProductSpotlightSection>
             </li>
           ))}

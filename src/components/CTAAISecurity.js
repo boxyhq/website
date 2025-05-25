@@ -3,8 +3,8 @@ import BaseCTAProductHighlight from './BaseCTAProductHighlight';
 const CTAAISecurity = () => {
   return (
     <BaseCTAProductHighlight
-      ctaTargertURL="https://cal.com/deepak-boxyhq/demo"
-      ctaTargertCopy="Book A Demo"
+      // ctaTargertURL="https://cal.com/deepak-boxyhq/demo"
+      // ctaTargertCopy="Book A Demo"
       sectionId="cta-ai-security"
       title="AI Security for the Modern Enterprise"
       icon="calendar"

@@ -13,17 +13,17 @@ const TableAddons = ({ showHubSpotForm, type }) => {
         include custom branding with custom domains, SAML federation for
         streamlined identity management, and SIEM integration for advanced
         security insights. Each add-on is crafted to seamlessly integrate with
-        your existing setup, providing you with a tailored, efficient, and
-        secure system. For detailed information and to discuss how these add-ons
-        can benefit your business,{' '}
-        <button
-          type="button"
-          className="ghost addons-contact"
-          onClick={() => showHubSpotForm(true, hubspotFormIds.addons)}
-        >
-          contact us today
-        </button>
-        .
+        your existing setup, providing you with a tailored, efficient, and secure system.
+        {/*secure system. For detailed information and to discuss how these add-ons*/}
+        {/*can benefit your business,{' '}*/}
+        {/*<button*/}
+        {/*  type="button"*/}
+        {/*  className="ghost addons-contact"*/}
+        {/*  onClick={() => showHubSpotForm(true, hubspotFormIds.addons)}*/}
+        {/*>*/}
+        {/*  contact us today*/}
+        {/*</button>*/}
+        {/*.*/}
       </p>
       <table className={clsx('pricing-table', 'addons', type)}>
         <thead>

@@ -20,7 +20,7 @@ const HeroIdentityFederation = () => {
       </p>
       <ul className="reset-list button-container">
         <li>
-          <DemoCTA />
+          {/*<DemoCTA />*/}
         </li>
         <li>
           <SignupCTA campaign="identity-federation" />

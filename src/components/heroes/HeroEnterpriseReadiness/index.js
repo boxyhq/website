@@ -24,7 +24,7 @@ const HeroEnterpriseReadiness = () => {
       </p>
       <ul className="reset-list button-container">
         <li>
-          <DemoCTA />
+          {/*<DemoCTA />*/}
         </li>
         <li>
           <SignupCTA campaign="enterprise-readiness" />
