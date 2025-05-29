@@ -19,11 +19,11 @@
  /blog/developer-first-security-sucks-automate-product-security https://www.ory.sh/blog/developer-first-security-sucks-automate-product-security 301
  /blog/entendiendo-la-Inyecci%C3%B3n-de-prompts-una-preocupaci%C3%B3n-creciente-en-la-IA-y-los-llm https://www.ory.sh/blog 301
  /blog/enterprise-readiness-made-simple https://www.ory.sh/blog/enterprise-readiness-made-simple 301
- /blog/enterprise-ready-saas-starter-kit https://www.ory.com/blog/enterprise-ready-saas-starter-kit 301
+ /blog/enterprise-ready-saas-starter-kit https://www.ory.sh/blog/enterprise-ready-saas-starter-kit 301
  /blog/exploring-the-open-source-business-model-and-how-companies-monetize-it https://www.ory.sh/blog/exploring-the-open-source-business-model-and-how-companies-monetize-it 301
  /blog/how-early-stage-startups-should-sell-to-enterprises https://www.ory.sh/blog/how-early-stage-startups-should-sell-to-enterprises 301
  /blog/how-effortless-solutions-managed-multi-tiered-client-needs-with-boxyhq-sso https://www.ory.sh/blog/how-effortless-solutions-managed-multi-tiered-client-needs-with-ory-sso 301
- /blog/how-low-code-solutions-are-changing-how-we-build-products-and-workflows https://www.ory.com/blog/how-low-code-solutions-are-changing-how-we-build-products-and-workflows 301
+ /blog/how-low-code-solutions-are-changing-how-we-build-products-and-workflows https://www.ory.sh/blog/how-low-code-solutions-are-changing-how-we-build-products-and-workflows 301
  /blog/ignite-your-saas-journey-with-the-best-free-and-open-source-saas-starter-kit https://www.ory.sh/blog/ignite-your-saas-journey-with-the-best-free-and-open-source-saas-starter-kit 301
  /blog/interview-with-calcom-enhancing-enterprise-experience-with-boxyhq https://www.ory.sh/blog/interview-with-calcom-enhancing-enterprise-experience-with-ory 301
  /blog/leveraging-boxyhqs-open-source-sso-for-greater-market-reach-and-compliance-monkeyfit https://www.ory.sh/blog/leveraging-ory-open-source-sso-for-greater-market-reach-and-compliance-monkeyfit 301
@@ -144,7 +144,7 @@
  /guides/jackson https://ory.sh/docs/polis/guides/service 301
  /guides/jackson/configuring-saml-sso https://ory.sh/docs/polis/guides/configuring-saml-sso 301
  /guides/jackson/deployments/heroku https://ory.sh/docs/polis/guides/deployment/heroku 301
- /guides/jackson/deployments/mogenius https://ory.sh/docs/polis/guides/deployment 301
+ /guides/jackson/deployments/mogenius https://www.ory.sh/docs/polis 301
  /guides/jackson/deployments/vercel https://ory.sh/docs/polis/guides/deployment/vercel 301
  /guides/jackson/frameworks/adonis https://ory.sh/docs/polis/guides/frameworks/adonis 301
  /guides/jackson/frameworks/django https://ory.sh/docs/polis/guides/frameworks/django 301
