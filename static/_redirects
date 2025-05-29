@@ -138,26 +138,26 @@
  /docs/jackson/sso-providers/rippling https://ory.sh/docs/polis/sso-providers/rippling 301!
  /docs/jackson/upgrade https://ory.sh/docs/polis/upgrade 301!
  /guides https://ory.sh/docs/polis 301!
- /guides/directory-sync http://ory.sh/docs/polis/directory-sync/quickstart 301!
- /guides/directory-sync/frameworks/express http://ory.sh/docs/polis/directory-sync/guides/express 301!
- /guides/directory-sync/frameworks/nextjs http://ory.sh/docs/polis/directory-sync/guides/nextjs 301!
+ /guides/directory-sync https://ory.sh/docs/polis/directory-sync/quickstart 301!
+ /guides/directory-sync/frameworks/express https://ory.sh/docs/polis/directory-sync/guides/express 301!
+ /guides/directory-sync/frameworks/nextjs https://ory.sh/docs/polis/directory-sync/guides/nextjs 301!
  /guides/jackson https://ory.sh/docs/polis/guides/service 301!
- /guides/jackson/configuring-saml-sso http://ory.sh/docs/polis/guides/configuring-saml-sso 301!
- /guides/jackson/deployments/heroku http://ory.sh/docs/polis/guides/deployment/heroku 301!
- /guides/jackson/deployments/mogenius http://ory.sh/docs/polis/guides/deployment 301!
- /guides/jackson/deployments/vercel http://ory.sh/docs/polis/guides/deployment/vercel 301!
- /guides/jackson/frameworks/adonis http://ory.sh/docs/polis/guides/frameworks/adonis 301!
- /guides/jackson/frameworks/django http://ory.sh/docs/polis/guides/frameworks/django 301!
- /guides/jackson/frameworks/express http://ory.sh/docs/polis/guides/frameworks/express 301!
- /guides/jackson/frameworks/laravel http://ory.sh/docs/polis/guides/frameworks/laravel 301!
- /guides/jackson/frameworks/nextjs http://ory.sh/docs/polis/guides/frameworks/nextjs 301!
- /guides/jackson/frameworks/rails http://ory.sh/docs/polis/guides/frameworks/rails 301!
- /guides/jackson/frameworks/react http://ory.sh/docs/polis/guides/frameworks/react 301!
- /guides/jackson/frameworks/remix http://ory.sh/docs/polis/guides/frameworks/remix 301!
+ /guides/jackson/configuring-saml-sso https://ory.sh/docs/polis/guides/configuring-saml-sso 301!
+ /guides/jackson/deployments/heroku https://ory.sh/docs/polis/guides/deployment/heroku 301!
+ /guides/jackson/deployments/mogenius https://ory.sh/docs/polis/guides/deployment 301!
+ /guides/jackson/deployments/vercel https://ory.sh/docs/polis/guides/deployment/vercel 301!
+ /guides/jackson/frameworks/adonis https://ory.sh/docs/polis/guides/frameworks/adonis 301!
+ /guides/jackson/frameworks/django https://ory.sh/docs/polis/guides/frameworks/django 301!
+ /guides/jackson/frameworks/express https://ory.sh/docs/polis/guides/frameworks/express 301!
+ /guides/jackson/frameworks/laravel https://ory.sh/docs/polis/guides/frameworks/laravel 301!
+ /guides/jackson/frameworks/nextjs https://ory.sh/docs/polis/guides/frameworks/nextjs 301!
+ /guides/jackson/frameworks/rails https://ory.sh/docs/polis/guides/frameworks/rails 301!
+ /guides/jackson/frameworks/react https://ory.sh/docs/polis/guides/frameworks/react 301!
+ /guides/jackson/frameworks/remix https://ory.sh/docs/polis/guides/frameworks/remix 301!
  /guides/jackson/integrations/auth0 https://ory.sh/docs/polis 301!
  /guides/jackson/integrations/bubble https://ory.sh/docs/polis 301!
  /guides/jackson/integrations/firebase https://ory.sh/docs/polis 301!
  /guides/jackson/integrations/nextauth https://ory.sh/docs/polis 301!
  /guides/jackson/integrations/ory https://ory.sh/docs/polis 301!
  /guides/jackson/integrations/supertokens https://ory.sh/docs/polis 301!
- /guides/jackson/login-with-saml-sso http://ory.sh/docs/polis/guides/login-with-saml-sso 301!
+ /guides/jackson/login-with-saml-sso https://ory.sh/docs/polis/guides/login-with-saml-sso 301!
