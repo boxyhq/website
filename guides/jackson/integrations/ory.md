@@ -5,7 +5,7 @@ sidebar_label: Ory Network
 
 # Ory Network
 
-[Ory Network](https://www.ory.sh/network/) is a fully hosted identity infrastructure for scaling teams. Based on open standards and supported by a team of security experts, it’s the fastest way to build secure auth flows.
+[Ory Network](https://www.ory.com/network/) is a fully hosted identity infrastructure for scaling teams. Based on open standards and supported by a team of security experts, it’s the fastest way to build secure auth flows.
 
 We integrate with Ory Network to support SAML SSO. You can follow the step outlined below:
 
@@ -17,7 +17,7 @@ Please note that we utilize the `B2B Organizations` feature of Ory Network which
 
 ## Obtain the Ory Network Session Token
 
-Install the [Ory CLI](https://www.ory.sh/docs/guides/cli/installation) and then run `ory auth` to sign into your Ory Network account.
+Install the [Ory CLI](https://www.ory.com/docs/guides/cli/installation) and then run `ory auth` to sign into your Ory Network account.
 
 You will find the `session_token` in the `.ory-cloud.json` file in your home folder. Copy that out since you need this for the next step. The `session_token` starts with `ory_st` prefix.
 

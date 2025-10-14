@@ -20,7 +20,7 @@ With SAML Jackson, our Single Sign-On (SSO) and Directory Sync solution, we are 
 - SAML Federation now supports bridging to OIDC.
 - Added error tracing for OIDC connections and related improvements.
 - Added a new statistics API endpoint for SSO and Directory Sync connection count.
-- Native integration with [Ory](https://www.ory.sh/).
+- Native integration with [Ory](https://www.ory.com/).
 - Added support to associate multiple tenants with SAML Federation apps. This is especially useful for large enterprises.
 - General improvements to SAML Federation support.
 - There were also several dependency updates to ensure the security and performance of SAML Jackson.
